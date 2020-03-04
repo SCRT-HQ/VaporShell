@@ -1,10 +1,14 @@
 function New-VSLambdaPermission {
     <#
     .SYNOPSIS
-        Adds an AWS::Lambda::Permission resource to the template. 
+        Adds an AWS::Lambda::Permission resource to the template. The AWS::Lambda::Permission resource grants an AWS service or another account permission to use a function. You can apply the policy at the function level, or specify a qualifier to restrict access to a single version or alias. If you use a qualifier, the invoker must use the full Amazon Resource Name (ARN of that version or alias to invoke the function.
 
     .DESCRIPTION
-        Adds an AWS::Lambda::Permission resource to the template. 
+        Adds an AWS::Lambda::Permission resource to the template. The AWS::Lambda::Permission resource grants an AWS service or another account permission to use a function. You can apply the policy at the function level, or specify a qualifier to restrict access to a single version or alias. If you use a qualifier, the invoker must use the full Amazon Resource Name (ARN of that version or alias to invoke the function.
+
+To grant permission to another account, specify the account ID as the Principal. For AWS services, the principal is a domain-style identifier defined by the service, like s3.amazonaws.com or sns.amazonaws.com. For AWS services, you can also specify the ARN or owning account of the associated resource as the SourceArn or SourceAccount. If you grant permission to a service principal without specifying the source, other accounts could potentially configure resources in their account to invoke your Lambda function.
+
+This resource adds a statement to a resource-based permission policy for the function. For more information about function policies, see Lambda Function Policies: https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html
@@ -13,31 +17,48 @@ function New-VSLambdaPermission {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Action
+        The action that the principal can use on the function. For example, lambda:InvokeFunction or lambda:GetFunction.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-action
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER EventSourceToken
+        For Alexa Smart Home functions, a token that must be supplied by the invoker.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-eventsourcetoken
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER FunctionName
+        The name of the Lambda function, version, or alias.
+**Name formats**
++  **Function name** - my-function name-only, my-function:v1 with alias.
++  **Function ARN** - arn:aws:lambda:us-west-2:123456789012:function:my-function.
++  **Partial ARN** - 123456789012:function:my-function.
+You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-functionname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Principal
+        The AWS service or account that invokes the function. If you specify a service, use SourceArn or SourceAccount to limit who can invoke the function through that service.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-principal
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER SourceAccount
+        For Amazon S3, the ID of the account that owns the resource. Use this together with SourceArn to ensure that the resource is owned by the specified account. It is possible for an Amazon S3 bucket to be deleted by its owner and recreated by another account.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-sourceaccount
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER SourceArn
+        For AWS services, the ARN of the AWS resource that invokes the function. For example, an Amazon S3 bucket or Amazon SNS topic.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-sourcearn
         PrimitiveType: String
         UpdateType: Immutable
@@ -156,6 +177,9 @@ function New-VSLambdaPermission {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

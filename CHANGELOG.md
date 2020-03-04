@@ -2,6 +2,7 @@
 
 <!-- TOC -->
 
+* [2.11.0 - 2020-03-04](#2110---2020-03-04)
 * [2.10.1 - 2020-02-20](#2101---2020-02-20)
 * [2.10.0 - 2020-02-18](#2100---2020-02-18)
 * [2.9.5 - 2020-02-17](#295---2020-02-17)
@@ -53,6 +54,18 @@
 * [0.7.02](#0702)
 
 <!-- /TOC -->
+
+## 2.11.0 - 2020-03-04
+
+* [Issue #69](https://github.com/scrthq/VaporShell/issues/69) + [PR #70](https://github.com/scrthq/VaporShell/pull/70) - _Thanks, [@indented-automation](https://github.com/indented-automation)!!!_
+  * Started `VaporShell.Core` class library to include with the module, first class being `TransformTagAttribute` to cleanly convert `Tags` parameter input to the appropriate format if not already.
+  * Added Pester tests to confirm Tag transforms are working as expected.
+* [Issue #68](https://github.com/scrthq/VaporShell/issues/68) - _Thanks, [@indented-automation](https://github.com/indented-automation) and [@austoonz](https://github.com/austoonz)!!!_
+  * Surfaced errors better on AWS SDK errors so the actual error is visible.
+  * Added the `FallbackCredentialFactory` to better support running in environments where credentials files are not a practical option.
+* Miscellaneous
+  * Updated PseudoParameter list to current spec.
+  * Added newer intrinsic functions `Add-FnCidr` and `Add-FnTransform`.
 
 ## 2.10.1 - 2020-02-20
 

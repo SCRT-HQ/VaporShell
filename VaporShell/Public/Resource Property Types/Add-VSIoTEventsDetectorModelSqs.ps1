@@ -1,21 +1,25 @@
 function Add-VSIoTEventsDetectorModelSqs {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTEvents::DetectorModel.Sqs resource property to the template. 
+        Adds an AWS::IoTEvents::DetectorModel.Sqs resource property to the template. Sends information about the detector model instance and the event which triggered the action to an Amazon SQS queue.
 
     .DESCRIPTION
         Adds an AWS::IoTEvents::DetectorModel.Sqs resource property to the template.
-
+Sends information about the detector model instance and the event which triggered the action to an Amazon SQS queue.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-sqs.html
 
     .PARAMETER UseBase64
+        Set this to TRUE if you want the data to be Base-64 encoded before it is written to the queue. Otherwise, set this to FALSE.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-sqs.html#cfn-iotevents-detectormodel-sqs-usebase64
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER QueueUrl
+        The URL of the Amazon SQS queue where the data is written.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-sqs.html#cfn-iotevents-detectormodel-sqs-queueurl
         PrimitiveType: String
         UpdateType: Mutable

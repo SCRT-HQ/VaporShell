@@ -1,10 +1,16 @@
 function New-VSGreengrassLoggerDefinitionVersion {
     <#
     .SYNOPSIS
-        Adds an AWS::Greengrass::LoggerDefinitionVersion resource to the template. 
+        Adds an AWS::Greengrass::LoggerDefinitionVersion resource to the template. The AWS::Greengrass::LoggerDefinitionVersion resource represents a logger definition version for AWS IoT Greengrass. A logger definition version contains a list of loggers.
 
     .DESCRIPTION
-        Adds an AWS::Greengrass::LoggerDefinitionVersion resource to the template. 
+        Adds an AWS::Greengrass::LoggerDefinitionVersion resource to the template. The AWS::Greengrass::LoggerDefinitionVersion resource represents a logger definition version for AWS IoT Greengrass. A logger definition version contains a list of loggers.
+
+**Note**
+
+To create a logger definition version, you must specify the ID of the logger definition that you want to associate with the version. For information about creating a logger definition, see https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-loggerdefinition.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-loggerdefinition.html.
+
+After you create a logger definition version that contains the loggers you want to deploy, you must add it to your group version. For more information, see https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-loggerdefinitionversion.html
@@ -13,11 +19,15 @@ function New-VSGreengrassLoggerDefinitionVersion {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER LoggerDefinitionId
+        The ID of the logger definition associated with this version. This value is a GUID.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-loggerdefinitionversion.html#cfn-greengrass-loggerdefinitionversion-loggerdefinitionid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Loggers
+        The loggers in this version.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-loggerdefinitionversion.html#cfn-greengrass-loggerdefinitionversion-loggers
         ItemType: Logger
@@ -93,6 +103,9 @@ function New-VSGreengrassLoggerDefinitionVersion {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

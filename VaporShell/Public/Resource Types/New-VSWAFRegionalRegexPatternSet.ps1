@@ -1,10 +1,12 @@
 function New-VSWAFRegionalRegexPatternSet {
     <#
     .SYNOPSIS
-        Adds an AWS::WAFRegional::RegexPatternSet resource to the template. 
+        Adds an AWS::WAFRegional::RegexPatternSet resource to the template. The RegexPatternSet specifies the regular expression (regex pattern that you want AWS WAF to search for, such as Ba@]dBo0]t. You can then configure AWS WAF to reject those requests.
 
     .DESCRIPTION
-        Adds an AWS::WAFRegional::RegexPatternSet resource to the template. 
+        Adds an AWS::WAFRegional::RegexPatternSet resource to the template. The RegexPatternSet specifies the regular expression (regex pattern that you want AWS WAF to search for, such as Ba@]dBo0]t. You can then configure AWS WAF to reject those requests.
+
+Note that you can only create regex pattern sets using a CloudFormation template. To add the regex pattern sets created through CloudFormation to a RegexMatchSet, use the AWS WAF console, API, or command line interface (CLI. For more information, see UpdateRegexMatchSet: https://docs.aws.amazon.com/waf/latest/APIReference/API_regional_UpdateRegexMatchSet.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-regexpatternset.html
@@ -13,12 +15,16 @@ function New-VSWAFRegionalRegexPatternSet {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER RegexPatternStrings
+        Specifies the regular expression regex patterns that you want AWS WAF to search for, such as Ba@]dBo0]t.
+
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-regexpatternset.html#cfn-wafregional-regexpatternset-regexpatternstrings
         UpdateType: Mutable
 
     .PARAMETER Name
+        A friendly name or description of the AWS::WAFRegional::RegexPatternSet: #aws-resource-wafregional-regexpatternset. You can't change Name after you create a RegexPatternSet.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-regexpatternset.html#cfn-wafregional-regexpatternset-name
         PrimitiveType: String
         UpdateType: Immutable
@@ -84,6 +90,9 @@ function New-VSWAFRegionalRegexPatternSet {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

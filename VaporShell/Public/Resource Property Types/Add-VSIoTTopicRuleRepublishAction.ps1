@@ -1,21 +1,25 @@
 function Add-VSIoTTopicRuleRepublishAction {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::TopicRule.RepublishAction resource property to the template. 
+        Adds an AWS::IoT::TopicRule.RepublishAction resource property to the template. Describes an action to republish to another topic.
 
     .DESCRIPTION
         Adds an AWS::IoT::TopicRule.RepublishAction resource property to the template.
-
+Describes an action to republish to another topic.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-republishaction.html
 
     .PARAMETER RoleArn
+        The ARN of the IAM role that grants access.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-republishaction.html#cfn-iot-topicrule-republishaction-rolearn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Topic
+        The name of the MQTT topic.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-republishaction.html#cfn-iot-topicrule-republishaction-topic
         PrimitiveType: String
         UpdateType: Mutable

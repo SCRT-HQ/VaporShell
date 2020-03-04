@@ -1,27 +1,33 @@
 function Add-VSBatchJobDefinitionNodeProperties {
     <#
     .SYNOPSIS
-        Adds an AWS::Batch::JobDefinition.NodeProperties resource property to the template. 
+        Adds an AWS::Batch::JobDefinition.NodeProperties resource property to the template. An object representing the node properties of a multi-node parallel job.
 
     .DESCRIPTION
         Adds an AWS::Batch::JobDefinition.NodeProperties resource property to the template.
-
+An object representing the node properties of a multi-node parallel job.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-nodeproperties.html
 
     .PARAMETER MainNode
+        Specifies the node index for the main node of a multi-node parallel job. This node index value must be fewer than the number of nodes.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-nodeproperties.html#cfn-batch-jobdefinition-nodeproperties-mainnode
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER NodeRangeProperties
+        A list of node ranges and their properties associated with a multi-node parallel job.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-nodeproperties.html#cfn-batch-jobdefinition-nodeproperties-noderangeproperties
         ItemType: NodeRangeProperty
         UpdateType: Mutable
 
     .PARAMETER NumNodes
+        The number of nodes associated with a multi-node parallel job.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-nodeproperties.html#cfn-batch-jobdefinition-nodeproperties-numnodes
         PrimitiveType: Integer
         UpdateType: Mutable

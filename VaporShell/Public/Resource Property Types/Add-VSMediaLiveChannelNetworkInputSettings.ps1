@@ -1,21 +1,27 @@
 function Add-VSMediaLiveChannelNetworkInputSettings {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaLive::Channel.NetworkInputSettings resource property to the template. 
+        Adds an AWS::MediaLive::Channel.NetworkInputSettings resource property to the template. Information about how to connect to the upstream system.
 
     .DESCRIPTION
         Adds an AWS::MediaLive::Channel.NetworkInputSettings resource property to the template.
+Information about how to connect to the upstream system.
 
+The parent of this entity is InputSettings.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-networkinputsettings.html
 
     .PARAMETER ServerValidation
+        Checks HTTPS server certificates. When set to checkCryptographyOnly, cryptography in the certificate is checked, but not the server's name. Certain subdomains notably S3 buckets that use dots in the bucket name don't strictly match the corresponding certificate's wildcard pattern and would otherwise cause the channel to error. This setting is ignored for protocols that do not use HTTPS.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-networkinputsettings.html#cfn-medialive-channel-networkinputsettings-servervalidation
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER HlsInputSettings
+        Information about how to connect to the upstream system.
+
         Type: HlsInputSettings
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-networkinputsettings.html#cfn-medialive-channel-networkinputsettings-hlsinputsettings
         UpdateType: Mutable

@@ -96,6 +96,13 @@ Task Update Clean, {
     }
 }
 
+# Synopsis: Only compile the dotnet dll
+Task DotnetOnly {
+    Write-BuildLog 'Compiling VaporShell.Core.dll'
+    dotnet build .\VaporShell.Core\
+    Get-Item ".\VaporShell.Core\obj\Debug\netstandard2.0\VaporShell.Core.dll" | Copy-Item -Destination $TargetVersionDirectory -Recurse -ErrorAction SilentlyContinue -Force
+}
+
 # Synopsis: Compiles module from source
 Task Build Update, {
     $functionsToExport = @()
@@ -111,6 +118,9 @@ Task Build Update, {
         '    $ForceDotSource = $false'
         ')'
         '$VaporshellPath = $PSScriptRoot'
+        'if ($null -eq ([System.AppDomain]::CurrentDomain.GetAssemblies() | Where-Object {$_.Location -match "VaporShell.Core.dll"})) {'
+        '    Add-Type -Path "$VaporshellPath\VaporShell.Core.dll" -ReferencedAssemblies ([PowerShell].Assembly.Location)'
+        '}'
     ) -join "`n"
     $psm1Header | Add-Content -Path $psm1 -Encoding UTF8
 
@@ -142,6 +152,10 @@ Task Build Update, {
         Update-Metadata -Path $SourceManifestPath -PropertyName ModuleVersion -Value $NextModuleVersion
         ([System.IO.File]::ReadAllText($SourceManifestPath)).Trim() | Set-Content $SourceManifestPath
     }
+
+    Write-BuildLog 'Compiling VaporShell.Core.dll'
+    dotnet build .\VaporShell.Core\
+    Get-Item ".\VaporShell.Core\obj\Debug\netstandard2.0\VaporShell.Core.dll" | Copy-Item -Destination $TargetVersionDirectory -Recurse -ErrorAction SilentlyContinue
 
     Write-BuildLog 'Copying latest AWSSDK assembly dependencies to output path'
     Save-Module 'AWS.Tools.CloudFormation','AWS.Tools.S3' -Path $PSScriptRoot -Repository PSGallery -Force
@@ -259,22 +273,31 @@ $pesterScriptBlock = {
             }
         }
     }
-    $parameters = @{
-        Name           = 'Pester'
-        MinimumVersion = '4.8.1'
-    }
-    Write-BuildLog "[$($parameters.Name)] Resolving"
-    try {
-        if ($imported = Get-Module $($parameters.Name)) {
-            Write-BuildLog "[$($parameters.Name)] Removing imported module"
-            $imported | Remove-Module
+
+    $testModules = @(
+        @{
+            Name           = 'Pester'
+            MinimumVersion = '4.10.1'
         }
-        Import-Module @parameters
-    }
-    catch {
-        Write-BuildLog "[$($parameters.Name)] Installing missing module"
-        Install-Module @parameters
-        Import-Module @parameters
+        @{
+            Name           = 'Assert'
+            MinimumVersion = '0.9.5'
+        }
+    )
+    foreach ($testModule in $testModules) {
+        Write-BuildLog "[$($testModule.Name)] Resolving"
+        try {
+            if ($imported = Get-Module $($testModule.Name)) {
+                Write-BuildLog "[$($testModule.Name)] Removing imported module"
+                $imported | Remove-Module
+            }
+            Import-Module @testModule
+        }
+        catch {
+            Write-BuildLog "[$($testModule.Name)] Installing missing module"
+            Install-Module @testModule
+            Import-Module @testModule
+        }
     }
     Push-Location
     Set-Location -PassThru $TargetModuleDirectory

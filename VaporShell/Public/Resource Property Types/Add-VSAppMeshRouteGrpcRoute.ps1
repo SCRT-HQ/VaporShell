@@ -1,26 +1,32 @@
 function Add-VSAppMeshRouteGrpcRoute {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::Route.GrpcRoute resource property to the template. 
+        Adds an AWS::AppMesh::Route.GrpcRoute resource property to the template. An object that represents a gRPC route type.
 
     .DESCRIPTION
         Adds an AWS::AppMesh::Route.GrpcRoute resource property to the template.
-
+An object that represents a gRPC route type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroute.html
 
     .PARAMETER Action
+        An object that represents the action to take if a match is determined.
+
         Type: GrpcRouteAction
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroute.html#cfn-appmesh-route-grpcroute-action
         UpdateType: Mutable
 
     .PARAMETER RetryPolicy
+        An object that represents a retry policy.
+
         Type: GrpcRetryPolicy
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroute.html#cfn-appmesh-route-grpcroute-retrypolicy
         UpdateType: Mutable
 
     .PARAMETER Match
+        An object that represents the criteria for determining a request match.
+
         Type: GrpcRouteMatch
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroute.html#cfn-appmesh-route-grpcroute-match
         UpdateType: Mutable

@@ -1,10 +1,10 @@
 function New-VSConfigConformancePack {
     <#
     .SYNOPSIS
-        Adds an AWS::Config::ConformancePack resource to the template. 
+        Adds an AWS::Config::ConformancePack resource to the template. A conformance pack is a collection of AWS Config rules and remediation actions that can be easily deployed in an account and a region. ConformancePack creates a service linked role in your account. The service linked role is created only when the role does not exist in your account.
 
     .DESCRIPTION
-        Adds an AWS::Config::ConformancePack resource to the template. 
+        Adds an AWS::Config::ConformancePack resource to the template. A conformance pack is a collection of AWS Config rules and remediation actions that can be easily deployed in an account and a region. ConformancePack creates a service linked role in your account. The service linked role is created only when the role does not exist in your account.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html
@@ -13,31 +13,45 @@ function New-VSConfigConformancePack {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ConformancePackName
+        Name of the conformance pack you want to create.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-conformancepackname
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER DeliveryS3Bucket
+        AWS Config stores intermediate files while processing conformance pack template.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-deliverys3bucket
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER DeliveryS3KeyPrefix
+        The prefix for the Amazon S3 bucket.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-deliverys3keyprefix
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER TemplateBody
+        A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.
+You can only use a YAML template with one resource type, that is, config rule and a remediation action.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-templatebody
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER TemplateS3Uri
+        Location of file containing the template body s3://bucketname/prefix. The uri must point to the conformance pack template max size: 300 KB that is located in an Amazon S3 bucket.
+You must have access to read Amazon S3 bucket.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-templates3uri
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER ConformancePackInputParameters
+        A list of ConformancePackInputParameter objects.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-conformancepackinputparameters
         UpdateType: Mutable
         Type: List
@@ -157,6 +171,9 @@ function New-VSConfigConformancePack {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

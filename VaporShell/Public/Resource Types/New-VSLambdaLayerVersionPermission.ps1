@@ -1,10 +1,10 @@
 function New-VSLambdaLayerVersionPermission {
     <#
     .SYNOPSIS
-        Adds an AWS::Lambda::LayerVersionPermission resource to the template. 
+        Adds an AWS::Lambda::LayerVersionPermission resource to the template. The AWS::Lambda::LayerVersionPermission resource adds permissions to the resource-based policy of a version of an AWS Lambda layer: https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html. Use this action to grant layer usage permission to other accounts. You can grant permission to a single account, all AWS accounts, or all accounts in an organization.
 
     .DESCRIPTION
-        Adds an AWS::Lambda::LayerVersionPermission resource to the template. 
+        Adds an AWS::Lambda::LayerVersionPermission resource to the template. The AWS::Lambda::LayerVersionPermission resource adds permissions to the resource-based policy of a version of an AWS Lambda layer: https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html. Use this action to grant layer usage permission to other accounts. You can grant permission to a single account, all AWS accounts, or all accounts in an organization.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversionpermission.html
@@ -13,21 +13,29 @@ function New-VSLambdaLayerVersionPermission {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Action
+        The API action that grants access to the layer. For example, lambda:GetLayerVersion.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversionpermission.html#cfn-lambda-layerversionpermission-action
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER LayerVersionArn
+        The Amazon Resource Name ARN of the layer.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversionpermission.html#cfn-lambda-layerversionpermission-layerversionarn
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER OrganizationId
+        With the principal set to *, grant permission to all accounts in the specified organization.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversionpermission.html#cfn-lambda-layerversionpermission-organizationid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Principal
+        An account ID, or * to grant permission to all AWS accounts.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversionpermission.html#cfn-lambda-layerversionpermission-principal
         PrimitiveType: String
         UpdateType: Immutable
@@ -124,6 +132,9 @@ function New-VSLambdaLayerVersionPermission {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

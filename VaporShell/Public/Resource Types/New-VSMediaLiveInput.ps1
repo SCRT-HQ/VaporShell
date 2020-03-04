@@ -1,10 +1,12 @@
 function New-VSMediaLiveInput {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaLive::Input resource to the template. 
+        Adds an AWS::MediaLive::Input resource to the template. The AWS::MediaLive::Input resource is a MediaLive resource type that creates an input.
 
     .DESCRIPTION
-        Adds an AWS::MediaLive::Input resource to the template. 
+        Adds an AWS::MediaLive::Input resource to the template. The AWS::MediaLive::Input resource is a MediaLive resource type that creates an input.
+
+A MediaLive input holds information that describes how the MediaLive channel is connected to the upstream system that is providing the source content that is to be transcoded.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html
@@ -13,50 +15,68 @@ function New-VSMediaLiveInput {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Type
+        The type for this input.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-type
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Destinations
+        The destination settings for push types of inputs. If the input is a pull type, these settings don't apply.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-destinations
         ItemType: InputDestinationRequest
         UpdateType: Mutable
 
     .PARAMETER Vpc
+        Settings that apply only if the input is an Amazon VPC input.
+
         Type: InputVpcRequest
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-vpc
         UpdateType: Immutable
 
     .PARAMETER MediaConnectFlows
+        Settings that apply only if the input is a MediaConnect input.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-mediaconnectflows
         ItemType: MediaConnectFlowRequest
         UpdateType: Mutable
 
     .PARAMETER InputSecurityGroups
+        The list of input security groups referenced by IDs to attach to the input if the input is a push type.
+
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-inputsecuritygroups
         UpdateType: Mutable
 
     .PARAMETER Sources
+        The source settings for a pull type of input. These settings don't apply if the input is a push type.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-sources
         ItemType: InputSourceRequest
         UpdateType: Mutable
 
     .PARAMETER RoleArn
+        The IAM role for MediaLive to assume when creating a MediaConnect input or Amazon VPC input. This doesn't apply to other types of inputs. The role is identified by its ARN.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-rolearn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Tags
+        A collection of tags for this input. Each tag is a key-value pair.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-tags
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER Name
+        A name for the input.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-name
         PrimitiveType: String
         UpdateType: Mutable
@@ -190,6 +210,9 @@ function New-VSMediaLiveInput {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

@@ -1,16 +1,20 @@
 function Add-VSMediaLiveChannelMediaPackageOutputDestinationSettings {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaLive::Channel.MediaPackageOutputDestinationSettings resource property to the template. 
+        Adds an AWS::MediaLive::Channel.MediaPackageOutputDestinationSettings resource property to the template. Destination settings for a MediaPackage output.
 
     .DESCRIPTION
         Adds an AWS::MediaLive::Channel.MediaPackageOutputDestinationSettings resource property to the template.
+Destination settings for a MediaPackage output.
 
+The parent of this entity is OutputDestination.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mediapackageoutputdestinationsettings.html
 
     .PARAMETER ChannelId
+        The ID of the channel in MediaPackage that is the destination for this output group. You don't need to specify the individual inputs in MediaPackage; MediaLive handles the connection of the two MediaLive pipelines to the two MediaPackage inputs. The MediaPackage channel and MediaLive channel must be in the same Region.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mediapackageoutputdestinationsettings.html#cfn-medialive-channel-mediapackageoutputdestinationsettings-channelid
         PrimitiveType: String
         UpdateType: Mutable

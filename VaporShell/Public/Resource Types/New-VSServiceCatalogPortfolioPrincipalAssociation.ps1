@@ -1,10 +1,10 @@
 function New-VSServiceCatalogPortfolioPrincipalAssociation {
     <#
     .SYNOPSIS
-        Adds an AWS::ServiceCatalog::PortfolioPrincipalAssociation resource to the template. 
+        Adds an AWS::ServiceCatalog::PortfolioPrincipalAssociation resource to the template. Associates the specified principal ARN with the specified portfolio.
 
     .DESCRIPTION
-        Adds an AWS::ServiceCatalog::PortfolioPrincipalAssociation resource to the template. 
+        Adds an AWS::ServiceCatalog::PortfolioPrincipalAssociation resource to the template. Associates the specified principal ARN with the specified portfolio.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioprincipalassociation.html
@@ -13,21 +13,32 @@ function New-VSServiceCatalogPortfolioPrincipalAssociation {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER PrincipalARN
+        The ARN of the principal IAM user, role, or group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioprincipalassociation.html#cfn-servicecatalog-portfolioprincipalassociation-principalarn
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER AcceptLanguage
+        The language code.
++  en - English default
++  jp - Japanese
++  zh - Chinese
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioprincipalassociation.html#cfn-servicecatalog-portfolioprincipalassociation-acceptlanguage
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER PortfolioId
+        The portfolio identifier.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioprincipalassociation.html#cfn-servicecatalog-portfolioprincipalassociation-portfolioid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER PrincipalType
+        The principal type. The supported value is IAM.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioprincipalassociation.html#cfn-servicecatalog-portfolioprincipalassociation-principaltype
         PrimitiveType: String
         UpdateType: Immutable
@@ -124,6 +135,9 @@ function New-VSServiceCatalogPortfolioPrincipalAssociation {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

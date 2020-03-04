@@ -1,31 +1,39 @@
 function Add-VSGlueMLTransformGlueTables {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::MLTransform.GlueTables resource property to the template. 
+        Adds an AWS::Glue::MLTransform.GlueTables resource property to the template. The database and table in the AWS Glue Data Catalog that is used for input or output data.
 
     .DESCRIPTION
         Adds an AWS::Glue::MLTransform.GlueTables resource property to the template.
-
+The database and table in the AWS Glue Data Catalog that is used for input or output data.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-inputrecordtables-gluetables.html
 
     .PARAMETER ConnectionName
+        The name of the connection to the AWS Glue Data Catalog.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-inputrecordtables-gluetables.html#cfn-glue-mltransform-inputrecordtables-gluetables-connectionname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER TableName
+        A table name in the AWS Glue Data Catalog.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-inputrecordtables-gluetables.html#cfn-glue-mltransform-inputrecordtables-gluetables-tablename
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DatabaseName
+        A database name in the AWS Glue Data Catalog.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-inputrecordtables-gluetables.html#cfn-glue-mltransform-inputrecordtables-gluetables-databasename
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER CatalogId
+        A unique identifier for the AWS Glue Data Catalog.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-inputrecordtables-gluetables.html#cfn-glue-mltransform-inputrecordtables-gluetables-catalogid
         PrimitiveType: String
         UpdateType: Mutable

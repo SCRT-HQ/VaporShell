@@ -1,21 +1,25 @@
 function Add-VSOpsWorksLayerShutdownEventConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::OpsWorks::Layer.ShutdownEventConfiguration resource property to the template. 
+        Adds an AWS::OpsWorks::Layer.ShutdownEventConfiguration resource property to the template. The Shutdown event configuration.
 
     .DESCRIPTION
         Adds an AWS::OpsWorks::Layer.ShutdownEventConfiguration resource property to the template.
-
+The Shutdown event configuration.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-lifecycleeventconfiguration-shutdowneventconfiguration.html
 
     .PARAMETER DelayUntilElbConnectionsDrained
+        Whether to enable Elastic Load Balancing connection draining. For more information, see Connection Draining: https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-lifecycleeventconfiguration-shutdowneventconfiguration.html#cfn-opsworks-layer-lifecycleconfiguration-shutdowneventconfiguration-delayuntilelbconnectionsdrained
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER ExecutionTimeout
+        The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a Shutdown event before shutting down an instance.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-lifecycleeventconfiguration-shutdowneventconfiguration.html#cfn-opsworks-layer-lifecycleconfiguration-shutdowneventconfiguration-executiontimeout
         PrimitiveType: Integer
         UpdateType: Mutable

@@ -1,10 +1,10 @@
 function New-VSACMPCACertificateAuthorityActivation {
     <#
     .SYNOPSIS
-        Adds an AWS::ACMPCA::CertificateAuthorityActivation resource to the template. 
+        Adds an AWS::ACMPCA::CertificateAuthorityActivation resource to the template. The AWS::ACMPCA::CertificateAuthorityActivation resource creates and installs a CA certificate on a CA. If no status is specified, the AWS::ACMPCA::CertificateAuthorityActivation resource status defaults to ACTIVE. Once the CA has a CA certificate installed, you can use the resource to toggle the CA status field between ACTIVE and DISABLED.
 
     .DESCRIPTION
-        Adds an AWS::ACMPCA::CertificateAuthorityActivation resource to the template. 
+        Adds an AWS::ACMPCA::CertificateAuthorityActivation resource to the template. The AWS::ACMPCA::CertificateAuthorityActivation resource creates and installs a CA certificate on a CA. If no status is specified, the AWS::ACMPCA::CertificateAuthorityActivation resource status defaults to ACTIVE. Once the CA has a CA certificate installed, you can use the resource to toggle the CA status field between ACTIVE and DISABLED.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthorityactivation.html
@@ -13,21 +13,29 @@ function New-VSACMPCACertificateAuthorityActivation {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER CertificateAuthorityArn
+        The Amazon Resource Name ARN of your private CA.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthorityactivation.html#cfn-acmpca-certificateauthorityactivation-certificateauthorityarn
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER Certificate
+        The Base64 PEM-encoded certificate authority certificate.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthorityactivation.html#cfn-acmpca-certificateauthorityactivation-certificate
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER CertificateChain
+        The Base64 PEM-encoded certificate chain that chains up to the root CA certificate that you used to sign your private CA certificate.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthorityactivation.html#cfn-acmpca-certificateauthorityactivation-certificatechain
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER Status
+        Status of your private CA.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthorityactivation.html#cfn-acmpca-certificateauthorityactivation-status
         UpdateType: Mutable
         PrimitiveType: String
@@ -124,6 +132,9 @@ function New-VSACMPCACertificateAuthorityActivation {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

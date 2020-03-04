@@ -1,10 +1,10 @@
 function New-VSSNSTopicPolicy {
     <#
     .SYNOPSIS
-        Adds an AWS::SNS::TopicPolicy resource to the template. 
+        Adds an AWS::SNS::TopicPolicy resource to the template. The AWS::SNS::TopicPolicy resource associates Amazon SNS topics with a policy. For an example snippet, see Declaring an Amazon SNS Policy: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/quickref-iam.html#scenario-sns-policy in the *AWS CloudFormation User Guide*.
 
     .DESCRIPTION
-        Adds an AWS::SNS::TopicPolicy resource to the template. 
+        Adds an AWS::SNS::TopicPolicy resource to the template. The AWS::SNS::TopicPolicy resource associates Amazon SNS topics with a policy. For an example snippet, see Declaring an Amazon SNS Policy: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/quickref-iam.html#scenario-sns-policy in the *AWS CloudFormation User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html
@@ -13,11 +13,15 @@ function New-VSSNSTopicPolicy {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER PolicyDocument
+        A policy document that contains permissions to add to the specified SNS topics.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html#cfn-sns-topicpolicy-policydocument
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER Topics
+        The Amazon Resource Names ARN of the topics to which you want to add the policy. You can use the  Ref: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html  function to specify an  AWS::SNS::Topic: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html  resource.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html#cfn-sns-topicpolicy-topics
         DuplicatesAllowed: True
         PrimitiveItemType: String
@@ -85,6 +89,9 @@ function New-VSSNSTopicPolicy {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

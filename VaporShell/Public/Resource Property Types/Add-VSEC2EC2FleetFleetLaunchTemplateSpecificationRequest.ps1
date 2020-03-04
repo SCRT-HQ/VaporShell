@@ -1,26 +1,34 @@
 function Add-VSEC2EC2FleetFleetLaunchTemplateSpecificationRequest {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::EC2Fleet.FleetLaunchTemplateSpecificationRequest resource property to the template. 
+        Adds an AWS::EC2::EC2Fleet.FleetLaunchTemplateSpecificationRequest resource property to the template. Specifies the launch template to use for an EC2 Fleet. You must specify either the launch template ID or launch template name in the request.
 
     .DESCRIPTION
         Adds an AWS::EC2::EC2Fleet.FleetLaunchTemplateSpecificationRequest resource property to the template.
+Specifies the launch template to use for an EC2 Fleet. You must specify either the launch template ID or launch template name in the request.
 
+FleetLaunchTemplateSpecificationRequest is a property of the  FleetLaunchTemplateConfigRequest: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateconfigrequest.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplatespecificationrequest.html
 
     .PARAMETER LaunchTemplateName
+        The name of the launch template.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplatespecificationrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplatespecificationrequest-launchtemplatename
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Version
+        The version number of the launch template. Note: This is a required parameter and will be updated soon.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplatespecificationrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplatespecificationrequest-version
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER LaunchTemplateId
+        The ID of the launch template.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplatespecificationrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplatespecificationrequest-launchtemplateid
         PrimitiveType: String
         UpdateType: Mutable

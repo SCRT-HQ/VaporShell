@@ -1,10 +1,10 @@
 function New-VSElasticLoadBalancingV2ListenerRule {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticLoadBalancingV2::ListenerRule resource to the template. 
+        Adds an AWS::ElasticLoadBalancingV2::ListenerRule resource to the template. Specifies a listener rule.
 
     .DESCRIPTION
-        Adds an AWS::ElasticLoadBalancingV2::ListenerRule resource to the template. 
+        Adds an AWS::ElasticLoadBalancingV2::ListenerRule resource to the template. Specifies a listener rule.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html
@@ -13,6 +13,8 @@ function New-VSElasticLoadBalancingV2ListenerRule {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Actions
+        The actions.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-actions
         DuplicatesAllowed: False
         ItemType: Action
@@ -20,6 +22,8 @@ function New-VSElasticLoadBalancingV2ListenerRule {
         UpdateType: Mutable
 
     .PARAMETER Conditions
+        The conditions.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-conditions
         DuplicatesAllowed: False
         ItemType: RuleCondition
@@ -27,11 +31,16 @@ function New-VSElasticLoadBalancingV2ListenerRule {
         UpdateType: Mutable
 
     .PARAMETER ListenerArn
+        The Amazon Resource Name ARN of the listener.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-listenerarn
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Priority
+        The rule priority. A listener can't have multiple rules with the same priority.
+If you try to reorder rules by updating their priorities, do not specify a new priority if an existing rule already uses this priority, as this can cause an error. If you need to reuse a priority with a different rule, you must remove it as a priority first, and then specify it in a subsequent update.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-priority
         PrimitiveType: Integer
         UpdateType: Mutable
@@ -128,6 +137,9 @@ function New-VSElasticLoadBalancingV2ListenerRule {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

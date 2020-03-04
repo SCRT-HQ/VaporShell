@@ -1,16 +1,18 @@
 function Add-VSEMRClusterHadoopJarStepConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::Cluster.HadoopJarStepConfig resource property to the template. 
+        Adds an AWS::EMR::Cluster.HadoopJarStepConfig resource property to the template. The HadoopJarStepConfig property type specifies a job flow step consisting of a JAR file whose main function will be executed. The main function submits a job for the cluster to execute as a step on the master node, and then waits for the job to finish or fail before executing subsequent steps.
 
     .DESCRIPTION
         Adds an AWS::EMR::Cluster.HadoopJarStepConfig resource property to the template.
-
+The HadoopJarStepConfig property type specifies a job flow step consisting of a JAR file whose main function will be executed. The main function submits a job for the cluster to execute as a step on the master node, and then waits for the job to finish or fail before executing subsequent steps.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-hadoopjarstepconfig.html
 
     .PARAMETER Args
+        A list of command line arguments passed to the JAR file's main function when executed.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-hadoopjarstepconfig.html#cfn-elasticmapreduce-cluster-hadoopjarstepconfig-args
         DuplicatesAllowed: False
         PrimitiveItemType: String
@@ -18,16 +20,22 @@ function Add-VSEMRClusterHadoopJarStepConfig {
         UpdateType: Mutable
 
     .PARAMETER Jar
+        A path to a JAR file run during the step.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-hadoopjarstepconfig.html#cfn-elasticmapreduce-cluster-hadoopjarstepconfig-jar
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER MainClass
+        The name of the main class in the specified Java file. If not specified, the JAR file should specify a Main-Class in its manifest file.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-hadoopjarstepconfig.html#cfn-elasticmapreduce-cluster-hadoopjarstepconfig-mainclass
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER StepProperties
+        A list of Java properties that are set when the step runs. You can use these properties to pass key value pairs to your main function.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-hadoopjarstepconfig.html#cfn-elasticmapreduce-cluster-hadoopjarstepconfig-stepproperties
         DuplicatesAllowed: False
         ItemType: KeyValue

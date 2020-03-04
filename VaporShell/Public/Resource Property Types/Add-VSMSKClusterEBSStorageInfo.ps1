@@ -1,16 +1,18 @@
 function Add-VSMSKClusterEBSStorageInfo {
     <#
     .SYNOPSIS
-        Adds an AWS::MSK::Cluster.EBSStorageInfo resource property to the template. 
+        Adds an AWS::MSK::Cluster.EBSStorageInfo resource property to the template. Contains information about the EBS storage volumes attached to brokers.
 
     .DESCRIPTION
         Adds an AWS::MSK::Cluster.EBSStorageInfo resource property to the template.
-
+Contains information about the EBS storage volumes attached to brokers.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-ebsstorageinfo.html
 
     .PARAMETER VolumeSize
+        The size in GiB of the EBS volume for the data drive on each broker node.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-ebsstorageinfo.html#cfn-msk-cluster-ebsstorageinfo-volumesize
         PrimitiveType: Integer
         UpdateType: Immutable

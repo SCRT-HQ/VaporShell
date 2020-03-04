@@ -1,16 +1,18 @@
 function Add-VSPinpointEmailConfigurationSetReputationOptions {
     <#
     .SYNOPSIS
-        Adds an AWS::PinpointEmail::ConfigurationSet.ReputationOptions resource property to the template. 
+        Adds an AWS::PinpointEmail::ConfigurationSet.ReputationOptions resource property to the template. Enable or disable collection of reputation metrics for emails that you send using this configuration set in the current AWS Region.
 
     .DESCRIPTION
         Adds an AWS::PinpointEmail::ConfigurationSet.ReputationOptions resource property to the template.
-
+Enable or disable collection of reputation metrics for emails that you send using this configuration set in the current AWS Region.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationset-reputationoptions.html
 
     .PARAMETER ReputationMetricsEnabled
+        If true, tracking of reputation metrics is enabled for the configuration set. If false, tracking of reputation metrics is disabled for the configuration set.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationset-reputationoptions.html#cfn-pinpointemail-configurationset-reputationoptions-reputationmetricsenabled
         PrimitiveType: Boolean
         UpdateType: Mutable

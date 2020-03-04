@@ -1,21 +1,25 @@
 function Add-VSManagedBlockchainNodeNodeConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::ManagedBlockchain::Node.NodeConfiguration resource property to the template. 
+        Adds an AWS::ManagedBlockchain::Node.NodeConfiguration resource property to the template. Configuration properties of a peer node within a membership.
 
     .DESCRIPTION
         Adds an AWS::ManagedBlockchain::Node.NodeConfiguration resource property to the template.
-
+Configuration properties of a peer node within a membership.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-node-nodeconfiguration.html
 
     .PARAMETER AvailabilityZone
+        The Availability Zone in which the node exists.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-node-nodeconfiguration.html#cfn-managedblockchain-node-nodeconfiguration-availabilityzone
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER InstanceType
+        The Amazon Managed Blockchain instance type for the node.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-node-nodeconfiguration.html#cfn-managedblockchain-node-nodeconfiguration-instancetype
         PrimitiveType: String
         UpdateType: Mutable

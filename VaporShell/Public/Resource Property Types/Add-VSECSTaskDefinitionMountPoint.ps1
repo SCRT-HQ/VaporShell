@@ -1,26 +1,32 @@
 function Add-VSECSTaskDefinitionMountPoint {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::TaskDefinition.MountPoint resource property to the template. 
+        Adds an AWS::ECS::TaskDefinition.MountPoint resource property to the template. The MountPoint property specifies details on a volume mount point that is used in a container definition.
 
     .DESCRIPTION
         Adds an AWS::ECS::TaskDefinition.MountPoint resource property to the template.
-
+The MountPoint property specifies details on a volume mount point that is used in a container definition.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-mountpoints.html
 
     .PARAMETER ContainerPath
+        The path on the container to mount the host volume at.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-mountpoints.html#cfn-ecs-taskdefinition-containerdefinition-mountpoints-containerpath
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ReadOnly
+        If this value is true, the container has read-only access to the volume. If this value is false, then the container can write to the volume. The default value is false.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-mountpoints.html#cfn-ecs-taskdefinition-containerdefinition-mountpoints-readonly
         PrimitiveType: Boolean
         UpdateType: Immutable
 
     .PARAMETER SourceVolume
+        The name of the volume to mount. Must be a volume name referenced in the name parameter of task definition volume.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-mountpoints.html#cfn-ecs-taskdefinition-containerdefinition-mountpoints-sourcevolume
         PrimitiveType: String
         UpdateType: Immutable

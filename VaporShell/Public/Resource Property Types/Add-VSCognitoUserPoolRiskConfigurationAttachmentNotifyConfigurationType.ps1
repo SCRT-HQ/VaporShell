@@ -1,41 +1,53 @@
 function Add-VSCognitoUserPoolRiskConfigurationAttachmentNotifyConfigurationType {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::UserPoolRiskConfigurationAttachment.NotifyConfigurationType resource property to the template. 
+        Adds an AWS::Cognito::UserPoolRiskConfigurationAttachment.NotifyConfigurationType resource property to the template. The notify configuration type.
 
     .DESCRIPTION
         Adds an AWS::Cognito::UserPoolRiskConfigurationAttachment.NotifyConfigurationType resource property to the template.
-
+The notify configuration type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-notifyconfigurationtype.html
 
     .PARAMETER BlockEmail
+        Email template used when a detected risk event is blocked.
+
         Type: NotifyEmailType
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-notifyconfigurationtype.html#cfn-cognito-userpoolriskconfigurationattachment-notifyconfigurationtype-blockemail
         UpdateType: Mutable
 
     .PARAMETER ReplyTo
+        The destination to which the receiver of an email should reply to.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-notifyconfigurationtype.html#cfn-cognito-userpoolriskconfigurationattachment-notifyconfigurationtype-replyto
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SourceArn
+        The Amazon Resource Name ARN of the identity that is associated with the sending authorization policy. It permits Amazon Cognito to send for the email address specified in the From parameter.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-notifyconfigurationtype.html#cfn-cognito-userpoolriskconfigurationattachment-notifyconfigurationtype-sourcearn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER NoActionEmail
+        The email template used when a detected risk event is allowed.
+
         Type: NotifyEmailType
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-notifyconfigurationtype.html#cfn-cognito-userpoolriskconfigurationattachment-notifyconfigurationtype-noactionemail
         UpdateType: Mutable
 
     .PARAMETER From
+        The email address that is sending the email. It must be either individually verified with Amazon SES, or from a domain that has been verified with Amazon SES.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-notifyconfigurationtype.html#cfn-cognito-userpoolriskconfigurationattachment-notifyconfigurationtype-from
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER MfaEmail
+        The MFA email template used when MFA is challenged as part of a detected risk.
+
         Type: NotifyEmailType
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-notifyconfigurationtype.html#cfn-cognito-userpoolriskconfigurationattachment-notifyconfigurationtype-mfaemail
         UpdateType: Mutable

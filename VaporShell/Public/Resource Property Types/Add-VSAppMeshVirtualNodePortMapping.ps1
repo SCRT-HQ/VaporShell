@@ -1,21 +1,25 @@
 function Add-VSAppMeshVirtualNodePortMapping {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::VirtualNode.PortMapping resource property to the template. 
+        Adds an AWS::AppMesh::VirtualNode.PortMapping resource property to the template. An object representing a virtual node or virtual router listener port mapping.
 
     .DESCRIPTION
         Adds an AWS::AppMesh::VirtualNode.PortMapping resource property to the template.
-
+An object representing a virtual node or virtual router listener port mapping.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-portmapping.html
 
     .PARAMETER Port
+        The port used for the port mapping.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-portmapping.html#cfn-appmesh-virtualnode-portmapping-port
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER Protocol
+        The protocol used for the port mapping. Specify one protocol.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-portmapping.html#cfn-appmesh-virtualnode-portmapping-protocol
         PrimitiveType: String
         UpdateType: Mutable

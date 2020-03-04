@@ -1,10 +1,10 @@
 function New-VSDAXCluster {
     <#
     .SYNOPSIS
-        Adds an AWS::DAX::Cluster resource to the template. 
+        Adds an AWS::DAX::Cluster resource to the template. Creates a DAX cluster. All nodes in the cluster run the same DAX caching software.
 
     .DESCRIPTION
-        Adds an AWS::DAX::Cluster resource to the template. 
+        Adds an AWS::DAX::Cluster resource to the template. Creates a DAX cluster. All nodes in the cluster run the same DAX caching software.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html
@@ -13,68 +13,98 @@ function New-VSDAXCluster {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER SSESpecification
+        Represents the settings used to enable server-side encryption on the cluster.
+
         Type: SSESpecification
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-ssespecification
         UpdateType: Immutable
 
     .PARAMETER Description
+        The description of the cluster.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ReplicationFactor
+        The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set ReplicationFactor to a number between 3 one primary and two read replicas and 10 one primary and nine read replicas. If the AvailabilityZones parameter is provided, its length must equal the ReplicationFactor.
+AWS recommends that you have at least two read replicas per cluster.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-replicationfactor
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER ParameterGroupName
+        The parameter group to be associated with the DAX cluster.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-parametergroupname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER AvailabilityZones
+        The Availability Zones AZs in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the ReplicationFactor parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.
+
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-availabilityzones
         UpdateType: Mutable
 
     .PARAMETER IAMRoleARN
+        A valid Amazon Resource Name ARN that identifies an IAM role. At runtime, DAX will assume this role and use the role's permissions to access DynamoDB on your behalf.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-iamrolearn
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER SubnetGroupName
+        The name of the subnet group to be used for the replication group.
+DAX clusters can only run in an Amazon VPC environment. All of the subnets that you specify in a subnet group must exist in the same VPC.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-subnetgroupname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER PreferredMaintenanceWindow
+        A range of time when maintenance of DAX cluster software will be performed. For example: sun:01:00-sun:09:00. Cluster maintenance normally takes less than 30 minutes, and is performed automatically within the maintenance window.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-preferredmaintenancewindow
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER NotificationTopicARN
+        The Amazon Resource Name ARN of the Amazon SNS topic to which notifications will be sent.
+The Amazon SNS topic owner must be same as the DAX cluster owner.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-notificationtopicarn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SecurityGroupIds
+        A list of security group IDs to be assigned to each node in the DAX cluster. Each of the security group ID is system-generated.
+If this parameter is not specified, DAX assigns the default VPC security group to each node.
+
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-securitygroupids
         UpdateType: Mutable
 
     .PARAMETER NodeType
+        The node type for the nodes in the cluster. All nodes in a DAX cluster are of the same type.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-nodetype
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ClusterName
+        The name of the DAX cluster.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-clustername
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Tags
+        A set of tags to associate with the DAX cluster.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-tags
         PrimitiveType: Json
         UpdateType: Mutable
@@ -243,6 +273,9 @@ function New-VSDAXCluster {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

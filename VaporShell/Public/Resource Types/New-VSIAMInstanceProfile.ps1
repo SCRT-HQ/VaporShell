@@ -1,10 +1,12 @@
 function New-VSIAMInstanceProfile {
     <#
     .SYNOPSIS
-        Adds an AWS::IAM::InstanceProfile resource to the template. 
+        Adds an AWS::IAM::InstanceProfile resource to the template. Creates a new instance profile. For information about instance profiles, go to About Instance Profiles: https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html.
 
     .DESCRIPTION
-        Adds an AWS::IAM::InstanceProfile resource to the template. 
+        Adds an AWS::IAM::InstanceProfile resource to the template. Creates a new instance profile. For information about instance profiles, go to About Instance Profiles: https://docs.aws.amazon.com/IAM/latest/UserGuide/AboutInstanceProfiles.html.
+
+For information about the number of instance profiles you can create, see Limitations on IAM Entities: https://docs.aws.amazon.com/IAM/latest/UserGuide/LimitationsOnEntities.html in the *IAM User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html
@@ -13,16 +15,25 @@ function New-VSIAMInstanceProfile {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER InstanceProfileName
+        The name of the instance profile to create.
+This parameter allows through its regex pattern: http://wikipedia.org/wiki/regex a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html#cfn-iam-instanceprofile-instanceprofilename
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Path
+        The path to the instance profile. For more information about paths, see IAM Identifiers: https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html in the *IAM User Guide*.
+This parameter is optional. If it is not included, it defaults to a slash /.
+This parameter allows through its regex pattern: http://wikipedia.org/wiki/regex a string of characters consisting of either a forward slash / by itself or a string that must begin and end with forward slashes. In addition, it can contain any ASCII character from the ! u0021 through the DEL character u007F, including most punctuation characters, digits, and upper and lowercased letters.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html#cfn-iam-instanceprofile-path
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Roles
+        The name of the role to associate with the instance profile. Only one role can be assigned to an EC2 instance at a time, and all applications on the instance share the same role and permissions.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html#cfn-iam-instanceprofile-roles
         DuplicatesAllowed: True
         PrimitiveItemType: String
@@ -101,6 +112,9 @@ function New-VSIAMInstanceProfile {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

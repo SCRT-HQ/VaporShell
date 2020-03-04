@@ -1,16 +1,18 @@
 function Add-VSDAXClusterSSESpecification {
     <#
     .SYNOPSIS
-        Adds an AWS::DAX::Cluster.SSESpecification resource property to the template. 
+        Adds an AWS::DAX::Cluster.SSESpecification resource property to the template. Represents the settings used to enable server-side encryption.
 
     .DESCRIPTION
         Adds an AWS::DAX::Cluster.SSESpecification resource property to the template.
-
+Represents the settings used to enable server-side encryption.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dax-cluster-ssespecification.html
 
     .PARAMETER SSEEnabled
+        Indicates whether server-side encryption is enabled true or disabled false on the cluster.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dax-cluster-ssespecification.html#cfn-dax-cluster-ssespecification-sseenabled
         PrimitiveType: Boolean
         UpdateType: Mutable

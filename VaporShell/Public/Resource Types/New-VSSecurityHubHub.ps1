@@ -1,10 +1,10 @@
 function New-VSSecurityHubHub {
     <#
     .SYNOPSIS
-        Adds an AWS::SecurityHub::Hub resource to the template. 
+        Adds an AWS::SecurityHub::Hub resource to the template. The AWS::SecurityHub::Hub resource represents the implementation of the AWS Security Hub service in your account. One hub resource is created for each Region in which you enable Security Hub.
 
     .DESCRIPTION
-        Adds an AWS::SecurityHub::Hub resource to the template. 
+        Adds an AWS::SecurityHub::Hub resource to the template. The AWS::SecurityHub::Hub resource represents the implementation of the AWS Security Hub service in your account. One hub resource is created for each Region in which you enable Security Hub.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-securityhub-hub.html
@@ -13,6 +13,8 @@ function New-VSSecurityHubHub {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Tags
+        The tags to add to the hub resource.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-securityhub-hub.html#cfn-securityhub-hub-tags
         PrimitiveType: Json
         UpdateType: Mutable
@@ -76,6 +78,9 @@ function New-VSSecurityHubHub {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

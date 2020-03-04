@@ -1,16 +1,22 @@
 function Add-VSStepFunctionsStateMachineCloudWatchLogsLogGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::StepFunctions::StateMachine.CloudWatchLogsLogGroup resource property to the template. 
+        Adds an AWS::StepFunctions::StateMachine.CloudWatchLogsLogGroup resource property to the template. Defines a CloudWatch log group.
 
     .DESCRIPTION
         Adds an AWS::StepFunctions::StateMachine.CloudWatchLogsLogGroup resource property to the template.
+Defines a CloudWatch log group.
 
+**Note**
+
+CloudWatchLogsLogGroup is only valid when StateMachineType is set to EXPRESS. For more information see Standard Versus Express Workflows: https://docs.aws.amazon.com/step-functions/latest/dg/concepts-standard-vs-express.html in the AWS Step Functions Developer Guide.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachine-logdestination-cloudwatchlogsloggroup.html
 
     .PARAMETER LogGroupArn
+        The ARN of the the CloudWatch log group to which you want your logs emitted to. The ARN must end with :*
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachine-logdestination-cloudwatchlogsloggroup.html#cfn-stepfunctions-statemachine-logdestination-cloudwatchlogsloggroup-loggrouparn
         PrimitiveType: String
         UpdateType: Mutable

@@ -1,10 +1,10 @@
 function New-VSEC2NetworkInterfaceAttachment {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::NetworkInterfaceAttachment resource to the template. 
+        Adds an AWS::EC2::NetworkInterfaceAttachment resource to the template. Attaches an elastic network interface (ENI to an Amazon EC2 instance. You can use this resource type to attach additional network interfaces to an instance without interruption.
 
     .DESCRIPTION
-        Adds an AWS::EC2::NetworkInterfaceAttachment resource to the template. 
+        Adds an AWS::EC2::NetworkInterfaceAttachment resource to the template. Attaches an elastic network interface (ENI to an Amazon EC2 instance. You can use this resource type to attach additional network interfaces to an instance without interruption.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html
@@ -13,21 +13,29 @@ function New-VSEC2NetworkInterfaceAttachment {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER DeleteOnTermination
+        Whether to delete the network interface when the instance terminates. By default, this value is set to true.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html#cfn-ec2-network-interface-attachment-deleteonterm
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER DeviceIndex
+        The network interface's position in the attachment order. For example, the first attached network interface has a DeviceIndex of 0.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html#cfn-ec2-network-interface-attachment-deviceindex
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER InstanceId
+        The ID of the instance to which you will attach the ENI.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html#cfn-ec2-network-interface-attachment-instanceid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER NetworkInterfaceId
+        The ID of the ENI that you want to attach.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html#cfn-ec2-network-interface-attachment-networkinterfaceid
         PrimitiveType: String
         UpdateType: Mutable
@@ -124,6 +132,9 @@ function New-VSEC2NetworkInterfaceAttachment {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

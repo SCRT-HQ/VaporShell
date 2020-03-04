@@ -1,10 +1,30 @@
 function New-VSGreengrassGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::Greengrass::Group resource to the template. 
+        Adds an AWS::Greengrass::Group resource to the template. AWS IoT Greengrass seamlessly extends AWS to edge devices so they can act locally on the data they generate, while still using the cloud for management, analytics, and durable storage. With AWS IoT Greengrass, connected devices can run AWS Lambda functions, execute predictions based on machine learning models, keep device data in sync, and communicate with other devices securely – even when not connected to the internet. For more information, see the AWS IoT Greengrass Developer Guide: https://docs.aws.amazon.com/greengrass/latest/developerguide/what-is-gg.html.
 
     .DESCRIPTION
-        Adds an AWS::Greengrass::Group resource to the template. 
+        Adds an AWS::Greengrass::Group resource to the template. AWS IoT Greengrass seamlessly extends AWS to edge devices so they can act locally on the data they generate, while still using the cloud for management, analytics, and durable storage. With AWS IoT Greengrass, connected devices can run AWS Lambda functions, execute predictions based on machine learning models, keep device data in sync, and communicate with other devices securely – even when not connected to the internet. For more information, see the AWS IoT Greengrass Developer Guide: https://docs.aws.amazon.com/greengrass/latest/developerguide/what-is-gg.html.
+
+**Note**
+
+For AWS Region support, see  AWS CloudFormation Support for AWS IoT Greengrass: https://docs.aws.amazon.com/greengrass/latest/developerguide/cloudformation-support.html in the *AWS IoT Greengrass Developer Guide*.
+
+The AWS::Greengrass::Group resource represents a group in AWS IoT Greengrass. In the AWS IoT Greengrass API, groups are used to organize your group versions.
+
+Groups can reference multiple group versions. All group versions must be associated with a group. A group version references a device definition version, subscription definition version, and other version types that contain the components you want to deploy to a Greengrass core device.
+
+To deploy a group version, the group version must reference a core definition version that contains one core. Other version types are optionally included, depending on your business need.
+
+**Note**
+
+When you create a group, you can optionally include an initial group version. To associate a group version later, create a https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html resource and specify the ID of this group.
+
+To change group components (such as devices, subscriptions, or functions, you must create new versions. This is because versions are immutable. For example, to add a function, you create a function definition version that contains the new function (and all other functions that you want to deploy. Then you create a group version that references the new function definition version (and all other version types that you want to deploy.
+
+**Deploying a Group Version**
+
+After you create the group version in your AWS CloudFormation template, you can deploy it using the https://docs.aws.amazon.com/greengrass/latest/apireference/createdeployment-post.html: https://docs.aws.amazon.com/greengrass/latest/apireference/createdeployment-post.html command in the AWS CLI or from the **Greengrass** node in the AWS IoT console. To deploy a group version, you must have a Greengrass service role associated with your AWS account. For more information, see AWS CloudFormation Support for AWS IoT Greengrass: https://docs.aws.amazon.com/greengrass/latest/developerguide/cloudformation-support.html in the *AWS IoT Greengrass Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html
@@ -13,21 +33,38 @@ function New-VSGreengrassGroup {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER InitialVersion
+        The group version to include when the group is created. A group version references the Amazon Resource Name ARN of a core definition version, device definition version, subscription definition version, and other version types. The group version must reference a core definition version that contains one core. Other version types are optionally included, depending on your business need.
+To associate a group version after the group is created, create an https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html resource and specify the ID of this group.
+
         Type: GroupVersion
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html#cfn-greengrass-group-initialversion
         UpdateType: Immutable
 
     .PARAMETER RoleArn
+        The Amazon Resource Name ARN of the IAM role attached to the group. This role contains the permissions that Lambda functions and connectors use to interact with other AWS services.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html#cfn-greengrass-group-rolearn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Tags
+        Application-specific metadata to attach to the group. You can use tags in IAM policies to control access to AWS IoT Greengrass resources. You can also use tags to categorize your resources. For more information, see Tagging Your AWS IoT Greengrass Resources: https://docs.aws.amazon.com/greengrass/latest/developerguide/tagging.html in the *AWS IoT Greengrass Developer Guide*.
+This Json property type is processed as a map of key-value pairs. It uses the following format, which is different from most Tags implementations in AWS CloudFormation templates.
+
+"Tags": {
+"KeyName0": "value",
+"KeyName1": "value",
+"KeyName2": "value"
+}
+
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html#cfn-greengrass-group-tags
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER Name
+        The name of the group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html#cfn-greengrass-group-name
         PrimitiveType: String
         UpdateType: Mutable
@@ -115,6 +152,9 @@ function New-VSGreengrassGroup {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

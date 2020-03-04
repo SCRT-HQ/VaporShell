@@ -1,10 +1,10 @@
 function New-VSElasticLoadBalancingV2ListenerCertificate {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticLoadBalancingV2::ListenerCertificate resource to the template. 
+        Adds an AWS::ElasticLoadBalancingV2::ListenerCertificate resource to the template. Specifies a certificate list for an HTTPS listener.
 
     .DESCRIPTION
-        Adds an AWS::ElasticLoadBalancingV2::ListenerCertificate resource to the template. 
+        Adds an AWS::ElasticLoadBalancingV2::ListenerCertificate resource to the template. Specifies a certificate list for an HTTPS listener.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenercertificate.html
@@ -13,6 +13,8 @@ function New-VSElasticLoadBalancingV2ListenerCertificate {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Certificates
+        The certificates to add. Duplicates are not allowed.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenercertificate.html#cfn-elasticloadbalancingv2-listenercertificate-certificates
         DuplicatesAllowed: False
         ItemType: Certificate
@@ -20,6 +22,8 @@ function New-VSElasticLoadBalancingV2ListenerCertificate {
         UpdateType: Immutable
 
     .PARAMETER ListenerArn
+        The Amazon Resource Name ARN of the listener.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenercertificate.html#cfn-elasticloadbalancingv2-listenercertificate-listenerarn
         PrimitiveType: String
         UpdateType: Immutable
@@ -94,6 +98,9 @@ function New-VSElasticLoadBalancingV2ListenerCertificate {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

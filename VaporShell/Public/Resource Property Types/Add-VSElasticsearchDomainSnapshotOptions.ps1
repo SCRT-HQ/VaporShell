@@ -1,16 +1,18 @@
 function Add-VSElasticsearchDomainSnapshotOptions {
     <#
     .SYNOPSIS
-        Adds an AWS::Elasticsearch::Domain.SnapshotOptions resource property to the template. 
+        Adds an AWS::Elasticsearch::Domain.SnapshotOptions resource property to the template. The automated snapshot configuration for the Amazon ES domain indices.
 
     .DESCRIPTION
         Adds an AWS::Elasticsearch::Domain.SnapshotOptions resource property to the template.
-
+The automated snapshot configuration for the Amazon ES domain indices.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-snapshotoptions.html
 
     .PARAMETER AutomatedSnapshotStartHour
+        The hour in UTC during which the service takes an automated daily snapshot of the indices in the Amazon ES domain. For example, if you specify 0, Amazon ES takes an automated snapshot everyday between midnight and 1 am. You can specify a value between 0 and 23.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-snapshotoptions.html#cfn-elasticsearch-domain-snapshotoptions-automatedsnapshotstarthour
         PrimitiveType: Integer
         UpdateType: Mutable

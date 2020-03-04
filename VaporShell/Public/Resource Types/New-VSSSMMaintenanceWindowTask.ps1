@@ -1,10 +1,10 @@
 function New-VSSSMMaintenanceWindowTask {
     <#
     .SYNOPSIS
-        Adds an AWS::SSM::MaintenanceWindowTask resource to the template. 
+        Adds an AWS::SSM::MaintenanceWindowTask resource to the template. The AWS::SSM::MaintenanceWindowTask resource defines information about a task for an AWS Systems Manager maintenance window. For more information, see RegisterTaskWithMaintenanceWindow: https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_RegisterTaskWithMaintenanceWindow.html in the *AWS Systems Manager API Reference*.
 
     .DESCRIPTION
-        Adds an AWS::SSM::MaintenanceWindowTask resource to the template. 
+        Adds an AWS::SSM::MaintenanceWindowTask resource to the template. The AWS::SSM::MaintenanceWindowTask resource defines information about a task for an AWS Systems Manager maintenance window. For more information, see RegisterTaskWithMaintenanceWindow: https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_RegisterTaskWithMaintenanceWindow.html in the *AWS Systems Manager API Reference*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html
@@ -13,67 +13,100 @@ function New-VSSSMMaintenanceWindowTask {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER MaxErrors
+        The maximum number of errors allowed before this task stops being scheduled.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-maxerrors
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Description
+        A description of the task.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ServiceRoleArn
+        The ARN of the IAM service role to use to publish Amazon Simple Notification Service Amazon SNS notifications for maintenance window Run Command tasks.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-servicerolearn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Priority
+        The priority of the task in the maintenance window. The lower the number, the higher the priority. Tasks that have the same priority are scheduled in parallel.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-priority
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER MaxConcurrency
+        The maximum number of targets this task can be run for, in parallel.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-maxconcurrency
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Targets
+        The targets, either instances or window target IDs.
++ Specify instances using Key=InstanceIds,Values=instanceid1,instanceid2 .
++ Specify window target IDs using Key=WindowTargetIds,Values=window-target-id-1,window-target-id-2.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-targets
         ItemType: Target
         UpdateType: Mutable
 
     .PARAMETER Name
+        The task name.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-name
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER TaskArn
+        The resource that the task uses during execution.
+For RUN_COMMAND and AUTOMATION task types, TaskArn is the SSM document name or Amazon Resource Name ARN.
+For LAMBDA tasks, TaskArn is the function name or ARN.
+For STEP_FUNCTIONS tasks, TaskArn is the state machine ARN.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-taskarn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER TaskInvocationParameters
+        The parameters to pass to the task when it runs. Populate only the fields that match the task type. All other fields should be empty.
+
         Type: TaskInvocationParameters
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-taskinvocationparameters
         UpdateType: Mutable
 
     .PARAMETER WindowId
+        The ID of the maintenance window where the task is registered.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-windowid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER TaskParameters
+        The parameters to pass to the task when it runs.
+TaskParameters has been deprecated. To specify parameters to pass to a task when it runs, instead use the Parameters option in the TaskInvocationParameters structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see MaintenanceWindowTaskInvocationParameters: https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_MaintenanceWindowTaskInvocationParameters.html.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-taskparameters
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER TaskType
+        The type of task. Valid values: RUN_COMMAND, AUTOMATION, LAMBDA, STEP_FUNCTIONS.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-tasktype
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER LoggingInfo
+        Information about an Amazon S3 bucket to write task-level logs to.
+LoggingInfo has been deprecated. To specify an S3 bucket to contain logs, instead use the OutputS3BucketName and OutputS3KeyPrefix options in the TaskInvocationParameters structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see AWS Systems Manager MaintenanceWindowTask TaskInvocationParameters: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-taskinvocationparameters.html.
+
         Type: LoggingInfo
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-logginginfo
         UpdateType: Mutable
@@ -251,6 +284,9 @@ function New-VSSSMMaintenanceWindowTask {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

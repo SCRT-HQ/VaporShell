@@ -1,10 +1,10 @@
 function New-VSSNSSubscription {
     <#
     .SYNOPSIS
-        Adds an AWS::SNS::Subscription resource to the template. 
+        Adds an AWS::SNS::Subscription resource to the template. The AWS::SNS::Subscription resource subscribes an endpoint to an Amazon Simple Notification Service (Amazon SNS topic. For a subscription to be created, the owner of the endpoint must confirm the subscription.
 
     .DESCRIPTION
-        Adds an AWS::SNS::Subscription resource to the template. 
+        Adds an AWS::SNS::Subscription resource to the template. The AWS::SNS::Subscription resource subscribes an endpoint to an Amazon Simple Notification Service (Amazon SNS topic. For a subscription to be created, the owner of the endpoint must confirm the subscription.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html
@@ -13,41 +13,61 @@ function New-VSSNSSubscription {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER DeliveryPolicy
+        The delivery policy JSON assigned to the subscription. Enables the subscriber to define the message delivery retry strategy in the case of an HTTP/S endpoint subscribed to the topic. For more information, see  GetSubscriptionAttributes: https://docs.aws.amazon.com/sns/latest/api/API_GetSubscriptionAttributes.html  in the *Amazon Simple Notification Service API Reference* and Message Delivery Retries: https://docs.aws.amazon.com/sns/latest/dg/sns-message-delivery-retries.html in the *Amazon SNS Developer Guide*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-subscription-deliverypolicy
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER Endpoint
+        The subscription's endpoint. The endpoint value depends on the protocol that you specify. For more information, see the Endpoint parameter of the  Subscribe: https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html  action in the *Amazon Simple Notification Service API Reference*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-endpoint
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER FilterPolicy
+        The filter policy JSON assigned to the subscription. Enables the subscriber to filter out unwanted messages. For more information, see  GetSubscriptionAttributes: https://docs.aws.amazon.com/sns/latest/api/API_GetSubscriptionAttributes.html  in the *Amazon Simple Notification Service API Reference* and Message Filtering: https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html in the *Amazon SNS Developer Guide*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-subscription-filterpolicy
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER Protocol
+        The subscription's protocol. For more information, see the Protocol parameter of the  Subscribe: https://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html  action in the *Amazon Simple Notification Service API Reference*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-protocol
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER RawMessageDelivery
+        When set to true, enables raw message delivery. Raw messages don't contain any JSON formatting and can be sent to Amazon SQS and HTTP/S endpoints. For more information, see  GetSubscriptionAttributes: https://docs.aws.amazon.com/sns/latest/api/API_GetSubscriptionAttributes.html  in the *Amazon Simple Notification Service API Reference*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-subscription-rawmessagedelivery
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER RedrivePolicy
+        When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue. Messages that can't be delivered due to client errors for example, when the subscribed endpoint is unreachable or server errors for example, when the service that powers the subscribed endpoint becomes unavailable are held in the dead-letter queue for further analysis or reprocessing.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-subscription-redrivepolicy
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER Region
+        For cross-region subscriptions, the region in which the topic resides.
+If no region is specified, CloudFormation uses the region of the caller as the default.
+If you perform an update operation that only updates the Region property of a AWS::SNS::Subscription resource, that operation will fail unless you are either:
++ Updating the Region from NULL to the caller region.
++ Updating the Region from the caller region to NULL.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-subscription-region
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER TopicArn
+        The ARN of the topic to subscribe to.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#topicarn
         PrimitiveType: String
         UpdateType: Immutable
@@ -188,6 +208,9 @@ function New-VSSNSSubscription {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

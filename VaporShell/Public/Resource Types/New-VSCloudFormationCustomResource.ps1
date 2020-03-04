@@ -1,10 +1,16 @@
 function New-VSCloudFormationCustomResource {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudFormation::CustomResource resource to the template. 
+        Adds an AWS::CloudFormation::CustomResource resource to the template. In a CloudFormation template, you use the AWS::CloudFormation::CustomResource or Custom::String  resource type to specify custom resources.
 
     .DESCRIPTION
-        Adds an AWS::CloudFormation::CustomResource resource to the template. 
+        Adds an AWS::CloudFormation::CustomResource resource to the template. In a CloudFormation template, you use the AWS::CloudFormation::CustomResource or Custom::String  resource type to specify custom resources.
+
+Custom resources provide a way for you to write custom provisioning logic in CloudFormation template and have CloudFormation run it during a stack operation, such as when you create, update or delete a stack. For more information, see Custom Resources: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-custom-resources.html.
+
+**Note**
+
+If you use the VPC Endpoints: https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html feature, custom resources in the VPC must have access to CloudFormation-specific Amazon Simple Storage Service (Amazon S3 buckets. Custom resources must send responses to a pre-signed Amazon S3 URL. If they can't send responses to Amazon S3, CloudFormation won't receive a response and the stack operation fails. For more information, see Setting Up VPC Endpoints for AWS CloudFormation: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-vpce-bucketnames.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cfn-customresource.html
@@ -13,6 +19,10 @@ function New-VSCloudFormationCustomResource {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ServiceToken
+        Only one property is defined by AWS for a custom resource: ServiceToken. All other properties are defined by the service provider.
+The service token that was given to the template developer by the service provider to access the service, such as an Amazon SNS topic ARN or Lambda function ARN. The service token must be from the same region in which you are creating the stack.
+Updates are not supported.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cfn-customresource.html#cfn-customresource-servicetoken
         PrimitiveType: String
         UpdateType: Immutable
@@ -76,6 +86,9 @@ function New-VSCloudFormationCustomResource {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

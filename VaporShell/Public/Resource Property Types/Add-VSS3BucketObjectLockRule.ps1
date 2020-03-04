@@ -1,16 +1,18 @@
 function Add-VSS3BucketObjectLockRule {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.ObjectLockRule resource property to the template. 
+        Adds an AWS::S3::Bucket.ObjectLockRule resource property to the template. The Object Lock rule in place for the specified object.
 
     .DESCRIPTION
         Adds an AWS::S3::Bucket.ObjectLockRule resource property to the template.
-
+The Object Lock rule in place for the specified object.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-objectlockrule.html
 
     .PARAMETER DefaultRetention
+        The default retention period that you want to apply to new objects placed in the specified bucket.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-objectlockrule.html#cfn-s3-bucket-objectlockrule-defaultretention
         Type: DefaultRetention
         UpdateType: Mutable

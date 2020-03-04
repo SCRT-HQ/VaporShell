@@ -1,16 +1,18 @@
 function Add-VSAppMeshVirtualServiceVirtualRouterServiceProvider {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::VirtualService.VirtualRouterServiceProvider resource property to the template. 
+        Adds an AWS::AppMesh::VirtualService.VirtualRouterServiceProvider resource property to the template. An object that represents a virtual node service provider.
 
     .DESCRIPTION
         Adds an AWS::AppMesh::VirtualService.VirtualRouterServiceProvider resource property to the template.
-
+An object that represents a virtual node service provider.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualrouterserviceprovider.html
 
     .PARAMETER VirtualRouterName
+        The name of the virtual router that is acting as a service provider.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualrouterserviceprovider.html#cfn-appmesh-virtualservice-virtualrouterserviceprovider-virtualroutername
         PrimitiveType: String
         UpdateType: Mutable

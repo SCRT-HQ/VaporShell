@@ -1,10 +1,10 @@
 function New-VSCloudFrontStreamingDistribution {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudFront::StreamingDistribution resource to the template. 
+        Adds an AWS::CloudFront::StreamingDistribution resource to the template. A streaming distribution tells CloudFront where you want RTMP content to be delivered from, and the details about how to track and manage content delivery.
 
     .DESCRIPTION
-        Adds an AWS::CloudFront::StreamingDistribution resource to the template. 
+        Adds an AWS::CloudFront::StreamingDistribution resource to the template. A streaming distribution tells CloudFront where you want RTMP content to be delivered from, and the details about how to track and manage content delivery.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-streamingdistribution.html
@@ -13,11 +13,15 @@ function New-VSCloudFrontStreamingDistribution {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER StreamingDistributionConfig
+        The current configuration information for the RTMP distribution.
+
         Type: StreamingDistributionConfig
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-streamingdistribution.html#cfn-cloudfront-streamingdistribution-streamingdistributionconfig
         UpdateType: Mutable
 
     .PARAMETER Tags
+        A complex type that contains zero or more Tag elements.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-streamingdistribution.html#cfn-cloudfront-streamingdistribution-tags
         ItemType: Tag
@@ -70,20 +74,15 @@ function New-VSCloudFrontStreamingDistribution {
         $LogicalId,
         [parameter(Mandatory = $true)]
         $StreamingDistributionConfig,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $true)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

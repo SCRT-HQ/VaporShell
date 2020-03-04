@@ -1,21 +1,25 @@
 function Add-VSDynamoDBTableTimeToLiveSpecification {
     <#
     .SYNOPSIS
-        Adds an AWS::DynamoDB::Table.TimeToLiveSpecification resource property to the template. 
+        Adds an AWS::DynamoDB::Table.TimeToLiveSpecification resource property to the template. Represents the settings used to enable or disable Time to Live (TTL for the specified table.
 
     .DESCRIPTION
         Adds an AWS::DynamoDB::Table.TimeToLiveSpecification resource property to the template.
-
+Represents the settings used to enable or disable Time to Live (TTL for the specified table.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-timetolivespecification.html
 
     .PARAMETER AttributeName
+        The name of the TTL attribute used to store the expiration time for items in the table.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-timetolivespecification.html#cfn-dynamodb-timetolivespecification-attributename
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Enabled
+        Indicates whether TTL is to be enabled true or disabled false on the table.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-timetolivespecification.html#cfn-dynamodb-timetolivespecification-enabled
         PrimitiveType: Boolean
         UpdateType: Mutable

@@ -1,10 +1,10 @@
 function New-VSCognitoIdentityPoolRoleAttachment {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::IdentityPoolRoleAttachment resource to the template. 
+        Adds an AWS::Cognito::IdentityPoolRoleAttachment resource to the template. The AWS::Cognito::IdentityPoolRoleAttachment resource manages the role configuration for an Amazon Cognito identity pool.
 
     .DESCRIPTION
-        Adds an AWS::Cognito::IdentityPoolRoleAttachment resource to the template. 
+        Adds an AWS::Cognito::IdentityPoolRoleAttachment resource to the template. The AWS::Cognito::IdentityPoolRoleAttachment resource manages the role configuration for an Amazon Cognito identity pool.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypoolroleattachment.html
@@ -13,16 +13,23 @@ function New-VSCognitoIdentityPoolRoleAttachment {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER RoleMappings
+        How users for a specific identity provider are mapped to roles. This is a string to the RoleMapping object map. The string identifies the identity provider. For example: "graph.facebook.com" or "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".
+If the IdentityProvider field isn't provided in this object, the string is used as the identity provider name.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypoolroleattachment.html#cfn-cognito-identitypoolroleattachment-rolemappings
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER IdentityPoolId
+        An identity pool ID in the format REGION:GUID.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypoolroleattachment.html#cfn-cognito-identitypoolroleattachment-identitypoolid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Roles
+        The map of the roles associated with this pool. For a given role, the key is either "authenticated" or "unauthenticated". The value is the role ARN.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypoolroleattachment.html#cfn-cognito-identitypoolroleattachment-roles
         PrimitiveType: Json
         UpdateType: Mutable
@@ -108,6 +115,9 @@ function New-VSCognitoIdentityPoolRoleAttachment {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

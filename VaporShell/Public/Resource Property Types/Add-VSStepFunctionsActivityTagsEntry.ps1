@@ -1,21 +1,25 @@
 function Add-VSStepFunctionsActivityTagsEntry {
     <#
     .SYNOPSIS
-        Adds an AWS::StepFunctions::Activity.TagsEntry resource property to the template. 
+        Adds an AWS::StepFunctions::Activity.TagsEntry resource property to the template. The TagsEntry property specifies *tags* to identify an activity.
 
     .DESCRIPTION
         Adds an AWS::StepFunctions::Activity.TagsEntry resource property to the template.
-
+The TagsEntry property specifies *tags* to identify an activity.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-activity-tagsentry.html
 
     .PARAMETER Value
+        The value for a key-value pair in a tag entry.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-activity-tagsentry.html#cfn-stepfunctions-activity-tagsentry-value
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Key
+        The key for a key-value pair in a tag entry.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-activity-tagsentry.html#cfn-stepfunctions-activity-tagsentry-key
         PrimitiveType: String
         UpdateType: Mutable

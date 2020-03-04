@@ -1,10 +1,10 @@
 function New-VSECSPrimaryTaskSet {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::PrimaryTaskSet resource to the template. 
+        Adds an AWS::ECS::PrimaryTaskSet resource to the template. Specifies which task set in a service is the primary task set. Any parameters that are updated on the primary task set in a service will transition to the service. This is used when a service uses the EXTERNAL deployment controller type. For more information, see Amazon ECS Deployment Types: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html in the *Amazon Elastic Container Service Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::ECS::PrimaryTaskSet resource to the template. 
+        Adds an AWS::ECS::PrimaryTaskSet resource to the template. Specifies which task set in a service is the primary task set. Any parameters that are updated on the primary task set in a service will transition to the service. This is used when a service uses the EXTERNAL deployment controller type. For more information, see Amazon ECS Deployment Types: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html in the *Amazon Elastic Container Service Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-primarytaskset.html
@@ -13,16 +13,22 @@ function New-VSECSPrimaryTaskSet {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Cluster
+        The short name or full Amazon Resource Name ARN of the cluster that hosts the service that the task set exists in.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-primarytaskset.html#cfn-ecs-primarytaskset-cluster
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER TaskSetId
+        The short name or full Amazon Resource Name ARN of the task set to set as the primary task set in the deployment.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-primarytaskset.html#cfn-ecs-primarytaskset-tasksetid
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER Service
+        The short name or full Amazon Resource Name ARN of the service that the task set exists in.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-primarytaskset.html#cfn-ecs-primarytaskset-service
         UpdateType: Immutable
         PrimitiveType: String
@@ -108,6 +114,9 @@ function New-VSECSPrimaryTaskSet {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

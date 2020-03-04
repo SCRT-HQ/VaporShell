@@ -1,26 +1,32 @@
 function Add-VSDLMLifecyclePolicyRetainRule {
     <#
     .SYNOPSIS
-        Adds an AWS::DLM::LifecyclePolicy.RetainRule resource property to the template. 
+        Adds an AWS::DLM::LifecyclePolicy.RetainRule resource property to the template. Specifies the retention rule for a lifecycle policy. You can retain snapshots based on either a count or a time interval.
 
     .DESCRIPTION
         Adds an AWS::DLM::LifecyclePolicy.RetainRule resource property to the template.
-
+Specifies the retention rule for a lifecycle policy. You can retain snapshots based on either a count or a time interval.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-retainrule.html
 
     .PARAMETER IntervalUnit
+        The unit of time for time-based retention.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-retainrule.html#cfn-dlm-lifecyclepolicy-retainrule-intervalunit
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Count
+        The number of snapshots to retain for each volume, up to a maximum of 1000.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-retainrule.html#cfn-dlm-lifecyclepolicy-retainrule-count
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER Interval
+        The amount of time to retain each snapshot. The maximum is 100 years. This is equivalent to 1200 months, 5200 weeks, or 36500 days.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-retainrule.html#cfn-dlm-lifecyclepolicy-retainrule-interval
         PrimitiveType: Integer
         UpdateType: Mutable

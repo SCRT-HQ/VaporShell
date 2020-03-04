@@ -1,16 +1,18 @@
 function Add-VSManagedBlockchainMemberVotingPolicy {
     <#
     .SYNOPSIS
-        Adds an AWS::ManagedBlockchain::Member.VotingPolicy resource property to the template. 
+        Adds an AWS::ManagedBlockchain::Member.VotingPolicy resource property to the template. The voting rules for the network to decide if a proposal is accepted
 
     .DESCRIPTION
         Adds an AWS::ManagedBlockchain::Member.VotingPolicy resource property to the template.
-
+The voting rules for the network to decide if a proposal is accepted
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-votingpolicy.html
 
     .PARAMETER ApprovalThresholdPolicy
+        Defines the rules for the network for voting on proposals, such as the percentage of YES votes required for the proposal to be approved and the duration of the proposal. The policy applies to all proposals and is specified when the network is created.
+
         Type: ApprovalThresholdPolicy
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-votingpolicy.html#cfn-managedblockchain-member-votingpolicy-approvalthresholdpolicy
         UpdateType: Mutable

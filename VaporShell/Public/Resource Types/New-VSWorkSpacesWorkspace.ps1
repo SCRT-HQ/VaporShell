@@ -1,10 +1,12 @@
 function New-VSWorkSpacesWorkspace {
     <#
     .SYNOPSIS
-        Adds an AWS::WorkSpaces::Workspace resource to the template. 
+        Adds an AWS::WorkSpaces::Workspace resource to the template. Specifies a WorkSpace.
 
     .DESCRIPTION
-        Adds an AWS::WorkSpaces::Workspace resource to the template. 
+        Adds an AWS::WorkSpaces::Workspace resource to the template. Specifies a WorkSpace.
+
+Updates are not supported for the BundleId, RootVolumeEncryptionEnabled, UserVolumeEncryptionEnabled, or VolumeEncryptionKey properties. To update these properties, you must also update a property that triggers a replacement, such as the UserName property.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html
@@ -13,21 +15,29 @@ function New-VSWorkSpacesWorkspace {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER BundleId
+        The identifier of the bundle for the WorkSpace.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-bundleid
         PrimitiveType: String
         UpdateType: Conditional
 
     .PARAMETER DirectoryId
+        The identifier of the AWS Directory Service directory for the WorkSpace.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-directoryid
         PrimitiveType: String
         UpdateType: Conditional
 
     .PARAMETER RootVolumeEncryptionEnabled
+        Indicates whether the data stored on the root volume is encrypted.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-rootvolumeencryptionenabled
         PrimitiveType: Boolean
         UpdateType: Conditional
 
     .PARAMETER Tags
+        The tags for the WorkSpace.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-tags
         DuplicatesAllowed: True
         ItemType: Tag
@@ -35,21 +45,29 @@ function New-VSWorkSpacesWorkspace {
         UpdateType: Mutable
 
     .PARAMETER UserName
+        The user name of the user for the WorkSpace. This user name must exist in the AWS Directory Service directory for the WorkSpace.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-username
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER UserVolumeEncryptionEnabled
+        Indicates whether the data stored on the user volume is encrypted.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-uservolumeencryptionenabled
         PrimitiveType: Boolean
         UpdateType: Conditional
 
     .PARAMETER VolumeEncryptionKey
+        The symmetric AWS KMS customer master key CMK used to encrypt data stored on your WorkSpace. Amazon WorkSpaces does not support asymmetric CMKs.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-volumeencryptionkey
         PrimitiveType: String
         UpdateType: Conditional
 
     .PARAMETER WorkspaceProperties
+        The WorkSpace properties.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-workspaceproperties
         Type: WorkspaceProperties
         UpdateType: Mutable
@@ -132,16 +150,8 @@ function New-VSWorkSpacesWorkspace {
                 }
             })]
         $RootVolumeEncryptionEnabled,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
@@ -181,6 +191,9 @@ function New-VSWorkSpacesWorkspace {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

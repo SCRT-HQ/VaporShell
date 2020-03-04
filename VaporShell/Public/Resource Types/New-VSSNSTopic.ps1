@@ -1,10 +1,14 @@
 function New-VSSNSTopic {
     <#
     .SYNOPSIS
-        Adds an AWS::SNS::Topic resource to the template. 
+        Adds an AWS::SNS::Topic resource to the template. The AWS::SNS::Topic resource creates a topic to which notifications can be published.
 
     .DESCRIPTION
-        Adds an AWS::SNS::Topic resource to the template. 
+        Adds an AWS::SNS::Topic resource to the template. The AWS::SNS::Topic resource creates a topic to which notifications can be published.
+
+**Note**
+
+One user can create a maximum of 100,000 topics.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html
@@ -13,16 +17,23 @@ function New-VSSNSTopic {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER DisplayName
+        The display name to use for an Amazon SNS topic with SMS subscriptions.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html#cfn-sns-topic-displayname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER KmsMasterKeyId
+        The ID of an AWS-managed customer master key CMK for Amazon SNS or a custom CMK. For more information, see Key Terms: https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms. For more examples, see  KeyId: https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters  in the *AWS Key Management Service API Reference*.
+This property applies only to server-side-encryption: https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html#cfn-sns-topic-kmsmasterkeyid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Subscription
+        The SNS subscriptions endpoints for this topic.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html#cfn-sns-topic-subscription
         DuplicatesAllowed: True
         ItemType: Subscription
@@ -30,6 +41,9 @@ function New-VSSNSTopic {
         UpdateType: Mutable
 
     .PARAMETER Tags
+        The list of tags to add to a new topic.
+To be able to tag a topic on creation, you must have the sns:CreateTopic and sns:TagResource permissions.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html#cfn-sns-topic-tags
         DuplicatesAllowed: True
         ItemType: Tag
@@ -37,6 +51,10 @@ function New-VSSNSTopic {
         UpdateType: Mutable
 
     .PARAMETER TopicName
+        The name of the topic you want to create. Topic names must include only uppercase and lowercase ASCII letters, numbers, underscores, and hyphens, and must be between 1 and 256 characters long.
+If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the topic name. For more information, see Name Type: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html.
+If you specify a name, you can't perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you must replace the resource, specify a new name.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html#cfn-sns-topic-topicname
         PrimitiveType: String
         UpdateType: Immutable
@@ -119,16 +137,8 @@ function New-VSSNSTopic {
                 }
             })]
         $Subscription,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -144,6 +154,9 @@ function New-VSSNSTopic {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

@@ -1,10 +1,10 @@
 function New-VSIoTEventsInput {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTEvents::Input resource to the template. 
+        Adds an AWS::IoTEvents::Input resource to the template. The AWS::IoTEvents::Input resource creates an input. To monitor your devices and processes, they must have a way to get telemetry data into AWS IoT Events. This is done by sending messages as *inputs* to AWS IoT Events. For more information, see  How to Use AWS IoT Events: https://docs.aws.amazon.com/iotevents/latest/developerguide/how-to-use-iotevents.html in the *AWS IoT Events Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::IoTEvents::Input resource to the template. 
+        Adds an AWS::IoTEvents::Input resource to the template. The AWS::IoTEvents::Input resource creates an input. To monitor your devices and processes, they must have a way to get telemetry data into AWS IoT Events. This is done by sending messages as *inputs* to AWS IoT Events. For more information, see  How to Use AWS IoT Events: https://docs.aws.amazon.com/iotevents/latest/developerguide/how-to-use-iotevents.html in the *AWS IoT Events Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-input.html
@@ -13,21 +13,30 @@ function New-VSIoTEventsInput {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER InputDefinition
+        The definition of the input.
+
         Type: InputDefinition
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-input.html#cfn-iotevents-input-inputdefinition
         UpdateType: Mutable
 
     .PARAMETER InputName
+        The name of the input.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-input.html#cfn-iotevents-input-inputname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER InputDescription
+        A brief description of the input.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-input.html#cfn-iotevents-input-inputdescription
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Tags
+        An array of key-value pairs to apply to this resource.
+For more information, see Tag: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-input.html#cfn-iotevents-input-tags
         ItemType: Tag
@@ -102,20 +111,15 @@ function New-VSIoTEventsInput {
                 }
             })]
         $InputDescription,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

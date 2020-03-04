@@ -1,10 +1,10 @@
 function New-VSGameLiftMatchmakingConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::GameLift::MatchmakingConfiguration resource to the template. 
+        Adds an AWS::GameLift::MatchmakingConfiguration resource to the template. The AWS::GameLift::MatchmakingConfiguration resource defines a new matchmaking configuration for use with FlexMatch. A matchmaking configuration sets out guidelines for matching players and starting game sessions for the match. You can set up multiple matchmaking configurations to handle the scenarios needed for your game. Requests for matchmaking specify which configuration to use and provides the player attribute values that are required for the configuration.
 
     .DESCRIPTION
-        Adds an AWS::GameLift::MatchmakingConfiguration resource to the template. 
+        Adds an AWS::GameLift::MatchmakingConfiguration resource to the template. The AWS::GameLift::MatchmakingConfiguration resource defines a new matchmaking configuration for use with FlexMatch. A matchmaking configuration sets out guidelines for matching players and starting game sessions for the match. You can set up multiple matchmaking configurations to handle the scenarios needed for your game. Requests for matchmaking specify which configuration to use and provides the player attribute values that are required for the configuration.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html
@@ -13,67 +13,93 @@ function New-VSGameLiftMatchmakingConfiguration {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER GameProperties
+        A set of custom properties for a game session, formatted as key-value pairs. These properties are passed to a game server process with a request to start a new game session. See  Start a Game Session: https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-gameproperties
         ItemType: GameProperty
         UpdateType: Mutable
 
     .PARAMETER GameSessionData
+        A set of custom game session properties, formatted as a single string value. This data is passed to a game server process with a request to start a new game session. See Start a Game Session: https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-gamesessiondata
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Description
+        A descriptive label that is associated with matchmaking configuration.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER AcceptanceTimeoutSeconds
+        The length of time in seconds to wait for players to accept a proposed match. If any player rejects the match or fails to accept before the timeout, the ticket continues to look for an acceptable match.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-acceptancetimeoutseconds
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER NotificationTarget
+        An SNS topic ARN that is set up to receive matchmaking notifications. See  Setting up Notifications for Matchmaking: https://docs.aws.amazon.com/gamelift/latest/developerguide/match-notification.html for more information.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-notificationtarget
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER CustomEventData
+        Information that is attached to all events related to the matchmaking configuration.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-customeventdata
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Name
+        A unique identifier for a matchmaking configuration. Matchmaking requests use this name to identify which matchmaking configuration to use.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-name
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER AdditionalPlayerCount
+        The number of player slots in a match to keep open for future players. For example, assume that the configuration's rule set specifies a match for a single 12-person team. If the additional player count is set to 2, only 10 players are initially selected for the match.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-additionalplayercount
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER BackfillMode
+        The method used to backfill game sessions that are created with this matchmaking configuration. Specify MANUAL when your game manages backfill requests manually or does not use the match backfill feature. Specify AUTOMATIC to have GameLift create a StartMatchBackfill request whenever a game session has one or more open slots. Learn more about manual and automatic backfill in Backfill Existing Games with FlexMatch: https://docs.aws.amazon.com/gamelift/latest/developerguide/match-backfill.html.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-backfillmode
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RequestTimeoutSeconds
+        The maximum duration, in seconds, that a matchmaking ticket can remain in process before timing out. Requests that fail due to timing out can be resubmitted as needed.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-requesttimeoutseconds
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER AcceptanceRequired
+        A flag that determines whether a match that was created with this configuration must be accepted by the matched players. To require acceptance, set to TRUE.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-acceptancerequired
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER RuleSetName
+        A unique identifier for a matchmaking rule set to use with this configuration. You can use either the rule set name or ARN value. A matchmaking configuration can only use rule sets that are defined in the same Region.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-rulesetname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER GameSessionQueueArns
+        Amazon Resource Name ARN: https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html that is assigned to a GameLift game session queue resource and uniquely identifies it. ARNs are unique across all Regions. These queues are used when placing game sessions for matches that are created with this matchmaking configuration. Queues can be located in any Region.
+
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-gamesessionqueuearns
@@ -261,6 +287,9 @@ function New-VSGameLiftMatchmakingConfiguration {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

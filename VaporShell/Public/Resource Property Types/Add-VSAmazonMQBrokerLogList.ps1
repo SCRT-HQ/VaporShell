@@ -1,21 +1,25 @@
 function Add-VSAmazonMQBrokerLogList {
     <#
     .SYNOPSIS
-        Adds an AWS::AmazonMQ::Broker.LogList resource property to the template. 
+        Adds an AWS::AmazonMQ::Broker.LogList resource property to the template. The list of information about logs to be enabled for the specified broker.
 
     .DESCRIPTION
         Adds an AWS::AmazonMQ::Broker.LogList resource property to the template.
-
+The list of information about logs to be enabled for the specified broker.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-loglist.html
 
     .PARAMETER Audit
+        Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-loglist.html#cfn-amazonmq-broker-loglist-audit
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER General
+        Enables general logging.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-loglist.html#cfn-amazonmq-broker-loglist-general
         PrimitiveType: Boolean
         UpdateType: Mutable

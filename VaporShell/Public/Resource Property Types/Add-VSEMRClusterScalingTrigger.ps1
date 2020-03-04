@@ -1,16 +1,18 @@
 function Add-VSEMRClusterScalingTrigger {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::Cluster.ScalingTrigger resource property to the template. 
+        Adds an AWS::EMR::Cluster.ScalingTrigger resource property to the template. ScalingTrigger is a subproperty of the ScalingRule property type. ScalingTrigger determines the conditions that trigger an automatic scaling activity.
 
     .DESCRIPTION
         Adds an AWS::EMR::Cluster.ScalingTrigger resource property to the template.
-
+ScalingTrigger is a subproperty of the ScalingRule property type. ScalingTrigger determines the conditions that trigger an automatic scaling activity.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingtrigger.html
 
     .PARAMETER CloudWatchAlarmDefinition
+        The definition of a CloudWatch metric alarm. When the defined alarm conditions are met along with other trigger parameters, scaling activity begins.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingtrigger.html#cfn-elasticmapreduce-cluster-scalingtrigger-cloudwatchalarmdefinition
         Type: CloudWatchAlarmDefinition
         UpdateType: Mutable

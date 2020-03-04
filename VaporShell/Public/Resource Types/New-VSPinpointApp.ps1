@@ -1,10 +1,10 @@
 function New-VSPinpointApp {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::App resource to the template. 
+        Adds an AWS::Pinpoint::App resource to the template. The AWS::Pinpoint::App resource is an Amazon Pinpoint application, also referred to as a *project* or *app*. An application is a collection of related settings, customer information, segments, campaigns, and other types of Amazon Pinpoint resources.
 
     .DESCRIPTION
-        Adds an AWS::Pinpoint::App resource to the template. 
+        Adds an AWS::Pinpoint::App resource to the template. The AWS::Pinpoint::App resource is an Amazon Pinpoint application, also referred to as a *project* or *app*. An application is a collection of related settings, customer information, segments, campaigns, and other types of Amazon Pinpoint resources.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-app.html
@@ -13,11 +13,15 @@ function New-VSPinpointApp {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Tags
+        A string-to-string map of key-value pairs that defines the tags to associate with the application. Each tag consists of a required tag key and an associated tag value.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-app.html#cfn-pinpoint-app-tags
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER Name
+        The display name of the application. This name is displayed as the **Project name** on the Amazon Pinpoint console.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-app.html#cfn-pinpoint-app-name
         PrimitiveType: String
         UpdateType: Immutable
@@ -92,6 +96,9 @@ function New-VSPinpointApp {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

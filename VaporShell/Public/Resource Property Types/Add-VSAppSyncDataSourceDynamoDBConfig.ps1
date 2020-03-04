@@ -1,36 +1,48 @@
 function Add-VSAppSyncDataSourceDynamoDBConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::AppSync::DataSource.DynamoDBConfig resource property to the template. 
+        Adds an AWS::AppSync::DataSource.DynamoDBConfig resource property to the template. The DynamoDBConfig property type specifies the AwsRegion and TableName for an Amazon DynamoDB table in your account for an AWS AppSync data source.
 
     .DESCRIPTION
         Adds an AWS::AppSync::DataSource.DynamoDBConfig resource property to the template.
+The DynamoDBConfig property type specifies the AwsRegion and TableName for an Amazon DynamoDB table in your account for an AWS AppSync data source.
 
+DynamoDBConfig is a property of the AWS::AppSync::DataSource: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-dynamodbconfig.html
 
     .PARAMETER TableName
+        The table name.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-dynamodbconfig.html#cfn-appsync-datasource-dynamodbconfig-tablename
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER AwsRegion
+        The AWS Region.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-dynamodbconfig.html#cfn-appsync-datasource-dynamodbconfig-awsregion
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Versioned
+        Set to TRUE to use Conflict Detection and Resolution with this data source.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-dynamodbconfig.html#cfn-appsync-datasource-dynamodbconfig-versioned
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER DeltaSyncConfig
+        The DeltaSyncConfig for a versioned datasource.
+
         Type: DeltaSyncConfig
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-dynamodbconfig.html#cfn-appsync-datasource-dynamodbconfig-deltasyncconfig
         UpdateType: Mutable
 
     .PARAMETER UseCallerCredentials
+        Set to TRUE to use AWS IAM with this data source.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-dynamodbconfig.html#cfn-appsync-datasource-dynamodbconfig-usecallercredentials
         PrimitiveType: Boolean
         UpdateType: Mutable

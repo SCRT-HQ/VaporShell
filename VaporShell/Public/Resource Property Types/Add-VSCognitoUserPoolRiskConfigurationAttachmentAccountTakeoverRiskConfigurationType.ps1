@@ -1,21 +1,25 @@
 function Add-VSCognitoUserPoolRiskConfigurationAttachmentAccountTakeoverRiskConfigurationType {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::UserPoolRiskConfigurationAttachment.AccountTakeoverRiskConfigurationType resource property to the template. 
+        Adds an AWS::Cognito::UserPoolRiskConfigurationAttachment.AccountTakeoverRiskConfigurationType resource property to the template. Configuration for mitigation actions and notification for different levels of risk detected for a potential account takeover.
 
     .DESCRIPTION
         Adds an AWS::Cognito::UserPoolRiskConfigurationAttachment.AccountTakeoverRiskConfigurationType resource property to the template.
-
+Configuration for mitigation actions and notification for different levels of risk detected for a potential account takeover.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-accounttakeoverriskconfigurationtype.html
 
     .PARAMETER Actions
+        Account takeover risk configuration actions
+
         Type: AccountTakeoverActionsType
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-accounttakeoverriskconfigurationtype.html#cfn-cognito-userpoolriskconfigurationattachment-accounttakeoverriskconfigurationtype-actions
         UpdateType: Mutable
 
     .PARAMETER NotifyConfiguration
+        The notify configuration used to construct email notifications.
+
         Type: NotifyConfigurationType
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-accounttakeoverriskconfigurationtype.html#cfn-cognito-userpoolriskconfigurationattachment-accounttakeoverriskconfigurationtype-notifyconfiguration
         UpdateType: Mutable

@@ -1,16 +1,18 @@
 function Add-VSLambdaVersionProvisionedConcurrencyConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::Lambda::Version.ProvisionedConcurrencyConfiguration resource property to the template. 
+        Adds an AWS::Lambda::Version.ProvisionedConcurrencyConfiguration resource property to the template. A provisioned concurrency configuration for a function's version.
 
     .DESCRIPTION
         Adds an AWS::Lambda::Version.ProvisionedConcurrencyConfiguration resource property to the template.
-
+A provisioned concurrency configuration for a function's version.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-version-provisionedconcurrencyconfiguration.html
 
     .PARAMETER ProvisionedConcurrentExecutions
+        The amount of provisioned concurrency to allocate for the version.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-version-provisionedconcurrencyconfiguration.html#cfn-lambda-version-provisionedconcurrencyconfiguration-provisionedconcurrentexecutions
         PrimitiveType: Integer
         UpdateType: Mutable

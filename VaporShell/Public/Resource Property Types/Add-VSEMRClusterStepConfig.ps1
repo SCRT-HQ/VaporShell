@@ -1,26 +1,32 @@
 function Add-VSEMRClusterStepConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::Cluster.StepConfig resource property to the template. 
+        Adds an AWS::EMR::Cluster.StepConfig resource property to the template. StepConfig is a property of the AWS::EMR::Cluster resource. The StepConfig property type specifies a cluster (job flow step, which runs only on the master node. Steps are used to submit data processing jobs to the cluster.
 
     .DESCRIPTION
         Adds an AWS::EMR::Cluster.StepConfig resource property to the template.
-
+StepConfig is a property of the AWS::EMR::Cluster resource. The StepConfig property type specifies a cluster (job flow step, which runs only on the master node. Steps are used to submit data processing jobs to the cluster.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-stepconfig.html
 
     .PARAMETER ActionOnFailure
+        The action to take when the cluster step fails. Possible values are CANCEL_AND_WAIT and CONTINUE.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-stepconfig.html#cfn-elasticmapreduce-cluster-stepconfig-actiononfailure
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER HadoopJarStep
+        The JAR file used for the step.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-stepconfig.html#cfn-elasticmapreduce-cluster-stepconfig-hadoopjarstep
         Type: HadoopJarStepConfig
         UpdateType: Mutable
 
     .PARAMETER Name
+        The name of the step.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-stepconfig.html#cfn-elasticmapreduce-cluster-stepconfig-name
         PrimitiveType: String
         UpdateType: Mutable

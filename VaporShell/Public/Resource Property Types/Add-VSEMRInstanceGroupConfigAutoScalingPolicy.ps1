@@ -1,21 +1,25 @@
 function Add-VSEMRInstanceGroupConfigAutoScalingPolicy {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::InstanceGroupConfig.AutoScalingPolicy resource property to the template. 
+        Adds an AWS::EMR::InstanceGroupConfig.AutoScalingPolicy resource property to the template. AutoScalingPolicy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. For more information, see Using Automatic Scaling in Amazon EMR: https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-automatic-scaling.html in the *Amazon EMR Management Guide*.
 
     .DESCRIPTION
         Adds an AWS::EMR::InstanceGroupConfig.AutoScalingPolicy resource property to the template.
-
+AutoScalingPolicy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. For more information, see Using Automatic Scaling in Amazon EMR: https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-automatic-scaling.html in the *Amazon EMR Management Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-autoscalingpolicy.html
 
     .PARAMETER Constraints
+        The upper and lower EC2 instance limits for an automatic scaling policy. Automatic scaling activity will not cause an instance group to grow above or below these limits.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-autoscalingpolicy.html#cfn-elasticmapreduce-instancegroupconfig-autoscalingpolicy-constraints
         Type: ScalingConstraints
         UpdateType: Mutable
 
     .PARAMETER Rules
+        The scale-in and scale-out rules that comprise the automatic scaling policy.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-autoscalingpolicy.html#cfn-elasticmapreduce-instancegroupconfig-autoscalingpolicy-rules
         DuplicatesAllowed: False
         ItemType: ScalingRule

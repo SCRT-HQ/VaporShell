@@ -1,21 +1,25 @@
 function Add-VSCodePipelineWebhookWebhookAuthConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::CodePipeline::Webhook.WebhookAuthConfiguration resource property to the template. 
+        Adds an AWS::CodePipeline::Webhook.WebhookAuthConfiguration resource property to the template. The authentication applied to incoming webhook trigger requests.
 
     .DESCRIPTION
         Adds an AWS::CodePipeline::Webhook.WebhookAuthConfiguration resource property to the template.
-
+The authentication applied to incoming webhook trigger requests.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-webhook-webhookauthconfiguration.html
 
     .PARAMETER AllowedIPRange
+        The property used to configure acceptance of webhooks in an IP address range. For IP, only the AllowedIPRange property must be set. This property must be set to a valid CIDR range.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-webhook-webhookauthconfiguration.html#cfn-codepipeline-webhook-webhookauthconfiguration-allowediprange
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SecretToken
+        The property used to configure GitHub authentication. For GITHUB_HMAC, only the SecretToken property must be set.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-webhook-webhookauthconfiguration.html#cfn-codepipeline-webhook-webhookauthconfiguration-secrettoken
         PrimitiveType: String
         UpdateType: Mutable

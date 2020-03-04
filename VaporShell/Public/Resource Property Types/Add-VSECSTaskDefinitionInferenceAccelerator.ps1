@@ -1,26 +1,32 @@
 function Add-VSECSTaskDefinitionInferenceAccelerator {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::TaskDefinition.InferenceAccelerator resource property to the template. 
+        Adds an AWS::ECS::TaskDefinition.InferenceAccelerator resource property to the template. Details on an Elastic Inference accelerator. For more information, see Working with Amazon Elastic Inference on Amazon ECS: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-eia.html in the *Amazon Elastic Container Service Developer Guide*.
 
     .DESCRIPTION
         Adds an AWS::ECS::TaskDefinition.InferenceAccelerator resource property to the template.
-
+Details on an Elastic Inference accelerator. For more information, see Working with Amazon Elastic Inference on Amazon ECS: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-eia.html in the *Amazon Elastic Container Service Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-inferenceaccelerator.html
 
     .PARAMETER DeviceName
+        The Elastic Inference accelerator device name. The deviceName must also be referenced in a container definition as a ResourceRequirement: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-resourcerequirement.html.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-inferenceaccelerator.html#cfn-ecs-taskdefinition-inferenceaccelerator-devicename
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER DevicePolicy
+        *Update requires*: Replacement: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-replacement
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-inferenceaccelerator.html#cfn-ecs-taskdefinition-inferenceaccelerator-devicepolicy
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER DeviceType
+        The Elastic Inference accelerator type to use.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-inferenceaccelerator.html#cfn-ecs-taskdefinition-inferenceaccelerator-devicetype
         PrimitiveType: String
         UpdateType: Immutable

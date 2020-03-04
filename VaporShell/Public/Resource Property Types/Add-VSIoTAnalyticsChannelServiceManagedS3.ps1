@@ -1,11 +1,11 @@
 function Add-VSIoTAnalyticsChannelServiceManagedS3 {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Channel.ServiceManagedS3 resource property to the template. 
+        Adds an AWS::IoTAnalytics::Channel.ServiceManagedS3 resource property to the template. Used to store channel data in an S3 bucket managed by the AWS IoT Analytics service. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the channel.
 
     .DESCRIPTION
         Adds an AWS::IoTAnalytics::Channel.ServiceManagedS3 resource property to the template.
-
+Used to store channel data in an S3 bucket managed by the AWS IoT Analytics service. The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the channel.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-servicemanageds3.html

@@ -1,10 +1,10 @@
 function New-VSElasticLoadBalancingV2Listener {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticLoadBalancingV2::Listener resource to the template. 
+        Adds an AWS::ElasticLoadBalancingV2::Listener resource to the template. Specifies a listener for an Application Load Balancer or Network Load Balancer.
 
     .DESCRIPTION
-        Adds an AWS::ElasticLoadBalancingV2::Listener resource to the template. 
+        Adds an AWS::ElasticLoadBalancingV2::Listener resource to the template. Specifies a listener for an Application Load Balancer or Network Load Balancer.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html
@@ -13,6 +13,9 @@ function New-VSElasticLoadBalancingV2Listener {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Certificates
+        The default SSL server certificate. You must provide exactly one certificate if the listener protocol is HTTPS or TLS.
+To create a certificate list for the listener, use AWS::ElasticLoadBalancingV2::ListenerCertificate: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenercertificate.html.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-certificates
         DuplicatesAllowed: False
         ItemType: Certificate
@@ -20,6 +23,8 @@ function New-VSElasticLoadBalancingV2Listener {
         UpdateType: Mutable
 
     .PARAMETER DefaultActions
+        The actions for the default rule.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-defaultactions
         DuplicatesAllowed: False
         ItemType: Action
@@ -27,21 +32,39 @@ function New-VSElasticLoadBalancingV2Listener {
         UpdateType: Mutable
 
     .PARAMETER LoadBalancerArn
+        The Amazon Resource Name ARN of the load balancer.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-loadbalancerarn
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Port
+        The port on which the load balancer is listening.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-port
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER Protocol
+        The protocol for connections from clients to the load balancer. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, and TCP_UDP.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-protocol
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SslPolicy
+        HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported. The following are the possible values:
++  ELBSecurityPolicy-2016-08
++  ELBSecurityPolicy-TLS-1-0-2015-04
++  ELBSecurityPolicy-TLS-1-1-2017-01
++  ELBSecurityPolicy-TLS-1-2-2017-01
++  ELBSecurityPolicy-TLS-1-2-Ext-2018-06
++  ELBSecurityPolicy-FS-2018-06
++  ELBSecurityPolicy-FS-1-1-2019-08
++  ELBSecurityPolicy-FS-1-2-2019-08
++  ELBSecurityPolicy-FS-1-2-Res-2019-08
+For more information, see Security Policies: https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies in the *Application Load Balancers Guide* and Security Policies: https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies in the *Network Load Balancers Guide*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-sslpolicy
         PrimitiveType: String
         UpdateType: Mutable
@@ -160,6 +183,9 @@ function New-VSElasticLoadBalancingV2Listener {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

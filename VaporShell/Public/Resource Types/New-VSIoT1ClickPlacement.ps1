@@ -1,10 +1,10 @@
 function New-VSIoT1ClickPlacement {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT1Click::Placement resource to the template. 
+        Adds an AWS::IoT1Click::Placement resource to the template. The AWS::IoT1Click::Placement resource creates a placement to be associated with an AWS IoT 1-Click project. A placement is an instance of a device in a location. For more information, see Projects, Templates, and Placements: https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-PTP.html in the *AWS IoT 1-Click Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::IoT1Click::Placement resource to the template. 
+        Adds an AWS::IoT1Click::Placement resource to the template. The AWS::IoT1Click::Placement resource creates a placement to be associated with an AWS IoT 1-Click project. A placement is an instance of a device in a location. For more information, see Projects, Templates, and Placements: https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-PTP.html in the *AWS IoT 1-Click Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot1click-placement.html
@@ -13,21 +13,29 @@ function New-VSIoT1ClickPlacement {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER PlacementName
+        The name of the placement.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot1click-placement.html#cfn-iot1click-placement-placementname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ProjectName
+        The name of the project containing the placement.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot1click-placement.html#cfn-iot1click-placement-projectname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER AssociatedDevices
+        The devices to associate with the placement, as defined by a mapping of zero or more key-value pairs wherein the key is a template name and the value is a device ID.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot1click-placement.html#cfn-iot1click-placement-associateddevices
         PrimitiveType: Json
         UpdateType: Immutable
 
     .PARAMETER Attributes
+        The user-defined attributes associated with the placement.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot1click-placement.html#cfn-iot1click-placement-attributes
         PrimitiveType: Json
         UpdateType: Mutable
@@ -124,6 +132,9 @@ function New-VSIoT1ClickPlacement {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

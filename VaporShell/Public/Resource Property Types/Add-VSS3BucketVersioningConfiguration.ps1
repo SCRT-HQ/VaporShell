@@ -1,16 +1,18 @@
 function Add-VSS3BucketVersioningConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.VersioningConfiguration resource property to the template. 
+        Adds an AWS::S3::Bucket.VersioningConfiguration resource property to the template. Describes the versioning state of an Amazon S3 bucket. For more information, see PUT Bucket versioning: https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTVersioningStatus.html in the *Amazon Simple Storage Service API Reference*.
 
     .DESCRIPTION
         Adds an AWS::S3::Bucket.VersioningConfiguration resource property to the template.
-
+Describes the versioning state of an Amazon S3 bucket. For more information, see PUT Bucket versioning: https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTVersioningStatus.html in the *Amazon Simple Storage Service API Reference*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-versioningconfig.html
 
     .PARAMETER Status
+        The versioning state of the bucket.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-versioningconfig.html#cfn-s3-bucket-versioningconfig-status
         PrimitiveType: String
         UpdateType: Mutable

@@ -1,10 +1,10 @@
 function New-VSPinpointEmailConfigurationSet {
     <#
     .SYNOPSIS
-        Adds an AWS::PinpointEmail::ConfigurationSet resource to the template. 
+        Adds an AWS::PinpointEmail::ConfigurationSet resource to the template. Create a configuration set. *Configuration sets* are groups of rules that you can apply to the emails you send using Amazon Pinpoint. You apply a configuration set to an email by including a reference to the configuration set in the headers of the email. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email.
 
     .DESCRIPTION
-        Adds an AWS::PinpointEmail::ConfigurationSet resource to the template. 
+        Adds an AWS::PinpointEmail::ConfigurationSet resource to the template. Create a configuration set. *Configuration sets* are groups of rules that you can apply to the emails you send using Amazon Pinpoint. You apply a configuration set to an email by including a reference to the configuration set in the headers of the email. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationset.html
@@ -13,32 +13,44 @@ function New-VSPinpointEmailConfigurationSet {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER SendingOptions
+        An object that defines whether or not Amazon Pinpoint can send email that you send using the configuration set.
+
         Type: SendingOptions
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationset.html#cfn-pinpointemail-configurationset-sendingoptions
         UpdateType: Mutable
 
     .PARAMETER TrackingOptions
+        An object that defines the open and click tracking options for emails that you send using the configuration set.
+
         Type: TrackingOptions
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationset.html#cfn-pinpointemail-configurationset-trackingoptions
         UpdateType: Mutable
 
     .PARAMETER ReputationOptions
+        An object that defines whether or not Amazon Pinpoint collects reputation metrics for the emails that you send that use the configuration set.
+
         Type: ReputationOptions
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationset.html#cfn-pinpointemail-configurationset-reputationoptions
         UpdateType: Mutable
 
     .PARAMETER DeliveryOptions
+        An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.
+
         Type: DeliveryOptions
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationset.html#cfn-pinpointemail-configurationset-deliveryoptions
         UpdateType: Mutable
 
     .PARAMETER Tags
+        An object that defines the tags keys and values that you want to associate with the configuration set.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationset.html#cfn-pinpointemail-configurationset-tags
         ItemType: Tags
         UpdateType: Mutable
 
     .PARAMETER Name
+        The name of the configuration set.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationset.html#cfn-pinpointemail-configurationset-name
         PrimitiveType: String
         UpdateType: Immutable
@@ -121,6 +133,9 @@ function New-VSPinpointEmailConfigurationSet {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

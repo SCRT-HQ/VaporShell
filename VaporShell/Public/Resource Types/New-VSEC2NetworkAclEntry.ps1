@@ -1,10 +1,12 @@
 function New-VSEC2NetworkAclEntry {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::NetworkAclEntry resource to the template. 
+        Adds an AWS::EC2::NetworkAclEntry resource to the template. Specifies an entry, known as a rule, in a network ACL with a rule number you specify. Each network ACL has a set of numbered ingress rules and a separate set of numbered egress rules.
 
     .DESCRIPTION
-        Adds an AWS::EC2::NetworkAclEntry resource to the template. 
+        Adds an AWS::EC2::NetworkAclEntry resource to the template. Specifies an entry, known as a rule, in a network ACL with a rule number you specify. Each network ACL has a set of numbered ingress rules and a separate set of numbered egress rules.
+
+For information about the protocol value, see Protocol Numbers: https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml on the Internet Assigned Numbers Authority (IANA website.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html
@@ -13,46 +15,65 @@ function New-VSEC2NetworkAclEntry {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER CidrBlock
+        The IPv4 CIDR range to allow or deny, in CIDR notation for example, 172.16.0.0/24. Requirement is conditional: You must specify the CidrBlock or Ipv6CidrBlock property.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-cidrblock
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Egress
+        Whether this rule applies to egress traffic from the subnet true or ingress traffic to the subnet false. By default, AWS CloudFormation specifies false.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-egress
         PrimitiveType: Boolean
         UpdateType: Immutable
 
     .PARAMETER Icmp
+        The Internet Control Message Protocol ICMP code and type. Requirement is conditional: Required if specifying 1 ICMP for the protocol parameter.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-icmp
         Type: Icmp
         UpdateType: Mutable
 
     .PARAMETER Ipv6CidrBlock
+        The IPv6 network range to allow or deny, in CIDR notation. Requirement is conditional: You must specify the CidrBlock or Ipv6CidrBlock property.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-ipv6cidrblock
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER NetworkAclId
+        The ID of the ACL for the entry.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-networkaclid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER PortRange
+        The range of port numbers for the UDP/TCP protocol. Conditional required if specifying 6 TCP or 17 UDP for the protocol parameter.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-portrange
         Type: PortRange
         UpdateType: Mutable
 
     .PARAMETER Protocol
+        The IP protocol that the rule applies to. You must specify -1 or a protocol number. You can specify -1 for all protocols.
+If you specify -1, all ports are opened and the PortRange property is ignored.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-protocol
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER RuleAction
+        Whether to allow or deny traffic that matches the rule; valid values are "allow" or "deny".
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-ruleaction
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RuleNumber
+        Rule number to assign to the entry, such as 100. ACL entries are processed in ascending order by rule number. Entries can't use the same rule number unless one is an egress rule and the other is an ingress rule.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl-entry.html#cfn-ec2-networkaclentry-rulenumber
         PrimitiveType: Integer
         UpdateType: Immutable
@@ -186,6 +207,9 @@ function New-VSEC2NetworkAclEntry {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

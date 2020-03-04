@@ -1,21 +1,25 @@
 function Add-VSDataPipelinePipelineParameterAttribute {
     <#
     .SYNOPSIS
-        Adds an AWS::DataPipeline::Pipeline.ParameterAttribute resource property to the template. 
+        Adds an AWS::DataPipeline::Pipeline.ParameterAttribute resource property to the template. Attribute is a property of ParameterObject that defines the attributes of a parameter object as key-value pairs.
 
     .DESCRIPTION
         Adds an AWS::DataPipeline::Pipeline.ParameterAttribute resource property to the template.
-
+Attribute is a property of ParameterObject that defines the attributes of a parameter object as key-value pairs.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-parameterobjects-attributes.html
 
     .PARAMETER Key
+        The field identifier.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-parameterobjects-attributes.html#cfn-datapipeline-pipeline-parameterobjects-attribtues-key
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER StringValue
+        The field value, expressed as a String.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-parameterobjects-attributes.html#cfn-datapipeline-pipeline-parameterobjects-attribtues-stringvalue
         PrimitiveType: String
         UpdateType: Mutable

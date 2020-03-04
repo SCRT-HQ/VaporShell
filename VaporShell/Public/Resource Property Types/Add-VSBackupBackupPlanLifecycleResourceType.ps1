@@ -1,21 +1,25 @@
 function Add-VSBackupBackupPlanLifecycleResourceType {
     <#
     .SYNOPSIS
-        Adds an AWS::Backup::BackupPlan.LifecycleResourceType resource property to the template. 
+        Adds an AWS::Backup::BackupPlan.LifecycleResourceType resource property to the template. Specifies an object containing an array of Transition objects that determine how long in days before a recovery point transitions to cold storage or is deleted.
 
     .DESCRIPTION
         Adds an AWS::Backup::BackupPlan.LifecycleResourceType resource property to the template.
-
+Specifies an object containing an array of Transition objects that determine how long in days before a recovery point transitions to cold storage or is deleted.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-lifecycleresourcetype.html
 
     .PARAMETER DeleteAfterDays
+        Specifies the number of days after creation that a recovery point is deleted. Must be greater than MoveToColdStorageAfterDays.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-lifecycleresourcetype.html#cfn-backup-backupplan-lifecycleresourcetype-deleteafterdays
         PrimitiveType: Double
         UpdateType: Mutable
 
     .PARAMETER MoveToColdStorageAfterDays
+        Specifies the number of days after creation that a recovery point is moved to cold storage.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-lifecycleresourcetype.html#cfn-backup-backupplan-lifecycleresourcetype-movetocoldstorageafterdays
         PrimitiveType: Double
         UpdateType: Mutable

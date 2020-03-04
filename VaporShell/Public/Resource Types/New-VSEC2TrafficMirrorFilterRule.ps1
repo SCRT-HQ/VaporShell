@@ -1,10 +1,14 @@
 function New-VSEC2TrafficMirrorFilterRule {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::TrafficMirrorFilterRule resource to the template. 
+        Adds an AWS::EC2::TrafficMirrorFilterRule resource to the template. Creates a Traffic Mirror filter rule.
 
     .DESCRIPTION
-        Adds an AWS::EC2::TrafficMirrorFilterRule resource to the template. 
+        Adds an AWS::EC2::TrafficMirrorFilterRule resource to the template. Creates a Traffic Mirror filter rule.
+
+A Traffic Mirror rule defines the Traffic Mirror source traffic to mirror.
+
+You need the Traffic Mirror filter ID when you create the rule.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html
@@ -13,51 +17,72 @@ function New-VSEC2TrafficMirrorFilterRule {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER DestinationPortRange
+        The destination port range.
+
         Type: TrafficMirrorPortRange
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-destinationportrange
         UpdateType: Mutable
 
     .PARAMETER Description
+        The description of the Traffic Mirror rule.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SourcePortRange
+        The source port range.
+
         Type: TrafficMirrorPortRange
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-sourceportrange
         UpdateType: Mutable
 
     .PARAMETER RuleAction
+        The action to take accept | reject on the filtered traffic.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-ruleaction
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SourceCidrBlock
+        The source CIDR block to assign to the Traffic Mirror rule.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-sourcecidrblock
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RuleNumber
+        The number of the Traffic Mirror rule. This number must be unique for each Traffic Mirror rule in a given direction. The rules are processed in ascending order by rule number.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-rulenumber
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER DestinationCidrBlock
+        The destination CIDR block to assign to the Traffic Mirror rule.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-destinationcidrblock
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER TrafficMirrorFilterId
+        The ID of the filter that this rule is associated with.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-trafficmirrorfilterid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER TrafficDirection
+        The type of traffic ingress | egress.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-trafficdirection
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Protocol
+        The protocol, for example UDP, to assign to the Traffic Mirror rule.
+For information about the protocol value, see Protocol Numbers: https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml on the Internet Assigned Numbers Authority IANA website.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-protocol
         PrimitiveType: Integer
         UpdateType: Mutable
@@ -202,6 +227,9 @@ function New-VSEC2TrafficMirrorFilterRule {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

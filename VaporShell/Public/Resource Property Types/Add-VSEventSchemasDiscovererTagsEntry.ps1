@@ -1,21 +1,25 @@
 function Add-VSEventSchemasDiscovererTagsEntry {
     <#
     .SYNOPSIS
-        Adds an AWS::EventSchemas::Discoverer.TagsEntry resource property to the template. 
+        Adds an AWS::EventSchemas::Discoverer.TagsEntry resource property to the template. Tags to associate with the discoverer.
 
     .DESCRIPTION
         Adds an AWS::EventSchemas::Discoverer.TagsEntry resource property to the template.
-
+Tags to associate with the discoverer.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eventschemas-discoverer-tagsentry.html
 
     .PARAMETER Value
+        They value of a key-value pair.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eventschemas-discoverer-tagsentry.html#cfn-eventschemas-discoverer-tagsentry-value
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Key
+        They key of a key-value pair.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eventschemas-discoverer-tagsentry.html#cfn-eventschemas-discoverer-tagsentry-key
         PrimitiveType: String
         UpdateType: Mutable

@@ -1,21 +1,25 @@
 function Add-VSElasticLoadBalancingV2ListenerRuleForwardConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticLoadBalancingV2::ListenerRule.ForwardConfig resource property to the template. 
+        Adds an AWS::ElasticLoadBalancingV2::ListenerRule.ForwardConfig resource property to the template. Information for creating an action that distributes requests among one or more target groups. For Network Load Balancers, you can specify a single target group. Specify only when Type is forward. If you specify both ForwardConfig and TargetGroupArn, you can specify only one target group using ForwardConfig and it must be the same target group specified in TargetGroupArn.
 
     .DESCRIPTION
         Adds an AWS::ElasticLoadBalancingV2::ListenerRule.ForwardConfig resource property to the template.
-
+Information for creating an action that distributes requests among one or more target groups. For Network Load Balancers, you can specify a single target group. Specify only when Type is forward. If you specify both ForwardConfig and TargetGroupArn, you can specify only one target group using ForwardConfig and it must be the same target group specified in TargetGroupArn.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-forwardconfig.html
 
     .PARAMETER TargetGroupStickinessConfig
+        Information about the target group stickiness for a rule.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-forwardconfig.html#cfn-elasticloadbalancingv2-listenerrule-forwardconfig-targetgroupstickinessconfig
         Type: TargetGroupStickinessConfig
         UpdateType: Mutable
 
     .PARAMETER TargetGroups
+        Information about how traffic will be distributed between multiple target groups in a forward rule.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-forwardconfig.html#cfn-elasticloadbalancingv2-listenerrule-forwardconfig-targetgroups
         DuplicatesAllowed: False
         ItemType: TargetGroupTuple

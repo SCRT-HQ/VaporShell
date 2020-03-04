@@ -1,10 +1,14 @@
 function New-VSRoute53ResolverResolverEndpoint {
     <#
     .SYNOPSIS
-        Adds an AWS::Route53Resolver::ResolverEndpoint resource to the template. 
+        Adds an AWS::Route53Resolver::ResolverEndpoint resource to the template. Creates a Resolver endpoint. There are two types of Resolver endpoints, inbound and outbound:
 
     .DESCRIPTION
-        Adds an AWS::Route53Resolver::ResolverEndpoint resource to the template. 
+        Adds an AWS::Route53Resolver::ResolverEndpoint resource to the template. Creates a Resolver endpoint. There are two types of Resolver endpoints, inbound and outbound:
+
++ An *inbound Resolver endpoint* forwards DNS queries to the DNS service for a VPC from your network.
+
++ An *outbound Resolver endpoint* forwards DNS queries from the DNS service for a VPC to your network.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html
@@ -13,29 +17,41 @@ function New-VSRoute53ResolverResolverEndpoint {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER IpAddresses
+        The subnets and IP addresses in your VPC that DNS queries originate from for outbound endpoints or that you forward DNS queries to for inbound endpoints. The subnet ID uniquely identifies a VPC.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-ipaddresses
         ItemType: IpAddressRequest
         UpdateType: Mutable
 
     .PARAMETER Direction
+        Indicates whether the Resolver endpoint allows inbound or outbound DNS queries:
++  INBOUND: allows DNS queries to your VPC from your network
++  OUTBOUND: allows DNS queries from your VPC to your network
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-direction
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER SecurityGroupIds
+        The ID of one or more security groups that control access to this VPC. The security group must include one or more inbound rules for inbound endpoints or outbound rules for outbound endpoints. Inbound and outbound rules must allow TCP and UDP access. For inbound access, open port 53. For outbound access, open the port that you're using for DNS queries on your network.
+
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-securitygroupids
         UpdateType: Immutable
 
     .PARAMETER Tags
+        A list of the tag keys and values that you want to associate with the endpoint.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-tags
         ItemType: Tag
         UpdateType: Mutable
 
     .PARAMETER Name
+        A friendly name that lets you easily find a configuration in the Resolver dashboard in the Route 53 console.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-name
         PrimitiveType: String
         UpdateType: Mutable
@@ -109,16 +125,8 @@ function New-VSRoute53ResolverResolverEndpoint {
         $Direction,
         [parameter(Mandatory = $true)]
         $SecurityGroupIds,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -134,6 +142,9 @@ function New-VSRoute53ResolverResolverEndpoint {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

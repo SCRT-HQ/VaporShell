@@ -1,16 +1,18 @@
 function Add-VSMSKClusterNodeExporter {
     <#
     .SYNOPSIS
-        Adds an AWS::MSK::Cluster.NodeExporter resource property to the template. 
+        Adds an AWS::MSK::Cluster.NodeExporter resource property to the template. Indicates whether you want to enable or disable the Node Exporter.
 
     .DESCRIPTION
         Adds an AWS::MSK::Cluster.NodeExporter resource property to the template.
-
+Indicates whether you want to enable or disable the Node Exporter.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-nodeexporter.html
 
     .PARAMETER EnabledInBroker
+        Indicates whether you want to enable or disable the Node Exporter.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-nodeexporter.html#cfn-msk-cluster-nodeexporter-enabledinbroker
         PrimitiveType: Boolean
         UpdateType: Mutable

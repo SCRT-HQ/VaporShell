@@ -1,10 +1,10 @@
 function New-VSAmplifyApp {
     <#
     .SYNOPSIS
-        Adds an AWS::Amplify::App resource to the template. 
+        Adds an AWS::Amplify::App resource to the template. The AWS::Amplify::App resource creates Apps in the Amplify Console. An App is a collection of branches.
 
     .DESCRIPTION
-        Adds an AWS::Amplify::App resource to the template. 
+        Adds an AWS::Amplify::App resource to the template. The AWS::Amplify::App resource creates Apps in the Amplify Console. An App is a collection of branches.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html
@@ -13,64 +13,88 @@ function New-VSAmplifyApp {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER AutoBranchCreationConfig
+        Sets the configuration for your automatic branch creation.
+
         Type: AutoBranchCreationConfig
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#cfn-amplify-app-autobranchcreationconfig
         UpdateType: Mutable
 
     .PARAMETER OauthToken
+        OAuth token for 3rd party source control system for an Amplify App, used to create webhook and read-only deploy key. OAuth token is not stored.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#cfn-amplify-app-oauthtoken
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Repository
+        Repository for an Amplify App
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#cfn-amplify-app-repository
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Description
+        Description for an Amplify App
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#cfn-amplify-app-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER EnvironmentVariables
+        Environment variables map for an Amplify App.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#cfn-amplify-app-environmentvariables
         ItemType: EnvironmentVariable
         UpdateType: Mutable
 
     .PARAMETER AccessToken
+        Personal Access token for 3rd party source control system for an Amplify App, used to create webhook and read-only deploy key. Token is not stored.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#cfn-amplify-app-accesstoken
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER BuildSpec
+        BuildSpec for an Amplify App
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#cfn-amplify-app-buildspec
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER CustomRules
+        Custom rewrite / redirect rules for an Amplify App.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#cfn-amplify-app-customrules
         ItemType: CustomRule
         UpdateType: Mutable
 
     .PARAMETER BasicAuthConfig
+        Credentials for Basic Authorization for an Amplify App.
+
         Type: BasicAuthConfig
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#cfn-amplify-app-basicauthconfig
         UpdateType: Mutable
 
     .PARAMETER Tags
+        Tag for an Amplify App
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#cfn-amplify-app-tags
         ItemType: Tag
         UpdateType: Mutable
 
     .PARAMETER Name
+        Name for the Amplify App
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#cfn-amplify-app-name
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER IAMServiceRole
+        IAM service role ARN for the Amplify App.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#cfn-amplify-app-iamservicerole
         PrimitiveType: String
         UpdateType: Mutable
@@ -201,16 +225,8 @@ function New-VSAmplifyApp {
         $CustomRules,
         [parameter(Mandatory = $false)]
         $BasicAuthConfig,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
@@ -237,6 +253,9 @@ function New-VSAmplifyApp {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

@@ -1,21 +1,25 @@
 function Add-VSAppStreamDirectoryConfigServiceAccountCredentials {
     <#
     .SYNOPSIS
-        Adds an AWS::AppStream::DirectoryConfig.ServiceAccountCredentials resource property to the template. 
+        Adds an AWS::AppStream::DirectoryConfig.ServiceAccountCredentials resource property to the template. The credentials for the service account used by the streaming instance to connect to the directory.
 
     .DESCRIPTION
         Adds an AWS::AppStream::DirectoryConfig.ServiceAccountCredentials resource property to the template.
-
+The credentials for the service account used by the streaming instance to connect to the directory.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-directoryconfig-serviceaccountcredentials.html
 
     .PARAMETER AccountName
+        The user name of the account. This account must have the following privileges: create computer objects, join computers to the domain, and change/reset the password on descendant computer objects for the organizational units specified.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-directoryconfig-serviceaccountcredentials.html#cfn-appstream-directoryconfig-serviceaccountcredentials-accountname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER AccountPassword
+        The password for the account.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-directoryconfig-serviceaccountcredentials.html#cfn-appstream-directoryconfig-serviceaccountcredentials-accountpassword
         PrimitiveType: String
         UpdateType: Mutable

@@ -1,16 +1,18 @@
 function Add-VSCognitoUserPoolDomainCustomDomainConfigType {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::UserPoolDomain.CustomDomainConfigType resource property to the template. 
+        Adds an AWS::Cognito::UserPoolDomain.CustomDomainConfigType resource property to the template. The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.
 
     .DESCRIPTION
         Adds an AWS::Cognito::UserPoolDomain.CustomDomainConfigType resource property to the template.
-
+The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpooldomain-customdomainconfigtype.html
 
     .PARAMETER CertificateArn
+        The Amazon Resource Name ARN of an AWS Certificate Manager SSL certificate. You use this certificate for the subdomain of your custom domain.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpooldomain-customdomainconfigtype.html#cfn-cognito-userpooldomain-customdomainconfigtype-certificatearn
         PrimitiveType: String
         UpdateType: Mutable

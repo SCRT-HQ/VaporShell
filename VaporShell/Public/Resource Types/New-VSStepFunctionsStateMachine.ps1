@@ -1,10 +1,10 @@
 function New-VSStepFunctionsStateMachine {
     <#
     .SYNOPSIS
-        Adds an AWS::StepFunctions::StateMachine resource to the template. 
+        Adds an AWS::StepFunctions::StateMachine resource to the template. Provisions a state machine. A state machine consists of a collection of states that can do work (Task states, determine to which states to transition next (Choice states, stop an execution with an error (Fail states, and so on. State machines are specified using a JSON-based, structured language.
 
     .DESCRIPTION
-        Adds an AWS::StepFunctions::StateMachine resource to the template. 
+        Adds an AWS::StepFunctions::StateMachine resource to the template. Provisions a state machine. A state machine consists of a collection of states that can do work (Task states, determine to which states to transition next (Choice states, stop an execution with an error (Fail states, and so on. State machines are specified using a JSON-based, structured language.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html
@@ -13,32 +13,53 @@ function New-VSStepFunctionsStateMachine {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER DefinitionString
+        The Amazon States Language definition of the state machine. See Amazon States Language: https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-definitionstring
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER LoggingConfiguration
+        Defines what execution history events are logged and where they are logged.
+The loggingConfiguration parameter is only valid when StateMachineType is set to EXPRESS. By default, the level is set to OFF. For more information see Log Levels: https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html in the AWS Step Functions User Guide.
+
         Type: LoggingConfiguration
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-loggingconfiguration
         UpdateType: Mutable
 
     .PARAMETER StateMachineName
+        The name of the state machine.
+A name must *not* contain:
++ white space
++ brackets < > { }  ]
++ wildcard characters ? *
++ special characters " # %  ^ | ~  $ & , ; : /
++ control characters U+0000-001F, U+007F-009F
+If you specify a name, you cannot perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you must replace the resource, specify a new name.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-statemachinename
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER RoleArn
+        The Amazon Resource Name ARN of the IAM role to use for this state machine.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-rolearn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Tags
+        The list of tags to add to a resource.
+Tags may only contain Unicode letters, digits, white space, or these symbols: _ . : / = + - @.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-tags
         ItemType: TagsEntry
         UpdateType: Mutable
 
     .PARAMETER StateMachineType
+        Determines whether a STANDARD or EXPRESS state machine is created. The default is STANDARD. You cannot update the type of a state machine once it has been created. For more information on STANDARD and EXPRESS worklfows, see Standard Versus Express Workflows: https://docs.aws.amazon.com/step-functions/latest/dg/concepts-standard-vs-express.html in the AWS Step Functions Developer Guide.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-statemachinetype
         PrimitiveType: String
         UpdateType: Immutable
@@ -148,6 +169,9 @@ function New-VSStepFunctionsStateMachine {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

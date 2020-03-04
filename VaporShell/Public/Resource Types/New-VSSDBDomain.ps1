@@ -1,10 +1,14 @@
 function New-VSSDBDomain {
     <#
     .SYNOPSIS
-        Adds an AWS::SDB::Domain resource to the template. 
+        Adds an AWS::SDB::Domain resource to the template. Use the AWS::SDB::Domain resource to declare a SimpleDB domain. When you specify AWS::SDB::Domain as an argument in a Ref function, AWS CloudFormation returns the value of the DomainName.
 
     .DESCRIPTION
-        Adds an AWS::SDB::Domain resource to the template. 
+        Adds an AWS::SDB::Domain resource to the template. Use the AWS::SDB::Domain resource to declare a SimpleDB domain. When you specify AWS::SDB::Domain as an argument in a Ref function, AWS CloudFormation returns the value of the DomainName.
+
+**Important**
+
+The AWS::SDB::Domain resource does not allow any updates, including metadata updates.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-simpledb.html
@@ -13,6 +17,8 @@ function New-VSSDBDomain {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Description
+        Information about the SimpleDB domain.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-simpledb.html#cfn-sdb-domain-description
         PrimitiveType: String
         UpdateType: Mutable
@@ -76,6 +82,9 @@ function New-VSSDBDomain {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

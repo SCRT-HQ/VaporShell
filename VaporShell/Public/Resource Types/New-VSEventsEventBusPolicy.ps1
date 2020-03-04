@@ -1,10 +1,14 @@
 function New-VSEventsEventBusPolicy {
     <#
     .SYNOPSIS
-        Adds an AWS::Events::EventBusPolicy resource to the template. 
+        Adds an AWS::Events::EventBusPolicy resource to the template. The AWS::Events::EventBusPolicy resource creates an event bus policy for Amazon EventBridge. An event bus policy enables your account to receive events from other AWS accounts. These events can trigger EventBridge rules created in your account. For more information, see Sending and Receiving Events Between AWS Accounts: https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html in the *Amazon EventBridge User Guide*.
 
     .DESCRIPTION
-        Adds an AWS::Events::EventBusPolicy resource to the template. 
+        Adds an AWS::Events::EventBusPolicy resource to the template. The AWS::Events::EventBusPolicy resource creates an event bus policy for Amazon EventBridge. An event bus policy enables your account to receive events from other AWS accounts. These events can trigger EventBridge rules created in your account. For more information, see Sending and Receiving Events Between AWS Accounts: https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html in the *Amazon EventBridge User Guide*.
+
+If you grant permissions using Condition and specifying an organization, then accounts in that organization must specify a RoleArn with proper permissions when they use PutTarget to add your account's event bus as a target.
+
+The permission policy on the default event bus can't exceed 10 KB in size.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbuspolicy.html
@@ -13,26 +17,39 @@ function New-VSEventsEventBusPolicy {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER EventBusName
+        The name of the event bus to associate with this policy.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbuspolicy.html#cfn-events-eventbuspolicy-eventbusname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Condition
+        Condition is a JSON string that you can use to limit the event bus permissions that you're granting only to accounts that fulfill the condition. Currently, the only supported condition is membership in a certain AWS organization. For more information about AWS Organizations, see What Is AWS Organizations?: https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html in the *AWS Organizations User Guide*.
+Condition is a property of the  AWS::Events::EventBusPolicy: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbuspolicy.html resource type.
+If you specify Condition with an AWS organization ID and specify "*" as the value for Principal, you grant permission to all the accounts in the named organization.
+
         Type: Condition
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbuspolicy.html#cfn-events-eventbuspolicy-condition
         UpdateType: Mutable
 
     .PARAMETER Action
+        The action that you are enabling the other account to perform. Currently, this must be events:PutEvents.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbuspolicy.html#cfn-events-eventbuspolicy-action
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER StatementId
+        An identifier string for the external account that you're granting permissions to. If you later want to revoke the permission for this external account, you must specify this StatementId.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbuspolicy.html#cfn-events-eventbuspolicy-statementid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Principal
+        The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify "*" to permit any account to put events to your default event bus.
+If you specify "*" without specifying Condition, avoid creating rules that may match undesirable events. To create more secure rules, make sure that the event pattern for each rule contains an account field with a specific account ID from which to receive events. Rules with an account field do not match any events sent from other accounts.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbuspolicy.html#cfn-events-eventbuspolicy-principal
         PrimitiveType: String
         UpdateType: Mutable
@@ -128,6 +145,9 @@ function New-VSEventsEventBusPolicy {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

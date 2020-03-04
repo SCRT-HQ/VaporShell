@@ -1,21 +1,27 @@
 function Add-VSIoT1ClickProjectDeviceTemplate {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT1Click::Project.DeviceTemplate resource property to the template. 
+        Adds an AWS::IoT1Click::Project.DeviceTemplate resource property to the template. In AWS CloudFormation, use the DeviceTemplate property type to define the template for an AWS IoT 1-Click project.
 
     .DESCRIPTION
         Adds an AWS::IoT1Click::Project.DeviceTemplate resource property to the template.
+In AWS CloudFormation, use the DeviceTemplate property type to define the template for an AWS IoT 1-Click project.
 
+DeviceTemplate is a property of the AWS::IoT1Click::Project resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot1click-project-devicetemplate.html
 
     .PARAMETER DeviceType
+        The device type, which currently must be "button".
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot1click-project-devicetemplate.html#cfn-iot1click-project-devicetemplate-devicetype
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER CallbackOverrides
+        An optional AWS Lambda function to invoke instead of the default AWS Lambda function provided by the placement template.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot1click-project-devicetemplate.html#cfn-iot1click-project-devicetemplate-callbackoverrides
         PrimitiveType: Json
         UpdateType: Mutable

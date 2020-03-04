@@ -1,10 +1,14 @@
 function New-VSEKSNodegroup {
     <#
     .SYNOPSIS
-        Adds an AWS::EKS::Nodegroup resource to the template. 
+        Adds an AWS::EKS::Nodegroup resource to the template. Creates a managed worker node group for an Amazon EKS cluster. You can only create a node group for your cluster that is equal to the current Kubernetes version for the cluster. All node groups are created with the latest AMI release version for the respective minor Kubernetes version of the cluster.
 
     .DESCRIPTION
-        Adds an AWS::EKS::Nodegroup resource to the template. 
+        Adds an AWS::EKS::Nodegroup resource to the template. Creates a managed worker node group for an Amazon EKS cluster. You can only create a node group for your cluster that is equal to the current Kubernetes version for the cluster. All node groups are created with the latest AMI release version for the respective minor Kubernetes version of the cluster.
+
+An Amazon EKS managed node group is an Amazon EC2 Auto Scaling group and associated Amazon EC2 instances that are managed by AWS for an Amazon EKS cluster. Each node group uses a version of the Amazon EKS-optimized Amazon Linux 2 AMI.
+
+You can only create a managed node group for Amazon EKS clusters that support managed nodes. For more information, see Managed Node Groups: https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html in the *Amazon EKS User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html
@@ -13,73 +17,102 @@ function New-VSEKSNodegroup {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ScalingConfig
+        The scaling configuration details for the Auto Scaling group that is created for your node group.
+
         Type: ScalingConfig
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-scalingconfig
         UpdateType: Mutable
 
     .PARAMETER Labels
+        The Kubernetes labels to be applied to the nodes in the node group when they are created.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-labels
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER ReleaseVersion
+        The AMI version of the Amazon EKS-optimized AMI to use with your node group for example, 1.14.7-YYYYMMDD. By default, the latest available AMI version for the node group's current Kubernetes version is used. For more information, see Amazon EKS-Optimized Linux AMI Versions: https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html in the *Amazon EKS User Guide*.
+Changing this value triggers an update of the node group if one is available. However, only the latest available AMI release version is valid as an input. You cannot roll back to a previous AMI release version.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-releaseversion
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER NodegroupName
+        The unique name to give your node group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-nodegroupname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Subnets
+        The subnets to use for the Auto Scaling group that is created for your node group. These subnets must have the tag key kubernetes.io/cluster/CLUSTER_NAME with a value of shared, where CLUSTER_NAME is replaced with the name of your cluster.
+
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-subnets
         UpdateType: Immutable
 
     .PARAMETER NodeRole
+        The IAM role associated with your node group. The Amazon EKS worker node kubelet daemon makes calls to AWS APIs on your behalf. Worker nodes receive permissions for these API calls through an IAM instance profile and associated policies. Before you can launch worker nodes and register them into a cluster, you must create an IAM role for those worker nodes to use when they are launched. For more information, see Amazon EKS Worker Node IAM Role: https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html in the * *Amazon EKS User Guide* *.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-noderole
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER AmiType
+        The AMI type for your node group. GPU instance types should use the AL2_x86_64_GPU AMI type, which uses the Amazon EKS-optimized Linux AMI with GPU support. Non-GPU instances should use the AL2_x86_64 AMI type, which uses the Amazon EKS-optimized Linux AMI.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-amitype
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ForceUpdateEnabled
+        Force the update if the existing node group's pods are unable to be drained due to a pod disruption budget issue. If an update fails because pods could not be drained, you can force the update after it fails to terminate the old node whether or not any pods are running on the node.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-forceupdateenabled
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER Version
+        The Kubernetes version to use for your managed nodes. By default, the Kubernetes version of the cluster is used, and this is the only accepted specified value.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-version
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RemoteAccess
+        The remote access SSH configuration to use with your node group.
+
         Type: RemoteAccess
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-remoteaccess
         UpdateType: Immutable
 
     .PARAMETER DiskSize
+        The root device disk size in GiB for your node group instances. The default disk size is 20 GiB.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-disksize
         PrimitiveType: Double
         UpdateType: Immutable
 
     .PARAMETER ClusterName
+        The name of the cluster to create the node group in.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-clustername
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER InstanceTypes
+        The instance type to use for your node group. Currently, you can specify a single instance type for a node group. The default value for this parameter is t3.medium. If you choose a GPU instance type, be sure to specify the AL2_x86_64_GPU with the amiType parameter.
+
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-instancetypes
         UpdateType: Immutable
 
     .PARAMETER Tags
+        The metadata to apply to the node group to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Node group tags do not propagate to any other resources associated with the node group, such as the Amazon EC2 instances or subnets.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-tags
         PrimitiveType: Json
         UpdateType: Mutable
@@ -250,6 +283,9 @@ function New-VSEKSNodegroup {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

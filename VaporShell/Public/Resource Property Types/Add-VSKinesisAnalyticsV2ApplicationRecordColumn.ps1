@@ -1,26 +1,34 @@
 function Add-VSKinesisAnalyticsV2ApplicationRecordColumn {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalyticsV2::Application.RecordColumn resource property to the template. 
+        Adds an AWS::KinesisAnalyticsV2::Application.RecordColumn resource property to the template. For an SQL-based Amazon Kinesis Data Analytics application, describes the mapping of each data element in the streaming source to the corresponding column in the in-application stream.
 
     .DESCRIPTION
         Adds an AWS::KinesisAnalyticsV2::Application.RecordColumn resource property to the template.
+For an SQL-based Amazon Kinesis Data Analytics application, describes the mapping of each data element in the streaming source to the corresponding column in the in-application stream.
 
+Also used to describe the format of the reference data source.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-recordcolumn.html
 
     .PARAMETER Mapping
+        A reference to the data element in the streaming input or the reference data source.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-recordcolumn.html#cfn-kinesisanalyticsv2-application-recordcolumn-mapping
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SqlType
+        The type of column created in the in-application input stream or reference table.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-recordcolumn.html#cfn-kinesisanalyticsv2-application-recordcolumn-sqltype
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Name
+        The name of the column that is created in the in-application input stream or reference table.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-recordcolumn.html#cfn-kinesisanalyticsv2-application-recordcolumn-name
         PrimitiveType: String
         UpdateType: Mutable

@@ -1,26 +1,32 @@
 function Add-VSECSTaskDefinitionUlimit {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::TaskDefinition.Ulimit resource property to the template. 
+        Adds an AWS::ECS::TaskDefinition.Ulimit resource property to the template. The Ulimit property specifies the ulimit settings to pass to the container.
 
     .DESCRIPTION
         Adds an AWS::ECS::TaskDefinition.Ulimit resource property to the template.
-
+The Ulimit property specifies the ulimit settings to pass to the container.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-ulimit.html
 
     .PARAMETER HardLimit
+        The hard limit for the ulimit type.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-ulimit.html#cfn-ecs-taskdefinition-containerdefinition-ulimit-hardlimit
         PrimitiveType: Integer
         UpdateType: Immutable
 
     .PARAMETER Name
+        The type of the ulimit.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-ulimit.html#cfn-ecs-taskdefinition-containerdefinition-ulimit-name
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER SoftLimit
+        The soft limit for the ulimit type.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-ulimit.html#cfn-ecs-taskdefinition-containerdefinition-ulimit-softlimit
         PrimitiveType: Integer
         UpdateType: Immutable

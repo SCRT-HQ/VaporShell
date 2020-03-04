@@ -1,10 +1,22 @@
 function New-VSSSMResourceDataSync {
     <#
     .SYNOPSIS
-        Adds an AWS::SSM::ResourceDataSync resource to the template. 
+        Adds an AWS::SSM::ResourceDataSync resource to the template. The AWS::SSM::ResourceDataSync resource creates, updates, or deletes a Resource Data Sync for AWS Systems Manager. A resource data sync helps you view data from multiple sources in a single location. Systems Manager offers two types of resource data sync: SyncToDestination and SyncFromSource.
 
     .DESCRIPTION
-        Adds an AWS::SSM::ResourceDataSync resource to the template. 
+        Adds an AWS::SSM::ResourceDataSync resource to the template. The AWS::SSM::ResourceDataSync resource creates, updates, or deletes a Resource Data Sync for AWS Systems Manager. A resource data sync helps you view data from multiple sources in a single location. Systems Manager offers two types of resource data sync: SyncToDestination and SyncFromSource.
+
+You can configure Systems Manager Inventory to use the SyncToDestination type to synchronize Inventory data from multiple AWS Regions to a single Amazon S3 bucket.
+
+You can configure Systems Manager Explorer to use the SyncFromSource type to synchronize operational work items (OpsItems and operational data (OpsData from multiple AWS Regions. This type can synchronize OpsItems and OpsData from multiple AWS accounts and Regions or from an EntireOrganization by using AWS Organizations.
+
+A resource data sync is an asynchronous operation that returns immediately. After a successful initial sync is completed, the system continuously syncs data.
+
+By default, data is not encrypted in Amazon S3. We strongly recommend that you enable encryption in Amazon S3 to ensure secure data storage. We also recommend that you secure access to the Amazon S3 bucket by creating a restrictive bucket policy.
+
+For more information, see Configuring Inventory Collection: https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-configuring.html#sysman-inventory-datasync and Setting Up Systems Manager Explorer to Display Data from Multiple Accounts and Regions: https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html in the *AWS Systems Manager User Guide*.
+
+Important: The following *Syntax* section shows all fields that are supported for a resource data sync. The *Examples* section below shows the recommended way to specify configurations for each sync type. Please see the *Examples* section when you create your resource data sync.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html
@@ -13,46 +25,64 @@ function New-VSSSMResourceDataSync {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER S3Destination
+        Configuration information for the target Amazon S3 bucket.
+
         Type: S3Destination
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-s3destination
         UpdateType: Immutable
 
     .PARAMETER KMSKeyArn
+        The ARN of an encryption key for a destination in Amazon S3. You can use a KMS key to encrypt inventory data in Amazon S3. You must specify a key that exist in the same region as the destination Amazon S3 bucket.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-kmskeyarn
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER SyncSource
+        Information about the source where the data was synchronized.
+
         Type: SyncSource
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-syncsource
         UpdateType: Mutable
 
     .PARAMETER BucketName
+        The name of the Amazon S3 bucket where the aggregated data is stored.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-bucketname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER BucketRegion
+        The AWS Region with the Amazon S3 bucket targeted by the Resource Data Sync.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-bucketregion
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER SyncFormat
+        A supported sync format. The following format is currently supported: JsonSerDe
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-syncformat
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER SyncName
+        A name for the Resource Data Sync.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-syncname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER SyncType
+        The type of resource data sync. If SyncType is SyncToDestination, then the resource data sync synchronizes data to an Amazon S3 bucket. If the SyncType is SyncFromSource then the resource data sync synchronizes data from AWS Organizations or from multiple AWS Regions.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-synctype
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER BucketPrefix
+        An Amazon S3 prefix for the bucket.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-bucketprefix
         PrimitiveType: String
         UpdateType: Immutable
@@ -186,6 +216,9 @@ function New-VSSSMResourceDataSync {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

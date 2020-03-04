@@ -1,10 +1,10 @@
 function New-VSCodeStarGitHubRepository {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeStar::GitHubRepository resource to the template. 
+        Adds an AWS::CodeStar::GitHubRepository resource to the template. The AWS::CodeStar::GitHubRepository resource creates a GitHub repository where users can store source code for use with AWS workflows. You must provide a location for the source code ZIP file in the AWS CloudFormation template, so the code can be uploaded to the created repository. You must have created a personal access token in GitHub to provide in the AWS CloudFormation template. AWS uses this token to connect to GitHub on your behalf. For more information about using a GitHub source repository with AWS CodeStar projects, see AWS CodeStar Project Files and Resources: https://docs.aws.amazon.com/codestar/latest/userguide/templates.html#templates-whatis.
 
     .DESCRIPTION
-        Adds an AWS::CodeStar::GitHubRepository resource to the template. 
+        Adds an AWS::CodeStar::GitHubRepository resource to the template. The AWS::CodeStar::GitHubRepository resource creates a GitHub repository where users can store source code for use with AWS workflows. You must provide a location for the source code ZIP file in the AWS CloudFormation template, so the code can be uploaded to the created repository. You must have created a personal access token in GitHub to provide in the AWS CloudFormation template. AWS uses this token to connect to GitHub on your behalf. For more information about using a GitHub source repository with AWS CodeStar projects, see AWS CodeStar Project Files and Resources: https://docs.aws.amazon.com/codestar/latest/userguide/templates.html#templates-whatis.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html
@@ -13,36 +13,50 @@ function New-VSCodeStarGitHubRepository {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER EnableIssues
+        Indicates whether to enable issues for the GitHub repository. You can use GitHub issues to track information and bugs for your repository.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html#cfn-codestar-githubrepository-enableissues
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER RepositoryName
+        The name of the repository you want to create in GitHub with AWS CloudFormation stack creation.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html#cfn-codestar-githubrepository-repositoryname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RepositoryAccessToken
+        The GitHub user's personal access token for the GitHub repository.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html#cfn-codestar-githubrepository-repositoryaccesstoken
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RepositoryOwner
+        The GitHub user name for the owner of the GitHub repository to be created. If this repository should be owned by a GitHub organization, provide its name.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html#cfn-codestar-githubrepository-repositoryowner
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER IsPrivate
+        Indicates whether the GitHub repository is a private repository. If so, you choose who can see and commit to this repository.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html#cfn-codestar-githubrepository-isprivate
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER Code
+        Information about code to be committed to a repository after it is created in an AWS CloudFormation stack.
+
         Type: Code
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html#cfn-codestar-githubrepository-code
         UpdateType: Mutable
 
     .PARAMETER RepositoryDescription
+        A comment or description about the new repository. This description is displayed in GitHub after the repository is created.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html#cfn-codestar-githubrepository-repositorydescription
         PrimitiveType: String
         UpdateType: Mutable
@@ -163,6 +177,9 @@ function New-VSCodeStarGitHubRepository {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

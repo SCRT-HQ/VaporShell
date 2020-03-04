@@ -1,31 +1,41 @@
 function Add-VSGreengrassDeviceDefinitionDevice {
     <#
     .SYNOPSIS
-        Adds an AWS::Greengrass::DeviceDefinition.Device resource property to the template. 
+        Adds an AWS::Greengrass::DeviceDefinition.Device resource property to the template. <a name="aws-properties-greengrass-devicedefinition-device-description"></a> A device is an AWS IoT device (thing that's added to a Greengrass group. Greengrass devices can communicate with the Greengrass core in the same group. For more information, see What Is AWS IoT Greengrass?: https://docs.aws.amazon.com/greengrass/latest/developerguide/what-is-gg.html in the *AWS IoT Greengrass Developer Guide*.
 
     .DESCRIPTION
         Adds an AWS::Greengrass::DeviceDefinition.Device resource property to the template.
+<a name="aws-properties-greengrass-devicedefinition-device-description"></a> A device is an AWS IoT device (thing that's added to a Greengrass group. Greengrass devices can communicate with the Greengrass core in the same group. For more information, see What Is AWS IoT Greengrass?: https://docs.aws.amazon.com/greengrass/latest/developerguide/what-is-gg.html in the *AWS IoT Greengrass Developer Guide*.
 
+<a name="aws-properties-greengrass-devicedefinition-device-inheritance"></a> In an AWS CloudFormation template, the Devices property of the  DeviceDefinitionVersion : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-devicedefinition-devicedefinitionversion.html property type contains a list of Device property types.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-devicedefinition-device.html
 
     .PARAMETER SyncShadow
+        Indicates whether the device's local shadow is synced with the cloud automatically.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-devicedefinition-device.html#cfn-greengrass-devicedefinition-device-syncshadow
         PrimitiveType: Boolean
         UpdateType: Immutable
 
     .PARAMETER ThingArn
+        The ARN of the device, which is an AWS IoT device thing.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-devicedefinition-device.html#cfn-greengrass-devicedefinition-device-thingarn
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Id
+        A descriptive or arbitrary ID for the device. This value must be unique within the device definition version. Maximum length is 128 characters with pattern a-zA-Z0-9:_-]+.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-devicedefinition-device.html#cfn-greengrass-devicedefinition-device-id
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER CertificateArn
+        The Amazon Resource Name ARN of the device certificate for the device. This X.509 certificate is used to authenticate the device with AWS IoT and AWS IoT Greengrass services.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-devicedefinition-device.html#cfn-greengrass-devicedefinition-device-certificatearn
         PrimitiveType: String
         UpdateType: Immutable

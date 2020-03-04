@@ -1,10 +1,10 @@
 function New-VSEC2ClientVpnTargetNetworkAssociation {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::ClientVpnTargetNetworkAssociation resource to the template. 
+        Adds an AWS::EC2::ClientVpnTargetNetworkAssociation resource to the template. Specifies a target network to associate with a Client VPN endpoint. A target network is a subnet in a VPC. You can associate multiple subnets from the same VPC with a Client VPN endpoint. You can associate only one subnet in each Availability Zone. We recommend that you associate at least two subnets to provide Availability Zone redundancy.
 
     .DESCRIPTION
-        Adds an AWS::EC2::ClientVpnTargetNetworkAssociation resource to the template. 
+        Adds an AWS::EC2::ClientVpnTargetNetworkAssociation resource to the template. Specifies a target network to associate with a Client VPN endpoint. A target network is a subnet in a VPC. You can associate multiple subnets from the same VPC with a Client VPN endpoint. You can associate only one subnet in each Availability Zone. We recommend that you associate at least two subnets to provide Availability Zone redundancy.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpntargetnetworkassociation.html
@@ -13,11 +13,15 @@ function New-VSEC2ClientVpnTargetNetworkAssociation {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ClientVpnEndpointId
+        The ID of the Client VPN endpoint.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpntargetnetworkassociation.html#cfn-ec2-clientvpntargetnetworkassociation-clientvpnendpointid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER SubnetId
+        The ID of the subnet to associate with the Client VPN endpoint.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpntargetnetworkassociation.html#cfn-ec2-clientvpntargetnetworkassociation-subnetid
         PrimitiveType: String
         UpdateType: Immutable
@@ -92,6 +96,9 @@ function New-VSEC2ClientVpnTargetNetworkAssociation {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

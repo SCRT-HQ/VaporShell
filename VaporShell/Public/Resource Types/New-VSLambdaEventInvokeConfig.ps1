@@ -1,10 +1,12 @@
 function New-VSLambdaEventInvokeConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::Lambda::EventInvokeConfig resource to the template. 
+        Adds an AWS::Lambda::EventInvokeConfig resource to the template. The AWS::Lambda::EventInvokeConfig resource configures options for asynchronous invocation: https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html on a version or an alias.
 
     .DESCRIPTION
-        Adds an AWS::Lambda::EventInvokeConfig resource to the template. 
+        Adds an AWS::Lambda::EventInvokeConfig resource to the template. The AWS::Lambda::EventInvokeConfig resource configures options for asynchronous invocation: https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html on a version or an alias.
+
+By default, Lambda retries an asynchronous invocation twice if the function returns an error. It retains events in a queue for up to six hours. When an event fails all processing attempts or stays in the asynchronous invocation queue for too long, Lambda discards it.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventinvokeconfig.html
@@ -13,26 +15,47 @@ function New-VSLambdaEventInvokeConfig {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER FunctionName
+        The name of the Lambda function.
+*Minimum*: 1
+*Maximum*: 64
+*Pattern*: a-zA-Z0-9-_]+
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventinvokeconfig.html#cfn-lambda-eventinvokeconfig-functionname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER MaximumRetryAttempts
+        The maximum number of times to retry when the function returns an error.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventinvokeconfig.html#cfn-lambda-eventinvokeconfig-maximumretryattempts
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER DestinationConfig
+        A destination for events after they have been sent to a function for processing.
+**Destinations**
++  **Function** - The Amazon Resource Name ARN of a Lambda function.
++  **Queue** - The ARN of an SQS queue.
++  **Topic** - The ARN of an SNS topic.
++  **Event Bus** - The ARN of an Amazon EventBridge event bus.
+
         Type: DestinationConfig
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventinvokeconfig.html#cfn-lambda-eventinvokeconfig-destinationconfig
         UpdateType: Mutable
 
     .PARAMETER Qualifier
+        The identifier of a version or alias.
++ **Version** - A version number.
++ **Alias** - An alias name.
++ **Latest** - To specify the unpublished version, use $LATEST.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventinvokeconfig.html#cfn-lambda-eventinvokeconfig-qualifier
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER MaximumEventAgeInSeconds
+        The maximum age of a request that Lambda sends to a function for processing.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventinvokeconfig.html#cfn-lambda-eventinvokeconfig-maximumeventageinseconds
         PrimitiveType: Integer
         UpdateType: Mutable
@@ -131,6 +154,9 @@ function New-VSLambdaEventInvokeConfig {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

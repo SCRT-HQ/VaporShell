@@ -1,10 +1,12 @@
 function New-VSServiceDiscoveryHttpNamespace {
     <#
     .SYNOPSIS
-        Adds an AWS::ServiceDiscovery::HttpNamespace resource to the template. 
+        Adds an AWS::ServiceDiscovery::HttpNamespace resource to the template. The HttpNamespace resource is a Cloud Map resource type that contains information about an HTTP namespace. Service instances that you register using an HTTP namespace can be discovered using a DiscoverInstances request but can't be discovered using DNS.
 
     .DESCRIPTION
-        Adds an AWS::ServiceDiscovery::HttpNamespace resource to the template. 
+        Adds an AWS::ServiceDiscovery::HttpNamespace resource to the template. The HttpNamespace resource is a Cloud Map resource type that contains information about an HTTP namespace. Service instances that you register using an HTTP namespace can be discovered using a DiscoverInstances request but can't be discovered using DNS.
+
+For the current limit on the number of namespaces that you can create using the same AWS account, see AWS Cloud Map Limits: https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html in the *AWS Cloud Map Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-httpnamespace.html
@@ -13,11 +15,15 @@ function New-VSServiceDiscoveryHttpNamespace {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Description
+        A description for the namespace.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-httpnamespace.html#cfn-servicediscovery-httpnamespace-description
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Name
+        The name that you want to assign to this namespace.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-httpnamespace.html#cfn-servicediscovery-httpnamespace-name
         PrimitiveType: String
         UpdateType: Immutable
@@ -92,6 +98,9 @@ function New-VSServiceDiscoveryHttpNamespace {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

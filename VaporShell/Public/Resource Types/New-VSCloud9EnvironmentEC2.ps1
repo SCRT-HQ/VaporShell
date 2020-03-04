@@ -1,10 +1,10 @@
 function New-VSCloud9EnvironmentEC2 {
     <#
     .SYNOPSIS
-        Adds an AWS::Cloud9::EnvironmentEC2 resource to the template. 
+        Adds an AWS::Cloud9::EnvironmentEC2 resource to the template. The AWS::Cloud9::EnvironmentEC2 resource creates an Amazon EC2 development environment in AWS Cloud9. For more information, see Creating an Environment: https://docs.aws.amazon.com/cloud9/latest/user-guide/create-environment.html in the *AWS Cloud9 User Guide*.
 
     .DESCRIPTION
-        Adds an AWS::Cloud9::EnvironmentEC2 resource to the template. 
+        Adds an AWS::Cloud9::EnvironmentEC2 resource to the template. The AWS::Cloud9::EnvironmentEC2 resource creates an Amazon EC2 development environment in AWS Cloud9. For more information, see Creating an Environment: https://docs.aws.amazon.com/cloud9/latest/user-guide/create-environment.html in the *AWS Cloud9 User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html
@@ -13,43 +13,59 @@ function New-VSCloud9EnvironmentEC2 {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Repositories
+        Any AWS CodeCommit source code repositories to be cloned into the development environment.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-repositories
         ItemType: Repository
         UpdateType: Immutable
 
     .PARAMETER OwnerArn
+        The Amazon Resource Name ARN of the environment owner. This ARN can be the ARN of any AWS Identity and Access Management IAM principal. If this value is not specified, the ARN defaults to this environment's creator.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-ownerarn
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Description
+        The description of the environment to create.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER AutomaticStopTimeMinutes
+        The number of minutes until the running instance is shut down after the environment was last used.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-automaticstoptimeminutes
         PrimitiveType: Integer
         UpdateType: Immutable
 
     .PARAMETER SubnetId
+        The ID of the subnet in Amazon Virtual Private Cloud Amazon VPC that AWS Cloud9 will use to communicate with the Amazon Elastic Compute Cloud Amazon EC2 instance.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-subnetid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER InstanceType
+        The type of instance to connect to the environment for example, t2.micro.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-instancetype
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Tags
+        An array of key-value pairs that will be associated with the new AWS Cloud9 development environment.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-tags
         ItemType: Tag
         UpdateType: Mutable
 
     .PARAMETER Name
+        The name of the environment.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-name
         PrimitiveType: String
         UpdateType: Mutable
@@ -165,16 +181,8 @@ function New-VSCloud9EnvironmentEC2 {
                 }
             })]
         $InstanceType,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -190,6 +198,9 @@ function New-VSCloud9EnvironmentEC2 {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

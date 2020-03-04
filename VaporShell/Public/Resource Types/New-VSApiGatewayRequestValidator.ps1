@@ -1,10 +1,10 @@
 function New-VSApiGatewayRequestValidator {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::RequestValidator resource to the template. 
+        Adds an AWS::ApiGateway::RequestValidator resource to the template. The AWS::ApiGateway::RequestValidator resource sets up basic validation rules for incoming requests to your API. For more information, see Enable Basic Request Validation for an API in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-method-request-validation.html in the *API Gateway Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::RequestValidator resource to the template. 
+        Adds an AWS::ApiGateway::RequestValidator resource to the template. The AWS::ApiGateway::RequestValidator resource sets up basic validation rules for incoming requests to your API. For more information, see Enable Basic Request Validation for an API in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-method-request-validation.html in the *API Gateway Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html
@@ -13,21 +13,29 @@ function New-VSApiGatewayRequestValidator {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Name
+        The name of this request validator.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-name
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER RestApiId
+        The identifier of the targeted API entity.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-restapiid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ValidateRequestBody
+        Indicates whether to validate the request body according to the configured schema for the targeted API and method.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-validaterequestbody
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER ValidateRequestParameters
+        Indicates whether to validate request parameters.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-validaterequestparameters
         PrimitiveType: Boolean
         UpdateType: Mutable
@@ -124,6 +132,9 @@ function New-VSApiGatewayRequestValidator {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

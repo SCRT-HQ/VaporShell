@@ -1,10 +1,10 @@
 function New-VSServiceDiscoveryPublicDnsNamespace {
     <#
     .SYNOPSIS
-        Adds an AWS::ServiceDiscovery::PublicDnsNamespace resource to the template. 
+        Adds an AWS::ServiceDiscovery::PublicDnsNamespace resource to the template. Creates a public namespace based on DNS, which will be visible on the internet. The namespace defines your service naming scheme. For example, if you name your namespace example.com and name your service backend, the resulting DNS name for the service will be backend.example.com. For the current limit on the number of namespaces that you can create using the same AWS account, see AWS Cloud Map Limits: https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html in the *AWS Cloud Map Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::ServiceDiscovery::PublicDnsNamespace resource to the template. 
+        Adds an AWS::ServiceDiscovery::PublicDnsNamespace resource to the template. Creates a public namespace based on DNS, which will be visible on the internet. The namespace defines your service naming scheme. For example, if you name your namespace example.com and name your service backend, the resulting DNS name for the service will be backend.example.com. For the current limit on the number of namespaces that you can create using the same AWS account, see AWS Cloud Map Limits: https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html in the *AWS Cloud Map Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-publicdnsnamespace.html
@@ -13,11 +13,15 @@ function New-VSServiceDiscoveryPublicDnsNamespace {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Description
+        A description for the namespace.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-publicdnsnamespace.html#cfn-servicediscovery-publicdnsnamespace-description
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Name
+        The name that you want to assign to this namespace.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-publicdnsnamespace.html#cfn-servicediscovery-publicdnsnamespace-name
         PrimitiveType: String
         UpdateType: Immutable
@@ -92,6 +96,9 @@ function New-VSServiceDiscoveryPublicDnsNamespace {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

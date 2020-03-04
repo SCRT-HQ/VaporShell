@@ -1,10 +1,10 @@
 function New-VSEC2NetworkAcl {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::NetworkAcl resource to the template. 
+        Adds an AWS::EC2::NetworkAcl resource to the template. Specifies a network ACL for your VPC.
 
     .DESCRIPTION
-        Adds an AWS::EC2::NetworkAcl resource to the template. 
+        Adds an AWS::EC2::NetworkAcl resource to the template. Specifies a network ACL for your VPC.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl.html
@@ -13,6 +13,8 @@ function New-VSEC2NetworkAcl {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Tags
+        An arbitrary set of tags key–value pairs for this ACL.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl.html#cfn-ec2-networkacl-tags
         DuplicatesAllowed: True
         ItemType: Tag
@@ -20,6 +22,8 @@ function New-VSEC2NetworkAcl {
         UpdateType: Mutable
 
     .PARAMETER VpcId
+        The ID of the VPC for the network ACL.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl.html#cfn-ec2-networkacl-vpcid
         PrimitiveType: String
         UpdateType: Immutable
@@ -69,16 +73,8 @@ function New-VSEC2NetworkAcl {
             })]
         [System.String]
         $LogicalId,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
@@ -94,6 +90,9 @@ function New-VSEC2NetworkAcl {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

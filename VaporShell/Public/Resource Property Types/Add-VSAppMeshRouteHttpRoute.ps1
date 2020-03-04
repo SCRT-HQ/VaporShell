@@ -1,26 +1,32 @@
 function Add-VSAppMeshRouteHttpRoute {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::Route.HttpRoute resource property to the template. 
+        Adds an AWS::AppMesh::Route.HttpRoute resource property to the template. An object that represents an HTTP or HTTP/2 route type.
 
     .DESCRIPTION
         Adds an AWS::AppMesh::Route.HttpRoute resource property to the template.
-
+An object that represents an HTTP or HTTP/2 route type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproute.html
 
     .PARAMETER Action
+        An object that represents the action to take if a match is determined.
+
         Type: HttpRouteAction
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproute.html#cfn-appmesh-route-httproute-action
         UpdateType: Mutable
 
     .PARAMETER RetryPolicy
+        An object that represents a retry policy.
+
         Type: HttpRetryPolicy
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproute.html#cfn-appmesh-route-httproute-retrypolicy
         UpdateType: Mutable
 
     .PARAMETER Match
+        An object that represents the criteria for determining a request match.
+
         Type: HttpRouteMatch
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproute.html#cfn-appmesh-route-httproute-match
         UpdateType: Mutable

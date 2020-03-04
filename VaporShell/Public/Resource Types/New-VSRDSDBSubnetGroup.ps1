@@ -1,10 +1,10 @@
 function New-VSRDSDBSubnetGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::RDS::DBSubnetGroup resource to the template. 
+        Adds an AWS::RDS::DBSubnetGroup resource to the template. The AWS::RDS::DBSubnetGroup resource creates a database subnet group. Subnet groups must contain at least two subnets in two different Availability Zones in the same region.
 
     .DESCRIPTION
-        Adds an AWS::RDS::DBSubnetGroup resource to the template. 
+        Adds an AWS::RDS::DBSubnetGroup resource to the template. The AWS::RDS::DBSubnetGroup resource creates a database subnet group. Subnet groups must contain at least two subnets in two different Availability Zones in the same region.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbsubnet-group.html
@@ -13,16 +13,24 @@ function New-VSRDSDBSubnetGroup {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER DBSubnetGroupDescription
+        The description for the DB subnet group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbsubnet-group.html#cfn-rds-dbsubnetgroup-dbsubnetgroupdescription
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DBSubnetGroupName
+        The name for the DB subnet group. This value is stored as a lowercase string.
+Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens. Must not be default.
+Example: mySubnetgroup
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbsubnet-group.html#cfn-rds-dbsubnetgroup-dbsubnetgroupname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER SubnetIds
+        The EC2 Subnet IDs for the DB subnet group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbsubnet-group.html#cfn-rds-dbsubnetgroup-subnetids
         DuplicatesAllowed: False
         PrimitiveItemType: String
@@ -30,6 +38,8 @@ function New-VSRDSDBSubnetGroup {
         UpdateType: Mutable
 
     .PARAMETER Tags
+        Tags to assign to the DB subnet group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbsubnet-group.html#cfn-rds-dbsubnetgroup-tags
         DuplicatesAllowed: True
         ItemType: Tag
@@ -105,20 +115,15 @@ function New-VSRDSDBSubnetGroup {
         $DBSubnetGroupName,
         [parameter(Mandatory = $true)]
         $SubnetIds,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

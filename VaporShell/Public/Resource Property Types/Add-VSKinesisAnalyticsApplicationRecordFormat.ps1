@@ -1,21 +1,25 @@
 function Add-VSKinesisAnalyticsApplicationRecordFormat {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalytics::Application.RecordFormat resource property to the template. 
+        Adds an AWS::KinesisAnalytics::Application.RecordFormat resource property to the template. Describes the record format and relevant mapping information that should be applied to schematize the records on the stream.
 
     .DESCRIPTION
         Adds an AWS::KinesisAnalytics::Application.RecordFormat resource property to the template.
-
+Describes the record format and relevant mapping information that should be applied to schematize the records on the stream.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-recordformat.html
 
     .PARAMETER MappingParameters
+        When configuring application input at the time of creating or updating an application, provides additional mapping information specific to the record format such as JSON, CSV, or record fields delimited by some delimiter on the streaming source.
+
         Type: MappingParameters
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-recordformat.html#cfn-kinesisanalytics-application-recordformat-mappingparameters
         UpdateType: Mutable
 
     .PARAMETER RecordFormatType
+        The type of record format.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-recordformat.html#cfn-kinesisanalytics-application-recordformat-recordformattype
         PrimitiveType: String
         UpdateType: Mutable

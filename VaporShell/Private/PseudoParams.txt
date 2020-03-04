@@ -5,3 +5,5 @@ AWS::NotificationARNs
 AWS::Region
 AWS::StackName
 AWS::Include
+AWS::Partition
+AWS::URLSuffix

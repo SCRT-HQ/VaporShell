@@ -1,10 +1,12 @@
 function New-VSCognitoUserPoolUserToGroupAttachment {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::UserPoolUserToGroupAttachment resource to the template. 
+        Adds an AWS::Cognito::UserPoolUserToGroupAttachment resource to the template. Adds the specified user to the specified group.
 
     .DESCRIPTION
-        Adds an AWS::Cognito::UserPoolUserToGroupAttachment resource to the template. 
+        Adds an AWS::Cognito::UserPoolUserToGroupAttachment resource to the template. Adds the specified user to the specified group.
+
+Calling this action requires developer credentials.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolusertogroupattachment.html
@@ -13,16 +15,22 @@ function New-VSCognitoUserPoolUserToGroupAttachment {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER GroupName
+        The group name.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolusertogroupattachment.html#cfn-cognito-userpoolusertogroupattachment-groupname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER UserPoolId
+        The user pool ID for the user pool.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolusertogroupattachment.html#cfn-cognito-userpoolusertogroupattachment-userpoolid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Username
+        The username for the user.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolusertogroupattachment.html#cfn-cognito-userpoolusertogroupattachment-username
         PrimitiveType: String
         UpdateType: Immutable
@@ -108,6 +116,9 @@ function New-VSCognitoUserPoolUserToGroupAttachment {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

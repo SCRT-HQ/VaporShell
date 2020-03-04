@@ -1,21 +1,26 @@
 function Add-VSKinesisAnalyticsApplicationInputLambdaProcessor {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalytics::Application.InputLambdaProcessor resource property to the template. 
+        Adds an AWS::KinesisAnalytics::Application.InputLambdaProcessor resource property to the template. An object that contains the Amazon Resource Name (ARN of the AWS Lambda: https://docs.aws.amazon.com/lambda/ function that is used to preprocess records in the stream, and the ARN of the IAM role that is used to access the AWS Lambda function.
 
     .DESCRIPTION
         Adds an AWS::KinesisAnalytics::Application.InputLambdaProcessor resource property to the template.
-
+An object that contains the Amazon Resource Name (ARN of the AWS Lambda: https://docs.aws.amazon.com/lambda/ function that is used to preprocess records in the stream, and the ARN of the IAM role that is used to access the AWS Lambda function.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-inputlambdaprocessor.html
 
     .PARAMETER ResourceARN
+        The ARN of the AWS Lambda: https://docs.aws.amazon.com/lambda/ function that operates on records in the stream.
+To specify an earlier version of the Lambda function than the latest, include the Lambda function version in the Lambda function ARN. For more information about Lambda ARNs, see Example ARNs: AWS Lambda: /general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-inputlambdaprocessor.html#cfn-kinesisanalytics-application-inputlambdaprocessor-resourcearn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RoleARN
+        The ARN of the IAM role that is used to access the AWS Lambda function.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-inputlambdaprocessor.html#cfn-kinesisanalytics-application-inputlambdaprocessor-rolearn
         PrimitiveType: String
         UpdateType: Mutable

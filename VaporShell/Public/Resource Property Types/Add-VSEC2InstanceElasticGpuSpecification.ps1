@@ -1,16 +1,20 @@
 function Add-VSEC2InstanceElasticGpuSpecification {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::Instance.ElasticGpuSpecification resource property to the template. 
+        Adds an AWS::EC2::Instance.ElasticGpuSpecification resource property to the template. Specifies the type of Elastic GPU. An Elastic GPU is a GPU resource that you can attach to your Amazon EC2 instance to accelerate the graphics performance of your applications. For more information, see  Amazon EC2 Elastic GPUs: https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html in the *Amazon EC2 User Guide for Windows Instances*.
 
     .DESCRIPTION
         Adds an AWS::EC2::Instance.ElasticGpuSpecification resource property to the template.
+Specifies the type of Elastic GPU. An Elastic GPU is a GPU resource that you can attach to your Amazon EC2 instance to accelerate the graphics performance of your applications. For more information, see  Amazon EC2 Elastic GPUs: https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html in the *Amazon EC2 User Guide for Windows Instances*.
 
+ElasticGpuSpecification is a property of the AWS::EC2::Instance: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-elasticgpuspecification.html
 
     .PARAMETER Type
+        The type of Elastic Graphics accelerator. For more information about the values to specify for Type, see Elastic Graphics Basics: https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html#elastic-graphics-basics, specifically the Elastic Graphics accelerator column, in the *Amazon Elastic Compute Cloud User Guide for Windows Instances*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-elasticgpuspecification.html#cfn-ec2-instance-elasticgpuspecification-type
         PrimitiveType: String
         UpdateType: Mutable

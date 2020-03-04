@@ -1,10 +1,16 @@
 function New-VSRedshiftClusterSecurityGroupIngress {
     <#
     .SYNOPSIS
-        Adds an AWS::Redshift::ClusterSecurityGroupIngress resource to the template. 
+        Adds an AWS::Redshift::ClusterSecurityGroupIngress resource to the template. Adds an inbound (ingress rule to an Amazon Redshift security group. Depending on whether the application accessing your cluster is running on the Internet or an Amazon EC2 instance, you can authorize inbound access to either a Classless Interdomain Routing (CIDR/Internet Protocol (IP range or to an Amazon EC2 security group. You can add as many as 20 ingress rules to an Amazon Redshift security group.
 
     .DESCRIPTION
-        Adds an AWS::Redshift::ClusterSecurityGroupIngress resource to the template. 
+        Adds an AWS::Redshift::ClusterSecurityGroupIngress resource to the template. Adds an inbound (ingress rule to an Amazon Redshift security group. Depending on whether the application accessing your cluster is running on the Internet or an Amazon EC2 instance, you can authorize inbound access to either a Classless Interdomain Routing (CIDR/Internet Protocol (IP range or to an Amazon EC2 security group. You can add as many as 20 ingress rules to an Amazon Redshift security group.
+
+If you authorize access to an Amazon EC2 security group, specify *EC2SecurityGroupName* and *EC2SecurityGroupOwnerId*. The Amazon EC2 security group and Amazon Redshift cluster must be in the same AWS Region.
+
+If you authorize access to a CIDR/IP address range, specify *CIDRIP*. For an overview of CIDR blocks, see the Wikipedia article on Classless Inter-Domain Routing: http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing.
+
+You must also associate the security group with a cluster so that clients running on these IP addresses or the EC2 instance are authorized to connect to the cluster. For information about managing security groups, go to Working with Security Groups: https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html in the *Amazon Redshift Cluster Management Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html
@@ -13,21 +19,31 @@ function New-VSRedshiftClusterSecurityGroupIngress {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER CIDRIP
+        The IP range to be added the Amazon Redshift security group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html#cfn-redshift-clustersecuritygroupingress-cidrip
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ClusterSecurityGroupName
+        The name of the security group to which the ingress rule is added.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html#cfn-redshift-clustersecuritygroupingress-clustersecuritygroupname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER EC2SecurityGroupName
+        The EC2 security group to be added the Amazon Redshift security group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html#cfn-redshift-clustersecuritygroupingress-ec2securitygroupname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER EC2SecurityGroupOwnerId
+        The AWS account number of the owner of the security group specified by the *EC2SecurityGroupName* parameter. The AWS Access Key ID is not an acceptable value.
+Example: 111122223333
+Conditional. If you specify the EC2SecurityGroupName property, you must specify this property.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html#cfn-redshift-clustersecuritygroupingress-ec2securitygroupownerid
         PrimitiveType: String
         UpdateType: Immutable
@@ -124,6 +140,9 @@ function New-VSRedshiftClusterSecurityGroupIngress {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

@@ -1,10 +1,12 @@
 function New-VSEC2RouteTable {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::RouteTable resource to the template. 
+        Adds an AWS::EC2::RouteTable resource to the template. Specifies a route table for a specified VPC. After you create a route table, you can add routes and associate the table with a subnet.
 
     .DESCRIPTION
-        Adds an AWS::EC2::RouteTable resource to the template. 
+        Adds an AWS::EC2::RouteTable resource to the template. Specifies a route table for a specified VPC. After you create a route table, you can add routes and associate the table with a subnet.
+
+For more information, see Route Tables: https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html in the *Amazon Virtual Private Cloud User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route-table.html
@@ -13,6 +15,8 @@ function New-VSEC2RouteTable {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Tags
+        Any tags assigned to the route table.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route-table.html#cfn-ec2-routetable-tags
         DuplicatesAllowed: True
         ItemType: Tag
@@ -20,6 +24,8 @@ function New-VSEC2RouteTable {
         UpdateType: Mutable
 
     .PARAMETER VpcId
+        The ID of the VPC.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route-table.html#cfn-ec2-routetable-vpcid
         PrimitiveType: String
         UpdateType: Immutable
@@ -69,16 +75,8 @@ function New-VSEC2RouteTable {
             })]
         [System.String]
         $LogicalId,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
@@ -94,6 +92,9 @@ function New-VSEC2RouteTable {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

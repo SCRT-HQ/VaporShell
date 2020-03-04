@@ -1,10 +1,10 @@
 function New-VSGlueMLTransform {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::MLTransform resource to the template. 
+        Adds an AWS::Glue::MLTransform resource to the template. The AWS::Glue::MLTransform is an AWS Glue resource type that manages machine learning transforms.
 
     .DESCRIPTION
-        Adds an AWS::Glue::MLTransform resource to the template. 
+        Adds an AWS::Glue::MLTransform resource to the template. The AWS::Glue::MLTransform is an AWS Glue resource type that manages machine learning transforms.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html
@@ -13,46 +13,75 @@ function New-VSGlueMLTransform {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Role
+        The name or Amazon Resource Name ARN of the IAM role with the required permissions. The required permissions include both AWS Glue service role permissions to AWS Glue resources, and Amazon S3 permissions required by the transform.
++ This role needs AWS Glue service role permissions to allow access to resources in AWS Glue. See Attach a Policy to IAM Users That Access AWS Glue: https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html.
++ This role needs permission to your Amazon Simple Storage Service Amazon S3 sources, targets, temporary directory, scripts, and any libraries used by the task run for this transform.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-role
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER MaxRetries
+        The maximum number of times to retry after an MLTaskRun of the machine learning transform fails.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-maxretries
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER WorkerType
+        The type of predefined worker that is allocated when a task of this transform runs. Accepts a value of Standard, G.1X, or G.2X.
++ For the Standard worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.
++ For the G.1X worker type, each worker provides 4 vCPU, 16 GB of memory and a 64GB disk, and 1 executor per worker.
++ For the G.2X worker type, each worker provides 8 vCPU, 32 GB of memory and a 128GB disk, and 1 executor per worker.
+MaxCapacity is a mutually exclusive option with NumberOfWorkers and WorkerType.
++ If either NumberOfWorkers or WorkerType is set, then MaxCapacity cannot be set.
++ If MaxCapacity is set then neither NumberOfWorkers or WorkerType can be set.
++ If WorkerType is set, then NumberOfWorkers is required and vice versa.
++ MaxCapacity and NumberOfWorkers must both be at least 1.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-workertype
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Description
+        A user-defined, long-form description text for the machine learning transform.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Timeout
+        The timeout in minutes of the machine learning transform.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-timeout
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER GlueVersion
+        This value determines which version of AWS Glue this machine learning transform is compatible with. Glue 1.0 is recommended for most customers. If the value is not set, the Glue compatibility defaults to Glue 0.9. For more information, see AWS Glue Versions: https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions in the developer guide.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-glueversion
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER TransformParameters
+        The algorithm-specific parameters that are associated with the machine learning transform.
+
         Type: TransformParameters
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-transformparameters
         UpdateType: Mutable
 
     .PARAMETER InputRecordTables
+        A list of AWS Glue table definitions used by the transform.
+
         Type: InputRecordTables
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-inputrecordtables
         UpdateType: Immutable
 
     .PARAMETER NumberOfWorkers
+        The number of workers of a defined workerType that are allocated when a task of the transform runs.
+If WorkerType is set, then NumberOfWorkers is required and vice versa.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-numberofworkers
         PrimitiveType: Integer
         UpdateType: Mutable
@@ -63,6 +92,14 @@ function New-VSGlueMLTransform {
         UpdateType: Mutable
 
     .PARAMETER MaxCapacity
+        The number of AWS Glue data processing units DPUs that are allocated to task runs for this transform. You can allocate from 2 to 100 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the AWS Glue pricing page: http://aws.amazon.com/glue/pricing/.
+MaxCapacity is a mutually exclusive option with NumberOfWorkers and WorkerType.
++ If either NumberOfWorkers or WorkerType is set, then MaxCapacity cannot be set.
++ If MaxCapacity is set then neither NumberOfWorkers or WorkerType can be set.
++ If WorkerType is set, then NumberOfWorkers is required and vice versa.
++ MaxCapacity and NumberOfWorkers must both be at least 1.
+When the WorkerType field is set to a value other than Standard, the MaxCapacity field is set automatically and becomes read-only.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-maxcapacity
         PrimitiveType: Double
         UpdateType: Mutable
@@ -218,6 +255,9 @@ function New-VSGlueMLTransform {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

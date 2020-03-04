@@ -1,21 +1,25 @@
 function Add-VSPinpointSegmentSetDimension {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::Segment.SetDimension resource property to the template. 
+        Adds an AWS::Pinpoint::Segment.SetDimension resource property to the template. Specifies the dimension type and values for a segment dimension.
 
     .DESCRIPTION
         Adds an AWS::Pinpoint::Segment.SetDimension resource property to the template.
-
+Specifies the dimension type and values for a segment dimension.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-setdimension.html
 
     .PARAMETER DimensionType
+        The type of segment dimension to use. Valid values are: INCLUSIVE, endpoints that match the criteria are included in the segment; and, EXCLUSIVE, endpoints that match the criteria are excluded from the segment.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-setdimension.html#cfn-pinpoint-segment-setdimension-dimensiontype
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Values
+        The criteria values to use for the segment dimension. Depending on the value of the DimensionType property, endpoints are included or excluded from the segment if their values match the criteria values.
+
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-setdimension.html#cfn-pinpoint-segment-setdimension-values

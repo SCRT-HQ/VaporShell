@@ -1,10 +1,10 @@
 function New-VSIoT1ClickProject {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT1Click::Project resource to the template. 
+        Adds an AWS::IoT1Click::Project resource to the template. The AWS::IoT1Click::Project resource creates an empty project with a placement template. A project contains zero or more placements that adhere to the placement template defined in the project. For more information, see CreateProject: https://docs.aws.amazon.com/iot-1-click/latest/projects-apireference/API_CreateProject.html in the *AWS IoT 1-Click Projects API Reference*.
 
     .DESCRIPTION
-        Adds an AWS::IoT1Click::Project resource to the template. 
+        Adds an AWS::IoT1Click::Project resource to the template. The AWS::IoT1Click::Project resource creates an empty project with a placement template. A project contains zero or more placements that adhere to the placement template defined in the project. For more information, see CreateProject: https://docs.aws.amazon.com/iot-1-click/latest/projects-apireference/API_CreateProject.html in the *AWS IoT 1-Click Projects API Reference*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot1click-project.html
@@ -13,16 +13,22 @@ function New-VSIoT1ClickProject {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Description
+        The description of the project.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot1click-project.html#cfn-iot1click-project-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER PlacementTemplate
+        An object describing the project's placement specifications.
+
         Type: PlacementTemplate
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot1click-project.html#cfn-iot1click-project-placementtemplate
         UpdateType: Mutable
 
     .PARAMETER ProjectName
+        The name of the project from which to obtain information.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot1click-project.html#cfn-iot1click-project-projectname
         PrimitiveType: String
         UpdateType: Immutable
@@ -99,6 +105,9 @@ function New-VSIoT1ClickProject {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

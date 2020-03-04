@@ -1,26 +1,34 @@
 function Add-VSMediaLiveChannelInputSpecification {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaLive::Channel.InputSpecification resource property to the template. 
+        Adds an AWS::MediaLive::Channel.InputSpecification resource property to the template. The input specification for this channel. It specifies the key characteristics of the inputs for this channel: the maximum bitrate, the resolution, and the codec.
 
     .DESCRIPTION
         Adds an AWS::MediaLive::Channel.InputSpecification resource property to the template.
+The input specification for this channel. It specifies the key characteristics of the inputs for this channel: the maximum bitrate, the resolution, and the codec.
 
+This entity is at the top level in the channel.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputspecification.html
 
     .PARAMETER Codec
+        The codec to include in the input specification for this channel.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputspecification.html#cfn-medialive-channel-inputspecification-codec
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER MaximumBitrate
+        The maximum input bitrate for any input attached to this channel.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputspecification.html#cfn-medialive-channel-inputspecification-maximumbitrate
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Resolution
+        The resolution for any input attached to this channel.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputspecification.html#cfn-medialive-channel-inputspecification-resolution
         PrimitiveType: String
         UpdateType: Mutable

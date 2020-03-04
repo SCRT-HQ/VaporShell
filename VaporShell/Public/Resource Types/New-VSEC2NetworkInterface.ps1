@@ -1,10 +1,10 @@
 function New-VSEC2NetworkInterface {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::NetworkInterface resource to the template. 
+        Adds an AWS::EC2::NetworkInterface resource to the template. Describes a network interface in an Elastic Compute Cloud (EC2 instance for AWS CloudFormation.
 
     .DESCRIPTION
-        Adds an AWS::EC2::NetworkInterface resource to the template. 
+        Adds an AWS::EC2::NetworkInterface resource to the template. Describes a network interface in an Elastic Compute Cloud (EC2 instance for AWS CloudFormation.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html
@@ -13,11 +13,15 @@ function New-VSEC2NetworkInterface {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Description
+        A description for the network interface.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER GroupSet
+        A list of security group IDs associated with this network interface.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-groupset
         DuplicatesAllowed: False
         PrimitiveItemType: String
@@ -25,26 +29,36 @@ function New-VSEC2NetworkInterface {
         UpdateType: Mutable
 
     .PARAMETER InterfaceType
+        Indicates the type of network interface. To create an Elastic Fabric Adapter EFA, specify efa. For more information, see  Elastic Fabric Adapter: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html in the *Amazon Elastic Compute Cloud User Guide*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-ec2-networkinterface-interfacetype
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Ipv6AddressCount
+        The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically selects the IPv6 addresses from the subnet range. To specify specific IPv6 addresses, use the Ipv6Addresses property and don't specify this property.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-ec2-networkinterface-ipv6addresscount
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER Ipv6Addresses
+        One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet to associate with the network interface. If you're specifying a number of IPv6 addresses, use the Ipv6AddressCount property and don't specify this property.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-ec2-networkinterface-ipv6addresses
         Type: InstanceIpv6Address
         UpdateType: Mutable
 
     .PARAMETER PrivateIpAddress
+        Assigns a single private IP address to the network interface, which is used as the primary private IP address. If you want to specify multiple private IP address, use the PrivateIpAddresses property.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-privateipaddress
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER PrivateIpAddresses
+        Assigns a list of private IP addresses to the network interface. You can specify a primary private IP address by setting the value of the Primary property to true in the PrivateIpAddressSpecification property. If you want EC2 to automatically assign private IP addresses, use the SecondaryPrivateIpAddressCount property and do not specify this property.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-privateipaddresses
         DuplicatesAllowed: False
         ItemType: PrivateIpAddressSpecification
@@ -52,21 +66,30 @@ function New-VSEC2NetworkInterface {
         UpdateType: Conditional
 
     .PARAMETER SecondaryPrivateIpAddressCount
+        The number of secondary private IPv4 addresses to assign to a network interface. When you specify a number of secondary IPv4 addresses, Amazon EC2 selects these IP addresses within the subnet's IPv4 CIDR range. You can't specify this option and specify more than one private IP address using privateIpAddresses.
+The number of IP addresses you can assign to a network interface varies by instance type. For more information, see IP Addresses Per ENI Per Instance Type: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI in the *Amazon Virtual Private Cloud User Guide*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-secondaryprivateipcount
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER SourceDestCheck
+        Indicates whether traffic to or from the instance is validated.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-sourcedestcheck
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER SubnetId
+        The ID of the subnet to associate with the network interface.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-subnetid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Tags
+        An arbitrary set of tags key–value pairs for this network interface.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-tags
         DuplicatesAllowed: True
         ItemType: Tag
@@ -210,20 +233,15 @@ function New-VSEC2NetworkInterface {
                 }
             })]
         $SubnetId,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

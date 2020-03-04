@@ -1,10 +1,10 @@
 function New-VSGlueSecurityConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::SecurityConfiguration resource to the template. 
+        Adds an AWS::Glue::SecurityConfiguration resource to the template. Creates a new security configuration. A security configuration is a set of security properties that can be used by AWS Glue. You can use a security configuration to encrypt data at rest. For information about using security configurations in AWS Glue, see Encrypting Data Written by Crawlers, Jobs, and Development Endpoints: https://docs.aws.amazon.com/glue/latest/dg/encryption-security-configuration.html.
 
     .DESCRIPTION
-        Adds an AWS::Glue::SecurityConfiguration resource to the template. 
+        Adds an AWS::Glue::SecurityConfiguration resource to the template. Creates a new security configuration. A security configuration is a set of security properties that can be used by AWS Glue. You can use a security configuration to encrypt data at rest. For information about using security configurations in AWS Glue, see Encrypting Data Written by Crawlers, Jobs, and Development Endpoints: https://docs.aws.amazon.com/glue/latest/dg/encryption-security-configuration.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-securityconfiguration.html
@@ -13,11 +13,15 @@ function New-VSGlueSecurityConfiguration {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER EncryptionConfiguration
+        The encryption configuration associated with this security configuration.
+
         Type: EncryptionConfiguration
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-securityconfiguration.html#cfn-glue-securityconfiguration-encryptionconfiguration
         UpdateType: Mutable
 
     .PARAMETER Name
+        The name of the security configuration.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-securityconfiguration.html#cfn-glue-securityconfiguration-name
         PrimitiveType: String
         UpdateType: Immutable
@@ -83,6 +87,9 @@ function New-VSGlueSecurityConfiguration {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

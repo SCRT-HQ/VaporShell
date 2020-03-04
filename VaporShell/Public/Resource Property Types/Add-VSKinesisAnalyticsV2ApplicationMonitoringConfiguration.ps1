@@ -1,26 +1,32 @@
 function Add-VSKinesisAnalyticsV2ApplicationMonitoringConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalyticsV2::Application.MonitoringConfiguration resource property to the template. 
+        Adds an AWS::KinesisAnalyticsV2::Application.MonitoringConfiguration resource property to the template. Describes configuration parameters for Amazon CloudWatch logging for a Java-based Kinesis Data Analytics application. For more information about CloudWatch logging, see Monitoring: https://docs.aws.amazon.com/kinesisanalytics/latest/java/monitoring-overview.html.
 
     .DESCRIPTION
         Adds an AWS::KinesisAnalyticsV2::Application.MonitoringConfiguration resource property to the template.
-
+Describes configuration parameters for Amazon CloudWatch logging for a Java-based Kinesis Data Analytics application. For more information about CloudWatch logging, see Monitoring: https://docs.aws.amazon.com/kinesisanalytics/latest/java/monitoring-overview.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-monitoringconfiguration.html
 
     .PARAMETER ConfigurationType
+        Describes whether to use the default CloudWatch logging configuration for an application. You must set this property to CUSTOM in order to set the LogLevel or MetricsLevel parameters.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-monitoringconfiguration.html#cfn-kinesisanalyticsv2-application-monitoringconfiguration-configurationtype
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER MetricsLevel
+        Describes the granularity of the CloudWatch Logs for an application.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-monitoringconfiguration.html#cfn-kinesisanalyticsv2-application-monitoringconfiguration-metricslevel
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER LogLevel
+        Describes the verbosity of the CloudWatch Logs for an application.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-monitoringconfiguration.html#cfn-kinesisanalyticsv2-application-monitoringconfiguration-loglevel
         PrimitiveType: String
         UpdateType: Mutable

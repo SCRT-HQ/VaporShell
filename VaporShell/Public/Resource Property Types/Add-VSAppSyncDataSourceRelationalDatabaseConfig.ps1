@@ -1,21 +1,27 @@
 function Add-VSAppSyncDataSourceRelationalDatabaseConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::AppSync::DataSource.RelationalDatabaseConfig resource property to the template. 
+        Adds an AWS::AppSync::DataSource.RelationalDatabaseConfig resource property to the template. Use the RelationalDatabaseConfig property type to specify RelationalDatabaseConfig for an AWS AppSync data source.
 
     .DESCRIPTION
         Adds an AWS::AppSync::DataSource.RelationalDatabaseConfig resource property to the template.
+Use the RelationalDatabaseConfig property type to specify RelationalDatabaseConfig for an AWS AppSync data source.
 
+RelationalDatabaseConfig is a property of the AWS::AppSync::DataSource: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-relationaldatabaseconfig.html
 
     .PARAMETER RdsHttpEndpointConfig
+        Information about the Amazon RDS resource.
+
         Type: RdsHttpEndpointConfig
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-relationaldatabaseconfig.html#cfn-appsync-datasource-relationaldatabaseconfig-rdshttpendpointconfig
         UpdateType: Mutable
 
     .PARAMETER RelationalDatabaseSourceType
+        The type of relational data source.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-relationaldatabaseconfig.html#cfn-appsync-datasource-relationaldatabaseconfig-relationaldatabasesourcetype
         PrimitiveType: String
         UpdateType: Mutable

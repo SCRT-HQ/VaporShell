@@ -1,10 +1,10 @@
 function New-VSSSMAssociation {
     <#
     .SYNOPSIS
-        Adds an AWS::SSM::Association resource to the template. 
+        Adds an AWS::SSM::Association resource to the template. The AWS::SSM::Association resource associates an SSM document in AWS Systems Manager with managed instances that contain a configuration agent to process the document.
 
     .DESCRIPTION
-        Adds an AWS::SSM::Association resource to the template. 
+        Adds an AWS::SSM::Association resource to the template. The AWS::SSM::Association resource associates an SSM document in AWS Systems Manager with managed instances that contain a configuration agent to process the document.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html
@@ -13,31 +13,44 @@ function New-VSSSMAssociation {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER AssociationName
+        The name of the association.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-associationname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DocumentVersion
+        The version of the SSM document to associate with the target.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-documentversion
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER InstanceId
+        The ID of the instance that the SSM document is associated with. You must specify the InstanceId or Targets property.
+InstanceId has been deprecated. To specify an instance ID for an association, use the Targets parameter. If you use the parameter InstanceId, you cannot use the parameters AssociationName, DocumentVersion, MaxErrors, MaxConcurrency, OutputLocation, or ScheduleExpression. To use these parameters, you must use the Targets parameter.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-instanceid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Name
+        The name of the Systems Manager document.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-name
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER OutputLocation
+        An Amazon S3 bucket where you want to store the output details of the request.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-outputlocation
         Type: InstanceAssociationOutputLocation
         UpdateType: Mutable
 
     .PARAMETER Parameters
+        The parameters for the runtime configuration of the document.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-parameters
         DuplicatesAllowed: False
         ItemType: ParameterValues
@@ -45,11 +58,15 @@ function New-VSSSMAssociation {
         UpdateType: Mutable
 
     .PARAMETER ScheduleExpression
+        A cron expression that specifies a schedule when the association runs.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-scheduleexpression
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Targets
+        The targets for the association. You must specify the InstanceId or Targets property.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-targets
         DuplicatesAllowed: False
         ItemType: Target
@@ -183,6 +200,9 @@ function New-VSSSMAssociation {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

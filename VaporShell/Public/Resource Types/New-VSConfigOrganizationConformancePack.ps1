@@ -1,10 +1,10 @@
 function New-VSConfigOrganizationConformancePack {
     <#
     .SYNOPSIS
-        Adds an AWS::Config::OrganizationConformancePack resource to the template. 
+        Adds an AWS::Config::OrganizationConformancePack resource to the template. OrganizationConformancePack deploys conformance packs across member accounts in an AWS Organization. OrganizationConformancePack enables organization service access for config-multiaccountsetup.amazonaws.com through the EnableAWSServiceAccess action and creates a service linked role in the master account of your organization. The service linked role is created only when the role does not exist in the master account.
 
     .DESCRIPTION
-        Adds an AWS::Config::OrganizationConformancePack resource to the template. 
+        Adds an AWS::Config::OrganizationConformancePack resource to the template. OrganizationConformancePack deploys conformance packs across member accounts in an AWS Organization. OrganizationConformancePack enables organization service access for config-multiaccountsetup.amazonaws.com through the EnableAWSServiceAccess action and creates a service linked role in the master account of your organization. The service linked role is created only when the role does not exist in the master account.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconformancepack.html
@@ -13,37 +13,51 @@ function New-VSConfigOrganizationConformancePack {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER OrganizationConformancePackName
+        The name you assign to an organization conformance pack.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconformancepack.html#cfn-config-organizationconformancepack-organizationconformancepackname
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER TemplateS3Uri
+        Location of file containing the template body. The uri must point to the conformance pack template max size: 300 KB.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconformancepack.html#cfn-config-organizationconformancepack-templates3uri
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER TemplateBody
+        A string containing full conformance pack template body. Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconformancepack.html#cfn-config-organizationconformancepack-templatebody
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER DeliveryS3Bucket
+        Location of an Amazon S3 bucket where AWS Config can deliver evaluation results and conformance pack template that is used to create a pack.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconformancepack.html#cfn-config-organizationconformancepack-deliverys3bucket
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER DeliveryS3KeyPrefix
+        Any folder structure you want to add to an Amazon S3 bucket.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconformancepack.html#cfn-config-organizationconformancepack-deliverys3keyprefix
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER ConformancePackInputParameters
+        A list of ConformancePackInputParameter objects.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconformancepack.html#cfn-config-organizationconformancepack-conformancepackinputparameters
         UpdateType: Mutable
         Type: List
         ItemType: ConformancePackInputParameter
 
     .PARAMETER ExcludedAccounts
+        A comma-separated list of accounts excluded from organization conformance pack.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconformancepack.html#cfn-config-organizationconformancepack-excludedaccounts
         UpdateType: Mutable
         Type: List
@@ -165,6 +179,9 @@ function New-VSConfigOrganizationConformancePack {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

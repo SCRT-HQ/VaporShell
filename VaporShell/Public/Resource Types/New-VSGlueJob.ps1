@@ -1,10 +1,10 @@
 function New-VSGlueJob {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Job resource to the template. 
+        Adds an AWS::Glue::Job resource to the template. The AWS::Glue::Job resource specifies an AWS Glue job in the data catalog. For more information, see Adding Jobs in AWS Glue: https://docs.aws.amazon.com/glue/latest/dg/add-job.html and Job Structure: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-Job in the *AWS Glue Developer Guide.*
 
     .DESCRIPTION
-        Adds an AWS::Glue::Job resource to the template. 
+        Adds an AWS::Glue::Job resource to the template. The AWS::Glue::Job resource specifies an AWS Glue job in the data catalog. For more information, see Adding Jobs in AWS Glue: https://docs.aws.amazon.com/glue/latest/dg/add-job.html and Job Structure: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-Job in the *AWS Glue Developer Guide.*
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html
@@ -13,91 +13,140 @@ function New-VSGlueJob {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Connections
+        The connections used for this job.
+
         Type: ConnectionsList
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-connections
         UpdateType: Mutable
 
     .PARAMETER MaxRetries
+        The maximum number of times to retry this job after a JobRun fails.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-maxretries
         PrimitiveType: Double
         UpdateType: Mutable
 
     .PARAMETER Description
+        A description of the job.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Timeout
+        The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters TIMEOUT status. The default is 2,880 minutes 48 hours.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-timeout
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER AllocatedCapacity
+        The number of capacity units that are allocated to this job.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-allocatedcapacity
         PrimitiveType: Double
         UpdateType: Mutable
 
     .PARAMETER Name
+        The name you assign to this job definition.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-name
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Role
+        The name or Amazon Resource Name ARN of the IAM role associated with this job.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-role
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DefaultArguments
+        The default arguments for this job, specified as name-value pairs.
+You can specify arguments here that your own job-execution script consumes, in addition to arguments that AWS Glue itself consumes.
+For information about how to specify and consume your own job arguments, see Calling AWS Glue APIs in Python: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html in the *AWS Glue Developer Guide*.
+For information about the key-value pairs that AWS Glue consumes to set up your job, see Special Parameters Used by AWS Glue: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html in the *AWS Glue Developer Guide*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-defaultarguments
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER NotificationProperty
+        Specifies configuration properties of a notification.
+
         Type: NotificationProperty
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-notificationproperty
         UpdateType: Mutable
 
     .PARAMETER WorkerType
+        The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.
++ For the Standard worker type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2 executors per worker.
++ For the G.1X worker type, each worker maps to 1 DPU 4 vCPU, 16 GB of memory, 64 GB disk, and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
++ For the G.2X worker type, each worker maps to 2 DPU 8 vCPU, 32 GB of memory, 128 GB disk, and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-workertype
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER LogUri
+        This field is reserved for future use.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-loguri
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Command
+        The code that executes a job.
+
         Type: JobCommand
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-command
         UpdateType: Mutable
 
     .PARAMETER GlueVersion
+        Glue version determines the versions of Apache Spark and Python that AWS Glue supports. The Python version indicates the version supported for jobs of type Spark.
+For more information about the available AWS Glue versions and corresponding Spark and Python versions, see Glue version: https://docs.aws.amazon.com/glue/latest/dg/add-job.html in the developer guide.
+Jobs that are created without specifying a Glue version default to Glue 0.9.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-glueversion
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ExecutionProperty
+        The maximum number of concurrent runs that are allowed for this job.
+
         Type: ExecutionProperty
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-executionproperty
         UpdateType: Mutable
 
     .PARAMETER SecurityConfiguration
+        The name of the SecurityConfiguration structure to be used with this job.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-securityconfiguration
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER NumberOfWorkers
+        The number of workers of a defined workerType that are allocated when a job runs.
+The maximum number of workers you can define are 299 for G.1X, and 149 for G.2X.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-numberofworkers
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER Tags
+        The tags to use with this job.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-tags
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER MaxCapacity
+        The number of AWS Glue data processing units DPUs that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
+Do not set Max Capacity if using WorkerType and NumberOfWorkers.
+The value that can be allocated for MaxCapacity depends on whether you are running a Python shell job or an Apache Spark ETL job:
++ When you specify a Python shell job JobCommand.Name="pythonshell", you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.
++ When you specify an Apache Spark ETL job JobCommand.Name="glueetl", you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-maxcapacity
         PrimitiveType: Double
         UpdateType: Mutable
@@ -312,6 +361,9 @@ function New-VSGlueJob {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

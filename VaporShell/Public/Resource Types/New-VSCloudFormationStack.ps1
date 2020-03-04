@@ -1,10 +1,22 @@
 function New-VSCloudFormationStack {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudFormation::Stack resource to the template. 
+        Adds an AWS::CloudFormation::Stack resource to the template. The AWS::CloudFormation::Stack type nests a stack as a resource in a top-level template.
 
     .DESCRIPTION
-        Adds an AWS::CloudFormation::Stack resource to the template. 
+        Adds an AWS::CloudFormation::Stack resource to the template. The AWS::CloudFormation::Stack type nests a stack as a resource in a top-level template.
+
+You can add output values from a nested stack within the containing template. You use the GetAtt: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html function with the nested stack's logical name and the name of the output value in the nested stack in the format Outputs.NestedStackOutputName.
+
+**Important**
+
+We strongly recommend that updates to nested stacks are run from the parent stack.
+
+When you apply template changes to update a top-level stack, CloudFormation updates the top-level stack and initiates an update to its nested stacks. CloudFormation updates the resources of modified nested stacks, but does not update the resources of unmodified nested stacks. For more information, see CloudFormation Stacks Updates: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html.
+
+**Note**
+
+You must acknowledge IAM capabilities for nested stacks that contain IAM resources. Also, verify that you have cancel update stack permissions, which is required if an update rolls back. For more information about IAM and CloudFormation, see Controlling Access with AWS Identity and Access Management: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html
@@ -13,6 +25,8 @@ function New-VSCloudFormationStack {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER NotificationARNs
+        The Simple Notification Service SNS topic ARNs to publish stack related events. You can find your SNS topic ARNs using the SNS console or your Command Line Interface CLI.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html#cfn-cloudformation-stack-notificationarns
         DuplicatesAllowed: False
         PrimitiveItemType: String
@@ -20,6 +34,11 @@ function New-VSCloudFormationStack {
         UpdateType: Mutable
 
     .PARAMETER Parameters
+        The set value pairs that represent the parameters passed to CloudFormation when this nested stack is created. Each parameter has a name corresponding to a parameter defined in the embedded template and a value representing the value that you want to set for the parameter.
+If you use the Ref function to pass a parameter value to a nested stack, comma-delimited list parameters must be of type String. In other words, you cannot pass values that are of type CommaDelimitedList to nested stacks.
+Conditional. Required if the nested stack requires input parameters.
+Whether an update causes interruptions depends on the resources that are being updated. An update never causes a nested stack to be replaced.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html#cfn-cloudformation-stack-parameters
         DuplicatesAllowed: False
         PrimitiveItemType: String
@@ -27,6 +46,8 @@ function New-VSCloudFormationStack {
         UpdateType: Mutable
 
     .PARAMETER Tags
+        Key-value pairs to associate with this stack. AWS CloudFormation also propagates these tags to the resources created in the stack. A maximum number of 50 tags can be specified.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html#cfn-cloudformation-stack-tags
         DuplicatesAllowed: True
         ItemType: Tag
@@ -34,11 +55,17 @@ function New-VSCloudFormationStack {
         UpdateType: Mutable
 
     .PARAMETER TemplateURL
+        Location of file containing the template body. The URL must point to a template max size: 460,800 bytes that is located in an Amazon S3 bucket. For more information, see Template Anatomy: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html.
+Whether an update causes interruptions depends on the resources that are being updated. An update never causes a nested stack to be replaced.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html#cfn-cloudformation-stack-templateurl
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER TimeoutInMinutes
+        The length of time, in minutes, that CloudFormation waits for the nested stack to reach the CREATE_COMPLETE state. The default is no timeout. When CloudFormation detects that the nested stack has reached the CREATE_COMPLETE state, it marks the nested stack resource as CREATE_COMPLETE in the parent stack and resumes creating the parent stack. If the timeout period expires before the nested stack reaches CREATE_COMPLETE, CloudFormation marks the nested stack as failed and rolls back both the nested stack and parent stack.
+Updates are not supported.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html#cfn-cloudformation-stack-timeoutinminutes
         PrimitiveType: Integer
         UpdateType: Mutable
@@ -93,16 +120,8 @@ function New-VSCloudFormationStack {
         [parameter(Mandatory = $false)]
         [System.Collections.Hashtable]
         $Parameters,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
@@ -129,6 +148,9 @@ function New-VSCloudFormationStack {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

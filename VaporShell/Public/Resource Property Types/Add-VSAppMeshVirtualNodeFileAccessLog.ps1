@@ -1,16 +1,19 @@
 function Add-VSAppMeshVirtualNodeFileAccessLog {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::VirtualNode.FileAccessLog resource property to the template. 
+        Adds an AWS::AppMesh::VirtualNode.FileAccessLog resource property to the template. An object that represents an access log file.
 
     .DESCRIPTION
         Adds an AWS::AppMesh::VirtualNode.FileAccessLog resource property to the template.
-
+An object that represents an access log file.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-fileaccesslog.html
 
     .PARAMETER Path
+        The file path to write access logs to. You can use /dev/stdout to send access logs to standard out and configure your Envoy container to use a log driver, such as awslogs, to export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's file system to write the files to disk.
+The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to bootstrap properly.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-fileaccesslog.html#cfn-appmesh-virtualnode-fileaccesslog-path
         PrimitiveType: String
         UpdateType: Mutable

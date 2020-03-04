@@ -1,21 +1,25 @@
 function Add-VSMSKClusterConfigurationInfo {
     <#
     .SYNOPSIS
-        Adds an AWS::MSK::Cluster.ConfigurationInfo resource property to the template. 
+        Adds an AWS::MSK::Cluster.ConfigurationInfo resource property to the template. Specifies the Amazon MSK configuration to use for the brokers.
 
     .DESCRIPTION
         Adds an AWS::MSK::Cluster.ConfigurationInfo resource property to the template.
-
+Specifies the Amazon MSK configuration to use for the brokers.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-configurationinfo.html
 
     .PARAMETER Revision
+        The revision of the Amazon MSK configuration to use.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-configurationinfo.html#cfn-msk-cluster-configurationinfo-revision
         PrimitiveType: Integer
         UpdateType: Immutable
 
     .PARAMETER Arn
+        The Amazon Resource Name ARN of the MSK configuration to use. For example, arn:aws:kafka:us-east-1:123456789012:configuration/example-configuration-name/abcdabcd-1234-abcd-1234-abcd123e8e8e-1.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-configurationinfo.html#cfn-msk-cluster-configurationinfo-arn
         PrimitiveType: String
         UpdateType: Immutable

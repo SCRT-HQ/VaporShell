@@ -1,10 +1,10 @@
 function New-VSInspectorAssessmentTarget {
     <#
     .SYNOPSIS
-        Adds an AWS::Inspector::AssessmentTarget resource to the template. 
+        Adds an AWS::Inspector::AssessmentTarget resource to the template. The AWS::Inspector::AssessmentTarget resource is used to create Amazon Inspector assessment targets, which specify the Amazon EC2 instances that will be analyzed during an assessment run.
 
     .DESCRIPTION
-        Adds an AWS::Inspector::AssessmentTarget resource to the template. 
+        Adds an AWS::Inspector::AssessmentTarget resource to the template. The AWS::Inspector::AssessmentTarget resource is used to create Amazon Inspector assessment targets, which specify the Amazon EC2 instances that will be analyzed during an assessment run.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-assessmenttarget.html
@@ -13,11 +13,15 @@ function New-VSInspectorAssessmentTarget {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER AssessmentTargetName
+        The name of the Amazon Inspector assessment target. The name must be unique within the AWS account.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-assessmenttarget.html#cfn-inspector-assessmenttarget-assessmenttargetname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ResourceGroupArn
+        The ARN that specifies the resource group that is used to create the assessment target. If resourceGroupArn is not specified, all EC2 instances in the current AWS account and Region are included in the assessment target.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-assessmenttarget.html#cfn-inspector-assessmenttarget-resourcegrouparn
         PrimitiveType: String
         UpdateType: Mutable
@@ -92,6 +96,9 @@ function New-VSInspectorAssessmentTarget {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

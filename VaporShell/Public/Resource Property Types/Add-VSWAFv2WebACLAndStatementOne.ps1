@@ -1,19 +1,22 @@
 function Add-VSWAFv2WebACLAndStatementOne {
     <#
     .SYNOPSIS
-        Adds an AWS::WAFv2::WebACL.AndStatementOne resource property to the template. 
+        Adds an AWS::WAFv2::WebACL.AndStatementOne resource property to the template. Logical AND statement used in statement nesting.
 
     .DESCRIPTION
         Adds an AWS::WAFv2::WebACL.AndStatementOne resource property to the template.
-
+Logical AND statement used in statement nesting.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-andstatementone.html
 
     .PARAMETER Statements
+        Logical AND statements used in statement nesting.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-andstatementone.html#cfn-wafv2-webacl-andstatementone-statements
         UpdateType: Mutable
-        Type: StatementTwos
+        Type: List
+        ItemType: StatementTwo
 
     .FUNCTIONALITY
         Vaporshell
@@ -22,7 +25,16 @@ function Add-VSWAFv2WebACLAndStatementOne {
     [cmdletbinding()]
     Param
     (
-        [parameter(Mandatory = $false)]
+        [parameter(Mandatory = $true)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.WAFv2.WebACL.StatementTwo"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $Statements
     )
     Begin {

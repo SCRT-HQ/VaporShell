@@ -1,31 +1,39 @@
 function Add-VSPinpointCampaignCampaignEmailMessage {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::Campaign.CampaignEmailMessage resource property to the template. 
+        Adds an AWS::Pinpoint::Campaign.CampaignEmailMessage resource property to the template. Specifies the content and "From" address for an email message that's sent to recipients of a campaign.
 
     .DESCRIPTION
         Adds an AWS::Pinpoint::Campaign.CampaignEmailMessage resource property to the template.
-
+Specifies the content and "From" address for an email message that's sent to recipients of a campaign.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignemailmessage.html
 
     .PARAMETER FromAddress
+        The verified email address to send the email from. The default address is the FromAddress specified for the email channel for the application.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignemailmessage.html#cfn-pinpoint-campaign-campaignemailmessage-fromaddress
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER HtmlBody
+        The body of the email, in HTML format, for recipients whose email clients render HTML content.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignemailmessage.html#cfn-pinpoint-campaign-campaignemailmessage-htmlbody
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Title
+        The subject line, or title, of the email.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignemailmessage.html#cfn-pinpoint-campaign-campaignemailmessage-title
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Body
+        The body of the email for recipients whose email clients don't render HTML content.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignemailmessage.html#cfn-pinpoint-campaign-campaignemailmessage-body
         PrimitiveType: String
         UpdateType: Mutable

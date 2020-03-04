@@ -1,31 +1,40 @@
 function Add-VSS3BucketWebsiteConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.WebsiteConfiguration resource property to the template. 
+        Adds an AWS::S3::Bucket.WebsiteConfiguration resource property to the template. Specifies website configuration parameters for an Amazon S3 bucket.
 
     .DESCRIPTION
         Adds an AWS::S3::Bucket.WebsiteConfiguration resource property to the template.
-
+Specifies website configuration parameters for an Amazon S3 bucket.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration.html
 
     .PARAMETER ErrorDocument
+        The name of the error document for the website.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration.html#cfn-s3-websiteconfiguration-errordocument
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER IndexDocument
+        The name of the index document for the website.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration.html#cfn-s3-websiteconfiguration-indexdocument
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RedirectAllRequestsTo
+        The redirect behavior for every request to this bucket's website endpoint.
+If you specify this property, you can't specify any other property.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration.html#cfn-s3-websiteconfiguration-redirectallrequeststo
         Type: RedirectAllRequestsTo
         UpdateType: Mutable
 
     .PARAMETER RoutingRules
+        Rules that define when a redirect is applied and the redirect behavior.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration.html#cfn-s3-websiteconfiguration-routingrules
         DuplicatesAllowed: False
         ItemType: RoutingRule

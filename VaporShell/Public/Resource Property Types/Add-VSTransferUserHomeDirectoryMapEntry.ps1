@@ -1,21 +1,25 @@
 function Add-VSTransferUserHomeDirectoryMapEntry {
     <#
     .SYNOPSIS
-        Adds an AWS::Transfer::User.HomeDirectoryMapEntry resource property to the template. 
+        Adds an AWS::Transfer::User.HomeDirectoryMapEntry resource property to the template. Represents an object that contains entries and targets for HomeDirectoryMappings.
 
     .DESCRIPTION
         Adds an AWS::Transfer::User.HomeDirectoryMapEntry resource property to the template.
-
+Represents an object that contains entries and targets for HomeDirectoryMappings.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-user-homedirectorymapentry.html
 
     .PARAMETER Entry
+        Represents an entry and a target for HomeDirectoryMappings.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-user-homedirectorymapentry.html#cfn-transfer-user-homedirectorymapentry-entry
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Target
+        Represents the map target that is used in a HomeDirectorymapEntry.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-user-homedirectorymapentry.html#cfn-transfer-user-homedirectorymapentry-target
         PrimitiveType: String
         UpdateType: Mutable

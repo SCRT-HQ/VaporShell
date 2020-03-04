@@ -1,10 +1,24 @@
 function New-VSAppConfigEnvironment {
     <#
     .SYNOPSIS
-        Adds an AWS::AppConfig::Environment resource to the template. 
+        Adds an AWS::AppConfig::Environment resource to the template. The AWS::AppConfig::Environment resource creates an environment, which is a logical deployment group of AppConfig targets, such as applications in a Beta or Production environment. You define one or more environments for each AppConfig application. You can also define environments for application subcomponents such as the Web, Mobile and Back-end components for your application. You can configure Amazon CloudWatch alarms for each environment. The system monitors alarms during a configuration deployment. If an alarm is triggered, the system rolls back the configuration.
 
     .DESCRIPTION
-        Adds an AWS::AppConfig::Environment resource to the template. 
+        Adds an AWS::AppConfig::Environment resource to the template. The AWS::AppConfig::Environment resource creates an environment, which is a logical deployment group of AppConfig targets, such as applications in a Beta or Production environment. You define one or more environments for each AppConfig application. You can also define environments for application subcomponents such as the Web, Mobile and Back-end components for your application. You can configure Amazon CloudWatch alarms for each environment. The system monitors alarms during a configuration deployment. If an alarm is triggered, the system rolls back the configuration.
+
+AppConfig requires that you create resources and deploy a configuration in the following order:
+
+1. Create an application
+
+1. Create an environment
+
+1. Create a configuration profile
+
+1. Create a deployment strategy
+
+1. Deploy the configuration
+
+For more information, see AWS AppConfig: https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig.html in the *AWS Systems Manager User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-environment.html
@@ -13,28 +27,38 @@ function New-VSAppConfigEnvironment {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Description
+        A description of the environment.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-environment.html#cfn-appconfig-environment-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Monitors
+        Amazon CloudWatch alarms to monitor during the deployment process.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-environment.html#cfn-appconfig-environment-monitors
         ItemType: Monitors
         UpdateType: Mutable
 
     .PARAMETER ApplicationId
+        The application ID.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-environment.html#cfn-appconfig-environment-applicationid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Tags
+        Metadata to assign to the environment. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-environment.html#cfn-appconfig-environment-tags
         ItemType: Tags
         UpdateType: Mutable
 
     .PARAMETER Name
+        A name for the environment.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-environment.html#cfn-appconfig-environment-name
         PrimitiveType: String
         UpdateType: Mutable
@@ -142,6 +166,9 @@ function New-VSAppConfigEnvironment {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

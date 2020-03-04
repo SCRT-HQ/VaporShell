@@ -1,10 +1,10 @@
 function New-VSGlueClassifier {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Classifier resource to the template. 
+        Adds an AWS::Glue::Classifier resource to the template. The AWS::Glue::Classifier resource creates an AWS Glue classifier that categorizes data sources and specifies schemas. For more information, see Adding Classifiers to a Crawler: https://docs.aws.amazon.com/glue/latest/dg/add-classifier.html and Classifier Structure: https://docs.aws.amazon.com/glue/latest/aws-glue-api-crawler-classifiers.html#aws-glue-api-crawler-classifiers-Classifier in the *AWS Glue Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::Glue::Classifier resource to the template. 
+        Adds an AWS::Glue::Classifier resource to the template. The AWS::Glue::Classifier resource creates an AWS Glue classifier that categorizes data sources and specifies schemas. For more information, see Adding Classifiers to a Crawler: https://docs.aws.amazon.com/glue/latest/dg/add-classifier.html and Classifier Structure: https://docs.aws.amazon.com/glue/latest/aws-glue-api-crawler-classifiers.html#aws-glue-api-crawler-classifiers-Classifier in the *AWS Glue Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-classifier.html
@@ -13,21 +13,29 @@ function New-VSGlueClassifier {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER XMLClassifier
+        A classifier for XML content.
+
         Type: XMLClassifier
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-classifier.html#cfn-glue-classifier-xmlclassifier
         UpdateType: Mutable
 
     .PARAMETER JsonClassifier
+        A classifier for JSON content.
+
         Type: JsonClassifier
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-classifier.html#cfn-glue-classifier-jsonclassifier
         UpdateType: Mutable
 
     .PARAMETER CsvClassifier
+        A classifier for comma-separated values CSV.
+
         Type: CsvClassifier
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-classifier.html#cfn-glue-classifier-csvclassifier
         UpdateType: Mutable
 
     .PARAMETER GrokClassifier
+        A classifier that uses grok.
+
         Type: GrokClassifier
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-classifier.html#cfn-glue-classifier-grokclassifier
         UpdateType: Mutable
@@ -88,6 +96,9 @@ function New-VSGlueClassifier {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

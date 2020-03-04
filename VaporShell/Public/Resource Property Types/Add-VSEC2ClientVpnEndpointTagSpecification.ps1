@@ -1,21 +1,25 @@
 function Add-VSEC2ClientVpnEndpointTagSpecification {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::ClientVpnEndpoint.TagSpecification resource property to the template. 
+        Adds an AWS::EC2::ClientVpnEndpoint.TagSpecification resource property to the template. The tags to apply to a resource when the resource is being created.
 
     .DESCRIPTION
         Adds an AWS::EC2::ClientVpnEndpoint.TagSpecification resource property to the template.
-
+The tags to apply to a resource when the resource is being created.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-tagspecification.html
 
     .PARAMETER ResourceType
+        The type of resource to tag.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-tagspecification.html#cfn-ec2-clientvpnendpoint-tagspecification-resourcetype
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Tags
+        The tags to apply to the resource.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-tagspecification.html#cfn-ec2-clientvpnendpoint-tagspecification-tags
         ItemType: Tag
@@ -39,16 +43,8 @@ function Add-VSEC2ClientVpnEndpointTagSpecification {
                 }
             })]
         $ResourceType,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $true)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags
     )
     Begin {

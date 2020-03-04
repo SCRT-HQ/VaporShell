@@ -1,10 +1,10 @@
 function New-VSCloudWatchAnomalyDetector {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudWatch::AnomalyDetector resource to the template. 
+        Adds an AWS::CloudWatch::AnomalyDetector resource to the template. The AWS::CloudWatch::AnomalyDetector type specifies an anomaly detection band for a certain metric and statistic. The band represents the expected "normal" range for the metric values. Anomaly detection bands can be used for visualization of a metric's expected values, and for alarms.
 
     .DESCRIPTION
-        Adds an AWS::CloudWatch::AnomalyDetector resource to the template. 
+        Adds an AWS::CloudWatch::AnomalyDetector resource to the template. The AWS::CloudWatch::AnomalyDetector type specifies an anomaly detection band for a certain metric and statistic. The band represents the expected "normal" range for the metric values. Anomaly detection bands can be used for visualization of a metric's expected values, and for alarms.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-anomalydetector.html
@@ -13,27 +13,37 @@ function New-VSCloudWatchAnomalyDetector {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER MetricName
+        The name of the metric associated with the anomaly detection band.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-anomalydetector.html#cfn-cloudwatch-anomalydetector-metricname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Stat
+        The statistic of the metric associated with the anomaly detection band.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-anomalydetector.html#cfn-cloudwatch-anomalydetector-stat
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Configuration
+        Specifies details about how the anomaly detection model is to be trained, including time ranges to exclude when training and updating the model. The configuration can also include the time zone to use for the metric.
+
         Type: Configuration
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-anomalydetector.html#cfn-cloudwatch-anomalydetector-configuration
         UpdateType: Mutable
 
     .PARAMETER Dimensions
+        The dimensions of the metric associated with the anomaly detection band.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-anomalydetector.html#cfn-cloudwatch-anomalydetector-dimensions
         ItemType: Dimension
         UpdateType: Immutable
 
     .PARAMETER Namespace
+        The namespace of the metric associated with the anomaly detection band.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-anomalydetector.html#cfn-cloudwatch-anomalydetector-namespace
         PrimitiveType: String
         UpdateType: Immutable
@@ -132,6 +142,9 @@ function New-VSCloudWatchAnomalyDetector {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

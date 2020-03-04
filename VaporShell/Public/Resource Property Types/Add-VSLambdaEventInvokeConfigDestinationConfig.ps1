@@ -1,21 +1,25 @@
 function Add-VSLambdaEventInvokeConfigDestinationConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::Lambda::EventInvokeConfig.DestinationConfig resource property to the template. 
+        Adds an AWS::Lambda::EventInvokeConfig.DestinationConfig resource property to the template. A configuration object that specifies the destination of an event after Lambda processes it.
 
     .DESCRIPTION
         Adds an AWS::Lambda::EventInvokeConfig.DestinationConfig resource property to the template.
-
+A configuration object that specifies the destination of an event after Lambda processes it.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventinvokeconfig-destinationconfig.html
 
     .PARAMETER OnSuccess
+        The destination configuration for successful invocations.
+
         Type: OnSuccess
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventinvokeconfig-destinationconfig.html#cfn-lambda-eventinvokeconfig-destinationconfig-onsuccess
         UpdateType: Mutable
 
     .PARAMETER OnFailure
+        The destination configuration for failed invocations.
+
         Type: OnFailure
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventinvokeconfig-destinationconfig.html#cfn-lambda-eventinvokeconfig-destinationconfig-onfailure
         UpdateType: Mutable

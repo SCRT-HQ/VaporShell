@@ -1,21 +1,29 @@
 function Add-VSEMRClusterConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::Cluster.Configuration resource property to the template. 
+        Adds an AWS::EMR::Cluster.Configuration resource property to the template. **Note**
 
     .DESCRIPTION
         Adds an AWS::EMR::Cluster.Configuration resource property to the template.
+**Note**
 
+Used only with Amazon EMR release 4.0 and later.
+
+Configuration is a subproperty of InstanceFleetConfig or InstanceGroupConfig. Configuration specifies optional configurations for customizing open-source big data applications and environment parameters. A configuration consists of a classification, properties, and optional nested configurations. A classification refers to an application-specific configuration file. Properties are the settings you want to change in that file. For more information, see Configuring Applications: https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html in the *Amazon EMR Release Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-configuration.html
 
     .PARAMETER Classification
+        The classification within a configuration.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-configuration.html#cfn-elasticmapreduce-cluster-configuration-classification
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ConfigurationProperties
+        A list of additional configurations to apply within a configuration object.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-configuration.html#cfn-elasticmapreduce-cluster-configuration-configurationproperties
         DuplicatesAllowed: False
         PrimitiveItemType: String
@@ -23,6 +31,8 @@ function Add-VSEMRClusterConfiguration {
         UpdateType: Mutable
 
     .PARAMETER Configurations
+        A list of additional configurations to apply within a configuration object.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-configuration.html#cfn-elasticmapreduce-cluster-configuration-configurations
         DuplicatesAllowed: False
         ItemType: Configuration

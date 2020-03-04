@@ -1,21 +1,27 @@
 function Add-VSEC2InstanceElasticInferenceAccelerator {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::Instance.ElasticInferenceAccelerator resource property to the template. 
+        Adds an AWS::EC2::Instance.ElasticInferenceAccelerator resource property to the template. Specifies the Elastic Inference Accelerator for the instance.
 
     .DESCRIPTION
         Adds an AWS::EC2::Instance.ElasticInferenceAccelerator resource property to the template.
+Specifies the Elastic Inference Accelerator for the instance.
 
+ElasticInferenceAccelerator is a property of the AWS::EC2::Instance: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-elasticinferenceaccelerator.html
 
     .PARAMETER Count
+        The number of elastic inference accelerators to attach to the instance.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-elasticinferenceaccelerator.html#cfn-ec2-instance-elasticinferenceaccelerator-count
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER Type
+        The type of elastic inference accelerator. The possible values are eia1.medium, eia1.large, and eia1.xlarge.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-elasticinferenceaccelerator.html#cfn-ec2-instance-elasticinferenceaccelerator-type
         PrimitiveType: String
         UpdateType: Mutable

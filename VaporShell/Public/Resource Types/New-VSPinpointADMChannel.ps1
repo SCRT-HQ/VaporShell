@@ -1,10 +1,12 @@
 function New-VSPinpointADMChannel {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::ADMChannel resource to the template. 
+        Adds an AWS::Pinpoint::ADMChannel resource to the template. A *channel* is a type of platform that you can deliver messages to. You can use the ADM channel to send push notifications through the Amazon Device Messaging (ADM service to apps that run on Amazon devices, such as Kindle Fire tablets. Before you can use Amazon Pinpoint to send messages to Amazon devices, you have to enable the ADM channel for an Amazon Pinpoint application.
 
     .DESCRIPTION
-        Adds an AWS::Pinpoint::ADMChannel resource to the template. 
+        Adds an AWS::Pinpoint::ADMChannel resource to the template. A *channel* is a type of platform that you can deliver messages to. You can use the ADM channel to send push notifications through the Amazon Device Messaging (ADM service to apps that run on Amazon devices, such as Kindle Fire tablets. Before you can use Amazon Pinpoint to send messages to Amazon devices, you have to enable the ADM channel for an Amazon Pinpoint application.
+
+The AWS::Pinpoint::ADMChannel resource defines the status and authentication settings of the ADM channel for an application.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-admchannel.html
@@ -13,21 +15,29 @@ function New-VSPinpointADMChannel {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ClientSecret
+        The Client Secret that you received from Amazon to send messages by using ADM.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-admchannel.html#cfn-pinpoint-admchannel-clientsecret
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Enabled
+        Specifies whether to enable the ADM channel for the application.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-admchannel.html#cfn-pinpoint-admchannel-enabled
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER ClientId
+        The Client ID that you received from Amazon to send messages by using ADM.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-admchannel.html#cfn-pinpoint-admchannel-clientid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ApplicationId
+        The unique identifier for the application that the ADM channel applies to.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-admchannel.html#cfn-pinpoint-admchannel-applicationid
         PrimitiveType: String
         UpdateType: Immutable
@@ -124,6 +134,9 @@ function New-VSPinpointADMChannel {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

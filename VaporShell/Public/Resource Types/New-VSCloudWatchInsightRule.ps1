@@ -1,10 +1,10 @@
 function New-VSCloudWatchInsightRule {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudWatch::InsightRule resource to the template. 
+        Adds an AWS::CloudWatch::InsightRule resource to the template. Creates or updates a Contributor Insights rule. Rules evaluate log events in a CloudWatch Logs log group, enabling you to find contributor data for the log events in that log group. For more information, see  Using Contributor Insights to Analyze High-Cardinality Data: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html in the *Amazon CloudWatch User Guide*.
 
     .DESCRIPTION
-        Adds an AWS::CloudWatch::InsightRule resource to the template. 
+        Adds an AWS::CloudWatch::InsightRule resource to the template. Creates or updates a Contributor Insights rule. Rules evaluate log events in a CloudWatch Logs log group, enabling you to find contributor data for the log events in that log group. For more information, see  Using Contributor Insights to Analyze High-Cardinality Data: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html in the *Amazon CloudWatch User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-insightrule.html
@@ -13,16 +13,22 @@ function New-VSCloudWatchInsightRule {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER RuleState
+        The current state of the rule. Valid values are ENABLED and DISABLED.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-insightrule.html#cfn-cloudwatch-insightrule-rulestate
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RuleBody
+        The definition of the rule, as a JSON object. For details about the syntax, see  Contributor Insights Rule Syntax: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights-RuleSyntax.html in the *Amazon CloudWatch User Guide*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-insightrule.html#cfn-cloudwatch-insightrule-rulebody
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RuleName
+        The name of the rule.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-insightrule.html#cfn-cloudwatch-insightrule-rulename
         PrimitiveType: String
         UpdateType: Immutable
@@ -108,6 +114,9 @@ function New-VSCloudWatchInsightRule {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

@@ -1,16 +1,19 @@
 function Add-VSElasticsearchDomainZoneAwarenessConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::Elasticsearch::Domain.ZoneAwarenessConfig resource property to the template. 
+        Adds an AWS::Elasticsearch::Domain.ZoneAwarenessConfig resource property to the template. Specifies zone awareness configuration options. Only use if ZoneAwarenessEnabled is true.
 
     .DESCRIPTION
         Adds an AWS::Elasticsearch::Domain.ZoneAwarenessConfig resource property to the template.
-
+Specifies zone awareness configuration options. Only use if ZoneAwarenessEnabled is true.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-zoneawarenessconfig.html
 
     .PARAMETER AvailabilityZoneCount
+        If you enabled multiple Availability Zones AZs, the number of AZs that you want the domain to use.
+Valid values are 2 and 3. Default is 2.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-zoneawarenessconfig.html#cfn-elasticsearch-domain-zoneawarenessconfig-availabilityzonecount
         PrimitiveType: Integer
         UpdateType: Mutable

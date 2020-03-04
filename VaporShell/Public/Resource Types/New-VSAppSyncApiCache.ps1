@@ -1,10 +1,10 @@
 function New-VSAppSyncApiCache {
     <#
     .SYNOPSIS
-        Adds an AWS::AppSync::ApiCache resource to the template. 
+        Adds an AWS::AppSync::ApiCache resource to the template. Represents the input of a CreateApiCache operation.
 
     .DESCRIPTION
-        Adds an AWS::AppSync::ApiCache resource to the template. 
+        Adds an AWS::AppSync::ApiCache resource to the template. Represents the input of a CreateApiCache operation.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apicache.html
@@ -13,31 +13,53 @@ function New-VSAppSyncApiCache {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Type
+        The cache instance type.
++  **T2_SMALL**: A t2.small instance type.
++  **T2_MEDIUM**: A t2.medium instance type.
++  **R4_LARGE**: A r4.large instance type.
++  **R4_XLARGE**: A r4.xlarge instance type.
++  **R4_2XLARGE**: A r4.2xlarge instance type.
++  **R4_4XLARGE**: A r4.4xlarge instance type.
++  **R4_8XLARGE**: A r4.8xlarge instance type.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apicache.html#cfn-appsync-apicache-type
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER TransitEncryptionEnabled
+        Transit encryption flag when connecting to cache. This setting cannot be updated after creation.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apicache.html#cfn-appsync-apicache-transitencryptionenabled
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER AtRestEncryptionEnabled
+        At rest encryption flag for cache. This setting cannot be updated after creation.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apicache.html#cfn-appsync-apicache-atrestencryptionenabled
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER ApiId
+        The GraphQL API Id.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apicache.html#cfn-appsync-apicache-apiid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ApiCachingBehavior
+        Caching behavior.
++  **FULL_REQUEST_CACHING**: All requests are fully cached.
++  **PER_RESOLVER_CACHING**: Individual resovlers that you specify are cached.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apicache.html#cfn-appsync-apicache-apicachingbehavior
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Ttl
+        TTL in seconds for cache entries.
+Valid values are between 1 and 3600 seconds.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apicache.html#cfn-appsync-apicache-ttl
         PrimitiveType: Double
         UpdateType: Mutable
@@ -156,6 +178,9 @@ function New-VSAppSyncApiCache {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

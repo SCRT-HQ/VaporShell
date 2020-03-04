@@ -1,10 +1,10 @@
 function New-VSEC2SubnetRouteTableAssociation {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::SubnetRouteTableAssociation resource to the template. 
+        Adds an AWS::EC2::SubnetRouteTableAssociation resource to the template. Associates a subnet with a route table. The subnet and route table must be in the same VPC. This association causes traffic originating from the subnet to be routed according to the routes in the route table. A route table can be associated with multiple subnets. If you want to associate a route table with a VPC, see  AWS::EC2::RouteTable: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route-table.html.
 
     .DESCRIPTION
-        Adds an AWS::EC2::SubnetRouteTableAssociation resource to the template. 
+        Adds an AWS::EC2::SubnetRouteTableAssociation resource to the template. Associates a subnet with a route table. The subnet and route table must be in the same VPC. This association causes traffic originating from the subnet to be routed according to the routes in the route table. A route table can be associated with multiple subnets. If you want to associate a route table with a VPC, see  AWS::EC2::RouteTable: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route-table.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-route-table-assoc.html
@@ -13,11 +13,16 @@ function New-VSEC2SubnetRouteTableAssociation {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER RouteTableId
+        The ID of the route table.
+The physical ID changes when the route table ID is changed.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-route-table-assoc.html#cfn-ec2-subnetroutetableassociation-routetableid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SubnetId
+        The ID of the subnet.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-route-table-assoc.html#cfn-ec2-subnetroutetableassociation-subnetid
         PrimitiveType: String
         UpdateType: Immutable
@@ -92,6 +97,9 @@ function New-VSEC2SubnetRouteTableAssociation {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

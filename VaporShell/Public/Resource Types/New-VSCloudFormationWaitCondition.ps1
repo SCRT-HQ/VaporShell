@@ -1,10 +1,24 @@
 function New-VSCloudFormationWaitCondition {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudFormation::WaitCondition resource to the template. 
+        Adds an AWS::CloudFormation::WaitCondition resource to the template. **Important**
 
     .DESCRIPTION
-        Adds an AWS::CloudFormation::WaitCondition resource to the template. 
+        Adds an AWS::CloudFormation::WaitCondition resource to the template. **Important**
+
+For Amazon EC2 and Auto Scaling resources, we recommend that you use a CreationPolicy attribute instead of wait conditions. Add a CreationPolicy attribute to those resources, and use the cfn-signal helper script to signal when an instance creation process has completed successfully.
+
+You can use a wait condition for situations like the following:
+
++ To coordinate stack resource creation with configuration actions that are external to the stack creation
+
++ To track the status of a configuration process
+
+For these situations, we recommend that you associate a CreationPolicy: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-creationpolicy.html attribute with the wait condition so that you don't have to use a wait condition handle. For more information and an example, see Creating Wait Conditions in a Template: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-waitcondition.html. If you use a CreationPolicy with a wait condition, do not specify any of the wait condition's properties.
+
+**Note**
+
+If you use the VPC Endpoints: https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html feature, resources in the VPC that respond to wait conditions must have access to CloudFormation-specific Amazon Simple Storage Service (Amazon S3 buckets. Resources must send wait condition responses to a pre-signed Amazon S3 URL. If they can't send responses to Amazon S3, CloudFormation won't receive a response and the stack operation fails. For more information, see Setting Up VPC Endpoints for AWS CloudFormation: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-vpce-bucketnames.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waitcondition.html
@@ -13,16 +27,26 @@ function New-VSCloudFormationWaitCondition {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Count
+        The number of success signals that CloudFormation must receive before it continues the stack creation process. When the wait condition receives the requisite number of success signals, CloudFormation resumes the creation of the stack. If the wait condition does not receive the specified number of success signals before the Timeout period expires, CloudFormation assumes that the wait condition has failed and rolls the stack back.
+Updates are not supported.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waitcondition.html#cfn-waitcondition-count
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER Handle
+        A reference to the wait condition handle used to signal this wait condition. Use the Ref intrinsic function to specify an AWS::CloudFormation::WaitConditionHandle: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waitconditionhandle.html resource.
+Anytime you add a WaitCondition resource during a stack update, you must associate the wait condition with a new WaitConditionHandle resource. Do not reuse an old wait condition handle that has already been defined in the template. If you reuse a wait condition handle, the wait condition might evaluate old signals from a previous create or update stack command.
+Updates are not supported.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waitcondition.html#cfn-waitcondition-handle
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Timeout
+        The length of time in seconds to wait for the number of signals that the Count property specifies. Timeout is a minimum-bound property, meaning the timeout occurs no sooner than the time you specify, but can occur shortly thereafter. The maximum time that can be specified for this property is 12 hours 43200 seconds.
+Updates are not supported.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waitcondition.html#cfn-waitcondition-timeout
         PrimitiveType: String
         UpdateType: Mutable
@@ -124,6 +148,9 @@ function New-VSCloudFormationWaitCondition {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

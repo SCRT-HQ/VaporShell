@@ -1,10 +1,10 @@
 function New-VSECSTaskDefinition {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::TaskDefinition resource to the template. 
+        Adds an AWS::ECS::TaskDefinition resource to the template. The AWS::ECS::TaskDefinition resource describes the container and volume definitions of an Amazon Elastic Container Service (Amazon ECS task. You can specify which Docker images to use, the required resources, and other configurations related to launching the task definition through an Amazon ECS service or task.
 
     .DESCRIPTION
-        Adds an AWS::ECS::TaskDefinition resource to the template. 
+        Adds an AWS::ECS::TaskDefinition resource to the template. The AWS::ECS::TaskDefinition resource describes the container and volume definitions of an Amazon Elastic Container Service (Amazon ECS task. You can specify which Docker images to use, the required resources, and other configurations related to launching the task definition through an Amazon ECS service or task.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html
@@ -13,6 +13,8 @@ function New-VSECSTaskDefinition {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ContainerDefinitions
+        A list of container definitions in JSON format that describe the different containers that make up your task. For more information about container definition parameters and defaults, see Amazon ECS Task Definitions: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html in the *Amazon Elastic Container Service Developer Guide*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-containerdefinitions
         DuplicatesAllowed: False
         ItemType: ContainerDefinition
@@ -25,16 +27,24 @@ function New-VSECSTaskDefinition {
         UpdateType: Immutable
 
     .PARAMETER ExecutionRoleArn
+        The Amazon Resource Name ARN of the task execution role that containers in this task can assume. All containers in this task are granted the permissions that are specified in this role.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-executionrolearn
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Family
+        The name of a family that this task definition is registered to. Up to 255 letters uppercase and lowercase, numbers, hyphens, and underscores are allowed.
+A family groups multiple versions of a task definition. Amazon ECS gives the first task definition that you registered to a family a revision number of 1. Amazon ECS gives sequential revision numbers to each task definition that you add.
+To use revision numbers when you update a task definition, specify this property. If you don't specify a value, AWS CloudFormation generates a new task definition each time that you update it.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-family
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER InferenceAccelerators
+        The Elastic Inference accelerators to use for the containers in the task.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-inferenceaccelerators
         DuplicatesAllowed: False
         ItemType: InferenceAccelerator
@@ -42,26 +52,50 @@ function New-VSECSTaskDefinition {
         UpdateType: Immutable
 
     .PARAMETER IpcMode
+        The IPC resource namespace to use for the containers in the task. The valid values are host, task, or none. If host is specified, then all containers within the tasks that specified the host IPC mode on the same container instance share the same IPC resources with the host Amazon EC2 instance. If task is specified, all containers within the specified task share the same IPC resources. If none is specified, then IPC resources within the containers of a task are private and not shared with other containers in a task or on the container instance. If no value is specified, then the IPC resource namespace sharing depends on the Docker daemon setting on the container instance. For more information, see IPC settings: https://docs.docker.com/engine/reference/run/#ipc-settings---ipc in the *Docker run reference*.
+If the host IPC mode is used, be aware that there is a heightened risk of undesired IPC namespace expose. For more information, see Docker security: https://docs.docker.com/engine/security/security/.
+If you are setting namespaced kernel parameters using systemControls for the containers in the task, the following will apply to your IPC resource namespace. For more information, see System Controls: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html in the *Amazon Elastic Container Service Developer Guide*.
++ For tasks that use the host IPC mode, IPC namespace related systemControls are not supported.
++ For tasks that use the task IPC mode, IPC namespace related systemControls will apply to all containers within a task.
+This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-ipcmode
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Memory
+        The amount in MiB of memory used by the task.
+If using the EC2 launch type, this field is optional and any value can be used. If a task-level memory value is specified then the container-level memory value is optional.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-memory
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER NetworkMode
+        The Docker networking mode to use for the containers in the task. The valid values are none, bridge, awsvpc, and host. The default Docker network mode is bridge. If you are using the Fargate launch type, the awsvpc network mode is required. If you are using the EC2 launch type, any network mode can be used. If the network mode is set to none, you cannot specify port mappings in your container definitions, and the tasks containers do not have external connectivity. The host and awsvpc network modes offer the highest networking performance for containers because they use the EC2 network stack instead of the virtualized network stack provided by the bridge mode.
+With the host and awsvpc network modes, exposed container ports are mapped directly to the corresponding host port for the host network mode or the attached elastic network interface port for the awsvpc network mode, so you cannot take advantage of dynamic host port mappings.
+If the network mode is awsvpc, the task is allocated an elastic network interface, and you must specify a NetworkConfiguration: https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_NetworkConfiguration.html value when you create a service or run a task with the task definition. For more information, see Task Networking: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html in the *Amazon Elastic Container Service Developer Guide*.
+Currently, only Amazon ECS-optimized AMIs, other Amazon Linux variants with the ecs-init package, or AWS Fargate infrastructure support the awsvpc network mode.
+If the network mode is host, you cannot run multiple instantiations of the same task on a single container instance when port mappings are used.
+Docker for Windows uses different network modes than Docker for Linux. When you register a task definition with Windows containers, you must not specify a network mode. If you use the console to register a task definition with Windows containers, you must choose the <default> network mode object.
+For more information, see Network settings: https://docs.docker.com/engine/reference/run/#network-settings in the *Docker run reference*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-networkmode
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER PidMode
+        The process namespace to use for the containers in the task. The valid values are host or task. If host is specified, then all containers within the tasks that specified the host PID mode on the same container instance share the same process namespace with the host Amazon EC2 instance. If task is specified, all containers within the specified task share the same process namespace. If no value is specified, the default is a private namespace. For more information, see PID settings: https://docs.docker.com/engine/reference/run/#pid-settings---pid in the *Docker run reference*.
+If the host PID mode is used, be aware that there is a heightened risk of undesired process namespace expose. For more information, see Docker security: https://docs.docker.com/engine/security/security/.
+This parameter is not supported for Windows containers or tasks using the Fargate launch type.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-pidmode
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER PlacementConstraints
+        An array of placement constraint objects to use for tasks. This field is not valid if you are using the Fargate launch type for your task.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-placementconstraints
         DuplicatesAllowed: False
         ItemType: TaskDefinitionPlacementConstraint
@@ -69,11 +103,16 @@ function New-VSECSTaskDefinition {
         UpdateType: Immutable
 
     .PARAMETER ProxyConfiguration
+        The ProxyConfiguration property specifies the configuration details for the App Mesh proxy.
+Your Amazon ECS container instances require at least version 1.26.0 of the container agent and at least version 1.26.0-1 of the ecs-init package to enable a proxy configuration. If your container instances are launched from the Amazon ECS-optimized AMI version 20190301 or later, then they contain the required versions of the container agent and ecs-init. For more information, see Amazon ECS-optimized Linux AMI: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html in the *Amazon Elastic Container Service Developer Guide*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-proxyconfiguration
         Type: ProxyConfiguration
         UpdateType: Immutable
 
     .PARAMETER RequiresCompatibilities
+        The launch type the task requires. If no value is specified, it will default to EC2. Valid values include EC2 and FARGATE.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-requirescompatibilities
         DuplicatesAllowed: False
         PrimitiveItemType: String
@@ -81,6 +120,16 @@ function New-VSECSTaskDefinition {
         UpdateType: Immutable
 
     .PARAMETER Tags
+        The metadata that you apply to the task definition to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.
+The following basic restrictions apply to tags:
++ Maximum number of tags per resource - 50
++ For each resource, each tag key must be unique, and each tag key can have only one value.
++ Maximum key length - 128 Unicode characters in UTF-8
++ Maximum value length - 256 Unicode characters in UTF-8
++ If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.
++ Tag keys and values are case-sensitive.
++ Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for AWS use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-tags
         DuplicatesAllowed: True
         ItemType: Tag
@@ -88,11 +137,18 @@ function New-VSECSTaskDefinition {
         UpdateType: Mutable
 
     .PARAMETER TaskRoleArn
+        The short name or full Amazon Resource Name ARN of the AWS Identity and Access Management IAM role that grants containers in the task permission to call AWS APIs on your behalf. For more information, see Amazon ECS Task Role: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_IAM_role.html in the *Amazon Elastic Container Service Developer Guide*.
+IAM roles for tasks on Windows require that the -EnableTaskIAMRole option is set when you launch the Amazon ECS-optimized Windows AMI. Your containers must also run some configuration code in order to take advantage of the feature. For more information, see Windows IAM Roles for Tasks: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html in the *Amazon Elastic Container Service Developer Guide*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-taskrolearn
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Volumes
+        The list of volume definitions for the task.
+If your tasks are using the Fargate launch type, the host and sourcePath parameters are not supported.
+For more information about volume definition parameters and defaults, see Amazon ECS Task Definitions: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html in the *Amazon Elastic Container Service Developer Guide*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-volumes
         DuplicatesAllowed: False
         ItemType: Volume
@@ -258,16 +314,8 @@ function New-VSECSTaskDefinition {
         $ProxyConfiguration,
         [parameter(Mandatory = $false)]
         $RequiresCompatibilities,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -294,6 +342,9 @@ function New-VSECSTaskDefinition {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

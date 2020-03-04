@@ -1,10 +1,16 @@
 function New-VSKinesisAnalyticsApplicationReferenceDataSource {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalytics::ApplicationReferenceDataSource resource to the template. 
+        Adds an AWS::KinesisAnalytics::ApplicationReferenceDataSource resource to the template. Adds a reference data source to an existing application.
 
     .DESCRIPTION
-        Adds an AWS::KinesisAnalytics::ApplicationReferenceDataSource resource to the template. 
+        Adds an AWS::KinesisAnalytics::ApplicationReferenceDataSource resource to the template. Adds a reference data source to an existing application.
+
+Amazon Kinesis Analytics reads reference data (that is, an Amazon S3 object and creates an in-application table within your application. In the request, you provide the source (S3 bucket name and object key name, name of the in-application table to create, and the necessary mapping information that describes how data in Amazon S3 object maps to columns in the resulting in-application table.
+
+For conceptual information, see Configuring Application Input: https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html. For the limits on data sources you can add to your application, see Limits: https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html.
+
+This operation requires permissions to perform the kinesisanalytics:AddApplicationOutput action.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-applicationreferencedatasource.html
@@ -13,11 +19,15 @@ function New-VSKinesisAnalyticsApplicationReferenceDataSource {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ApplicationName
+        Name of an existing application.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-applicationreferencedatasource.html#cfn-kinesisanalytics-applicationreferencedatasource-applicationname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ReferenceDataSource
+        The reference data source can be an object in your Amazon S3 bucket. Amazon Kinesis Analytics reads the object and copies the data into the in-application table that is created. You provide an S3 bucket, object key name, and the resulting in-application table that is created. You must also provide an IAM role with the necessary permissions that Amazon Kinesis Analytics can assume to read the object from your S3 bucket on your behalf.
+
         Type: ReferenceDataSource
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-applicationreferencedatasource.html#cfn-kinesisanalytics-applicationreferencedatasource-referencedatasource
         UpdateType: Mutable
@@ -83,6 +93,9 @@ function New-VSKinesisAnalyticsApplicationReferenceDataSource {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

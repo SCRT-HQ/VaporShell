@@ -1,10 +1,14 @@
 function New-VSCloudWatchAlarm {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudWatch::Alarm resource to the template. 
+        Adds an AWS::CloudWatch::Alarm resource to the template. The AWS::CloudWatch::Alarm type specifies an alarm and associates it with the specified metric or metric math expression.
 
     .DESCRIPTION
-        Adds an AWS::CloudWatch::Alarm resource to the template. 
+        Adds an AWS::CloudWatch::Alarm resource to the template. The AWS::CloudWatch::Alarm type specifies an alarm and associates it with the specified metric or metric math expression.
+
+When this operation creates an alarm, the alarm state is immediately set to INSUFFICIENT_DATA. The alarm is then evaluated and its state is set appropriately. Any actions associated with the new state are then executed.
+
+When you update an existing alarm, its state is left unchanged, but the update completely overwrites the previous configuration of the alarm.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html
@@ -13,11 +17,15 @@ function New-VSCloudWatchAlarm {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ActionsEnabled
+        Indicates whether actions should be executed during any changes to the alarm state. The default is TRUE.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-actionsenabled
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER AlarmActions
+        The list of actions to execute when this alarm transitions into an ALARM state from any other state. Specify each action as an Amazon Resource Name ARN. For more information about creating alarms and the actions that you can specify, see PutMetricAlarm: https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutMetricAlarm.html in the *Amazon CloudWatch API Reference*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-alarmactions
         DuplicatesAllowed: True
         PrimitiveItemType: String
@@ -25,26 +33,38 @@ function New-VSCloudWatchAlarm {
         UpdateType: Mutable
 
     .PARAMETER AlarmDescription
+        The description of the alarm.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-alarmdescription
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER AlarmName
+        The name of the alarm. If you don't specify a name, AWS CloudFormation generates a unique physical ID and uses that ID for the alarm name.
+If you specify a name, you cannot perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you must replace the resource, specify a new name.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-alarmname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ComparisonOperator
+        The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic value is used as the first operand.
+You can specify the following values: GreaterThanThreshold, GreaterThanOrEqualToThreshold, LessThanThreshold, or LessThanOrEqualToThreshold.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-comparisonoperator
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DatapointsToAlarm
+        The number of datapoints that must be breaching to trigger the alarm. This is used only if you are setting an "M out of N" alarm. In that case, this value is the M. For more information, see Evaluating an Alarm: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation in the *Amazon CloudWatch User Guide*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarm-datapointstoalarm
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER Dimensions
+        The dimensions for the metric associated with the alarm. For an alarm based on a math expression, you can't specify Dimensions. Instead, you use Metrics.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-dimension
         DuplicatesAllowed: True
         ItemType: Dimension
@@ -52,21 +72,30 @@ function New-VSCloudWatchAlarm {
         UpdateType: Mutable
 
     .PARAMETER EvaluateLowSampleCountPercentile
+        Used only for alarms based on percentiles. If ignore, the alarm state does not change during periods with too few data points to be statistically significant. If evaluate or this parameter is not used, the alarm is always evaluated and possibly changes state no matter how many data points are available.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-evaluatelowsamplecountpercentile
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER EvaluationPeriods
+        The number of periods over which data is compared to the specified threshold.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-evaluationperiods
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER ExtendedStatistic
+        The percentile statistic for the metric associated with the alarm. Specify a value between p0.0 and p100.
+For an alarm based on a math expression, you can't specify ExtendedStatistic. Instead, you use Metrics.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-extendedstatistic
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER InsufficientDataActions
+        The actions to execute when this alarm transitions to the INSUFFICIENT_DATA state from any other state. Each action is specified as an Amazon Resource Name ARN.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-insufficientdataactions
         DuplicatesAllowed: True
         PrimitiveItemType: String
@@ -74,11 +103,16 @@ function New-VSCloudWatchAlarm {
         UpdateType: Mutable
 
     .PARAMETER MetricName
+        The name of the metric associated with the alarm. This is required for an alarm based on a metric. For an alarm based on a math expression, you use Metrics instead and you can't specify MetricName.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-metricname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Metrics
+        An array that enables you to create an alarm based on the result of a metric math expression. Each item in the array either retrieves a metric or performs a math expression.
+If you specify the Metrics parameter, you cannot specify MetricName, Dimensions, Period, Namespace, Statistic, or ExtendedStatistic.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarm-metrics
         DuplicatesAllowed: False
         ItemType: MetricDataQuery
@@ -86,11 +120,15 @@ function New-VSCloudWatchAlarm {
         UpdateType: Mutable
 
     .PARAMETER Namespace
+        The namespace of the metric associated with the alarm. This is required for an alarm based on a metric. For an alarm based on a math expression, you can't specify Namespace and you use Metrics instead.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-namespace
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER OKActions
+        The actions to execute when this alarm transitions to the OK state from any other state. Each action is specified as an Amazon Resource Name ARN.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-okactions
         DuplicatesAllowed: True
         PrimitiveItemType: String
@@ -98,31 +136,46 @@ function New-VSCloudWatchAlarm {
         UpdateType: Mutable
 
     .PARAMETER Period
+        The period, in seconds, over which the statistic is applied. This is required for an alarm based on a metric. Valid values are 10, 30, 60, and any multiple of 60.
+For an alarm based on a math expression, you can't specify Period, and instead you use the Metrics parameter.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-period
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER Statistic
+        The statistic for the metric associated with the alarm, other than percentile. For percentile statistics, use ExtendedStatistic.
+For an alarm based on a math expression, you can't specify Statistic. Instead, you use Metrics.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-statistic
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Threshold
+        The value to compare with the specified statistic.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-threshold
         PrimitiveType: Double
         UpdateType: Mutable
 
     .PARAMETER ThresholdMetricId
+        In an alarm based on an anomaly detection model, this is the ID of the ANOMALY_DETECTION_BAND function used as the threshold for the alarm.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-dynamic-threshold
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER TreatMissingData
+        Sets how this alarm is to handle missing data points. Valid values are breaching, notBreaching, ignore, and missing. For more information, see  Configuring How CloudWatch Alarms Treat Missing Data: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data in the *Amazon CloudWatch User Guide*.
+If you omit this parameter, the default behavior of missing is used.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-treatmissingdata
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Unit
+        The unit of the metric associated with the alarm. You can specify the following values: Seconds, Microseconds, Milliseconds, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes, Bits, Kilobits, Megabits, Gigabits, Terabits, Percent, Count, Bytes/Second, Kilobytes/Second, Megabytes/Second, Gigabytes/Second, Terabytes/Second, Bits/Second, Kilobits/Second, Megabits/Second, Gigabits/Second, Terabits/Second, Count/Second, or None.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-unit
         PrimitiveType: String
         UpdateType: Mutable
@@ -379,6 +432,9 @@ function New-VSCloudWatchAlarm {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

@@ -1,26 +1,32 @@
 function Add-VSAmazonMQBrokerMaintenanceWindow {
     <#
     .SYNOPSIS
-        Adds an AWS::AmazonMQ::Broker.MaintenanceWindow resource property to the template. 
+        Adds an AWS::AmazonMQ::Broker.MaintenanceWindow resource property to the template. The parameters that determine the WeeklyStartTime to apply pending updates or patches to the broker.
 
     .DESCRIPTION
         Adds an AWS::AmazonMQ::Broker.MaintenanceWindow resource property to the template.
-
+The parameters that determine the WeeklyStartTime to apply pending updates or patches to the broker.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-maintenancewindow.html
 
     .PARAMETER DayOfWeek
+        The day of the week.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-maintenancewindow.html#cfn-amazonmq-broker-maintenancewindow-dayofweek
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER TimeOfDay
+        The time, in 24-hour format.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-maintenancewindow.html#cfn-amazonmq-broker-maintenancewindow-timeofday
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER TimeZone
+        The time zone, UTC by default, in either the Country/City format, or the UTC offset format.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-maintenancewindow.html#cfn-amazonmq-broker-maintenancewindow-timezone
         PrimitiveType: String
         UpdateType: Mutable

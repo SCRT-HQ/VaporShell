@@ -1,10 +1,10 @@
 function New-VSEC2ClientVpnEndpoint {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::ClientVpnEndpoint resource to the template. 
+        Adds an AWS::EC2::ClientVpnEndpoint resource to the template. Specifies a Client VPN endpoint. A Client VPN endpoint is the resource you create and configure to enable and manage client VPN sessions. It is the destination endpoint at which all client VPN sessions are terminated.
 
     .DESCRIPTION
-        Adds an AWS::EC2::ClientVpnEndpoint resource to the template. 
+        Adds an AWS::EC2::ClientVpnEndpoint resource to the template. Specifies a Client VPN endpoint. A Client VPN endpoint is the resource you create and configure to enable and manage client VPN sessions. It is the destination endpoint at which all client VPN sessions are terminated.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html
@@ -13,54 +13,84 @@ function New-VSEC2ClientVpnEndpoint {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ClientCidrBlock
+        The IPv4 address range, in CIDR notation, from which to assign client IP addresses. The address range cannot overlap with the local CIDR of the VPC in which the associated subnet is located, or the routes that you add manually. The address range cannot be changed after the Client VPN endpoint has been created. The CIDR block should be /22 or greater.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-clientcidrblock
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ConnectionLogOptions
+        Information about the client connection logging options.
+If you enable client connection logging, data about client connections is sent to a Cloudwatch Logs log stream. The following information is logged:
++ Client connection requests
++ Client connection results successful and unsuccessful
++ Reasons for unsuccessful client connection requests
++ Client connection termination time
+
         Type: ConnectionLogOptions
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-connectionlogoptions
         UpdateType: Mutable
 
     .PARAMETER SplitTunnel
+        Indicates whether split-tunnel is enabled on the AWS Client VPN endpoint.
+By default, split-tunnel on a VPN endpoint is disabled.
+For information about split-tunnel VPN endpoints, see Split-Tunnel AWS Client VPN Endpoint: https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html in the *AWS Client VPN Administrator Guide*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-splittunnel
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER Description
+        A brief description of the Client VPN endpoint.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER TagSpecifications
+        The tags to apply to the Client VPN endpoint during creation.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-tagspecifications
         ItemType: TagSpecification
         UpdateType: Immutable
 
     .PARAMETER AuthenticationOptions
+        Information about the authentication method to be used to authenticate clients.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-authenticationoptions
         ItemType: ClientAuthenticationRequest
         UpdateType: Immutable
 
     .PARAMETER ServerCertificateArn
+        The ARN of the server certificate. For more information, see the AWS Certificate Manager User Guide: https://docs.aws.amazon.com/acm/latest/userguide/.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-servercertificatearn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DnsServers
+        Information about the DNS servers to be used for DNS resolution. A Client VPN endpoint can have up to two DNS servers. If no DNS server is specified, the DNS address configured on the device is used for the DNS server.
+
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-dnsservers
         UpdateType: Mutable
 
     .PARAMETER TransportProtocol
+        The transport protocol to be used by the VPN session.
+Default value: udp
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-transportprotocol
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER VpnPort
+        The port number to assign to the Client VPN endpoint for TCP and UDP traffic.
+Valid Values: 443 | 1194
+Default Value: 443
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-vpnport
         PrimitiveType: Integer
         UpdateType: Mutable
@@ -205,6 +235,9 @@ function New-VSEC2ClientVpnEndpoint {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

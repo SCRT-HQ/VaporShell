@@ -1,11 +1,11 @@
 function Add-VSGlueSecurityConfigurationS3Encryptions {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::SecurityConfiguration.S3Encryptions resource property to the template. 
+        Adds an AWS::Glue::SecurityConfiguration.S3Encryptions resource property to the template. The S3Encryptions property type specifies the encyption configuration for Amazon Simple Storage Service (Amazon S3 data for a security configuration.
 
     .DESCRIPTION
         Adds an AWS::Glue::SecurityConfiguration.S3Encryptions resource property to the template.
-
+The S3Encryptions property type specifies the encyption configuration for Amazon Simple Storage Service (Amazon S3 data for a security configuration.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-securityconfiguration-s3encryptions.html

@@ -1,10 +1,14 @@
 function New-VSSESConfigurationSetEventDestination {
     <#
     .SYNOPSIS
-        Adds an AWS::SES::ConfigurationSetEventDestination resource to the template. 
+        Adds an AWS::SES::ConfigurationSetEventDestination resource to the template. Specifies a configuration set event destination. An event destination is an AWS service that Amazon SES publishes email sending events to. When you specify an event destination, you provide one, and only one, destination. You can send event data to Amazon CloudWatch or Amazon Kinesis Data Firehose. For information about using configuration sets, see the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html.
 
     .DESCRIPTION
-        Adds an AWS::SES::ConfigurationSetEventDestination resource to the template. 
+        Adds an AWS::SES::ConfigurationSetEventDestination resource to the template. Specifies a configuration set event destination. An event destination is an AWS service that Amazon SES publishes email sending events to. When you specify an event destination, you provide one, and only one, destination. You can send event data to Amazon CloudWatch or Amazon Kinesis Data Firehose. For information about using configuration sets, see the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html.
+
+**Note**
+
+You can't specify Amazon SNS event destinations in CloudFormation templates.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationseteventdestination.html
@@ -13,11 +17,15 @@ function New-VSSESConfigurationSetEventDestination {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ConfigurationSetName
+        The name of the configuration set that contains the event destination that you want to update.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationseteventdestination.html#cfn-ses-configurationseteventdestination-configurationsetname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER EventDestination
+        The event destination object that you want to apply to the specified configuration set.
+
         Type: EventDestination
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationseteventdestination.html#cfn-ses-configurationseteventdestination-eventdestination
         UpdateType: Mutable
@@ -83,6 +91,9 @@ function New-VSSESConfigurationSetEventDestination {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

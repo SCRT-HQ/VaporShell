@@ -1,10 +1,12 @@
 function New-VSPinpointAPNSVoipChannel {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::APNSVoipChannel resource to the template. 
+        Adds an AWS::Pinpoint::APNSVoipChannel resource to the template. A *channel* is a type of platform that you can deliver messages to. You can use the APNs VoIP channel to send VoIP notification messages to the Apple Push Notification service (APNs. Before you can use Amazon Pinpoint to send VoIP notifications to APNs, you have to enable the APNs VoIP channel for an Amazon Pinpoint application.
 
     .DESCRIPTION
-        Adds an AWS::Pinpoint::APNSVoipChannel resource to the template. 
+        Adds an AWS::Pinpoint::APNSVoipChannel resource to the template. A *channel* is a type of platform that you can deliver messages to. You can use the APNs VoIP channel to send VoIP notification messages to the Apple Push Notification service (APNs. Before you can use Amazon Pinpoint to send VoIP notifications to APNs, you have to enable the APNs VoIP channel for an Amazon Pinpoint application.
+
+The AWS::Pinpoint::APNSVoipChannel resource defines the status and authentication settings of the APNs VoIP channel for an application.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipchannel.html
@@ -13,46 +15,64 @@ function New-VSPinpointAPNSVoipChannel {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER BundleId
+        The bundle identifier that's assigned to your iOS app. This identifier is used for APNs tokens.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipchannel.html#cfn-pinpoint-apnsvoipchannel-bundleid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER PrivateKey
+        The private key for the APNs client certificate that you want Amazon Pinpoint to use to communicate with APNs.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipchannel.html#cfn-pinpoint-apnsvoipchannel-privatekey
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Enabled
+        Specifies whether to enable the APNs VoIP channel for the application.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipchannel.html#cfn-pinpoint-apnsvoipchannel-enabled
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER DefaultAuthenticationMethod
+        The default authentication method that you want Amazon Pinpoint to use when authenticating with APNs, key or certificate.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipchannel.html#cfn-pinpoint-apnsvoipchannel-defaultauthenticationmethod
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER TokenKey
+        The key identifier that's assigned to your APNs signing key, if you want Amazon Pinpoint to communicate with APNs by using APNs tokens.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipchannel.html#cfn-pinpoint-apnsvoipchannel-tokenkey
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ApplicationId
+        The unique identifier for the application that the APNs VoIP channel applies to.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipchannel.html#cfn-pinpoint-apnsvoipchannel-applicationid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER TeamId
+        The identifier that's assigned to your Apple developer account team. This identifier is used for APNs tokens.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipchannel.html#cfn-pinpoint-apnsvoipchannel-teamid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Certificate
+        The APNs client certificate that you received from Apple, if you want Amazon Pinpoint to communicate with APNs by using an APNs certificate.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipchannel.html#cfn-pinpoint-apnsvoipchannel-certificate
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER TokenKeyId
+        The key identifier that's assigned to your APNs signing key, if you want Amazon Pinpoint to communicate with APNs by using APNs tokens.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipchannel.html#cfn-pinpoint-apnsvoipchannel-tokenkeyid
         PrimitiveType: String
         UpdateType: Mutable
@@ -204,6 +224,9 @@ function New-VSPinpointAPNSVoipChannel {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

@@ -1,16 +1,18 @@
 function Add-VSIoTEventsDetectorModelLambda {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTEvents::DetectorModel.Lambda resource property to the template. 
+        Adds an AWS::IoTEvents::DetectorModel.Lambda resource property to the template. Calls an AWS Lambda function, passing in information about the detector model instance and the event which triggered the action.
 
     .DESCRIPTION
         Adds an AWS::IoTEvents::DetectorModel.Lambda resource property to the template.
-
+Calls an AWS Lambda function, passing in information about the detector model instance and the event which triggered the action.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-lambda.html
 
     .PARAMETER FunctionArn
+        The ARN of the AWS Lambda function which is executed.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-lambda.html#cfn-iotevents-detectormodel-lambda-functionarn
         PrimitiveType: String
         UpdateType: Mutable

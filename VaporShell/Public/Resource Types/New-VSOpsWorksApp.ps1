@@ -1,10 +1,12 @@
 function New-VSOpsWorksApp {
     <#
     .SYNOPSIS
-        Adds an AWS::OpsWorks::App resource to the template. 
+        Adds an AWS::OpsWorks::App resource to the template. Creates an app for a specified stack. For more information, see Creating Apps: https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html.
 
     .DESCRIPTION
-        Adds an AWS::OpsWorks::App resource to the template. 
+        Adds an AWS::OpsWorks::App resource to the template. Creates an app for a specified stack. For more information, see Creating Apps: https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html.
+
+**Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions: https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html
@@ -13,11 +15,15 @@ function New-VSOpsWorksApp {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER AppSource
+        A Source object that specifies the app repository.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-appsource
         Type: Source
         UpdateType: Mutable
 
     .PARAMETER Attributes
+        One or more user-defined key/value pairs to be added to the stack attributes.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-attributes
         DuplicatesAllowed: False
         PrimitiveItemType: String
@@ -25,6 +31,8 @@ function New-VSOpsWorksApp {
         UpdateType: Mutable
 
     .PARAMETER DataSources
+        The app's data source.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-datasources
         DuplicatesAllowed: False
         ItemType: DataSource
@@ -32,11 +40,15 @@ function New-VSOpsWorksApp {
         UpdateType: Mutable
 
     .PARAMETER Description
+        A description of the app.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Domains
+        The app virtual host settings, with multiple domains separated by commas. For example: 'www.example.com, example.com'
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-domains
         DuplicatesAllowed: True
         PrimitiveItemType: String
@@ -44,11 +56,17 @@ function New-VSOpsWorksApp {
         UpdateType: Mutable
 
     .PARAMETER EnableSsl
+        Whether to enable SSL for the app.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-enablessl
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER Environment
+        An array of EnvironmentVariable objects that specify environment variables to be associated with the app. After you deploy the app, these variables are defined on the associated app server instance. For more information, see  Environment Variables: https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment.
+There is no specific limit on the number of environment variables. However, the size of the associated data structure - which includes the variables' names, values, and protected flag values - cannot exceed 20 KB. This limit should accommodate most if not all use cases. Exceeding it will cause an exception with the message, "Environment: is too large maximum is 20KB."
+If you have specified one or more environment variables, you cannot modify the stack's Chef version.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-environment
         DuplicatesAllowed: True
         ItemType: EnvironmentVariable
@@ -56,26 +74,36 @@ function New-VSOpsWorksApp {
         UpdateType: Mutable
 
     .PARAMETER Name
+        The app name.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-name
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Shortname
+        The app's short name.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-shortname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER SslConfiguration
+        An SslConfiguration object with the SSL configuration.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-sslconfiguration
         Type: SslConfiguration
         UpdateType: Mutable
 
     .PARAMETER StackId
+        The stack ID.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-stackid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Type
+        The app type. Each supported type is associated with a particular layer. For example, PHP applications are associated with a PHP layer. AWS OpsWorks Stacks deploys an application to those instances that are members of the corresponding layer. If your app isn't one of the standard types, or you prefer to implement your own Deploy recipes, specify other.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-type
         PrimitiveType: String
         UpdateType: Mutable
@@ -225,6 +253,9 @@ function New-VSOpsWorksApp {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

@@ -1,16 +1,18 @@
 function Add-VSS3BucketCorsRule {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.CorsRule resource property to the template. 
+        Adds an AWS::S3::Bucket.CorsRule resource property to the template. Specifies a cross-origin access rule for an Amazon S3 bucket.
 
     .DESCRIPTION
         Adds an AWS::S3::Bucket.CorsRule resource property to the template.
-
+Specifies a cross-origin access rule for an Amazon S3 bucket.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-cors-corsrule.html
 
     .PARAMETER AllowedHeaders
+        Headers that are specified in the Access-Control-Request-Headers header. These headers are allowed in a preflight OPTIONS request. In response to any preflight OPTIONS request, Amazon S3 returns any requested headers that are allowed.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-cors-corsrule.html#cfn-s3-bucket-cors-corsrule-allowedheaders
         DuplicatesAllowed: False
         PrimitiveItemType: String
@@ -18,6 +20,8 @@ function Add-VSS3BucketCorsRule {
         UpdateType: Mutable
 
     .PARAMETER AllowedMethods
+        An HTTP method that you allow the origin to execute. Valid values are GET, PUT, HEAD, POST, and DELETE.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-cors-corsrule.html#cfn-s3-bucket-cors-corsrule-allowedmethods
         DuplicatesAllowed: False
         PrimitiveItemType: String
@@ -25,6 +29,8 @@ function Add-VSS3BucketCorsRule {
         UpdateType: Mutable
 
     .PARAMETER AllowedOrigins
+        One or more origins you want customers to be able to access the bucket from.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-cors-corsrule.html#cfn-s3-bucket-cors-corsrule-allowedorigins
         DuplicatesAllowed: False
         PrimitiveItemType: String
@@ -32,6 +38,8 @@ function Add-VSS3BucketCorsRule {
         UpdateType: Mutable
 
     .PARAMETER ExposedHeaders
+        One or more headers in the response that you want customers to be able to access from their applications for example, from a JavaScript XMLHttpRequest object.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-cors-corsrule.html#cfn-s3-bucket-cors-corsrule-exposedheaders
         DuplicatesAllowed: False
         PrimitiveItemType: String
@@ -39,11 +47,15 @@ function Add-VSS3BucketCorsRule {
         UpdateType: Mutable
 
     .PARAMETER Id
+        A unique identifier for this rule. The value must be no more than 255 characters.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-cors-corsrule.html#cfn-s3-bucket-cors-corsrule-id
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER MaxAge
+        The time in seconds that your browser is to cache the preflight response for the specified resource.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-cors-corsrule.html#cfn-s3-bucket-cors-corsrule-maxage
         PrimitiveType: Integer
         UpdateType: Mutable

@@ -1,21 +1,34 @@
 function Add-VSGreengrassResourceDefinitionS3MachineLearningModelResourceData {
     <#
     .SYNOPSIS
-        Adds an AWS::Greengrass::ResourceDefinition.S3MachineLearningModelResourceData resource property to the template. 
+        Adds an AWS::Greengrass::ResourceDefinition.S3MachineLearningModelResourceData resource property to the template. <a name="aws-properties-greengrass-resourcedefinition-s3machinelearningmodelresourcedata-description"></a>Settings for an Amazon S3 machine learning resource. For more information, see Perform Machine Learning Inference: https://docs.aws.amazon.com/greengrass/latest/developerguide/ml-inference.html in the *AWS IoT Greengrass Developer Guide*.
 
     .DESCRIPTION
         Adds an AWS::Greengrass::ResourceDefinition.S3MachineLearningModelResourceData resource property to the template.
+<a name="aws-properties-greengrass-resourcedefinition-s3machinelearningmodelresourcedata-description"></a>Settings for an Amazon S3 machine learning resource. For more information, see Perform Machine Learning Inference: https://docs.aws.amazon.com/greengrass/latest/developerguide/ml-inference.html in the *AWS IoT Greengrass Developer Guide*.
 
+<a name="aws-properties-greengrass-resourcedefinition-s3machinelearningmodelresourcedata-inheritance"></a> In an AWS CloudFormation template, S3MachineLearningModelResourceData can be used in the https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedatacontainer.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedatacontainer.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-s3machinelearningmodelresourcedata.html
 
+    .PARAMETER OwnerSetting
+        +  AWS IoT Greengrass Developer Guide: https://docs.aws.amazon.com/greengrass/latest/developerguide/
+
+        Type: ResourceDownloadOwnerSetting
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-s3machinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinition-s3machinelearningmodelresourcedata-ownersetting
+        UpdateType: Immutable
+
     .PARAMETER DestinationPath
+        The absolute local path of the resource inside the Lambda environment.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-s3machinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinition-s3machinelearningmodelresourcedata-destinationpath
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER S3Uri
+        The URI of the source model in an Amazon S3 bucket. The model package must be in tar.gz or .zip format.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-s3machinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinition-s3machinelearningmodelresourcedata-s3uri
         PrimitiveType: String
         UpdateType: Immutable
@@ -27,6 +40,8 @@ function Add-VSGreengrassResourceDefinitionS3MachineLearningModelResourceData {
     [cmdletbinding()]
     Param
     (
+        [parameter(Mandatory = $false)]
+        $OwnerSetting,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"

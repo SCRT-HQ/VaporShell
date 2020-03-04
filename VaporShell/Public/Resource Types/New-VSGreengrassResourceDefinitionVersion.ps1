@@ -1,10 +1,16 @@
 function New-VSGreengrassResourceDefinitionVersion {
     <#
     .SYNOPSIS
-        Adds an AWS::Greengrass::ResourceDefinitionVersion resource to the template. 
+        Adds an AWS::Greengrass::ResourceDefinitionVersion resource to the template. The AWS::Greengrass::ResourceDefinitionVersion resource represents a resource definition version for AWS IoT Greengrass. A resource definition version contains a list of resources. (In AWS CloudFormation, resources are named *resource instances*.
 
     .DESCRIPTION
-        Adds an AWS::Greengrass::ResourceDefinitionVersion resource to the template. 
+        Adds an AWS::Greengrass::ResourceDefinitionVersion resource to the template. The AWS::Greengrass::ResourceDefinitionVersion resource represents a resource definition version for AWS IoT Greengrass. A resource definition version contains a list of resources. (In AWS CloudFormation, resources are named *resource instances*.
+
+**Note**
+
+To create a resource definition version, you must specify the ID of the resource definition that you want to associate with the version. For information about creating a resource definition, see https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-resourcedefinition.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-resourcedefinition.html.
+
+After you create a resource definition version that contains the resources you want to deploy, you must add it to your group version. For more information, see https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-resourcedefinitionversion.html
@@ -13,12 +19,16 @@ function New-VSGreengrassResourceDefinitionVersion {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Resources
+        The resources in this version.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-resourcedefinitionversion.html#cfn-greengrass-resourcedefinitionversion-resources
         ItemType: ResourceInstance
         UpdateType: Immutable
 
     .PARAMETER ResourceDefinitionId
+        The ID of the resource definition associated with this version. This value is a GUID.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-resourcedefinitionversion.html#cfn-greengrass-resourcedefinitionversion-resourcedefinitionid
         PrimitiveType: String
         UpdateType: Immutable
@@ -93,6 +103,9 @@ function New-VSGreengrassResourceDefinitionVersion {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

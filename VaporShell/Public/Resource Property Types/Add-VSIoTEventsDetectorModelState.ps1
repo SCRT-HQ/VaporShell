@@ -1,31 +1,39 @@
 function Add-VSIoTEventsDetectorModelState {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTEvents::DetectorModel.State resource property to the template. 
+        Adds an AWS::IoTEvents::DetectorModel.State resource property to the template. Information that defines a state of a detector.
 
     .DESCRIPTION
         Adds an AWS::IoTEvents::DetectorModel.State resource property to the template.
-
+Information that defines a state of a detector.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-state.html
 
     .PARAMETER OnInput
+        When an input is received and the condition is TRUE, perform the specified actions.
+
         Type: OnInput
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-state.html#cfn-iotevents-detectormodel-state-oninput
         UpdateType: Mutable
 
     .PARAMETER OnExit
+        When exiting this state, perform these actions if the specified condition is TRUE.
+
         Type: OnExit
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-state.html#cfn-iotevents-detectormodel-state-onexit
         UpdateType: Mutable
 
     .PARAMETER StateName
+        The name of the state.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-state.html#cfn-iotevents-detectormodel-state-statename
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER OnEnter
+        When entering this state, perform these actions if the condition is TRUE.
+
         Type: OnEnter
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-state.html#cfn-iotevents-detectormodel-state-onenter
         UpdateType: Mutable

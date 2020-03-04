@@ -1,21 +1,25 @@
 function Add-VSEFSFileSystemElasticFileSystemTag {
     <#
     .SYNOPSIS
-        Adds an AWS::EFS::FileSystem.ElasticFileSystemTag resource property to the template. 
+        Adds an AWS::EFS::FileSystem.ElasticFileSystemTag resource property to the template. A tag is a key-value pair attached to a file system. Allowed characters in the Key and Value properties are letters, white space, and numbers that can be represented in UTF-8, and the following characters: + - = . _ : /
 
     .DESCRIPTION
         Adds an AWS::EFS::FileSystem.ElasticFileSystemTag resource property to the template.
-
+A tag is a key-value pair attached to a file system. Allowed characters in the Key and Value properties are letters, white space, and numbers that can be represented in UTF-8, and the following characters: + - = . _ : /
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-filesystem-filesystemtags.html
 
     .PARAMETER Key
+        The tag key String. The key can't start with aws:.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-filesystem-filesystemtags.html#cfn-efs-filesystem-filesystemtags-key
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Value
+        The value of the tag key.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-filesystem-filesystemtags.html#cfn-efs-filesystem-filesystemtags-value
         PrimitiveType: String
         UpdateType: Mutable

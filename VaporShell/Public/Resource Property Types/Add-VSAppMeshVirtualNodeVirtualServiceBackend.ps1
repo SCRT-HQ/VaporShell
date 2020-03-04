@@ -1,16 +1,25 @@
 function Add-VSAppMeshVirtualNodeVirtualServiceBackend {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::VirtualNode.VirtualServiceBackend resource property to the template. 
+        Adds an AWS::AppMesh::VirtualNode.VirtualServiceBackend resource property to the template. An object that represents a virtual service backend for a virtual node.
 
     .DESCRIPTION
         Adds an AWS::AppMesh::VirtualNode.VirtualServiceBackend resource property to the template.
-
+An object that represents a virtual service backend for a virtual node.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualservicebackend.html
 
+    .PARAMETER ClientPolicy
+        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
+        Type: ClientPolicy
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualservicebackend.html#cfn-appmesh-virtualnode-virtualservicebackend-clientpolicy
+        UpdateType: Mutable
+
     .PARAMETER VirtualServiceName
+        The name of the virtual service that is acting as a virtual node backend.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualservicebackend.html#cfn-appmesh-virtualnode-virtualservicebackend-virtualservicename
         PrimitiveType: String
         UpdateType: Mutable
@@ -22,6 +31,8 @@ function Add-VSAppMeshVirtualNodeVirtualServiceBackend {
     [cmdletbinding()]
     Param
     (
+        [parameter(Mandatory = $false)]
+        $ClientPolicy,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"

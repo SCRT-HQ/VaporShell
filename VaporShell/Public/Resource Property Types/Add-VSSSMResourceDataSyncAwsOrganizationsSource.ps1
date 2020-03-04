@@ -1,21 +1,25 @@
 function Add-VSSSMResourceDataSyncAwsOrganizationsSource {
     <#
     .SYNOPSIS
-        Adds an AWS::SSM::ResourceDataSync.AwsOrganizationsSource resource property to the template. 
+        Adds an AWS::SSM::ResourceDataSync.AwsOrganizationsSource resource property to the template. Information about the AwsOrganizationsSource resource data sync source. A sync source of this type can synchronize data from AWS Organizations or, if an AWS Organization is not present, from multiple AWS Regions.
 
     .DESCRIPTION
         Adds an AWS::SSM::ResourceDataSync.AwsOrganizationsSource resource property to the template.
-
+Information about the AwsOrganizationsSource resource data sync source. A sync source of this type can synchronize data from AWS Organizations or, if an AWS Organization is not present, from multiple AWS Regions.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-resourcedatasync-awsorganizationssource.html
 
     .PARAMETER OrganizationSourceType
+        If an AWS Organization is present, this is either OrganizationalUnits or EntireOrganization. For OrganizationalUnits, the data is aggregated from a set of organization units. For EntireOrganization, the data is aggregated from the entire AWS Organization.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-resourcedatasync-awsorganizationssource.html#cfn-ssm-resourcedatasync-awsorganizationssource-organizationsourcetype
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER OrganizationalUnits
+        The AWS Organizations organization units included in the sync.
+
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-resourcedatasync-awsorganizationssource.html#cfn-ssm-resourcedatasync-awsorganizationssource-organizationalunits

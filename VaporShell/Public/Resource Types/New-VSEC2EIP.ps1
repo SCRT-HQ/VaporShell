@@ -1,10 +1,18 @@
 function New-VSEC2EIP {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::EIP resource to the template. 
+        Adds an AWS::EC2::EIP resource to the template. Specifies an Elastic IP (EIP address and can, optionally, associate it with an Amazon EC2 instance.
 
     .DESCRIPTION
-        Adds an AWS::EC2::EIP resource to the template. 
+        Adds an AWS::EC2::EIP resource to the template. Specifies an Elastic IP (EIP address and can, optionally, associate it with an Amazon EC2 instance.
+
+You can allocate an Elastic IP address from an address pool owned by AWS or from an address pool created from a public IPv4 address range that you have brought to AWS for use with your AWS resources using bring your own IP addresses (BYOIP. For more information, see Bring Your Own IP Addresses (BYOIP: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html in the *Amazon Elastic Compute Cloud User Guide*.
+
+EC2-VPC] If you release an Elastic IP address, you might be able to recover it. You cannot recover an Elastic IP address that you released after it is allocated to another AWS account. You cannot recover an Elastic IP address for EC2-Classic. To attempt to recover an Elastic IP address that you released, specify it in this operation.
+
+An Elastic IP address is for use either in the EC2-Classic platform or in a VPC. By default, you can allocate 5 Elastic IP addresses for EC2-Classic per Region and 5 Elastic IP addresses for EC2-VPC per Region.
+
+For more information, see Elastic IP Addresses: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html in the *Amazon Elastic Compute Cloud User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip.html
@@ -13,21 +21,35 @@ function New-VSEC2EIP {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Domain
+        Set to vpc to allocate the address for use with instances in a VPC.
+Default: The address is for use with instances in EC2-Classic.
+If you define an Elastic IP address and associate it with a VPC that is defined in the same template, you must declare a dependency on the VPC-gateway attachment by using the  DependsOn Attribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-dependson.html on this resource.
+Required when allocating an address to a VPC
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip.html#cfn-ec2-eip-domain
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER InstanceId
+        The ID of the instance.
+Updates to the InstanceId property may require *some interruptions*. Updates on an EIP reassociates the address on its associated resource.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip.html#cfn-ec2-eip-instanceid
         PrimitiveType: String
         UpdateType: Conditional
 
     .PARAMETER PublicIpv4Pool
+        The ID of an address pool that you own. Use this parameter to let Amazon EC2 select an address from the address pool.
+Updates to the PublicIpv4Pool property may require *some interruptions*. Updates on an EIP reassociates the address on its associated resource.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip.html#cfn-ec2-eip-publicipv4pool
         PrimitiveType: String
         UpdateType: Conditional
 
     .PARAMETER Tags
+        Any tags assigned to the Elastic IP address.
+Updates to the Tags property may require *some interruptions*. Updates on an EIP reassociates the address on its associated resource.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip.html#cfn-ec2-eip-tags
         DuplicatesAllowed: True
         ItemType: Tag
@@ -112,20 +134,15 @@ function New-VSEC2EIP {
                 }
             })]
         $PublicIpv4Pool,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

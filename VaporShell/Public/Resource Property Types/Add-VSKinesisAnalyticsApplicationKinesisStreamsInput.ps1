@@ -1,21 +1,25 @@
 function Add-VSKinesisAnalyticsApplicationKinesisStreamsInput {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalytics::Application.KinesisStreamsInput resource property to the template. 
+        Adds an AWS::KinesisAnalytics::Application.KinesisStreamsInput resource property to the template. Identifies an Amazon Kinesis stream as the streaming source. You provide the stream's Amazon Resource Name (ARN and an IAM role ARN that enables Amazon Kinesis Analytics to access the stream on your behalf.
 
     .DESCRIPTION
         Adds an AWS::KinesisAnalytics::Application.KinesisStreamsInput resource property to the template.
-
+Identifies an Amazon Kinesis stream as the streaming source. You provide the stream's Amazon Resource Name (ARN and an IAM role ARN that enables Amazon Kinesis Analytics to access the stream on your behalf.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-kinesisstreamsinput.html
 
     .PARAMETER ResourceARN
+        ARN of the input Amazon Kinesis stream to read.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-kinesisstreamsinput.html#cfn-kinesisanalytics-application-kinesisstreamsinput-resourcearn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RoleARN
+        ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to grant the necessary permissions to this role.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-kinesisstreamsinput.html#cfn-kinesisanalytics-application-kinesisstreamsinput-rolearn
         PrimitiveType: String
         UpdateType: Mutable

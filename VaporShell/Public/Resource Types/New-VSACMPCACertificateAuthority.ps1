@@ -1,10 +1,14 @@
 function New-VSACMPCACertificateAuthority {
     <#
     .SYNOPSIS
-        Adds an AWS::ACMPCA::CertificateAuthority resource to the template. 
+        Adds an AWS::ACMPCA::CertificateAuthority resource to the template. Use the AWS::ACMPCA::CertificateAuthority resource to create a private CA. Once the CA exists, you can use the AWS::ACMPCA::Certificate resource to issue a new CA certificate. Alternatively, you can issue a CA certificate using an on-premises CA, and then use the AWS::ACMPCA::CertificateAuthorityActivation resource to import the new CA certificate and activate the CA.
 
     .DESCRIPTION
-        Adds an AWS::ACMPCA::CertificateAuthority resource to the template. 
+        Adds an AWS::ACMPCA::CertificateAuthority resource to the template. Use the AWS::ACMPCA::CertificateAuthority resource to create a private CA. Once the CA exists, you can use the AWS::ACMPCA::Certificate resource to issue a new CA certificate. Alternatively, you can issue a CA certificate using an on-premises CA, and then use the AWS::ACMPCA::CertificateAuthorityActivation resource to import the new CA certificate and activate the CA.
+
+**Note**
+
+Before removing a AWS::ACMPCA::CertificateAuthority resource from the CloudFormation stack, disable the affected CA. Otherwise, the action will fail. You can disable the CA by removing its associated AWS::ACMPCA::CertificateAuthorityActivation resource from CloudFormation.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthority.html
@@ -13,31 +17,44 @@ function New-VSACMPCACertificateAuthority {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Type
+        Type of your private CA.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthority.html#cfn-acmpca-certificateauthority-type
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER KeyAlgorithm
+        Type of the public key algorithm and size, in bits, of the key pair that your CA creates when it issues a certificate. When you create a subordinate CA, you must use a key algorithm supported by the parent CA.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthority.html#cfn-acmpca-certificateauthority-keyalgorithm
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER SigningAlgorithm
+        Name of the algorithm your private CA uses to sign certificate requests.
+This parameter should not be confused with the SigningAlgorithm parameter used to sign certificates when they are issued.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthority.html#cfn-acmpca-certificateauthority-signingalgorithm
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER Subject
+        Structure that contains X.500 distinguished name information for your private CA.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthority.html#cfn-acmpca-certificateauthority-subject
         UpdateType: Immutable
         Type: Subject
 
     .PARAMETER RevocationConfiguration
+        Information about the certificate revocation list CRL created and maintained by your private CA. Certificate revocation information used by the CreateCertificateAuthority and UpdateCertificateAuthority actions. Your certificate authority can create and maintain a certificate revocation list CRL. A CRL contains information about certificates that have been revoked.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthority.html#cfn-acmpca-certificateauthority-revocationconfiguration
         UpdateType: Mutable
         Type: RevocationConfiguration
 
     .PARAMETER Tags
+        Key-value pairs that will be attached to the new private CA. You can associate up to 50 tags with a private CA. For information using tags with IAM to manage permissions, see Controlling Access Using IAM Tags: https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthority.html#cfn-acmpca-certificateauthority-tags
         UpdateType: Mutable
         Type: List
@@ -125,20 +142,15 @@ function New-VSACMPCACertificateAuthority {
         $Subject,
         [parameter(Mandatory = $false)]
         $RevocationConfiguration,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

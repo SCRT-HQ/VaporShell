@@ -1,31 +1,40 @@
 function Add-VSS3BucketAnalyticsConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.AnalyticsConfiguration resource property to the template. 
+        Adds an AWS::S3::Bucket.AnalyticsConfiguration resource property to the template. Specifies the configuration and any analyses for the analytics filter of an Amazon S3 bucket.
 
     .DESCRIPTION
         Adds an AWS::S3::Bucket.AnalyticsConfiguration resource property to the template.
-
+Specifies the configuration and any analyses for the analytics filter of an Amazon S3 bucket.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-analyticsconfiguration.html
 
     .PARAMETER Id
+        The ID that identifies the analytics configuration.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-analyticsconfiguration.html#cfn-s3-bucket-analyticsconfiguration-id
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Prefix
+        The prefix that an object must have to be included in the analytics results.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-analyticsconfiguration.html#cfn-s3-bucket-analyticsconfiguration-prefix
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER StorageClassAnalysis
+        Contains data related to access patterns to be collected and made available to analyze the tradeoffs between different storage classes.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-analyticsconfiguration.html#cfn-s3-bucket-analyticsconfiguration-storageclassanalysis
         Type: StorageClassAnalysis
         UpdateType: Mutable
 
     .PARAMETER TagFilters
+        The tags to use when evaluating an analytics filter.
+The analytics only includes objects that meet the filter's criteria. If no filter is specified, all of the contents of the bucket are included in the analysis.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-analyticsconfiguration.html#cfn-s3-bucket-analyticsconfiguration-tagfilters
         DuplicatesAllowed: False
         ItemType: TagFilter

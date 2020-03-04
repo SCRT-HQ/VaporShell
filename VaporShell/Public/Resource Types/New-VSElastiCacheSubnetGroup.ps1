@@ -1,10 +1,10 @@
 function New-VSElastiCacheSubnetGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::ElastiCache::SubnetGroup resource to the template. 
+        Adds an AWS::ElastiCache::SubnetGroup resource to the template. Creates a cache subnet group. For more information about cache subnet groups, go to Cache Subnet Groups in the *Amazon ElastiCache User Guide* or go to CreateCacheSubnetGroup: https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html in the *Amazon ElastiCache API Reference Guide*.
 
     .DESCRIPTION
-        Adds an AWS::ElastiCache::SubnetGroup resource to the template. 
+        Adds an AWS::ElastiCache::SubnetGroup resource to the template. Creates a cache subnet group. For more information about cache subnet groups, go to Cache Subnet Groups in the *Amazon ElastiCache User Guide* or go to CreateCacheSubnetGroup: https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html in the *Amazon ElastiCache API Reference Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-subnetgroup.html
@@ -13,16 +13,24 @@ function New-VSElastiCacheSubnetGroup {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER CacheSubnetGroupName
+        The name for the cache subnet group. This value is stored as a lowercase string.
+Constraints: Must contain no more than 255 alphanumeric characters or hyphens.
+Example: mysubnetgroup
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-subnetgroup.html#cfn-elasticache-subnetgroup-cachesubnetgroupname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Description
+        The description for the cache subnet group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-subnetgroup.html#cfn-elasticache-subnetgroup-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SubnetIds
+        The EC2 subnet IDs for the cache subnet group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-subnetgroup.html#cfn-elasticache-subnetgroup-subnetids
         DuplicatesAllowed: True
         PrimitiveItemType: String
@@ -101,6 +109,9 @@ function New-VSElastiCacheSubnetGroup {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

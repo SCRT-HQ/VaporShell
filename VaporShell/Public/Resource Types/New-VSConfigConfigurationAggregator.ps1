@@ -1,10 +1,10 @@
 function New-VSConfigConfigurationAggregator {
     <#
     .SYNOPSIS
-        Adds an AWS::Config::ConfigurationAggregator resource to the template. 
+        Adds an AWS::Config::ConfigurationAggregator resource to the template. The details about the configuration aggregator, including information about source accounts, regions, and metadata of the aggregator.
 
     .DESCRIPTION
-        Adds an AWS::Config::ConfigurationAggregator resource to the template. 
+        Adds an AWS::Config::ConfigurationAggregator resource to the template. The details about the configuration aggregator, including information about source accounts, regions, and metadata of the aggregator.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationaggregator.html
@@ -13,19 +13,31 @@ function New-VSConfigConfigurationAggregator {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER AccountAggregationSources
+        Provides a list of source accounts and regions to be aggregated.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationaggregator.html#cfn-config-configurationaggregator-accountaggregationsources
         ItemType: AccountAggregationSource
         UpdateType: Mutable
 
     .PARAMETER ConfigurationAggregatorName
+        The name of the aggregator.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationaggregator.html#cfn-config-configurationaggregator-configurationaggregatorname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER OrganizationAggregationSource
+        Provides an organization and list of regions to be aggregated.
+
         Type: OrganizationAggregationSource
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationaggregator.html#cfn-config-configurationaggregator-organizationaggregationsource
+        UpdateType: Mutable
+
+    .PARAMETER Tags
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationaggregator.html#cfn-config-configurationaggregator-tags
+        ItemType: Tag
         UpdateType: Mutable
 
     .PARAMETER DeletionPolicy
@@ -97,9 +109,15 @@ function New-VSConfigConfigurationAggregator {
         $ConfigurationAggregatorName,
         [parameter(Mandatory = $false)]
         $OrganizationAggregationSource,
+        [VaporShell.Core.TransformTag()]
+        [parameter(Mandatory = $false)]
+        $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,
@@ -159,6 +177,12 @@ function New-VSConfigConfigurationAggregator {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name AccountAggregationSources -Value @($AccountAggregationSources)
+                }
+                Tags {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name Tags -Value @($Tags)
                 }
                 Default {
                     if (!($ResourceParams["Properties"])) {

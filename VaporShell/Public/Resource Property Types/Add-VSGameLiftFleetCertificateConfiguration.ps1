@@ -1,16 +1,18 @@
 function Add-VSGameLiftFleetCertificateConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::GameLift::Fleet.CertificateConfiguration resource property to the template. 
+        Adds an AWS::GameLift::Fleet.CertificateConfiguration resource property to the template. Information about the use of a TLS/SSL certificate for a fleet. TLS certificate generation is enabled at the fleet level, with one certificate generated for the fleet. When this feature is enabled, the certificate can be retrieved using the GameLift Server SDK call GetInstanceCertificate. All instances in a fleet share the same certificate.
 
     .DESCRIPTION
         Adds an AWS::GameLift::Fleet.CertificateConfiguration resource property to the template.
-
+Information about the use of a TLS/SSL certificate for a fleet. TLS certificate generation is enabled at the fleet level, with one certificate generated for the fleet. When this feature is enabled, the certificate can be retrieved using the GameLift Server SDK call GetInstanceCertificate. All instances in a fleet share the same certificate.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-certificateconfiguration.html
 
     .PARAMETER CertificateType
+        Indicates whether a TLS/SSL certificate is generated for the fleet.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-certificateconfiguration.html#cfn-gamelift-fleet-certificateconfiguration-certificatetype
         PrimitiveType: String
         UpdateType: Immutable

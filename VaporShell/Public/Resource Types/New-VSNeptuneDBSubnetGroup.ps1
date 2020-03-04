@@ -1,10 +1,10 @@
 function New-VSNeptuneDBSubnetGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::Neptune::DBSubnetGroup resource to the template. 
+        Adds an AWS::Neptune::DBSubnetGroup resource to the template. The AWS::Neptune::DBSubnetGroup type creates an Amazon Neptune DB subnet group. Subnet groups must contain at least two subnets in two different Availability Zones in the same AWS Region.
 
     .DESCRIPTION
-        Adds an AWS::Neptune::DBSubnetGroup resource to the template. 
+        Adds an AWS::Neptune::DBSubnetGroup resource to the template. The AWS::Neptune::DBSubnetGroup type creates an Amazon Neptune DB subnet group. Subnet groups must contain at least two subnets in two different Availability Zones in the same AWS Region.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbsubnetgroup.html
@@ -13,22 +13,30 @@ function New-VSNeptuneDBSubnetGroup {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER DBSubnetGroupName
+        The name of the DB subnet group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbsubnetgroup.html#cfn-neptune-dbsubnetgroup-dbsubnetgroupname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER DBSubnetGroupDescription
+        Provides the description of the DB subnet group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbsubnetgroup.html#cfn-neptune-dbsubnetgroup-dbsubnetgroupdescription
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SubnetIds
+        The Amazon EC2 subnet IDs for the DB subnet group.
+
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbsubnetgroup.html#cfn-neptune-dbsubnetgroup-subnetids
         UpdateType: Mutable
 
     .PARAMETER Tags
+        The tags that you want to attach to the DB subnet group.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbsubnetgroup.html#cfn-neptune-dbsubnetgroup-tags
         ItemType: Tag
@@ -103,20 +111,15 @@ function New-VSNeptuneDBSubnetGroup {
         $DBSubnetGroupDescription,
         [parameter(Mandatory = $true)]
         $SubnetIds,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

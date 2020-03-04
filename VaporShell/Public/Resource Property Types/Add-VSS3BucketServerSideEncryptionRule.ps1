@@ -1,16 +1,18 @@
 function Add-VSS3BucketServerSideEncryptionRule {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::Bucket.ServerSideEncryptionRule resource property to the template. 
+        Adds an AWS::S3::Bucket.ServerSideEncryptionRule resource property to the template. Specifies the default server-side encryption configuration.
 
     .DESCRIPTION
         Adds an AWS::S3::Bucket.ServerSideEncryptionRule resource property to the template.
-
+Specifies the default server-side encryption configuration.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-serversideencryptionrule.html
 
     .PARAMETER ServerSideEncryptionByDefault
+        Specifies the default server-side encryption to apply to new objects in the bucket. If a PUT Object request doesn't specify any server-side encryption, this default encryption will be applied.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-serversideencryptionrule.html#cfn-s3-bucket-serversideencryptionrule-serversideencryptionbydefault
         Type: ServerSideEncryptionByDefault
         UpdateType: Mutable

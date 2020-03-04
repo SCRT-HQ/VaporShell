@@ -1,10 +1,12 @@
 function New-VSApplicationAutoScalingScalableTarget {
     <#
     .SYNOPSIS
-        Adds an AWS::ApplicationAutoScaling::ScalableTarget resource to the template. 
+        Adds an AWS::ApplicationAutoScaling::ScalableTarget resource to the template. The AWS::ApplicationAutoScaling::ScalableTarget resource specifies a resource that Application Auto Scaling can scale.
 
     .DESCRIPTION
-        Adds an AWS::ApplicationAutoScaling::ScalableTarget resource to the template. 
+        Adds an AWS::ApplicationAutoScaling::ScalableTarget resource to the template. The AWS::ApplicationAutoScaling::ScalableTarget resource specifies a resource that Application Auto Scaling can scale.
+
+For more information, see RegisterScalableTarget: https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html in the *Application Auto Scaling API Reference*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html
@@ -13,31 +15,45 @@ function New-VSApplicationAutoScalingScalableTarget {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER MaxCapacity
+        The maximum value to scale to in response to a scale-out event.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-maxcapacity
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER MinCapacity
+        The minimum value to scale to in response to a scale-in event.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-mincapacity
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER ResourceId
+        The resource identifier to associate with this scalable target. This string consists of the resource type and unique identifier. For valid values, see the ResourceId parameter for RegisterScalableTarget: https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html in the *Application Auto Scaling API Reference*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-resourceid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER RoleARN
+        Specify the Amazon Resource Name ARN of an AWS Identity and Access Management IAM role that allows Application Auto Scaling to modify the scalable target on your behalf. This can be either an IAM service role that Application Auto Scaling can assume to make calls to other AWS resources on your behalf, or a service-linked role for the specified service. For more information, see How Application Auto Scaling Works with IAM: https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html in the *Application Auto Scaling User Guide*.
+To automatically create a service-linked role, specify the full ARN of the service-linked role in your stack template. For examples of the ARN format and more information, see Service-Linked Roles: https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-service-linked-roles.html in the *Application Auto Scaling User Guide*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-rolearn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ScalableDimension
+        The scalable dimension that is associated with the scalable target. Specify the service namespace, resource type, and scaling property, for example, ecs:service:DesiredCount for the desired task count of an Amazon ECS service. For valid values, see the ScalableDimension parameter for RegisterScalableTarget: https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html in the *Application Auto Scaling API Reference*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-scalabledimension
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ScheduledActions
+        The scheduled actions for the scalable target. Duplicates aren't allowed.
+For more information about using scheduled scaling, see Scheduled Scaling: https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html in the *Application Auto Scaling User Guide*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-scheduledactions
         DuplicatesAllowed: False
         ItemType: ScheduledAction
@@ -45,11 +61,20 @@ function New-VSApplicationAutoScalingScalableTarget {
         UpdateType: Mutable
 
     .PARAMETER ServiceNamespace
+        The namespace of the AWS service that provides the resource or custom-resource for a resource provided by your own application or service. For valid values, see the ServiceNamespace parameter for RegisterScalableTarget: https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html in the *Application Auto Scaling API Reference*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-servicenamespace
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER SuspendedState
+        An embedded object that contains attributes and attribute values that are used to suspend and resume automatic scaling. Setting the value of an attribute to true suspends the specified scaling activities. Setting it to false default resumes the specified scaling activities.
+**Suspension Outcomes**
++ For DynamicScalingInSuspended, while a suspension is in effect, all scale-in activities that are triggered by a scaling policy are suspended.
++ For DynamicScalingOutSuspended, while a suspension is in effect, all scale-out activities that are triggered by a scaling policy are suspended.
++ For ScheduledScalingSuspended, while a suspension is in effect, all scaling activities that involve scheduled actions are suspended.
+For more information, see Suspending and Resuming Scaling: https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html in the *Application Auto Scaling User Guide*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-suspendedstate
         Type: SuspendedState
         UpdateType: Mutable
@@ -181,6 +206,9 @@ function New-VSApplicationAutoScalingScalableTarget {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

@@ -1,10 +1,12 @@
 function New-VSRedshiftClusterSubnetGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::Redshift::ClusterSubnetGroup resource to the template. 
+        Adds an AWS::Redshift::ClusterSubnetGroup resource to the template. Specifies an Amazon Redshift subnet group. You must provide a list of one or more subnets in your existing Amazon Virtual Private Cloud (Amazon VPC when creating Amazon Redshift subnet group.
 
     .DESCRIPTION
-        Adds an AWS::Redshift::ClusterSubnetGroup resource to the template. 
+        Adds an AWS::Redshift::ClusterSubnetGroup resource to the template. Specifies an Amazon Redshift subnet group. You must provide a list of one or more subnets in your existing Amazon Virtual Private Cloud (Amazon VPC when creating Amazon Redshift subnet group.
+
+For information about subnet groups, go to Amazon Redshift Cluster Subnet Groups: https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html in the *Amazon Redshift Cluster Management Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html
@@ -13,11 +15,15 @@ function New-VSRedshiftClusterSubnetGroup {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Description
+        A description for the subnet group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html#cfn-redshift-clustersubnetgroup-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SubnetIds
+        An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html#cfn-redshift-clustersubnetgroup-subnetids
         DuplicatesAllowed: True
         PrimitiveItemType: String
@@ -25,6 +31,8 @@ function New-VSRedshiftClusterSubnetGroup {
         UpdateType: Mutable
 
     .PARAMETER Tags
+        Specifies an arbitrary set of tags key–value pairs to associate with this subnet group. Use tags to manage your resources.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html#cfn-redshift-clustersubnetgroup-tags
         DuplicatesAllowed: True
         ItemType: Tag
@@ -89,20 +97,15 @@ function New-VSRedshiftClusterSubnetGroup {
         $Description,
         [parameter(Mandatory = $true)]
         $SubnetIds,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

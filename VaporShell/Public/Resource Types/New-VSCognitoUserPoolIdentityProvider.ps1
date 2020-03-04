@@ -1,10 +1,10 @@
 function New-VSCognitoUserPoolIdentityProvider {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::UserPoolIdentityProvider resource to the template. 
+        Adds an AWS::Cognito::UserPoolIdentityProvider resource to the template. The AWS::Cognito::UserPoolIdentityProvider resource creates an identity provider for a user pool.
 
     .DESCRIPTION
-        Adds an AWS::Cognito::UserPoolIdentityProvider resource to the template. 
+        Adds an AWS::Cognito::UserPoolIdentityProvider resource to the template. The AWS::Cognito::UserPoolIdentityProvider resource creates an identity provider for a user pool.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolidentityprovider.html
@@ -13,31 +13,66 @@ function New-VSCognitoUserPoolIdentityProvider {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ProviderName
+        The identity provider name.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolidentityprovider.html#cfn-cognito-userpoolidentityprovider-providername
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER UserPoolId
+        The user pool ID.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolidentityprovider.html#cfn-cognito-userpoolidentityprovider-userpoolid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER AttributeMapping
+        A mapping of identity provider attributes to standard and custom user pool attributes.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolidentityprovider.html#cfn-cognito-userpoolidentityprovider-attributemapping
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER ProviderDetails
+        The identity provider details. The following list describes the provider detail keys for each identity provider type.
++ For Google, Facebook and Login with Amazon:
++ client_id
++ client_secret
++ authorize_scopes
++ For Sign in with Apple:
++ client_id
++ team_id
++ key_id
++ private_key
++ authorize_scopes
++ For OIDC providers:
++ client_id
++ client_secret
++ attributes_request_method
++ oidc_issuer
++ authorize_scopes
++ authorize_url *if not available from discovery URL specified by oidc_issuer key*
++ token_url *if not available from discovery URL specified by oidc_issuer key*
++ attributes_url *if not available from discovery URL specified by oidc_issuer key*
++ jwks_uri *if not available from discovery URL specified by oidc_issuer key*
++ For SAML providers:
++ MetadataFile OR MetadataURL
++ IDPSignout *optional*
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolidentityprovider.html#cfn-cognito-userpoolidentityprovider-providerdetails
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER ProviderType
+        The identity provider type.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolidentityprovider.html#cfn-cognito-userpoolidentityprovider-providertype
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER IdpIdentifiers
+        A list of identity provider identifiers.
+
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolidentityprovider.html#cfn-cognito-userpoolidentityprovider-idpidentifiers
@@ -148,6 +183,9 @@ function New-VSCognitoUserPoolIdentityProvider {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

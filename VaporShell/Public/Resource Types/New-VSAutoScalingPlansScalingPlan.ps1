@@ -1,10 +1,22 @@
 function New-VSAutoScalingPlansScalingPlan {
     <#
     .SYNOPSIS
-        Adds an AWS::AutoScalingPlans::ScalingPlan resource to the template. 
+        Adds an AWS::AutoScalingPlans::ScalingPlan resource to the template. The AWS::AutoScalingPlans::ScalingPlan resource defines a scaling plan that AWS Auto Scaling uses to scale the following application resources:
 
     .DESCRIPTION
-        Adds an AWS::AutoScalingPlans::ScalingPlan resource to the template. 
+        Adds an AWS::AutoScalingPlans::ScalingPlan resource to the template. The AWS::AutoScalingPlans::ScalingPlan resource defines a scaling plan that AWS Auto Scaling uses to scale the following application resources:
+
++ Amazon EC2 Auto Scaling groups
+
++ Amazon EC2 Spot Fleet requests
+
++ Amazon ECS services
+
++ Amazon DynamoDB tables and global secondary indexes
+
++ Amazon Aurora Replicas
+
+For more information, see the AWS Auto Scaling User Guide: https://docs.aws.amazon.com/autoscaling/plans/userguide/what-is-aws-auto-scaling.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscalingplans-scalingplan.html
@@ -13,11 +25,15 @@ function New-VSAutoScalingPlansScalingPlan {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ApplicationSource
+        A CloudFormation stack or a set of tags. You can create one scaling plan per application source.
+
         Type: ApplicationSource
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscalingplans-scalingplan.html#cfn-autoscalingplans-scalingplan-applicationsource
         UpdateType: Mutable
 
     .PARAMETER ScalingInstructions
+        The scaling instructions.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscalingplans-scalingplan.html#cfn-autoscalingplans-scalingplan-scalinginstructions
         ItemType: ScalingInstruction
@@ -84,6 +100,9 @@ function New-VSAutoScalingPlansScalingPlan {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

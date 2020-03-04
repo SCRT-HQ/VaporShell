@@ -1,21 +1,27 @@
 function Add-VSApiGatewayDeploymentCanarySetting {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::Deployment.CanarySetting resource property to the template. 
+        Adds an AWS::ApiGateway::Deployment.CanarySetting resource property to the template. The CanarySetting property type specifies settings for the canary deployment in this stage.
 
     .DESCRIPTION
         Adds an AWS::ApiGateway::Deployment.CanarySetting resource property to the template.
+The CanarySetting property type specifies settings for the canary deployment in this stage.
 
+CanarySetting is a property of the StageDescription: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html property type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-canarysetting.html
 
     .PARAMETER PercentTraffic
+        The percent 0-100 of traffic diverted to a canary deployment.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-canarysetting.html#cfn-apigateway-deployment-canarysetting-percenttraffic
         PrimitiveType: Double
         UpdateType: Mutable
 
     .PARAMETER StageVariableOverrides
+        Stage variables overridden for a canary release deployment, including new stage variables introduced in the canary. These stage variables are represented as a string-to-string map between stage variable names and their values.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-canarysetting.html#cfn-apigateway-deployment-canarysetting-stagevariableoverrides
         DuplicatesAllowed: False
         PrimitiveItemType: String
@@ -23,6 +29,8 @@ function Add-VSApiGatewayDeploymentCanarySetting {
         UpdateType: Mutable
 
     .PARAMETER UseStageCache
+        Whether the canary deployment uses the stage cache or not.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-canarysetting.html#cfn-apigateway-deployment-canarysetting-usestagecache
         PrimitiveType: Boolean
         UpdateType: Mutable

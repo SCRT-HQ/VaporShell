@@ -169,16 +169,8 @@ function $FunctionName {
         if ($Prop.Value.ItemType) {
             if ($Prop.Value.ItemType -eq "Tag") {
                 $scriptContents += @"
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $Mandatory)]
-        [ValidateScript( {
-                `$allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]`$(`$_.PSTypeNames) -match "(`$((`$allowedTypes|ForEach-Object{[RegEx]::Escape(`$_)}) -join '|'))") {
-                    `$true
-                }
-                else {
-                    `$PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: `$(`$allowedTypes -join ", "). The current types of the value are: `$(`$_.PSTypeNames -join ", ")."))
-                }
-            })]
         `$$ParamName
 "@
             }
@@ -350,6 +342,9 @@ function $FunctionName {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         `$DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        `$UpdateReplacePolicy,
         [parameter(Mandatory = `$false)]
         [System.String[]]
         `$DependsOn,

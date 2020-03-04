@@ -1,10 +1,10 @@
 function New-VSPinpointCampaign {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::Campaign resource to the template. 
+        Adds an AWS::Pinpoint::Campaign resource to the template. A *campaign* is a messaging initiative that engages a specific segment of users for an Amazon Pinpoint application. The AWS::Pinpoint::Campaign resource defines the configuration and other settings for a campaign.
 
     .DESCRIPTION
-        Adds an AWS::Pinpoint::Campaign resource to the template. 
+        Adds an AWS::Pinpoint::Campaign resource to the template. A *campaign* is a messaging initiative that engages a specific segment of users for an Amazon Pinpoint application. The AWS::Pinpoint::Campaign resource defines the configuration and other settings for a campaign.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html
@@ -13,77 +13,107 @@ function New-VSPinpointCampaign {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Description
+        A custom description of the campaign.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SegmentId
+        The unique identifier for the segment to associate with the campaign.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-segmentid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER IsPaused
+        Specifies whether to pause the campaign. A paused campaign doesn't run unless you resume it by setting this value to false.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-ispaused
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER AdditionalTreatments
+        An array of requests that defines additional treatments for the campaign, in addition to the default treatment for the campaign.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-additionaltreatments
         ItemType: WriteTreatmentResource
         UpdateType: Mutable
 
     .PARAMETER Name
+        The name of the campaign.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-name
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SegmentVersion
+        The version of the segment to associate with the campaign.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-segmentversion
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER TreatmentDescription
+        A custom description of a variation of the campaign to use for A/B testing.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-treatmentdescription
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER MessageConfiguration
+        The message configuration settings for the campaign.
+
         Type: MessageConfiguration
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-messageconfiguration
         UpdateType: Mutable
 
     .PARAMETER Limits
+        The messaging limits for the campaign.
+
         Type: Limits
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-limits
         UpdateType: Mutable
 
     .PARAMETER HoldoutPercent
+        The allocated percentage of users segment members who shouldn't receive messages from the campaign.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-holdoutpercent
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER Schedule
+        The schedule settings for the campaign.
+
         Type: Schedule
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-schedule
         UpdateType: Mutable
 
     .PARAMETER ApplicationId
+        The unique identifier for the Amazon Pinpoint application that the campaign is associated with.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-applicationid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER CampaignHook
+        Specifies the AWS Lambda function to use as a code hook for a campaign.
+
         Type: CampaignHook
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-campaignhook
         UpdateType: Mutable
 
     .PARAMETER Tags
+        A string-to-string map of key-value pairs that defines the tags to associate with the campaign. Each tag consists of a required tag key and an associated tag value.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-tags
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER TreatmentName
+        The custom name of a variation of the campaign to use for A/B testing.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-treatmentname
         PrimitiveType: String
         UpdateType: Mutable
@@ -265,6 +295,9 @@ function New-VSPinpointCampaign {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

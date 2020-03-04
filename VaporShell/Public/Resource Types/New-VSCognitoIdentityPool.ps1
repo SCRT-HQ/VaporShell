@@ -1,10 +1,12 @@
 function New-VSCognitoIdentityPool {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::IdentityPool resource to the template. 
+        Adds an AWS::Cognito::IdentityPool resource to the template. The AWS::Cognito::IdentityPool resource creates an Amazon Cognito identity pool.
 
     .DESCRIPTION
-        Adds an AWS::Cognito::IdentityPool resource to the template. 
+        Adds an AWS::Cognito::IdentityPool resource to the template. The AWS::Cognito::IdentityPool resource creates an Amazon Cognito identity pool.
+
+To avoid deleting the resource accidentally from AWS CloudFormation, use DeletionPolicy Attribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html and the UpdateReplacePolicy Attribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html to retain the resource on deletion or replacement.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html
@@ -13,59 +15,86 @@ function New-VSCognitoIdentityPool {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER PushSync
+        The configuration options to be applied to the identity pool.
+
         Type: PushSync
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-pushsync
         UpdateType: Mutable
 
     .PARAMETER CognitoIdentityProviders
+        The Amazon Cognito user pools and their client IDs.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-cognitoidentityproviders
         ItemType: CognitoIdentityProvider
         UpdateType: Mutable
 
     .PARAMETER CognitoEvents
+        The events to configure.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-cognitoevents
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER DeveloperProviderName
+        The "domain" Amazon Cognito uses when referencing your users. This name acts as a placeholder that allows your backend and the Amazon Cognito service to communicate about the developer provider. For the DeveloperProviderName, you can use letters and periods ., underscores _, and dashes -.
+*Minimum length*: 1
+*Maximum length*: 100
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-developerprovidername
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER CognitoStreams
+        Configuration options for configuring Amazon Cognito streams.
+
         Type: CognitoStreams
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-cognitostreams
         UpdateType: Mutable
 
     .PARAMETER IdentityPoolName
+        The name of your Amazon Cognito identity pool.
+*Minimum length*: 1
+*Maximum length*: 128
+*Pattern*: ws+=,.@-]+
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-identitypoolname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER AllowUnauthenticatedIdentities
+        Specifies whether the identity pool supports unauthenticated logins.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-allowunauthenticatedidentities
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER SupportedLoginProviders
+        Key-value pairs that map provider names to provider app IDs.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-supportedloginproviders
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER SamlProviderARNs
+        The Amazon Resource Names ARNs of the Security Assertion Markup Language SAML providers.
+
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-samlproviderarns
         UpdateType: Mutable
 
     .PARAMETER OpenIdConnectProviderARNs
+        The Amazon Resource Names ARNs of the OpenID connect providers.
+
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-openidconnectproviderarns
         UpdateType: Mutable
 
     .PARAMETER AllowClassicFlow
+        Enables the Basic Classic authentication flow.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-allowclassicflow
         PrimitiveType: Boolean
         UpdateType: Mutable
@@ -203,6 +232,9 @@ function New-VSCognitoIdentityPool {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

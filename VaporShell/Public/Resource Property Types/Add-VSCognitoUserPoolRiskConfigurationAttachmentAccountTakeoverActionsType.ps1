@@ -1,26 +1,32 @@
 function Add-VSCognitoUserPoolRiskConfigurationAttachmentAccountTakeoverActionsType {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::UserPoolRiskConfigurationAttachment.AccountTakeoverActionsType resource property to the template. 
+        Adds an AWS::Cognito::UserPoolRiskConfigurationAttachment.AccountTakeoverActionsType resource property to the template. Account takeover actions type.
 
     .DESCRIPTION
         Adds an AWS::Cognito::UserPoolRiskConfigurationAttachment.AccountTakeoverActionsType resource property to the template.
-
+Account takeover actions type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-accounttakeoveractionstype.html
 
     .PARAMETER HighAction
+        Action to take for a high risk.
+
         Type: AccountTakeoverActionType
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-accounttakeoveractionstype.html#cfn-cognito-userpoolriskconfigurationattachment-accounttakeoveractionstype-highaction
         UpdateType: Mutable
 
     .PARAMETER LowAction
+        Action to take for a low risk.
+
         Type: AccountTakeoverActionType
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-accounttakeoveractionstype.html#cfn-cognito-userpoolriskconfigurationattachment-accounttakeoveractionstype-lowaction
         UpdateType: Mutable
 
     .PARAMETER MediumAction
+        Action to take for a medium risk.
+
         Type: AccountTakeoverActionType
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-accounttakeoveractionstype.html#cfn-cognito-userpoolriskconfigurationattachment-accounttakeoveractionstype-mediumaction
         UpdateType: Mutable

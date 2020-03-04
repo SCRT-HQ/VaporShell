@@ -1,21 +1,29 @@
 function Add-VSDynamoDBTableLocalSecondaryIndex {
     <#
     .SYNOPSIS
-        Adds an AWS::DynamoDB::Table.LocalSecondaryIndex resource property to the template. 
+        Adds an AWS::DynamoDB::Table.LocalSecondaryIndex resource property to the template. Represents the properties of a local secondary index.
 
     .DESCRIPTION
         Adds an AWS::DynamoDB::Table.LocalSecondaryIndex resource property to the template.
-
+Represents the properties of a local secondary index.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-lsi.html
 
     .PARAMETER IndexName
+        The name of the local secondary index. The name must be unique among all other indexes on this table.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-lsi.html#cfn-dynamodb-lsi-indexname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER KeySchema
+        The complete key schema for the local secondary index, consisting of one or more pairs of attribute names and key types:
++  HASH - partition key
++  RANGE - sort key
+The partition key of an item is also known as its *hash attribute*. The term "hash attribute" derives from DynamoDB's usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values.
+The sort key of an item is also known as its *range attribute*. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-lsi.html#cfn-dynamodb-lsi-keyschema
         DuplicatesAllowed: False
         ItemType: KeySchema
@@ -23,6 +31,8 @@ function Add-VSDynamoDBTableLocalSecondaryIndex {
         UpdateType: Mutable
 
     .PARAMETER Projection
+        Represents attributes that are copied projected from the table into the local secondary index. These are in addition to the primary key attributes and index key attributes, which are automatically projected.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-lsi.html#cfn-dynamodb-lsi-projection
         Type: Projection
         UpdateType: Mutable

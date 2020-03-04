@@ -1,26 +1,32 @@
 function Add-VSOpsWorksStackRdsDbInstance {
     <#
     .SYNOPSIS
-        Adds an AWS::OpsWorks::Stack.RdsDbInstance resource property to the template. 
+        Adds an AWS::OpsWorks::Stack.RdsDbInstance resource property to the template. Describes an Amazon RDS instance.
 
     .DESCRIPTION
         Adds an AWS::OpsWorks::Stack.RdsDbInstance resource property to the template.
-
+Describes an Amazon RDS instance.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-rdsdbinstance.html
 
     .PARAMETER DbPassword
+        AWS OpsWorks Stacks returns *****FILTERED***** instead of the actual value.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-rdsdbinstance.html#cfn-opsworks-stack-rdsdbinstance-dbpassword
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DbUser
+        The master user name.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-rdsdbinstance.html#cfn-opsworks-stack-rdsdbinstance-dbuser
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RdsDbInstanceArn
+        The instance's ARN.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-rdsdbinstance.html#cfn-opsworks-stack-rdsdbinstance-rdsdbinstancearn
         PrimitiveType: String
         UpdateType: Mutable

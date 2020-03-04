@@ -1,36 +1,46 @@
 function Add-VSIoTAnalyticsDatasetVariable {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Dataset.Variable resource property to the template. 
+        Adds an AWS::IoTAnalytics::Dataset.Variable resource property to the template. An instance of a variable to be passed to the containerAction execution. Each variable must have a name and a value given by one of stringValue, datasetContentVersionValue, or outputFileUriValue.
 
     .DESCRIPTION
         Adds an AWS::IoTAnalytics::Dataset.Variable resource property to the template.
-
+An instance of a variable to be passed to the containerAction execution. Each variable must have a name and a value given by one of stringValue, datasetContentVersionValue, or outputFileUriValue.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable.html
 
     .PARAMETER DatasetContentVersionValue
+        The value of the variable as a structure that specifies a dataset content version.
+
         Type: DatasetContentVersionValue
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable.html#cfn-iotanalytics-dataset-variable-datasetcontentversionvalue
         UpdateType: Mutable
 
     .PARAMETER DoubleValue
+        The value of the variable as a double numeric.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable.html#cfn-iotanalytics-dataset-variable-doublevalue
         PrimitiveType: Double
         UpdateType: Mutable
 
     .PARAMETER OutputFileUriValue
+        The value of the variable as a structure that specifies an output file URI.
+
         Type: OutputFileUriValue
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable.html#cfn-iotanalytics-dataset-variable-outputfileurivalue
         UpdateType: Mutable
 
     .PARAMETER VariableName
+        The name of the variable.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable.html#cfn-iotanalytics-dataset-variable-variablename
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER StringValue
+        The value of the variable as a string.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable.html#cfn-iotanalytics-dataset-variable-stringvalue
         PrimitiveType: String
         UpdateType: Mutable

@@ -1,21 +1,25 @@
 function Add-VSCognitoUserPoolDeviceConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::UserPool.DeviceConfiguration resource property to the template. 
+        Adds an AWS::Cognito::UserPool.DeviceConfiguration resource property to the template. The configuration for the user pool's device tracking.
 
     .DESCRIPTION
         Adds an AWS::Cognito::UserPool.DeviceConfiguration resource property to the template.
-
+The configuration for the user pool's device tracking.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-deviceconfiguration.html
 
     .PARAMETER DeviceOnlyRememberedOnUserPrompt
+        If true, a device is only remembered on user prompt.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-deviceconfiguration.html#cfn-cognito-userpool-deviceconfiguration-deviceonlyrememberedonuserprompt
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER ChallengeRequiredOnNewDevice
+        Indicates whether a challenge is required on a new device. Only applicable to a new device.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-deviceconfiguration.html#cfn-cognito-userpool-deviceconfiguration-challengerequiredonnewdevice
         PrimitiveType: Boolean
         UpdateType: Mutable

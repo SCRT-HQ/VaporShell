@@ -1,16 +1,20 @@
 function Add-VSEC2InstanceInstanceIpv6Address {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::Instance.InstanceIpv6Address resource property to the template. 
+        Adds an AWS::EC2::Instance.InstanceIpv6Address resource property to the template. Specifies the IPv6 address for the instance.
 
     .DESCRIPTION
         Adds an AWS::EC2::Instance.InstanceIpv6Address resource property to the template.
+Specifies the IPv6 address for the instance.
 
+InstanceIpv6Address is a property of the AWS::EC2::Instance: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-instanceipv6address.html
 
     .PARAMETER Ipv6Address
+        The IPv6 address.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-instanceipv6address.html#cfn-ec2-instance-instanceipv6address-ipv6address
         PrimitiveType: String
         UpdateType: Mutable

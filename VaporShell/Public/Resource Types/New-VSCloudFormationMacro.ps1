@@ -1,10 +1,10 @@
 function New-VSCloudFormationMacro {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudFormation::Macro resource to the template. 
+        Adds an AWS::CloudFormation::Macro resource to the template. The AWS::CloudFormation::Macro resource is an CloudFormation resource type that creates an CloudFormation macro to perform custom processing on CloudFormation templates. For more information, see Using AWS CloudFormation Macros to Perform Custom Processing on Templates: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html.
 
     .DESCRIPTION
-        Adds an AWS::CloudFormation::Macro resource to the template. 
+        Adds an AWS::CloudFormation::Macro resource to the template. The AWS::CloudFormation::Macro resource is an CloudFormation resource type that creates an CloudFormation macro to perform custom processing on CloudFormation templates. For more information, see Using AWS CloudFormation Macros to Perform Custom Processing on Templates: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-macro.html
@@ -13,26 +13,36 @@ function New-VSCloudFormationMacro {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Description
+        A description of the macro.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-macro.html#cfn-cloudformation-macro-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER FunctionName
+        The Amazon Resource Name ARN of the underlying AWS Lambda function that you want AWS CloudFormation to invoke when the macro is run.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-macro.html#cfn-cloudformation-macro-functionname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER LogGroupName
+        The Amazon CloudWatch log group to which AWS CloudFormation sends error logging information when invoking the macro's underlying AWS Lambda function.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-macro.html#cfn-cloudformation-macro-loggroupname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER LogRoleARN
+        The ARN of the role AWS CloudFormation should assume when sending log entries to CloudWatch logs.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-macro.html#cfn-cloudformation-macro-logrolearn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Name
+        The name of the macro. The name of the macro must be unique across all macros in the account.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-macro.html#cfn-cloudformation-macro-name
         PrimitiveType: String
         UpdateType: Immutable
@@ -140,6 +150,9 @@ function New-VSCloudFormationMacro {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

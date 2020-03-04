@@ -1,10 +1,10 @@
 function New-VSDirectoryServiceMicrosoftAD {
     <#
     .SYNOPSIS
-        Adds an AWS::DirectoryService::MicrosoftAD resource to the template. 
+        Adds an AWS::DirectoryService::MicrosoftAD resource to the template. The AWS::DirectoryService::MicrosoftAD resource specifies a Microsoft Active Directory in AWS so that your directory users and groups can access the AWS Management Console and AWS applications using their existing credentials. For more information, see AWS Managed Microsoft AD: https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html in the *AWS Directory Service Admin Guide*.
 
     .DESCRIPTION
-        Adds an AWS::DirectoryService::MicrosoftAD resource to the template. 
+        Adds an AWS::DirectoryService::MicrosoftAD resource to the template. The AWS::DirectoryService::MicrosoftAD resource specifies a Microsoft Active Directory in AWS so that your directory users and groups can access the AWS Management Console and AWS applications using their existing credentials. For more information, see AWS Managed Microsoft AD: https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html in the *AWS Directory Service Admin Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html
@@ -13,36 +13,52 @@ function New-VSDirectoryServiceMicrosoftAD {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER CreateAlias
+        Specifies an alias for a directory and assigns the alias to the directory. The alias is used to construct the access URL for the directory, such as http://<alias>.awsapps.com. By default, AWS CloudFormation does not create an alias.
+After an alias has been created, it cannot be deleted or reused, so this operation should only be used when absolutely necessary.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-createalias
         PrimitiveType: Boolean
         UpdateType: Immutable
 
     .PARAMETER Edition
+        AWS Managed Microsoft AD is available in two editions: Standard and Enterprise. Enterprise is the default.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-edition
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER EnableSso
+        Whether to enable single sign-on for a Microsoft Active Directory in AWS. Single sign-on allows users in your directory to access certain AWS services from a computer joined to the directory without having to enter their credentials separately. If you don't specify a value, AWS CloudFormation disables single sign-on by default.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-enablesso
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER Name
+        The fully qualified domain name for the AWS Managed Microsoft AD directory, such as corp.example.com. This name will resolve inside your VPC only. It does not need to be publicly resolvable.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-name
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Password
+        The password for the default administrative user named Admin.
+If you need to change the password for the administrator account, see the ResetUserPassword: https://docs.aws.amazon.com/directoryservice/latest/devguide/API_ResetUserPassword.html API call in the *AWS Directory Service API Reference*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-password
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ShortName
+        The NetBIOS name for your domain, such as CORP. If you don't specify a NetBIOS name, it will default to the first part of your directory DNS. For example, CORP for the directory DNS corp.example.com.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-shortname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER VpcSettings
+        Specifies the VPC settings of the Microsoft AD directory server in AWS.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-vpcsettings
         Type: VpcSettings
         UpdateType: Immutable
@@ -165,6 +181,9 @@ function New-VSDirectoryServiceMicrosoftAD {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

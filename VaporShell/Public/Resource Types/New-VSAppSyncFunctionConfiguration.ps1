@@ -1,10 +1,10 @@
 function New-VSAppSyncFunctionConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::AppSync::FunctionConfiguration resource to the template. 
+        Adds an AWS::AppSync::FunctionConfiguration resource to the template. The AWS::AppSync::FunctionConfiguration resource defines the functions in GraphQL APIs to perform certain operations. You can use pipeline resolvers to attach functions. For more information, see Pipeline Resolvers: https://docs.aws.amazon.com/appsync/latest/devguide/pipeline-resolvers.html in the *AWS AppSync Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::AppSync::FunctionConfiguration resource to the template. 
+        Adds an AWS::AppSync::FunctionConfiguration resource to the template. The AWS::AppSync::FunctionConfiguration resource defines the functions in GraphQL APIs to perform certain operations. You can use pipeline resolvers to attach functions. For more information, see Pipeline Resolvers: https://docs.aws.amazon.com/appsync/latest/devguide/pipeline-resolvers.html in the *AWS AppSync Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html
@@ -13,46 +13,64 @@ function New-VSAppSyncFunctionConfiguration {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ResponseMappingTemplateS3Location
+        The location of a response mapping template in an Amazon S3 bucket. Use this if you want to provision with a template file in Amazon S3 rather than embedding it in your CloudFormation template.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-responsemappingtemplates3location
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Description
+        The Function description.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DataSourceName
+        The name of data source this function will attach.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-datasourcename
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RequestMappingTemplate
+        The Function request mapping template. Functions support only the 2018-05-29 version of the request mapping template.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-requestmappingtemplate
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ResponseMappingTemplate
+        The Function response mapping template.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-responsemappingtemplate
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER FunctionVersion
+        The version of the request mapping template. Currently only the 2018-05-29 version of the template is supported.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-functionversion
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RequestMappingTemplateS3Location
+        The location of a request mapping template in an Amazon S3 bucket. Use this if you want to provision with a template file in Amazon S3 rather than embedding it in your CloudFormation template.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-requestmappingtemplates3location
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ApiId
+        The AWS AppSync GraphQL API that you want to attach using this function.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-apiid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Name
+        The name of the function.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-name
         PrimitiveType: String
         UpdateType: Mutable
@@ -204,6 +222,9 @@ function New-VSAppSyncFunctionConfiguration {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

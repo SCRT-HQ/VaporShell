@@ -1,21 +1,27 @@
 function Add-VSCodeBuildReportGroupReportExportConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeBuild::ReportGroup.ReportExportConfig resource property to the template. 
+        Adds an AWS::CodeBuild::ReportGroup.ReportExportConfig resource property to the template. Information about the location where the run of a report is exported.
 
     .DESCRIPTION
         Adds an AWS::CodeBuild::ReportGroup.ReportExportConfig resource property to the template.
-
+Information about the location where the run of a report is exported.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-reportgroup-reportexportconfig.html
 
     .PARAMETER S3Destination
+        A S3ReportExportConfig object that contains information about the S3 bucket where the run of a report is exported.
+
         Type: S3ReportExportConfig
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-reportgroup-reportexportconfig.html#cfn-codebuild-reportgroup-reportexportconfig-s3destination
         UpdateType: Mutable
 
     .PARAMETER ExportConfigType
+        The export configuration type. Valid values are:
++  S3: The report results are exported to an S3 bucket.
++  NO_EXPORT: The report results are not exported.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-reportgroup-reportexportconfig.html#cfn-codebuild-reportgroup-reportexportconfig-exportconfigtype
         PrimitiveType: String
         UpdateType: Mutable

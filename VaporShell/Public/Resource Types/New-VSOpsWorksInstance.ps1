@@ -1,10 +1,12 @@
 function New-VSOpsWorksInstance {
     <#
     .SYNOPSIS
-        Adds an AWS::OpsWorks::Instance resource to the template. 
+        Adds an AWS::OpsWorks::Instance resource to the template. Creates an instance in a specified stack. For more information, see Adding an Instance to a Layer: https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html.
 
     .DESCRIPTION
-        Adds an AWS::OpsWorks::Instance resource to the template. 
+        Adds an AWS::OpsWorks::Instance resource to the template. Creates an instance in a specified stack. For more information, see Adding an Instance to a Layer: https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html.
+
+**Required Permissions**: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see Managing User Permissions: https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html
@@ -13,31 +15,47 @@ function New-VSOpsWorksInstance {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER AgentVersion
+        The default AWS OpsWorks Stacks agent version. You have the following options:
++  INHERIT - Use the stack's default agent version setting.
++  *version_number* - Use the specified agent version. This value overrides the stack's default setting. To update the agent version, edit the instance configuration and specify a new version. AWS OpsWorks Stacks then automatically installs that version on the instance.
+The default setting is INHERIT. To specify an agent version, you must use the complete version number, not the abbreviated number shown on the console. For a list of available agent version numbers, call DescribeAgentVersions: https://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeAgentVersions. AgentVersion cannot be set to Chef 12.2.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-agentversion
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER AmiId
+        A custom AMI ID to be used to create the instance. The AMI should be based on one of the supported operating systems. For more information, see Using Custom AMIs: https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html.
+If you specify a custom AMI, you must set Os to Custom.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-amiid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Architecture
+        The instance architecture. The default option is x86_64. Instance types do not necessarily support both architectures. For a list of the architectures that are supported by the different instance types, see Instance Families and Types: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-architecture
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER AutoScalingType
+        For load-based or time-based instances, the type. Windows stacks can use only time-based instances.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-autoscalingtype
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER AvailabilityZone
+        The Availability Zone of the AWS OpsWorks instance, such as us-east-2a.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-availabilityzone
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER BlockDeviceMappings
+        An array of BlockDeviceMapping objects that specify the instance's block devices. For more information, see Block Device Mapping: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html. Note that block device mappings are not supported for custom AMIs.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-blockdevicemappings
         DuplicatesAllowed: False
         ItemType: BlockDeviceMapping
@@ -45,11 +63,15 @@ function New-VSOpsWorksInstance {
         UpdateType: Immutable
 
     .PARAMETER EbsOptimized
+        Whether to create an Amazon EBS-optimized instance.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-ebsoptimized
         PrimitiveType: Boolean
         UpdateType: Immutable
 
     .PARAMETER ElasticIps
+        A list of Elastic IP addresses to associate with the instance.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-elasticips
         DuplicatesAllowed: False
         PrimitiveItemType: String
@@ -57,21 +79,30 @@ function New-VSOpsWorksInstance {
         UpdateType: Mutable
 
     .PARAMETER Hostname
+        The instance host name.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-hostname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER InstallUpdatesOnBoot
+        Whether to install operating system and package updates when the instance boots. The default value is true. To control when updates are installed, set this value to false. You must then update your instances manually by using CreateDeployment: https://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateDeployment to run the update_dependencies stack command or by manually running yum Amazon Linux or apt-get Ubuntu on the instances.
+We strongly recommend using the default value of true to ensure that your instances have the latest security updates.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-installupdatesonboot
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER InstanceType
+        The instance type, such as t2.micro. For a list of supported instance types, open the stack in the console, choose **Instances**, and choose **+ Instance**. The **Size** list contains the currently supported types. For more information, see Instance Families and Types: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html. The parameter values that you use to specify the various types are in the **API Name** column of the **Available Instance Types** table.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-instancetype
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER LayerIds
+        An array that contains the instance's layer IDs.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-layerids
         DuplicatesAllowed: True
         PrimitiveItemType: String
@@ -79,46 +110,72 @@ function New-VSOpsWorksInstance {
         UpdateType: Mutable
 
     .PARAMETER Os
+        The instance's operating system, which must be set to one of the following.
++ A supported Linux operating system: An Amazon Linux version, such as Amazon Linux 2018.03, Amazon Linux 2017.09, Amazon Linux 2017.03, Amazon Linux 2016.09, Amazon Linux 2016.03, Amazon Linux 2015.09, or Amazon Linux 2015.03.
++ A supported Ubuntu operating system, such as Ubuntu 16.04 LTS, Ubuntu 14.04 LTS, or Ubuntu 12.04 LTS.
++  CentOS Linux 7
++  Red Hat Enterprise Linux 7
++ A supported Windows operating system, such as Microsoft Windows Server 2012 R2 Base, Microsoft Windows Server 2012 R2 with SQL Server Express, Microsoft Windows Server 2012 R2 with SQL Server Standard, or Microsoft Windows Server 2012 R2 with SQL Server Web.
++ A custom AMI: Custom.
+For more information about the supported operating systems, see AWS OpsWorks Stacks Operating Systems: https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.html.
+The default option is the current Amazon Linux version. If you set this parameter to Custom, you must use the CreateInstance: https://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/CreateInstance action's AmiId parameter to specify the custom AMI that you want to use. Block device mappings are not supported if the value is Custom. For more information about supported operating systems, see Operating Systems: https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os.htmlFor more information about how to use custom AMIs with AWS OpsWorks Stacks, see Using Custom AMIs: https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-os
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RootDeviceType
+        The instance root device type. For more information, see Storage for the Root Device: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-rootdevicetype
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER SshKeyName
+        The instance's Amazon EC2 key-pair name.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-sshkeyname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER StackId
+        The stack ID.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-stackid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER SubnetId
+        The ID of the instance's subnet. If the stack is running in a VPC, you can use this parameter to override the stack's default subnet ID value and direct AWS OpsWorks Stacks to launch the instance in a different subnet.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-subnetid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Tenancy
+        The instance's tenancy option. The default option is no tenancy, or if the instance is running in a VPC, inherit tenancy settings from the VPC. The following are valid values for this parameter: dedicated, default, or host. Because there are costs associated with changes in tenancy options, we recommend that you research tenancy options before choosing them for your instances. For more information about dedicated hosts, see Dedicated Hosts Overview: http://aws.amazon.com/ec2/dedicated-hosts/ and Amazon EC2 Dedicated Hosts: http://aws.amazon.com/ec2/dedicated-hosts/. For more information about dedicated instances, see Dedicated Instances: https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/dedicated-instance.html and Amazon EC2 Dedicated Instances: http://aws.amazon.com/ec2/purchasing-options/dedicated-instances/.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-tenancy
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER TimeBasedAutoScaling
+        The time-based scaling configuration for the instance.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-timebasedautoscaling
         Type: TimeBasedAutoScaling
         UpdateType: Immutable
 
     .PARAMETER VirtualizationType
+        The instance's virtualization type, paravirtual or hvm.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-virtualizationtype
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Volumes
+        A list of AWS OpsWorks volume IDs to associate with the instance. For more information, see AWS::OpsWorks::Volume: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-volume.html.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-volumes
         DuplicatesAllowed: False
         PrimitiveItemType: String
@@ -368,6 +425,9 @@ function New-VSOpsWorksInstance {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

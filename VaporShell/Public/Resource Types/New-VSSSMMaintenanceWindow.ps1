@@ -1,10 +1,12 @@
 function New-VSSSMMaintenanceWindow {
     <#
     .SYNOPSIS
-        Adds an AWS::SSM::MaintenanceWindow resource to the template. 
+        Adds an AWS::SSM::MaintenanceWindow resource to the template. The AWS::SSM::MaintenanceWindow resource represents general information about a maintenance window for AWS Systems Manager. Maintenance Windows let you define a schedule for when to perform potentially disruptive actions on your instances, such as patching an operating system (OS, updating drivers, or installing software. Each maintenance window has a schedule, a duration, a set of registered targets, and a set of registered tasks.
 
     .DESCRIPTION
-        Adds an AWS::SSM::MaintenanceWindow resource to the template. 
+        Adds an AWS::SSM::MaintenanceWindow resource to the template. The AWS::SSM::MaintenanceWindow resource represents general information about a maintenance window for AWS Systems Manager. Maintenance Windows let you define a schedule for when to perform potentially disruptive actions on your instances, such as patching an operating system (OS, updating drivers, or installing software. Each maintenance window has a schedule, a duration, a set of registered targets, and a set of registered tasks.
+
+For more information, see Systems Manager Maintenance Windows: https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-maintenance.html in the *AWS Systems Manager User Guide* and  CreateMaintenanceWindow: https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateMaintenanceWindow.html in the *AWS Systems Manager API Reference*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindow.html
@@ -13,52 +15,72 @@ function New-VSSSMMaintenanceWindow {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER StartDate
+        The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become active. StartDate allows you to delay activation of the Maintenance Window until the specified future date.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindow.html#cfn-ssm-maintenancewindow-startdate
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Description
+        A description of the maintenance window.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindow.html#cfn-ssm-maintenancewindow-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER AllowUnassociatedTargets
+        Enables a maintenance window task to run on managed instances, even if you have not registered those instances as targets. If enabled, then you must specify the unregistered instances by instance ID when you register a task with the maintenance window.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindow.html#cfn-ssm-maintenancewindow-allowunassociatedtargets
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER Cutoff
+        The number of hours before the end of the maintenance window that Systems Manager stops scheduling new tasks for execution.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindow.html#cfn-ssm-maintenancewindow-cutoff
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER Schedule
+        The schedule of the maintenance window in the form of a cron or rate expression.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindow.html#cfn-ssm-maintenancewindow-schedule
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Duration
+        The duration of the maintenance window in hours.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindow.html#cfn-ssm-maintenancewindow-duration
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER EndDate
+        The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become inactive.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindow.html#cfn-ssm-maintenancewindow-enddate
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Tags
+        Optional metadata that you assign to a resource in the form of an arbitrary set of tags key-value pairs. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a maintenance window to identify the type of tasks it will run, the types of targets, and the environment it will run in.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindow.html#cfn-ssm-maintenancewindow-tags
         ItemType: Tag
         UpdateType: Mutable
 
     .PARAMETER Name
+        The name of the maintenance window.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindow.html#cfn-ssm-maintenancewindow-name
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ScheduleTimezone
+        The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority IANA format.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindow.html#cfn-ssm-maintenancewindow-scheduletimezone
         PrimitiveType: String
         UpdateType: Mutable
@@ -185,16 +207,8 @@ function New-VSSSMMaintenanceWindow {
                 }
             })]
         $EndDate,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
@@ -221,6 +235,9 @@ function New-VSSSMMaintenanceWindow {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

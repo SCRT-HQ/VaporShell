@@ -1,10 +1,16 @@
 function New-VSWAFv2RuleGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::WAFv2::RuleGroup resource to the template. 
+        Adds an AWS::WAFv2::RuleGroup resource to the template. **Note**
 
     .DESCRIPTION
-        Adds an AWS::WAFv2::RuleGroup resource to the template. 
+        Adds an AWS::WAFv2::RuleGroup resource to the template. **Note**
+
+This is the latest version of **AWS WAF**, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the AWS WAF Developer Guide: https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html.
+
+Use an AWS::WAFv2::RuleGroup: #aws-resource-wafv2-rulegroup to define a collection of rules for inspecting and controlling web requests. You use a rule group in an AWS::WAFv2::WebACL: aws-resource-wafv2-webacl.md by providing its Amazon Resource Name (ARN to the rule statement RuleGroupReferenceStatement, when you add rules to the web ACL.
+
+When you create a rule group, you define an immutable capacity limit. If you update a rule group, you must stay within the capacity. This allows others to reuse the rule group with confidence in its capacity requirements.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-rulegroup.html
@@ -13,39 +19,57 @@ function New-VSWAFv2RuleGroup {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Capacity
+        The web ACL capacity units WCUs required for this rule group.
+When you create your own rule group, you define this, and you cannot change it after creation. When you add or modify the rules in a rule group, AWS WAF enforces this limit. You can check the capacity for a set of rules using CheckCapacity.
+AWS WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. AWS WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. The WCU limit for web ACLs is 1,500.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-rulegroup.html#cfn-wafv2-rulegroup-capacity
         UpdateType: Mutable
         PrimitiveType: Integer
 
     .PARAMETER Description
+        A friendly description of the rule group. You cannot change the description of a rule group after you create it.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-rulegroup.html#cfn-wafv2-rulegroup-description
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER Name
+        A friendly name of the rule group. You cannot change the name of a rule group after you create it.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-rulegroup.html#cfn-wafv2-rulegroup-name
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER Scope
+        Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer ALB or an API Gateway stage. Valid Values are CLOUDFRONT and REGIONAL.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-rulegroup.html#cfn-wafv2-rulegroup-scope
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER Rules
+        The Rule statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that AWS WAF uses to identify matching web requests, and parameters that govern how AWS WAF handles them.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-rulegroup.html#cfn-wafv2-rulegroup-rules
         UpdateType: Mutable
-        Type: Rules
+        Type: List
+        ItemType: Rule
 
     .PARAMETER VisibilityConfig
+        Defines and enables Amazon CloudWatch metrics and web request sample collection.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-rulegroup.html#cfn-wafv2-rulegroup-visibilityconfig
         UpdateType: Mutable
         Type: VisibilityConfig
 
     .PARAMETER Tags
+        Key:value pairs associated with an AWS resource. The key:value pair can be anything you define. Typically, the tag key represents a category such as "environment" and the tag value represents a specific value within that category such as "test," "development," or "production". You can add up to 50 tags to each AWS resource.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-rulegroup.html#cfn-wafv2-rulegroup-tags
         UpdateType: Mutable
-        Type: TagList
+        Type: List
+        ItemType: Tag
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.
@@ -137,14 +161,27 @@ function New-VSWAFv2RuleGroup {
             })]
         $Scope,
         [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.WAFv2.RuleGroup.Rule"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $Rules,
         [parameter(Mandatory = $true)]
         $VisibilityConfig,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
         $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,
@@ -198,6 +235,18 @@ function New-VSWAFv2RuleGroup {
                 }
                 Condition {
                     $ResourceParams.Add("Condition",$Condition)
+                }
+                Rules {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name Rules -Value @($Rules)
+                }
+                Tags {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name Tags -Value @($Tags)
                 }
                 Default {
                     if (!($ResourceParams["Properties"])) {

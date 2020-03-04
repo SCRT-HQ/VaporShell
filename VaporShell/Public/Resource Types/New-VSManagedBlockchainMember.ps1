@@ -1,10 +1,10 @@
 function New-VSManagedBlockchainMember {
     <#
     .SYNOPSIS
-        Adds an AWS::ManagedBlockchain::Member resource to the template. 
+        Adds an AWS::ManagedBlockchain::Member resource to the template. Creates a member within a Managed Blockchain network.
 
     .DESCRIPTION
-        Adds an AWS::ManagedBlockchain::Member resource to the template. 
+        Adds an AWS::ManagedBlockchain::Member resource to the template. Creates a member within a Managed Blockchain network.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-member.html
@@ -13,21 +13,29 @@ function New-VSManagedBlockchainMember {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER MemberConfiguration
+        Configuration properties of the member.
+
         Type: MemberConfiguration
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-member.html#cfn-managedblockchain-member-memberconfiguration
         UpdateType: Mutable
 
     .PARAMETER NetworkConfiguration
+        Configuration properties of the network to which the member belongs.
+
         Type: NetworkConfiguration
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-member.html#cfn-managedblockchain-member-networkconfiguration
         UpdateType: Mutable
 
     .PARAMETER NetworkId
+        The unique identifier of the network to which the member belongs.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-member.html#cfn-managedblockchain-member-networkid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER InvitationId
+        The unique identifier of the invitation to join the network sent to the account that creates the member.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-member.html#cfn-managedblockchain-member-invitationid
         PrimitiveType: String
         UpdateType: Mutable
@@ -106,6 +114,9 @@ function New-VSManagedBlockchainMember {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

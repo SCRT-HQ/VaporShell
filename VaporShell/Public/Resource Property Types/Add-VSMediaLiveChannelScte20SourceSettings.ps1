@@ -1,21 +1,27 @@
 function Add-VSMediaLiveChannelScte20SourceSettings {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaLive::Channel.Scte20SourceSettings resource property to the template. 
+        Adds an AWS::MediaLive::Channel.Scte20SourceSettings resource property to the template. Information about the SCTE-20 captions to extract from the input.
 
     .DESCRIPTION
         Adds an AWS::MediaLive::Channel.Scte20SourceSettings resource property to the template.
+Information about the SCTE-20 captions to extract from the input.
 
+The parent of this entity is CaptionSelectorSettings.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-scte20sourcesettings.html
 
     .PARAMETER Source608ChannelNumber
+        Specifies the 608/708 channel number within the video track from which to extract captions.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-scte20sourcesettings.html#cfn-medialive-channel-scte20sourcesettings-source608channelnumber
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER Convert608To708
+        If upconvert, 608 data is both passed through the "608 compatibility bytes" fields of the 708 wrapper as well as translated into 708. Any 708 data present in the source content is discarded.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-scte20sourcesettings.html#cfn-medialive-channel-scte20sourcesettings-convert608to708
         PrimitiveType: String
         UpdateType: Mutable

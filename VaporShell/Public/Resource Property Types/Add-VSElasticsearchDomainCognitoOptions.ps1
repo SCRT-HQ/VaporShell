@@ -1,31 +1,39 @@
 function Add-VSElasticsearchDomainCognitoOptions {
     <#
     .SYNOPSIS
-        Adds an AWS::Elasticsearch::Domain.CognitoOptions resource property to the template. 
+        Adds an AWS::Elasticsearch::Domain.CognitoOptions resource property to the template. Configures Amazon ES to use Amazon Cognito authentication for Kibana.
 
     .DESCRIPTION
         Adds an AWS::Elasticsearch::Domain.CognitoOptions resource property to the template.
-
+Configures Amazon ES to use Amazon Cognito authentication for Kibana.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-cognitooptions.html
 
     .PARAMETER Enabled
+        Whether to enable or disable Amazon Cognito authentication for Kibana. See Amazon Cognito Authentication for Kibana: https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-cognitooptions.html#cfn-elasticsearch-domain-cognitooptions-enabled
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER IdentityPoolId
+        The Amazon Cognito identity pool ID that you want Amazon ES to use for Kibana authentication.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-cognitooptions.html#cfn-elasticsearch-domain-cognitooptions-identitypoolid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RoleArn
+        The AmazonESCognitoAccess role that allows Amazon ES to configure your user pool and identity pool.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-cognitooptions.html#cfn-elasticsearch-domain-cognitooptions-rolearn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER UserPoolId
+        The Amazon Cognito user pool ID that you want Amazon ES to use for Kibana authentication.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-cognitooptions.html#cfn-elasticsearch-domain-cognitooptions-userpoolid
         PrimitiveType: String
         UpdateType: Mutable

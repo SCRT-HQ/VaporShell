@@ -1,21 +1,25 @@
 function Add-VSSSMAssociationTarget {
     <#
     .SYNOPSIS
-        Adds an AWS::SSM::Association.Target resource property to the template. 
+        Adds an AWS::SSM::Association.Target resource property to the template. Target is a property of the AWS::SSM::Association: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html resource that specifies the targets for an SSM document in Systems Manager.
 
     .DESCRIPTION
         Adds an AWS::SSM::Association.Target resource property to the template.
-
+Target is a property of the AWS::SSM::Association: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html resource that specifies the targets for an SSM document in Systems Manager.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-target.html
 
     .PARAMETER Key
+        User-defined criteria for sending commands that target instances that meet the criteria.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-target.html#cfn-ssm-association-target-key
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Values
+        User-defined criteria that maps to Key. For example, if you specified tag:ServerRole, you could specify value:WebServer to run a command on instances that include Amazon EC2 tags of ServerRole,WebServer.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-target.html#cfn-ssm-association-target-values
         DuplicatesAllowed: False
         PrimitiveItemType: String

@@ -1,10 +1,10 @@
 function New-VSEventSchemasRegistry {
     <#
     .SYNOPSIS
-        Adds an AWS::EventSchemas::Registry resource to the template. 
+        Adds an AWS::EventSchemas::Registry resource to the template. Use the AWS::EventSchemas::Registry to specify a schema registry. Schema registries are containers for Schemas. Registries collect and organize schemas so that your schemas are in logical groups.
 
     .DESCRIPTION
-        Adds an AWS::EventSchemas::Registry resource to the template. 
+        Adds an AWS::EventSchemas::Registry resource to the template. Use the AWS::EventSchemas::Registry to specify a schema registry. Schema registries are containers for Schemas. Registries collect and organize schemas so that your schemas are in logical groups.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-registry.html
@@ -13,16 +13,22 @@ function New-VSEventSchemasRegistry {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Description
+        A description of the registry to be created.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-registry.html#cfn-eventschemas-registry-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RegistryName
+        The name of the schema registry.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-registry.html#cfn-eventschemas-registry-registryname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Tags
+        Tags to associate with the registry.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-registry.html#cfn-eventschemas-registry-tags
         ItemType: TagsEntry
@@ -109,6 +115,9 @@ function New-VSEventSchemasRegistry {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

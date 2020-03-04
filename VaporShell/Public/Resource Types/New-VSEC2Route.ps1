@@ -1,10 +1,12 @@
 function New-VSEC2Route {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::Route resource to the template. 
+        Adds an AWS::EC2::Route resource to the template. Specifies a route in a route table within a VPC.
 
     .DESCRIPTION
-        Adds an AWS::EC2::Route resource to the template. 
+        Adds an AWS::EC2::Route resource to the template. Specifies a route in a route table within a VPC.
+
+You must specify one of the following targets: EgressOnlyInternetGatewayId, GatewayId, InstanceId, NatGatewayId, NetworkInterfaceId, TransitGatewayId, or VpcPeeringConnectionId.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html
@@ -13,51 +15,73 @@ function New-VSEC2Route {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER DestinationCidrBlock
+        The IPv4 CIDR block used for the destination match.
+You must specify the DestinationCidrBlock or DestinationIpv6CidrBlock property.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-destinationcidrblock
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER DestinationIpv6CidrBlock
+        The IPv6 CIDR block used for the destination match.
+You must specify the DestinationCidrBlock or DestinationIpv6CidrBlock property.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-destinationipv6cidrblock
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER EgressOnlyInternetGatewayId
+        The ID of the egress-only internet gateway.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-egressonlyinternetgatewayid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER GatewayId
+        The ID of an internet gateway or virtual private gateway attached to your VPC.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-gatewayid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER InstanceId
+        The ID of a NAT instance in your VPC.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-instanceid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER NatGatewayId
+        The ID of a NAT gateway.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-natgatewayid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER NetworkInterfaceId
+        The ID of the network interface.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-networkinterfaceid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RouteTableId
+        The ID of the route table. The routing table must be associated with the same VPC that the virtual private gateway is attached to.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-routetableid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER TransitGatewayId
+        The ID of a transit gateway.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-transitgatewayid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER VpcPeeringConnectionId
+        The ID of a VPC peering connection.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-vpcpeeringconnectionid
         PrimitiveType: String
         UpdateType: Mutable
@@ -220,6 +244,9 @@ function New-VSEC2Route {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

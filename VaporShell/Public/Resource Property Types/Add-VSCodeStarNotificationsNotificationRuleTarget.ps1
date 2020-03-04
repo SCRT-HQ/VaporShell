@@ -1,21 +1,25 @@
 function Add-VSCodeStarNotificationsNotificationRuleTarget {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeStarNotifications::NotificationRule.Target resource property to the template. 
+        Adds an AWS::CodeStarNotifications::NotificationRule.Target resource property to the template. Information about the SNS topics associated with a notification rule.
 
     .DESCRIPTION
         Adds an AWS::CodeStarNotifications::NotificationRule.Target resource property to the template.
-
+Information about the SNS topics associated with a notification rule.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codestarnotifications-notificationrule-target.html
 
     .PARAMETER TargetType
+        The target type. Can be an Amazon SNS topic.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codestarnotifications-notificationrule-target.html#cfn-codestarnotifications-notificationrule-target-targettype
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER TargetAddress
+        The Amazon Resource Name ARN of the SNS topic.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codestarnotifications-notificationrule-target.html#cfn-codestarnotifications-notificationrule-target-targetaddress
         PrimitiveType: String
         UpdateType: Mutable

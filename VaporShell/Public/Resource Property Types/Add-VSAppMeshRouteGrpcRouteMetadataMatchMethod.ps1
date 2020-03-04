@@ -1,36 +1,46 @@
 function Add-VSAppMeshRouteGrpcRouteMetadataMatchMethod {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::Route.GrpcRouteMetadataMatchMethod resource property to the template. 
+        Adds an AWS::AppMesh::Route.GrpcRouteMetadataMatchMethod resource property to the template. An object that represents the match method. Specify one of the match values.
 
     .DESCRIPTION
         Adds an AWS::AppMesh::Route.GrpcRouteMetadataMatchMethod resource property to the template.
-
+An object that represents the match method. Specify one of the match values.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadatamatchmethod.html
 
     .PARAMETER Suffix
+        The value sent by the client must end with the specified characters.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadatamatchmethod.html#cfn-appmesh-route-grpcroutemetadatamatchmethod-suffix
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Regex
+        The value sent by the client must include the specified characters.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadatamatchmethod.html#cfn-appmesh-route-grpcroutemetadatamatchmethod-regex
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Exact
+        The value sent by the client must match the specified value exactly.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadatamatchmethod.html#cfn-appmesh-route-grpcroutemetadatamatchmethod-exact
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Prefix
+        The value sent by the client must begin with the specified characters.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadatamatchmethod.html#cfn-appmesh-route-grpcroutemetadatamatchmethod-prefix
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Range
+        An object that represents the range of values to match on.
+
         Type: MatchRange
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadatamatchmethod.html#cfn-appmesh-route-grpcroutemetadatamatchmethod-range
         UpdateType: Mutable

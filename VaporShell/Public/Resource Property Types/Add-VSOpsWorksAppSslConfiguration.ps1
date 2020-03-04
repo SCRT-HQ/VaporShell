@@ -1,26 +1,32 @@
 function Add-VSOpsWorksAppSslConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::OpsWorks::App.SslConfiguration resource property to the template. 
+        Adds an AWS::OpsWorks::App.SslConfiguration resource property to the template. Describes an app's SSL configuration.
 
     .DESCRIPTION
         Adds an AWS::OpsWorks::App.SslConfiguration resource property to the template.
-
+Describes an app's SSL configuration.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-sslconfiguration.html
 
     .PARAMETER Certificate
+        The contents of the certificate's domain.crt file.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-sslconfiguration.html#cfn-opsworks-app-sslconfig-certificate
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Chain
+        Optional. Can be used to specify an intermediate certificate authority key or client authentication.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-sslconfiguration.html#cfn-opsworks-app-sslconfig-chain
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER PrivateKey
+        The private key; the contents of the certificate's domain.kex file.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-sslconfiguration.html#cfn-opsworks-app-sslconfig-privatekey
         PrimitiveType: String
         UpdateType: Mutable

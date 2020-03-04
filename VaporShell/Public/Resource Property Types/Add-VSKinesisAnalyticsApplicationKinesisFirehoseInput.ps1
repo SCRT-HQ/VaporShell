@@ -1,21 +1,25 @@
 function Add-VSKinesisAnalyticsApplicationKinesisFirehoseInput {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalytics::Application.KinesisFirehoseInput resource property to the template. 
+        Adds an AWS::KinesisAnalytics::Application.KinesisFirehoseInput resource property to the template. Identifies an Amazon Kinesis Firehose delivery stream as the streaming source. You provide the delivery stream's Amazon Resource Name (ARN and an IAM role ARN that enables Amazon Kinesis Analytics to access the stream on your behalf.
 
     .DESCRIPTION
         Adds an AWS::KinesisAnalytics::Application.KinesisFirehoseInput resource property to the template.
-
+Identifies an Amazon Kinesis Firehose delivery stream as the streaming source. You provide the delivery stream's Amazon Resource Name (ARN and an IAM role ARN that enables Amazon Kinesis Analytics to access the stream on your behalf.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-kinesisfirehoseinput.html
 
     .PARAMETER ResourceARN
+        ARN of the input delivery stream.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-kinesisfirehoseinput.html#cfn-kinesisanalytics-application-kinesisfirehoseinput-resourcearn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RoleARN
+        ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream on your behalf. You need to make sure that the role has the necessary permissions to access the stream.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-kinesisfirehoseinput.html#cfn-kinesisanalytics-application-kinesisfirehoseinput-rolearn
         PrimitiveType: String
         UpdateType: Mutable

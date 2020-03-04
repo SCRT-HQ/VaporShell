@@ -1,16 +1,18 @@
 function Add-VSLambdaFunctionDeadLetterConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::Lambda::Function.DeadLetterConfig resource property to the template. 
+        Adds an AWS::Lambda::Function.DeadLetterConfig resource property to the template. The dead-letter queue: https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq for failed asynchronous invocations.
 
     .DESCRIPTION
         Adds an AWS::Lambda::Function.DeadLetterConfig resource property to the template.
-
+The dead-letter queue: https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq for failed asynchronous invocations.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-deadletterconfig.html
 
     .PARAMETER TargetArn
+        The Amazon Resource Name ARN of an Amazon SQS queue or Amazon SNS topic.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-deadletterconfig.html#cfn-lambda-function-deadletterconfig-targetarn
         PrimitiveType: String
         UpdateType: Mutable

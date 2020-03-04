@@ -1,22 +1,26 @@
 function Add-VSIoTEventsDetectorModelDetectorModelDefinition {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTEvents::DetectorModel.DetectorModelDefinition resource property to the template. 
+        Adds an AWS::IoTEvents::DetectorModel.DetectorModelDefinition resource property to the template. Information that defines how a detector operates.
 
     .DESCRIPTION
         Adds an AWS::IoTEvents::DetectorModel.DetectorModelDefinition resource property to the template.
-
+Information that defines how a detector operates.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-detectormodeldefinition.html
 
     .PARAMETER States
+        Information about the states of the detector.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-detectormodeldefinition.html#cfn-iotevents-detectormodel-detectormodeldefinition-states
         ItemType: State
         UpdateType: Mutable
 
     .PARAMETER InitialStateName
+        The state that is entered at the creation of each detector instance.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-detectormodeldefinition.html#cfn-iotevents-detectormodel-detectormodeldefinition-initialstatename
         PrimitiveType: String
         UpdateType: Mutable

@@ -1,16 +1,18 @@
 function Add-VSEC2SpotFleetClassicLoadBalancer {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::SpotFleet.ClassicLoadBalancer resource property to the template. 
+        Adds an AWS::EC2::SpotFleet.ClassicLoadBalancer resource property to the template. Specifies a Classic Load Balancer.
 
     .DESCRIPTION
         Adds an AWS::EC2::SpotFleet.ClassicLoadBalancer resource property to the template.
-
+Specifies a Classic Load Balancer.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-classicloadbalancer.html
 
     .PARAMETER Name
+        The name of the load balancer.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-classicloadbalancer.html#cfn-ec2-spotfleet-classicloadbalancer-name
         PrimitiveType: String
         UpdateType: Mutable

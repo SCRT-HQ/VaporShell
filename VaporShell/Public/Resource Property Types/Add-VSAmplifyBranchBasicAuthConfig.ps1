@@ -1,26 +1,32 @@
 function Add-VSAmplifyBranchBasicAuthConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::Amplify::Branch.BasicAuthConfig resource property to the template. 
+        Adds an AWS::Amplify::Branch.BasicAuthConfig resource property to the template. Use the BasicAuthConfig property type to set password protection for a specific branch.
 
     .DESCRIPTION
         Adds an AWS::Amplify::Branch.BasicAuthConfig resource property to the template.
-
+Use the BasicAuthConfig property type to set password protection for a specific branch.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-branch-basicauthconfig.html
 
     .PARAMETER Username
+        The user name for basic authorization.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-branch-basicauthconfig.html#cfn-amplify-branch-basicauthconfig-username
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER EnableBasicAuth
+        Enables Basic Auth for the branch.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-branch-basicauthconfig.html#cfn-amplify-branch-basicauthconfig-enablebasicauth
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER Password
+        The password for basic authorization.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-branch-basicauthconfig.html#cfn-amplify-branch-basicauthconfig-password
         PrimitiveType: String
         UpdateType: Mutable

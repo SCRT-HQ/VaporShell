@@ -1,10 +1,10 @@
 function New-VSApiGatewayDocumentationVersion {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::DocumentationVersion resource to the template. 
+        Adds an AWS::ApiGateway::DocumentationVersion resource to the template. The AWS::ApiGateway::DocumentationVersion resource creates a snapshot of the documentation for an API. For more information, see Representation of API Documentation in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api-content-representation.html in the *API Gateway Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::ApiGateway::DocumentationVersion resource to the template. 
+        Adds an AWS::ApiGateway::DocumentationVersion resource to the template. The AWS::ApiGateway::DocumentationVersion resource creates a snapshot of the documentation for an API. For more information, see Representation of API Documentation in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-documenting-api-content-representation.html in the *API Gateway Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationversion.html
@@ -13,16 +13,22 @@ function New-VSApiGatewayDocumentationVersion {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Description
+        The description of the API documentation snapshot.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationversion.html#cfn-apigateway-documentationversion-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DocumentationVersion
+        The version identifier of the API documentation snapshot.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationversion.html#cfn-apigateway-documentationversion-documentationversion
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER RestApiId
+        The identifier of the API.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationversion.html#cfn-apigateway-documentationversion-restapiid
         PrimitiveType: String
         UpdateType: Immutable
@@ -108,6 +114,9 @@ function New-VSApiGatewayDocumentationVersion {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

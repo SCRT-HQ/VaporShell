@@ -1,21 +1,25 @@
 function Add-VSEC2NetworkAclEntryPortRange {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::NetworkAclEntry.PortRange resource property to the template. 
+        Adds an AWS::EC2::NetworkAclEntry.PortRange resource property to the template. Describes a range of ports.
 
     .DESCRIPTION
         Adds an AWS::EC2::NetworkAclEntry.PortRange resource property to the template.
-
+Describes a range of ports.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkaclentry-portrange.html
 
     .PARAMETER From
+        The first port in the range. Required if you specify 6 TCP or 17 UDP for the protocol parameter.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkaclentry-portrange.html#cfn-ec2-networkaclentry-portrange-from
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER To
+        The last port in the range. Required if you specify 6 TCP or 17 UDP for the protocol parameter.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkaclentry-portrange.html#cfn-ec2-networkaclentry-portrange-to
         PrimitiveType: Integer
         UpdateType: Mutable

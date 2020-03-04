@@ -1,16 +1,18 @@
 function Add-VSMediaConvertJobTemplateAccelerationSettings {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaConvert::JobTemplate.AccelerationSettings resource property to the template. 
+        Adds an AWS::MediaConvert::JobTemplate.AccelerationSettings resource property to the template. Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide.
 
     .DESCRIPTION
         Adds an AWS::MediaConvert::JobTemplate.AccelerationSettings resource property to the template.
-
+Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconvert-jobtemplate-accelerationsettings.html
 
     .PARAMETER Mode
+        Specify the conditions when the service will run your job with accelerated transcoding.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconvert-jobtemplate-accelerationsettings.html#cfn-mediaconvert-jobtemplate-accelerationsettings-mode
         PrimitiveType: String
         UpdateType: Mutable

@@ -1,10 +1,12 @@
 function New-VSElasticLoadBalancingV2TargetGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticLoadBalancingV2::TargetGroup resource to the template. 
+        Adds an AWS::ElasticLoadBalancingV2::TargetGroup resource to the template. Specifies a target group for an Application Load Balancer or Network Load Balancer.
 
     .DESCRIPTION
-        Adds an AWS::ElasticLoadBalancingV2::TargetGroup resource to the template. 
+        Adds an AWS::ElasticLoadBalancingV2::TargetGroup resource to the template. Specifies a target group for an Application Load Balancer or Network Load Balancer.
+
+Before you register a Lambda function as a target, you must create a AWS::Lambda::Permission resource that grants the Elastic Load Balancing service principal permission to invoke the Lambda function.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html
@@ -13,61 +15,86 @@ function New-VSElasticLoadBalancingV2TargetGroup {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER HealthCheckEnabled
+        Indicates whether health checks are enabled. If the target type is lambda, health checks are disabled by default but can be enabled. If the target type is instance or ip, health checks are always enabled and cannot be disabled.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-healthcheckenabled
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER HealthCheckIntervalSeconds
+        The approximate amount of time, in seconds, between health checks of an individual target. For HTTP and HTTPS health checks, the range is 5–300 seconds. For TCP health checks, the supported values are 10 and 30 seconds. If the target type is instance or ip, the default is 30 seconds. If the target type is lambda, the default is 35 seconds.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-healthcheckintervalseconds
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER HealthCheckPath
+        HTTP/HTTPS health checks] The ping path that is the destination on the targets for health checks. The default is /.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-healthcheckpath
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER HealthCheckPort
+        The port the load balancer uses when performing health checks on targets. The default is traffic-port, which is the port on which each target receives traffic from the load balancer.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-healthcheckport
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER HealthCheckProtocol
+        The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers, the default is TCP. The TCP protocol is supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The TLS, UDP, and TCP_UDP protocols are not supported for health checks.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-healthcheckprotocol
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER HealthCheckTimeoutSeconds
+        The amount of time, in seconds, during which no response from a target means a failed health check. For target groups with a protocol of HTTP or HTTPS, the default is 5 seconds. For target groups with a protocol of TCP or TLS, this value must be 6 seconds for HTTP health checks and 10 seconds for TCP and HTTPS health checks. If the target type is lambda, the default is 30 seconds.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-healthchecktimeoutseconds
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER HealthyThresholdCount
+        The number of consecutive health checks successes required before considering an unhealthy target healthy. For target groups with a protocol of HTTP or HTTPS, the default is 5. For target groups with a protocol of TCP or TLS, the default is 3. If the target type is lambda, the default is 5.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-healthythresholdcount
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER Matcher
+        HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-matcher
         Type: Matcher
         UpdateType: Mutable
 
     .PARAMETER Name
+        The name of the target group.
+This name must be unique per region per account, can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and must not begin or end with a hyphen.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-name
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Port
+        The port on which the targets receive traffic. This port is used unless you specify a port override when registering the target. If the target is a Lambda function, this parameter does not apply.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-port
         PrimitiveType: Integer
         UpdateType: Immutable
 
     .PARAMETER Protocol
+        The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, or TCP_UDP. A TCP_UDP listener must be associated with a TCP_UDP target group. If the target is a Lambda function, this parameter does not apply.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-protocol
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Tags
+        The tags.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-tags
         DuplicatesAllowed: True
         ItemType: Tag
@@ -75,6 +102,8 @@ function New-VSElasticLoadBalancingV2TargetGroup {
         UpdateType: Mutable
 
     .PARAMETER TargetGroupAttributes
+        The attributes.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-targetgroupattributes
         DuplicatesAllowed: False
         ItemType: TargetGroupAttribute
@@ -82,11 +111,18 @@ function New-VSElasticLoadBalancingV2TargetGroup {
         UpdateType: Mutable
 
     .PARAMETER TargetType
+        The type of target that you must specify when registering targets with this target group. You can't specify targets for a target group using more than one target type.
++  instance - Targets are specified by instance ID. This is the default value. If the target group protocol is UDP or TCP_UDP, the target type must be instance.
++  ip - Targets are specified by IP address. You can specify IP addresses from the subnets of the virtual private cloud VPC for the target group, the RFC 1918 range 10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16, and the RFC 6598 range 100.64.0.0/10. You can't specify publicly routable IP addresses.
++  lambda - The target groups contains a single Lambda function.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-targettype
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Targets
+        The targets.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-targets
         DuplicatesAllowed: False
         ItemType: TargetDescription
@@ -94,11 +130,15 @@ function New-VSElasticLoadBalancingV2TargetGroup {
         UpdateType: Mutable
 
     .PARAMETER UnhealthyThresholdCount
+        The number of consecutive health check failures required before considering a target unhealthy. For target groups with a protocol of HTTP or HTTPS, the default is 2. For target groups with a protocol of TCP or TLS, this value must be the same as the healthy threshold count. If the target type is lambda, the default is 2.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-unhealthythresholdcount
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER VpcId
+        The identifier of the virtual private cloud VPC. If the target is a Lambda function, this parameter does not apply. Otherwise, this parameter is required.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-vpcid
         PrimitiveType: String
         UpdateType: Immutable
@@ -260,16 +300,8 @@ function New-VSElasticLoadBalancingV2TargetGroup {
                 }
             })]
         $Protocol,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
@@ -329,6 +361,9 @@ function New-VSElasticLoadBalancingV2TargetGroup {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

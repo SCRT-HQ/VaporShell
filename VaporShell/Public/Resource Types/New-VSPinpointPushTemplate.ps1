@@ -1,10 +1,10 @@
 function New-VSPinpointPushTemplate {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::PushTemplate resource to the template. 
+        Adds an AWS::Pinpoint::PushTemplate resource to the template. The AWS::Pinpoint::PushTemplate resource is a message template that you can use in messages that are sent through a push notification channel. A *message template* is a set of content and settings that you can define, save, and reuse in messages for one or more Amazon Pinpoint applications.
 
     .DESCRIPTION
-        Adds an AWS::Pinpoint::PushTemplate resource to the template. 
+        Adds an AWS::Pinpoint::PushTemplate resource to the template. The AWS::Pinpoint::PushTemplate resource is a message template that you can use in messages that are sent through a push notification channel. A *message template* is a set of content and settings that you can define, save, and reuse in messages for one or more Amazon Pinpoint applications.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-pushtemplate.html
@@ -13,46 +13,64 @@ function New-VSPinpointPushTemplate {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER GCM
+        The message template to use for the GCM channel, which is used to send notifications through the Firebase Cloud Messaging FCM, formerly Google Cloud Messaging GCM, service. This message template overrides the default template for push notification channels Default.
+
         Type: AndroidPushNotificationTemplate
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-pushtemplate.html#cfn-pinpoint-pushtemplate-gcm
         UpdateType: Mutable
 
     .PARAMETER Baidu
+        The message template to use for the Baidu Baidu Cloud Push channel. This message template overrides the default template for push notification channels Default.
+
         Type: AndroidPushNotificationTemplate
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-pushtemplate.html#cfn-pinpoint-pushtemplate-baidu
         UpdateType: Mutable
 
     .PARAMETER TemplateName
+        The name of the message template.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-pushtemplate.html#cfn-pinpoint-pushtemplate-templatename
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER ADM
+        The message template to use for the ADM Amazon Device Messaging channel. This message template overrides the default template for push notification channels Default.
+
         Type: AndroidPushNotificationTemplate
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-pushtemplate.html#cfn-pinpoint-pushtemplate-adm
         UpdateType: Mutable
 
     .PARAMETER APNS
+        The message template to use for the APNs Apple Push Notification service channel. This message template overrides the default template for push notification channels Default.
+
         Type: APNSPushNotificationTemplate
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-pushtemplate.html#cfn-pinpoint-pushtemplate-apns
         UpdateType: Mutable
 
     .PARAMETER TemplateDescription
+        A custom description of the message template.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-pushtemplate.html#cfn-pinpoint-pushtemplate-templatedescription
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DefaultSubstitutions
+        A JSON object that specifies the default values to use for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable. When you create a message that's based on the template, you can override these defaults with message-specific and address-specific variables and values.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-pushtemplate.html#cfn-pinpoint-pushtemplate-defaultsubstitutions
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Default
+        The default message template to use for push notification channels.
+
         Type: DefaultPushNotificationTemplate
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-pushtemplate.html#cfn-pinpoint-pushtemplate-default
         UpdateType: Mutable
 
     .PARAMETER Tags
+        A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-pushtemplate.html#cfn-pinpoint-pushtemplate-tags
         PrimitiveType: Json
         UpdateType: Mutable
@@ -159,6 +177,9 @@ function New-VSPinpointPushTemplate {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

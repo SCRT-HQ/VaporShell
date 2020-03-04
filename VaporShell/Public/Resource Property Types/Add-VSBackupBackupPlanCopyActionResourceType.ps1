@@ -1,21 +1,25 @@
 function Add-VSBackupBackupPlanCopyActionResourceType {
     <#
     .SYNOPSIS
-        Adds an AWS::Backup::BackupPlan.CopyActionResourceType resource property to the template. 
+        Adds an AWS::Backup::BackupPlan.CopyActionResourceType resource property to the template. <a name="aws-properties-backup-backupplan-copyactionresourcetype-description"></a>The CopyActionResourceType property type specifies Not currently supported by AWS CloudFormation. for an AWS::Backup::BackupPlan: aws-resource-backup-backupplan.md.
 
     .DESCRIPTION
         Adds an AWS::Backup::BackupPlan.CopyActionResourceType resource property to the template.
-
+<a name="aws-properties-backup-backupplan-copyactionresourcetype-description"></a>The CopyActionResourceType property type specifies Not currently supported by AWS CloudFormation. for an AWS::Backup::BackupPlan: aws-resource-backup-backupplan.md.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-copyactionresourcetype.html
 
     .PARAMETER Lifecycle
+        Not currently supported by AWS CloudFormation.
+
         Type: LifecycleResourceType
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-copyactionresourcetype.html#cfn-backup-backupplan-copyactionresourcetype-lifecycle
         UpdateType: Mutable
 
     .PARAMETER DestinationBackupVaultArn
+        Not currently supported by AWS CloudFormation.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-copyactionresourcetype.html#cfn-backup-backupplan-copyactionresourcetype-destinationbackupvaultarn
         PrimitiveType: String
         UpdateType: Mutable

@@ -1,16 +1,20 @@
 function Add-VSAppSyncResolverPipelineConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::AppSync::Resolver.PipelineConfig resource property to the template. 
+        Adds an AWS::AppSync::Resolver.PipelineConfig resource property to the template. Use the PipelineConfig property type to specify PipelineConfig for an AWS AppSync resolver.
 
     .DESCRIPTION
         Adds an AWS::AppSync::Resolver.PipelineConfig resource property to the template.
+Use the PipelineConfig property type to specify PipelineConfig for an AWS AppSync resolver.
 
+PipelineConfig is a property of the AWS::AppSync::Resolver: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-resolver-pipelineconfig.html
 
     .PARAMETER Functions
+        A list of Function objects.
+
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-resolver-pipelineconfig.html#cfn-appsync-resolver-pipelineconfig-functions

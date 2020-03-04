@@ -1,10 +1,10 @@
 function New-VSECSTaskSet {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::TaskSet resource to the template. 
+        Adds an AWS::ECS::TaskSet resource to the template. Create a task set in the specified cluster and service. This is used when a service uses the EXTERNAL deployment controller type. For more information, see Amazon ECS Deployment Types: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html in the *Amazon Elastic Container Service Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::ECS::TaskSet resource to the template. 
+        Adds an AWS::ECS::TaskSet resource to the template. Create a task set in the specified cluster and service. This is used when a service uses the EXTERNAL deployment controller type. For more information, see Amazon ECS Deployment Types: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html in the *Amazon Elastic Container Service Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskset.html
@@ -13,53 +13,74 @@ function New-VSECSTaskSet {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Cluster
+        The short name or full Amazon Resource Name ARN of the cluster that hosts the service to create the task set in.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskset.html#cfn-ecs-taskset-cluster
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER ExternalId
+        An optional non-unique tag that identifies this task set in external systems. If the task set is associated with a service discovery registry, the tasks in this task set will have the ECS_TASK_SET_EXTERNAL_ID AWS Cloud Map attribute set to the provided value.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskset.html#cfn-ecs-taskset-externalid
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER LaunchType
+        The launch type that new tasks in the task set will use. For more information, see Amazon ECS Launch Types: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html in the *Amazon Elastic Container Service Developer Guide*.
+If a launchType is specified, the capacityProviderStrategy parameter must be omitted.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskset.html#cfn-ecs-taskset-launchtype
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER LoadBalancers
+        A load balancer object representing the load balancer to use with the task set. The supported load balancer types are either an Application Load Balancer or a Network Load Balancer.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskset.html#cfn-ecs-taskset-loadbalancers
         UpdateType: Immutable
         Type: List
         ItemType: LoadBalancer
 
     .PARAMETER NetworkConfiguration
+        The network configuration for the task set.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskset.html#cfn-ecs-taskset-networkconfiguration
         UpdateType: Immutable
         Type: NetworkConfiguration
 
     .PARAMETER PlatformVersion
+        The platform version that the tasks in the task set should use. A platform version is specified only for tasks using the Fargate launch type. If one isn't specified, the LATEST platform version is used by default.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskset.html#cfn-ecs-taskset-platformversion
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER Scale
+        A floating-point percentage of the desired number of tasks to place and keep running in the task set.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskset.html#cfn-ecs-taskset-scale
         UpdateType: Mutable
         Type: Scale
 
     .PARAMETER Service
+        The short name or full Amazon Resource Name ARN of the service to create the task set in.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskset.html#cfn-ecs-taskset-service
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER ServiceRegistries
+        The details of the service discovery registries to assign to this task set. For more information, see Service Discovery: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskset.html#cfn-ecs-taskset-serviceregistries
         UpdateType: Immutable
         Type: List
         ItemType: ServiceRegistry
 
     .PARAMETER TaskDefinition
+        The task definition for the tasks in the task set to use.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskset.html#cfn-ecs-taskset-taskdefinition
         UpdateType: Immutable
         PrimitiveType: String
@@ -204,6 +225,9 @@ function New-VSECSTaskSet {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

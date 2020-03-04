@@ -1,10 +1,10 @@
 function New-VSGuardDutyFilter {
     <#
     .SYNOPSIS
-        Adds an AWS::GuardDuty::Filter resource to the template. 
+        Adds an AWS::GuardDuty::Filter resource to the template. The AWS::GuardDuty::Filter resource specifies a new filter defined by the provided findingCriteria.
 
     .DESCRIPTION
-        Adds an AWS::GuardDuty::Filter resource to the template. 
+        Adds an AWS::GuardDuty::Filter resource to the template. The AWS::GuardDuty::Filter resource specifies a new filter defined by the provided findingCriteria.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html
@@ -13,31 +13,43 @@ function New-VSGuardDutyFilter {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Action
+        Specifies the action that is to be applied to the findings that match the filter.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-action
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Description
+        The description of the filter.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DetectorId
+        The ID of the detector to associate the Filter with.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-detectorid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER FindingCriteria
+        Represents the criteria to be used in the filter for querying findings.
+
         Type: FindingCriteria
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-findingcriteria
         UpdateType: Mutable
 
     .PARAMETER Rank
+        Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-rank
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER Name
+        The name of the filter.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-name
         PrimitiveType: String
         UpdateType: Immutable
@@ -147,6 +159,9 @@ function New-VSGuardDutyFilter {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

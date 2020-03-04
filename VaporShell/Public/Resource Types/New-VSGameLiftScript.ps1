@@ -1,10 +1,10 @@
 function New-VSGameLiftScript {
     <#
     .SYNOPSIS
-        Adds an AWS::GameLift::Script resource to the template. 
+        Adds an AWS::GameLift::Script resource to the template. The AWS::GameLift::Script resource creates a new script record for your Realtime Servers script. Realtime scripts are JavaScript that provide configuration settings and optional custom game logic for your game. The script is deployed when you create a Realtime Servers fleet to host your game sessions. Script logic is executed during an active game session.
 
     .DESCRIPTION
-        Adds an AWS::GameLift::Script resource to the template. 
+        Adds an AWS::GameLift::Script resource to the template. The AWS::GameLift::Script resource creates a new script record for your Realtime Servers script. Realtime scripts are JavaScript that provide configuration settings and optional custom game logic for your game. The script is deployed when you create a Realtime Servers fleet to host your game sessions. Script logic is executed during an active game session.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-script.html
@@ -13,16 +13,22 @@ function New-VSGameLiftScript {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Version
+        The version that is associated with a build or script. Version strings do not need to be unique.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-script.html#cfn-gamelift-script-version
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER StorageLocation
+        The location in Amazon S3 where build or script files are stored for access by Amazon GameLift.
+
         Type: S3Location
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-script.html#cfn-gamelift-script-storagelocation
         UpdateType: Mutable
 
     .PARAMETER Name
+        A descriptive label that is associated with a script. Script names do not need to be unique.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-script.html#cfn-gamelift-script-name
         PrimitiveType: String
         UpdateType: Mutable
@@ -99,6 +105,9 @@ function New-VSGameLiftScript {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

@@ -1,10 +1,10 @@
 function New-VSS3AccessPoint {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::AccessPoint resource to the template. 
+        Adds an AWS::S3::AccessPoint resource to the template. The AWS::S3::AccessPoint resource is an Amazon S3 resource type that you can use to access buckets.
 
     .DESCRIPTION
-        Adds an AWS::S3::AccessPoint resource to the template. 
+        Adds an AWS::S3::AccessPoint resource to the template. The AWS::S3::AccessPoint resource is an Amazon S3 resource type that you can use to access buckets.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-accesspoint.html
@@ -13,41 +13,57 @@ function New-VSS3AccessPoint {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Name
+        The name of this access point.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-accesspoint.html#cfn-s3-accesspoint-name
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER Bucket
+        The name of the bucket associated with this access point.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-accesspoint.html#cfn-s3-accesspoint-bucket
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER VpcConfiguration
+        The Virtual Private Cloud VPC configuration for this access point, if one exists.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-accesspoint.html#cfn-s3-accesspoint-vpcconfiguration
         UpdateType: Immutable
         Type: VpcConfiguration
 
     .PARAMETER PublicAccessBlockConfiguration
+        The PublicAccessBlock configuration that you want to apply to this Amazon S3 bucket. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see The Meaning of "Public": https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status in the *Amazon Simple Storage Service Developer Guide*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-accesspoint.html#cfn-s3-accesspoint-publicaccessblockconfiguration
         UpdateType: Immutable
         Type: PublicAccessBlockConfiguration
 
     .PARAMETER Policy
+        The access point policy associated with this access point.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-accesspoint.html#cfn-s3-accesspoint-policy
         UpdateType: Mutable
         PrimitiveType: Json
 
     .PARAMETER PolicyStatus
+        The container element for a bucket's policy status.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-accesspoint.html#cfn-s3-accesspoint-policystatus
         UpdateType: Mutable
         PrimitiveType: Json
 
     .PARAMETER NetworkOrigin
+        Indicates whether this access point allows access from the internet. If VpcConfiguration is specified for this access point, then NetworkOrigin is VPC, and the access point doesn't allow access from the internet. Otherwise, NetworkOrigin is Internet, and the access point allows access from the internet, subject to the access point and bucket access policies.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-accesspoint.html#cfn-s3-accesspoint-networkorigin
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER CreationDate
+        The date and time when this access point was created.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-accesspoint.html#cfn-s3-accesspoint-creationdate
         UpdateType: Mutable
         PrimitiveType: String
@@ -170,6 +186,9 @@ function New-VSS3AccessPoint {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

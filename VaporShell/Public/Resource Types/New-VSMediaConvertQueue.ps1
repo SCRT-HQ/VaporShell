@@ -1,10 +1,10 @@
 function New-VSMediaConvertQueue {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaConvert::Queue resource to the template. 
+        Adds an AWS::MediaConvert::Queue resource to the template. The AWS::MediaConvert::Queue resource is an AWS Elemental MediaConvert resource type that you can use to manage the resources that are available to your account for parallel processing of jobs. For more information about queues, see Working with AWS Elemental MediaConvert Queues: https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html in the *AWS Elemental MediaConvert User Guide*.
 
     .DESCRIPTION
-        Adds an AWS::MediaConvert::Queue resource to the template. 
+        Adds an AWS::MediaConvert::Queue resource to the template. The AWS::MediaConvert::Queue resource is an AWS Elemental MediaConvert resource type that you can use to manage the resources that are available to your account for parallel processing of jobs. For more information about queues, see Working with AWS Elemental MediaConvert Queues: https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html in the *AWS Elemental MediaConvert User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-queue.html
@@ -13,26 +13,38 @@ function New-VSMediaConvertQueue {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Status
+        Initial state of the queue. Queues can be either ACTIVE or PAUSED. If you create a paused queue, then jobs that you send to that queue won't begin.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-queue.html#cfn-mediaconvert-queue-status
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Description
+        Optional. A description of the queue that you are creating.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-queue.html#cfn-mediaconvert-queue-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER PricingPlan
+        When you use AWS CloudFormation, you can create only on-demand queues. Therefore, always set PricingPlan to the value "ON_DEMAND" when declaring an AWS::MediaConvert::Queue in your AWS CloudFormation template.
+To create a reserved queue, use the AWS Elemental MediaConvert console at https://console.aws.amazon.com/mediaconvert to set up a contract. For more information, see Working with AWS Elemental MediaConvert Queues: https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html in the *AWS Elemental MediaConvert User Guide*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-queue.html#cfn-mediaconvert-queue-pricingplan
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Tags
+        An array of key-value pairs to apply to this resource.
+For more information, see Tag: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-queue.html#cfn-mediaconvert-queue-tags
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER Name
+        The name of the queue that you are creating.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-queue.html#cfn-mediaconvert-queue-name
         PrimitiveType: String
         UpdateType: Immutable
@@ -140,6 +152,9 @@ function New-VSMediaConvertQueue {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

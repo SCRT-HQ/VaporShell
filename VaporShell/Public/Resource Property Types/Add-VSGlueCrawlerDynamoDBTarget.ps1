@@ -1,16 +1,18 @@
 function Add-VSGlueCrawlerDynamoDBTarget {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Crawler.DynamoDBTarget resource property to the template. 
+        Adds an AWS::Glue::Crawler.DynamoDBTarget resource property to the template. Specifies an Amazon DynamoDB table to crawl.
 
     .DESCRIPTION
         Adds an AWS::Glue::Crawler.DynamoDBTarget resource property to the template.
-
+Specifies an Amazon DynamoDB table to crawl.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-dynamodbtarget.html
 
     .PARAMETER Path
+        The name of the DynamoDB table to crawl.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-dynamodbtarget.html#cfn-glue-crawler-dynamodbtarget-path
         PrimitiveType: String
         UpdateType: Mutable

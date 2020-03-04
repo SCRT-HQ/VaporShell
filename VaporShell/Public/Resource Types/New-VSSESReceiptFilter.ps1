@@ -1,10 +1,10 @@
 function New-VSSESReceiptFilter {
     <#
     .SYNOPSIS
-        Adds an AWS::SES::ReceiptFilter resource to the template. 
+        Adds an AWS::SES::ReceiptFilter resource to the template. Specify a new IP address filter. You use IP address filters when you receive email with Amazon SES. For more information, see the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html.
 
     .DESCRIPTION
-        Adds an AWS::SES::ReceiptFilter resource to the template. 
+        Adds an AWS::SES::ReceiptFilter resource to the template. Specify a new IP address filter. You use IP address filters when you receive email with Amazon SES. For more information, see the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptfilter.html
@@ -13,6 +13,8 @@ function New-VSSESReceiptFilter {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Filter
+        A data structure that describes the IP address filter that you want to specify. This object consists of a name, an IP address range, and a boolean that indicates whether to allow or block mail from the IP range.
+
         Type: Filter
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptfilter.html#cfn-ses-receiptfilter-filter
         UpdateType: Immutable
@@ -67,6 +69,9 @@ function New-VSSESReceiptFilter {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

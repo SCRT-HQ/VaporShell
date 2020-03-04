@@ -1,10 +1,10 @@
 function New-VSEC2TransitGatewayRouteTable {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::TransitGatewayRouteTable resource to the template. 
+        Adds an AWS::EC2::TransitGatewayRouteTable resource to the template. Specifies a route table for a transit gateway.
 
     .DESCRIPTION
-        Adds an AWS::EC2::TransitGatewayRouteTable resource to the template. 
+        Adds an AWS::EC2::TransitGatewayRouteTable resource to the template. Specifies a route table for a transit gateway.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroutetable.html
@@ -13,11 +13,15 @@ function New-VSEC2TransitGatewayRouteTable {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER TransitGatewayId
+        The ID of the transit gateway.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroutetable.html#cfn-ec2-transitgatewayroutetable-transitgatewayid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Tags
+        Any tags assigned to the route table.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroutetable.html#cfn-ec2-transitgatewayroutetable-tags
         ItemType: Tag
@@ -79,20 +83,15 @@ function New-VSEC2TransitGatewayRouteTable {
                 }
             })]
         $TransitGatewayId,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

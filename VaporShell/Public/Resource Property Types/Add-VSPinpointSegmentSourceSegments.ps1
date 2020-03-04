@@ -1,21 +1,25 @@
 function Add-VSPinpointSegmentSourceSegments {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::Segment.SourceSegments resource property to the template. 
+        Adds an AWS::Pinpoint::Segment.SourceSegments resource property to the template. Specifies the base segment to build a segment on. A base segment, also referred to as a *source segment*, defines the initial population of endpoints for a segment. When you add dimensions to a segment, Amazon Pinpoint filters the base segment by using the dimensions that you specify. You can specify more than one dimensional segment or only one imported segment.
 
     .DESCRIPTION
         Adds an AWS::Pinpoint::Segment.SourceSegments resource property to the template.
-
+Specifies the base segment to build a segment on. A base segment, also referred to as a *source segment*, defines the initial population of endpoints for a segment. When you add dimensions to a segment, Amazon Pinpoint filters the base segment by using the dimensions that you specify. You can specify more than one dimensional segment or only one imported segment.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentgroups-groups-sourcesegments.html
 
     .PARAMETER Version
+        The version number of the segment.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentgroups-groups-sourcesegments.html#cfn-pinpoint-segment-segmentgroups-groups-sourcesegments-version
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER Id
+        The unique identifier for the segment.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentgroups-groups-sourcesegments.html#cfn-pinpoint-segment-segmentgroups-groups-sourcesegments-id
         PrimitiveType: String
         UpdateType: Mutable

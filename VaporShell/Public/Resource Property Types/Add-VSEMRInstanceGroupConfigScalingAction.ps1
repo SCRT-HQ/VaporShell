@@ -1,21 +1,25 @@
 function Add-VSEMRInstanceGroupConfigScalingAction {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::InstanceGroupConfig.ScalingAction resource property to the template. 
+        Adds an AWS::EMR::InstanceGroupConfig.ScalingAction resource property to the template. ScalingAction is a subproperty of the ScalingRule property type. ScalingAction determines the type of adjustment the automatic scaling activity makes when triggered, and the periodicity of the adjustment.
 
     .DESCRIPTION
         Adds an AWS::EMR::InstanceGroupConfig.ScalingAction resource property to the template.
-
+ScalingAction is a subproperty of the ScalingRule property type. ScalingAction determines the type of adjustment the automatic scaling activity makes when triggered, and the periodicity of the adjustment.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingaction.html
 
     .PARAMETER Market
+        Not available for instance groups. Instance groups use the market type specified for the group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingaction.html#cfn-elasticmapreduce-instancegroupconfig-scalingaction-market
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SimpleScalingPolicyConfiguration
+        The type of adjustment the automatic scaling activity makes when triggered, and the periodicity of the adjustment.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingaction.html#cfn-elasticmapreduce-instancegroupconfig-scalingaction-simplescalingpolicyconfiguration
         Type: SimpleScalingPolicyConfiguration
         UpdateType: Mutable

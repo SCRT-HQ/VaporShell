@@ -1,10 +1,10 @@
 function New-VSGuardDutyMaster {
     <#
     .SYNOPSIS
-        Adds an AWS::GuardDuty::Master resource to the template. 
+        Adds an AWS::GuardDuty::Master resource to the template. You can use the AWS::GuardDuty::Master resource in a GuardDuty member account to accept an invitation from a GuardDuty master account. The invitation to the member account must be sent prior to using the AWS::GuardDuty::Master resource to accept the master account's invitation. You can invite a member account by using the InviteMembers operation of the Amazon GuardDuty API, or by creating an AWS::GuardDuty::Member resource.
 
     .DESCRIPTION
-        Adds an AWS::GuardDuty::Master resource to the template. 
+        Adds an AWS::GuardDuty::Master resource to the template. You can use the AWS::GuardDuty::Master resource in a GuardDuty member account to accept an invitation from a GuardDuty master account. The invitation to the member account must be sent prior to using the AWS::GuardDuty::Master resource to accept the master account's invitation. You can invite a member account by using the InviteMembers operation of the Amazon GuardDuty API, or by creating an AWS::GuardDuty::Member resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-master.html
@@ -13,16 +13,22 @@ function New-VSGuardDutyMaster {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER DetectorId
+        The unique ID of the detector associated with the GuardDuty master account.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-master.html#cfn-guardduty-master-detectorid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER MasterId
+        The AWS account ID of the account designated as the GuardDuty master account.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-master.html#cfn-guardduty-master-masterid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER InvitationId
+        The ID of the invitation that is sent to the account designated as a member account. You can find the invitation ID by using the ListInvitation action of the GuardDuty API.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-master.html#cfn-guardduty-master-invitationid
         PrimitiveType: String
         UpdateType: Immutable
@@ -108,6 +114,9 @@ function New-VSGuardDutyMaster {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

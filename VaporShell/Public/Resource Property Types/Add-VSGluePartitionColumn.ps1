@@ -1,26 +1,32 @@
 function Add-VSGluePartitionColumn {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Partition.Column resource property to the template. 
+        Adds an AWS::Glue::Partition.Column resource property to the template. A column in a Table.
 
     .DESCRIPTION
         Adds an AWS::Glue::Partition.Column resource property to the template.
-
+A column in a Table.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-column.html
 
     .PARAMETER Comment
+        A free-form text comment.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-column.html#cfn-glue-partition-column-comment
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Type
+        The data type of the Column.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-column.html#cfn-glue-partition-column-type
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Name
+        The name of the Column.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-column.html#cfn-glue-partition-column-name
         PrimitiveType: String
         UpdateType: Mutable

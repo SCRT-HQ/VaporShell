@@ -1,31 +1,39 @@
 function Add-VSEventsRuleBatchParameters {
     <#
     .SYNOPSIS
-        Adds an AWS::Events::Rule.BatchParameters resource property to the template. 
+        Adds an AWS::Events::Rule.BatchParameters resource property to the template. The custom parameters to be used when the target is an AWS Batch job.
 
     .DESCRIPTION
         Adds an AWS::Events::Rule.BatchParameters resource property to the template.
-
+The custom parameters to be used when the target is an AWS Batch job.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-batchparameters.html
 
     .PARAMETER ArrayProperties
+        The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an AWS Batch job.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-batchparameters.html#cfn-events-rule-batchparameters-arrayproperties
         Type: BatchArrayProperties
         UpdateType: Mutable
 
     .PARAMETER JobDefinition
+        The ARN or name of the job definition to use if the event target is an AWS Batch job. This job definition must already exist.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-batchparameters.html#cfn-events-rule-batchparameters-jobdefinition
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER JobName
+        The name to use for this execution of the job, if the target is an AWS Batch job.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-batchparameters.html#cfn-events-rule-batchparameters-jobname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RetryStrategy
+        The retry strategy to use for failed jobs, if the target is an AWS Batch job. The retry strategy is the number of times to retry the failed job execution. Valid values are 1–10. When you specify a retry strategy here, it overrides the retry strategy defined in the job definition.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-batchparameters.html#cfn-events-rule-batchparameters-retrystrategy
         Type: BatchRetryStrategy
         UpdateType: Mutable

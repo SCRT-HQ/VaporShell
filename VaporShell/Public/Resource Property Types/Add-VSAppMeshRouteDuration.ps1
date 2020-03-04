@@ -1,21 +1,25 @@
 function Add-VSAppMeshRouteDuration {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::Route.Duration resource property to the template. 
+        Adds an AWS::AppMesh::Route.Duration resource property to the template. An object that represents a duration of time.
 
     .DESCRIPTION
         Adds an AWS::AppMesh::Route.Duration resource property to the template.
-
+An object that represents a duration of time.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-duration.html
 
     .PARAMETER Value
+        A number of time units.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-duration.html#cfn-appmesh-route-duration-value
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER Unit
+        A unit of time.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-duration.html#cfn-appmesh-route-duration-unit
         PrimitiveType: String
         UpdateType: Mutable

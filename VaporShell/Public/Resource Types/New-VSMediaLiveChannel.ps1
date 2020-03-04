@@ -1,10 +1,12 @@
 function New-VSMediaLiveChannel {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaLive::Channel resource to the template. 
+        Adds an AWS::MediaLive::Channel resource to the template. The AWS::MediaLive::Channel resource is a MediaLive resource type that creates a channel.
 
     .DESCRIPTION
-        Adds an AWS::MediaLive::Channel resource to the template. 
+        Adds an AWS::MediaLive::Channel resource to the template. The AWS::MediaLive::Channel resource is a MediaLive resource type that creates a channel.
+
+A MediaLive channel ingests and transcodes (decodes and encodes source content from the inputs that are attached to that channel, and packages the new content into outputs.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html
@@ -13,48 +15,66 @@ function New-VSMediaLiveChannel {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER InputAttachments
+        The list of input attachments for the channel.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-inputattachments
         ItemType: InputAttachment
         UpdateType: Mutable
 
     .PARAMETER InputSpecification
+        The input specification for this channel. It specifies the key characteristics of the inputs for this channel: the maximum bitrate, the resolution, and the codec.
+
         Type: InputSpecification
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-inputspecification
         UpdateType: Mutable
 
     .PARAMETER ChannelClass
+        The class for this channel. For a channel with two pipelines, the class is STANDARD. For a channel with one pipeline, the class is SINGLE_PIPELINE.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-channelclass
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER EncoderSettings
+        The encoding configuration for the output content.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-encodersettings
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER Destinations
+        The settings that identify the destination for the outputs in this MediaLive output package.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-destinations
         ItemType: OutputDestination
         UpdateType: Mutable
 
     .PARAMETER LogLevel
+        The verbosity for logging activity for this channel. Charges for logging which are generated through Amazon CloudWatch Logging are higher for higher verbosities.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-loglevel
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RoleArn
+        The IAM role for MediaLive to assume when running this channel. The role is identified by its ARN.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-rolearn
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Tags
+        A collection of tags for this channel. Each tag is a key-value pair.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-tags
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER Name
+        A name for this audio selector. The AudioDescription in an output references this name in order to identify a specific input audio to include in that output.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-name
         PrimitiveType: String
         UpdateType: Mutable
@@ -197,6 +217,9 @@ function New-VSMediaLiveChannel {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

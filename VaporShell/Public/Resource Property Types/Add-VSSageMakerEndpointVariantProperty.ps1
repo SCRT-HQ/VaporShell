@@ -1,16 +1,18 @@
 function Add-VSSageMakerEndpointVariantProperty {
     <#
     .SYNOPSIS
-        Adds an AWS::SageMaker::Endpoint.VariantProperty resource property to the template. 
+        Adds an AWS::SageMaker::Endpoint.VariantProperty resource property to the template. Not supported.
 
     .DESCRIPTION
         Adds an AWS::SageMaker::Endpoint.VariantProperty resource property to the template.
-
+Not supported.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-variantproperty.html
 
     .PARAMETER VariantPropertyType
+        Not supported.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-variantproperty.html#cfn-sagemaker-endpoint-variantproperty-variantpropertytype
         PrimitiveType: String
         UpdateType: Mutable

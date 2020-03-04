@@ -1,26 +1,32 @@
 function Add-VSAppMeshRouteGrpcRouteMetadata {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::Route.GrpcRouteMetadata resource property to the template. 
+        Adds an AWS::AppMesh::Route.GrpcRouteMetadata resource property to the template. An object that represents the match metadata for the route.
 
     .DESCRIPTION
         Adds an AWS::AppMesh::Route.GrpcRouteMetadata resource property to the template.
-
+An object that represents the match metadata for the route.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadata.html
 
     .PARAMETER Invert
+        Specify True to match anything except the match criteria. The default value is False.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadata.html#cfn-appmesh-route-grpcroutemetadata-invert
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER Name
+        The name of the route.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadata.html#cfn-appmesh-route-grpcroutemetadata-name
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Match
+        An object that represents the data to match from the request.
+
         Type: GrpcRouteMetadataMatchMethod
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadata.html#cfn-appmesh-route-grpcroutemetadata-match
         UpdateType: Mutable

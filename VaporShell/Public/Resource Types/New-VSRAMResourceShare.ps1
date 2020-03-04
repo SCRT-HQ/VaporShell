@@ -1,10 +1,10 @@
 function New-VSRAMResourceShare {
     <#
     .SYNOPSIS
-        Adds an AWS::RAM::ResourceShare resource to the template. 
+        Adds an AWS::RAM::ResourceShare resource to the template. Specifies a resource share.
 
     .DESCRIPTION
-        Adds an AWS::RAM::ResourceShare resource to the template. 
+        Adds an AWS::RAM::ResourceShare resource to the template. Specifies a resource share.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ram-resourceshare.html
@@ -13,29 +13,39 @@ function New-VSRAMResourceShare {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Principals
+        The principals to associate with the resource share. The possible values are IDs of AWS accounts, the ARN of an OU or organization from AWS Organizations.
+
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ram-resourceshare.html#cfn-ram-resourceshare-principals
         UpdateType: Mutable
 
     .PARAMETER AllowExternalPrincipals
+        Indicates whether principals outside your AWS organization can be associated with a resource share.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ram-resourceshare.html#cfn-ram-resourceshare-allowexternalprincipals
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER ResourceArns
+        The Amazon Resource Names ARN of the resources to associate with the resource share.
+
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ram-resourceshare.html#cfn-ram-resourceshare-resourcearns
         UpdateType: Mutable
 
     .PARAMETER Tags
+        One or more tags.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ram-resourceshare.html#cfn-ram-resourceshare-tags
         ItemType: Tag
         UpdateType: Mutable
 
     .PARAMETER Name
+        The name of the resource share.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ram-resourceshare.html#cfn-ram-resourceshare-name
         PrimitiveType: String
         UpdateType: Mutable
@@ -100,16 +110,8 @@ function New-VSRAMResourceShare {
         $AllowExternalPrincipals,
         [parameter(Mandatory = $false)]
         $ResourceArns,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
@@ -125,6 +127,9 @@ function New-VSRAMResourceShare {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

@@ -1,10 +1,10 @@
 function New-VSCloudFrontDistribution {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudFront::Distribution resource to the template. 
+        Adds an AWS::CloudFront::Distribution resource to the template. A distribution tells CloudFront where you want content to be delivered from, and the details about how to track and manage content delivery.
 
     .DESCRIPTION
-        Adds an AWS::CloudFront::Distribution resource to the template. 
+        Adds an AWS::CloudFront::Distribution resource to the template. A distribution tells CloudFront where you want content to be delivered from, and the details about how to track and manage content delivery.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-distribution.html
@@ -13,11 +13,15 @@ function New-VSCloudFrontDistribution {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER DistributionConfig
+        The current configuration information for the distribution. Send a GET request to the /CloudFront API version/distribution ID/config resource.
+
         Type: DistributionConfig
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-distribution.html#cfn-cloudfront-distribution-distributionconfig
         UpdateType: Mutable
 
     .PARAMETER Tags
+        A complex type that contains zero or more Tag elements.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-distribution.html#cfn-cloudfront-distribution-tags
         ItemType: Tag
@@ -70,20 +74,15 @@ function New-VSCloudFrontDistribution {
         $LogicalId,
         [parameter(Mandatory = $true)]
         $DistributionConfig,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

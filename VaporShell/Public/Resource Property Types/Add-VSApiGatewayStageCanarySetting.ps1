@@ -1,26 +1,35 @@
 function Add-VSApiGatewayStageCanarySetting {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGateway::Stage.CanarySetting resource property to the template. 
+        Adds an AWS::ApiGateway::Stage.CanarySetting resource property to the template. The CanarySetting property type specifies settings for the canary deployment in this stage.
 
     .DESCRIPTION
         Adds an AWS::ApiGateway::Stage.CanarySetting resource property to the template.
+The CanarySetting property type specifies settings for the canary deployment in this stage.
 
+CanarySetting is a property of the AWS::ApiGateway::Stage: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-canarysetting.html
 
     .PARAMETER DeploymentId
+        The identifier of the deployment that the stage points to.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-canarysetting.html#cfn-apigateway-stage-canarysetting-deploymentid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER PercentTraffic
+        The percentage 0-100 of traffic diverted to a canary deployment.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-canarysetting.html#cfn-apigateway-stage-canarysetting-percenttraffic
         PrimitiveType: Double
         UpdateType: Mutable
 
     .PARAMETER StageVariableOverrides
+        Stage variables overridden for a canary release deployment, including new stage variables introduced in the canary. These stage variables are represented as a string-to-string map between stage variable names and their values.
+Duplicates are not allowed.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-canarysetting.html#cfn-apigateway-stage-canarysetting-stagevariableoverrides
         DuplicatesAllowed: False
         PrimitiveItemType: String
@@ -28,6 +37,8 @@ function Add-VSApiGatewayStageCanarySetting {
         UpdateType: Mutable
 
     .PARAMETER UseStageCache
+        Whether the canary deployment uses the stage cache or not.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-canarysetting.html#cfn-apigateway-stage-canarysetting-usestagecache
         PrimitiveType: Boolean
         UpdateType: Mutable

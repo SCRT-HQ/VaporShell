@@ -1,10 +1,28 @@
 function New-VSS3BucketPolicy {
     <#
     .SYNOPSIS
-        Adds an AWS::S3::BucketPolicy resource to the template. 
+        Adds an AWS::S3::BucketPolicy resource to the template. Applies an Amazon S3 bucket policy to an Amazon S3 bucket. If you are using an identity other than the root user of the AWS account that owns the bucket, the calling identity must have the PutBucketPolicy permissions on the specified bucket and belong to the bucket owner's account in order to use this operation.
 
     .DESCRIPTION
-        Adds an AWS::S3::BucketPolicy resource to the template. 
+        Adds an AWS::S3::BucketPolicy resource to the template. Applies an Amazon S3 bucket policy to an Amazon S3 bucket. If you are using an identity other than the root user of the AWS account that owns the bucket, the calling identity must have the PutBucketPolicy permissions on the specified bucket and belong to the bucket owner's account in order to use this operation.
+
+**Important**
+
+Only one bucket policy should be applied to a bucket.
+
+If you don't have PutBucketPolicy permissions, Amazon S3 returns a 403 Access Denied error. If you have the correct permissions, but you're not using an identity that belongs to the bucket owner's account, Amazon S3 returns a 405 Method Not Allowed error.
+
+**Important**
+
+As a security precaution, the root user of the AWS account that owns a bucket can always use this operation, even if the policy explicitly denies the root user the ability to perform this action.
+
+For more information about bucket policies, see Using Bucket Policies and User Policies: https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html.
+
+The following operations are related to PutBucketPolicy:
+
++  CreateBucket: https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html
+
++  DeleteBucket: https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html
@@ -13,11 +31,15 @@ function New-VSS3BucketPolicy {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Bucket
+        The name of the Amazon S3 bucket to which the policy applies.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html#aws-properties-s3-policy-bucket
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER PolicyDocument
+        A policy document containing permissions to add to the specified bucket. For more information, see Access Policy Language Overview: https://docs.aws.amazon.com/AmazonS3/latest/dev/access-policy-language-overview.html in the *Amazon Simple Storage Service Developer Guide*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html#aws-properties-s3-policy-policydocument
         PrimitiveType: Json
         UpdateType: Mutable
@@ -92,6 +114,9 @@ function New-VSS3BucketPolicy {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

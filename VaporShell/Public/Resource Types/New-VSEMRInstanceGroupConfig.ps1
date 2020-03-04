@@ -1,10 +1,10 @@
 function New-VSEMRInstanceGroupConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::EMR::InstanceGroupConfig resource to the template. 
+        Adds an AWS::EMR::InstanceGroupConfig resource to the template. Use InstanceGroupConfig to define instance groups for an EMR cluster. A cluster can not use both instance groups and instance fleets. For more information, see Create a Cluster with Instance Fleets or Uniform Instance Groups: https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-instance-group-configuration.html in the *Amazon EMR Management Guide*.
 
     .DESCRIPTION
-        Adds an AWS::EMR::InstanceGroupConfig resource to the template. 
+        Adds an AWS::EMR::InstanceGroupConfig resource to the template. Use InstanceGroupConfig to define instance groups for an EMR cluster. A cluster can not use both instance groups and instance fleets. For more information, see Create a Cluster with Instance Fleets or Uniform Instance Groups: https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-instance-group-configuration.html in the *Amazon EMR Management Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html
@@ -13,16 +13,23 @@ function New-VSEMRInstanceGroupConfig {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER AutoScalingPolicy
+        AutoScalingPolicy is a subproperty of InstanceGroupConfig. AutoScalingPolicy defines how an instance group dynamically adds and terminates EC2 instances in response to the value of a CloudWatch metric. For more information, see Using Automatic Scaling in Amazon EMR: https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-automatic-scaling.html in the *Amazon EMR Management Guide*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-elasticmapreduce-instancegroupconfig-autoscalingpolicy
         Type: AutoScalingPolicy
         UpdateType: Mutable
 
     .PARAMETER BidPrice
+        The bid price for each EC2 Spot instance type as defined by InstanceType. Expressed in USD. If neither BidPrice nor BidPriceAsPercentageOfOnDemandPrice is provided, BidPriceAsPercentageOfOnDemandPrice defaults to 100%.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-bidprice
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Configurations
+        Amazon EMR releases 4.x or later.
+The list of configurations supplied for an EMR cluster instance group. You can specify a separate configuration for each instance group master, core, and task.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-configurations
         DuplicatesAllowed: False
         ItemType: Configuration
@@ -30,36 +37,50 @@ function New-VSEMRInstanceGroupConfig {
         UpdateType: Immutable
 
     .PARAMETER EbsConfiguration
+        EbsConfiguration determines the EBS volumes to attach to EMR cluster instances.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-ebsconfiguration
         Type: EbsConfiguration
         UpdateType: Immutable
 
     .PARAMETER InstanceCount
+        Target number of instances for the instance group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfiginstancecount-
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER InstanceRole
+        The role of the instance group in the cluster.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-instancerole
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER InstanceType
+        The EC2 instance type for all instances in the instance group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-instancetype
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER JobFlowId
+        The ID of an Amazon EMR cluster that you want to associate this instance group with.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-jobflowid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Market
+        Market type of the EC2 instances used to create a cluster node.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-market
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Name
+        Friendly name given to the instance group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-name
         PrimitiveType: String
         UpdateType: Immutable
@@ -204,6 +225,9 @@ function New-VSEMRInstanceGroupConfig {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

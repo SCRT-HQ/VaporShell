@@ -1,16 +1,18 @@
 function Add-VSKinesisAnalyticsV2ApplicationKinesisStreamsInput {
     <#
     .SYNOPSIS
-        Adds an AWS::KinesisAnalyticsV2::Application.KinesisStreamsInput resource property to the template. 
+        Adds an AWS::KinesisAnalyticsV2::Application.KinesisStreamsInput resource property to the template. Identifies an Amazon Kinesis data stream as the streaming source. You provide the stream's Amazon Resource Name (ARN.
 
     .DESCRIPTION
         Adds an AWS::KinesisAnalyticsV2::Application.KinesisStreamsInput resource property to the template.
-
+Identifies an Amazon Kinesis data stream as the streaming source. You provide the stream's Amazon Resource Name (ARN.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-kinesisstreamsinput.html
 
     .PARAMETER ResourceARN
+        The ARN of the input Kinesis data stream to read.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-kinesisstreamsinput.html#cfn-kinesisanalyticsv2-application-kinesisstreamsinput-resourcearn
         PrimitiveType: String
         UpdateType: Mutable

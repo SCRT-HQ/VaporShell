@@ -1,10 +1,10 @@
 function New-VSAppSyncResolver {
     <#
     .SYNOPSIS
-        Adds an AWS::AppSync::Resolver resource to the template. 
+        Adds an AWS::AppSync::Resolver resource to the template. The AWS::AppSync::Resolver resource defines the logical GraphQL resolver that you attach to fields in a schema. Request and response templates for resolvers are written in Apache Velocity Template Language (VTL format. For more information about resolvers, see Resolver Mapping Template Reference: https://docs.aws.amazon.com/appsync/latest/devguide/resolver-mapping-template-reference.html.
 
     .DESCRIPTION
-        Adds an AWS::AppSync::Resolver resource to the template. 
+        Adds an AWS::AppSync::Resolver resource to the template. The AWS::AppSync::Resolver resource defines the logical GraphQL resolver that you attach to fields in a schema. Request and response templates for resolvers are written in Apache Velocity Template Language (VTL format. For more information about resolvers, see Resolver Mapping Template Reference: https://docs.aws.amazon.com/appsync/latest/devguide/resolver-mapping-template-reference.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html
@@ -13,61 +13,87 @@ function New-VSAppSyncResolver {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ResponseMappingTemplateS3Location
+        The location of a response mapping template in an Amazon S3 bucket. Use this if you want to provision with a template file in Amazon S3 rather than embedding it in your CloudFormation template.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-responsemappingtemplates3location
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER TypeName
+        The GraphQL type that invokes this resolver.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-typename
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER PipelineConfig
+        Functions linked with the pipeline resolver.
+
         Type: PipelineConfig
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-pipelineconfig
         UpdateType: Mutable
 
     .PARAMETER DataSourceName
+        The resolver data source name.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-datasourcename
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RequestMappingTemplate
+        The request mapping template.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-requestmappingtemplate
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ResponseMappingTemplate
+        The response mapping template.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-responsemappingtemplate
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Kind
+        The resolver type.
++  **UNIT**: A UNIT resolver type. A UNIT resolver is the default resolver type. A UNIT resolver enables you to execute a GraphQL query against a single data source.
++  **PIPELINE**: A PIPELINE resolver type. A PIPELINE resolver enables you to execute a series of Function in a serial manner. You can use a pipeline resolver to execute a GraphQL query against multiple data sources.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-kind
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER CachingConfig
+        The caching configuration for the resolver.
+
         Type: CachingConfig
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-cachingconfig
         UpdateType: Mutable
 
     .PARAMETER SyncConfig
+        The SyncConfig for a resolver attached to a versioned datasource.
+
         Type: SyncConfig
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-syncconfig
         UpdateType: Mutable
 
     .PARAMETER RequestMappingTemplateS3Location
+        The location of a request mapping template in an Amazon S3 bucket. Use this if you want to provision with a template file in Amazon S3 rather than embedding it in your CloudFormation template.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-requestmappingtemplates3location
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ApiId
+        The AWS AppSync GraphQL API to which you want to attach this resolver.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-apiid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER FieldName
+        The GraphQL field on a type that invokes the resolver.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-fieldname
         PrimitiveType: String
         UpdateType: Immutable
@@ -225,6 +251,9 @@ function New-VSAppSyncResolver {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

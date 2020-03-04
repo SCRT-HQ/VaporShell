@@ -1,10 +1,22 @@
 function New-VSFMSPolicy {
     <#
     .SYNOPSIS
-        Adds an AWS::FMS::Policy resource to the template. 
+        Adds an AWS::FMS::Policy resource to the template. An AWS Firewall Manager policy.
 
     .DESCRIPTION
-        Adds an AWS::FMS::Policy resource to the template. 
+        Adds an AWS::FMS::Policy resource to the template. An AWS Firewall Manager policy.
+
+Firewall Manager provides the following types of policies:
+
++ A Shield Advanced policy, which applies Shield Advanced protection to specified accounts and resources.
+
++ An AWS WAF policy, which contains a rule group and defines which resources are to be protected by that rule group.
+
++ A security group policy, which manages VPC security groups across your AWS organization.
+
+Each policy is specific to one of the types. If you want to enforce more than one policy type across accounts, create multiple policies. You can create multiple policies for each type.
+
+These policies require some setup to use. For more information, see the sections on prerequisites and getting started under AWS Firewall Manager: https://docs.aws.amazon.com/waf/latest/developerguide/fms-prereq.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html
@@ -13,58 +25,90 @@ function New-VSFMSPolicy {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ExcludeMap
+        Specifies the AWS account IDs to exclude from the policy. The IncludeMap values are evaluated first, with all the appropriate account IDs added to the policy. Then the accounts listed in ExcludeMap are removed, resulting in the final list of accounts to add to the policy.
+The key to the map is ACCOUNT. For example, a valid ExcludeMap would be {“ACCOUNT” : “accountID1”, “accountID2”]}.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-excludemap
         UpdateType: Mutable
         Type: IEMap
 
     .PARAMETER ExcludeResourceTags
+        Used only when tags are specified in the ResourceTags property. If this property is True, resources with the specified tags are not in scope of the policy. If it's False, only resources with the specified tags are in scope of the policy.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-excluderesourcetags
         UpdateType: Mutable
         PrimitiveType: Boolean
 
     .PARAMETER IncludeMap
+        Specifies the AWS account IDs to include in the policy. If IncludeMap is not set, all accounts in the organization in AWS Organizations are included in the policy. If IncludeMap is set, only values listed in IncludeMap are included in the policy.
+The key to the map is ACCOUNT. For example, a valid IncludeMap would be {“ACCOUNT” : “accountID1”, “accountID2”]}.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-includemap
         UpdateType: Mutable
         Type: IEMap
 
     .PARAMETER PolicyName
+        The friendly name of the AWS Firewall Manager policy.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-policyname
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER RemediationEnabled
+        Indicates if the policy should be automatically applied to new resources.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-remediationenabled
         UpdateType: Mutable
         PrimitiveType: Boolean
 
     .PARAMETER ResourceTags
+        An array of ResourceTag objects, used to explicitly include resources in the policy scope or explicitly exclude them. If this isn't set, then tags aren't used to modify policy scope. See also ExcludeResourceTags.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-resourcetags
         UpdateType: Mutable
         Type: List
         ItemType: ResourceTag
 
     .PARAMETER ResourceType
+        The type of resource protected by or in scope of the policy. This is in the format shown in the AWS Resource Types Reference: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html. For AWS WAF and Shield Advanced, examples include AWS::ElasticLoadBalancingV2::LoadBalancer and AWS::CloudFront::Distribution. For a security group common policy, valid values are AWS::EC2::NetworkInterface and AWS::EC2::Instance. For a security group content audit policy, valid values are AWS::EC2::SecurityGroup, AWS::EC2::NetworkInterface, and AWS::EC2::Instance. For a security group usage audit policy, the value is AWS::EC2::SecurityGroup.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-resourcetype
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER ResourceTypeList
+        An array of ResourceType.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-resourcetypelist
         UpdateType: Mutable
         Type: List
         PrimitiveItemType: String
 
     .PARAMETER SecurityServicePolicyData
+        Details about the security service that is being used to protect the resources.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-securityservicepolicydata
         UpdateType: Mutable
         PrimitiveType: Json
 
     .PARAMETER DeleteAllPolicyResources
+        Used when deleting a policy. If true, Firewall Manager performs cleanup according to the policy type.
+For AWS WAF and Shield Advanced policies, Firewall Manager does the following:
++ Deletes rule groups created by AWS Firewall Manager
++ Removes web ACLs from in-scope resources
++ Deletes web ACLs that contain no rules or rule groups
+For security group policies, Firewall Manager does the following for each security group in the policy:
++ Disassociates the security group from in-scope resources
++ Deletes the security group if it was created through Firewall Manager and if it's no longer associated with any resources through another policy
+After the cleanup, in-scope resources are no longer protected by web ACLs in this policy. Protection of out-of-scope resources remains unchanged. Scope is determined by tags that you create and accounts that you associate with the policy. When creating the policy, if you specify that only resources in specific accounts or with specific tags are in scope of the policy, those accounts and resources are handled by the policy. All others are out of scope. If you don't specify tags or accounts, all resources are in scope.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-deleteallpolicyresources
         UpdateType: Mutable
         PrimitiveType: Boolean
 
     .PARAMETER Tags
+        A collection of key:value pairs associated with an AWS resource. The key:value pair can be anything you define. Typically, the tag key represents a category such as "environment" and the tag value represents a specific value within that category such as "test," "development," or "production". You can add up to 50 tags to each AWS resource.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-tags
         UpdateType: Mutable
         Type: List
@@ -212,6 +256,9 @@ function New-VSFMSPolicy {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

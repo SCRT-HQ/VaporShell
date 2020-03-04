@@ -1,21 +1,25 @@
 function Add-VSGameLiftGameSessionQueuePlayerLatencyPolicy {
     <#
     .SYNOPSIS
-        Adds an AWS::GameLift::GameSessionQueue.PlayerLatencyPolicy resource property to the template. 
+        Adds an AWS::GameLift::GameSessionQueue.PlayerLatencyPolicy resource property to the template. The queue setting that determines the highest latency allowed for individual players when placing a game session. When a latency policy is in force, a game session cannot be placed with any fleet in a Region where a player reports latency higher than the cap. Latency policies are only enforced when the placement request contains player latency information.
 
     .DESCRIPTION
         Adds an AWS::GameLift::GameSessionQueue.PlayerLatencyPolicy resource property to the template.
-
+The queue setting that determines the highest latency allowed for individual players when placing a game session. When a latency policy is in force, a game session cannot be placed with any fleet in a Region where a player reports latency higher than the cap. Latency policies are only enforced when the placement request contains player latency information.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-gamesessionqueue-playerlatencypolicy.html
 
     .PARAMETER PolicyDurationSeconds
+        The length of time, in seconds, that the policy is enforced while placing a new game session. A null value for this property means that the policy is enforced until the queue times out.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-gamesessionqueue-playerlatencypolicy.html#cfn-gamelift-gamesessionqueue-playerlatencypolicy-policydurationseconds
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER MaximumIndividualPlayerLatencyMilliseconds
+        The maximum latency value that is allowed for any player, in milliseconds. All policies must have a value set for this property.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-gamesessionqueue-playerlatencypolicy.html#cfn-gamelift-gamesessionqueue-playerlatencypolicy-maximumindividualplayerlatencymilliseconds
         PrimitiveType: Integer
         UpdateType: Mutable

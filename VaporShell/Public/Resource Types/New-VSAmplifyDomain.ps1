@@ -1,10 +1,10 @@
 function New-VSAmplifyDomain {
     <#
     .SYNOPSIS
-        Adds an AWS::Amplify::Domain resource to the template. 
+        Adds an AWS::Amplify::Domain resource to the template. The AWS::Amplify::Domain resource allows you to connect a custom domain to your app.
 
     .DESCRIPTION
-        Adds an AWS::Amplify::Domain resource to the template. 
+        Adds an AWS::Amplify::Domain resource to the template. The AWS::Amplify::Domain resource allows you to connect a custom domain to your app.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-domain.html
@@ -13,17 +13,23 @@ function New-VSAmplifyDomain {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER SubDomainSettings
+        Setting structure for the Subdomain.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-domain.html#cfn-amplify-domain-subdomainsettings
         ItemType: SubDomainSetting
         UpdateType: Mutable
 
     .PARAMETER AppId
+        Unique Id for an Amplify App.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-domain.html#cfn-amplify-domain-appid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER DomainName
+        Domain name for the Domain Association.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-domain.html#cfn-amplify-domain-domainname
         PrimitiveType: String
         UpdateType: Immutable
@@ -109,6 +115,9 @@ function New-VSAmplifyDomain {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

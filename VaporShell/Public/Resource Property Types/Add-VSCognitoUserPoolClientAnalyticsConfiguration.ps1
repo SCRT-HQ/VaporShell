@@ -1,31 +1,43 @@
 function Add-VSCognitoUserPoolClientAnalyticsConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::UserPoolClient.AnalyticsConfiguration resource property to the template. 
+        Adds an AWS::Cognito::UserPoolClient.AnalyticsConfiguration resource property to the template. The Amazon Pinpoint analytics configuration for collecting metrics for a user pool.
 
     .DESCRIPTION
         Adds an AWS::Cognito::UserPoolClient.AnalyticsConfiguration resource property to the template.
+The Amazon Pinpoint analytics configuration for collecting metrics for a user pool.
 
+**Note**
+
+Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia us-east-1 Region, regardless of the region in which the user pool resides.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolclient-analyticsconfiguration.html
 
     .PARAMETER UserDataShared
+        If UserDataShared is true, Amazon Cognito will include user data in the events it publishes to Amazon Pinpoint analytics.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolclient-analyticsconfiguration.html#cfn-cognito-userpoolclient-analyticsconfiguration-userdatashared
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER ExternalId
+        The external ID.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolclient-analyticsconfiguration.html#cfn-cognito-userpoolclient-analyticsconfiguration-externalid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER ApplicationId
+        The application ID for an Amazon Pinpoint application.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolclient-analyticsconfiguration.html#cfn-cognito-userpoolclient-analyticsconfiguration-applicationid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RoleArn
+        The ARN of an IAM role that authorizes Amazon Cognito to publish events to Amazon Pinpoint analytics.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolclient-analyticsconfiguration.html#cfn-cognito-userpoolclient-analyticsconfiguration-rolearn
         PrimitiveType: String
         UpdateType: Mutable

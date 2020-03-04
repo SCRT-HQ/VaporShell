@@ -1,16 +1,18 @@
 function Add-VSCognitoUserPoolUsernameConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::UserPool.UsernameConfiguration resource property to the template. 
+        Adds an AWS::Cognito::UserPool.UsernameConfiguration resource property to the template. Used to configure username case insensitivity.
 
     .DESCRIPTION
         Adds an AWS::Cognito::UserPool.UsernameConfiguration resource property to the template.
-
+Used to configure username case insensitivity.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-usernameconfiguration.html
 
     .PARAMETER CaseSensitive
+        Set to False if you want username, email alias and preferred_username alias to be case insensitive. For example, when set to False, users will be able to sign in using either "username" or "Username".
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-usernameconfiguration.html#cfn-cognito-userpool-usernameconfiguration-casesensitive
         PrimitiveType: Boolean
         UpdateType: Mutable

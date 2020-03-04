@@ -1,32 +1,40 @@
 function Add-VSAppMeshRouteHttpRouteMatch {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::Route.HttpRouteMatch resource property to the template. 
+        Adds an AWS::AppMesh::Route.HttpRouteMatch resource property to the template. An object that represents the requirements for a route to match HTTP requests for a virtual router.
 
     .DESCRIPTION
         Adds an AWS::AppMesh::Route.HttpRouteMatch resource property to the template.
-
+An object that represents the requirements for a route to match HTTP requests for a virtual router.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html
 
     .PARAMETER Scheme
+        The client request scheme to match on. Specify only one.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html#cfn-appmesh-route-httproutematch-scheme
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Headers
+        An object that represents the client request headers to match on.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html#cfn-appmesh-route-httproutematch-headers
         ItemType: HttpRouteHeader
         UpdateType: Mutable
 
     .PARAMETER Prefix
+        Specifies the path to match requests with. This parameter must always start with /, which by itself matches all requests to the virtual service name. You can also match for path-based routing of requests. For example, if your virtual service name is my-service.local and you want the route to match requests to my-service.local/metrics, your prefix should be /metrics.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html#cfn-appmesh-route-httproutematch-prefix
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Method
+        The client request method to match on. Specify only one.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html#cfn-appmesh-route-httproutematch-method
         PrimitiveType: String
         UpdateType: Mutable

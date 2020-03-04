@@ -1,10 +1,10 @@
 function New-VSEC2LocalGatewayRoute {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::LocalGatewayRoute resource to the template. 
+        Adds an AWS::EC2::LocalGatewayRoute resource to the template. Creates a static route for the specified local gateway route table.
 
     .DESCRIPTION
-        Adds an AWS::EC2::LocalGatewayRoute resource to the template. 
+        Adds an AWS::EC2::LocalGatewayRoute resource to the template. Creates a static route for the specified local gateway route table.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroute.html
@@ -13,16 +13,22 @@ function New-VSEC2LocalGatewayRoute {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER DestinationCidrBlock
+        The CIDR block used for destination matches.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroute.html#cfn-ec2-localgatewayroute-destinationcidrblock
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER LocalGatewayRouteTableId
+        The ID of the local gateway route table.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroute.html#cfn-ec2-localgatewayroute-localgatewayroutetableid
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER LocalGatewayVirtualInterfaceGroupId
+        The ID of the virtual interface group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroute.html#cfn-ec2-localgatewayroute-localgatewayvirtualinterfacegroupid
         UpdateType: Immutable
         PrimitiveType: String
@@ -108,6 +114,9 @@ function New-VSEC2LocalGatewayRoute {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

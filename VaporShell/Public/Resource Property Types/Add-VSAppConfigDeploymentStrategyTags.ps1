@@ -1,21 +1,25 @@
 function Add-VSAppConfigDeploymentStrategyTags {
     <#
     .SYNOPSIS
-        Adds an AWS::AppConfig::DeploymentStrategy.Tags resource property to the template. 
+        Adds an AWS::AppConfig::DeploymentStrategy.Tags resource property to the template. Metadata to assign to the deployment strategy. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.
 
     .DESCRIPTION
         Adds an AWS::AppConfig::DeploymentStrategy.Tags resource property to the template.
-
+Metadata to assign to the deployment strategy. Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an optional value, both of which you define.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appconfig-deploymentstrategy-tags.html
 
     .PARAMETER Value
+        The tag value can be up to 256 characters.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appconfig-deploymentstrategy-tags.html#cfn-appconfig-deploymentstrategy-tags-value
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Key
+        The key-value string map. The valid character set is a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with aws:.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appconfig-deploymentstrategy-tags.html#cfn-appconfig-deploymentstrategy-tags-key
         PrimitiveType: String
         UpdateType: Mutable

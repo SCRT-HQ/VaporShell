@@ -1,27 +1,33 @@
 function Add-VSIoTEventsDetectorModelEvent {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTEvents::DetectorModel.Event resource property to the template. 
+        Adds an AWS::IoTEvents::DetectorModel.Event resource property to the template. Specifies the actions to be performed when the condition evaluates to TRUE.
 
     .DESCRIPTION
         Adds an AWS::IoTEvents::DetectorModel.Event resource property to the template.
-
+Specifies the actions to be performed when the condition evaluates to TRUE.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-event.html
 
     .PARAMETER Condition
+        Optional. The Boolean expression that, when TRUE, causes the actions to be performed. If not present, the actions are performed =TRUE. If the expression result is not a Boolean value, the actions are not performed =FALSE.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-event.html#cfn-iotevents-detectormodel-event-condition
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Actions
+        The actions to be performed.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-event.html#cfn-iotevents-detectormodel-event-actions
         ItemType: Action
         UpdateType: Mutable
 
     .PARAMETER EventName
+        The name of the event.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-event.html#cfn-iotevents-detectormodel-event-eventname
         PrimitiveType: String
         UpdateType: Mutable

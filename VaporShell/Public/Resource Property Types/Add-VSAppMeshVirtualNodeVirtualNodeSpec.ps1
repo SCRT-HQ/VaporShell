@@ -1,33 +1,48 @@
 function Add-VSAppMeshVirtualNodeVirtualNodeSpec {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::VirtualNode.VirtualNodeSpec resource property to the template. 
+        Adds an AWS::AppMesh::VirtualNode.VirtualNodeSpec resource property to the template. An object that represents the specification of a virtual node.
 
     .DESCRIPTION
         Adds an AWS::AppMesh::VirtualNode.VirtualNodeSpec resource property to the template.
-
+An object that represents the specification of a virtual node.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodespec.html
 
     .PARAMETER Logging
+        The inbound and outbound access logging information for the virtual node.
+
         Type: Logging
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodespec.html#cfn-appmesh-virtualnode-virtualnodespec-logging
         UpdateType: Mutable
 
     .PARAMETER Backends
+        The backends that the virtual node is expected to send outbound traffic to.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodespec.html#cfn-appmesh-virtualnode-virtualnodespec-backends
         ItemType: Backend
         UpdateType: Mutable
 
     .PARAMETER Listeners
+        The listener that the virtual node is expected to receive inbound traffic from. You can specify one listener.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodespec.html#cfn-appmesh-virtualnode-virtualnodespec-listeners
         ItemType: Listener
         UpdateType: Mutable
 
+    .PARAMETER BackendDefaults
+        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
+        Type: BackendDefaults
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodespec.html#cfn-appmesh-virtualnode-virtualnodespec-backenddefaults
+        UpdateType: Mutable
+
     .PARAMETER ServiceDiscovery
+        The service discovery information for the virtual node. If your virtual node does not expect ingress traffic, you can omit this parameter. If you specify a listener, then you must specify service discovery information.
+
         Type: ServiceDiscovery
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodespec.html#cfn-appmesh-virtualnode-virtualnodespec-servicediscovery
         UpdateType: Mutable
@@ -63,6 +78,8 @@ function Add-VSAppMeshVirtualNodeVirtualNodeSpec {
                 }
             })]
         $Listeners,
+        [parameter(Mandatory = $false)]
+        $BackendDefaults,
         [parameter(Mandatory = $false)]
         $ServiceDiscovery
     )

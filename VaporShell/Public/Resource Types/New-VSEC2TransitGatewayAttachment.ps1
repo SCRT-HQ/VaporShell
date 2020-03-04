@@ -1,10 +1,14 @@
 function New-VSEC2TransitGatewayAttachment {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::TransitGatewayAttachment resource to the template. 
+        Adds an AWS::EC2::TransitGatewayAttachment resource to the template. Attaches a VPC to a transit gateway.
 
     .DESCRIPTION
-        Adds an AWS::EC2::TransitGatewayAttachment resource to the template. 
+        Adds an AWS::EC2::TransitGatewayAttachment resource to the template. Attaches a VPC to a transit gateway.
+
+If you attach a VPC with a CIDR range that overlaps the CIDR range of a VPC that is already attached, the new VPC CIDR range is not propagated to the default propagation route table.
+
+To send VPC traffic to an attached transit gateway, add a route to the VPC route table using AWS::EC2::TransitGatewayRoute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroute.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayattachment.html
@@ -13,22 +17,30 @@ function New-VSEC2TransitGatewayAttachment {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER TransitGatewayId
+        The ID of the transit gateway.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayattachment.html#cfn-ec2-transitgatewayattachment-transitgatewayid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER VpcId
+        The ID of the VPC.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayattachment.html#cfn-ec2-transitgatewayattachment-vpcid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER SubnetIds
+        The IDs of one or more subnets. You can specify only one subnet per Availability Zone. You must specify at least one subnet, but we recommend that you specify two subnets for better availability. The transit gateway uses one IP address from each specified subnet.
+
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayattachment.html#cfn-ec2-transitgatewayattachment-subnetids
         UpdateType: Immutable
 
     .PARAMETER Tags
+        The tags for the attachment.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayattachment.html#cfn-ec2-transitgatewayattachment-tags
         ItemType: Tag
@@ -103,20 +115,15 @@ function New-VSEC2TransitGatewayAttachment {
         $VpcId,
         [parameter(Mandatory = $true)]
         $SubnetIds,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

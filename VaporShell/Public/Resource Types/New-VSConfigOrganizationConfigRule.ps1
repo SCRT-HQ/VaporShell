@@ -1,10 +1,12 @@
 function New-VSConfigOrganizationConfigRule {
     <#
     .SYNOPSIS
-        Adds an AWS::Config::OrganizationConfigRule resource to the template. 
+        Adds an AWS::Config::OrganizationConfigRule resource to the template. An organization config rule that has information about config rules that AWS Config creates in member accounts. Only a master account can create or update an organization config rule.
 
     .DESCRIPTION
-        Adds an AWS::Config::OrganizationConfigRule resource to the template. 
+        Adds an AWS::Config::OrganizationConfigRule resource to the template. An organization config rule that has information about config rules that AWS Config creates in member accounts. Only a master account can create or update an organization config rule.
+
+OrganizationConfigRule resource enables organization service access through EnableAWSServiceAccess action and creates a service linked role in the master account of your organization. The service linked role is created only when the role does not exist in the master account. AWS Config verifies the existence of role with GetRole action.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconfigrule.html
@@ -13,21 +15,29 @@ function New-VSConfigOrganizationConfigRule {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER OrganizationManagedRuleMetadata
+        An OrganizationManagedRuleMetadata object.
+
         Type: OrganizationManagedRuleMetadata
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconfigrule.html#cfn-config-organizationconfigrule-organizationmanagedrulemetadata
         UpdateType: Mutable
 
     .PARAMETER OrganizationConfigRuleName
+        The name that you assign to organization config rule.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconfigrule.html#cfn-config-organizationconfigrule-organizationconfigrulename
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER OrganizationCustomRuleMetadata
+        An OrganizationCustomRuleMetadata object.
+
         Type: OrganizationCustomRuleMetadata
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconfigrule.html#cfn-config-organizationconfigrule-organizationcustomrulemetadata
         UpdateType: Mutable
 
     .PARAMETER ExcludedAccounts
+        A comma-separated list of accounts excluded from organization config rule.
+
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconfigrule.html#cfn-config-organizationconfigrule-excludedaccounts
@@ -98,6 +108,9 @@ function New-VSConfigOrganizationConfigRule {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

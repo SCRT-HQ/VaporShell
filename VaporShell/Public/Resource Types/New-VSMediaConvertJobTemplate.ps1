@@ -1,10 +1,14 @@
 function New-VSMediaConvertJobTemplate {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaConvert::JobTemplate resource to the template. 
+        Adds an AWS::MediaConvert::JobTemplate resource to the template. The AWS::MediaConvert::JobTemplate resource is an AWS Elemental MediaConvert resource type that you can use to generate transcoding jobs.
 
     .DESCRIPTION
-        Adds an AWS::MediaConvert::JobTemplate resource to the template. 
+        Adds an AWS::MediaConvert::JobTemplate resource to the template. The AWS::MediaConvert::JobTemplate resource is an AWS Elemental MediaConvert resource type that you can use to generate transcoding jobs.
+
+When you declare this entity in your AWS CloudFormation template, you pass in your transcoding job settings in JSON or YAML format. This settings specification must be formed in a particular way that conforms to AWS Elemental MediaConvert job validation. For more information about creating a job template model for the SettingsJson property, see the Remarks section later in this topic.
+
+For information about job templates, see Working with AWS Elemental MediaConvert Job Templates: https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-job-templates.html in the *AWS Elemental MediaConvert User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-jobtemplate.html
@@ -13,46 +17,82 @@ function New-VSMediaConvertJobTemplate {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Category
+        Optional. A category for the job template you are creating
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-jobtemplate.html#cfn-mediaconvert-jobtemplate-category
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Description
+        Optional. A description of the job template you are creating.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-jobtemplate.html#cfn-mediaconvert-jobtemplate-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER AccelerationSettings
+        Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide.
+
         Type: AccelerationSettings
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-jobtemplate.html#cfn-mediaconvert-jobtemplate-accelerationsettings
         UpdateType: Mutable
 
     .PARAMETER Priority
+        Specify the relative priority for this job. In any given queue, the service begins processing the job with the highest value first. When more than one job has the same priority, the service begins processing the job that you submitted first. If you don't specify a priority, the service uses the default value 0. Minimum: -50 Maximum: 50
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-jobtemplate.html#cfn-mediaconvert-jobtemplate-priority
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER StatusUpdateInterval
+        Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
+Specify one of the following enums:
+SECONDS_10
+SECONDS_12
+SECONDS_15
+SECONDS_20
+SECONDS_30
+SECONDS_60
+SECONDS_120
+SECONDS_180
+SECONDS_240
+SECONDS_300
+SECONDS_360
+SECONDS_420
+SECONDS_480
+SECONDS_540
+SECONDS_600
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-jobtemplate.html#cfn-mediaconvert-jobtemplate-statusupdateinterval
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SettingsJson
+        Specify, in JSON format, the transcoding job settings for this job template. This specification must conform to the AWS Elemental MediaConvert job validation. For information about forming this specification, see the Remarks section later in this topic.
+For more information about MediaConvert job templates, see Working with AWS Elemental MediaConvert Job Templates: https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-job-templates.html in the *AWS Elemental MediaConvert User Guide*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-jobtemplate.html#cfn-mediaconvert-jobtemplate-settingsjson
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER Queue
+        Optional. The queue that jobs created from this template are assigned to. Specify the Amazon Resource Name ARN of the queue. For example, arn:aws:mediaconvert:us-west-2:505474453218:queues/Default. If you don't specify this, jobs will go to the default queue.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-jobtemplate.html#cfn-mediaconvert-jobtemplate-queue
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Tags
+        An array of key-value pairs to apply to this resource.
+For more information, see Tag: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-jobtemplate.html#cfn-mediaconvert-jobtemplate-tags
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER Name
+        The name of the job template you are creating.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-jobtemplate.html#cfn-mediaconvert-jobtemplate-name
         PrimitiveType: String
         UpdateType: Immutable
@@ -195,6 +235,9 @@ function New-VSMediaConvertJobTemplate {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

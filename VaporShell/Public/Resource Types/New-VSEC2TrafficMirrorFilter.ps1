@@ -1,10 +1,14 @@
 function New-VSEC2TrafficMirrorFilter {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::TrafficMirrorFilter resource to the template. 
+        Adds an AWS::EC2::TrafficMirrorFilter resource to the template. Specifies a Traffic Mirror filter.
 
     .DESCRIPTION
-        Adds an AWS::EC2::TrafficMirrorFilter resource to the template. 
+        Adds an AWS::EC2::TrafficMirrorFilter resource to the template. Specifies a Traffic Mirror filter.
+
+A Traffic Mirror filter is a set of rules that defines the traffic to mirror.
+
+By default, no traffic is mirrored. To mirror traffic, use AWS::EC2::TrafficMirrorFilterRule: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html to add Traffic Mirror rules to the filter. The rules you add define what traffic gets mirrored.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilter.html
@@ -13,17 +17,24 @@ function New-VSEC2TrafficMirrorFilter {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Description
+        The description of the Traffic Mirror filter.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilter.html#cfn-ec2-trafficmirrorfilter-description
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER NetworkServices
+        The network service traffic that is associated with the Traffic Mirror filter.
+Valid values are amazon-dns.
+
         PrimitiveItemType: String
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilter.html#cfn-ec2-trafficmirrorfilter-networkservices
         UpdateType: Mutable
 
     .PARAMETER Tags
+        The tags to assign to a Traffic Mirror filter.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilter.html#cfn-ec2-trafficmirrorfilter-tags
         ItemType: Tag
@@ -87,20 +98,15 @@ function New-VSEC2TrafficMirrorFilter {
         $Description,
         [parameter(Mandatory = $false)]
         $NetworkServices,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

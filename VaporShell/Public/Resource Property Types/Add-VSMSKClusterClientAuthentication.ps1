@@ -1,16 +1,18 @@
 function Add-VSMSKClusterClientAuthentication {
     <#
     .SYNOPSIS
-        Adds an AWS::MSK::Cluster.ClientAuthentication resource property to the template. 
+        Adds an AWS::MSK::Cluster.ClientAuthentication resource property to the template. Includes information related to client authentication.
 
     .DESCRIPTION
         Adds an AWS::MSK::Cluster.ClientAuthentication resource property to the template.
-
+Includes information related to client authentication.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-clientauthentication.html
 
     .PARAMETER Tls
+        Details for client authentication using TLS.
+
         Type: Tls
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-clientauthentication.html#cfn-msk-cluster-clientauthentication-tls
         UpdateType: Immutable

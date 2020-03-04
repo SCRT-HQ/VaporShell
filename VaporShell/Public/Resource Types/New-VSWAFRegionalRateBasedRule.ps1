@@ -1,10 +1,20 @@
 function New-VSWAFRegionalRateBasedRule {
     <#
     .SYNOPSIS
-        Adds an AWS::WAFRegional::RateBasedRule resource to the template. 
+        Adds an AWS::WAFRegional::RateBasedRule resource to the template. A RateBasedRule is identical to a regular Rule, with one addition: a RateBasedRule counts the number of requests that arrive from a specified IP address every five minutes. For example, based on recent requests that you've seen from an attacker, you might create a RateBasedRule that includes the following conditions:
 
     .DESCRIPTION
-        Adds an AWS::WAFRegional::RateBasedRule resource to the template. 
+        Adds an AWS::WAFRegional::RateBasedRule resource to the template. A RateBasedRule is identical to a regular Rule, with one addition: a RateBasedRule counts the number of requests that arrive from a specified IP address every five minutes. For example, based on recent requests that you've seen from an attacker, you might create a RateBasedRule that includes the following conditions:
+
++ The requests come from 192.0.2.44.
+
++ They contain the value BadBot in the User-Agent header.
+
+In the rule, you also define the rate limit as 15,000.
+
+Requests that meet both of these conditions and exceed 15,000 requests every five minutes trigger the rule's action (block or count, which is defined in the web ACL.
+
+Note you can only create rate-based rules using a CloudFormation template. To add the rate-based rules created through CloudFormation to a web ACL, use the AWS WAF console, API, or command line interface (CLI. For more information, see UpdateWebACL: https://docs.aws.amazon.com/waf/latest/APIReference/API_regional_UpdateWebACL.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-ratebasedrule.html
@@ -13,27 +23,37 @@ function New-VSWAFRegionalRateBasedRule {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER MetricName
+        A friendly name or description for the metrics for a RateBasedRule. The name can contain only alphanumeric characters A-Z, a-z, 0-9, with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the RateBasedRule.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-ratebasedrule.html#cfn-wafregional-ratebasedrule-metricname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER RateLimit
+        The maximum number of requests, which have an identical value in the field specified by the RateKey, allowed in a five-minute period. If the number of requests exceeds the RateLimit and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-ratebasedrule.html#cfn-wafregional-ratebasedrule-ratelimit
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER MatchPredicates
+        The Predicates object contains one Predicate element for each ByteMatchSet, IPSet, or SqlInjectionMatchSet> object that you want to include in a RateBasedRule.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-ratebasedrule.html#cfn-wafregional-ratebasedrule-matchpredicates
         ItemType: Predicate
         UpdateType: Mutable
 
     .PARAMETER RateKey
+        The field that AWS WAF uses to determine if requests are likely arriving from single source and thus subject to rate monitoring. The only valid value for RateKey is IP. IP indicates that requests arriving from the same IP address are subject to the RateLimit that is specified in the RateBasedRule.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-ratebasedrule.html#cfn-wafregional-ratebasedrule-ratekey
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Name
+        A friendly name or description for a RateBasedRule. You can't change the name of a RateBasedRule after you create it.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-ratebasedrule.html#cfn-wafregional-ratebasedrule-name
         PrimitiveType: String
         UpdateType: Immutable
@@ -141,6 +161,9 @@ function New-VSWAFRegionalRateBasedRule {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

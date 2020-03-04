@@ -1,36 +1,46 @@
 function Add-VSEC2SpotFleetLaunchTemplateOverrides {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::SpotFleet.LaunchTemplateOverrides resource property to the template. 
+        Adds an AWS::EC2::SpotFleet.LaunchTemplateOverrides resource property to the template. Specifies overrides for a launch template.
 
     .DESCRIPTION
         Adds an AWS::EC2::SpotFleet.LaunchTemplateOverrides resource property to the template.
-
+Specifies overrides for a launch template.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateoverrides.html
 
     .PARAMETER AvailabilityZone
+        The Availability Zone in which to launch the instances.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateoverrides.html#cfn-ec2-spotfleet-launchtemplateoverrides-availabilityzone
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER InstanceType
+        The instance type.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateoverrides.html#cfn-ec2-spotfleet-launchtemplateoverrides-instancetype
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SpotPrice
+        The maximum price per unit hour that you are willing to pay for a Spot Instance.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateoverrides.html#cfn-ec2-spotfleet-launchtemplateoverrides-spotprice
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SubnetId
+        The ID of the subnet in which to launch the instances.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateoverrides.html#cfn-ec2-spotfleet-launchtemplateoverrides-subnetid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER WeightedCapacity
+        The number of units provided by the specified instance type.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateoverrides.html#cfn-ec2-spotfleet-launchtemplateoverrides-weightedcapacity
         PrimitiveType: Double
         UpdateType: Mutable

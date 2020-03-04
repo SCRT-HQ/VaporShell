@@ -1,10 +1,16 @@
 function New-VSWAFRegionalGeoMatchSet {
     <#
     .SYNOPSIS
-        Adds an AWS::WAFRegional::GeoMatchSet resource to the template. 
+        Adds an AWS::WAFRegional::GeoMatchSet resource to the template. **Note**
 
     .DESCRIPTION
-        Adds an AWS::WAFRegional::GeoMatchSet resource to the template. 
+        Adds an AWS::WAFRegional::GeoMatchSet resource to the template. **Note**
+
+This is **AWS WAF Classic** documentation. For more information, see AWS WAF Classic: https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html in the developer guide.
+
+**For the latest version of AWS WAF**, use the AWS WAFV2 API and see the AWS WAF Developer Guide: https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html. With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+
+Contains one or more countries that AWS WAF will search for.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-geomatchset.html
@@ -13,12 +19,16 @@ function New-VSWAFRegionalGeoMatchSet {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER GeoMatchConstraints
+        An array of GeoMatchConstraint objects, which contain the country that you want AWS WAF to search for.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-geomatchset.html#cfn-wafregional-geomatchset-geomatchconstraints
         ItemType: GeoMatchConstraint
         UpdateType: Mutable
 
     .PARAMETER Name
+        A friendly name or description of the AWS::WAFRegional::GeoMatchSet: #aws-resource-wafregional-geomatchset. You can't change the name of an GeoMatchSet after you create it.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-geomatchset.html#cfn-wafregional-geomatchset-name
         PrimitiveType: String
         UpdateType: Immutable
@@ -93,6 +103,9 @@ function New-VSWAFRegionalGeoMatchSet {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

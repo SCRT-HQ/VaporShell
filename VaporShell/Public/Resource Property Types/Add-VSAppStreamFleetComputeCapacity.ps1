@@ -1,16 +1,18 @@
 function Add-VSAppStreamFleetComputeCapacity {
     <#
     .SYNOPSIS
-        Adds an AWS::AppStream::Fleet.ComputeCapacity resource property to the template. 
+        Adds an AWS::AppStream::Fleet.ComputeCapacity resource property to the template. The desired capacity for a fleet.
 
     .DESCRIPTION
         Adds an AWS::AppStream::Fleet.ComputeCapacity resource property to the template.
-
+The desired capacity for a fleet.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-fleet-computecapacity.html
 
     .PARAMETER DesiredInstances
+        The desired number of streaming instances.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-fleet-computecapacity.html#cfn-appstream-fleet-computecapacity-desiredinstances
         PrimitiveType: Integer
         UpdateType: Mutable

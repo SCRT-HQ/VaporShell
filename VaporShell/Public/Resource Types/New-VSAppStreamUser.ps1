@@ -1,10 +1,10 @@
 function New-VSAppStreamUser {
     <#
     .SYNOPSIS
-        Adds an AWS::AppStream::User resource to the template. 
+        Adds an AWS::AppStream::User resource to the template. The AWS::AppStream::User resource creates a new user in the AppStream 2.0 user pool.
 
     .DESCRIPTION
-        Adds an AWS::AppStream::User resource to the template. 
+        Adds an AWS::AppStream::User resource to the template. The AWS::AppStream::User resource creates a new user in the AppStream 2.0 user pool.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-user.html
@@ -13,26 +13,38 @@ function New-VSAppStreamUser {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER UserName
+        The email address of the user.
+Users' email addresses are case-sensitive. During login, if they specify an email address that doesn't use the same capitalization as the email address specified when their user pool account was created, a "user does not exist" error message displays.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-user.html#cfn-appstream-user-username
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER FirstName
+        The first name, or given name, of the user.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-user.html#cfn-appstream-user-firstname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER MessageAction
+        The action to take for the welcome email that is sent to a user after the user is created in the user pool. If you specify SUPPRESS, no email is sent. If you specify RESEND, do not specify the first name or last name of the user. If the value is null, the email is sent.
+The temporary password in the welcome email is valid for only 7 days. If users don’t set their passwords within 7 days, you must send them a new welcome email.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-user.html#cfn-appstream-user-messageaction
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER LastName
+        The last name, or surname, of the user.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-user.html#cfn-appstream-user-lastname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER AuthenticationType
+        The authentication type for the user. You must specify USERPOOL.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-user.html#cfn-appstream-user-authenticationtype
         PrimitiveType: String
         UpdateType: Immutable
@@ -140,6 +152,9 @@ function New-VSAppStreamUser {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

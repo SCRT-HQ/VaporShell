@@ -1,21 +1,25 @@
 function Add-VSRoboMakerSimulationApplicationSimulationSoftwareSuite {
     <#
     .SYNOPSIS
-        Adds an AWS::RoboMaker::SimulationApplication.SimulationSoftwareSuite resource property to the template. 
+        Adds an AWS::RoboMaker::SimulationApplication.SimulationSoftwareSuite resource property to the template. Information about a simulation software suite.
 
     .DESCRIPTION
         Adds an AWS::RoboMaker::SimulationApplication.SimulationSoftwareSuite resource property to the template.
-
+Information about a simulation software suite.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-simulationapplication-simulationsoftwaresuite.html
 
     .PARAMETER Version
+        The version of the simulation software suite.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-simulationapplication-simulationsoftwaresuite.html#cfn-robomaker-simulationapplication-simulationsoftwaresuite-version
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Name
+        The name of the simulation software suite.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-simulationapplication-simulationsoftwaresuite.html#cfn-robomaker-simulationapplication-simulationsoftwaresuite-name
         PrimitiveType: String
         UpdateType: Mutable

@@ -1,26 +1,32 @@
 function Add-VSMediaLiveInputInputSourceRequest {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaLive::Input.InputSourceRequest resource property to the template. 
+        Adds an AWS::MediaLive::Input.InputSourceRequest resource property to the template. The settings for a pull input.
 
     .DESCRIPTION
         Adds an AWS::MediaLive::Input.InputSourceRequest resource property to the template.
-
+The settings for a pull input.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputsourcerequest.html
 
     .PARAMETER Username
+        The user name for accessing the upstream system. The user name applies only if the upstream system requires credentials.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputsourcerequest.html#cfn-medialive-input-inputsourcerequest-username
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER PasswordParam
+        The password parameter that holds the password for accessing the upstream system. The password parameter applies only if the upstream system requires credentials.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputsourcerequest.html#cfn-medialive-input-inputsourcerequest-passwordparam
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Url
+        For a pull input, the URL where MediaLive pulls the source content from.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputsourcerequest.html#cfn-medialive-input-inputsourcerequest-url
         PrimitiveType: String
         UpdateType: Mutable

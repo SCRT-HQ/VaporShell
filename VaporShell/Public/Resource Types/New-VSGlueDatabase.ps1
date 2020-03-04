@@ -1,10 +1,10 @@
 function New-VSGlueDatabase {
     <#
     .SYNOPSIS
-        Adds an AWS::Glue::Database resource to the template. 
+        Adds an AWS::Glue::Database resource to the template. The AWS::Glue::Database resource specifies a logical grouping of tables in AWS Glue. For more information, see Defining a Database in Your Data Catalog: https://docs.aws.amazon.com/glue/latest/dg/define-database.html and Database Structure: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-databases.html#aws-glue-api-catalog-databases-Database in the *AWS Glue Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::Glue::Database resource to the template. 
+        Adds an AWS::Glue::Database resource to the template. The AWS::Glue::Database resource specifies a logical grouping of tables in AWS Glue. For more information, see Defining a Database in Your Data Catalog: https://docs.aws.amazon.com/glue/latest/dg/define-database.html and Database Structure: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-databases.html#aws-glue-api-catalog-databases-Database in the *AWS Glue Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-database.html
@@ -13,11 +13,16 @@ function New-VSGlueDatabase {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER DatabaseInput
+        The metadata for the database.
+
         Type: DatabaseInput
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-database.html#cfn-glue-database-databaseinput
         UpdateType: Mutable
 
     .PARAMETER CatalogId
+        The AWS account ID for the account in which to create the catalog object.
+To specify the account ID, you can use the Ref intrinsic function with the AWS::AccountId pseudo parameter. For example: !Ref AWS::AccountId
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-database.html#cfn-glue-database-catalogid
         PrimitiveType: String
         UpdateType: Immutable
@@ -83,6 +88,9 @@ function New-VSGlueDatabase {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

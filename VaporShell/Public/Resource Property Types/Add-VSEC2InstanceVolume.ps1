@@ -1,21 +1,27 @@
 function Add-VSEC2InstanceVolume {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::Instance.Volume resource property to the template. 
+        Adds an AWS::EC2::Instance.Volume resource property to the template. Specifies a volume to attach to an instance.
 
     .DESCRIPTION
         Adds an AWS::EC2::Instance.Volume resource property to the template.
+Specifies a volume to attach to an instance.
 
+Volume is property is an embedded property of the  AWS::EC2::Instance: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-mount-point.html
 
     .PARAMETER Device
+        The device name for example, /dev/sdh or xvdh.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-mount-point.html#cfn-ec2-mountpoint-device
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER VolumeId
+        The ID of the EBS volume. The volume and instance must be within the same Availability Zone.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-mount-point.html#cfn-ec2-mountpoint-volumeid
         PrimitiveType: String
         UpdateType: Mutable

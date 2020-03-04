@@ -1,10 +1,14 @@
 function New-VSElasticBeanstalkApplicationVersion {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticBeanstalk::ApplicationVersion resource to the template. 
+        Adds an AWS::ElasticBeanstalk::ApplicationVersion resource to the template. The AWS::ElasticBeanstalk::ApplicationVersion resource is an AWS Elastic Beanstalk resource type that specifies an application version, an iteration of deployable code, for an Elastic Beanstalk application.
 
     .DESCRIPTION
-        Adds an AWS::ElasticBeanstalk::ApplicationVersion resource to the template. 
+        Adds an AWS::ElasticBeanstalk::ApplicationVersion resource to the template. The AWS::ElasticBeanstalk::ApplicationVersion resource is an AWS Elastic Beanstalk resource type that specifies an application version, an iteration of deployable code, for an Elastic Beanstalk application.
+
+**Note**
+
+After you create an application version with a specified Amazon S3 bucket and key location, you can't change that Amazon S3 location. If you change the Amazon S3 location, an attempt to launch an environment from the application version will fail.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-version.html
@@ -13,16 +17,23 @@ function New-VSElasticBeanstalkApplicationVersion {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ApplicationName
+        The name of the Elastic Beanstalk application that is associated with this application version.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-version.html#cfn-elasticbeanstalk-applicationversion-applicationname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Description
+        A description of this application version.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-version.html#cfn-elasticbeanstalk-applicationversion-description
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER SourceBundle
+        The Amazon S3 bucket and key that identify the location of the source bundle for this version.
+The Amazon S3 bucket must be in the same region as the environment.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-version.html#cfn-elasticbeanstalk-applicationversion-sourcebundle
         Type: SourceBundle
         UpdateType: Immutable
@@ -99,6 +110,9 @@ function New-VSElasticBeanstalkApplicationVersion {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

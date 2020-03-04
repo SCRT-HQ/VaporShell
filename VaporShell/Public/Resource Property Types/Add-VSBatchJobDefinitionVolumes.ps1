@@ -1,21 +1,25 @@
 function Add-VSBatchJobDefinitionVolumes {
     <#
     .SYNOPSIS
-        Adds an AWS::Batch::JobDefinition.Volumes resource property to the template. 
+        Adds an AWS::Batch::JobDefinition.Volumes resource property to the template. A list of volumes associated with the job.
 
     .DESCRIPTION
         Adds an AWS::Batch::JobDefinition.Volumes resource property to the template.
-
+A list of volumes associated with the job.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-volumes.html
 
     .PARAMETER Host
+        The contents of the host parameter determine whether your data volume persists on the host container instance and where it is stored. If the host parameter is empty, then the Docker daemon assigns a host path for your data volume. However, the data is not guaranteed to persist after the containers associated with it stop running.
+
         Type: VolumesHost
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-volumes.html#cfn-batch-jobdefinition-volumes-host
         UpdateType: Mutable
 
     .PARAMETER Name
+        The name of the volume. Up to 255 letters uppercase and lowercase, numbers, hyphens, and underscores are allowed. This name is referenced in the sourceVolume parameter of container definition mountPoints.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-volumes.html#cfn-batch-jobdefinition-volumes-name
         PrimitiveType: String
         UpdateType: Mutable

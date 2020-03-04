@@ -1,22 +1,26 @@
 function Add-VSCodeBuildProjectProjectTriggers {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeBuild::Project.ProjectTriggers resource property to the template. 
+        Adds an AWS::CodeBuild::Project.ProjectTriggers resource property to the template. ProjectTriggers is a property of the AWS CodeBuild Project: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html resource that specifies webhooks that trigger an AWS CodeBuild build.
 
     .DESCRIPTION
         Adds an AWS::CodeBuild::Project.ProjectTriggers resource property to the template.
-
+ProjectTriggers is a property of the AWS CodeBuild Project: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html resource that specifies webhooks that trigger an AWS CodeBuild build.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html
 
     .PARAMETER FilterGroups
+        A list of lists of WebhookFilter objects used to determine which webhook events are triggered. At least one WebhookFilter in the array must specify EVENT as its type.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html#cfn-codebuild-project-projecttriggers-filtergroups
         ItemType: FilterGroup
         UpdateType: Mutable
 
     .PARAMETER Webhook
+        Specifies whether or not to begin automatically rebuilding the source code every time a code change is pushed to the repository.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html#cfn-codebuild-project-projecttriggers-webhook
         PrimitiveType: Boolean
         UpdateType: Mutable

@@ -1,10 +1,14 @@
 function New-VSBackupBackupVault {
     <#
     .SYNOPSIS
-        Adds an AWS::Backup::BackupVault resource to the template. 
+        Adds an AWS::Backup::BackupVault resource to the template. Creates a logical container where backups are stored. A CreateBackupVault request includes a name, optionally one or more resource tags, an encryption key, and a request ID.
 
     .DESCRIPTION
-        Adds an AWS::Backup::BackupVault resource to the template. 
+        Adds an AWS::Backup::BackupVault resource to the template. Creates a logical container where backups are stored. A CreateBackupVault request includes a name, optionally one or more resource tags, an encryption key, and a request ID.
+
+**Note**
+
+Sensitive data, such as passport numbers, should not be included the name of a backup vault.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupvault.html
@@ -13,26 +17,36 @@ function New-VSBackupBackupVault {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER BackupVaultTags
+        Metadata that you can assign to help organize the resources that you create. Each tag is a key-value pair.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupvault.html#cfn-backup-backupvault-backupvaulttags
         PrimitiveType: Json
         UpdateType: Mutable
 
     .PARAMETER BackupVaultName
+        The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the AWS Region where they are created. They consist of lowercase letters, numbers, and hyphens.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupvault.html#cfn-backup-backupvault-backupvaultname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER EncryptionKeyArn
+        The server-side encryption key that is used to protect your backups; for example, arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupvault.html#cfn-backup-backupvault-encryptionkeyarn
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Notifications
+        The SNS event notifications for the specified backup vault.
+
         Type: NotificationObjectType
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupvault.html#cfn-backup-backupvault-notifications
         UpdateType: Mutable
 
     .PARAMETER AccessPolicy
+        A resource-based policy that is used to manage access permissions on the target backup vault.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupvault.html#cfn-backup-backupvault-accesspolicy
         PrimitiveType: Json
         UpdateType: Mutable
@@ -131,6 +145,9 @@ function New-VSBackupBackupVault {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

@@ -1,10 +1,10 @@
 function New-VSIoTPolicy {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::Policy resource to the template. 
+        Adds an AWS::IoT::Policy resource to the template. Use the AWS::IoT::Policy resource to declare an AWS IoT policy. For more information about working with AWS IoT policies, see Authorization: https://docs.aws.amazon.com/iot/latest/developerguide/authorization.html in the *AWS IoT Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::IoT::Policy resource to the template. 
+        Adds an AWS::IoT::Policy resource to the template. Use the AWS::IoT::Policy resource to declare an AWS IoT policy. For more information about working with AWS IoT policies, see Authorization: https://docs.aws.amazon.com/iot/latest/developerguide/authorization.html in the *AWS IoT Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-policy.html
@@ -13,11 +13,15 @@ function New-VSIoTPolicy {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER PolicyDocument
+        The JSON document that describes the policy.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-policy.html#cfn-iot-policy-policydocument
         PrimitiveType: Json
         UpdateType: Immutable
 
     .PARAMETER PolicyName
+        The policy name.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-policy.html#cfn-iot-policy-policyname
         PrimitiveType: String
         UpdateType: Immutable
@@ -92,6 +96,9 @@ function New-VSIoTPolicy {
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

@@ -1,10 +1,10 @@
 function New-VSTransferServer {
     <#
     .SYNOPSIS
-        Adds an AWS::Transfer::Server resource to the template. 
+        Adds an AWS::Transfer::Server resource to the template. The AWS::Transfer::Server resource instantiates an autoscaling virtual server based on Secure File Transfer Protocol (SFTP in AWS. When you make updates to your server or when you work with users, use the service-generated ServerId property that is assigned to the newly created server.
 
     .DESCRIPTION
-        Adds an AWS::Transfer::Server resource to the template. 
+        Adds an AWS::Transfer::Server resource to the template. The AWS::Transfer::Server resource instantiates an autoscaling virtual server based on Secure File Transfer Protocol (SFTP in AWS. When you make updates to your server or when you work with users, use the service-generated ServerId property that is assigned to the newly created server.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html
@@ -13,31 +13,44 @@ function New-VSTransferServer {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER LoggingRole
+        A value that allows the service to write your SFTP users' activity to your Amazon CloudWatch logs for monitoring and auditing purposes.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-loggingrole
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER IdentityProviderDetails
+        This parameter is required when the IdentityProviderType is set to API_GATEWAY. Accepts an array containing all of the information required to call a customer-supplied authentication API, including the API Gateway URL. This property is not required when the IdentityProviderType is set to SERVICE_MANAGED.
+
         Type: IdentityProviderDetails
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-identityproviderdetails
         UpdateType: Mutable
 
     .PARAMETER EndpointType
+        The type of VPC endpoint that you want your SFTP server to connect to. You can choose to connect to the public internet or a virtual private cloud VPC endpoint. With a VPC endpoint, you can restrict access to your SFTP server and resources only within your VPC.
+It is recommended that you use VPC as the EndpointType. With this endpoint type, you have the option to directly associate up to three Elastic IPv4 addresses BYO IP included with your server's endpoint and use VPC security groups to restrict traffic by the client's public IP address. This is not possible with EndpointType set to VPC_ENDPOINT.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-endpointtype
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER EndpointDetails
+        The virtual private cloud VPC endpoint settings that are configured for your SFTP server. When you host your endpoint within your VPC, you can make it accessible only to resources within your VPC, or you can attach Elastic IPs and make it accessible to clients over the internet. You VPC's default security groups are automatically assigned to your endpoint.
+
         Type: EndpointDetails
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-endpointdetails
         UpdateType: Mutable
 
     .PARAMETER IdentityProviderType
+        Specifies the mode of authentication for the SFTP server. The default value is SERVICE_MANAGED, which allows you to store and access SFTP user credentials within the AWS Transfer for SFTP service. Use the API_GATEWAY value to integrate with an identity provider of your choosing. The API_GATEWAY setting requires you to provide an API Gateway endpoint URL to call for authentication using the IdentityProviderDetails parameter.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-identityprovidertype
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Tags
+        Key-value pairs that can be used to group and search for servers.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-tags
         ItemType: Tag
@@ -125,20 +138,15 @@ function New-VSTransferServer {
                 }
             })]
         $IdentityProviderType,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.Tag","System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
+        [ValidateSet("Delete","Retain","Snapshot")]
+        [System.String]
+        $UpdateReplacePolicy,
         [parameter(Mandatory = $false)]
         [System.String[]]
         $DependsOn,

@@ -1,21 +1,25 @@
 function Add-VSIoTAnalyticsDatasetDatasetContentDeliveryRule {
     <#
     .SYNOPSIS
-        Adds an AWS::IoTAnalytics::Dataset.DatasetContentDeliveryRule resource property to the template. 
+        Adds an AWS::IoTAnalytics::Dataset.DatasetContentDeliveryRule resource property to the template. When dataset contents are created, they are delivered to destination specified here.
 
     .DESCRIPTION
         Adds an AWS::IoTAnalytics::Dataset.DatasetContentDeliveryRule resource property to the template.
-
+When dataset contents are created, they are delivered to destination specified here.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-datasetcontentdeliveryrule.html
 
     .PARAMETER Destination
+        The destination to which dataset contents are delivered.
+
         Type: DatasetContentDeliveryRuleDestination
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-datasetcontentdeliveryrule.html#cfn-iotanalytics-dataset-datasetcontentdeliveryrule-destination
         UpdateType: Mutable
 
     .PARAMETER EntryName
+        The name of the dataset content delivery rules entry.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-datasetcontentdeliveryrule.html#cfn-iotanalytics-dataset-datasetcontentdeliveryrule-entryname
         PrimitiveType: String
         UpdateType: Mutable
