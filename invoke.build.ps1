@@ -273,22 +273,31 @@ $pesterScriptBlock = {
             }
         }
     }
-    $parameters = @{
-        Name           = 'Pester'
-        MinimumVersion = '4.8.1'
-    }
-    Write-BuildLog "[$($parameters.Name)] Resolving"
-    try {
-        if ($imported = Get-Module $($parameters.Name)) {
-            Write-BuildLog "[$($parameters.Name)] Removing imported module"
-            $imported | Remove-Module
+
+    $testModules = @(
+        @{
+            Name           = 'Pester'
+            MinimumVersion = '4.10.1'
         }
-        Import-Module @parameters
-    }
-    catch {
-        Write-BuildLog "[$($parameters.Name)] Installing missing module"
-        Install-Module @parameters
-        Import-Module @parameters
+        @{
+            Name           = 'Assert'
+            MinimumVersion = '0.9.5'
+        }
+    )
+    foreach ($testModule in $testModules) {
+        Write-BuildLog "[$($testModule.Name)] Resolving"
+        try {
+            if ($imported = Get-Module $($testModule.Name)) {
+                Write-BuildLog "[$($testModule.Name)] Removing imported module"
+                $imported | Remove-Module
+            }
+            Import-Module @testModule
+        }
+        catch {
+            Write-BuildLog "[$($testModule.Name)] Installing missing module"
+            Install-Module @testModule
+            Import-Module @testModule
+        }
     }
     Push-Location
     Set-Location -PassThru $TargetModuleDirectory

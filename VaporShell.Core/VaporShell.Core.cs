@@ -13,19 +13,19 @@ namespace VaporShell.Core
         {
             PSObject tag = new PSObject();
             tag.Members.Add(new PSNoteProperty("Key", key.ToString()));
-            tag.Members.Add(new PSNoteProperty("Value", value.ToString()));
+            tag.Members.Add(new PSNoteProperty("Value", value));
             tag.TypeNames.Insert(0, "Vaporshell.Resource.Tag");
 
             return tag;
         }
 
-        private bool TryGetKey(IDictionary dictionary, string keyName, ref string KeyValue)
+        private bool TryGetKey(IDictionary dictionary, string keyName, ref object KeyValue)
         {
             foreach (object key in dictionary.Keys)
             {
                 if (key.ToString().ToLower() == keyName.ToLower())
                 {
-                    KeyValue = dictionary[key].ToString();
+                    KeyValue = dictionary[key];
                     return true;
                 }
             }
@@ -35,8 +35,8 @@ namespace VaporShell.Core
 
         private IEnumerable<PSObject> TransformHashtable(IDictionary inputData)
         {
-            string keyName = "";
-            string value = "";
+            object keyName = null;
+            object value = null;
             if (this.TryGetKey(inputData, "key", ref keyName) && this.TryGetKey(inputData, "value", ref value))
             {
                 yield return this.ConvertToTag(keyName, value);
