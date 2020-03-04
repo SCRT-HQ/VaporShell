@@ -9,33 +9,43 @@ namespace VaporShell.Core
     {
         private EngineIntrinsics engineIntrinsics;
 
-        private IEnumerable<PSObject> ConvertToTag(object key, object value)
+        private PSObject ConvertToTag(object key, object value)
         {
             PSObject tag = new PSObject();
-            tag.Members.Add(new PSNoteProperty("Key", key));
-            tag.Members.Add(new PSNoteProperty("Value", value));
-            tag.TypeNames.Insert(0,"Vaporshell.Resource.Tag");
+            tag.Members.Add(new PSNoteProperty("Key", key.ToString()));
+            tag.Members.Add(new PSNoteProperty("Value", value.ToString()));
+            tag.TypeNames.Insert(0, "Vaporshell.Resource.Tag");
 
-            yield return tag;
+            return tag;
+        }
+
+        private bool TryGetKey(IDictionary dictionary, string keyName, ref string KeyValue)
+        {
+            foreach (object key in dictionary.Keys)
+            {
+                if (key.ToString().ToLower() == keyName.ToLower())
+                {
+                    KeyValue = dictionary[key].ToString();
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         private IEnumerable<PSObject> TransformHashtable(IDictionary inputData)
         {
-            if (inputData.Contains("Key") && inputData.Contains("Value"))
+            string keyName = "";
+            string value = "";
+            if (this.TryGetKey(inputData, "key", ref keyName) && this.TryGetKey(inputData, "value", ref value))
             {
-                foreach (PSObject tag in this.ConvertToTag(inputData["Key"],inputData["Value"]))
-                {
-                    yield return tag;
-                }
+                yield return this.ConvertToTag(keyName, value);
             }
             else
             {
                 foreach (string key in inputData.Keys)
                 {
-                    foreach (PSObject tag in this.ConvertToTag(key,inputData[key]))
-                    {
-                        yield return tag;
-                    }
+                    yield return this.ConvertToTag(key, inputData[key]);
                 }
             }
         }
@@ -45,34 +55,41 @@ namespace VaporShell.Core
             var props = new List<string>();
             foreach (var property in inputData.Properties)
             {
-                props.Add(property.Name);
+                props.Add(property.Name.ToLower());
             }
-            if (props.Contains("Key") && props.Contains("Value"))
-            {
-                object key = null;
-                object value = null;
 
-                foreach (var property in inputData.Properties)
-                {
-                    if (property.Name == "Key")
-                    {
-                        key = property.Value;
-                    }
-                    else if (property.Name == "Value")
-                    {
-                        value = property.Value;
-                    }
-                }
-                foreach (PSObject tag in this.ConvertToTag(key,value))
-                {
-                    yield return tag;
-                }
+            if (props.Contains("key") && props.Contains("value"))
+            {
+                yield return this.ConvertToTag(inputData.Properties["Key"].Value, inputData.Properties["Value"].Value);
             }
             else
             {
                 foreach (var property in inputData.Properties)
                 {
-                    foreach (PSObject tag in this.ConvertToTag(property.Name,property.Value))
+                    yield return this.ConvertToTag(property.Name, property.Value);
+                }
+            }
+        }
+
+        private IEnumerable<PSObject> TransformSingle(object inputData)
+        {
+            if (inputData is IDictionary)
+            {
+                foreach (PSObject tag in this.TransformHashtable(inputData as IDictionary))
+                {
+                    yield return tag;
+                }
+            }
+            else if (inputData is PSObject)
+            {
+                PSObject psObject = inputData as PSObject;
+                if (psObject.TypeNames.Contains("Vaporshell.Resource.Tag"))
+                {
+                    yield return psObject;
+                }
+                else if (psObject.TypeNames.Contains("System.Management.Automation.PSCustomObject"))
+                {
+                    foreach (PSObject tag in this.TransformPSObject(psObject))
                     {
                         yield return tag;
                     }
@@ -80,45 +97,32 @@ namespace VaporShell.Core
             }
         }
 
-        private object TransformSingle(object inputData)
-        {
-            if (inputData is IDictionary)
-            {
-                return this.TransformHashtable(inputData as IDictionary);
-            }
-            else if (inputData is PSObject)
-            {
-                PSObject psObject = inputData as PSObject;
-                if (psObject.TypeNames.Contains("Vaporshell.Resource.Tag"))
-                {
-                    return inputData;
-                }
-                else if (psObject.TypeNames.Contains("System.Management.Automation.PSCustomObject"))
-                {
-                    return this.TransformPSObject(psObject);
-                }
-            }
-            return null;
-        }
-
-        private IEnumerable<object> TransformData(object inputData)
+        private IEnumerable<PSObject> TransformData(object inputData)
         {
             if (inputData is Array)
             {
                 foreach (object item in inputData as Array)
                 {
-                    yield return this.TransformSingle(item);
+                    // This is returning an unenumerated array
+                    foreach (PSObject tag in this.TransformSingle(item))
+                    {
+                        yield return tag;
+                    }
                 }
             }
             else
             {
-                yield return this.TransformSingle(inputData);
+                foreach (PSObject tag in this.TransformSingle(inputData))
+                {
+                    yield return tag;
+                }
             }
         }
 
         public override object Transform(EngineIntrinsics engineIntrinsics, object inputData)
         {
             this.engineIntrinsics = engineIntrinsics;
+
             return this.TransformData(inputData);
         }
     }
