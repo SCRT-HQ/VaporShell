@@ -2,6 +2,7 @@
 
 <!-- TOC -->
 
+* [2.11.1 - 2020-03-09](#2111---2020-03-09)
 * [2.11.0 - 2020-03-04](#2110---2020-03-04)
 * [2.10.1 - 2020-02-20](#2101---2020-02-20)
 * [2.10.0 - 2020-02-18](#2100---2020-02-18)
@@ -55,12 +56,17 @@
 
 <!-- /TOC -->
 
+## 2.11.1 - 2020-03-09
+
+* [Issue #72](https://github.com/SCRT-HQ/VaporShell/issues/72)
+  * Updated allowable types for `Add-FnJoin` to match current AWS documentation (was missing `Fn::ImportValue` and `Fn::Sub` support)
+
 ## 2.11.0 - 2020-03-04
 
-* [Issue #69](https://github.com/scrthq/VaporShell/issues/69) + [PR #70](https://github.com/scrthq/VaporShell/pull/70) - _Thanks, [@indented-automation](https://github.com/indented-automation)!!!_
+* [Issue #69](https://github.com/SCRT-HQ/VaporShell/issues/69) + [PR #70](https://github.com/SCRT-HQ/VaporShell/pull/70) - _Thanks, [@indented-automation](https://github.com/indented-automation)!!!_
   * Started `VaporShell.Core` class library to include with the module, first class being `TransformTagAttribute` to cleanly convert `Tags` parameter input to the appropriate format if not already.
   * Added Pester tests to confirm Tag transforms are working as expected.
-* [Issue #68](https://github.com/scrthq/VaporShell/issues/68) - _Thanks, [@indented-automation](https://github.com/indented-automation) and [@austoonz](https://github.com/austoonz)!!!_
+* [Issue #68](https://github.com/SCRT-HQ/VaporShell/issues/68) - _Thanks, [@indented-automation](https://github.com/indented-automation) and [@austoonz](https://github.com/austoonz)!!!_
   * Surfaced errors better on AWS SDK errors so the actual error is visible.
   * Added the `FallbackCredentialFactory` to better support running in environments where credentials files are not a practical option.
 * Miscellaneous
@@ -85,7 +91,7 @@
 
 ## 2.9.5 - 2020-02-17
 
-* [Issue #66](https://github.com/scrthq/VaporShell/issues/66)
+* [Issue #66](https://github.com/SCRT-HQ/VaporShell/issues/66)
   * Fixed: `Int`,`Double`, and `Boolean` parameters now accept CloudFormation Intrinsic Functions as parameter values.
 * Miscellaneous
   * Brought Resource Type and Property Type functions up to current spec sheet.
@@ -107,14 +113,14 @@
 
 ## 2.9.1 - 2019-09-09
 
-* [Issue #61](https://github.com/scrthq/VaporShell/issues/61) -- _Thanks, [@ScriptAutomate](https://github.com/ScriptAutomate)!_
+* [Issue #61](https://github.com/SCRT-HQ/VaporShell/issues/61) -- _Thanks, [@ScriptAutomate](https://github.com/ScriptAutomate)!_
   * Updated Synopsis and Description for all Resource Type and Property Type functions to include the information from the parsed documentation.
 
 ## 2.9.0 - 2019-09-08
 
-* [Issue #61](https://github.com/scrthq/VaporShell/issues/61) -- _Thanks, [@ScriptAutomate](https://github.com/ScriptAutomate)!_
+* [Issue #61](https://github.com/SCRT-HQ/VaporShell/issues/61) -- _Thanks, [@ScriptAutomate](https://github.com/ScriptAutomate)!_
   * Updated Parameter help for all Resource Type and Property Type functions to include the Parameter descriptions.
-* [Issue #62](https://github.com/scrthq/VaporShell/issues/62) -- _Thanks, [@ScriptAutomate](https://github.com/ScriptAutomate)!_
+* [Issue #62](https://github.com/SCRT-HQ/VaporShell/issues/62) -- _Thanks, [@ScriptAutomate](https://github.com/ScriptAutomate)!_
   * Updated the CI build process to check all spec sheets for any Resource Types and Property Types that may be missing from `us-east-1`.
 * Miscellaneous
   * Brought Resource Type and Property Type functions up to current spec sheet.
@@ -127,7 +133,7 @@
 
 ## 2.8.0 - 2019-08-08
 
-* [Issue #57](https://github.com/scrthq/PSGSuite/issues/57)
+* [Issue #57](https://github.com/SCRT-HQ/PSGSuite/issues/57)
   * Fixed: `ProcessRequest4` private function will now use the Async methods if detected, so usage of the AWSPowerShell.NetCore or AWS.Tools.* modules from Windows PowerShell will still work as expected when using any of the SDK wrapper functions like `Watch-Stack`
 * Miscellaneous
   * Brought Resource Type and Property Type functions up to current spec sheet.
@@ -139,7 +145,7 @@
 
 ## 2.7.2 - 2019-04-16
 
-* [Issue #53](https://github.com/scrthq/VaporShell/issues/53)
+* [Issue #53](https://github.com/SCRT-HQ/VaporShell/issues/53)
   * Fixed: `New-VaporMetadata` now allows colons `:` in the LogicalId.
 * Miscellaneous
   * Brought Resource Type and Property Type functions up to current spec sheet.
@@ -156,7 +162,7 @@
 
 ## 2.7.0 - 2019-03-08
 
-* [Issue #48](https://github.com/scrthq/VaporShell/issues/48)
+* [Issue #48](https://github.com/SCRT-HQ/VaporShell/issues/48)
   * Fixed: `Export-VaporShell` was having various failures due to the `Format-Json` private function called during JSON conversion.
 * Miscellaneous
   * Brought Resource Type and Property Type functions up to current spec sheet.
@@ -166,21 +172,21 @@
 
 ## 2.6.3
 
-* [Issue #44](https://github.com/scrthq/VaporShell/issues/44)
+* [Issue #44](https://github.com/SCRT-HQ/VaporShell/issues/44)
   * Fixed: `Resource` from the DSL module was no longer resolving the available types after the CI/CD pipeline switched to compiling the module into a single PSM1 before deploying to the PowerShell Gallery.
 * Miscellaneous
   * Brought Resource Type and Property Type functions up to current spec sheet.
 
 ## 2.6.2
 
-* [Issue #41](https://github.com/scrthq/VaporShell/issues/41)
+* [Issue #41](https://github.com/SCRT-HQ/VaporShell/issues/41)
   * Fixed: `Update-VSStack` and `Update-VSStackSet` were removing the `BuiltWith = VaporShell` tags if not explicitly included when updating Tags.
 * Miscellaneous
   * Brought Resource Type and Property Type functions up to current spec sheet.
 
 ## 2.6.1
 
-* [Issue #41](https://github.com/scrthq/VaporShell/issues/41)
+* [Issue #41](https://github.com/SCRT-HQ/VaporShell/issues/41)
   * Fixed: `Tags` parameter on the following functions was incorrectly expecting `String` values, switched to `Hashtable`:
     * `New-VSStack`
     * `Update-VSStack`
@@ -224,11 +230,11 @@
 
 ## 2.4.1
 
-* Added `Vaporshell.Condition` to the acceptible types for standard resource parameters ([Issue #35](https://github.com/scrthq/VaporShell/issues/35))
+* Added `Vaporshell.Condition` to the acceptible types for standard resource parameters ([Issue #35](https://github.com/SCRT-HQ/VaporShell/issues/35))
 
 ## 2.4.0
 
-* Added `ToString()` method override to `New-VaporResource` for convenience during template building [Issue #34](https://github.com/scrthq/VaporShell/issues/34)
+* Added `ToString()` method override to `New-VaporResource` for convenience during template building [Issue #34](https://github.com/SCRT-HQ/VaporShell/issues/34)
 
 ## 2.3.0
 
@@ -238,7 +244,7 @@
 
 ## 2.2.1
 
-* Fixed [issue #25](https://github.com/scrthq/VaporShell/issues/25) by updating `Convert-SpecToFunction` to exclude common parameters from being added as properties to outputted resource and resource property objects
+* Fixed [issue #25](https://github.com/SCRT-HQ/VaporShell/issues/25) by updating `Convert-SpecToFunction` to exclude common parameters from being added as properties to outputted resource and resource property objects
 
 ## 2.2.0
 
@@ -271,7 +277,7 @@
 ## 2.0.0
 
 * Completely wrapped the AWS .NET SDK's CloudFormation model, allowing for full stack / change set / stack set management from VaporShell
-* Fixed Export-VaporShell to work with PowerShell v3 and v4 ([Issue #15](https://github.com/scrthq/VaporShell/issues/15))
+* Fixed Export-VaporShell to work with PowerShell v3 and v4 ([Issue #15](https://github.com/SCRT-HQ/VaporShell/issues/15))
 
 
 ## 1.2.3
