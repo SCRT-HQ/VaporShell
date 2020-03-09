@@ -2,13 +2,13 @@ function Add-FnJoin {
     <#
     .SYNOPSIS
         Adds the intrinsic function "Fn::Join" to a resource property
-    
+
     .DESCRIPTION
         The intrinsic function Fn::Join appends a set of values into a single value, separated by the specified delimiter. If a delimiter is the empty string, the set of values are concatenated with no delimiter.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-join.html
-    
+
     .PARAMETER Delimiter
         The value you want to occur between fragments. The delimiter will occur between fragments only. It will not terminate the final value.
 
@@ -31,9 +31,11 @@ function Add-FnJoin {
             Fn::GetAtt
             Fn::GetAZs
             Fn::If
+            Fn::ImportValue
             Fn::Join
             Fn::Split
             Fn::Select
+            Fn::Sub
             Ref
 
     .FUNCTIONALITY
@@ -48,7 +50,7 @@ function Add-FnJoin {
         $Delimiter = $null,
         [parameter(Mandatory = $true,Position = 1)]
         [ValidateScript({
-            $allowedTypes = "Vaporshell.Condition.If","Vaporshell.Function.Base64","Vaporshell.Function.FindInMap","Vaporshell.Function.GetAtt","Vaporshell.Function.GetAZs","Vaporshell.Function.Join","Vaporshell.Function.Select","Vaporshell.Function.Split","Vaporshell.Function.Ref","System.String"
+            $allowedTypes = "Vaporshell.Condition.If","Vaporshell.Function.Base64","Vaporshell.Function.FindInMap","Vaporshell.Function.GetAtt","Vaporshell.Function.GetAZs","Vaporshell.Function.ImportValue","Vaporshell.Function.Join","Vaporshell.Function.Select","Vaporshell.Function.Split","Vaporshell.Function.Sub","Vaporshell.Function.Ref","System.String"
             if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                 $true
             }
