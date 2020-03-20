@@ -403,7 +403,7 @@ task PublishToGitHub -If $gitHubConditions {
         CommitId         = $commitId
         ReleaseNotes     = $ReleaseNotes
         ArtifactPath     = $zipPath
-        GitHubUsername   = 'scrthq'
+        GitHubUsername   = 'SCRT-HQ'
         GitHubRepository = $ModuleName
         GitHubApiKey     = $env:GitHubPAT
         Draft            = $false
@@ -440,4 +440,4 @@ task PublishToTwitter -If $tweetConditions {
     Write-BuildLog "Tweet successful!"
 }
 
-task Deploy Init,PublishToPSGallery,PublishToGitHub,PublishToTwitter
+task Deploy Init,PublishToPSGallery,PublishToTwitter,PublishToGitHub
