@@ -42,6 +42,11 @@ function New-VSChangeSet {
     .PARAMETER Parameters
     A list of Parameter structures that specify input parameters for the change set
 
+    .PARAMETER ResourcesToImport
+    The resources to import into your stack. Use the helper function `Add-VSChangeSetResourceToImport` to create the `Amazon.CloudFormation.Model.ResourceToImport` objects.
+
+    https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-existing-stack.html
+
     .PARAMETER ResourceTypes
     The template resource types that you have permissions to work with if you execute this change set, such as AWS::EC2::Instance, AWS::EC2::*, or Custom::MyCustomInstance. If the list of resource types doesn't include a resource type that you're updating, the stack update fails. By default, AWS CloudFormation grants permissions to all resource types. AWS Identity and Access Management (IAM) uses this parameter for condition keys in IAM policies for AWS CloudFormation.
 
@@ -100,7 +105,8 @@ function New-VSChangeSet {
         $Capabilities,
         [parameter(Mandatory = $false)]
         [Amazon.CloudFormation.ChangeSetType]
-        $ChangeSetType,
+        [ValidateSet('CREATE','IMPORT','UPDATE')]
+        $ChangeSetType = 'CREATE',
         [parameter(Mandatory = $false)]
         [Alias('ClientToken')]
         [String]
@@ -122,6 +128,9 @@ function New-VSChangeSet {
                 }
             })]
         $Parameters,
+        [parameter()]
+        [Amazon.CloudFormation.Model.ResourceToImport[]]
+        $ResourcesToImport,
         [parameter(Mandatory = $false)]
         [String[]]
         $ResourceTypes,
@@ -157,6 +166,7 @@ function New-VSChangeSet {
         $method = "CreateChangeSet"
         $requestType = "Amazon.CloudFormation.Model.$($method)Request"
         $request = New-Object $requestType
+        $request.ChangeSetType = [Amazon.CloudFormation.ChangeSetType]::FindValue($ChangeSetType)
         foreach ($key in $PSBoundParameters.Keys) {
             switch ($key) {
                 ClientRequestToken {
@@ -164,6 +174,13 @@ function New-VSChangeSet {
                 }
                 Path {
                     $request.TemplateBody = [System.IO.File]::ReadAllText((Resolve-Path $Path))
+                }
+                ResourcesToImport {
+                    $rToI = New-Object 'System.Collections.Generic.List[Amazon.CloudFormation.Model.ResourceToImport]'
+                    foreach ($res in $ResourcesToImport) {
+                        $rToI.Add($res)
+                    }
+                    $request.ResourcesToImport = $rToI
                 }
                 Parameters {
                     if ($Parameters[0] -is [Amazon.CloudFormation.Model.Parameter]) {
@@ -189,6 +206,7 @@ function New-VSChangeSet {
                         $tagList.Add((VSStackTag -Key $key -Value $Tags[$key]))
                     }
                 }
+                ChangeSetType {}
                 Default {
                     if ($request.PSObject.Properties.Name -contains $key) {
                         $request.$key = $PSBoundParameters[$key]

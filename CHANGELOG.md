@@ -2,6 +2,7 @@
 
 <!-- TOC -->
 
+* [2.12.0 - 2020-05-03](#2120---2020-05-03)
 * [2.11.1 - 2020-03-09](#2111---2020-03-09)
 * [2.11.0 - 2020-03-04](#2110---2020-03-04)
 * [2.10.1 - 2020-02-20](#2101---2020-02-20)
@@ -55,6 +56,14 @@
 * [0.7.02](#0702)
 
 <!-- /TOC -->
+
+## 2.12.0 - 2020-05-03
+
+* [Issue #74](https://github.com/SCRT-HQ/VaporShell/issues/74)
+    * Fixed: `UpdateReplacePolicy` was incorrectly nested under the Resource Properties, not top-level next to `DeletionPolicy`.
+* [Issue #75](https://github.com/SCRT-HQ/VaporShell/issues/75)
+    * Added: Support for `ResourcesToImport` declaration on changes sets with `New-VSChangeSet`
+    * Added: New helper function `Add-VSChangeSetResourceToImport` to create the `ResourceToImport` object needed as the value of the `ResourcesToImport` parameter on `New-VSChangeSet`
 
 ## 2.11.1 - 2020-03-09
 
