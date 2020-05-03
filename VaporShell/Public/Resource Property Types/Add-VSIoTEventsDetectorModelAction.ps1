@@ -17,6 +17,41 @@ An action to be performed when the condition is TRUE.
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-iotevents
         UpdateType: Mutable
 
+    .PARAMETER Firehose
+        Sends information about the detector model instance and the event which triggered the action to a Kinesis Data Firehose delivery stream.
+
+        Type: Firehose
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-firehose
+        UpdateType: Mutable
+
+    .PARAMETER IotTopicPublish
+        Publishes an MQTT message with the given topic to the AWS IoT message broker.
+
+        Type: IotTopicPublish
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-iottopicpublish
+        UpdateType: Mutable
+
+    .PARAMETER DynamoDB
+        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
+        Type: DynamoDB
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-dynamodb
+        UpdateType: Mutable
+
+    .PARAMETER DynamoDBv2
+        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
+        Type: DynamoDBv2
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-dynamodbv2
+        UpdateType: Mutable
+
+    .PARAMETER IotSiteWise
+        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
+        Type: IotSiteWise
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-iotsitewise
+        UpdateType: Mutable
+
     .PARAMETER ResetTimer
         Information needed to reset the timer.
 
@@ -31,25 +66,11 @@ An action to be performed when the condition is TRUE.
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-sqs
         UpdateType: Mutable
 
-    .PARAMETER Firehose
-        Sends information about the detector model instance and the event which triggered the action to a Kinesis Data Firehose delivery stream.
-
-        Type: Firehose
-        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-firehose
-        UpdateType: Mutable
-
     .PARAMETER Sns
         Sends an Amazon SNS message.
 
         Type: Sns
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-sns
-        UpdateType: Mutable
-
-    .PARAMETER IotTopicPublish
-        Publishes an MQTT message with the given topic to the AWS IoT message broker.
-
-        Type: IotTopicPublish
-        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-iottopicpublish
         UpdateType: Mutable
 
     .PARAMETER SetTimer
@@ -90,15 +111,21 @@ An action to be performed when the condition is TRUE.
         [parameter(Mandatory = $false)]
         $IotEvents,
         [parameter(Mandatory = $false)]
+        $Firehose,
+        [parameter(Mandatory = $false)]
+        $IotTopicPublish,
+        [parameter(Mandatory = $false)]
+        $DynamoDB,
+        [parameter(Mandatory = $false)]
+        $DynamoDBv2,
+        [parameter(Mandatory = $false)]
+        $IotSiteWise,
+        [parameter(Mandatory = $false)]
         $ResetTimer,
         [parameter(Mandatory = $false)]
         $Sqs,
         [parameter(Mandatory = $false)]
-        $Firehose,
-        [parameter(Mandatory = $false)]
         $Sns,
-        [parameter(Mandatory = $false)]
-        $IotTopicPublish,
         [parameter(Mandatory = $false)]
         $SetTimer,
         [parameter(Mandatory = $false)]

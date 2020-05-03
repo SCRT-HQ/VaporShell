@@ -12,6 +12,13 @@ SpotOptionsRequest is a property of the  AWS::EC2::EC2Fleet: https://docs.aws.am
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html
 
+    .PARAMETER SingleAvailabilityZone
+        +   SpotOptionsRequest: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotOptionsRequest.html in the *Amazon EC2 API Reference*
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-singleavailabilityzone
+        PrimitiveType: Boolean
+        UpdateType: Immutable
+
     .PARAMETER AllocationStrategy
         Indicates how to allocate the target Spot Instance capacity across the Spot Instance pools specified by the EC2 Fleet.
 If the allocation strategy is lowestPrice, EC2 Fleet launches instances from the Spot Instance pools with the lowest price. This is the default allocation strategy.
@@ -21,21 +28,42 @@ If the allocation strategy is capacityOptimized, EC2 Fleet launches instances fr
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-allocationstrategy
         PrimitiveType: String
-        UpdateType: Mutable
+        UpdateType: Immutable
+
+    .PARAMETER SingleInstanceType
+        +   SpotOptionsRequest: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotOptionsRequest.html in the *Amazon EC2 API Reference*
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-singleinstancetype
+        PrimitiveType: Boolean
+        UpdateType: Immutable
+
+    .PARAMETER MinTargetCapacity
+        +   SpotOptionsRequest: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotOptionsRequest.html in the *Amazon EC2 API Reference*
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-mintargetcapacity
+        PrimitiveType: Integer
+        UpdateType: Immutable
+
+    .PARAMETER MaxTotalPrice
+        +   SpotOptionsRequest: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotOptionsRequest.html in the *Amazon EC2 API Reference*
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-maxtotalprice
+        PrimitiveType: String
+        UpdateType: Immutable
 
     .PARAMETER InstanceInterruptionBehavior
         The behavior when a Spot Instance is interrupted. The default is terminate.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-instanceinterruptionbehavior
         PrimitiveType: String
-        UpdateType: Mutable
+        UpdateType: Immutable
 
     .PARAMETER InstancePoolsToUseCount
         The number of Spot pools across which to allocate your target Spot capacity. Valid only when Spot **AllocationStrategy** is set to lowest-price. EC2 Fleet selects the cheapest Spot pools and evenly allocates your target Spot capacity across the number of Spot pools that you specify.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-instancepoolstousecount
         PrimitiveType: Integer
-        UpdateType: Mutable
+        UpdateType: Immutable
 
     .FUNCTIONALITY
         Vaporshell
@@ -44,6 +72,17 @@ If the allocation strategy is capacityOptimized, EC2 Fleet launches instances fr
     [cmdletbinding()]
     Param
     (
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.Boolean","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $SingleAvailabilityZone,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
@@ -55,6 +94,39 @@ If the allocation strategy is capacityOptimized, EC2 Fleet launches instances fr
                 }
             })]
         $AllocationStrategy,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.Boolean","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $SingleInstanceType,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.Int32","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $MinTargetCapacity,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $MaxTotalPrice,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"

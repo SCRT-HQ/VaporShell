@@ -17,6 +17,13 @@ Sends information about the detector model instance and the event which triggere
         PrimitiveType: Boolean
         UpdateType: Mutable
 
+    .PARAMETER Payload
+        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
+        Type: Payload
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-sqs.html#cfn-iotevents-detectormodel-sqs-payload
+        UpdateType: Mutable
+
     .PARAMETER QueueUrl
         The URL of the Amazon SQS queue where the data is written.
 
@@ -42,6 +49,8 @@ Sends information about the detector model instance and the event which triggere
                 }
             })]
         $UseBase64,
+        [parameter(Mandatory = $false)]
+        $Payload,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"

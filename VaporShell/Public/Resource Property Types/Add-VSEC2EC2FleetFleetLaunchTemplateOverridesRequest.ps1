@@ -17,42 +17,49 @@ FleetLaunchTemplateOverridesRequest is a property of the  FleetLaunchTemplateCon
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest-weightedcapacity
         PrimitiveType: Double
-        UpdateType: Mutable
+        UpdateType: Immutable
+
+    .PARAMETER Placement
+        +   FleetLaunchTemplateOverridesRequest: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_FleetLaunchTemplateOverridesRequest.html in the *Amazon EC2 API Reference*
+
+        Type: Placement
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest-placement
+        UpdateType: Immutable
 
     .PARAMETER Priority
         The priority for the launch template override. If **AllocationStrategy** is set to prioritized, EC2 Fleet uses priority to determine which launch template override to use first in fulfilling On-Demand capacity. The highest priority is launched first. Valid values are whole numbers starting at 0. The lower the number, the higher the priority. If no number is set, the launch template override has the lowest priority.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest-priority
         PrimitiveType: Double
-        UpdateType: Mutable
+        UpdateType: Immutable
 
     .PARAMETER AvailabilityZone
         The Availability Zone in which to launch the instances.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest-availabilityzone
         PrimitiveType: String
-        UpdateType: Mutable
+        UpdateType: Immutable
 
     .PARAMETER SubnetId
         The IDs of the subnets in which to launch the instances. Separate multiple subnet IDs using commas for example, subnet-1234abcdeexample1, subnet-0987cdef6example2. A request of type instant can have only one subnet ID.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest-subnetid
         PrimitiveType: String
-        UpdateType: Mutable
+        UpdateType: Immutable
 
     .PARAMETER InstanceType
         The instance type.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest-instancetype
         PrimitiveType: String
-        UpdateType: Mutable
+        UpdateType: Immutable
 
     .PARAMETER MaxPrice
         The maximum price per unit hour that you are willing to pay for a Spot Instance.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest-maxprice
         PrimitiveType: String
-        UpdateType: Mutable
+        UpdateType: Immutable
 
     .FUNCTIONALITY
         Vaporshell
@@ -72,6 +79,8 @@ FleetLaunchTemplateOverridesRequest is a property of the  FleetLaunchTemplateCon
                 }
             })]
         $WeightedCapacity,
+        [parameter(Mandatory = $false)]
+        $Placement,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.Double","Vaporshell.Function"

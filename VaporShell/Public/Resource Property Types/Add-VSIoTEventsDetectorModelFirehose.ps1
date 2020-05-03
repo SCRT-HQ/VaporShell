@@ -17,6 +17,13 @@ Sends information about the detector model instance and the event which triggere
         PrimitiveType: String
         UpdateType: Mutable
 
+    .PARAMETER Payload
+        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
+        Type: Payload
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-firehose.html#cfn-iotevents-detectormodel-firehose-payload
+        UpdateType: Mutable
+
     .PARAMETER Separator
         A character separator that is used to separate records written to the Kinesis Data Firehose delivery stream. Valid values are: 'n' newline, 't' tab, 'rn' Windows newline, ',' comma.
 
@@ -42,6 +49,8 @@ Sends information about the detector model instance and the event which triggere
                 }
             })]
         $DeliveryStreamName,
+        [parameter(Mandatory = $false)]
+        $Payload,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"

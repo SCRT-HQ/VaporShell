@@ -12,6 +12,13 @@ The PatchRules property of the RuleGroup: https://docs.aws.amazon.com/AWSCloudFo
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html
 
+    .PARAMETER ApproveUntilDate
+        +  PatchRule: https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchRule.html in the *AWS Systems Manager API Reference*.
+
+        Type: PatchStringDate
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html#cfn-ssm-patchbaseline-rule-approveuntildate
+        UpdateType: Mutable
+
     .PARAMETER EnableNonSecurity
         For instances identified by the approval rule filters, enables a patch baseline to apply non-security updates available in the specified repository. The default value is 'false'. Applies to Linux instances only.
 
@@ -48,6 +55,8 @@ You must specify a value for ApproveAfterDays.
     [cmdletbinding()]
     Param
     (
+        [parameter(Mandatory = $false)]
+        $ApproveUntilDate,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.Boolean","Vaporshell.Function"

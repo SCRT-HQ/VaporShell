@@ -82,6 +82,13 @@ For more information about custom error pages, see Customizing Error Responses: 
         ItemType: CustomErrorResponse
         UpdateType: Mutable
 
+    .PARAMETER OriginGroups
+        +  DistributionConfig: https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DistributionConfig.html in the *Amazon CloudFront API Reference*
+
+        Type: OriginGroups
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-origingroups
+        UpdateType: Mutable
+
     .PARAMETER Enabled
         From this field, you can enable or disable the selected distribution.
 
@@ -210,6 +217,8 @@ In general, configuring CloudFront to communicate with viewers using HTTP/2 redu
                 }
             })]
         $CustomErrorResponses,
+        [parameter(Mandatory = $false)]
+        $OriginGroups,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.Boolean","Vaporshell.Function"
