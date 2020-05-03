@@ -24,6 +24,20 @@ A structure for the resource.
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-resource.html#cfn-lakeformation-permissions-resource-databaseresource
         UpdateType: Mutable
 
+    .PARAMETER DataLocationResource
+        Currently not supported by AWS CloudFormation.
+
+        Type: DataLocationResource
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-resource.html#cfn-lakeformation-permissions-resource-datalocationresource
+        UpdateType: Mutable
+
+    .PARAMETER TableWithColumnsResource
+        Currently not supported by AWS CloudFormation.
+
+        Type: TableWithColumnsResource
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-resource.html#cfn-lakeformation-permissions-resource-tablewithcolumnsresource
+        UpdateType: Mutable
+
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -34,7 +48,11 @@ A structure for the resource.
         [parameter(Mandatory = $false)]
         $TableResource,
         [parameter(Mandatory = $false)]
-        $DatabaseResource
+        $DatabaseResource,
+        [parameter(Mandatory = $false)]
+        $DataLocationResource,
+        [parameter(Mandatory = $false)]
+        $TableWithColumnsResource
     )
     Begin {
         $obj = [PSCustomObject]@{}

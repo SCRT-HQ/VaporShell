@@ -17,15 +17,15 @@ TagSpecification is a property of the  AWS::EC2::EC2Fleet: https://docs.aws.amaz
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-tagspecification.html#cfn-ec2-ec2fleet-tagspecification-resourcetype
         PrimitiveType: String
-        UpdateType: Mutable
+        UpdateType: Immutable
 
     .PARAMETER Tags
         The tags to apply to the resource.
 
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-tagspecification.html#cfn-ec2-ec2fleet-tagspecification-tags
-        ItemType: TagRequest
-        UpdateType: Mutable
+        ItemType: Tag
+        UpdateType: Immutable
 
     .FUNCTIONALITY
         Vaporshell
@@ -45,16 +45,8 @@ TagSpecification is a property of the  AWS::EC2::EC2Fleet: https://docs.aws.amaz
                 }
             })]
         $ResourceType,
+        [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.EC2.EC2Fleet.TagRequest"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
         $Tags
     )
     Begin {

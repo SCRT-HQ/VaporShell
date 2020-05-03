@@ -52,11 +52,32 @@ Describes the actions associated with a rule.
         Type: FirehoseAction
         UpdateType: Mutable
 
+    .PARAMETER Http
+        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-http
+        Type: HttpAction
+        UpdateType: Mutable
+
     .PARAMETER IotAnalytics
         Sends message data to an AWS IoT Analytics channel.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-iotanalytics
         Type: IotAnalyticsAction
+        UpdateType: Mutable
+
+    .PARAMETER IotEvents
+        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-iotevents
+        Type: IotEventsAction
+        UpdateType: Mutable
+
+    .PARAMETER IotSiteWise
+        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-iotsitewise
+        Type: IotSiteWiseAction
         UpdateType: Mutable
 
     .PARAMETER Kinesis
@@ -128,7 +149,13 @@ Describes the actions associated with a rule.
         [parameter(Mandatory = $false)]
         $Firehose,
         [parameter(Mandatory = $false)]
+        $Http,
+        [parameter(Mandatory = $false)]
         $IotAnalytics,
+        [parameter(Mandatory = $false)]
+        $IotEvents,
+        [parameter(Mandatory = $false)]
+        $IotSiteWise,
         [parameter(Mandatory = $false)]
         $Kinesis,
         [parameter(Mandatory = $false)]

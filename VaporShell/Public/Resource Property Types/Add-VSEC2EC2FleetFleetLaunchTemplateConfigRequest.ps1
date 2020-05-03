@@ -17,7 +17,7 @@ FleetLaunchTemplateConfigRequest is a property of the AWS::EC2::EC2Fleet: https:
 
         Type: FleetLaunchTemplateSpecificationRequest
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateconfigrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplateconfigrequest-launchtemplatespecification
-        UpdateType: Mutable
+        UpdateType: Immutable
 
     .PARAMETER Overrides
         Any parameters that you specify override the same parameters in the launch template.
@@ -25,7 +25,7 @@ FleetLaunchTemplateConfigRequest is a property of the AWS::EC2::EC2Fleet: https:
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateconfigrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplateconfigrequest-overrides
         ItemType: FleetLaunchTemplateOverridesRequest
-        UpdateType: Mutable
+        UpdateType: Immutable
 
     .FUNCTIONALITY
         Vaporshell

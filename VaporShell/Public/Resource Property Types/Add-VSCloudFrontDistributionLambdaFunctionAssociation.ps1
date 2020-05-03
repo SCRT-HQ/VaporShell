@@ -10,6 +10,13 @@ A complex type that contains a Lambda function association.
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-lambdafunctionassociation.html
 
+    .PARAMETER IncludeBody
+        +  LambdaFunctionAssociation: https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_LambdaFunctionAssociation.html in the *Amazon CloudFront API Reference*
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-lambdafunctionassociation.html#cfn-cloudfront-distribution-lambdafunctionassociation-includebody
+        PrimitiveType: Boolean
+        UpdateType: Mutable
+
     .PARAMETER EventType
         Specifies the event type that triggers a Lambda function invocation. You can specify the following values:
 +  viewer-request: The function executes when CloudFront receives a request from a viewer and before it checks to see whether the requested object is in the edge cache.
@@ -36,6 +43,17 @@ If the origin returns an HTTP status code other than HTTP 200 OK, the function d
     [cmdletbinding()]
     Param
     (
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.Boolean","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $IncludeBody,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"

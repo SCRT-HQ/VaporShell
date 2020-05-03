@@ -73,6 +73,10 @@ function Set-VSCredential {
     }
     Process {
         if (!$ProfileName) {$ProfileName = "default"}
+        $env:AWS_PROFILE = $ProfileName
+        'AWS_PROFILE' | ForEach-Object {
+            [System.Environment]::SetEnvironmentVariable($_,$ProfileName,[System.EnvironmentVariableTarget]::User)
+        }
         $options = New-Object Amazon.Runtime.CredentialManagement.CredentialProfileOptions
         foreach ($key in $PSBoundParameters.Keys) {
             if ($options.PSObject.Properties.Name -contains $key) {
@@ -85,6 +89,10 @@ function Set-VSCredential {
             Write-Verbose "Setting Region"
             $Region = $PSBoundParameters["Region"]
             $prof.Region = [Amazon.RegionEndpoint]::$Region
+            $env:AWS_REGION = $env:AWS_DEFAULT_REGION = $prof.Region.SystemName
+            'AWS_REGION','AWS_DEFAULT_REGION' | ForEach-Object {
+                [System.Environment]::SetEnvironmentVariable($_,$prof.Region.SystemName,[System.EnvironmentVariableTarget]::User)
+            }
         }
         $sharedFile = New-Object Amazon.Runtime.CredentialManagement.SharedCredentialsFile
         Write-Verbose "Updating SharedCredentials file"
