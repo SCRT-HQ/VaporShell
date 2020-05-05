@@ -13,7 +13,7 @@ function New-VSSageMakerEndpoint {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER RetainAllVariantProperties
-        Not supported.
+        When updating endpoint resources, enables or disables the retention of variant properties, such as the instance count or the variant weight. To retain the variant properties of an endpoint when updating it, set RetainAllVariantProperties to true. To use the variant properties specified in a new EndpointConfig call when updating an endpoint, set RetainAllVariantProperties to false. Use this property only when updating endpoint resources, not when creating new endpoint resources.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-retainallvariantproperties
         PrimitiveType: Boolean
@@ -27,7 +27,7 @@ function New-VSSageMakerEndpoint {
         UpdateType: Immutable
 
     .PARAMETER ExcludeRetainedVariantProperties
-        Not supported.
+        When you are updating endpoint resources with RetainAllVariantProperties: https://docs.aws.amazon.com/sagemaker/latest/dg/API_UpdateEndpoint.html#SageMaker-UpdateEndpoint-request-RetainAllVariantProperties whose value is set to true, ExcludeRetainedVariantProperties specifies the list of type VariantProperty: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-variantproperty.html to override with the values provided by EndpointConfig. If you don't specify a value for ExcludeAllVariantProperties, no variant properties are overridden. Don't use this property when creating new endpoint resources or when RetainAllVariantProperties is set to false.
 
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-excluderetainedvariantproperties

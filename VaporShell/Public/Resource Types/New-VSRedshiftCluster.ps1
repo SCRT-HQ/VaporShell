@@ -200,7 +200,7 @@ Constraints:
 
     .PARAMETER NodeType
         The node type to be provisioned for the cluster. For information about node types, go to  Working with Clusters: https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes in the *Amazon Redshift Cluster Management Guide*.
-Valid Values: ds2.xlarge | ds2.8xlarge | dc1.large | dc1.8xlarge | dc2.large | dc2.8xlarge | ra3.16xlarge
+Valid Values: ds2.xlarge | ds2.8xlarge | dc1.large | dc1.8xlarge | dc2.large | dc2.8xlarge | ra3.4xlarge | ra3.16xlarge
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-nodetype
         PrimitiveType: String

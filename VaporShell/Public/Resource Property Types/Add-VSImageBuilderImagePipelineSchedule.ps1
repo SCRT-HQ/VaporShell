@@ -1,21 +1,25 @@
 function Add-VSImageBuilderImagePipelineSchedule {
     <#
     .SYNOPSIS
-        Adds an AWS::ImageBuilder::ImagePipeline.Schedule resource property to the template. 
+        Adds an AWS::ImageBuilder::ImagePipeline.Schedule resource property to the template. A schedule configures how often and when a pipeline will automatically create a new image.
 
     .DESCRIPTION
         Adds an AWS::ImageBuilder::ImagePipeline.Schedule resource property to the template.
-
+A schedule configures how often and when a pipeline will automatically create a new image.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagepipeline-schedule.html
 
     .PARAMETER ScheduleExpression
+        The expression determines how often EC2 Image Builder evaluates your pipelineExecutionStartCondition.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagepipeline-schedule.html#cfn-imagebuilder-imagepipeline-schedule-scheduleexpression
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER PipelineExecutionStartCondition
+        The condition configures when the pipeline should trigger a new image build. When the pipelineExecutionStartCondition is set to EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE, EC2 Image Builder will build a new image only when there are known changes pending. When it is set to EXPRESSION_MATCH_ONLY, it will build a new image every time the CRON expression matches the current time.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagepipeline-schedule.html#cfn-imagebuilder-imagepipeline-schedule-pipelineexecutionstartcondition
         UpdateType: Mutable
         PrimitiveType: String

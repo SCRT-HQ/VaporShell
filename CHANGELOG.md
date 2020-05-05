@@ -1,7 +1,6 @@
-# Changelog <!-- omit in toc -->
-
 <!-- TOC -->
 
+* [2.12.1 - 2020-05-05](#2121---2020-05-05)
 * [2.12.0 - 2020-05-03](#2120---2020-05-03)
 * [2.11.1 - 2020-03-09](#2111---2020-03-09)
 * [2.11.0 - 2020-03-04](#2110---2020-03-04)
@@ -56,6 +55,12 @@
 * [0.7.02](#0702)
 
 <!-- /TOC -->
+
+## 2.12.1 - 2020-05-05
+
+* Miscellaneous
+    * Fixed: `Watch-Stack` colorization bleed on BackgroundColor changes
+    * Fixed: `Watch-Stack` now exits when all stacks are in a stable state, not early if one stack stablizes before the rest.
 
 ## 2.12.0 - 2020-05-03
 

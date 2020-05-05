@@ -29,7 +29,7 @@ If you add a default route (AWS::EC2::Route resource that points to a NAT gatewa
         UpdateType: Immutable
 
     .PARAMETER Tags
-        The tags key–value pairs to associate with this resource.
+        The tags key-value pairs to associate with this resource.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-tags
         DuplicatesAllowed: True

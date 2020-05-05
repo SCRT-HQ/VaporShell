@@ -28,8 +28,9 @@ function New-VSRoute53ResolverResolverRule {
 
     .PARAMETER RuleType
         When you want to forward DNS queries for specified domain name to resolvers on your network, specify FORWARD.
-When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver to process queries for a subdomain of that domain, choose SYSTEM.
+When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver to process queries for a subdomain of that domain, specify SYSTEM.
 For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and specify FORWARD for RuleType. To then have Resolver process queries for apex.example.com, you create a rule and specify SYSTEM for RuleType.
+Currently, only Resolver can create rules that have a value of RECURSIVE for RuleType.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverrule.html#cfn-route53resolver-resolverrule-ruletype
         PrimitiveType: String

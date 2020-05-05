@@ -13,8 +13,8 @@ function New-VSElasticLoadBalancingV2Listener {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Certificates
-        The default SSL server certificate. You must provide exactly one certificate if the listener protocol is HTTPS or TLS.
-To create a certificate list for the listener, use AWS::ElasticLoadBalancingV2::ListenerCertificate: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenercertificate.html.
+        The default SSL server certificate for a secure listener. You must provide exactly one certificate if the listener protocol is HTTPS or TLS.
+To create a certificate list for a secure listener, use AWS::ElasticLoadBalancingV2::ListenerCertificate: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenercertificate.html.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-certificates
         DuplicatesAllowed: False
@@ -23,7 +23,8 @@ To create a certificate list for the listener, use AWS::ElasticLoadBalancingV2::
         UpdateType: Mutable
 
     .PARAMETER DefaultActions
-        The actions for the default rule.
+        The actions for the default rule. You cannot define a condition for a default rule.
+To create additional rules for an Application Load Balancer, use AWS::ElasticLoadBalancingV2::ListenerRule: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-defaultactions
         DuplicatesAllowed: False

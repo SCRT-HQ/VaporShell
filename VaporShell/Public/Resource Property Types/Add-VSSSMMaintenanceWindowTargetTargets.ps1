@@ -13,7 +13,7 @@ Targets is a property of the AWS::SSM::MaintenanceWindowTarget: https://docs.aws
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtarget-targets.html
 
     .PARAMETER Values
-        User-defined criteria that maps to Key. For example, if you specified tag:ServerRole, you could specify value:WebServer to run a command on instances that include Amazon EC2 tags of ServerRole,WebServer.
+        User-defined criteria that maps to Key. For example, if you specified tag:ServerRole, you could specify value:WebServer to run a command on instances that include EC2 tags of ServerRole,WebServer.
 
         PrimitiveItemType: String
         Type: List

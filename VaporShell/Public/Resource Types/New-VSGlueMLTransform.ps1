@@ -87,7 +87,7 @@ If WorkerType is set, then NumberOfWorkers is required and vice versa.
         UpdateType: Mutable
 
     .PARAMETER Tags
-        For more information about using the Ref function, see Ref: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html.
+        The tags to use with this machine learning transform. You may use tags to limit access to the machine learning transform. For more information about tags in AWS Glue, see AWS Tags in AWS Glue: https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html in the developer guide.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-tags
         PrimitiveType: Json

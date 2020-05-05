@@ -1,27 +1,33 @@
 function Add-VSSyntheticsCanaryVPCConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::Synthetics::Canary.VPCConfig resource property to the template. 
+        Adds an AWS::Synthetics::Canary.VPCConfig resource property to the template. If this canary is to test an endpoint in a VPC, this structure contains information about the subnet and security groups of the VPC endpoint. For more information, see  Running a Canary in a VPC: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html.
 
     .DESCRIPTION
         Adds an AWS::Synthetics::Canary.VPCConfig resource property to the template.
-
+If this canary is to test an endpoint in a VPC, this structure contains information about the subnet and security groups of the VPC endpoint. For more information, see  Running a Canary in a VPC: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-vpcconfig.html
 
     .PARAMETER VpcId
+        The IDs of the VPC where this canary is to run.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-vpcconfig.html#cfn-synthetics-canary-vpcconfig-vpcid
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER SubnetIds
+        The IDs of the subnets where this canary is to run.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-vpcconfig.html#cfn-synthetics-canary-vpcconfig-subnetids
         UpdateType: Mutable
         Type: List
         PrimitiveItemType: String
 
     .PARAMETER SecurityGroupIds
+        The IDs of the security groups for this canary.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-vpcconfig.html#cfn-synthetics-canary-vpcconfig-securitygroupids
         UpdateType: Mutable
         Type: List

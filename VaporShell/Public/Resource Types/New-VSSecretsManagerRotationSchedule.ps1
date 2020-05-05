@@ -24,7 +24,7 @@ When you configure rotation for a secret, AWS CloudFormation automatically rotat
         UpdateType: Immutable
 
     .PARAMETER RotationLambdaARN
-        Specifies the ARN of the Lambda function that can rotate the secret. If you don't specify this parameter, then the secret must already have the ARN of a Lambda function configured. To reference a Lambda function also created in this template, use the Ref: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html function with the function's logical ID.
+        Specifies the ARN of the Lambda function that can rotate the secret. If you don't specify this parameter, then the secret must already have the ARN of a Lambda function configured. To reference a Lambda function also created in this template, use the Ref: https://docs.aws.amazon.com/git statusAWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html function with the function's logical ID.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-rotationschedule.html#cfn-secretsmanager-rotationschedule-rotationlambdaarn
         PrimitiveType: String

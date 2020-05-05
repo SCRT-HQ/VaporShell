@@ -1,26 +1,32 @@
 function Add-VSMediaConvertJobTemplateHopDestination {
     <#
     .SYNOPSIS
-        Adds an AWS::MediaConvert::JobTemplate.HopDestination resource property to the template. 
+        Adds an AWS::MediaConvert::JobTemplate.HopDestination resource property to the template. Not currently supported by AWS CloudFormation.
 
     .DESCRIPTION
         Adds an AWS::MediaConvert::JobTemplate.HopDestination resource property to the template.
-
+Not currently supported by AWS CloudFormation.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconvert-jobtemplate-hopdestination.html
 
     .PARAMETER WaitMinutes
+        Not currently supported by AWS CloudFormation.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconvert-jobtemplate-hopdestination.html#cfn-mediaconvert-jobtemplate-hopdestination-waitminutes
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER Priority
+        Not currently supported by AWS CloudFormation.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconvert-jobtemplate-hopdestination.html#cfn-mediaconvert-jobtemplate-hopdestination-priority
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER Queue
+        Not currently supported by AWS CloudFormation.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconvert-jobtemplate-hopdestination.html#cfn-mediaconvert-jobtemplate-hopdestination-queue
         PrimitiveType: String
         UpdateType: Mutable

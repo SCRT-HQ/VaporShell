@@ -1,11 +1,11 @@
 function Add-VSCloudFrontDistributionGeoRestriction {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudFront::Distribution.GeoRestriction resource property to the template. A complex type that controls the countries in which your content is distributed. CloudFront determines the location of your users using MaxMind GeoIP databases.
+        Adds an AWS::CloudFront::Distribution.GeoRestriction resource property to the template. A complex type that controls the countries in which your content is distributed. CloudFront determines the location of your users using MaxMind GeoIP databases. To disable geo restriction, remove the Restrictions: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-restrictions property from your stack template.
 
     .DESCRIPTION
         Adds an AWS::CloudFront::Distribution.GeoRestriction resource property to the template.
-A complex type that controls the countries in which your content is distributed. CloudFront determines the location of your users using MaxMind GeoIP databases.
+A complex type that controls the countries in which your content is distributed. CloudFront determines the location of your users using MaxMind GeoIP databases. To disable geo restriction, remove the Restrictions: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-restrictions property from your stack template.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-georestriction.html

@@ -35,6 +35,8 @@ function New-VSConfigConfigurationAggregator {
         UpdateType: Mutable
 
     .PARAMETER Tags
+        An array of tag object.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationaggregator.html#cfn-config-configurationaggregator-tags
         ItemType: Tag

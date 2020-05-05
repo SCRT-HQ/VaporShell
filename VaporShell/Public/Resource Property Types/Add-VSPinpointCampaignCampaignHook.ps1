@@ -1,17 +1,19 @@
 function Add-VSPinpointCampaignCampaignHook {
     <#
     .SYNOPSIS
-        Adds an AWS::Pinpoint::Campaign.CampaignHook resource property to the template. Specifies the AWS Lambda function to use as a code hook for a campaign.
+        Adds an AWS::Pinpoint::Campaign.CampaignHook resource property to the template. Specifies settings for invoking an AWS Lambda function that customizes a segment for a campaign.
 
     .DESCRIPTION
         Adds an AWS::Pinpoint::Campaign.CampaignHook resource property to the template.
-Specifies the AWS Lambda function to use as a code hook for a campaign.
+Specifies settings for invoking an AWS Lambda function that customizes a segment for a campaign.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignhook.html
 
     .PARAMETER Mode
-        Specifies which Lambda mode to use when invoking the AWS Lambda function.
+        The mode that Amazon Pinpoint uses to invoke the AWS Lambda function. Possible values are:
++  FILTER - Invoke the function to customize the segment that's used by a campaign.
++  DELIVERY - Deprecated Previously, invoked the function to send a campaign through a custom channel. This functionality is not supported anymore. To send a campaign through a custom channel, use the CustomDeliveryConfiguration and CampaignCustomMessage objects of the campaign.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignhook.html#cfn-pinpoint-campaign-campaignhook-mode
         PrimitiveType: String
@@ -25,7 +27,7 @@ Specifies the AWS Lambda function to use as a code hook for a campaign.
         UpdateType: Mutable
 
     .PARAMETER LambdaFunctionName
-        The name or Amazon Resource Name ARN of the AWS Lambda function that Amazon Pinpoint invokes to send messages for a campaign.
+        The name or Amazon Resource Name ARN of the AWS Lambda function that Amazon Pinpoint invokes to customize a segment for a campaign.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignhook.html#cfn-pinpoint-campaign-campaignhook-lambdafunctionname
         PrimitiveType: String

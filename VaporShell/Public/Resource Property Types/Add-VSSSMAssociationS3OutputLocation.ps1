@@ -11,14 +11,14 @@ S3OutputLocation is a property of the AWS::SSM::Association: https://docs.aws.am
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-s3outputlocation.html
 
     .PARAMETER OutputS3BucketName
-        The name of the Amazon S3 bucket.
+        The name of the S3 bucket.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-s3outputlocation.html#cfn-ssm-association-s3outputlocation-outputs3bucketname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER OutputS3KeyPrefix
-        The Amazon S3 bucket subfolder.
+        The S3 bucket subfolder.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-s3outputlocation.html#cfn-ssm-association-s3outputlocation-outputs3keyprefix
         PrimitiveType: String

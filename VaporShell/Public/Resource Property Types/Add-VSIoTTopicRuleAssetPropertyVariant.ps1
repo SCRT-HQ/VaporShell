@@ -1,31 +1,39 @@
 function Add-VSIoTTopicRuleAssetPropertyVariant {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::TopicRule.AssetPropertyVariant resource property to the template. 
+        Adds an AWS::IoT::TopicRule.AssetPropertyVariant resource property to the template. Contains an asset property value (of a single type.
 
     .DESCRIPTION
         Adds an AWS::IoT::TopicRule.AssetPropertyVariant resource property to the template.
-
+Contains an asset property value (of a single type.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-assetpropertyvariant.html
 
     .PARAMETER BooleanValue
+        Optional. A string that contains the boolean value true or false of the value entry. Accepts substitution templates.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-assetpropertyvariant.html#cfn-iot-topicrule-assetpropertyvariant-booleanvalue
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DoubleValue
+        Optional. A string that contains the double value of the value entry. Accepts substitution templates.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-assetpropertyvariant.html#cfn-iot-topicrule-assetpropertyvariant-doublevalue
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER IntegerValue
+        Optional. A string that contains the integer value of the value entry. Accepts substitution templates.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-assetpropertyvariant.html#cfn-iot-topicrule-assetpropertyvariant-integervalue
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER StringValue
+        Optional. The string value of the value entry. Accepts substitution templates.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-assetpropertyvariant.html#cfn-iot-topicrule-assetpropertyvariant-stringvalue
         PrimitiveType: String
         UpdateType: Mutable

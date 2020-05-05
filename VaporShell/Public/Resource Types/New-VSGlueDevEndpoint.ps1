@@ -54,7 +54,8 @@ You can specify a version of Python support for development endpoints by using t
         UpdateType: Mutable
 
     .PARAMETER PublicKeys
-        +  DevEndpoint Structure: https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-dev-endpoint.html#aws-glue-api-jobs-dev-endpoint-DevEndpoint in the *AWS Glue Developer Guide*
+        A list of public keys to be used by the DevEndpoints for authentication. Using this attribute is preferred over a single public key because the public keys allow you to have a different private key per client.
+If you previously created an endpoint with a public key, you must remove that key to be able to set a list of public keys. Call the UpdateDevEndpoint API operation with the public key content in the deletePublicKeys attribute, and the list of new keys in the addPublicKeys attribute.
 
         PrimitiveItemType: String
         Type: List

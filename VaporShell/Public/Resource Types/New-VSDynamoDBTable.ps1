@@ -17,7 +17,7 @@ You should be aware of the following behaviors when working with DynamoDB tables
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER AttributeDefinitions
-        A list of attributes that describe the key schema for the table and indexes. Duplicates are allowed.
+        A list of attributes that describe the key schema for the table and indexes.
 This property is required to create a DynamoDB table.
 Update requires: Some interruptions: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-some-interrupt. Replacement if you edit an existing AttributeDefinition.
 

@@ -28,7 +28,7 @@ function New-VSACMPCACertificate {
 
     .PARAMETER SigningAlgorithm
         The name of the algorithm that will be used to sign the certificate to be issued.
-This parameter should not be confused with the SigningAlgorithm parameter used to sign a CSR .
+This parameter should not be confused with the SigningAlgorithm parameter used to sign a CSR.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificate.html#cfn-acmpca-certificate-signingalgorithm
         UpdateType: Immutable

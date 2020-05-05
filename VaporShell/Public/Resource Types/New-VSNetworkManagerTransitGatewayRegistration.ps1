@@ -1,10 +1,10 @@
 function New-VSNetworkManagerTransitGatewayRegistration {
     <#
     .SYNOPSIS
-        Adds an AWS::NetworkManager::TransitGatewayRegistration resource to the template. 
+        Adds an AWS::NetworkManager::TransitGatewayRegistration resource to the template. Registers a transit gateway in your global network. The transit gateway can be in any AWS Region, but it must be owned by the same AWS account that owns the global network. You cannot register a transit gateway in more than one global network.
 
     .DESCRIPTION
-        Adds an AWS::NetworkManager::TransitGatewayRegistration resource to the template. 
+        Adds an AWS::NetworkManager::TransitGatewayRegistration resource to the template. Registers a transit gateway in your global network. The transit gateway can be in any AWS Region, but it must be owned by the same AWS account that owns the global network. You cannot register a transit gateway in more than one global network.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewayregistration.html
@@ -13,11 +13,15 @@ function New-VSNetworkManagerTransitGatewayRegistration {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER GlobalNetworkId
+        The ID of the global network.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewayregistration.html#cfn-networkmanager-transitgatewayregistration-globalnetworkid
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER TransitGatewayArn
+        The Amazon Resource Name ARN of the transit gateway.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewayregistration.html#cfn-networkmanager-transitgatewayregistration-transitgatewayarn
         UpdateType: Immutable
         PrimitiveType: String

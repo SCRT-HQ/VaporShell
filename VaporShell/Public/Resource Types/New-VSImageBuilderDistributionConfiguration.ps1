@@ -1,10 +1,10 @@
 function New-VSImageBuilderDistributionConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::ImageBuilder::DistributionConfiguration resource to the template. 
+        Adds an AWS::ImageBuilder::DistributionConfiguration resource to the template. A distribution configuration allows you to specify the name and description of your output AMI, authorize other AWS accounts to launch the AMI, and replicate the AMI to other AWS Regions. It also allows you to export the AMI to Amazon S3.
 
     .DESCRIPTION
-        Adds an AWS::ImageBuilder::DistributionConfiguration resource to the template. 
+        Adds an AWS::ImageBuilder::DistributionConfiguration resource to the template. A distribution configuration allows you to specify the name and description of your output AMI, authorize other AWS accounts to launch the AMI, and replicate the AMI to other AWS Regions. It also allows you to export the AMI to Amazon S3.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-distributionconfiguration.html
@@ -13,22 +13,30 @@ function New-VSImageBuilderDistributionConfiguration {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Name
+        The name of this distribution configuration.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-distributionconfiguration.html#cfn-imagebuilder-distributionconfiguration-name
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER Description
+        The description of this distribution configuration.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-distributionconfiguration.html#cfn-imagebuilder-distributionconfiguration-description
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER Distributions
+        The distributions of this distribution configuration formatted as an array of Distribution objects.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-distributionconfiguration.html#cfn-imagebuilder-distributionconfiguration-distributions
         UpdateType: Mutable
         Type: List
         ItemType: Distribution
 
     .PARAMETER Tags
+        The tags of this distribution configuration.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-distributionconfiguration.html#cfn-imagebuilder-distributionconfiguration-tags
         UpdateType: Mutable
         Type: Map

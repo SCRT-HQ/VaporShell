@@ -35,10 +35,15 @@ function New-VSCognitoUserPoolIdentityProvider {
 
     .PARAMETER ProviderDetails
         The identity provider details. The following list describes the provider detail keys for each identity provider type.
-+ For Google, Facebook and Login with Amazon:
++ For Google and Login with Amazon:
 + client_id
 + client_secret
 + authorize_scopes
++ For Facebook:
++ client_id
++ client_secret
++ authorize_scopes
++ api_version
 + For Sign in with Apple:
 + client_id
 + team_id

@@ -69,6 +69,8 @@ function New-VSMSKCluster {
         UpdateType: Immutable
 
     .PARAMETER LoggingInfo
+        You can configure your MSK cluster to send broker logs to different destination types. This is a container for the configuration details related to broker logs.
+
         Type: LoggingInfo
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-logginginfo
         UpdateType: Mutable

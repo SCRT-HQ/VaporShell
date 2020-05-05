@@ -1,10 +1,10 @@
 function New-VSResourceGroupsGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::ResourceGroups::Group resource to the template. 
+        Adds an AWS::ResourceGroups::Group resource to the template. Creates a group with a specified name, description, and resource query.
 
     .DESCRIPTION
-        Adds an AWS::ResourceGroups::Group resource to the template. 
+        Adds an AWS::ResourceGroups::Group resource to the template. Creates a group with a specified name, description, and resource query.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resourcegroups-group.html
@@ -13,21 +13,29 @@ function New-VSResourceGroupsGroup {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Name
+        The name of a resource group. Specify a name that is unique in the Region. To create multiple resource groups based on the same CloudFormation stack, use unique names for each.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resourcegroups-group.html#cfn-resourcegroups-group-name
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER Description
+        The description of the resource group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resourcegroups-group.html#cfn-resourcegroups-group-description
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER ResourceQuery
+        The resource query that determines which AWS resources are members of the associated resource group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resourcegroups-group.html#cfn-resourcegroups-group-resourcequery
         UpdateType: Mutable
         Type: ResourceQuery
 
     .PARAMETER Tags
+        The tags associated with the specified resource group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resourcegroups-group.html#cfn-resourcegroups-group-tags
         UpdateType: Mutable
         Type: List

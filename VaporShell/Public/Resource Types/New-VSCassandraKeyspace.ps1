@@ -1,10 +1,10 @@
 function New-VSCassandraKeyspace {
     <#
     .SYNOPSIS
-        Adds an AWS::Cassandra::Keyspace resource to the template. 
+        Adds an AWS::Cassandra::Keyspace resource to the template. The AWS::Cassandra::Keyspace resource allows you to create a new keyspace in Amazon Keyspaces (for Apache Cassandra. For more information, see Create a Keyspace and a Table: https://docs.aws.amazon.com/keyspaces/latest/devguide/getting-started.ddl.html in the *Amazon Keyspaces Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::Cassandra::Keyspace resource to the template. 
+        Adds an AWS::Cassandra::Keyspace resource to the template. The AWS::Cassandra::Keyspace resource allows you to create a new keyspace in Amazon Keyspaces (for Apache Cassandra. For more information, see Create a Keyspace and a Table: https://docs.aws.amazon.com/keyspaces/latest/devguide/getting-started.ddl.html in the *Amazon Keyspaces Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-keyspace.html
@@ -13,6 +13,10 @@ function New-VSCassandraKeyspace {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER KeyspaceName
+        The name of the keyspace to be created. If you don't specify a name, AWS CloudFormation generates a unique ID and uses that ID for the keyspace name. For more information, see Name Type: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html.
+*Length Constraints:* Minimum length of 3. Maximum length of 255.
+*Pattern:* ^a-zA-Z0-9]a-zA-Z0-9_]{1,47}$
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-keyspace.html#cfn-cassandra-keyspace-keyspacename
         UpdateType: Immutable
         PrimitiveType: String

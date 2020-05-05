@@ -1,10 +1,10 @@
 function New-VSAthenaWorkGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::Athena::WorkGroup resource to the template. 
+        Adds an AWS::Athena::WorkGroup resource to the template. The AWS::Athena::WorkGroup resource specifies an Amazon Athena workgroup, which contains a name, description, creation time, state, and other configuration, listed under WorkGroupConfiguration: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-workgroup.html#cfn-athena-workgroup-workgroupconfiguration. Each workgroup enables you to isolate queries for you or your group from other queries in the same account. For more information, see CreateWorkGroup: https://docs.aws.amazon.com/athena/latest/APIReference/API_CreateWorkGroup.html in the *Amazon Athena API Reference*.
 
     .DESCRIPTION
-        Adds an AWS::Athena::WorkGroup resource to the template. 
+        Adds an AWS::Athena::WorkGroup resource to the template. The AWS::Athena::WorkGroup resource specifies an Amazon Athena workgroup, which contains a name, description, creation time, state, and other configuration, listed under WorkGroupConfiguration: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-workgroup.html#cfn-athena-workgroup-workgroupconfiguration. Each workgroup enables you to isolate queries for you or your group from other queries in the same account. For more information, see CreateWorkGroup: https://docs.aws.amazon.com/athena/latest/APIReference/API_CreateWorkGroup.html in the *Amazon Athena API Reference*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-workgroup.html
@@ -13,36 +13,51 @@ function New-VSAthenaWorkGroup {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Name
+        The workgroup name.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-workgroup.html#cfn-athena-workgroup-name
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER Description
+        The workgroup description.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-workgroup.html#cfn-athena-workgroup-description
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER Tags
+        An array of key-value pairs to apply to this resource.
+For more information, see Tag: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-workgroup.html#cfn-athena-workgroup-tags
         UpdateType: Mutable
         Type: Tags
 
     .PARAMETER WorkGroupConfiguration
+        The configuration of the workgroup, which includes the location in Amazon S3 where query results are stored, the encryption option, if any, used for query results, whether Amazon CloudWatch Metrics are enabled for the workgroup, and the limit for the amount of bytes scanned cutoff per query, if it is specified. The EnforceWorkGroupConfiguration: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfigurationupdates.html#cfn-athena-workgroup-workgroupconfigurationupdates-enforceworkgroupconfiguration option determines whether workgroup settings override client-side query settings.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-workgroup.html#cfn-athena-workgroup-workgroupconfiguration
         UpdateType: Mutable
         Type: WorkGroupConfiguration
 
     .PARAMETER WorkGroupConfigurationUpdates
+        The configuration information that will be updated for this workgroup, which includes the location in Amazon S3 where query results are stored, the encryption option, if any, used for query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, whether the workgroup settings override the client-side settings, and the data usage limit for the amount of bytes scanned per query, if it is specified.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-workgroup.html#cfn-athena-workgroup-workgroupconfigurationupdates
         UpdateType: Mutable
         Type: WorkGroupConfigurationUpdates
 
     .PARAMETER State
+        The state of the workgroup: ENABLED or DISABLED.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-workgroup.html#cfn-athena-workgroup-state
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER RecursiveDeleteOption
+        The option to delete the workgroup and its contents even if the workgroup contains any named queries.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-workgroup.html#cfn-athena-workgroup-recursivedeleteoption
         UpdateType: Mutable
         PrimitiveType: Boolean

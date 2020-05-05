@@ -1,10 +1,14 @@
 function New-VSGroundStationDataflowEndpointGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::GroundStation::DataflowEndpointGroup resource to the template. 
+        Adds an AWS::GroundStation::DataflowEndpointGroup resource to the template. Creates a Dataflow Endpoint Group request.
 
     .DESCRIPTION
-        Adds an AWS::GroundStation::DataflowEndpointGroup resource to the template. 
+        Adds an AWS::GroundStation::DataflowEndpointGroup resource to the template. Creates a Dataflow Endpoint Group request.
+
+Dataflow endpoint groups contain a list of endpoints. When the name of a dataflow endpoint group is specified in a mission profile, the Ground Station service will connect to the endpoints and flow data during a contact.
+
+For more information about dataflow endpoint groups, see Dataflow Endpoint Groups: https://docs.aws.amazon.com/ground-station/latest/ug/dataflowendpointgroups.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-dataflowendpointgroup.html
@@ -19,6 +23,8 @@ function New-VSGroundStationDataflowEndpointGroup {
         ItemType: EndpointDetails
 
     .PARAMETER Tags
+        Tags assigned to a resource.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-dataflowendpointgroup.html#cfn-groundstation-dataflowendpointgroup-tags
         UpdateType: Mutable
         Type: List

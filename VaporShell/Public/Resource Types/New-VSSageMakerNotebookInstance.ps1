@@ -50,7 +50,7 @@ For more information, see Notebook Instances Are Internet-Enabled by Default: ht
         UpdateType: Immutable
 
     .PARAMETER AcceleratorTypes
-        A list of Elastic Inference EI instance types to associate with this notebook instance. Currently, only one instance type can be associated with a notebook instance. For more information, see Using Elastic Inference in Amazon SageMaker.
+        Not currently supported by AWS CloudFormation.
 
         PrimitiveItemType: String
         Type: List

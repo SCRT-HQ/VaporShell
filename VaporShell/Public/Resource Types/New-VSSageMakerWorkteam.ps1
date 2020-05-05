@@ -44,8 +44,7 @@ You cannot create more than 25 work teams in an account and region.
         UpdateType: Mutable
 
     .PARAMETER Tags
-        A list of key-value pairs to apply to this resource.
-For more information, see Resource Tag: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html and Using Cost Allocation Tags: https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what in the * AWS Billing and Cost Management User Guide*.
+        Not currently supported by AWS CloudFormation.
 
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-workteam.html#cfn-sagemaker-workteam-tags

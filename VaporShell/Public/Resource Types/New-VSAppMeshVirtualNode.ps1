@@ -6,15 +6,17 @@ function New-VSAppMeshVirtualNode {
     .DESCRIPTION
         Adds an AWS::AppMesh::VirtualNode resource to the template. Creates a virtual node within a service mesh.
 
-A virtual node acts as a logical pointer to a particular task group, such as an Amazon ECS service or a Kubernetes deployment. When you create a virtual node, you can specify the service discovery information for your task group.
+A virtual node acts as a logical pointer to a particular task group, such as an Amazon ECS service or a Kubernetes deployment. When you create a virtual node, you can specify the service discovery information for your task group, and whether the proxy running in a task group will communicate with other proxies using Transport Layer Security (TLS.
 
-Any inbound traffic that your virtual node expects should be specified as a listener. Any outbound traffic that your virtual node expects to reach should be specified as a backend.
+You define a listener for any inbound traffic that your virtual node expects. Any virtual service that your virtual node expects to communicate to is specified as a backend.
 
 The response metadata for your new virtual node contains the arn that is associated with the virtual node. Set this value (either the full ARN or the truncated resource name: for example, mesh/default/virtualNode/simpleapp as the APPMESH_VIRTUAL_NODE_NAME environment variable for your task group's Envoy proxy container in your task definition or pod spec. This is then mapped to the node.id and node.cluster Envoy parameters.
 
 **Note**
 
 If you require your Envoy stats or tracing to use a different name, you can override the node.cluster value that is set by APPMESH_VIRTUAL_NODE_NAME with the APPMESH_VIRTUAL_NODE_CLUSTER environment variable.
+
+For more information about virtual nodes, see Virtual nodes: https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_nodes.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html
@@ -30,7 +32,7 @@ If you require your Envoy stats or tracing to use a different name, you can over
         UpdateType: Immutable
 
     .PARAMETER MeshOwner
-        +  CreateVirtualNode: https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateVirtualNode.html in the * AWS App Mesh API Reference *.
+        The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see Working with Shared Meshes: https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#cfn-appmesh-virtualnode-meshowner
         PrimitiveType: String

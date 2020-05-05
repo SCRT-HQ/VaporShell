@@ -88,7 +88,7 @@ The number of IP addresses you can assign to a network interface varies by insta
         UpdateType: Immutable
 
     .PARAMETER Tags
-        An arbitrary set of tags key–value pairs for this network interface.
+        An arbitrary set of tags key-value pairs for this network interface.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-tags
         DuplicatesAllowed: True

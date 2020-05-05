@@ -1,10 +1,12 @@
 function New-VSChatbotSlackChannelConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::Chatbot::SlackChannelConfiguration resource to the template. 
+        Adds an AWS::Chatbot::SlackChannelConfiguration resource to the template. The AWS::Chatbot::SlackChannelConfiguration resource configures a Slack channel to allow users to use AWS Chatbot with AWS CloudFormation templates.
 
     .DESCRIPTION
-        Adds an AWS::Chatbot::SlackChannelConfiguration resource to the template. 
+        Adds an AWS::Chatbot::SlackChannelConfiguration resource to the template. The AWS::Chatbot::SlackChannelConfiguration resource configures a Slack channel to allow users to use AWS Chatbot with AWS CloudFormation templates.
+
+This resource requires some setup to be done in the AWS Chatbot console. To provide the required Slack workspace ID, you must perform the initial authorization flow with Slack in the AWS Chatbot console, then copy and paste the workspace ID from the console. For more details, see steps 1-4 in Setting Up AWS Chatbot with Slack: https://docs.aws.amazon.com/chatbot/latest/adminguide/setting-up.html#Setup_intro in the *AWS Chatbot User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-slackchannelconfiguration.html
@@ -13,37 +15,55 @@ function New-VSChatbotSlackChannelConfiguration {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER SlackWorkspaceId
+        The ID of the Slack workspace authorized with AWS Chatbot.
+To get the workspace ID, you must perform the initial authorization flow with Slack in the AWS Chatbot console. Then you can copy and paste the workspace ID from the console. For more details, see steps 1-4 in Setting Up AWS Chatbot with Slack: https://docs.aws.amazon.com/chatbot/latest/adminguide/setting-up.html#Setup_intro in the *AWS Chatbot User Guide*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-slackchannelconfiguration.html#cfn-chatbot-slackchannelconfiguration-slackworkspaceid
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER SlackChannelId
+        The ID of the Slack channel.
+To get the ID, open Slack, right click on the channel name in the left pane, then choose Copy Link. The channel ID is the 9-character string at the end of the URL. For example, ABCBBLZZZ.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-slackchannelconfiguration.html#cfn-chatbot-slackchannelconfiguration-slackchannelid
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER ConfigurationName
+        The name of the configuration.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-slackchannelconfiguration.html#cfn-chatbot-slackchannelconfiguration-configurationname
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER IamRoleArn
+        The ARN of the IAM role that defines the permissions for AWS Chatbot.
+This is a user-defined role that AWS Chatbot will assume. This is not the service-linked role. For more information, see IAM Policies for AWS Chatbot: https://docs.aws.amazon.com/chatbot/latest/adminguide/chatbot-iam-policies.html.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-slackchannelconfiguration.html#cfn-chatbot-slackchannelconfiguration-iamrolearn
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER SnsTopicArns
+        The ARNs of the SNS topics that deliver notifications to AWS Chatbot.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-slackchannelconfiguration.html#cfn-chatbot-slackchannelconfiguration-snstopicarns
         UpdateType: Mutable
         Type: List
         PrimitiveItemType: String
 
     .PARAMETER LoggingLevel
+        Specifies the logging level for this configuration. This property affects the log entries pushed to Amazon CloudWatch Logs.
+Logging levels include ERROR, INFO, or NONE.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-slackchannelconfiguration.html#cfn-chatbot-slackchannelconfiguration-logginglevel
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER Arn
+        Not currently supported by AWS CloudFormation.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-slackchannelconfiguration.html#cfn-chatbot-slackchannelconfiguration-arn
         UpdateType: Mutable
         PrimitiveType: String

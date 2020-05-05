@@ -1,16 +1,18 @@
 function Add-VSAppMeshVirtualNodeTlsValidationContextFileTrust {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::VirtualNode.TlsValidationContextFileTrust resource property to the template. 
+        Adds an AWS::AppMesh::VirtualNode.TlsValidationContextFileTrust resource property to the template. An object that represents a Transport Layer Security (TLS validation context trust for a local file.
 
     .DESCRIPTION
         Adds an AWS::AppMesh::VirtualNode.TlsValidationContextFileTrust resource property to the template.
-
+An object that represents a Transport Layer Security (TLS validation context trust for a local file.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontextfiletrust.html
 
     .PARAMETER CertificateChain
+        The certificate trust chain for a certificate stored on the file system of the virtual node that the proxy is running on.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontextfiletrust.html#cfn-appmesh-virtualnode-tlsvalidationcontextfiletrust-certificatechain
         PrimitiveType: String
         UpdateType: Mutable

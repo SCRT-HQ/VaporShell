@@ -1,10 +1,10 @@
 function New-VSNetworkManagerLink {
     <#
     .SYNOPSIS
-        Adds an AWS::NetworkManager::Link resource to the template. 
+        Adds an AWS::NetworkManager::Link resource to the template. Specifies a link for a site.
 
     .DESCRIPTION
-        Adds an AWS::NetworkManager::Link resource to the template. 
+        Adds an AWS::NetworkManager::Link resource to the template. Specifies a link for a site.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-link.html
@@ -13,37 +13,56 @@ function New-VSNetworkManagerLink {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER GlobalNetworkId
+        The ID of the global network.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-link.html#cfn-networkmanager-link-globalnetworkid
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER SiteId
+        The ID of the site.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-link.html#cfn-networkmanager-link-siteid
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER Bandwidth
+        The bandwidth for the link.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-link.html#cfn-networkmanager-link-bandwidth
         UpdateType: Mutable
         Type: Bandwidth
 
     .PARAMETER Provider
+        The provider of the link.
+Constraints: Cannot include the following characters: |  ^
+Length Constraints: Maximum length of 128 characters.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-link.html#cfn-networkmanager-link-provider
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER Description
+        A description of the link.
+Length Constraints: Maximum length of 256 characters.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-link.html#cfn-networkmanager-link-description
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER Tags
+        The tags for the link.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-link.html#cfn-networkmanager-link-tags
         UpdateType: Mutable
         Type: List
         ItemType: Tag
 
     .PARAMETER Type
+        The type of the link.
+Constraints: Cannot include the following characters: |  ^
+Length Constraints: Maximum length of 128 characters.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-link.html#cfn-networkmanager-link-type
         UpdateType: Mutable
         PrimitiveType: String

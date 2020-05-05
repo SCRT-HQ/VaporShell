@@ -19,6 +19,7 @@ ScalableTargetAction is a subproperty of ScheduledAction: https://docs.aws.amazo
 
     .PARAMETER MinCapacity
         The minimum capacity.
+For Lambda provisioned concurrency, the minimum value allowed is 0. For all other resources, the minimum value allowed is 1.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scalabletargetaction.html#cfn-applicationautoscaling-scalabletarget-scalabletargetaction-mincapacity
         PrimitiveType: Integer

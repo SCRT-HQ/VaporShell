@@ -25,7 +25,7 @@ Important: The following *Syntax* section shows all fields that are supported fo
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER S3Destination
-        Configuration information for the target Amazon S3 bucket.
+        Configuration information for the target S3 bucket.
 
         Type: S3Destination
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-s3destination
@@ -46,14 +46,14 @@ Important: The following *Syntax* section shows all fields that are supported fo
         UpdateType: Mutable
 
     .PARAMETER BucketName
-        The name of the Amazon S3 bucket where the aggregated data is stored.
+        The name of the S3 bucket where the aggregated data is stored.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-bucketname
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER BucketRegion
-        The AWS Region with the Amazon S3 bucket targeted by the Resource Data Sync.
+        The AWS Region with the S3 bucket targeted by the Resource Data Sync.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-bucketregion
         PrimitiveType: String
@@ -74,7 +74,7 @@ Important: The following *Syntax* section shows all fields that are supported fo
         UpdateType: Immutable
 
     .PARAMETER SyncType
-        The type of resource data sync. If SyncType is SyncToDestination, then the resource data sync synchronizes data to an Amazon S3 bucket. If the SyncType is SyncFromSource then the resource data sync synchronizes data from AWS Organizations or from multiple AWS Regions.
+        The type of resource data sync. If SyncType is SyncToDestination, then the resource data sync synchronizes data to an S3 bucket. If the SyncType is SyncFromSource then the resource data sync synchronizes data from AWS Organizations or from multiple AWS Regions.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-synctype
         PrimitiveType: String

@@ -1,11 +1,11 @@
 function Add-VSElasticLoadBalancingV2ListenerCertificateCertificate {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticLoadBalancingV2::ListenerCertificate.Certificate resource property to the template. Specifies an SSL server certificate.
+        Adds an AWS::ElasticLoadBalancingV2::ListenerCertificate.Certificate resource property to the template. Specifies an SSL server certificate for the certificate list of a secure listener.
 
     .DESCRIPTION
         Adds an AWS::ElasticLoadBalancingV2::ListenerCertificate.Certificate resource property to the template.
-Specifies an SSL server certificate.
+Specifies an SSL server certificate for the certificate list of a secure listener.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-certificates.html

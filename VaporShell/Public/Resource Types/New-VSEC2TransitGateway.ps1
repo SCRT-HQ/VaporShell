@@ -21,7 +21,7 @@ When you create a transit gateway, we create a default transit gateway route tab
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER DefaultRouteTablePropagation
-        Indicates whether resource attachments automatically propagate routes to the default propagation route table.
+        Enable or disable automatic propagation of routes to the default propagation route table. Enabled by default.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-defaultroutetablepropagation
         PrimitiveType: String
@@ -35,35 +35,35 @@ When you create a transit gateway, we create a default transit gateway route tab
         UpdateType: Immutable
 
     .PARAMETER AutoAcceptSharedAttachments
-        Indicates whether attachment requests are automatically accepted.
+        Enable or disable automatic acceptance of attachment requests. Disabled by default.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-autoacceptsharedattachments
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER DefaultRouteTableAssociation
-        Indicates whether resource attachments are automatically associated with the default association route table.
+        Enable or disable automatic association with the default association route table. Enabled by default.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-defaultroutetableassociation
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER VpnEcmpSupport
-        Indicates whether Equal Cost Multipath Protocol support is enabled.
+        Enable or disable Equal Cost Multipath Protocol support. Enabled by default.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-vpnecmpsupport
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER DnsSupport
-        Indicates whether DNS support is enabled.
+        Enable or disable DNS support. Enabled by default.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-dnssupport
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER AmazonSideAsn
-        A private Autonomous System Number ASN for the Amazon side of a BGP session. The range is 64512 to 65534 for 16-bit ASNs.
+        A private Autonomous System Number ASN for the Amazon side of a BGP session. The range is 64512 to 65534 for 16-bit ASNs. The default is 64512.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-amazonsideasn
         PrimitiveType: Integer

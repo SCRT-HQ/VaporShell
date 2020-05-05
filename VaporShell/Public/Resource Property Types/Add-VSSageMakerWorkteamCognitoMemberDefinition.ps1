@@ -11,21 +11,21 @@ Identifies a Amazon Cognito user group. A user group can be used in on or more w
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-cognitomemberdefinition.html
 
     .PARAMETER CognitoUserPool
-        An identifier for a user pool. The user pool must be in the same region as the service that you are calling.
+        Not currently supported by AWS CloudFormation.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-cognitomemberdefinition.html#cfn-sagemaker-workteam-cognitomemberdefinition-cognitouserpool
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER CognitoClientId
-        An identifier for an application client. You must create the app client ID using Amazon Cognito.
+        Not currently supported by AWS CloudFormation.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-cognitomemberdefinition.html#cfn-sagemaker-workteam-cognitomemberdefinition-cognitoclientid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER CognitoUserGroup
-        An identifier for a user group.
+        Not currently supported by AWS CloudFormation.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-cognitomemberdefinition.html#cfn-sagemaker-workteam-cognitomemberdefinition-cognitousergroup
         PrimitiveType: String

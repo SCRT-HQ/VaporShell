@@ -11,7 +11,7 @@ Specifies a metrics configuration for the CloudWatch request metrics (specified 
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-metricsconfiguration.html
 
     .PARAMETER Id
-        The ID used to identify the metrics configuration.
+        The ID used to identify the metrics configuration. This can be any value you choose that helps you identify your metrics configuration.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-metricsconfiguration.html#cfn-s3-bucket-metricsconfiguration-id
         PrimitiveType: String

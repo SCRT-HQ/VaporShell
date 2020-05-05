@@ -14,6 +14,7 @@ function New-VSConfigRemediationConfiguration {
 
     .PARAMETER TargetVersion
         Version of the target. For example, version of the SSM document.
+If you make backward incompatible changes to the SSM document, you must call PutRemediationConfiguration API again to ensure the remediations can run.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-targetversion
         PrimitiveType: String
@@ -65,7 +66,7 @@ For example, if you specify RetryAttemptsSeconds as 50 seconds and MaximumAutoma
 
     .PARAMETER MaximumAutomaticAttempts
         The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is 5.
-For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptsSeconds as 50 seconds, AWS Config throws an exception after the 5th failed attempt within 50 seconds.
+For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptsSeconds as 50 seconds, AWS Config will put a RemediationException on your behalf for the failing resource after the 5th failed attempt within 50 seconds.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-maximumautomaticattempts
         PrimitiveType: Integer

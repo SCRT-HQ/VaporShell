@@ -1,10 +1,10 @@
 function New-VSApiGatewayV2Api {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGatewayV2::Api resource to the template. The AWS::ApiGatewayV2::Api resource creates an API. WebSocket APIs and HTTP APIs (beta are supported. For more information about WebSocket APIs, see About WebSocket APIs in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-overview.html in the *API Gateway Developer Guide*. For more information about HTTP APIs, see HTTP APIs: https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api.html in the *API Gateway Developer Guide.*
+        Adds an AWS::ApiGatewayV2::Api resource to the template. The AWS::ApiGatewayV2::Api resource creates an API. WebSocket APIs and HTTP APIs are supported. For more information about WebSocket APIs, see About WebSocket APIs in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-overview.html in the *API Gateway Developer Guide*. For more information about HTTP APIs, see HTTP APIs: https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api.html in the *API Gateway Developer Guide.*
 
     .DESCRIPTION
-        Adds an AWS::ApiGatewayV2::Api resource to the template. The AWS::ApiGatewayV2::Api resource creates an API. WebSocket APIs and HTTP APIs (beta are supported. For more information about WebSocket APIs, see About WebSocket APIs in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-overview.html in the *API Gateway Developer Guide*. For more information about HTTP APIs, see HTTP APIs: https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api.html in the *API Gateway Developer Guide.*
+        Adds an AWS::ApiGatewayV2::Api resource to the template. The AWS::ApiGatewayV2::Api resource creates an API. WebSocket APIs and HTTP APIs are supported. For more information about WebSocket APIs, see About WebSocket APIs in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-overview.html in the *API Gateway Developer Guide*. For more information about HTTP APIs, see HTTP APIs: https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api.html in the *API Gateway Developer Guide.*
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html
@@ -41,7 +41,7 @@ function New-VSApiGatewayV2Api {
         UpdateType: Mutable
 
     .PARAMETER FailOnWarnings
-        Specifies whether to rollback the API creation true or not false when a warning is encountered. The default value is false.
+        Specifies whether to rollback the API creation when a warning is encountered. By default, API creation continues if a warning is encountered.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-failonwarnings
         PrimitiveType: Boolean

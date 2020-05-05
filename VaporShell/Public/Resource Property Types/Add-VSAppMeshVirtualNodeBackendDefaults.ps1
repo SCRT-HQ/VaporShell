@@ -1,16 +1,18 @@
 function Add-VSAppMeshVirtualNodeBackendDefaults {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::VirtualNode.BackendDefaults resource property to the template. 
+        Adds an AWS::AppMesh::VirtualNode.BackendDefaults resource property to the template. An object that represents the default properties for a backend.
 
     .DESCRIPTION
         Adds an AWS::AppMesh::VirtualNode.BackendDefaults resource property to the template.
-
+An object that represents the default properties for a backend.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-backenddefaults.html
 
     .PARAMETER ClientPolicy
+        A reference to an object that represents a client policy.
+
         Type: ClientPolicy
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-backenddefaults.html#cfn-appmesh-virtualnode-backenddefaults-clientpolicy
         UpdateType: Mutable

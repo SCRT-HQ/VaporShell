@@ -76,7 +76,8 @@ AWS authenticates the CMK asynchronously. Therefore, if you specify an ID, alias
         UpdateType: Mutable
 
     .PARAMETER MultiAttachEnabled
-        +   CreateVolume: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html in the *Amazon Elastic Compute Cloud API Reference*
+        Indicates whether Amazon EBS Multi-Attach is enabled.
+AWS CloudFormation does not currently support updating a single-attach volume to be multi-attach enabled, updating a multi-attach enabled volume to be single-attach, or updating the size or number of I/O operations per second IOPS of a multi-attach enabled volume.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-multiattachenabled
         PrimitiveType: Boolean

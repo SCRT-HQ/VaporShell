@@ -1,10 +1,10 @@
 function New-VSAutoScalingScalingPolicy {
     <#
     .SYNOPSIS
-        Adds an AWS::AutoScaling::ScalingPolicy resource to the template. Specifies a scaling policy for an Amazon EC2 Auto Scaling group.
+        Adds an AWS::AutoScaling::ScalingPolicy resource to the template. Specifies an Amazon EC2 Auto Scaling scaling policy so that the Auto Scaling group can change the number of instances available for your application in response to changing demand.
 
     .DESCRIPTION
-        Adds an AWS::AutoScaling::ScalingPolicy resource to the template. Specifies a scaling policy for an Amazon EC2 Auto Scaling group.
+        Adds an AWS::AutoScaling::ScalingPolicy resource to the template. Specifies an Amazon EC2 Auto Scaling scaling policy so that the Auto Scaling group can change the number of instances available for your application in response to changing demand.
 
 To update an existing scaling policy, use the existing policy name and set the property to change. If you leave a property unspecified when updating a scaling policy, the corresponding value remains unchanged.
 
@@ -58,9 +58,8 @@ Valid only if the policy type is StepScaling.
         UpdateType: Mutable
 
     .PARAMETER MinAdjustmentMagnitude
-        The minimum number of instances to scale. If the value of AdjustmentType is PercentChangeInCapacity, the scaling policy changes the DesiredCapacity of the Auto Scaling group by at least this many instances. This property replaces the MinAdjustmentStep property.
-For example, suppose that you create a step scaling policy to scale out an Auto Scaling group by 25 percent and you specify a MinAdjustmentMagnitude of 2. If the group has 4 instances and the scaling policy is performed, 25 percent of 4 is 1. However, because you specified a MinAdjustmentMagnitude of 2, Amazon EC2 Auto Scaling scales out the group by 2 instances.
-Valid only if the policy type is StepScaling or SimpleScaling.
+        The minimum value to scale by when scaling by percentages. For example, suppose that you create a step scaling policy to scale out an Auto Scaling group by 25 percent and you specify a MinAdjustmentMagnitude of 2. If the group has 4 instances and the scaling policy is performed, 25 percent of 4 is 1. However, because you specified a MinAdjustmentMagnitude of 2, Amazon EC2 Auto Scaling scales out the group by 2 instances.
+Valid only if the policy type is StepScaling or SimpleScaling and the adjustment type is PercentChangeInCapacity. For more information, see Scaling Adjustment Types: https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment in the *Amazon EC2 Auto Scaling User Guide*.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-minadjustmentmagnitude
         PrimitiveType: Integer

@@ -27,7 +27,7 @@ MaintenanceWindowRunCommandParameters is a property of the TaskInvocationParamet
         UpdateType: Mutable
 
     .PARAMETER OutputS3KeyPrefix
-        The Amazon S3 bucket subfolder.
+        The S3 bucket subfolder.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-outputs3keyprefix
         PrimitiveType: String
@@ -62,7 +62,7 @@ MaintenanceWindowRunCommandParameters is a property of the TaskInvocationParamet
         UpdateType: Mutable
 
     .PARAMETER OutputS3BucketName
-        The name of the Amazon S3 bucket.
+        The name of the S3 bucket.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-outputs3bucketname
         PrimitiveType: String

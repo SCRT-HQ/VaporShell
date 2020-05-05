@@ -7,7 +7,7 @@ function Add-VSEC2InstanceVolume {
         Adds an AWS::EC2::Instance.Volume resource property to the template.
 Specifies a volume to attach to an instance.
 
-Volume is property is an embedded property of the  AWS::EC2::Instance: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html resource.
+Volume is an embedded property of the  AWS::EC2::Instance: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html resource.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-mount-point.html

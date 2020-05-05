@@ -1,21 +1,25 @@
 function Add-VSCassandraTableProvisionedThroughput {
     <#
     .SYNOPSIS
-        Adds an AWS::Cassandra::Table.ProvisionedThroughput resource property to the template. 
+        Adds an AWS::Cassandra::Table.ProvisionedThroughput resource property to the template. The provisioned throughput for the table, consisting of ReadCapacityUnits and WriteCapacityUnits.
 
     .DESCRIPTION
         Adds an AWS::Cassandra::Table.ProvisionedThroughput resource property to the template.
-
+The provisioned throughput for the table, consisting of ReadCapacityUnits and WriteCapacityUnits.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cassandra-table-provisionedthroughput.html
 
     .PARAMETER ReadCapacityUnits
+        The amount of read capacity that's provisioned for the table. For more information, see Read/Write Capacity Mode: https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html in the the *Amazon Keyspaces Developer Guide*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cassandra-table-provisionedthroughput.html#cfn-cassandra-table-provisionedthroughput-readcapacityunits
         UpdateType: Mutable
         PrimitiveType: Integer
 
     .PARAMETER WriteCapacityUnits
+        The amount of write capacity that's provisioned for the table. For more information, see Read/Write Capacity Mode: https://docs.aws.amazon.com/keyspaces/latest/devguide/ReadWriteCapacityMode.html in the the *Amazon Keyspaces Developer Guide*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cassandra-table-provisionedthroughput.html#cfn-cassandra-table-provisionedthroughput-writecapacityunits
         UpdateType: Mutable
         PrimitiveType: Integer

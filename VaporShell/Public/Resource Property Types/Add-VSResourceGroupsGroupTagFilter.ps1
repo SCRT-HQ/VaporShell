@@ -1,21 +1,25 @@
 function Add-VSResourceGroupsGroupTagFilter {
     <#
     .SYNOPSIS
-        Adds an AWS::ResourceGroups::Group.TagFilter resource property to the template. 
+        Adds an AWS::ResourceGroups::Group.TagFilter resource property to the template. The TagFilter object used to define tag-based group membership.
 
     .DESCRIPTION
         Adds an AWS::ResourceGroups::Group.TagFilter resource property to the template.
-
+The TagFilter object used to define tag-based group membership.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resourcegroups-group-tagfilter.html
 
     .PARAMETER Key
+        A string that defines a tag key. Only resources in the account that are tagged with a specified tag key are members of the tag-based resource group. This field is required when the ResourceQuery.Type property is TAG_FILTERS_1_0.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resourcegroups-group-tagfilter.html#cfn-resourcegroups-group-tagfilter-key
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER Values
+        A list of tag values that can be included in the tag-based resource group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resourcegroups-group-tagfilter.html#cfn-resourcegroups-group-tagfilter-values
         UpdateType: Mutable
         Type: List

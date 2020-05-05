@@ -135,7 +135,7 @@ This parameter is not supported for Windows containers or tasks that use the aws
         UpdateType: Immutable
 
     .PARAMETER HealthCheck
-        The health check command and associated configuration parameters for the container. This parameter maps to HealthCheck in the Create a container: https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate section of the Docker Remote API: https://docs.docker.com/engine/api/v1.35/ and the HEALTHCHECK parameter of docker run: https://docs.docker.com/engine/reference/run/.
+        The container health check command and associated configuration parameters for the container. This parameter maps to HealthCheck in the Create a container: https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate section of the Docker Remote API: https://docs.docker.com/engine/api/v1.35/ and the HEALTHCHECK parameter of docker run: https://docs.docker.com/engine/reference/run/.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-healthcheck
         Type: HealthCheck

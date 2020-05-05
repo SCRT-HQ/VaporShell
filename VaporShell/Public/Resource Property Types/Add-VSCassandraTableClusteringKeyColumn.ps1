@@ -1,21 +1,27 @@
 function Add-VSCassandraTableClusteringKeyColumn {
     <#
     .SYNOPSIS
-        Adds an AWS::Cassandra::Table.ClusteringKeyColumn resource property to the template. 
+        Adds an AWS::Cassandra::Table.ClusteringKeyColumn resource property to the template. Defines an individual column within the clustering key.
 
     .DESCRIPTION
         Adds an AWS::Cassandra::Table.ClusteringKeyColumn resource property to the template.
-
+Defines an individual column within the clustering key.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cassandra-table-clusteringkeycolumn.html
 
     .PARAMETER Column
+        The name and data type of this clustering key column.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cassandra-table-clusteringkeycolumn.html#cfn-cassandra-table-clusteringkeycolumn-column
         UpdateType: Immutable
         Type: Column
 
     .PARAMETER OrderBy
+        The order in which this column's data will be stored:
++ ASC default - the column's data will be stored in ascending order.
++ DESC - the column's data will be stored in descending order.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cassandra-table-clusteringkeycolumn.html#cfn-cassandra-table-clusteringkeycolumn-orderby
         UpdateType: Immutable
         PrimitiveType: String

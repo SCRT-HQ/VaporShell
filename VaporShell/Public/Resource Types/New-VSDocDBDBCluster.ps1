@@ -97,7 +97,7 @@ Example: mySubnetgroup
         UpdateType: Immutable
 
     .PARAMETER DeletionProtection
-        +  ModifyDBCluster: https://docs.aws.amazon.com/documentdb/latest/developerguide/API_ModifyDBCluster.html
+        Protects clusters from being accidentally deleted. If enabled, the cluster cannot be deleted unless it is modified and DeletionProtection is disabled.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-deletionprotection
         PrimitiveType: Boolean

@@ -39,6 +39,8 @@ Specifies an action for a listener rule.
         UpdateType: Mutable
 
     .PARAMETER Order
+        The order for the action. This value is required for rules with multiple actions. The action with the lowest value for order is performed first.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-defaultactions.html#cfn-elasticloadbalancingv2-listener-action-order
         PrimitiveType: Integer
         UpdateType: Mutable

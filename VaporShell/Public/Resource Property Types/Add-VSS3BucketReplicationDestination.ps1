@@ -40,7 +40,7 @@ If you specify the AccessControlTranslation property, the Account property is re
         UpdateType: Mutable
 
     .PARAMETER StorageClass
-        The storage class to use when replicating objects, such as standard or reduced redundancy. By default, Amazon S3 uses the storage class of the source object to create the object replica.
+        The storage class to use when replicating objects, such as S3 Standard or reduced redundancy. By default, Amazon S3 uses the storage class of the source object to create the object replica.
 For valid values, see the StorageClass element of the PUT Bucket replication: https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html action in the *Amazon Simple Storage Service API Reference*.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules-destination.html#cfn-s3-bucket-replicationconfiguration-rules-destination-storageclass

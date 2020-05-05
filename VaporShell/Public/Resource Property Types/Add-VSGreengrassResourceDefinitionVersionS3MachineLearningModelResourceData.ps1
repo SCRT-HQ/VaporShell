@@ -13,7 +13,7 @@ function Add-VSGreengrassResourceDefinitionVersionS3MachineLearningModelResource
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata.html
 
     .PARAMETER OwnerSetting
-        +  AWS IoT Greengrass Developer Guide: https://docs.aws.amazon.com/greengrass/latest/developerguide/
+        The owner setting for the downloaded machine learning resource. For more information, see Access Machine Learning Resources from Lambda Functions: https://docs.aws.amazon.com/greengrass/latest/developerguide/access-ml-resources.html in the *AWS IoT Greengrass Developer Guide*.
 
         Type: ResourceDownloadOwnerSetting
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata-ownersetting

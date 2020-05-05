@@ -1,10 +1,10 @@
 function New-VSCodeGuruProfilerProfilingGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeGuruProfiler::ProfilingGroup resource to the template. 
+        Adds an AWS::CodeGuruProfiler::ProfilingGroup resource to the template. Creates a profiling group.
 
     .DESCRIPTION
-        Adds an AWS::CodeGuruProfiler::ProfilingGroup resource to the template. 
+        Adds an AWS::CodeGuruProfiler::ProfilingGroup resource to the template. Creates a profiling group.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeguruprofiler-profilinggroup.html
@@ -13,6 +13,8 @@ function New-VSCodeGuruProfilerProfilingGroup {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ProfilingGroupName
+        The name of the profiling group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeguruprofiler-profilinggroup.html#cfn-codeguruprofiler-profilinggroup-profilinggroupname
         UpdateType: Immutable
         PrimitiveType: String

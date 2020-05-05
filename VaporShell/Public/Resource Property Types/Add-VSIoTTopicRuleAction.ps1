@@ -53,7 +53,7 @@ Describes the actions associated with a rule.
         UpdateType: Mutable
 
     .PARAMETER Http
-        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+        Send data to an HTTPS endpoint.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-http
         Type: HttpAction
@@ -67,14 +67,14 @@ Describes the actions associated with a rule.
         UpdateType: Mutable
 
     .PARAMETER IotEvents
-        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+        Sends an input to an AWS IoT Events detector.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-iotevents
         Type: IotEventsAction
         UpdateType: Mutable
 
     .PARAMETER IotSiteWise
-        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+        Sends data from the MQTT message that triggered the rule to AWS IoT SiteWise asset properties.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-iotsitewise
         Type: IotSiteWiseAction

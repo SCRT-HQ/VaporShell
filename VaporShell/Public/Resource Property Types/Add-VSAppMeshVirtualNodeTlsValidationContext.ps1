@@ -1,16 +1,18 @@
 function Add-VSAppMeshVirtualNodeTlsValidationContext {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::VirtualNode.TlsValidationContext resource property to the template. 
+        Adds an AWS::AppMesh::VirtualNode.TlsValidationContext resource property to the template. An object that represents a Transport Layer Security (TLS validation context.
 
     .DESCRIPTION
         Adds an AWS::AppMesh::VirtualNode.TlsValidationContext resource property to the template.
-
+An object that represents a Transport Layer Security (TLS validation context.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontext.html
 
     .PARAMETER Trust
+        A reference to an object that represents a TLS validation context trust.
+
         Type: TlsValidationContextTrust
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontext.html#cfn-appmesh-virtualnode-tlsvalidationcontext-trust
         UpdateType: Mutable

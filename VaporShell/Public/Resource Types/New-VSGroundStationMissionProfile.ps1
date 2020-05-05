@@ -1,10 +1,10 @@
 function New-VSGroundStationMissionProfile {
     <#
     .SYNOPSIS
-        Adds an AWS::GroundStation::MissionProfile resource to the template. 
+        Adds an AWS::GroundStation::MissionProfile resource to the template. Mission profiles specify parameters and provide references to config objects to define how Ground Station lists and executes contacts.
 
     .DESCRIPTION
-        Adds an AWS::GroundStation::MissionProfile resource to the template. 
+        Adds an AWS::GroundStation::MissionProfile resource to the template. Mission profiles specify parameters and provide references to config objects to define how Ground Station lists and executes contacts.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-missionprofile.html
@@ -13,37 +13,51 @@ function New-VSGroundStationMissionProfile {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Name
+        The name of the mission profile.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-missionprofile.html#cfn-groundstation-missionprofile-name
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER ContactPrePassDurationSeconds
+        Amount of time in seconds prior to contact start that you'd like to receive a CloudWatch Event indicating an upcoming pass. For more information on CloudWatch Events, see the What Is CloudWatch Events?: https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/WhatIsCloudWatchEvents.html
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-missionprofile.html#cfn-groundstation-missionprofile-contactprepassdurationseconds
         UpdateType: Mutable
         PrimitiveType: Integer
 
     .PARAMETER ContactPostPassDurationSeconds
+        Amount of time in seconds after a contact ends that you’d like to receive a CloudWatch Event indicating the pass has finished. For more information on CloudWatch Events, see the What Is CloudWatch Events?: https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/WhatIsCloudWatchEvents.html
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-missionprofile.html#cfn-groundstation-missionprofile-contactpostpassdurationseconds
         UpdateType: Mutable
         PrimitiveType: Integer
 
     .PARAMETER MinimumViableContactDurationSeconds
+        Minimum length of a contact in seconds that Ground Station will return when listing contacts. Ground Station will not return contacts shorter than this duration.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-missionprofile.html#cfn-groundstation-missionprofile-minimumviablecontactdurationseconds
         UpdateType: Mutable
         PrimitiveType: Integer
 
     .PARAMETER DataflowEdges
+        A list containing lists of config ARNs. Each list of config ARNs is an edge, with a "from" config and a "to" config.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-missionprofile.html#cfn-groundstation-missionprofile-dataflowedges
         UpdateType: Mutable
         Type: List
         ItemType: DataflowEdge
 
     .PARAMETER TrackingConfigArn
+        The ARN of a tracking config objects that defines how to track the satellite through the sky during a contact.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-missionprofile.html#cfn-groundstation-missionprofile-trackingconfigarn
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER Tags
+        Tags assigned to the mission profile.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-missionprofile.html#cfn-groundstation-missionprofile-tags
         UpdateType: Mutable
         Type: List

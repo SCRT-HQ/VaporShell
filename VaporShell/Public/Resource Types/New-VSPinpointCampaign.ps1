@@ -27,7 +27,7 @@ function New-VSPinpointCampaign {
         UpdateType: Mutable
 
     .PARAMETER IsPaused
-        Specifies whether to pause the campaign. A paused campaign doesn't run unless you resume it by setting this value to false.
+        Specifies whether to pause the campaign. A paused campaign doesn't run unless you resume it by changing this value to false.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-ispaused
         PrimitiveType: Boolean
@@ -56,7 +56,7 @@ function New-VSPinpointCampaign {
         UpdateType: Mutable
 
     .PARAMETER TreatmentDescription
-        A custom description of a variation of the campaign to use for A/B testing.
+        A custom description of the default treatment for the campaign.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-treatmentdescription
         PrimitiveType: String
@@ -112,7 +112,7 @@ function New-VSPinpointCampaign {
         UpdateType: Mutable
 
     .PARAMETER TreatmentName
-        The custom name of a variation of the campaign to use for A/B testing.
+        A custom name of the default treatment for the campaign, if the campaign has multiple treatments. A *treatment* is a variation of a campaign that's used for A/B testing.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-treatmentname
         PrimitiveType: String

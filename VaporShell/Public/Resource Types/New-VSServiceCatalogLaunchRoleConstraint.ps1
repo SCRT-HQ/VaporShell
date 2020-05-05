@@ -20,7 +20,9 @@ function New-VSServiceCatalogLaunchRoleConstraint {
         UpdateType: Mutable
 
     .PARAMETER LocalRoleName
-        + CreateConstraint: https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreateConstraint.html in the *AWS Service Catalog API Reference*
+        You are required to specify either the RoleArn or the LocalRoleName but can't use both.
+If you specify the LocalRoleName property, when an account uses the launch constraint, the IAM role with that name in the account will be used. This allows launch-role constraints to be account-agnostic so the administrator can create fewer resources per shared account.
+The given role name must exist in the account used to create the launch constraint and the account of the user who launches a product with this launch constraint.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchroleconstraint.html#cfn-servicecatalog-launchroleconstraint-localrolename
         PrimitiveType: String
@@ -52,6 +54,7 @@ function New-VSServiceCatalogLaunchRoleConstraint {
 
     .PARAMETER RoleArn
         The ARN of the launch role.
+You are required to specify RoleArn or LocalRoleName but can't use both.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchroleconstraint.html#cfn-servicecatalog-launchroleconstraint-rolearn
         PrimitiveType: String

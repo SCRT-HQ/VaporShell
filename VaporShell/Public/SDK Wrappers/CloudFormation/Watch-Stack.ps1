@@ -42,7 +42,7 @@ function Watch-Stack {
         $ProfileName = $env:AWS_PROFILE
     )
     Begin {
-        Import-AWSSDK
+        Import-AWSSDK -Verbose:$false
     }
     Process {
         if ($InNewWindow) {
@@ -73,7 +73,9 @@ function Watch-Stack {
         else {
             $i = 0
             $cont = $true
-            $prof = @{}
+            $prof = @{
+                Verbose = $false
+            }
             if ($ProfileName) {
                 $prof["ProfileName"] = $ProfileName
             }
@@ -83,60 +85,79 @@ function Watch-Stack {
             Colorize $head
             $private:tableHeaderAdded = $false
             $private:nameIdMap = @{}
+            $stcks = $StackName
             do {
-                foreach ($stckName in $StackName) {
-                    try {
-                        if ($private:nameIdMap.ContainsKey($stckName)) {
-                            $results = Get-VSStack -Events -StackId $private:nameIdMap[$stckName] @prof -ErrorAction Stop -Verbose:$false | Sort-Object timestamp
-                        }
-                        else  {
-                            $results = Get-VSStack -Events -StackId "$stckName" @prof -ErrorAction Stop -Verbose:$false | Sort-Object timestamp
-                            $private:nameIdMap[$stckName] = $results[0].StackId
-                        }
-                        $stName = $results[0].StackId
-                        $snLength = $results[0].StackName.Length
-                        $resTypeLength = ($results.ResourceType | Sort-Object -Property Length)[-1].Length
-                        if ($resTypeLength -le 26) {
-                            $resTypeLength = 26
-                        }
-                        $stack = $results | Sort-Object TimeStamp | ForEach-Object {
-                            if (!$private:tableHeaderAdded) {
-                                "{0,-20} {1,-20} {2,-$($snLength)} {3,-$resTypeLength} {4,-35}" -f 'Timestamp','ResourceStatus','StackName','ResourceType','ResourceStatusReason'
-                                "{0,-20} {1,-20} {2,-$($snLength)} {3,-$resTypeLength} {4,-35}" -f '---------','--------------','---------','------------','--------------------'
-                                $private:tableHeaderAdded = $true
+                do {
+                    $completed = @()
+                    foreach ($stckName in $stcks) {
+                        try {
+                            if ($private:nameIdMap.ContainsKey($stckName)) {
+                                $results = Get-VSStack -Events -StackId $private:nameIdMap[$stckName] @prof -ErrorAction Stop | Sort-Object timestamp
                             }
-                            if ($_.ResourceStatus -ne 'CREATE_IN_PROGRESS' -or $_.ResourceStatusReason -or ($_.ResourceStatus -eq 'CREATE_IN_PROGRESS' -and $PSBoundParameters['IncludeBlankResourceStatusReasons'])) {
-                                $formatted = "{0,-20} {1,-20} {2,-$($snLength)} {3,-$resTypeLength} {4,-35}" -f $_.Timestamp,$_.ResourceStatus,$_.StackName,$_.ResourceType,$_.ResourceStatusReason
-                                if ($strings -notcontains $formatted.Replace(' ','')) {
-                                    $formatted.Trim()
-                                    $strings += $formatted.Replace(' ','')
+                            else  {
+                                $results = Get-VSStack -Events -StackId "$stckName" @prof -ErrorAction Stop | Sort-Object timestamp
+                                $private:nameIdMap[$stckName] = $results[0].StackId
+                            }
+                            $stName = $results[0].StackId
+                            $snLength = $results[0].StackName.Length
+                            $resTypeLength = ($results.LogicalResourceId | Where-Object {$_ -ne $results[0].StackName} | Sort-Object -Property Length)[-1].Length
+                            if ($resTypeLength -le 26) {
+                                $resTypeLength = 26
+                            }
+                            $stack = $results | Sort-Object TimeStamp | ForEach-Object {
+                                if (!$private:tableHeaderAdded) {
+                                    "{0,-20} {1,-20} {2,-$($snLength)} {3,-$resTypeLength} {4,-35}" -f 'Timestamp','ResourceStatus','StackName','LogicalId','ResourceStatusReason'
+                                    "{0,-20} {1,-20} {2,-$($snLength)} {3,-$resTypeLength} {4,-35}" -f '---------','--------------','---------','------------','--------------------'
+                                    $private:tableHeaderAdded = $true
+                                }
+                                $identifier = if ($_.LogicalResourceId -eq $results[0].StackName) {
+                                    'AWS::CloudFormation::Stack'
+                                }
+                                else {
+                                    $_.LogicalResourceId
+                                }
+                                if ($_.ResourceStatus -ne 'CREATE_IN_PROGRESS' -or $_.ResourceStatusReason -or ($_.ResourceStatus -eq 'CREATE_IN_PROGRESS' -and $PSBoundParameters['IncludeBlankResourceStatusReasons'])) {
+                                    $formatted = "{0,-20} {1,-20} {2,-$($snLength)} {3,-$resTypeLength} {4,-35}" -f $_.Timestamp,$_.ResourceStatus,$_.StackName,$identifier,$_.ResourceStatusReason
+                                    if ($strings -notcontains $formatted.Replace(' ','')) {
+                                        $formatted.Trim()
+                                        $strings += $formatted.Replace(' ','')
+                                    }
                                 }
                             }
-                        }
-                        Colorize $stack
-                        if ($i -ge 1 -and $stack -match '.*_(COMPLETE|FAILED).*AWS::CloudFormation::Stack.*') {
-                            $stackStatus = (Get-VSStack -StackId "$stName" @prof).StackStatus.Value
-                            if ($stackStatus -match '.*_(COMPLETE|FAILED)$') {
-                                Write-Verbose "Stack status: $stackStatus"
-                                $cont = $false
+                            Colorize $stack
+                            if ($i -ge 1 -and ($stack -match '.*_(COMPLETE|FAILED).*AWS::CloudFormation::Stack.*' -or $null -eq $stack)) {
+                                $stackStatus = (Get-VSStack -StackId "$stName" @prof).StackStatus.Value
+                                if ($stackStatus -match '.*_(COMPLETE|FAILED)$') {
+                                    Write-Verbose "[$stckName] Stack status: $stackStatus"
+                                    $cont = $false
+                                    $completed += $stckName
+                                }
+                                else {
+                                    Start-Sleep $RefreshRate
+                                }
                             }
                             else {
                                 Start-Sleep $RefreshRate
-                                $i++
                             }
                         }
-                        else {
-                            Start-Sleep $RefreshRate
-                            $i++
+                        catch {
+                            $PSCmdlet.ThrowTerminatingError($_)
+                            $cont = $false
                         }
                     }
-                    catch {
-                        $PSCmdlet.ThrowTerminatingError($_)
-                        $cont = $false
+                    $i++
+                    $stcks = $stcks | Where-Object {$_ -notin $completed}
+                }
+                until ($cont -eq $false)
+                if ($completed.Count -and $i -ge 1) {
+                    $message = "$($stcks.Count) stacks remaining"
+                    if ($stcks.Count) {
+                        $message += ": [ $($stcks -join ', ') ]"
                     }
+                    Write-Verbose $message
                 }
             }
-            until ($cont -eq $false)
+            until ($null -eq $stcks)
         }
     }
 }

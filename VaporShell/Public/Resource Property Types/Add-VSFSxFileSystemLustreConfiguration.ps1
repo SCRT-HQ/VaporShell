@@ -18,7 +18,7 @@ The configuration for the Amazon FSx for Lustre file system.
         UpdateType: Immutable
 
     .PARAMETER WeeklyMaintenanceStartTime
-        The preferred time to perform weekly maintenance, in the UTC time zone.
+        The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone, where d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration.html#cfn-fsx-filesystem-lustreconfiguration-weeklymaintenancestarttime
         PrimitiveType: String
@@ -26,14 +26,17 @@ The configuration for the Amazon FSx for Lustre file system.
 
     .PARAMETER ImportedFileChunkSize
         Optional For files imported from a data repository, this value determines the stripe count and maximum amount of data per file in MiB stored on a single physical disk. The maximum number of disks that a single file can be striped across is limited by the total number of disks that make up the file system.
-The chunk size default is 1,024 MiB 1 GiB and can go as high as 512,000 MiB 500 GiB. Amazon S3 objects have a maximum size of 5 TB.
+The default chunk size is 1,024 MiB 1 GiB and can go as high as 512,000 MiB 500 GiB. Amazon S3 objects have a maximum size of 5 TB.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration.html#cfn-fsx-filesystem-lustreconfiguration-importedfilechunksize
         PrimitiveType: Integer
         UpdateType: Immutable
 
     .PARAMETER DeploymentType
-        Not currently supported by AWS CloudFormation.
+        Optional Choose SCRATCH_1 and SCRATCH_2 deployment types when you need temporary storage and shorter-term processing of data. The SCRATCH_2 deployment type provides in-transit encryption of data and higher burst throughput capacity than SCRATCH_1.
+Choose PERSISTENT_1 deployment type for longer-term storage and workloads and encryption of data in transit. To learn more about deployment types, see  FSx for Lustre Deployment Options: https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-deployment-types.html.
+Encryption of data in-transit is automatically enabled when you access a SCRATCH_2 or PERSISTENT_1 file system from Amazon EC2 instances that support this feature: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/data-                 protection.html. Default = SCRATCH_1
+Encryption of data in-transit for SCRATCH_2 and PERSISTENT_1 deployment types is supported when accessed from supported instance types in supported AWS Regions. To learn more, Encrypting Data in Transit: https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration.html#cfn-fsx-filesystem-lustreconfiguration-deploymenttype
         PrimitiveType: String
@@ -48,7 +51,8 @@ The Amazon S3 export bucket must be the same as the import bucket specified by I
         UpdateType: Immutable
 
     .PARAMETER PerUnitStorageThroughput
-        Not currently supported by AWS CloudFormation.
+        Required for the PERSISTENT_1 deployment type, describes the amount of read and write throughput for each 1 tebibyte of storage, in MB/s/TiB. File system throughput capacity is calculated by multiplying ﬁle system storage capacity TiB by the PerUnitStorageThroughput MB/s/TiB. For a 2.4 TiB ﬁle system, provisioning 50 MB/s/TiB of PerUnitStorageThroughput yields 117 MB/s of ﬁle system throughput. You pay for the amount of throughput that you provision.
+Valid values are 50, 100, 200.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration.html#cfn-fsx-filesystem-lustreconfiguration-perunitstoragethroughput
         PrimitiveType: Integer

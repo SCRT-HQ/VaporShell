@@ -18,21 +18,21 @@ Specifies that you want Kinesis Data Firehose to convert data from the JSON form
         UpdateType: Mutable
 
     .PARAMETER InputFormatConfiguration
-        Specifies the deserializer that you want Kinesis Data Firehose to use to convert the format of your data from JSON.
+        Specifies the deserializer that you want Kinesis Data Firehose to use to convert the format of your data from JSON. This parameter is required if Enabled is set to true.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-dataformatconversionconfiguration.html#cfn-kinesisfirehose-deliverystream-dataformatconversionconfiguration-inputformatconfiguration
         Type: InputFormatConfiguration
         UpdateType: Mutable
 
     .PARAMETER OutputFormatConfiguration
-        Specifies the serializer that you want Kinesis Data Firehose to use to convert the format of your data to the Parquet or ORC format.
+        Specifies the serializer that you want Kinesis Data Firehose to use to convert the format of your data to the Parquet or ORC format. This parameter is required if Enabled is set to true.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-dataformatconversionconfiguration.html#cfn-kinesisfirehose-deliverystream-dataformatconversionconfiguration-outputformatconfiguration
         Type: OutputFormatConfiguration
         UpdateType: Mutable
 
     .PARAMETER SchemaConfiguration
-        Specifies the AWS Glue Data Catalog table that contains the column information.
+        Specifies the AWS Glue Data Catalog table that contains the column information. This parameter is required if Enabled is set to true.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-dataformatconversionconfiguration.html#cfn-kinesisfirehose-deliverystream-dataformatconversionconfiguration-schemaconfiguration
         Type: SchemaConfiguration

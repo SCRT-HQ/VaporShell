@@ -58,7 +58,7 @@ Tags may only contain Unicode letters, digits, white space, or these symbols: _ 
         UpdateType: Mutable
 
     .PARAMETER StateMachineType
-        Determines whether a STANDARD or EXPRESS state machine is created. The default is STANDARD. You cannot update the type of a state machine once it has been created. For more information on STANDARD and EXPRESS worklfows, see Standard Versus Express Workflows: https://docs.aws.amazon.com/step-functions/latest/dg/concepts-standard-vs-express.html in the AWS Step Functions Developer Guide.
+        Determines whether a STANDARD or EXPRESS state machine is created. The default is STANDARD. You cannot update the type of a state machine once it has been created. For more information on STANDARD and EXPRESS workflows, see Standard Versus Express Workflows: https://docs.aws.amazon.com/step-functions/latest/dg/concepts-standard-vs-express.html in the AWS Step Functions Developer Guide.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-statemachinetype
         PrimitiveType: String

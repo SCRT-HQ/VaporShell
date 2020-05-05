@@ -63,7 +63,7 @@ The AWS::Pinpoint::PushTemplate AndroidPushNotificationTemplate resource defines
         UpdateType: Mutable
 
     .PARAMETER Url
-        The URL to open in a recipient's default mobile browser, if a recipient taps a a push notification that's based on the message template and the value of the Action property is URL.
+        The URL to open in a recipient's default mobile browser, if a recipient taps a push notification that's based on the message template and the value of the Action property is URL.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-pushtemplate-androidpushnotificationtemplate.html#cfn-pinpoint-pushtemplate-androidpushnotificationtemplate-url
         PrimitiveType: String

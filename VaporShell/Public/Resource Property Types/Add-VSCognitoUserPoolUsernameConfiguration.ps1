@@ -1,17 +1,20 @@
 function Add-VSCognitoUserPoolUsernameConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::Cognito::UserPool.UsernameConfiguration resource property to the template. Used to configure username case insensitivity.
+        Adds an AWS::Cognito::UserPool.UsernameConfiguration resource property to the template. The UsernameConfiguration property type specifies case sensitivity on the username input for the selected sign-in option.
 
     .DESCRIPTION
         Adds an AWS::Cognito::UserPool.UsernameConfiguration resource property to the template.
-Used to configure username case insensitivity.
+The UsernameConfiguration property type specifies case sensitivity on the username input for the selected sign-in option.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-usernameconfiguration.html
 
     .PARAMETER CaseSensitive
-        Set to False if you want username, email alias and preferred_username alias to be case insensitive. For example, when set to False, users will be able to sign in using either "username" or "Username".
+        Specifies whether username case sensitivity will be applied for all users in the user pool through Cognito APIs.
+Valid values include:
++  ** True **: Enables case sensitivity for all username input. When this option is set to True, users must sign in using the exact capitalization of their given username. For example, “UserName”. This is the default value.
++  ** False **: Enables case insensitivity for all username input. For example, when this option is set to False, users will be able to sign in using either "username" or "Username". This option also enables both preferred_username and email alias to be case insensitive, in addition to the username attribute.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-usernameconfiguration.html#cfn-cognito-userpool-usernameconfiguration-casesensitive
         PrimitiveType: Boolean

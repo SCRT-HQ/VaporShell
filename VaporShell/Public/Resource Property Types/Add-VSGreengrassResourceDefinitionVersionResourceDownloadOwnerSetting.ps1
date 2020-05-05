@@ -1,21 +1,27 @@
 function Add-VSGreengrassResourceDefinitionVersionResourceDownloadOwnerSetting {
     <#
     .SYNOPSIS
-        Adds an AWS::Greengrass::ResourceDefinitionVersion.ResourceDownloadOwnerSetting resource property to the template. 
+        Adds an AWS::Greengrass::ResourceDefinitionVersion.ResourceDownloadOwnerSetting resource property to the template. The owner setting for a downloaded machine learning resource. For more information, see Access Machine Learning Resources from Lambda Functions: https://docs.aws.amazon.com/greengrass/latest/developerguide/access-ml-resources.html in the *AWS IoT Greengrass Developer Guide*.
 
     .DESCRIPTION
         Adds an AWS::Greengrass::ResourceDefinitionVersion.ResourceDownloadOwnerSetting resource property to the template.
+The owner setting for a downloaded machine learning resource. For more information, see Access Machine Learning Resources from Lambda Functions: https://docs.aws.amazon.com/greengrass/latest/developerguide/access-ml-resources.html in the *AWS IoT Greengrass Developer Guide*.
 
+<a name="aws-properties-greengrass-resourcedefinitionversion-resourcedownloadownersetting-inheritance"></a> In an AWS CloudFormation template, ResourceDownloadOwnerSetting is the property type of the OwnerSetting property for the  S3MachineLearningModelResourceData: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata.html and  SageMakerMachineLearningModelResourceData: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata.html property types.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedownloadownersetting.html
 
     .PARAMETER GroupOwner
+        The group owner of the machine learning resource. This is the group ID GID of an existing Linux OS group on the system. The group's permissions are added to the Lambda process.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedownloadownersetting.html#cfn-greengrass-resourcedefinitionversion-resourcedownloadownersetting-groupowner
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER GroupPermission
+        The permissions that the group owner has to the machine learning resource. Valid values are rw read-write or ro read-only.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedownloadownersetting.html#cfn-greengrass-resourcedefinitionversion-resourcedownloadownersetting-grouppermission
         PrimitiveType: String
         UpdateType: Immutable

@@ -34,7 +34,7 @@ An object that represents the specification of a virtual node.
         UpdateType: Mutable
 
     .PARAMETER BackendDefaults
-        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+        A reference to an object that represents the defaults for backends.
 
         Type: BackendDefaults
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodespec.html#cfn-appmesh-virtualnode-virtualnodespec-backenddefaults

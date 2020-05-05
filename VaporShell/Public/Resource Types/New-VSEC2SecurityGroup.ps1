@@ -39,7 +39,7 @@ Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/#,@]+=&;{}!$*
         UpdateType: Immutable
 
     .PARAMETER SecurityGroupEgress
-        VPC only] The outbound rules associated with the security group.
+        VPC only] The outbound rules associated with the security group. There is a short interruption during which you cannot connect to the security group.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-securitygroupegress
         DuplicatesAllowed: True
@@ -48,7 +48,7 @@ Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/#,@]+=&;{}!$*
         UpdateType: Mutable
 
     .PARAMETER SecurityGroupIngress
-        The inbound rules associated with the security group.
+        The inbound rules associated with the security group. There is a short interruption during which you cannot connect to the security group.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-securitygroupingress
         DuplicatesAllowed: True

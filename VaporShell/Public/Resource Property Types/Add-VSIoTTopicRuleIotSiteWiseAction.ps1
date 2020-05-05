@@ -1,16 +1,18 @@
 function Add-VSIoTTopicRuleIotSiteWiseAction {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::TopicRule.IotSiteWiseAction resource property to the template. 
+        Adds an AWS::IoT::TopicRule.IotSiteWiseAction resource property to the template. Describes an action to send data from an MQTT message that triggered the rule to AWS IoT SiteWise asset properties.
 
     .DESCRIPTION
         Adds an AWS::IoT::TopicRule.IotSiteWiseAction resource property to the template.
-
+Describes an action to send data from an MQTT message that triggered the rule to AWS IoT SiteWise asset properties.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-iotsitewiseaction.html
 
     .PARAMETER PutAssetPropertyValueEntries
+        A list of asset property value entries.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-iotsitewiseaction.html#cfn-iot-topicrule-iotsitewiseaction-putassetpropertyvalueentries
         DuplicatesAllowed: False
         ItemType: PutAssetPropertyValueEntry
@@ -18,6 +20,8 @@ function Add-VSIoTTopicRuleIotSiteWiseAction {
         UpdateType: Mutable
 
     .PARAMETER RoleArn
+        The ARN of the role that grants AWS IoT permission to send an asset property value to AWS IoTSiteWise. "Action": "iotsitewise:BatchPutAssetPropertyValue". The trust policy can restrict access to specific asset hierarchy paths.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-iotsitewiseaction.html#cfn-iot-topicrule-iotsitewiseaction-rolearn
         PrimitiveType: String
         UpdateType: Mutable

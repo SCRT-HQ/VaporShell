@@ -6,9 +6,9 @@ function New-VSAppMeshVirtualRouter {
     .DESCRIPTION
         Adds an AWS::AppMesh::VirtualRouter resource to the template. Creates a virtual router within a service mesh.
 
-Any inbound traffic that your virtual router expects should be specified as a listener.
+Specify a listener for any inbound traffic that your virtual router receives. Create a virtual router for each protocol and port that you need to route. Virtual routers handle traffic for one or more virtual services within your mesh. After you create your virtual router, create and associate routes for your virtual router that direct incoming requests to different virtual nodes.
 
-Virtual routers handle traffic for one or more virtual services within your mesh. After you create your virtual router, create and associate routes for your virtual router that direct incoming requests to different virtual nodes.
+For more information about virtual routers, see Virtual routers: https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_routers.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html
@@ -31,7 +31,7 @@ Virtual routers handle traffic for one or more virtual services within your mesh
         UpdateType: Immutable
 
     .PARAMETER MeshOwner
-        +  CreateVirtualRouter: https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateVirtualRouter.html in the * AWS App Mesh API Reference *.
+        The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see Working with Shared Meshes: https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#cfn-appmesh-virtualrouter-meshowner
         PrimitiveType: String

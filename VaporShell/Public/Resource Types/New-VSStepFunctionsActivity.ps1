@@ -31,7 +31,7 @@ A name must *not* contain:
 + wildcard characters ? *
 + special characters " # %  ^ | ~  $ & , ; : /
 + control characters U+0000-001F, U+007F-009F
-For an EXPRESS state machine, the name should only contain 0-9, A-Z, a-z, - and _ to enable logging with CloudWatch Logs.
+To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-activity.html#cfn-stepfunctions-activity-name
         PrimitiveType: String

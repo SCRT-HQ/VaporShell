@@ -1,21 +1,25 @@
 function Add-VSImageBuilderInfrastructureConfigurationS3Logs {
     <#
     .SYNOPSIS
-        Adds an AWS::ImageBuilder::InfrastructureConfiguration.S3Logs resource property to the template. 
+        Adds an AWS::ImageBuilder::InfrastructureConfiguration.S3Logs resource property to the template. Amazon S3 logging configuration.
 
     .DESCRIPTION
         Adds an AWS::ImageBuilder::InfrastructureConfiguration.S3Logs resource property to the template.
-
+Amazon S3 logging configuration.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-infrastructureconfiguration-s3logs.html
 
     .PARAMETER S3BucketName
+        The Amazon S3 bucket in which to store the logs.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-infrastructureconfiguration-s3logs.html#cfn-imagebuilder-infrastructureconfiguration-s3logs-s3bucketname
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER S3KeyPrefix
+        The Amazon S3 path in which to store the logs.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-infrastructureconfiguration-s3logs.html#cfn-imagebuilder-infrastructureconfiguration-s3logs-s3keyprefix
         UpdateType: Mutable
         PrimitiveType: String

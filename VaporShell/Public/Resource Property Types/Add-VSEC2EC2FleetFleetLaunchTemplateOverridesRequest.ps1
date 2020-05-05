@@ -20,7 +20,7 @@ FleetLaunchTemplateOverridesRequest is a property of the  FleetLaunchTemplateCon
         UpdateType: Immutable
 
     .PARAMETER Placement
-        +   FleetLaunchTemplateOverridesRequest: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_FleetLaunchTemplateOverridesRequest.html in the *Amazon EC2 API Reference*
+        The location where the instance launched, if applicable.
 
         Type: Placement
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest-placement

@@ -27,7 +27,7 @@ function New-VSApiGatewayV2Integration {
         UpdateType: Mutable
 
     .PARAMETER ConnectionType
-        The type of the network connection to the integration endpoint. Currently the only valid value is INTERNET, for connections through the public routable internet.
+        The type of the network connection to the integration endpoint. Specify INTERNET for connections through the public routable internet or VPC_LINK for private connections between API Gateway and resources in a VPC. The default value is INTERNET.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integration.html#cfn-apigatewayv2-integration-connectiontype
         PrimitiveType: String
@@ -58,21 +58,23 @@ WHEN_NO_TEMPLATES allows pass-through when the integration has no content types 
         UpdateType: Mutable
 
     .PARAMETER ConnectionId
-        + CreateIntegration: https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/apis-apiid-integrations.html#CreateIntegration in the *Amazon API Gateway Version 2 API Reference*
+        The ID of the VPC link for a private integration. Supported only for HTTP APIs.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integration.html#cfn-apigatewayv2-integration-connectionid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER IntegrationUri
-        For a Lambda proxy integration, this is the URI of the Lambda function.
+        For a Lambda integration, specify the URI of a Lambda function.
+For an HTTP integration, specify a fully-qualified URL.
+For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see DiscoverInstances: https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html. For private integrations, all resources must be owned by the same AWS account.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integration.html#cfn-apigatewayv2-integration-integrationuri
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER PayloadFormatVersion
-        Specifies the format of the payload sent to an integration. Required for HTTP APIs. Currently, the only supported value is 1.0.
+        Specifies the format of the payload sent to an integration. Required for HTTP APIs.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integration.html#cfn-apigatewayv2-integration-payloadformatversion
         PrimitiveType: String
@@ -93,14 +95,14 @@ WHEN_NO_TEMPLATES allows pass-through when the integration has no content types 
         UpdateType: Mutable
 
     .PARAMETER TimeoutInMillis
-        Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds for WebSocket APIs. The default value is 5,000 milliseconds, or 5 seconds for HTTP APIs.
+        Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integration.html#cfn-apigatewayv2-integration-timeoutinmillis
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER TlsConfig
-        + CreateIntegration: https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/apis-apiid-integrations.html#CreateIntegration in the *Amazon API Gateway Version 2 API Reference*
+        The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.
 
         Type: TlsConfig
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integration.html#cfn-apigatewayv2-integration-tlsconfig
@@ -128,7 +130,7 @@ If this property is not defined, the response payload will be passed through fro
 AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.
 AWS_PROXY: for integrating the route or method request with the Lambda function-invoking action with the client request passed through as-is. This integration is also referred to as Lambda proxy integration.
 HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.
-HTTP_PROXY: for integrating route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration.
+HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an HTTP_PROXY integration.
 MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integration.html#cfn-apigatewayv2-integration-integrationtype

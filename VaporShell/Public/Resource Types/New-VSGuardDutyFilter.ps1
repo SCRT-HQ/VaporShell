@@ -48,7 +48,7 @@ function New-VSGuardDutyFilter {
         UpdateType: Mutable
 
     .PARAMETER Name
-        The name of the filter.
+        The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot ., underscore _, and dash -. Spaces are not allowed.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-name
         PrimitiveType: String

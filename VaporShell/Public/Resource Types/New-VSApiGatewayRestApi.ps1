@@ -26,7 +26,7 @@ On January 1, 2016, the Swagger Specification was donated to the OpenAPI initiat
         UpdateType: Mutable
 
     .PARAMETER BinaryMediaTypes
-        The list of binary media types that are supported by the RestApi resource, such as image/png or application/octet-stream. By default, RestApi supports only UTF-8-encoded text payloads. Duplicates are not allowed. Slashes must be escaped with ~1. For example, image/png would be image~1png in the BinaryMediaTypes list. For more information, see Enable Support for Binary Payloads in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-payload-encodings.html in the *API Gateway Developer Guide*.
+        The list of binary media types that are supported by the RestApi resource, such as image/png or application/octet-stream. By default, RestApi supports only UTF-8-encoded text payloads. Duplicates are not allowed. For more information, see Enable Support for Binary Payloads in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-payload-encodings.html in the *API Gateway Developer Guide*.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-binarymediatypes
         DuplicatesAllowed: False

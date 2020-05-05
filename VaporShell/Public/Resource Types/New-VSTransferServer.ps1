@@ -13,14 +13,17 @@ function New-VSTransferServer {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER LoggingRole
-        A value that allows the service to write your SFTP users' activity to your Amazon CloudWatch logs for monitoring and auditing purposes.
+        Allows the service to write your users' activity to your Amazon CloudWatch logs for monitoring and auditing purposes.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-loggingrole
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Protocols
-        CreateServer: https://docs.aws.amazon.com/transfer/latest/userguide/API_CreateServer.html in the *AWS Transfer for SFTP User Guide*.
+        Specifies the file transfer protocol or protocols over which your file transfer protocol client can connect to your server's endpoint. The available protocols are:
++ Secure Shell SSH File Transfer Protocol SFTP: File transfer over SSH
++ File Transfer Protocol Secure FTPS: File transfer with TLS encryption
++ File Transfer Protocol FTP: Unencrypted file transfer
 
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-protocols
@@ -28,7 +31,7 @@ function New-VSTransferServer {
         UpdateType: Mutable
 
     .PARAMETER IdentityProviderDetails
-        This parameter is required when the IdentityProviderType is set to API_GATEWAY. Accepts an array containing all of the information required to call a customer-supplied authentication API, including the API Gateway URL. This property is not required when the IdentityProviderType is set to SERVICE_MANAGED.
+        Required when IdentityProviderType is set to API_GATEWAY. Accepts an array containing all of the information required to call a customer-supplied authentication API, including the API Gateway URL. Not required when IdentityProviderType is set to SERVICE_MANAGED.
 
         Type: IdentityProviderDetails
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-identityproviderdetails
@@ -50,14 +53,14 @@ It is recommended that you use VPC as the EndpointType. With this endpoint type,
         UpdateType: Mutable
 
     .PARAMETER IdentityProviderType
-        Specifies the mode of authentication for the SFTP server. The default value is SERVICE_MANAGED, which allows you to store and access SFTP user credentials within the AWS Transfer for SFTP service. Use the API_GATEWAY value to integrate with an identity provider of your choosing. The API_GATEWAY setting requires you to provide an API Gateway endpoint URL to call for authentication using the IdentityProviderDetails parameter.
+        Specifies the mode of authentication for a file transfer protocol-enabled server. The default value is SERVICE_MANAGED, which allows you to store and access user credentials within the AWS Transfer Family service. Use the API_GATEWAY value to integrate with an identity provider of your choosing. The API_GATEWAY setting requires you to provide an API Gateway endpoint URL to call for authentication using the IdentityProviderDetails parameter.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-identityprovidertype
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Tags
-        Key-value pairs that can be used to group and search for servers.
+        Key-value pairs that can be used to group and search for file transfer protocol-enabled servers.
 
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-tags
@@ -65,7 +68,7 @@ It is recommended that you use VPC as the EndpointType. With this endpoint type,
         UpdateType: Mutable
 
     .PARAMETER Certificate
-        CreateServer: https://docs.aws.amazon.com/transfer/latest/userguide/API_CreateServer.html in the *AWS Transfer for SFTP User Guide*.
+        The Amazon Resource Name ARN of the AWS Certificate Manager ACM certificate. Required when Protocols is set to FTPS.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-certificate
         PrimitiveType: String

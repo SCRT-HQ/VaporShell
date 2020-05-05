@@ -1,21 +1,25 @@
 function Add-VSImageBuilderImagePipelineImageTestsConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::ImageBuilder::ImagePipeline.ImageTestsConfiguration resource property to the template. 
+        Adds an AWS::ImageBuilder::ImagePipeline.ImageTestsConfiguration resource property to the template. The image pipeline image tests configuration is the configuration of the image tests, which includes the test enablement status and timeout minutes.
 
     .DESCRIPTION
         Adds an AWS::ImageBuilder::ImagePipeline.ImageTestsConfiguration resource property to the template.
-
+The image pipeline image tests configuration is the configuration of the image tests, which includes the test enablement status and timeout minutes.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagepipeline-imagetestsconfiguration.html
 
     .PARAMETER ImageTestsEnabled
+        Defines if tests should be executed when building this image. For example, true or false.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagepipeline-imagetestsconfiguration.html#cfn-imagebuilder-imagepipeline-imagetestsconfiguration-imagetestsenabled
         UpdateType: Mutable
         PrimitiveType: Boolean
 
     .PARAMETER TimeoutMinutes
+        The maximum time in minutes that tests are permitted to run.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagepipeline-imagetestsconfiguration.html#cfn-imagebuilder-imagepipeline-imagetestsconfiguration-timeoutminutes
         UpdateType: Mutable
         PrimitiveType: Integer

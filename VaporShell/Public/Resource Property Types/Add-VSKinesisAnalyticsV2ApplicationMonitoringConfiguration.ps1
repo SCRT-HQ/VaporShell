@@ -18,7 +18,7 @@ Describes configuration parameters for Amazon CloudWatch logging for a Java-base
         UpdateType: Mutable
 
     .PARAMETER MetricsLevel
-        Describes the granularity of the CloudWatch Logs for an application.
+        Describes the granularity of the CloudWatch Logs for an application. The Parallelism level is not recommended for applications with a Parallelism over 64 due to excessive costs.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-monitoringconfiguration.html#cfn-kinesisanalyticsv2-application-monitoringconfiguration-metricslevel
         PrimitiveType: String

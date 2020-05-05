@@ -1,16 +1,18 @@
 function Add-VSApiGatewayV2IntegrationTlsConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::ApiGatewayV2::Integration.TlsConfig resource property to the template. 
+        Adds an AWS::ApiGatewayV2::Integration.TlsConfig resource property to the template. The TlsConfig property specifies the TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.
 
     .DESCRIPTION
         Adds an AWS::ApiGatewayV2::Integration.TlsConfig resource property to the template.
-
+The TlsConfig property specifies the TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-integration-tlsconfig.html
 
     .PARAMETER ServerNameToVerify
+        If you specify a server name, API Gateway uses it to verify the hostname on the integration's certificate. The server name is also included in the TLS handshake to support Server Name Indication SNI or virtual hosting.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-integration-tlsconfig.html#cfn-apigatewayv2-integration-tlsconfig-servernametoverify
         PrimitiveType: String
         UpdateType: Mutable

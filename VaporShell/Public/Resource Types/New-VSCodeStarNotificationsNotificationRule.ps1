@@ -1,10 +1,10 @@
 function New-VSCodeStarNotificationsNotificationRule {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeStarNotifications::NotificationRule resource to the template. Creates a notification rule for a resource. The rule specifies the events you want notifications about and the targets (such as SNS topics where you want to receive them.
+        Adds an AWS::CodeStarNotifications::NotificationRule resource to the template. Creates a notification rule for a resource. The rule specifies the events you want notifications about and the targets (such as Amazon SNS topics or AWS Chatbot clients configured for Slack where you want to receive them.
 
     .DESCRIPTION
-        Adds an AWS::CodeStarNotifications::NotificationRule resource to the template. Creates a notification rule for a resource. The rule specifies the events you want notifications about and the targets (such as SNS topics where you want to receive them.
+        Adds an AWS::CodeStarNotifications::NotificationRule resource to the template. Creates a notification rule for a resource. The rule specifies the events you want notifications about and the targets (such as Amazon SNS topics or AWS Chatbot clients configured for Slack where you want to receive them.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestarnotifications-notificationrule.html
@@ -42,7 +42,7 @@ function New-VSCodeStarNotificationsNotificationRule {
         UpdateType: Immutable
 
     .PARAMETER Targets
-        A list of Amazon Resource Names ARNs of SNS topics to associate with the notification rule.
+        A list of Amazon Resource Names ARNs of Amazon SNS topics and AWS Chatbot clients to associate with the notification rule.
 
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestarnotifications-notificationrule.html#cfn-codestarnotifications-notificationrule-targets

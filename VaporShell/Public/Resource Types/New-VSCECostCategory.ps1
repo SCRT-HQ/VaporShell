@@ -1,10 +1,10 @@
 function New-VSCECostCategory {
     <#
     .SYNOPSIS
-        Adds an AWS::CE::CostCategory resource to the template. 
+        Adds an AWS::CE::CostCategory resource to the template. The AWS::CE::CostCategory resource creates groupings of cost that you can use across products in the AWS Billing and Cost Management console, such as Cost Explorer and AWS Budgets. For more information, see Managing Your Costs with Cost Categories: https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-cost-categories.html in the *AWS Billing and Cost Management User Guide*.
 
     .DESCRIPTION
-        Adds an AWS::CE::CostCategory resource to the template. 
+        Adds an AWS::CE::CostCategory resource to the template. The AWS::CE::CostCategory resource creates groupings of cost that you can use across products in the AWS Billing and Cost Management console, such as Cost Explorer and AWS Budgets. For more information, see Managing Your Costs with Cost Categories: https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-cost-categories.html in the *AWS Billing and Cost Management User Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-costcategory.html
@@ -13,16 +13,23 @@ function New-VSCECostCategory {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Name
+        The unique name of the Cost Category.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-costcategory.html#cfn-ce-costcategory-name
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER RuleVersion
+        The rule schema version in this particular Cost Category.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-costcategory.html#cfn-ce-costcategory-ruleversion
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER Rules
+        The array of CostCategoryRule in JSON array format.
+Rules are processed in order. If there are multiple rules that match the line item, then the first rule to match is used to determine that Cost Category value.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-costcategory.html#cfn-ce-costcategory-rules
         UpdateType: Mutable
         PrimitiveType: String

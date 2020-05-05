@@ -1,16 +1,18 @@
 function Add-VSSyntheticsCanaryRunConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::Synthetics::Canary.RunConfig resource property to the template. 
+        Adds an AWS::Synthetics::Canary.RunConfig resource property to the template. A structure that contains input information for a canary run.
 
     .DESCRIPTION
         Adds an AWS::Synthetics::Canary.RunConfig resource property to the template.
-
+A structure that contains input information for a canary run.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-runconfig.html
 
     .PARAMETER TimeoutInSeconds
+        How long the canary is allowed to run before it must stop. If you omit this field, the frequency of the canary is used as this value, up to a maximum of 900 seconds.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-runconfig.html#cfn-synthetics-canary-runconfig-timeoutinseconds
         UpdateType: Mutable
         PrimitiveType: Integer

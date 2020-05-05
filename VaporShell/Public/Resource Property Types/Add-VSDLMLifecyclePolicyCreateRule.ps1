@@ -19,7 +19,7 @@ Specifies when to create snapshots of EBS volumes.
 
     .PARAMETER Times
         The time, in UTC, to start the operation. The supported format is hh:mm.
-The operation occurs within a one-hour window following the specified time.
+The operation occurs within a one-hour window following the specified time. If you do not specify a time, Amazon DLM selects a time within the next 24 hours.
 
         PrimitiveItemType: String
         Type: List
@@ -27,7 +27,7 @@ The operation occurs within a one-hour window following the specified time.
         UpdateType: Mutable
 
     .PARAMETER Interval
-        The interval between snapshots. The supported values are 2, 3, 4, 6, 8, 12, and 24.
+        The interval between snapshots. The supported values are 1, 2, 3, 4, 6, 8, 12, and 24.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-createrule.html#cfn-dlm-lifecyclepolicy-createrule-interval
         PrimitiveType: Integer

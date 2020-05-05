@@ -1,26 +1,32 @@
 function Add-VSIoTTopicRuleAssetPropertyValue {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::TopicRule.AssetPropertyValue resource property to the template. 
+        Adds an AWS::IoT::TopicRule.AssetPropertyValue resource property to the template. An asset property value entry containing the following information.
 
     .DESCRIPTION
         Adds an AWS::IoT::TopicRule.AssetPropertyValue resource property to the template.
-
+An asset property value entry containing the following information.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-assetpropertyvalue.html
 
     .PARAMETER Quality
+        Optional. A string that describes the quality of the value. Accepts substitution templates. Must be GOOD, BAD, or UNCERTAIN.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-assetpropertyvalue.html#cfn-iot-topicrule-assetpropertyvalue-quality
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Timestamp
+        The asset property value timestamp.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-assetpropertyvalue.html#cfn-iot-topicrule-assetpropertyvalue-timestamp
         Type: AssetPropertyTimestamp
         UpdateType: Mutable
 
     .PARAMETER Value
+        The value of the asset property.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-assetpropertyvalue.html#cfn-iot-topicrule-assetpropertyvalue-value
         Type: AssetPropertyVariant
         UpdateType: Mutable

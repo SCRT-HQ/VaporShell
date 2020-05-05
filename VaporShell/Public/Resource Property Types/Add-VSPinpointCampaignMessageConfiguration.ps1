@@ -11,14 +11,14 @@ Specifies the message configuration settings for a campaign.
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-messageconfiguration.html
 
     .PARAMETER APNSMessage
-        The message that the campaign sends through the APNs Apple Push Notification service channel. This message overrides the default message.
+        The message that the campaign sends through the APNs Apple Push Notification service channel. If specified, this message overrides the default message.
 
         Type: Message
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-messageconfiguration.html#cfn-pinpoint-campaign-messageconfiguration-apnsmessage
         UpdateType: Mutable
 
     .PARAMETER BaiduMessage
-        The message that the campaign sends through the Baidu Baidu Cloud Push channel. This message overrides the default message.
+        The message that the campaign sends through the Baidu Baidu Cloud Push channel. If specified, this message overrides the default message.
 
         Type: Message
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-messageconfiguration.html#cfn-pinpoint-campaign-messageconfiguration-baidumessage
@@ -32,28 +32,28 @@ Specifies the message configuration settings for a campaign.
         UpdateType: Mutable
 
     .PARAMETER EmailMessage
-        The message that the campaign sends through the email channel.
+        The message that the campaign sends through the email channel. If specified, this message overrides the default message.
 
         Type: CampaignEmailMessage
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-messageconfiguration.html#cfn-pinpoint-campaign-messageconfiguration-emailmessage
         UpdateType: Mutable
 
     .PARAMETER GCMMessage
-        The message that the campaign sends through the GCM channel, which enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging FCM, formerly Google Cloud Messaging GCM, service. This message overrides the default message.
+        The message that the campaign sends through the GCM channel, which enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging FCM, formerly Google Cloud Messaging GCM, service. If specified, this message overrides the default message.
 
         Type: Message
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-messageconfiguration.html#cfn-pinpoint-campaign-messageconfiguration-gcmmessage
         UpdateType: Mutable
 
     .PARAMETER SMSMessage
-        The message that the campaign sends through the SMS channel.
+        The message that the campaign sends through the SMS channel. If specified, this message overrides the default message.
 
         Type: CampaignSmsMessage
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-messageconfiguration.html#cfn-pinpoint-campaign-messageconfiguration-smsmessage
         UpdateType: Mutable
 
     .PARAMETER ADMMessage
-        The message that the campaign sends through the ADM Amazon Device Messaging channel. This message overrides the default message.
+        The message that the campaign sends through the ADM Amazon Device Messaging channel. If specified, this message overrides the default message.
 
         Type: Message
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-messageconfiguration.html#cfn-pinpoint-campaign-messageconfiguration-admmessage

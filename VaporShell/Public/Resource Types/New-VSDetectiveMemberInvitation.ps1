@@ -1,10 +1,10 @@
 function New-VSDetectiveMemberInvitation {
     <#
     .SYNOPSIS
-        Adds an AWS::Detective::MemberInvitation resource to the template. 
+        Adds an AWS::Detective::MemberInvitation resource to the template. The AWS::Detective::MemberInvitation resource is an Amazon Detective resource type that sends an invitation to join a Detective behavior graph. The invitation is sent from the master account to the root user email address of an AWS account.
 
     .DESCRIPTION
-        Adds an AWS::Detective::MemberInvitation resource to the template. 
+        Adds an AWS::Detective::MemberInvitation resource to the template. The AWS::Detective::MemberInvitation resource is an Amazon Detective resource type that sends an invitation to join a Detective behavior graph. The invitation is sent from the master account to the root user email address of an AWS account.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-detective-memberinvitation.html
@@ -13,21 +13,29 @@ function New-VSDetectiveMemberInvitation {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER GraphArn
+        The ARN of the behavior graph to invite the account to contribute data to.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-detective-memberinvitation.html#cfn-detective-memberinvitation-grapharn
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER MemberId
+        The AWS account identifier of the invited account
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-detective-memberinvitation.html#cfn-detective-memberinvitation-memberid
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER MemberEmailAddress
+        The root user email address of the invited account. If the email address provided is not the root user email address for the provided account, the invitation creation fails.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-detective-memberinvitation.html#cfn-detective-memberinvitation-memberemailaddress
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER Message
+        Customized text to include in the invitation email message.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-detective-memberinvitation.html#cfn-detective-memberinvitation-message
         UpdateType: Mutable
         PrimitiveType: String

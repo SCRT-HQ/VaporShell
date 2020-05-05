@@ -56,7 +56,7 @@ For information about split-tunnel VPN endpoints, see Split-Tunnel AWS Client VP
         UpdateType: Immutable
 
     .PARAMETER VpcId
-        + Client VPN Endpoints: https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-working-endpoints.html in the *AWS Client VPN Administrator Guide*
+        The ID of the VPC to associate with the Client VPN endpoint. If no security group IDs are specified in the request, the default security group for the VPC is applied.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-vpcid
         PrimitiveType: String
@@ -94,7 +94,7 @@ Default value: udp
         UpdateType: Immutable
 
     .PARAMETER SecurityGroupIds
-        + Client VPN Endpoints: https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-working-endpoints.html in the *AWS Client VPN Administrator Guide*
+        The IDs of one or more security groups to apply to the target network. You must also specify the ID of the VPC that contains the security groups.
 
         PrimitiveItemType: String
         Type: List

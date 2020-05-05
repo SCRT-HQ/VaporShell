@@ -1,10 +1,10 @@
 function New-VSElasticLoadBalancingV2ListenerCertificate {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticLoadBalancingV2::ListenerCertificate resource to the template. Specifies a certificate list for an HTTPS listener.
+        Adds an AWS::ElasticLoadBalancingV2::ListenerCertificate resource to the template. Specifies an SSL server certificate to add to the certificate list for an HTTPS or TLS listener.
 
     .DESCRIPTION
-        Adds an AWS::ElasticLoadBalancingV2::ListenerCertificate resource to the template. Specifies a certificate list for an HTTPS listener.
+        Adds an AWS::ElasticLoadBalancingV2::ListenerCertificate resource to the template. Specifies an SSL server certificate to add to the certificate list for an HTTPS or TLS listener.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenercertificate.html
@@ -13,7 +13,7 @@ function New-VSElasticLoadBalancingV2ListenerCertificate {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Certificates
-        The certificates to add. Duplicates are not allowed.
+        The certificate. You can specify one certificate per resource.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenercertificate.html#cfn-elasticloadbalancingv2-listenercertificate-certificates
         DuplicatesAllowed: False

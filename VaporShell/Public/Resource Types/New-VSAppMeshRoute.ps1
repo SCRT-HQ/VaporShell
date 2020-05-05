@@ -6,9 +6,9 @@ function New-VSAppMeshRoute {
     .DESCRIPTION
         Adds an AWS::AppMesh::Route resource to the template. Creates a route that is associated with a virtual router.
 
-You can use the prefix parameter in your route specification for path-based routing of requests. For example, if your virtual service name is my-service.local and you want the route to match requests to my-service.local/metrics, your prefix should be /metrics.
+You can route several different protocols and define a retry policy for a route. Traffic can be routed to one or more virtual nodes.
 
-If your route matches a request, you can distribute traffic to one or more target virtual nodes with relative weighting.
+For more information about routes, see Routes: https://docs.aws.amazon.com/app-mesh/latest/userguide/routes.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-route.html
@@ -24,14 +24,14 @@ If your route matches a request, you can distribute traffic to one or more targe
         UpdateType: Immutable
 
     .PARAMETER VirtualRouterName
-        The name of the virtual router in which to create the route.
+        The name of the virtual router in which to create the route. If the virtual router is in a shared mesh, then you must be the owner of the virtual router resource.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-route.html#cfn-appmesh-route-virtualroutername
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER MeshOwner
-        +  CreateRoute: https://docs.aws.amazon.com/app-mesh/latest/APIReference/API_CreateRoute.html in the * AWS App Mesh API Reference *.
+        The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then the account that you specify must share the mesh with your account before you can create the resource in the service mesh. For more information about mesh sharing, see Working with Shared Meshes: https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-route.html#cfn-appmesh-route-meshowner
         PrimitiveType: String

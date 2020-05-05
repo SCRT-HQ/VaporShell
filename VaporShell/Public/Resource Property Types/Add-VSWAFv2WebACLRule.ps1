@@ -37,13 +37,21 @@ A single rule, which you can use in a WebACL or RuleGroup to identify web reques
 
     .PARAMETER Action
         The action that AWS WAF should take on a web request when it matches the rule's statement. Settings at the web ACL level can override the rule action setting.
+This is used only for rules whose statements don't reference a rule group. Rule statements that reference a rule group are RuleGroupReferenceStatement and ManagedRuleGroupReferenceStatement.
+You must set either this Action setting or the rule's OverrideAction, but not both:
++ If the rule statement doesn't reference a rule group, you must set this rule action setting and you must not set the rule's override action setting.
++ If the rule statement references a rule group, you must not set this action setting, because the actions are already set on the rules inside the rule group. You must set the rule's override action setting to indicate specifically whether to override the actions that are set on the rules in the rule group.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-action
         UpdateType: Mutable
         Type: RuleAction
 
     .PARAMETER OverrideAction
-        The action to use to override the rule's Action setting. You can use no override action, in which case the rule action is in effect, or count action, in which case, if the rule matches a web request, it only counts the match.
+        The override action to apply to the rules in a rule group, instead of the individual rule action settings. This is used only for rules whose statements reference a rule group. Rule statements that reference a rule group are RuleGroupReferenceStatement and ManagedRuleGroupReferenceStatement.
+Set the override action to none to leave the rule group rule actions in effect. Set it to count to only count matches, regardless of the rule action settings.
+You must set either this OverrideAction setting or the Action setting, but not both:
++ If the rule statement references a rule group, you must set this override action setting and you must not set the rule's action setting.
++ If the rule statement doesn't reference a rule group, you must set the rule action setting and you must not set the rule's override action setting.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-overrideaction
         UpdateType: Mutable

@@ -1,21 +1,25 @@
 function Add-VSAppMeshVirtualNodeListenerTlsFileCertificate {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::VirtualNode.ListenerTlsFileCertificate resource property to the template. 
+        Adds an AWS::AppMesh::VirtualNode.ListenerTlsFileCertificate resource property to the template. An object that represents a local file certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see Transport Layer Security (TLS: https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites.
 
     .DESCRIPTION
         Adds an AWS::AppMesh::VirtualNode.ListenerTlsFileCertificate resource property to the template.
-
+An object that represents a local file certificate. The certificate must meet specific requirements and you must have proxy authorization enabled. For more information, see Transport Layer Security (TLS: https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html#virtual-node-tls-prerequisites.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertlsfilecertificate.html
 
     .PARAMETER PrivateKey
+        The private key for a certificate stored on the file system of the virtual node that the proxy is running on.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertlsfilecertificate.html#cfn-appmesh-virtualnode-listenertlsfilecertificate-privatekey
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER CertificateChain
+        The certificate chain for the certificate.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertlsfilecertificate.html#cfn-appmesh-virtualnode-listenertlsfilecertificate-certificatechain
         PrimitiveType: String
         UpdateType: Mutable

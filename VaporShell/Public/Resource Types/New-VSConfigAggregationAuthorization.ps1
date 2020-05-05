@@ -27,6 +27,8 @@ function New-VSConfigAggregationAuthorization {
         UpdateType: Immutable
 
     .PARAMETER Tags
+        An array of tag object.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-aggregationauthorization.html#cfn-config-aggregationauthorization-tags
         ItemType: Tag

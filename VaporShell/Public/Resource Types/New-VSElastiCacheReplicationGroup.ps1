@@ -60,10 +60,12 @@ Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover o
     .PARAMETER CacheNodeType
         The compute and memory capacity of the nodes in the node group shard.
 The following node types are supported by ElastiCache. Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts.
+Changing the CacheNodeType of a Memcached instance is currently not supported. If you need to scale using Memcached, we recommend forcing a replacement update by changing the LogicalResourceId of the resource.
 + General purpose:
 + Current generation:
 **M5 node types:** cache.m5.large, cache.m5.xlarge, cache.m5.2xlarge, cache.m5.4xlarge, cache.m5.12xlarge, cache.m5.24xlarge
 **M4 node types:** cache.m4.large, cache.m4.xlarge, cache.m4.2xlarge, cache.m4.4xlarge, cache.m4.10xlarge
+**T3 node types:** cache.t3.micro, cache.t3.small, cache.t3.medium
 **T2 node types:** cache.t2.micro, cache.t2.small, cache.t2.medium
 + Previous generation: not recommended
 **T1 node types:** cache.t1.micro

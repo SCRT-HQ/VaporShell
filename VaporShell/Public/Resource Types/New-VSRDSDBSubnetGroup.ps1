@@ -6,6 +6,8 @@ function New-VSRDSDBSubnetGroup {
     .DESCRIPTION
         Adds an AWS::RDS::DBSubnetGroup resource to the template. The AWS::RDS::DBSubnetGroup resource creates a database subnet group. Subnet groups must contain at least two subnets in two different Availability Zones in the same region.
 
+For more information, see  Working with DB Subnet Groups: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Subnets in the *Amazon RDS User Guide*.
+
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbsubnet-group.html
 
@@ -13,15 +15,15 @@ function New-VSRDSDBSubnetGroup {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER DBSubnetGroupDescription
-        The description for the DB subnet group.
+        The description for the DB Subnet Group.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbsubnet-group.html#cfn-rds-dbsubnetgroup-dbsubnetgroupdescription
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER DBSubnetGroupName
-        The name for the DB subnet group. This value is stored as a lowercase string.
-Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens. Must not be default.
+        The name for the DB Subnet Group. This value is stored as a lowercase string.
+Constraints: Must contain no more than 255 alphanumeric characters or hyphens. Must not be "Default".
 Example: mySubnetgroup
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbsubnet-group.html#cfn-rds-dbsubnetgroup-dbsubnetgroupname
@@ -29,7 +31,7 @@ Example: mySubnetgroup
         UpdateType: Immutable
 
     .PARAMETER SubnetIds
-        The EC2 Subnet IDs for the DB subnet group.
+        The EC2 Subnet IDs for the DB Subnet Group.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbsubnet-group.html#cfn-rds-dbsubnetgroup-subnetids
         DuplicatesAllowed: False

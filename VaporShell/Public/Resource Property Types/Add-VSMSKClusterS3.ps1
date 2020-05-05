@@ -1,26 +1,32 @@
 function Add-VSMSKClusterS3 {
     <#
     .SYNOPSIS
-        Adds an AWS::MSK::Cluster.S3 resource property to the template. 
+        Adds an AWS::MSK::Cluster.S3 resource property to the template. The details of the Amazon S3 destination for broker logs.
 
     .DESCRIPTION
         Adds an AWS::MSK::Cluster.S3 resource property to the template.
-
+The details of the Amazon S3 destination for broker logs.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-s3.html
 
     .PARAMETER Bucket
+        The name of the S3 bucket that is the destination for broker logs.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-s3.html#cfn-msk-cluster-s3-bucket
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Enabled
+        Specifies whether broker logs get sent to the specified Amazon S3 destination.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-s3.html#cfn-msk-cluster-s3-enabled
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER Prefix
+        The S3 prefix that is the destination for broker logs.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-s3.html#cfn-msk-cluster-s3-prefix
         PrimitiveType: String
         UpdateType: Mutable
