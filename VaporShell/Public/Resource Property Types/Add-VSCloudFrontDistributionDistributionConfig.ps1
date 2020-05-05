@@ -83,7 +83,7 @@ For more information about custom error pages, see Customizing Error Responses: 
         UpdateType: Mutable
 
     .PARAMETER OriginGroups
-        +  DistributionConfig: https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DistributionConfig.html in the *Amazon CloudFront API Reference*
+        A complex type that contains information about origin groups for this distribution.
 
         Type: OriginGroups
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-origingroups

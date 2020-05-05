@@ -62,7 +62,7 @@ function New-VSApiGatewayV2Stage {
         UpdateType: Immutable
 
     .PARAMETER StageVariables
-        A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore characters, and the values must match A-Za-z0-9-._~:/?#&=,]+. Supported only for WebSocket APIs.
+        A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore characters, and the values must match A-Za-z0-9-._~:/?#&=,]+.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-stagevariables
         PrimitiveType: Json

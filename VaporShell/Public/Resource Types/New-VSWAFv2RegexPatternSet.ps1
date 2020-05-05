@@ -42,6 +42,7 @@ You use a regex pattern set by providing its Amazon Resource Name (ARN to the ru
 
     .PARAMETER Scope
         Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer ALB or an API Gateway stage. Valid Values are CLOUDFRONT and REGIONAL.
+For CLOUDFRONT, you must create your WAFv2 resources in the US East N. Virginia Region, us-east-1.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-regexpatternset.html#cfn-wafv2-regexpatternset-scope
         UpdateType: Mutable

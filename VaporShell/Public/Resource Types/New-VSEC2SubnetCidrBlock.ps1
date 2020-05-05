@@ -1,10 +1,10 @@
 function New-VSEC2SubnetCidrBlock {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::SubnetCidrBlock resource to the template. Associates a single IPv6 CIDR block with a VPC subnet.
+        Adds an AWS::EC2::SubnetCidrBlock resource to the template. Associates a CIDR block with your subnet. You can only associate a single IPv6 CIDR block with your subnet. An IPv6 CIDR block must have a prefix length of /64.
 
     .DESCRIPTION
-        Adds an AWS::EC2::SubnetCidrBlock resource to the template. Associates a single IPv6 CIDR block with a VPC subnet.
+        Adds an AWS::EC2::SubnetCidrBlock resource to the template. Associates a CIDR block with your subnet. You can only associate a single IPv6 CIDR block with your subnet. An IPv6 CIDR block must have a prefix length of /64.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnetcidrblock.html

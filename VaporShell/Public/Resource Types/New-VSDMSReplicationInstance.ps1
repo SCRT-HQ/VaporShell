@@ -17,7 +17,7 @@ function New-VSDMSReplicationInstance {
 Constraints:
 + Must contain from 1 to 63 alphanumeric characters or hyphens.
 + First character must be a letter.
-+ Cannot end with a hyphen or contain two consecutive hyphens.
++ Can't end with a hyphen or contain two consecutive hyphens.
 Example: myrepinstance
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-replicationinstanceidentifier
@@ -60,7 +60,7 @@ Constraints: Minimum 30-minute window.
         UpdateType: Mutable
 
     .PARAMETER AutoMinorVersionUpgrade
-        Indicates whether minor engine upgrades will be applied automatically to the replication instance during the maintenance window. This parameter defaults to true.
+        A value that indicates whether minor engine upgrades are applied automatically to the replication instance during the maintenance window. This parameter defaults to true.
 Default: true
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-autominorversionupgrade
@@ -113,7 +113,7 @@ Valid Values: dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large | dms.c
         UpdateType: Immutable
 
     .PARAMETER MultiAZ
-        Specifies whether the replication instance is a Multi-AZ deployment. You cannot set the AvailabilityZone parameter if the Multi-AZ parameter is set to true.
+        Specifies whether the replication instance is a Multi-AZ deployment. You can't set the AvailabilityZone parameter if the Multi-AZ parameter is set to true.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-multiaz
         PrimitiveType: Boolean

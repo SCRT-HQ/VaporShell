@@ -1,16 +1,18 @@
 function Add-VSGroundStationDataflowEndpointGroupEndpointDetails {
     <#
     .SYNOPSIS
-        Adds an AWS::GroundStation::DataflowEndpointGroup.EndpointDetails resource property to the template. 
+        Adds an AWS::GroundStation::DataflowEndpointGroup.EndpointDetails resource property to the template. The security details and endpoint information.
 
     .DESCRIPTION
         Adds an AWS::GroundStation::DataflowEndpointGroup.EndpointDetails resource property to the template.
-
+The security details and endpoint information.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-endpointdetails.html
 
     .PARAMETER SecurityDetails
+        The role ARN, and IDs for security groups and subnets.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-endpointdetails.html#cfn-groundstation-dataflowendpointgroup-endpointdetails-securitydetails
         UpdateType: Mutable
         Type: SecurityDetails

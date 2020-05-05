@@ -1,10 +1,10 @@
 function New-VSDetectiveGraph {
     <#
     .SYNOPSIS
-        Adds an AWS::Detective::Graph resource to the template. 
+        Adds an AWS::Detective::Graph resource to the template. The AWS::Detective::Graph resource is an Amazon Detective resource type that creates a Detective behavior graph. The requesting account becomes the master account for the behavior graph.
 
     .DESCRIPTION
-        Adds an AWS::Detective::Graph resource to the template. 
+        Adds an AWS::Detective::Graph resource to the template. The AWS::Detective::Graph resource is an Amazon Detective resource type that creates a Detective behavior graph. The requesting account becomes the master account for the behavior graph.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-detective-graph.html

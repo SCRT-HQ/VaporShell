@@ -25,7 +25,7 @@ Represents a collection of route settings.
         UpdateType: Mutable
 
     .PARAMETER ThrottlingBurstLimit
-        Specifies the throttling burst limit. Supported only for WebSocket APIs.
+        Specifies the throttling burst limit.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-stage-routesettings.html#cfn-apigatewayv2-stage-routesettings-throttlingburstlimit
         PrimitiveType: Integer
@@ -39,7 +39,7 @@ Represents a collection of route settings.
         UpdateType: Mutable
 
     .PARAMETER ThrottlingRateLimit
-        Specifies the throttling rate limit. Supported only for WebSocket APIs.
+        Specifies the throttling rate limit.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-stage-routesettings.html#cfn-apigatewayv2-stage-routesettings-throttlingratelimit
         PrimitiveType: Double

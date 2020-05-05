@@ -1,10 +1,10 @@
 function New-VSNetworkManagerLinkAssociation {
     <#
     .SYNOPSIS
-        Adds an AWS::NetworkManager::LinkAssociation resource to the template. 
+        Adds an AWS::NetworkManager::LinkAssociation resource to the template. Specifies the association between a device and a link. A device can be associated to multiple links and a link can be associated to multiple devices. The device and link must be in the same global network and the same site.
 
     .DESCRIPTION
-        Adds an AWS::NetworkManager::LinkAssociation resource to the template. 
+        Adds an AWS::NetworkManager::LinkAssociation resource to the template. Specifies the association between a device and a link. A device can be associated to multiple links and a link can be associated to multiple devices. The device and link must be in the same global network and the same site.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-linkassociation.html
@@ -13,16 +13,22 @@ function New-VSNetworkManagerLinkAssociation {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER GlobalNetworkId
+        The ID of the global network.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-linkassociation.html#cfn-networkmanager-linkassociation-globalnetworkid
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER DeviceId
+        The device ID for the link association.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-linkassociation.html#cfn-networkmanager-linkassociation-deviceid
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER LinkId
+        The ID of the link.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-linkassociation.html#cfn-networkmanager-linkassociation-linkid
         UpdateType: Immutable
         PrimitiveType: String

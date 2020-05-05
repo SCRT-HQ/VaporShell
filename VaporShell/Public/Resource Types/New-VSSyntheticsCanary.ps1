@@ -1,10 +1,14 @@
 function New-VSSyntheticsCanary {
     <#
     .SYNOPSIS
-        Adds an AWS::Synthetics::Canary resource to the template. 
+        Adds an AWS::Synthetics::Canary resource to the template. Creates or updates a canary. Canaries are scripts that monitor your endpoints and APIs from the outside-in. Canaries help you check the availability and latency of your web services and troubleshoot anomalies by investigating load time data, screenshots of the UI, logs, and metrics. You can set up a canary to run continuously or just once.
 
     .DESCRIPTION
-        Adds an AWS::Synthetics::Canary resource to the template. 
+        Adds an AWS::Synthetics::Canary resource to the template. Creates or updates a canary. Canaries are scripts that monitor your endpoints and APIs from the outside-in. Canaries help you check the availability and latency of your web services and troubleshoot anomalies by investigating load time data, screenshots of the UI, logs, and metrics. You can set up a canary to run continuously or just once.
+
+To create canaries, you must have the CloudWatchSyntheticsFullAccess policy. If you are creating a new IAM role for the canary, you also need the the iam:CreateRole, iam:CreatePolicy and iam:AttachRolePolicy permissions. For more information, see Necessary Roles and Permissions: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Roles.
+
+Do not include secrets or proprietary information in your canary names. The canary name makes up part of the Amazon Resource Name (ARN for the canary, and the ARN is included in outbound calls over the internet. For more information, see Security Considerations for Synthetics Canaries: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/servicelens_canaries_security.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html
@@ -13,46 +17,73 @@ function New-VSSyntheticsCanary {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Name
+        The name of the canary. For example, MyCanary.
+State  <a name="State-fn::getatt"></a>
+The state of the canary. For example, RUNNING.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-name
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER Code
+        Use this structure to input your script code for the canary. This structure contains the Lambda handler with the location where the canary should start running the script. If the script is stored in an S3 bucket, the bucket name, key, and version are also included. If the script is passed into the canary directly, the script code is contained in the value of Script.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-code
         UpdateType: Mutable
         Type: Code
 
     .PARAMETER ArtifactS3Location
+        The location in Amazon S3 where Synthetics stores artifacts from the runs of this canary. Artifacts include the log file, screenshots, and HAR files. Specify the full location path, including s3:// at the beginning of the path.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-artifacts3location
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER Schedule
+        A structure that contains information about how often the canary is to run, and when these runs are to stop.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-schedule
         UpdateType: Mutable
         Type: Schedule
 
     .PARAMETER ExecutionRoleArn
+        The ARN of the IAM role to be used to run the canary. This role must already exist, and must include lambda.amazonaws.com as a principal in the trust policy. The role must also have the following permissions:
++  s3:PutObject
++  s3:GetBucketLocation
++  s3:ListAllMyBuckets
++  cloudwatch:PutMetricData
++  logs:CreateLogGroup
++  logs:CreateLogStream
++  logs:CreateLogStream
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-executionrolearn
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER RuntimeVersion
+        Specifies the runtime version to use for the canary. Currently, the only valid value is syn-1.0. For more information about runtime versions, see  Canary Runtime Versions: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-runtimeversion
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER SuccessRetentionPeriod
+        The number of days to retain data about successful runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-successretentionperiod
         UpdateType: Mutable
         PrimitiveType: Integer
 
     .PARAMETER FailureRetentionPeriod
+        The number of days to retain data about failed runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-failureretentionperiod
         UpdateType: Mutable
         PrimitiveType: Integer
 
     .PARAMETER Tags
+        The list of key-value pairs that are associated with the canary.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-tags
         UpdateType: Mutable
         Type: List
@@ -60,16 +91,22 @@ function New-VSSyntheticsCanary {
         DuplicatesAllowed: True
 
     .PARAMETER VPCConfig
+        If this canary is to test an endpoint in a VPC, this structure contains information about the subnet and security groups of the VPC endpoint. For more information, see  Running a Canary in a VPC: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-vpcconfig
         UpdateType: Mutable
         Type: VPCConfig
 
     .PARAMETER RunConfig
+        A structure that contains input information for a canary run.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-runconfig
         UpdateType: Mutable
         Type: RunConfig
 
     .PARAMETER StartCanaryAfterCreation
+        Specify TRUE to have the canary start making runs immediately when it is created.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-startcanaryaftercreation
         UpdateType: Mutable
         PrimitiveType: Boolean

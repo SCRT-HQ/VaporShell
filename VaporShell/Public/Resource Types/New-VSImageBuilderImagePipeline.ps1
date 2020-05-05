@@ -1,10 +1,10 @@
 function New-VSImageBuilderImagePipeline {
     <#
     .SYNOPSIS
-        Adds an AWS::ImageBuilder::ImagePipeline resource to the template. 
+        Adds an AWS::ImageBuilder::ImagePipeline resource to the template. An image pipeline is the automation configuration for building secure OS images on AWS. The Image Builder image pipeline is associated with an image recipe that defines the build, validation, and test phases for an image build lifecycle. An image pipeline can be associated with an infrastructure configuration that defines where your image is built. You can define attributes, such as instance type, subnets, security groups, logging, and other infrastructure-related configurations. You can also associate your image pipeline with a distribution configuration to define how you would like to deploy your image.
 
     .DESCRIPTION
-        Adds an AWS::ImageBuilder::ImagePipeline resource to the template. 
+        Adds an AWS::ImageBuilder::ImagePipeline resource to the template. An image pipeline is the automation configuration for building secure OS images on AWS. The Image Builder image pipeline is associated with an image recipe that defines the build, validation, and test phases for an image build lifecycle. An image pipeline can be associated with an infrastructure configuration that defines where your image is built. You can define attributes, such as instance type, subnets, security groups, logging, and other infrastructure-related configurations. You can also associate your image pipeline with a distribution configuration to define how you would like to deploy your image.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagepipeline.html
@@ -13,46 +13,64 @@ function New-VSImageBuilderImagePipeline {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Name
+        The name of the image pipeline.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagepipeline.html#cfn-imagebuilder-imagepipeline-name
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER Description
+        The description of this image pipeline.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagepipeline.html#cfn-imagebuilder-imagepipeline-description
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER ImageTestsConfiguration
+        The configuration of the image tests used when creating this image.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagepipeline.html#cfn-imagebuilder-imagepipeline-imagetestsconfiguration
         UpdateType: Mutable
         Type: ImageTestsConfiguration
 
     .PARAMETER Status
+        The status of the image pipeline.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagepipeline.html#cfn-imagebuilder-imagepipeline-status
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER Schedule
+        The schedule of the image pipeline. A schedule configures how often and when a pipeline will automatically create a new image.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagepipeline.html#cfn-imagebuilder-imagepipeline-schedule
         UpdateType: Mutable
         Type: Schedule
 
     .PARAMETER ImageRecipeArn
+        The Amazon Resource Name ARN of the image recipe associated with this image pipeline.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagepipeline.html#cfn-imagebuilder-imagepipeline-imagerecipearn
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER DistributionConfigurationArn
+        The Amazon Resource Name ARN of the distribution configuration associated with this image pipeline.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagepipeline.html#cfn-imagebuilder-imagepipeline-distributionconfigurationarn
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER InfrastructureConfigurationArn
+        The Amazon Resource Name ARN of the infrastructure configuration associated with this image pipeline.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagepipeline.html#cfn-imagebuilder-imagepipeline-infrastructureconfigurationarn
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER Tags
+        The tags of this image pipeline.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagepipeline.html#cfn-imagebuilder-imagepipeline-tags
         UpdateType: Mutable
         Type: Map

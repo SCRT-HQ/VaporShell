@@ -56,7 +56,7 @@ else {
     $helperContent = Invoke-RestMethod -Uri $helperUri
     $helperContent | Set-Content $localGistPath -Force
 }
-.([scriptblock]::Create($helperContent))($ModuleName)
+. $localGistPath $ModuleName
 Set-BuildVariables
 #endregion
 

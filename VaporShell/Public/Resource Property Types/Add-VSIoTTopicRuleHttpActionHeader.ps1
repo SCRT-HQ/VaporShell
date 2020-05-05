@@ -1,21 +1,25 @@
 function Add-VSIoTTopicRuleHttpActionHeader {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::TopicRule.HttpActionHeader resource property to the template. 
+        Adds an AWS::IoT::TopicRule.HttpActionHeader resource property to the template. The HTTP action header.
 
     .DESCRIPTION
         Adds an AWS::IoT::TopicRule.HttpActionHeader resource property to the template.
-
+The HTTP action header.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-httpactionheader.html
 
     .PARAMETER Key
+        The HTTP header key.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-httpactionheader.html#cfn-iot-topicrule-httpactionheader-key
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Value
+        The HTTP header value. Substitution templates are supported.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-httpactionheader.html#cfn-iot-topicrule-httpactionheader-value
         PrimitiveType: String
         UpdateType: Mutable

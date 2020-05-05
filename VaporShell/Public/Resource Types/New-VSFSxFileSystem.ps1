@@ -13,21 +13,30 @@ function New-VSFSxFileSystem {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER StorageType
+        Sets the storage type for the Amazon FSx for Windows file system you're creating. Valid values are SSD and HDD.
++ Set to SSD to use solid state drive storage. SSD is supported on all Windows deployment types.
++ Set to HDD to use hard disk drive storage. HDD is supported on SINGLE_AZ_2 and MULTI_AZ_1 Windows file system deployment types.
+Default value is SSD. For more information, see  Storage Type Options: https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options in the *Amazon FSx for Windows User Guide*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-storagetype
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER KmsKeyId
-        The ID of the AWS Key Management Service AWS KMS key used to encrypt the file system's data for an Amazon FSx for Windows File Server file system. Amazon FSx for Lustre does not support KMS encryption.
+        The ID of the AWS Key Management Service AWS KMS key used to encrypt the file system's data for Amazon FSx for Windows File Server file systems and persistent Amazon FSx for Lustre file systems at rest. In either case, if not specified, the Amazon FSx managed key is used. The scratch Amazon FSx for Lustre file systems are always encrypted at rest using Amazon FSx managed keys. For more information, see Encrypt: https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html in the *AWS Key Management Service API Reference*.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-kmskeyid
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER StorageCapacity
-        The storage capacity of the file system being created.
-For Windows file systems, valid values are 32 GiB - 65,536 GiB.
-For Lustre file systems, valid values are 1,200, 2,400, 3,600, then continuing in increments of 3600 GiB.
+        Sets the storage capacity of the file system that you're creating.
+For Lustre file systems:
++ For SCRATCH_2 and PERSISTENT_1 deployment types, valid values are 1.2, 2.4, and increments of 2.4 TiB.
++ For SCRATCH_1 deployment type, valid values are 1.2, 2.4, and increments of 3.6 TiB.
+For Windows file systems:
++ If StorageType=SSD, valid values are 32 GiB - 65,536 GiB 64 TiB.
++ If StorageType=HDD, valid values are 2000 GiB - 65,536 GiB 64 TiB.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-storagecapacity
         PrimitiveType: Integer
@@ -41,7 +50,7 @@ For Lustre file systems, valid values are 1,200, 2,400, 3,600, then continuing i
         UpdateType: Immutable
 
     .PARAMETER LustreConfiguration
-        The Lustre configuration for the file system being created. This value is required if FileSystemType is set to LUSTRE.
+        The Lustre configuration for the file system being created.
 
         Type: LustreConfiguration
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-lustreconfiguration
@@ -56,7 +65,7 @@ For Lustre file systems, valid values are 1,200, 2,400, 3,600, then continuing i
 
     .PARAMETER SubnetIds
         Specifies the IDs of the subnets that the file system will be accessible from. For Windows MULTI_AZ_1 file system deployment types, provide exactly two subnet IDs, one for the preferred file server and one for the standby file server. You specify one of these subnets as the preferred subnet using the WindowsConfiguration > PreferredSubnetID property.
-For Windows SINGLE_AZ_1 file system deployment types and Lustre file systems, provide exactly one subnet ID. The file server is launched in that subnet's Availability Zone.
+For Windows SINGLE_AZ_1 and SINGLE_AZ_2 file system deployment types and Lustre file systems, provide exactly one subnet ID. The file server is launched in that subnet's Availability Zone.
 
         PrimitiveItemType: String
         Type: List

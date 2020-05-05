@@ -15,6 +15,8 @@ For the following examples, suppose that you have an alarm with a breach thresho
 
 For more information, see Step Adjustments: https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html#as-scaling-steps in the *Application Auto Scaling User Guide*.
 
+You can find a sample template snippet in the Examples: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#aws-resource-applicationautoscaling-scalingpolicy--examples section of the AWS::ApplicationAutoScaling::ScalingPolicy documentation.
+
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-stepadjustment.html
 

@@ -1,26 +1,32 @@
 function Add-VSAppMeshVirtualNodeClientPolicyTls {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::VirtualNode.ClientPolicyTls resource property to the template. 
+        Adds an AWS::AppMesh::VirtualNode.ClientPolicyTls resource property to the template. A reference to an object that represents a Transport Layer Security (TLS client policy.
 
     .DESCRIPTION
         Adds an AWS::AppMesh::VirtualNode.ClientPolicyTls resource property to the template.
-
+A reference to an object that represents a Transport Layer Security (TLS client policy.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-clientpolicytls.html
 
     .PARAMETER Validation
+        A reference to an object that represents a TLS validation context.
+
         Type: TlsValidationContext
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-clientpolicytls.html#cfn-appmesh-virtualnode-clientpolicytls-validation
         UpdateType: Mutable
 
     .PARAMETER Enforce
+        Whether the policy is enforced. The default is True, if a value isn't specified.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-clientpolicytls.html#cfn-appmesh-virtualnode-clientpolicytls-enforce
         PrimitiveType: Boolean
         UpdateType: Mutable
 
     .PARAMETER Ports
+        One or more ports that the policy is enforced for.
+
         PrimitiveItemType: Integer
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-clientpolicytls.html#cfn-appmesh-virtualnode-clientpolicytls-ports

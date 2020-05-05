@@ -1,21 +1,25 @@
 function Add-VSCloudFrontDistributionOriginGroupMembers {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudFront::Distribution.OriginGroupMembers resource property to the template. 
+        Adds an AWS::CloudFront::Distribution.OriginGroupMembers resource property to the template. A complex data type for the origins included in an origin group.
 
     .DESCRIPTION
         Adds an AWS::CloudFront::Distribution.OriginGroupMembers resource property to the template.
-
+A complex data type for the origins included in an origin group.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroupmembers.html
 
     .PARAMETER Quantity
+        The number of origins in an origin group.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroupmembers.html#cfn-cloudfront-distribution-origingroupmembers-quantity
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER Items
+        Items origins in an origin group.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroupmembers.html#cfn-cloudfront-distribution-origingroupmembers-items
         ItemType: OriginGroupMember

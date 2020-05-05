@@ -36,7 +36,7 @@ The EC2VpcId property is for backward compatibility with older regions, and is n
         UpdateType: Immutable
 
     .PARAMETER GroupDescription
-        Provides the description of the DB security group.
+        Provides the description of the DB Security Group.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group.html#cfn-rds-dbsecuritygroup-groupdescription
         PrimitiveType: String

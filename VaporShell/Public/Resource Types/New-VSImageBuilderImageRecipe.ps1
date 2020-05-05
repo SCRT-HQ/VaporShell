@@ -1,10 +1,10 @@
 function New-VSImageBuilderImageRecipe {
     <#
     .SYNOPSIS
-        Adds an AWS::ImageBuilder::ImageRecipe resource to the template. 
+        Adds an AWS::ImageBuilder::ImageRecipe resource to the template. An Image Builder image recipe is a document that defines the source image and the components to be applied to the source image to produce the desired configuration for the output image. You can use an image recipe to duplicate builds. Image Builder image recipes can be shared, branched, and edited using the console wizard, the AWS CLI, or the API. You can use image recipes with your version control software to maintain shareable versioned image recipes.
 
     .DESCRIPTION
-        Adds an AWS::ImageBuilder::ImageRecipe resource to the template. 
+        Adds an AWS::ImageBuilder::ImageRecipe resource to the template. An Image Builder image recipe is a document that defines the source image and the components to be applied to the source image to produce the desired configuration for the output image. You can use an image recipe to duplicate builds. Image Builder image recipes can be shared, branched, and edited using the console wizard, the AWS CLI, or the API. You can use image recipes with your version control software to maintain shareable versioned image recipes.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagerecipe.html
@@ -13,38 +13,52 @@ function New-VSImageBuilderImageRecipe {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Name
+        The name of the image recipe.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagerecipe.html#cfn-imagebuilder-imagerecipe-name
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER Description
+        The description of the image recipe.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagerecipe.html#cfn-imagebuilder-imagerecipe-description
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER Version
+        The semantic version of the image recipe.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagerecipe.html#cfn-imagebuilder-imagerecipe-version
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER Components
+        The components of the image recipe. Components are orchestration documents that define a sequence of steps for downloading, installing, configuring, and testing software packages. They also define validation and security hardening steps. A component is defined using a YAML document format.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagerecipe.html#cfn-imagebuilder-imagerecipe-components
         UpdateType: Immutable
         Type: List
         ItemType: ComponentConfiguration
 
     .PARAMETER BlockDeviceMappings
+        The block device mappings to apply when creating images from this recipe.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagerecipe.html#cfn-imagebuilder-imagerecipe-blockdevicemappings
         UpdateType: Immutable
         Type: List
         ItemType: InstanceBlockDeviceMapping
 
     .PARAMETER ParentImage
+        The parent image of the image recipe.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagerecipe.html#cfn-imagebuilder-imagerecipe-parentimage
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER Tags
+        The tags of the image recipe.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagerecipe.html#cfn-imagebuilder-imagerecipe-tags
         UpdateType: Immutable
         Type: Map

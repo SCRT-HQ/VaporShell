@@ -1,26 +1,32 @@
 function Add-VSCloudFrontDistributionOriginGroup {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudFront::Distribution.OriginGroup resource property to the template. 
+        Adds an AWS::CloudFront::Distribution.OriginGroup resource property to the template. An origin group includes two origins (a primary origin and a second origin to failover to and a failover criteria that you specify. You create an origin group to support origin failover in CloudFront. When you create or update a distribution, you can specifiy the origin group instead of a single origin, and CloudFront will failover from the primary origin to the second origin under the failover conditions that you've chosen.
 
     .DESCRIPTION
         Adds an AWS::CloudFront::Distribution.OriginGroup resource property to the template.
-
+An origin group includes two origins (a primary origin and a second origin to failover to and a failover criteria that you specify. You create an origin group to support origin failover in CloudFront. When you create or update a distribution, you can specifiy the origin group instead of a single origin, and CloudFront will failover from the primary origin to the second origin under the failover conditions that you've chosen.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroup.html
 
     .PARAMETER Id
+        The origin group's ID.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroup.html#cfn-cloudfront-distribution-origingroup-id
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER FailoverCriteria
+        A complex type that contains information about the failover criteria for an origin group.
+
         Type: OriginGroupFailoverCriteria
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroup.html#cfn-cloudfront-distribution-origingroup-failovercriteria
         UpdateType: Mutable
 
     .PARAMETER Members
+        A complex type that contains information about the origins in an origin group.
+
         Type: OriginGroupMembers
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroup.html#cfn-cloudfront-distribution-origingroup-members
         UpdateType: Mutable

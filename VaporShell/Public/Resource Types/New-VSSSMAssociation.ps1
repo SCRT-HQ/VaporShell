@@ -42,7 +42,7 @@ InstanceId has been deprecated. To specify an instance ID for an association, us
         UpdateType: Immutable
 
     .PARAMETER OutputLocation
-        An Amazon S3 bucket where you want to store the output details of the request.
+        An S3 bucket where you want to store the output details of the request.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-outputlocation
         Type: InstanceAssociationOutputLocation

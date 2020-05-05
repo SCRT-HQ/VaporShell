@@ -1,26 +1,32 @@
 function Add-VSIoTTopicRuleIotEventsAction {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::TopicRule.IotEventsAction resource property to the template. 
+        Adds an AWS::IoT::TopicRule.IotEventsAction resource property to the template. Sends an input to an AWS IoT Events detector.
 
     .DESCRIPTION
         Adds an AWS::IoT::TopicRule.IotEventsAction resource property to the template.
-
+Sends an input to an AWS IoT Events detector.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-ioteventsaction.html
 
     .PARAMETER InputName
+        The name of the AWS IoT Events input.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-ioteventsaction.html#cfn-iot-topicrule-ioteventsaction-inputname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER MessageId
+        Optional] Use this to ensure that only one input message with a given messageId will be processed by an AWS IoT Events detector.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-ioteventsaction.html#cfn-iot-topicrule-ioteventsaction-messageid
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER RoleArn
+        The ARN of the role that grants AWS IoT permission to send an input to an AWS IoT Events detector. "Action":"iotevents:BatchPutMessage".
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-ioteventsaction.html#cfn-iot-topicrule-ioteventsaction-rolearn
         PrimitiveType: String
         UpdateType: Mutable

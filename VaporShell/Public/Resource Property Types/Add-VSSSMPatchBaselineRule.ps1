@@ -13,7 +13,7 @@ The PatchRules property of the RuleGroup: https://docs.aws.amazon.com/AWSCloudFo
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html
 
     .PARAMETER ApproveUntilDate
-        +  PatchRule: https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchRule.html in the *AWS Systems Manager API Reference*.
+        Not currently supported by AWS CloudFormation.
 
         Type: PatchStringDate
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html#cfn-ssm-patchbaseline-rule-approveuntildate

@@ -1,11 +1,11 @@
 function Add-VSFSxFileSystemWindowsConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::FSx::FileSystem.WindowsConfiguration resource property to the template. The Microsoft Windows configuration for the file system being created. This value is required if FileSystemType is set to WINDOWS.
+        Adds an AWS::FSx::FileSystem.WindowsConfiguration resource property to the template. The Microsoft Windows configuration for the file system being created.
 
     .DESCRIPTION
         Adds an AWS::FSx::FileSystem.WindowsConfiguration resource property to the template.
-The Microsoft Windows configuration for the file system being created. This value is required if FileSystemType is set to WINDOWS.
+The Microsoft Windows configuration for the file system being created.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html
@@ -18,7 +18,7 @@ The Microsoft Windows configuration for the file system being created. This valu
         UpdateType: Mutable
 
     .PARAMETER WeeklyMaintenanceStartTime
-        The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone.
+        The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone, where d is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-weeklymaintenancestarttime
         PrimitiveType: String
@@ -33,9 +33,10 @@ The Microsoft Windows configuration for the file system being created. This valu
 
     .PARAMETER DeploymentType
         Specifies the file system deployment type, valid values are the following:
-+ MULTI_AZ_1 - Deploys a high availability file system that is configured for Multi-AZ redundancy to tolerate temporary Availability Zone AZ unavailability. You can only deploy a Multi-AZ file system in AWS Regions that have a minimum of three Availability Zones.
-+ SINGLE_AZ_1 - Default Choose to deploy a file system that is configured for single AZ redundancy.
-To learn more about high availability Multi-AZ file systems, see  High Availability for Amazon FSx for Windows File Server: https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html.
++  MULTI_AZ_1 - Deploys a high availability file system that is configured for Multi-AZ redundancy to tolerate temporary Availability Zone AZ unavailability. You can only deploy a Multi-AZ file system in AWS Regions that have a minimum of three Availability Zones. Also supports HDD storage type
++  SINGLE_AZ_1 - Default Choose to deploy a file system that is configured for single AZ redundancy.
++  SINGLE_AZ_2 - The latest generation Single AZ file system. Specifies a file system that is configured for single AZ redundancy and supports HDD storage type.
+For more information, see  Availability and Durability: Single-AZ and Multi-AZ File Systems: https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-deploymenttype
         PrimitiveType: String

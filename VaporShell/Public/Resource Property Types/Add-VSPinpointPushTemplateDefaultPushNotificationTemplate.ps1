@@ -13,8 +13,8 @@ The AWS::Pinpoint::PushTemplate DefaultPushNotificationTemplate resource defines
     .PARAMETER Action
         The action to occur if a recipient taps a push notification that's based on the message template. Valid values are:
 +  OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default action.
-+ DEEP_LINK - Your app opens and displays a designated user interface in the app. This setting uses the deep-linking features of the iOS and Android platforms.
-+ URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.
++  DEEP_LINK - Your app opens and displays a designated user interface in the app. This setting uses the deep-linking features of the iOS and Android platforms.
++  URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-pushtemplate-defaultpushnotificationtemplate.html#cfn-pinpoint-pushtemplate-defaultpushnotificationtemplate-action
         PrimitiveType: String

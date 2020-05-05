@@ -1,17 +1,17 @@
 function Add-VSEC2SpotFleetFleetLaunchTemplateSpecification {
     <#
     .SYNOPSIS
-        Adds an AWS::EC2::SpotFleet.FleetLaunchTemplateSpecification resource property to the template. Describes a launch template.
+        Adds an AWS::EC2::SpotFleet.FleetLaunchTemplateSpecification resource property to the template. Describes the Amazon EC2 launch template and the launch template version that can be used by a Spot Fleet request to configure Amazon EC2 instances. For information about launch templates, see Launching an instance from a launch template: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html in the *Amazon EC2 User Guide for Linux Instances*.
 
     .DESCRIPTION
         Adds an AWS::EC2::SpotFleet.FleetLaunchTemplateSpecification resource property to the template.
-Describes a launch template.
+Describes the Amazon EC2 launch template and the launch template version that can be used by a Spot Fleet request to configure Amazon EC2 instances. For information about launch templates, see Launching an instance from a launch template: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html in the *Amazon EC2 User Guide for Linux Instances*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-fleetlaunchtemplatespecification.html
 
     .PARAMETER LaunchTemplateId
-        The ID of the launch template. You must specify either a template ID or a template name.
+        The ID of the launch template. If you specify the template ID, you can't specify the template name.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-fleetlaunchtemplatespecification.html#cfn-ec2-spotfleet-fleetlaunchtemplatespecification-launchtemplateid
         PrimitiveType: String

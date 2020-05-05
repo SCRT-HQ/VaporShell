@@ -48,7 +48,6 @@ If you specify LogDestinationType as s3, do not specify DeliverLogsPermissionArn
 
     .PARAMETER ResourceId
         The ID of the subnet, network interface, or VPC for which you want to create a flow log.
-Constraints: Maximum of 1000 resources
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-resourceid
         PrimitiveType: String

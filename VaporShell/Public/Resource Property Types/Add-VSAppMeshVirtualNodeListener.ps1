@@ -18,7 +18,7 @@ An object that represents a listener for a virtual node.
         UpdateType: Mutable
 
     .PARAMETER TLS
-        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+        A reference to an object that represents the Transport Layer Security TLS properties for a listener.
 
         Type: ListenerTls
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listener.html#cfn-appmesh-virtualnode-listener-tls

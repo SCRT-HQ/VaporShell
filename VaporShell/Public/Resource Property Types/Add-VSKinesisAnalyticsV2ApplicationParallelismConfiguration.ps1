@@ -18,7 +18,7 @@ Describes parameters for how a Java-based Amazon Kinesis Data Analytics applicat
         UpdateType: Mutable
 
     .PARAMETER ParallelismPerKPU
-        Describes the number of parallel tasks that a Java-based Kinesis Data Analytics application can perform per Kinesis Processing Unit KPU used by the application. For more information about KPUs, see Amazon Kinesis Data Analytics Pricing: http://aws.amazon.com/kinesis/data-analytics/pricing/.
+        Describes the number of parallel tasks that a Java-based Kinesis Data Analytics application can perform per Kinesis Processing Unit KPU used by the application. For more information about KPUs, see Amazon Kinesis Data Analytics Pricing: https://aws.amazon.com/kinesis/data-analytics/pricing/.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-parallelismconfiguration.html#cfn-kinesisanalyticsv2-application-parallelismconfiguration-parallelismperkpu
         PrimitiveType: Integer

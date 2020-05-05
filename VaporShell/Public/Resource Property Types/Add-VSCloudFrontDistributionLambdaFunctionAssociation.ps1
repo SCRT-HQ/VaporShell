@@ -11,7 +11,7 @@ A complex type that contains a Lambda function association.
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-lambdafunctionassociation.html
 
     .PARAMETER IncludeBody
-        +  LambdaFunctionAssociation: https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_LambdaFunctionAssociation.html in the *Amazon CloudFront API Reference*
+        A flag that allows a Lambda function to have read access to the body content. For more information, see Accessing the Request Body by Choosing the Include Body Option: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html in the Amazon CloudFront Developer Guide.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-lambdafunctionassociation.html#cfn-cloudfront-distribution-lambdafunctionassociation-includebody
         PrimitiveType: Boolean

@@ -41,7 +41,7 @@ function New-VSKinesisAnalyticsV2Application {
         UpdateType: Mutable
 
     .PARAMETER Tags
-        +  CreateApplication: https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_CreateApplication.html in the *Amazon Kinesis Data Analytics API Reference*
+        A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50.
 
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalyticsv2-application.html#cfn-kinesisanalyticsv2-application-tags

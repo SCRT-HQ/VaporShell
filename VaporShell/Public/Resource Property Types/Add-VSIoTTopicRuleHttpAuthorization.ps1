@@ -1,16 +1,18 @@
 function Add-VSIoTTopicRuleHttpAuthorization {
     <#
     .SYNOPSIS
-        Adds an AWS::IoT::TopicRule.HttpAuthorization resource property to the template. 
+        Adds an AWS::IoT::TopicRule.HttpAuthorization resource property to the template. The authorization method used to send messages.
 
     .DESCRIPTION
         Adds an AWS::IoT::TopicRule.HttpAuthorization resource property to the template.
-
+The authorization method used to send messages.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-httpauthorization.html
 
     .PARAMETER Sigv4
+        Use Sig V4 authorization. For more information, see Signature Version 4 Signing Process: https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-httpauthorization.html#cfn-iot-topicrule-httpauthorization-sigv4
         Type: SigV4Authorization
         UpdateType: Mutable

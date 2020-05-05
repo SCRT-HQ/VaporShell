@@ -12,7 +12,7 @@ The LinuxParameters property specifies Linux-specific options that are applied t
 
     .PARAMETER Capabilities
         The Linux capabilities for the container that are added to or dropped from the default configuration provided by Docker.
-If you are using tasks that use the Fargate launch type, capabilities is supported but the add parameter is not supported.
+For tasks that use the Fargate launch type, capabilities is supported for all platform versions but the add parameter is only supported if using platform version 1.4.0 or later.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-capabilities
         Type: KernelCapabilities

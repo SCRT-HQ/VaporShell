@@ -13,7 +13,7 @@ OnDemandOptionsRequest is a property of the AWS::EC2::EC2Fleet: https://docs.aws
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-ondemandoptionsrequest.html
 
     .PARAMETER SingleAvailabilityZone
-        +   OnDemandOptionsRequest: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_OnDemandOptionsRequest.html in the *Amazon EC2 API Reference*
+        Indicates that the fleet launches all On-Demand Instances into a single Availability Zone. Supported only for fleets of type instant.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-ondemandoptionsrequest.html#cfn-ec2-ec2fleet-ondemandoptionsrequest-singleavailabilityzone
         PrimitiveType: Boolean
@@ -27,28 +27,28 @@ OnDemandOptionsRequest is a property of the AWS::EC2::EC2Fleet: https://docs.aws
         UpdateType: Immutable
 
     .PARAMETER SingleInstanceType
-        +   OnDemandOptionsRequest: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_OnDemandOptionsRequest.html in the *Amazon EC2 API Reference*
+        Indicates that the fleet uses a single instance type to launch all On-Demand Instances in the fleet. Supported only for fleets of type instant.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-ondemandoptionsrequest.html#cfn-ec2-ec2fleet-ondemandoptionsrequest-singleinstancetype
         PrimitiveType: Boolean
         UpdateType: Immutable
 
     .PARAMETER MinTargetCapacity
-        +   OnDemandOptionsRequest: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_OnDemandOptionsRequest.html in the *Amazon EC2 API Reference*
+        The minimum target capacity for On-Demand Instances in the fleet. If the minimum target capacity is not reached, the fleet launches no instances.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-ondemandoptionsrequest.html#cfn-ec2-ec2fleet-ondemandoptionsrequest-mintargetcapacity
         PrimitiveType: Integer
         UpdateType: Immutable
 
     .PARAMETER MaxTotalPrice
-        +   OnDemandOptionsRequest: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_OnDemandOptionsRequest.html in the *Amazon EC2 API Reference*
+        The maximum amount per hour for On-Demand Instances that you're willing to pay.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-ondemandoptionsrequest.html#cfn-ec2-ec2fleet-ondemandoptionsrequest-maxtotalprice
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER CapacityReservationOptions
-        +   OnDemandOptionsRequest: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_OnDemandOptionsRequest.html in the *Amazon EC2 API Reference*
+        The strategy for using unused Capacity Reservations for fulfilling On-Demand capacity. Supported only for fleets of type instant.
 
         Type: CapacityReservationOptionsRequest
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-ondemandoptionsrequest.html#cfn-ec2-ec2fleet-ondemandoptionsrequest-capacityreservationoptions

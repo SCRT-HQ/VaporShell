@@ -50,9 +50,9 @@ After you create a cluster parameter group, you should wait at least 5 minutes b
         UpdateType: Mutable
 
     .PARAMETER Name
-        The name of the cluster parameter group.
+        The name of the DB cluster parameter group.
 Constraints:
-+ Must match the name of an existing DBClusterParameterGroup.
++ Must not match the name of an existing DBClusterParameterGroup.
 This value is stored as a lowercase string.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbclusterparametergroup.html#cfn-docdb-dbclusterparametergroup-name

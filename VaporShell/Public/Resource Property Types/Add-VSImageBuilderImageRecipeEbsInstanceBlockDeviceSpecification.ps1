@@ -1,46 +1,60 @@
 function Add-VSImageBuilderImageRecipeEbsInstanceBlockDeviceSpecification {
     <#
     .SYNOPSIS
-        Adds an AWS::ImageBuilder::ImageRecipe.EbsInstanceBlockDeviceSpecification resource property to the template. 
+        Adds an AWS::ImageBuilder::ImageRecipe.EbsInstanceBlockDeviceSpecification resource property to the template. The image recipe EBS instance block device specification includes the Amazon EBS-specific block device mapping specifications for the image.
 
     .DESCRIPTION
         Adds an AWS::ImageBuilder::ImageRecipe.EbsInstanceBlockDeviceSpecification resource property to the template.
-
+The image recipe EBS instance block device specification includes the Amazon EBS-specific block device mapping specifications for the image.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagerecipe-ebsinstanceblockdevicespecification.html
 
     .PARAMETER Encrypted
+        Use to configure device encryption.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagerecipe-ebsinstanceblockdevicespecification.html#cfn-imagebuilder-imagerecipe-ebsinstanceblockdevicespecification-encrypted
         UpdateType: Immutable
         PrimitiveType: Boolean
 
     .PARAMETER DeleteOnTermination
+        Configures delete on termination of the associated device.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagerecipe-ebsinstanceblockdevicespecification.html#cfn-imagebuilder-imagerecipe-ebsinstanceblockdevicespecification-deleteontermination
         UpdateType: Immutable
         PrimitiveType: Boolean
 
     .PARAMETER Iops
+        Use to configure device IOPS.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagerecipe-ebsinstanceblockdevicespecification.html#cfn-imagebuilder-imagerecipe-ebsinstanceblockdevicespecification-iops
         UpdateType: Immutable
         PrimitiveType: Integer
 
     .PARAMETER KmsKeyId
+        Use to configure the KMS key to use when encrypting the device.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagerecipe-ebsinstanceblockdevicespecification.html#cfn-imagebuilder-imagerecipe-ebsinstanceblockdevicespecification-kmskeyid
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER SnapshotId
+        The snapshot that defines the device contents.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagerecipe-ebsinstanceblockdevicespecification.html#cfn-imagebuilder-imagerecipe-ebsinstanceblockdevicespecification-snapshotid
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER VolumeSize
+        Overrides the volume size of the device.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagerecipe-ebsinstanceblockdevicespecification.html#cfn-imagebuilder-imagerecipe-ebsinstanceblockdevicespecification-volumesize
         UpdateType: Immutable
         PrimitiveType: Integer
 
     .PARAMETER VolumeType
+        Overrides the volume type of the device.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagerecipe-ebsinstanceblockdevicespecification.html#cfn-imagebuilder-imagerecipe-ebsinstanceblockdevicespecification-volumetype
         UpdateType: Immutable
         PrimitiveType: String

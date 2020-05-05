@@ -27,7 +27,7 @@ function New-VSCodeBuildReportGroup {
         UpdateType: Mutable
 
     .PARAMETER Tags
-        The ARN of the AWS CodeBuild report group, such as arn:aws:codebuild:region:123456789012:report-group/myReportGroupName.
+        Not currently supported by AWS CloudFormation.
 
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-reportgroup.html#cfn-codebuild-reportgroup-tags

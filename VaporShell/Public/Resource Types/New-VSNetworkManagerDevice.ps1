@@ -1,10 +1,10 @@
 function New-VSNetworkManagerDevice {
     <#
     .SYNOPSIS
-        Adds an AWS::NetworkManager::Device resource to the template. 
+        Adds an AWS::NetworkManager::Device resource to the template. Specifies a device.
 
     .DESCRIPTION
-        Adds an AWS::NetworkManager::Device resource to the template. 
+        Adds an AWS::NetworkManager::Device resource to the template. Specifies a device.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-device.html
@@ -13,47 +13,69 @@ function New-VSNetworkManagerDevice {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Description
+        A description of the device.
+Length Constraints: Maximum length of 256 characters.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-device.html#cfn-networkmanager-device-description
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER Tags
+        The tags for the device.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-device.html#cfn-networkmanager-device-tags
         UpdateType: Mutable
         Type: List
         ItemType: Tag
 
     .PARAMETER GlobalNetworkId
+        The ID of the global network.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-device.html#cfn-networkmanager-device-globalnetworkid
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER Location
+        The site location.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-device.html#cfn-networkmanager-device-location
         UpdateType: Mutable
         Type: Location
 
     .PARAMETER Model
+        The model of the device.
+Length Constraints: Maximum length of 128 characters.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-device.html#cfn-networkmanager-device-model
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER SerialNumber
+        The serial number of the device.
+Length Constraints: Maximum length of 128 characters.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-device.html#cfn-networkmanager-device-serialnumber
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER SiteId
+        The site ID.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-device.html#cfn-networkmanager-device-siteid
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER Type
+        The device type.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-device.html#cfn-networkmanager-device-type
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER Vendor
+        The vendor of the device.
+Length Constraints: Maximum length of 128 characters.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-device.html#cfn-networkmanager-device-vendor
         UpdateType: Mutable
         PrimitiveType: String

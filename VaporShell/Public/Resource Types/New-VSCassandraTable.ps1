@@ -1,10 +1,10 @@
 function New-VSCassandraTable {
     <#
     .SYNOPSIS
-        Adds an AWS::Cassandra::Table resource to the template. 
+        Adds an AWS::Cassandra::Table resource to the template. The AWS::Cassandra::Table resource allows you to create a new table in Amazon Keyspaces (for Apache Cassandra. For more information, see Create a Keyspace and a Table: https://docs.aws.amazon.com/keyspaces/latest/devguide/getting-started.ddl.html in the *Amazon Keyspaces Developer Guide*.
 
     .DESCRIPTION
-        Adds an AWS::Cassandra::Table resource to the template. 
+        Adds an AWS::Cassandra::Table resource to the template. The AWS::Cassandra::Table resource allows you to create a new table in Amazon Keyspaces (for Apache Cassandra. For more information, see Create a Keyspace and a Table: https://docs.aws.amazon.com/keyspaces/latest/devguide/getting-started.ddl.html in the *Amazon Keyspaces Developer Guide*.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html
@@ -13,16 +13,25 @@ function New-VSCassandraTable {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER KeyspaceName
+        The name of the keyspace in which to create the table. The keyspace must already exist.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html#cfn-cassandra-table-keyspacename
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER TableName
+        The name of the table to be created. If you don't specify a name, AWS CloudFormation generates a unique ID and uses that ID for the table name. For more information, see Name Type: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html.
+If you specify a name, you cannot perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you must replace the resource, specify a new name.
+*Length Constraints:* Minimum length of 3. Maximum length of 255.
+*Pattern:* ^a-zA-Z0-9]a-zA-Z0-9_]{1,47}$
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html#cfn-cassandra-table-tablename
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER RegularColumns
+        One or more columns that are not part of the primary key - that is, columns that are *not* defined as partition key columns or clustering key columns.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html#cfn-cassandra-table-regularcolumns
         UpdateType: Mutable
         Type: List
@@ -30,6 +39,8 @@ function New-VSCassandraTable {
         DuplicatesAllowed: False
 
     .PARAMETER PartitionKeyColumns
+        One or more columns that uniquely identify every row in the table. Every table must have a partition key.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html#cfn-cassandra-table-partitionkeycolumns
         UpdateType: Immutable
         Type: List
@@ -37,6 +48,8 @@ function New-VSCassandraTable {
         DuplicatesAllowed: False
 
     .PARAMETER ClusteringKeyColumns
+        One or more columns that determine how the table data is sorted.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html#cfn-cassandra-table-clusteringkeycolumns
         UpdateType: Immutable
         Type: List
@@ -44,6 +57,11 @@ function New-VSCassandraTable {
         DuplicatesAllowed: False
 
     .PARAMETER BillingMode
+        The billing mode for the table, which determines how you'll be charged for reads and writes:
++ **On-demand mode** default - you pay based on the actual reads and writes your application performs.
++ **Provisioned mode** - lets you specify the number of reads and writes per second that you need for your application.
+If you don't specify a value for this property, then the table will use on-demand mode.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html#cfn-cassandra-table-billingmode
         UpdateType: Mutable
         Type: BillingMode

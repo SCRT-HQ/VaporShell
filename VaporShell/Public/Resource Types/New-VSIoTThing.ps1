@@ -23,6 +23,7 @@ For information about working with things, see How AWS IoT Works: https://docs.a
 
     .PARAMETER ThingName
         The name of the thing to update.
+You can't change a thing's name. To change a thing's name, you must create a new thing, give it the new name, and then delete the old thing.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thing.html#cfn-iot-thing-thingname
         PrimitiveType: String

@@ -13,7 +13,7 @@ For more information, see PutScheduledAction: https://docs.aws.amazon.com/autosc
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scheduledaction.html
 
     .PARAMETER EndTime
-        The date and time that the action is scheduled to end.
+        The date and time for the recurring schedule to end.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scheduledaction.html#cfn-applicationautoscaling-scalabletarget-scheduledaction-endtime
         PrimitiveType: Timestamp
@@ -31,7 +31,7 @@ For more information, see PutScheduledAction: https://docs.aws.amazon.com/autosc
 + At expressions - "atyyyy-mm-ddThh:mm:ss"
 + Rate expressions - "ratevalue unit"
 + Cron expressions - "cronfields"
-At expressions are useful for one-time schedules. Specify the time, in UTC.
+At expressions are useful for one-time schedules. Specify the time in UTC.
 For rate expressions, *value* is a positive integer and *unit* is minute | minutes | hour | hours | day | days.
 For more information about cron expressions, see Cron Expressions: https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions in the *Amazon CloudWatch Events User Guide*.
 
@@ -40,14 +40,14 @@ For more information about cron expressions, see Cron Expressions: https://docs.
         UpdateType: Mutable
 
     .PARAMETER ScheduledActionName
-        The name of the scheduled action.
+        The name of the scheduled action. This name must be unique among all other scheduled actions on the specified scalable target.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scheduledaction.html#cfn-applicationautoscaling-scalabletarget-scheduledaction-scheduledactionname
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER StartTime
-        The date and time that the action is scheduled to begin.
+        The date and time that the action is scheduled to start.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scheduledaction.html#cfn-applicationautoscaling-scalabletarget-scheduledaction-starttime
         PrimitiveType: Timestamp

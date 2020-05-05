@@ -42,7 +42,7 @@ When you use the AWS::CertificateManager::Certificate resource in an AWS CloudFo
         UpdateType: Immutable
 
     .PARAMETER Tags
-        Key-value pairs that can identity the certificate.
+        Key-value pairs that can identify the certificate.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-tags
         DuplicatesAllowed: True

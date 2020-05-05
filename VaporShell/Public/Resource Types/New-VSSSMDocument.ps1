@@ -13,12 +13,7 @@ function New-VSSSMDocument {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Content
-        The content for the new SSM document, in valid JSON or YAML format.
-We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command.
-For examples, see the following topics in the *AWS Systems Manager User Guide*.
-+  Create an SSM Document AWS API: https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html
-+  Create an SSM Document AWS CLI: https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html
-+  Create an SSM Document Tools for Windows PowerShell: https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-ps.html
+        The content for the new SSM document in JSON or YAML format.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-content
         PrimitiveType: Json
@@ -26,6 +21,7 @@ For examples, see the following topics in the *AWS Systems Manager User Guide*.
 
     .PARAMETER DocumentType
         The type of document to create.
+*Allowed Values*: ApplicationConfigurationSchema | Automation | ChangeCalendar | Command | DeploymentStrategy | Package | Policy | Session
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-documenttype
         PrimitiveType: String
@@ -33,7 +29,7 @@ For examples, see the following topics in the *AWS Systems Manager User Guide*.
 
     .PARAMETER Name
         A name for the Systems Manager document.
-Do not use the following to begin the names of documents you create. They are reserved by AWS for use as document prefixes:
+You can't use the following strings as document name prefixes. These are reserved by AWS for use as document name prefixes:
 +  aws
 +  amazon
 +  amzn

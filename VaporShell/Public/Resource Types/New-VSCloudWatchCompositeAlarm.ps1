@@ -1,10 +1,20 @@
 function New-VSCloudWatchCompositeAlarm {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudWatch::CompositeAlarm resource to the template. 
+        Adds an AWS::CloudWatch::CompositeAlarm resource to the template. The AWS::CloudWatch::CompositeAlarm type creates or updates a composite alarm. When you create a composite alarm, you specify a rule expression for the alarm that takes into account the alarm states of other alarms that you have created. The composite alarm goes into ALARM state only if all conditions of the rule are met.
 
     .DESCRIPTION
-        Adds an AWS::CloudWatch::CompositeAlarm resource to the template. 
+        Adds an AWS::CloudWatch::CompositeAlarm resource to the template. The AWS::CloudWatch::CompositeAlarm type creates or updates a composite alarm. When you create a composite alarm, you specify a rule expression for the alarm that takes into account the alarm states of other alarms that you have created. The composite alarm goes into ALARM state only if all conditions of the rule are met.
+
+The alarms specified in a composite alarm's rule expression can include metric alarms and other composite alarms.
+
+Using composite alarms can reduce alarm noise. You can create multiple metric alarms, and also create a composite alarm and set up alerts only for the composite alarm. For example, you could create a composite alarm that goes into ALARM state only when more than one of the underlying metric alarms are in ALARM state.
+
+Currently, the only alarm actions that can be taken by composite alarms are notifying SNS topics.
+
+When this operation creates an alarm, the alarm state is immediately set to INSUFFICIENT_DATA. The alarm is then evaluated and its state is set appropriately. Any actions associated with the new state are then executed. For a composite alarm, this initial time after creation is the only time that the alarm can be in INSUFFICIENT_DATA state.
+
+When you update an existing alarm, its state is left unchanged, but the update completely overwrites the previous configuration of the alarm.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-compositealarm.html
@@ -13,38 +23,61 @@ function New-VSCloudWatchCompositeAlarm {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER AlarmName
+        The name for the composite alarm. This name must be unique within your AWS account.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-compositealarm.html#cfn-cloudwatch-compositealarm-alarmname
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER AlarmRule
+        An expression that specifies which other alarms are to be evaluated to determine this composite alarm's state. For each alarm that you reference, you designate a function that specifies whether that alarm needs to be in ALARM state, OK state, or INSUFFICIENT_DATA state. You can use operators AND, OR and NOT to combine multiple functions in a single expression. You can use parenthesis to logically group the functions in your expression.
+You can use either alarm names or ARNs to reference the other alarms that are to be evaluated.
+Functions can include the following:
++  ALARM"alarm-name or alarm-ARN" is TRUE if the named alarm is in ALARM state.
++  OK"alarm-name or alarm-ARN" is TRUE if the named alarm is in OK state.
++  INSUFFICIENT_DATA"alarm-name or alarm-ARN" is TRUE if the named alarm is in INSUFFICIENT_DATA state.
++ TRUE always evaluates to TRUE.
++ FALSE always evaluates to FALSE.
+TRUE and FALSE are useful for testing a complex AlarmRule structure, and for testing your alarm actions.
+For more information about AlarmRule syntax, see PutCompositeAlarm: https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutCompositeAlarm.html in the *Amazon CloudWatch API Reference*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-compositealarm.html#cfn-cloudwatch-compositealarm-alarmrule
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER AlarmDescription
+        The description for the composite alarm.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-compositealarm.html#cfn-cloudwatch-compositealarm-alarmdescription
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER ActionsEnabled
+        Indicates whether actions should be executed during any changes to the alarm state of the composite alarm. The default is TRUE.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-compositealarm.html#cfn-cloudwatch-compositealarm-actionsenabled
         UpdateType: Mutable
         PrimitiveType: Boolean
 
     .PARAMETER OKActions
+        The actions to execute when this alarm transitions to the OK state from any other state. Each action is specified as an Amazon Resource Name ARN. For more information about creating alarms and the actions that you can specify, see PutCompositeAlarm: https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutCompositeAlarm.html in the *Amazon CloudWatch API Reference*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-compositealarm.html#cfn-cloudwatch-compositealarm-okactions
         UpdateType: Mutable
         Type: List
         PrimitiveItemType: String
 
     .PARAMETER AlarmActions
+        The actions to execute when this alarm transitions to the ALARM state from any other state. Each action is specified as an Amazon Resource Name ARN. For more information about creating alarms and the actions that you can specify, see PutCompositeAlarm: https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutCompositeAlarm.html in the *Amazon CloudWatch API Reference*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-compositealarm.html#cfn-cloudwatch-compositealarm-alarmactions
         UpdateType: Mutable
         Type: List
         PrimitiveItemType: String
 
     .PARAMETER InsufficientDataActions
+        The actions to execute when this alarm transitions to the INSUFFICIENT_DATA state from any other state. Each action is specified as an Amazon Resource Name ARN. For more information about creating alarms and the actions that you can specify, see PutCompositeAlarm: https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutCompositeAlarm.html in the *Amazon CloudWatch API Reference*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-compositealarm.html#cfn-cloudwatch-compositealarm-insufficientdataactions
         UpdateType: Mutable
         Type: List

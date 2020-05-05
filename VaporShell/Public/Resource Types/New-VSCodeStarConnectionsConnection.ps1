@@ -1,10 +1,16 @@
 function New-VSCodeStarConnectionsConnection {
     <#
     .SYNOPSIS
-        Adds an AWS::CodeStarConnections::Connection resource to the template. 
+        Adds an AWS::CodeStarConnections::Connection resource to the template. **Important**
 
     .DESCRIPTION
-        Adds an AWS::CodeStarConnections::Connection resource to the template. 
+        Adds an AWS::CodeStarConnections::Connection resource to the template. **Important**
+
+The CodeStar Connections feature is in preview release and is subject to change.
+
+The AWS::CodeStarConnections::Connection resource can be used to connect external source providers with services like AWS CodePipeline.
+
+**Note:** A connection created through CloudFormation is in PENDING status by default. You can make its status AVAILABLE by editing the connection in the CodePipeline console.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestarconnections-connection.html
@@ -13,11 +19,15 @@ function New-VSCodeStarConnectionsConnection {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER ConnectionName
+        The name of the connection. Connection names must be unique in an AWS user account.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestarconnections-connection.html#cfn-codestarconnections-connection-connectionname
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER ProviderType
+        The name of the external provider where your third-party code repository is configured. Currently, the valid provider type is Bitbucket.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestarconnections-connection.html#cfn-codestarconnections-connection-providertype
         UpdateType: Immutable
         PrimitiveType: String

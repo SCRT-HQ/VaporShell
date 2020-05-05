@@ -1,21 +1,25 @@
 function Add-VSMSKClusterFirehose {
     <#
     .SYNOPSIS
-        Adds an AWS::MSK::Cluster.Firehose resource property to the template. 
+        Adds an AWS::MSK::Cluster.Firehose resource property to the template. Details of the Kinesis Data Firehose delivery stream that is the destination for broker logs.
 
     .DESCRIPTION
         Adds an AWS::MSK::Cluster.Firehose resource property to the template.
-
+Details of the Kinesis Data Firehose delivery stream that is the destination for broker logs.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-firehose.html
 
     .PARAMETER DeliveryStream
+        The Kinesis Data Firehose delivery stream that is the destination for broker logs.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-firehose.html#cfn-msk-cluster-firehose-deliverystream
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Enabled
+        Specifies whether broker logs get sent to the specified Kinesis Data Firehose delivery stream.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-firehose.html#cfn-msk-cluster-firehose-enabled
         PrimitiveType: Boolean
         UpdateType: Mutable

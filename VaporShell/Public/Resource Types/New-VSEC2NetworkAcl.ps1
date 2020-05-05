@@ -13,7 +13,7 @@ function New-VSEC2NetworkAcl {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Tags
-        An arbitrary set of tags key–value pairs for this ACL.
+        An arbitrary set of tags key-value pairs for this ACL.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-acl.html#cfn-ec2-networkacl-tags
         DuplicatesAllowed: True

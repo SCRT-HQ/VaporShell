@@ -1,16 +1,18 @@
 function Add-VSEKSClusterProvider {
     <#
     .SYNOPSIS
-        Adds an AWS::EKS::Cluster.Provider resource property to the template. 
+        Adds an AWS::EKS::Cluster.Provider resource property to the template. Identifies the AWS Key Management Service (AWS KMS customer master key (CMK used to encrypt the secrets.
 
     .DESCRIPTION
         Adds an AWS::EKS::Cluster.Provider resource property to the template.
-
+Identifies the AWS Key Management Service (AWS KMS customer master key (CMK used to encrypt the secrets.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-provider.html
 
     .PARAMETER KeyArn
+        Amazon Resource Name ARN or alias of the customer master key CMK. The CMK must be symmetric, created in the same region as the cluster, and if the CMK was created in a different account, the user must have access to the CMK. For more information, see Allowing Users in Other Accounts to Use a CMK: https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html in the *AWS Key Management Service Developer Guide*.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-provider.html#cfn-eks-cluster-provider-keyarn
         PrimitiveType: String
         UpdateType: Mutable

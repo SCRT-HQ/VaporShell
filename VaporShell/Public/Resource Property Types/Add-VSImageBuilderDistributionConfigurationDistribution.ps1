@@ -1,26 +1,32 @@
 function Add-VSImageBuilderDistributionConfigurationDistribution {
     <#
     .SYNOPSIS
-        Adds an AWS::ImageBuilder::DistributionConfiguration.Distribution resource property to the template. 
+        Adds an AWS::ImageBuilder::DistributionConfiguration.Distribution resource property to the template. The distribution configuration distribution defines the settings for a specific Region in the Distribution Configuration.
 
     .DESCRIPTION
         Adds an AWS::ImageBuilder::DistributionConfiguration.Distribution resource property to the template.
-
+The distribution configuration distribution defines the settings for a specific Region in the Distribution Configuration.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-distribution.html
 
     .PARAMETER Region
+        The target Region for the Distribution Configuration. For example, eu-west-1.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-distribution.html#cfn-imagebuilder-distributionconfiguration-distribution-region
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER AmiDistributionConfiguration
+        The specific AMI settings, such as launch permissions and AMI tags.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-distribution.html#cfn-imagebuilder-distributionconfiguration-distribution-amidistributionconfiguration
         UpdateType: Mutable
         PrimitiveType: Json
 
     .PARAMETER LicenseConfigurationArns
+        The License Manager Configuration to associate with the AMI in the specified Region. For more information, see the  LicenseConfiguration API: https://docs.aws.amazon.com/license-manager/latest/APIReference/API_LicenseConfiguration.html.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-distribution.html#cfn-imagebuilder-distributionconfiguration-distribution-licenseconfigurationarns
         UpdateType: Mutable
         Type: List

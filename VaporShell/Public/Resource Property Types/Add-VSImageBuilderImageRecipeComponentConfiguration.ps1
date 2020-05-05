@@ -1,16 +1,18 @@
 function Add-VSImageBuilderImageRecipeComponentConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::ImageBuilder::ImageRecipe.ComponentConfiguration resource property to the template. 
+        Adds an AWS::ImageBuilder::ImageRecipe.ComponentConfiguration resource property to the template. The image recipe component configuration includes the configuration details of this component.
 
     .DESCRIPTION
         Adds an AWS::ImageBuilder::ImageRecipe.ComponentConfiguration resource property to the template.
-
+The image recipe component configuration includes the configuration details of this component.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagerecipe-componentconfiguration.html
 
     .PARAMETER ComponentArn
+        The Amazon Resource Name ARN of the component.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagerecipe-componentconfiguration.html#cfn-imagebuilder-imagerecipe-componentconfiguration-componentarn
         UpdateType: Immutable
         PrimitiveType: String

@@ -1,10 +1,10 @@
 function New-VSSecretsManagerResourcePolicy {
     <#
     .SYNOPSIS
-        Adds an AWS::SecretsManager::ResourcePolicy resource to the template. Attaches the contents of the git specified resource-based permission policy to a secret. A resource-based policy is optional. Alternatively, you can use IAM identity-based policies that specify the Amazon Resource Name (ARN of the secret in the policy statement Resources element. You can also use a combination of both identity-based and resource-based policies. The affected users and roles receive the permissions permitted by all relevant policies.
+        Adds an AWS::SecretsManager::ResourcePolicy resource to the template. Attaches the contents of the specified resource-based permission policy to a secret. A resource-based policy is optional. Alternatively, you can use IAM identity-based policies to specify the Amazon Resource Name (ARN of the secret in the policy statement Resources element. You can also use a combination of both identity-based and resource-based policies. The affected users and roles receive the permissions permitted by all relevant policies.
 
     .DESCRIPTION
-        Adds an AWS::SecretsManager::ResourcePolicy resource to the template. Attaches the contents of the git specified resource-based permission policy to a secret. A resource-based policy is optional. Alternatively, you can use IAM identity-based policies that specify the Amazon Resource Name (ARN of the secret in the policy statement Resources element. You can also use a combination of both identity-based and resource-based policies. The affected users and roles receive the permissions permitted by all relevant policies.
+        Adds an AWS::SecretsManager::ResourcePolicy resource to the template. Attaches the contents of the specified resource-based permission policy to a secret. A resource-based policy is optional. Alternatively, you can use IAM identity-based policies to specify the Amazon Resource Name (ARN of the secret in the policy statement Resources element. You can also use a combination of both identity-based and resource-based policies. The affected users and roles receive the permissions permitted by all relevant policies.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-resourcepolicy.html

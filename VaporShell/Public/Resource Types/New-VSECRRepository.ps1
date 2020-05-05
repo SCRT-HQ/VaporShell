@@ -28,7 +28,7 @@ If you specify a name, you cannot perform updates that require replacement of th
         UpdateType: Immutable
 
     .PARAMETER RepositoryPolicyText
-        The JSON repository policy text to apply to the repository. For more information, see Amazon ECR Repository Policy Examples: https://docs.aws.amazon.com/AmazonECR/latest/userguide/RepositoryPolicyExamples.html in the *Amazon Elastic Container Registry User Guide*.
+        The JSON repository policy text to apply to the repository. For more information, see Amazon ECR Repository Policies: https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html in the *Amazon Elastic Container Registry User Guide*.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-repositorypolicytext
         PrimitiveType: Json

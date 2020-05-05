@@ -15,7 +15,7 @@ If an Elastic IP address is attached to your instance, AWS CloudFormation reatta
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER AdditionalInfo
-        Reserved.
+        This property is reserved for internal use. If you use it, the stack fails with this error: Bad property set: Testing this property] Service: AmazonEC2; Status Code: 400; Error Code: InvalidParameterCombination; Request ID: 0XXXXXX-49c7-4b40-8bcc-76885dcXXXXX.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-additionalinfo
         PrimitiveType: String
@@ -112,14 +112,13 @@ Default: false
 
     .PARAMETER HostResourceGroupArn
         The ARN of the host resource group in which to launch the instances. If you specify a host resource group ARN, omit the **Tenancy** parameter or set it to host.
-This parameter is not supported by CreateFleet: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet.html.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-hostresourcegrouparn
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER IamInstanceProfile
-        The IAM instance profile.
+        The IAM instance profile. See IamInstanceProfileSpecification: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfileSpecification.html in the *Amazon EC2 API Reference* for property values.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-iaminstanceprofile
         PrimitiveType: String
@@ -288,7 +287,7 @@ If you specify a network interface, you must specify any subnets as part of the 
         UpdateType: Immutable
 
     .PARAMETER Tags
-        The tags to apply to the resources during launch. You can only tag instances and volumes on launch. The specified tags are applied to all instances or volumes that are created during launch. To tag a resource after it has been created, see CreateTags: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html.
+        The tags to apply to the instance during launch. These tags are not applied to the EBS volumes, such as the root volume.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-tags
         DuplicatesAllowed: True

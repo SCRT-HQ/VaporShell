@@ -1,10 +1,10 @@
 function New-VSImageBuilderInfrastructureConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::ImageBuilder::InfrastructureConfiguration resource to the template. 
+        Adds an AWS::ImageBuilder::InfrastructureConfiguration resource to the template. The infrastructure configuration allows you to specify the infrastructure within which to build and test your image. In the infrastructure configuration, you can specify instance types, subnets, and security groups to associate with your instance. You can also associate an Amazon EC2 key pair with the instance used to build your image. This allows you to log on to your instance to troubleshoot if your build fails and you set terminateInstanceOnFailure to false.
 
     .DESCRIPTION
-        Adds an AWS::ImageBuilder::InfrastructureConfiguration resource to the template. 
+        Adds an AWS::ImageBuilder::InfrastructureConfiguration resource to the template. The infrastructure configuration allows you to specify the infrastructure within which to build and test your image. In the infrastructure configuration, you can specify instance types, subnets, and security groups to associate with your instance. You can also associate an Amazon EC2 key pair with the instance used to build your image. This allows you to log on to your instance to troubleshoot if your build fails and you set terminateInstanceOnFailure to false.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-infrastructureconfiguration.html
@@ -13,59 +13,81 @@ function New-VSImageBuilderInfrastructureConfiguration {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Name
+        The name of the infrastructure configuration.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-infrastructureconfiguration.html#cfn-imagebuilder-infrastructureconfiguration-name
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER Description
+        The description of the infrastructure configuration.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-infrastructureconfiguration.html#cfn-imagebuilder-infrastructureconfiguration-description
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER InstanceTypes
+        The instance types of the infrastructure configuration.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-infrastructureconfiguration.html#cfn-imagebuilder-infrastructureconfiguration-instancetypes
         UpdateType: Mutable
         Type: List
         PrimitiveItemType: String
 
     .PARAMETER SecurityGroupIds
+        The security group IDs of the infrastructure configuration.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-infrastructureconfiguration.html#cfn-imagebuilder-infrastructureconfiguration-securitygroupids
         UpdateType: Mutable
         Type: List
         PrimitiveItemType: String
 
     .PARAMETER Logging
+        The logging configuration of the infrastructure configuration.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-infrastructureconfiguration.html#cfn-imagebuilder-infrastructureconfiguration-logging
         UpdateType: Mutable
         PrimitiveType: Json
         Type: Logging
 
     .PARAMETER SubnetId
+        The subnet ID of the infrastructure configuration.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-infrastructureconfiguration.html#cfn-imagebuilder-infrastructureconfiguration-subnetid
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER KeyPair
+        The EC2 key pair of the infrastructure configuration.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-infrastructureconfiguration.html#cfn-imagebuilder-infrastructureconfiguration-keypair
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER TerminateInstanceOnFailure
+        The terminate instance on failure configuration of the infrastructure configuration.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-infrastructureconfiguration.html#cfn-imagebuilder-infrastructureconfiguration-terminateinstanceonfailure
         UpdateType: Mutable
         PrimitiveType: Boolean
 
     .PARAMETER InstanceProfileName
+        The instance profile of the infrastructure configuration.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-infrastructureconfiguration.html#cfn-imagebuilder-infrastructureconfiguration-instanceprofilename
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER SnsTopicArn
+        The Amazon Resource Name ARN of the SNS topic for the infrastructure configuration.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-infrastructureconfiguration.html#cfn-imagebuilder-infrastructureconfiguration-snstopicarn
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER Tags
+        The tags of the infrastructure configuration.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-infrastructureconfiguration.html#cfn-imagebuilder-infrastructureconfiguration-tags
         UpdateType: Mutable
         Type: Map

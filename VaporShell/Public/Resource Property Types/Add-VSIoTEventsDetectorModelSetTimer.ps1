@@ -25,7 +25,7 @@ Information needed to set the timer.
         UpdateType: Mutable
 
     .PARAMETER DurationExpression
-        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+        Not currently supported by AWS CloudFormation.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-settimer.html#cfn-iotevents-detectormodel-settimer-durationexpression
         PrimitiveType: String

@@ -15,14 +15,14 @@ For more information, see RegisterScalableTarget: https://docs.aws.amazon.com/au
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER MaxCapacity
-        The maximum value to scale to in response to a scale-out event.
+        The maximum value that you plan to scale out to. When a scaling policy is in effect, Application Auto Scaling can scale out expand as needed to the maximum capacity limit in response to changing demand.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-maxcapacity
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER MinCapacity
-        The minimum value to scale to in response to a scale-in event.
+        The minimum value that you plan to scale in to. When a scaling policy is in effect, Application Auto Scaling can scale in contract as needed to the minimum capacity limit in response to changing demand.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-mincapacity
         PrimitiveType: Integer

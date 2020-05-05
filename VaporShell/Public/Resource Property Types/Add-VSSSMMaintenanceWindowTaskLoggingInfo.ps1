@@ -17,14 +17,14 @@ LoggingInfo has been deprecated. To specify an S3 bucket to contain logs, instea
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-logginginfo.html
 
     .PARAMETER S3Bucket
-        The name of an Amazon S3 bucket where execution logs are stored .
+        The name of an S3 bucket where execution logs are stored .
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-logginginfo.html#cfn-ssm-maintenancewindowtask-logginginfo-s3bucket
         PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER Region
-        The region where the Amazon S3 bucket is located.
+        The Region where the S3 bucket is located.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-logginginfo.html#cfn-ssm-maintenancewindowtask-logginginfo-region
         PrimitiveType: String

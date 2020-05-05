@@ -1,10 +1,10 @@
 function New-VSImageBuilderComponent {
     <#
     .SYNOPSIS
-        Adds an AWS::ImageBuilder::Component resource to the template. 
+        Adds an AWS::ImageBuilder::Component resource to the template. Components are orchestration documents that define a sequence of steps for downloading, installing, and configuring software packages or for defining tests to run on software packages. They also define validation and security hardening steps. A component is defined using a YAML document format. For more information, see Using Documents in EC2 Image Builder: https://docs.aws.amazon.com/imagebuilder/latest/userguide/image-builder-application-documents.html.
 
     .DESCRIPTION
-        Adds an AWS::ImageBuilder::Component resource to the template. 
+        Adds an AWS::ImageBuilder::Component resource to the template. Components are orchestration documents that define a sequence of steps for downloading, installing, and configuring software packages or for defining tests to run on software packages. They also define validation and security hardening steps. A component is defined using a YAML document format. For more information, see Using Documents in EC2 Image Builder: https://docs.aws.amazon.com/imagebuilder/latest/userguide/image-builder-application-documents.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-component.html
@@ -13,26 +13,36 @@ function New-VSImageBuilderComponent {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Name
+        The name of the component.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-component.html#cfn-imagebuilder-component-name
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER Version
+        The component version. For example, 1.0.0.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-component.html#cfn-imagebuilder-component-version
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER Description
+        The description of the component.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-component.html#cfn-imagebuilder-component-description
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER ChangeDescription
+        A change description of the component. For example initial version.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-component.html#cfn-imagebuilder-component-changedescription
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER Platform
+        The platform of the component. For example, Windows.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-component.html#cfn-imagebuilder-component-platform
         UpdateType: Immutable
         PrimitiveType: String
@@ -43,17 +53,23 @@ function New-VSImageBuilderComponent {
         PrimitiveType: String
 
     .PARAMETER KmsKeyId
+        The KMS key identifier used to encrypt the component.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-component.html#cfn-imagebuilder-component-kmskeyid
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER Tags
+        The tags associated with the component.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-component.html#cfn-imagebuilder-component-tags
         UpdateType: Immutable
         Type: Map
         PrimitiveItemType: String
 
     .PARAMETER Uri
+        The URI of the component document.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-component.html#cfn-imagebuilder-component-uri
         UpdateType: Immutable
         PrimitiveType: String

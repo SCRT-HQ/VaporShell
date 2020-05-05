@@ -13,21 +13,23 @@ FleetLaunchTemplateSpecificationRequest is a property of the  FleetLaunchTemplat
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplatespecificationrequest.html
 
     .PARAMETER LaunchTemplateName
-        The name of the launch template.
+        The name of the launch template. If you specify the template name, you can't specify the template ID.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplatespecificationrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplatespecificationrequest-launchtemplatename
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER Version
-        The version number of the launch template. Note: This is a required parameter and will be updated soon.
+        The launch template version number, $Latest, or $Default. You must specify a value, otherwise the request fails.
+If the value is $Latest, Amazon EC2 uses the latest version of the launch template.
+If the value is $Default, Amazon EC2 uses the default version of the launch template.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplatespecificationrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplatespecificationrequest-version
         PrimitiveType: String
         UpdateType: Immutable
 
     .PARAMETER LaunchTemplateId
-        The ID of the launch template.
+        The ID of the launch template. If you specify the template ID, you can't specify the template name.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplatespecificationrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplatespecificationrequest-launchtemplateid
         PrimitiveType: String

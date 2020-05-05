@@ -1,21 +1,25 @@
 function Add-VSAppMeshVirtualNodeListenerTlsCertificate {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::VirtualNode.ListenerTlsCertificate resource property to the template. 
+        Adds an AWS::AppMesh::VirtualNode.ListenerTlsCertificate resource property to the template. An object that represents a listener's Transport Layer Security (TLS certificate.
 
     .DESCRIPTION
         Adds an AWS::AppMesh::VirtualNode.ListenerTlsCertificate resource property to the template.
-
+An object that represents a listener's Transport Layer Security (TLS certificate.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertlscertificate.html
 
     .PARAMETER ACM
+        A reference to an object that represents an AWS Certicate Manager ACM certificate.
+
         Type: ListenerTlsAcmCertificate
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertlscertificate.html#cfn-appmesh-virtualnode-listenertlscertificate-acm
         UpdateType: Mutable
 
     .PARAMETER File
+        A reference to an object that represents a local file certificate.
+
         Type: ListenerTlsFileCertificate
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertlscertificate.html#cfn-appmesh-virtualnode-listenertlscertificate-file
         UpdateType: Mutable

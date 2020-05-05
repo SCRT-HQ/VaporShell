@@ -46,7 +46,8 @@ Used only when a scaling-specific cooldown is not specified and not supported fo
         UpdateType: Mutable
 
     .PARAMETER DesiredCapacity
-        The number of Amazon EC2 instances that the Auto Scaling group attempts to maintain. The number must be greater than or equal to the minimum size of the group and less than or equal to the maximum size of the group. If you do not specify a desired capacity, the default is the minimum size of the group.
+        The desired capacity is the initial capacity of the Auto Scaling group at the time of its creation and the capacity it attempts to maintain. It can scale beyond this capacity if you configure automatic scaling.
+The number must be greater than or equal to the minimum size of the group and less than or equal to the maximum size of the group. If you do not specify a desired capacity, the default is the minimum size of the group.
 CloudFormation marks the Auto Scaling group as successful by setting its status to CREATE_COMPLETE when the desired capacity is reached. However, if SpotPrice is set in the launch configuration: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html, then desired capacity is not used as a criteria for success, because whether your request is fulfilled depends on Spot Instance capacity and your maximum price. If the current Spot price is less than your specified maximum price, Amazon EC2 Auto Scaling uses DesiredCapacity as the target capacity for the group.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-desiredcapacity
@@ -81,7 +82,7 @@ You must specify one of the following properties: LaunchConfigurationName, Launc
         UpdateType: Immutable
 
     .PARAMETER LaunchConfigurationName
-        The name of the LaunchConfiguration: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html to use to launch instances.
+        The name of the launch configuration: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html to use to launch instances.
 You must specify one of the following properties: LaunchConfigurationName, LaunchTemplate, InstanceId, or MixedInstancesPolicy.
 When you update LaunchConfigurationName, existing Amazon EC2 instances continue to run with the configuration that they were originally launched with. To update existing instances, specify an UpdatePolicy attribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatepolicy.html for the Auto Scaling group.
 
@@ -90,7 +91,7 @@ When you update LaunchConfigurationName, existing Amazon EC2 instances continue 
         UpdateType: Mutable
 
     .PARAMETER LaunchTemplate
-        The LaunchTemplate: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html to use to launch instances.
+        The EC2 launch template: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html to use to launch instances.
 You must specify one of the following properties: LaunchConfigurationName, LaunchTemplate, InstanceId, or MixedInstancesPolicy.
 When you update LaunchTemplate, existing Amazon EC2 instances continue to run with the configuration that they were originally launched with. To update existing instances, specify an UpdatePolicy attribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatepolicy.html for the Auto Scaling group.
 
@@ -118,14 +119,16 @@ For more information, see Using a Load Balancer with an Auto Scaling Group: http
         UpdateType: Mutable
 
     .PARAMETER MaxInstanceLifetime
-        + Suspending and Resuming Scaling Processes: https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html in the *Amazon EC2 Auto Scaling User Guide*
+        The maximum amount of time, in seconds, that an instance can be in service.
+Valid Range: Minimum value of 604800.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-maxinstancelifetime
         PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER MaxSize
-        The maximum number of Amazon EC2 instances in the Auto Scaling group.
+        The maximum size of the Auto Scaling group.
+With a mixed instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need to go above MaxSize to meet your capacity requirements. In this event, Amazon EC2 Auto Scaling will never go above MaxSize by more than your maximum instance weight weights that define how many capacity units each instance contributes to the capacity of the group.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-maxsize
         PrimitiveType: String
@@ -141,7 +144,7 @@ For more information, see Using a Load Balancer with an Auto Scaling Group: http
         UpdateType: Mutable
 
     .PARAMETER MinSize
-        The minimum number of Amazon EC2 instances in the Auto Scaling group.
+        The minimum size of the Auto Scaling group.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-minsize
         PrimitiveType: String
@@ -181,7 +184,7 @@ You must specify one of the following properties: LaunchConfigurationName, Launc
         UpdateType: Mutable
 
     .PARAMETER Tags
-        The tags for the group.
+        One or more tags. You can tag your Auto Scaling group and propagate the tags to the Amazon EC2 instances it launches.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-tags
         DuplicatesAllowed: True

@@ -1,10 +1,10 @@
 function New-VSAutoScalingScheduledAction {
     <#
     .SYNOPSIS
-        Adds an AWS::AutoScaling::ScheduledAction resource to the template. Specifies a scheduled scaling action for an Amazon EC2 Auto Scaling group, changing the number of servers available for your application in response to predictable load changes.
+        Adds an AWS::AutoScaling::ScheduledAction resource to the template. Specifies an Amazon EC2 Auto Scaling scheduled action so that the Auto Scaling group can change the number of instances available for your application in response to predictable load changes.
 
     .DESCRIPTION
-        Adds an AWS::AutoScaling::ScheduledAction resource to the template. Specifies a scheduled scaling action for an Amazon EC2 Auto Scaling group, changing the number of servers available for your application in response to predictable load changes.
+        Adds an AWS::AutoScaling::ScheduledAction resource to the template. Specifies an Amazon EC2 Auto Scaling scheduled action so that the Auto Scaling group can change the number of instances available for your application in response to predictable load changes.
 
 **Important**
 
@@ -28,7 +28,7 @@ For more information, see Scheduled Scaling: https://docs.aws.amazon.com/autosca
         UpdateType: Immutable
 
     .PARAMETER DesiredCapacity
-        The number of Amazon EC2 instances that should be running in the Auto Scaling group.
+        The desired capacity is the initial capacity of the Auto Scaling group after the scheduled action runs and the capacity it attempts to maintain. It can scale beyond this capacity if you add more scaling conditions.
 You must specify at least one of the following properties: MaxSize, MinSize, or DesiredCapacity.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-desiredcapacity
@@ -43,7 +43,7 @@ You must specify at least one of the following properties: MaxSize, MinSize, or 
         UpdateType: Mutable
 
     .PARAMETER MaxSize
-        The maximum number of Amazon EC2 instances in the Auto Scaling group.
+        The maximum size of the Auto Scaling group.
 You must specify at least one of the following properties: MaxSize, MinSize, or DesiredCapacity.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-maxsize
@@ -51,7 +51,7 @@ You must specify at least one of the following properties: MaxSize, MinSize, or 
         UpdateType: Mutable
 
     .PARAMETER MinSize
-        The minimum number of Amazon EC2 instances in the Auto Scaling group.
+        The minimum size of the Auto Scaling group.
 You must specify at least one of the following properties: MaxSize, MinSize, or DesiredCapacity.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-minsize

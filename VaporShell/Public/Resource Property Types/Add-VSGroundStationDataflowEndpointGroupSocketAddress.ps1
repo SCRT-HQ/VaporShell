@@ -1,21 +1,25 @@
 function Add-VSGroundStationDataflowEndpointGroupSocketAddress {
     <#
     .SYNOPSIS
-        Adds an AWS::GroundStation::DataflowEndpointGroup.SocketAddress resource property to the template. 
+        Adds an AWS::GroundStation::DataflowEndpointGroup.SocketAddress resource property to the template. The address of the endpoint, such as 192.168.1.1.
 
     .DESCRIPTION
         Adds an AWS::GroundStation::DataflowEndpointGroup.SocketAddress resource property to the template.
-
+The address of the endpoint, such as 192.168.1.1.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-socketaddress.html
 
     .PARAMETER Name
+        The name of the endpoint, such as Endpoint 1.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-socketaddress.html#cfn-groundstation-dataflowendpointgroup-socketaddress-name
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER Port
+        The port of the endpoint, such as 55888.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-socketaddress.html#cfn-groundstation-dataflowendpointgroup-socketaddress-port
         UpdateType: Mutable
         PrimitiveType: Integer

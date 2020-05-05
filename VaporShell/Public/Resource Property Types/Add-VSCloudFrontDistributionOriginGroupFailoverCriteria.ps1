@@ -1,16 +1,18 @@
 function Add-VSCloudFrontDistributionOriginGroupFailoverCriteria {
     <#
     .SYNOPSIS
-        Adds an AWS::CloudFront::Distribution.OriginGroupFailoverCriteria resource property to the template. 
+        Adds an AWS::CloudFront::Distribution.OriginGroupFailoverCriteria resource property to the template. A complex data type that includes information about the failover criteria for an origin group, including the status codes for which CloudFront will failover from the primary origin to the second origin.
 
     .DESCRIPTION
         Adds an AWS::CloudFront::Distribution.OriginGroupFailoverCriteria resource property to the template.
-
+A complex data type that includes information about the failover criteria for an origin group, including the status codes for which CloudFront will failover from the primary origin to the second origin.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroupfailovercriteria.html
 
     .PARAMETER StatusCodes
+        The status codes that, when returned from the primary origin, will trigger CloudFront to failover to the second origin.
+
         Type: StatusCodes
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroupfailovercriteria.html#cfn-cloudfront-distribution-origingroupfailovercriteria-statuscodes
         UpdateType: Mutable

@@ -18,7 +18,7 @@ Information about a WorkSpace.
         UpdateType: Mutable
 
     .PARAMETER RootVolumeSizeGib
-        The size of the root volume.
+        The size of the root volume. For important information about how to modify the size of the root and user volumes, see Modify a WorkSpace: https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-workspace-workspaceproperties.html#cfn-workspaces-workspace-workspaceproperties-rootvolumesizegib
         PrimitiveType: Integer
@@ -39,7 +39,7 @@ Information about a WorkSpace.
         UpdateType: Mutable
 
     .PARAMETER UserVolumeSizeGib
-        The size of the user storage.
+        The size of the user storage. For important information about how to modify the size of the root and user volumes, see Modify a WorkSpace: https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-workspace-workspaceproperties.html#cfn-workspaces-workspace-workspaceproperties-uservolumesizegib
         PrimitiveType: Integer

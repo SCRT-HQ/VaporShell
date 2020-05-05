@@ -28,7 +28,7 @@ Cluster creation typically takes between 10 and 15 minutes. After you create an 
         UpdateType: Mutable
 
     .PARAMETER EncryptionConfig
-        +  CreateCluster: https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateCluster.html in the *Amazon EKS API Reference *.
+        The encryption configuration for the cluster.
 
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-encryptionconfig
@@ -36,7 +36,7 @@ Cluster creation typically takes between 10 and 15 minutes. After you create an 
         UpdateType: Immutable
 
     .PARAMETER RoleArn
-        The Amazon Resource Name ARN of the IAM role that provides permissions for Amazon EKS to make calls to other AWS API operations on your behalf. For more information, see Amazon EKS Service IAM Role: https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html in the * *Amazon EKS User Guide* *.
+        The Amazon Resource Name ARN of the IAM role that provides permissions for the Kubernetes control plane to make calls to AWS API operations on your behalf. For more information, see Amazon EKS Service IAM Role: https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html in the * *Amazon EKS User Guide* *.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-rolearn
         PrimitiveType: String

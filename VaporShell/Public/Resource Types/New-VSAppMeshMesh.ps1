@@ -1,12 +1,14 @@
 function New-VSAppMeshMesh {
     <#
     .SYNOPSIS
-        Adds an AWS::AppMesh::Mesh resource to the template. Creates a service mesh. A service mesh is a logical boundary for network traffic between the services that reside within it.
+        Adds an AWS::AppMesh::Mesh resource to the template. Creates a service mesh.
 
     .DESCRIPTION
-        Adds an AWS::AppMesh::Mesh resource to the template. Creates a service mesh. A service mesh is a logical boundary for network traffic between the services that reside within it.
+        Adds an AWS::AppMesh::Mesh resource to the template. Creates a service mesh.
 
-After you create your service mesh, you can create virtual services, virtual nodes, virtual routers, and routes to distribute traffic between the applications in your mesh.
+A service mesh is a logical boundary for network traffic between services that are represented by resources within the mesh. After you create your service mesh, you can create virtual services, virtual nodes, virtual routers, and routes to distribute traffic between the applications in your mesh.
+
+For more information about service meshes, see Service meshes: https://docs.aws.amazon.com/app-mesh/latest/userguide/meshes.html.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-mesh.html

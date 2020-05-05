@@ -134,6 +134,7 @@ Valid Values: aurora for MySQL 5.6-compatible Aurora, aurora-mysql for MySQL 5.7
 
     .PARAMETER EngineMode
         The DB engine mode of the DB cluster, either provisioned, serverless, parallelquery, global, or multimaster.
+global engine mode only applies for global database clusters created with Aurora MySQL version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use provisioned engine mode.
 Limitations and requirements apply to some DB engine modes. For more information, see the following sections in the *Amazon Aurora User Guide*:
 +   Limitations of Aurora Serverless: https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations
 +   Limitations of Parallel Query: https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations
@@ -213,7 +214,7 @@ Constraints: Minimum 30-minute window.
         UpdateType: Mutable
 
     .PARAMETER ReplicationSourceIdentifier
-        The Amazon Resource Name ARN of the source DB instance or DB cluster if this DB cluster is created as a Read Replica.
+        The Amazon Resource Name ARN of the source DB instance or DB cluster if this DB cluster is created as a read replica.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-replicationsourceidentifier
         PrimitiveType: String
@@ -265,8 +266,8 @@ Constraints:
         UpdateType: Immutable
 
     .PARAMETER StorageEncrypted
-        Indicates whether the DB instance is encrypted.
-If you specify the DBClusterIdentifier, SnapshotIdentifier, or SourceDBInstanceIdentifier property, don't specify this property. The value is inherited from the cluster, snapshot, or source DB instance.
+        Indicates whether the DB cluster is encrypted.
+If you specify the SnapshotIdentifier or SourceDBInstanceIdentifier property, don't specify this property. The value is inherited from the snapshot or source DB instance.
 If you specify the KmsKeyId property, then you must enable encryption.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-storageencrypted

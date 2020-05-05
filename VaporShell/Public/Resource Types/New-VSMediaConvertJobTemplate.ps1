@@ -83,6 +83,8 @@ For more information about MediaConvert job templates, see Working with AWS Elem
         UpdateType: Mutable
 
     .PARAMETER HopDestinations
+        Not currently supported by AWS CloudFormation.
+
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-jobtemplate.html#cfn-mediaconvert-jobtemplate-hopdestinations
         ItemType: HopDestination

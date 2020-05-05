@@ -8,7 +8,7 @@ function New-VSWAFv2IPSet {
 
 This is the latest version of **AWS WAF**, named AWS WAFV2, released in November, 2019. For information, including how to migrate your AWS WAF resources from the prior release, see the AWS WAF Developer Guide: https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html.
 
-The AWS::WAFv2::IPSet is used to identify web requests that originate from specific IP addresses or ranges of IP addresses. For example, if you're receiving a lot of requests from a ranges of IP addresses, you can configure AWS WAF to block them using an IP set that lists those IP addresses.
+Use an AWS::WAFv2::IPSet: #aws-resource-wafv2-ipset to identify web requests that originate from specific IP addresses or ranges of IP addresses. For example, if you're receiving a lot of requests from a ranges of IP addresses, you can configure AWS WAF to block them using an IP set that lists those IP addresses.
 
 You use an IP set by providing its Amazon Resource Name (ARN to the rule statement IPSetReferenceStatement, when you add a rule to a rule group or web ACL.
 
@@ -34,6 +34,7 @@ You use an IP set by providing its Amazon Resource Name (ARN to the rule stateme
 
     .PARAMETER Scope
         Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer ALB or an API Gateway stage. Valid Values are CLOUDFRONT and REGIONAL.
+For CLOUDFRONT, you must create your WAFv2 resources in the US East N. Virginia Region, us-east-1.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-ipset.html#cfn-wafv2-ipset-scope
         UpdateType: Mutable

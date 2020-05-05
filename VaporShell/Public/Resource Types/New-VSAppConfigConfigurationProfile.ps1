@@ -1,10 +1,10 @@
 function New-VSAppConfigConfigurationProfile {
     <#
     .SYNOPSIS
-        Adds an AWS::AppConfig::ConfigurationProfile resource to the template. The AWS::AppConfig::ConfigurationProfile resource creates a configuration profile that enables AppConfig to access the configuration source. Valid configuration sources include Systems Manager (SSM documents and SSM Parameter Store parameters. A configuration profile includes the following information.
+        Adds an AWS::AppConfig::ConfigurationProfile resource to the template. The AWS::AppConfig::ConfigurationProfile resource creates a configuration profile that enables AppConfig to access the configuration source. Valid configuration sources include Systems Manager (SSM documents, SSM Parameter Store parameters, and Amazon S3. A configuration profile includes the following information.
 
     .DESCRIPTION
-        Adds an AWS::AppConfig::ConfigurationProfile resource to the template. The AWS::AppConfig::ConfigurationProfile resource creates a configuration profile that enables AppConfig to access the configuration source. Valid configuration sources include Systems Manager (SSM documents and SSM Parameter Store parameters. A configuration profile includes the following information.
+        Adds an AWS::AppConfig::ConfigurationProfile resource to the template. The AWS::AppConfig::ConfigurationProfile resource creates a configuration profile that enables AppConfig to access the configuration source. Valid configuration sources include Systems Manager (SSM documents, SSM Parameter Store parameters, and Amazon S3. A configuration profile includes the following information.
 
 + The Uri location of the configuration data.
 
@@ -33,7 +33,7 @@ For more information, see AWS AppConfig: https://docs.aws.amazon.com/systems-man
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER LocationUri
-        A URI to locate the configuration. You can specify either a Systems Manager SSM document or an SSM Parameter Store parameter. For an SSM document, specify either the document name in the format ssm-document://<Document name> or the Amazon Resource Name ARN. For a parameter, specify either the parameter name in the format ssm-parameter://<Parameter name> or the ARN.
+        A URI to locate the configuration. You can specify a Systems Manager SSM document, an SSM Parameter Store parameter, or an Amazon S3 object. For an SSM document, specify either the document name in the format ssm-document://<Document_name> or the Amazon Resource Name ARN. For a parameter, specify either the parameter name in the format ssm-parameter://<Parameter_name> or the ARN. For an Amazon S3 object, specify the URI in the following format: s3://<bucket>/<objectKey> . Here is an example: s3://my-bucket/my-app/us-east-1/my-config.json
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-configurationprofile.html#cfn-appconfig-configurationprofile-locationuri
         PrimitiveType: String

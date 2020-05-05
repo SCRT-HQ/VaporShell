@@ -1,10 +1,12 @@
 function New-VSGroundStationConfig {
     <#
     .SYNOPSIS
-        Adds an AWS::GroundStation::Config resource to the template. 
+        Adds an AWS::GroundStation::Config resource to the template. Creates a Config with the specified parameters.
 
     .DESCRIPTION
-        Adds an AWS::GroundStation::Config resource to the template. 
+        Adds an AWS::GroundStation::Config resource to the template. Creates a Config with the specified parameters.
+
+Config objects provide Ground Station with the details necessary in order to schedule and execute satellite contacts.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-config.html
@@ -13,17 +15,23 @@ function New-VSGroundStationConfig {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Name
+        The name of the config object.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-config.html#cfn-groundstation-config-name
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER Tags
+        Tags assigned to a resource.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-config.html#cfn-groundstation-config-tags
         UpdateType: Mutable
         Type: List
         ItemType: Tag
 
     .PARAMETER ConfigData
+        Object containing the parameters of a config. Only one subtype may be specified per config. See the subtype definitions for a description of each config subtype.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-config.html#cfn-groundstation-config-configdata
         UpdateType: Mutable
         PrimitiveType: Json

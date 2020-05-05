@@ -1,26 +1,32 @@
 function Add-VSNetworkManagerSiteLocation {
     <#
     .SYNOPSIS
-        Adds an AWS::NetworkManager::Site.Location resource property to the template. 
+        Adds an AWS::NetworkManager::Site.Location resource property to the template. Describes a location.
 
     .DESCRIPTION
         Adds an AWS::NetworkManager::Site.Location resource property to the template.
-
+Describes a location.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-site-location.html
 
     .PARAMETER Address
+        The physical address.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-site-location.html#cfn-networkmanager-site-location-address
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER Latitude
+        The latitude.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-site-location.html#cfn-networkmanager-site-location-latitude
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER Longitude
+        The longitude.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-site-location.html#cfn-networkmanager-site-location-longitude
         UpdateType: Mutable
         PrimitiveType: String

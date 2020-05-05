@@ -1,21 +1,25 @@
 function Add-VSNetworkManagerLinkBandwidth {
     <#
     .SYNOPSIS
-        Adds an AWS::NetworkManager::Link.Bandwidth resource property to the template. 
+        Adds an AWS::NetworkManager::Link.Bandwidth resource property to the template. Describes bandwidth information.
 
     .DESCRIPTION
         Adds an AWS::NetworkManager::Link.Bandwidth resource property to the template.
-
+Describes bandwidth information.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-link-bandwidth.html
 
     .PARAMETER DownloadSpeed
+        Download speed in Mbps.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-link-bandwidth.html#cfn-networkmanager-link-bandwidth-downloadspeed
         UpdateType: Mutable
         PrimitiveType: Integer
 
     .PARAMETER UploadSpeed
+        Upload speed in Mbps.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-link-bandwidth.html#cfn-networkmanager-link-bandwidth-uploadspeed
         UpdateType: Mutable
         PrimitiveType: Integer

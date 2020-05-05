@@ -1,10 +1,10 @@
 function New-VSNetworkManagerSite {
     <#
     .SYNOPSIS
-        Adds an AWS::NetworkManager::Site resource to the template. 
+        Adds an AWS::NetworkManager::Site resource to the template. Specifies a site in a global network.
 
     .DESCRIPTION
-        Adds an AWS::NetworkManager::Site resource to the template. 
+        Adds an AWS::NetworkManager::Site resource to the template. Specifies a site in a global network.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-site.html
@@ -13,22 +13,34 @@ function New-VSNetworkManagerSite {
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
     .PARAMETER Description
+        A description of your site.
+Length Constraints: Maximum length of 256 characters.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-site.html#cfn-networkmanager-site-description
         UpdateType: Mutable
         PrimitiveType: String
 
     .PARAMETER Tags
+        The tags for the site.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-site.html#cfn-networkmanager-site-tags
         UpdateType: Mutable
         Type: List
         ItemType: Tag
 
     .PARAMETER GlobalNetworkId
+        The ID of the global network.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-site.html#cfn-networkmanager-site-globalnetworkid
         UpdateType: Immutable
         PrimitiveType: String
 
     .PARAMETER Location
+        The site location. This information is used for visualization in the Network Manager console. If you specify the address, the latitude and longitude are automatically calculated.
++  Address: The physical address of the site.
++  Latitude: The latitude of the site.
++  Longitude: The longitude of the site.
+
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-site.html#cfn-networkmanager-site-location
         UpdateType: Mutable
         Type: Location

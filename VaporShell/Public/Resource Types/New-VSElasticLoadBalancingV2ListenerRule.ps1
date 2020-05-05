@@ -1,10 +1,10 @@
 function New-VSElasticLoadBalancingV2ListenerRule {
     <#
     .SYNOPSIS
-        Adds an AWS::ElasticLoadBalancingV2::ListenerRule resource to the template. Specifies a listener rule.
+        Adds an AWS::ElasticLoadBalancingV2::ListenerRule resource to the template. Specifies a listener rule. The listener must be associated with an Application Load Balancer. Each rule consists of a priority, one or more actions, and one or more conditions.
 
     .DESCRIPTION
-        Adds an AWS::ElasticLoadBalancingV2::ListenerRule resource to the template. Specifies a listener rule.
+        Adds an AWS::ElasticLoadBalancingV2::ListenerRule resource to the template. Specifies a listener rule. The listener must be associated with an Application Load Balancer. Each rule consists of a priority, one or more actions, and one or more conditions.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html
@@ -14,6 +14,7 @@ function New-VSElasticLoadBalancingV2ListenerRule {
 
     .PARAMETER Actions
         The actions.
+The rule must include exactly one of the following types of actions: forward, fixed-response, or redirect, and it must be the last action to be performed. If the rule is for an HTTPS listener, it can also optionally include an authentication action.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-actions
         DuplicatesAllowed: False
@@ -23,6 +24,7 @@ function New-VSElasticLoadBalancingV2ListenerRule {
 
     .PARAMETER Conditions
         The conditions.
+The rule can optionally include up to one of each of the following conditions: http-request-method, host-header, path-pattern, and source-ip. A rule can also optionally include one or more of each of the following conditions: http-header and query-string.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-conditions
         DuplicatesAllowed: False

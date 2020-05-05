@@ -1,11 +1,11 @@
 function Add-VSSecretsManagerRotationScheduleRotationRules {
     <#
     .SYNOPSIS
-        Adds an AWS::SecretsManager::RotationSchedule.RotationRules resource property to the template. The RotationRules property used as part of the AWS::SecretsManager::RotationSchedule: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-rotationschedule.html resource type to configure how and when Secrets Manager performs rotation for the associated secret.
+        Adds an AWS::SecretsManager::RotationSchedule.RotationRules resource property to the template. The RotationRules property is used as part of the AWS::SecretsManager::RotationSchedule: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-rotationschedule.html resource type to configure how and when Secrets Manager performs rotation for the associated secret.
 
     .DESCRIPTION
         Adds an AWS::SecretsManager::RotationSchedule.RotationRules resource property to the template.
-The RotationRules property used as part of the AWS::SecretsManager::RotationSchedule: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-rotationschedule.html resource type to configure how and when Secrets Manager performs rotation for the associated secret.
+The RotationRules property is used as part of the AWS::SecretsManager::RotationSchedule: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-rotationschedule.html resource type to configure how and when Secrets Manager performs rotation for the associated secret.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-rotationrules.html

@@ -20,7 +20,7 @@ function New-VSOpsWorksCMServer {
         UpdateType: Immutable
 
     .PARAMETER EngineVersion
-        The major release version of the engine that you want to use. For a Chef server, the valid value for EngineVersion is currently 12. For a Puppet server, the valid value is 2017.
+        The major release version of the engine that you want to use. For a Chef server, the valid value for EngineVersion is currently 2. For a Puppet server, the valid value is 2017.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html#cfn-opsworkscm-server-engineversion
         PrimitiveType: String
@@ -55,7 +55,7 @@ function New-VSOpsWorksCMServer {
         UpdateType: Immutable
 
     .PARAMETER PreferredMaintenanceWindow
-        The start time for a one-hour period each week during which AWS OpsWorks CM performs maintenance on the instance. Valid values must be specified in the following format: DDD:HH:MM. The specified time is in coordinated universal time UTC. The default value is a random one-hour period on Tuesday, Wednesday, or Friday. See TimeWindowDefinition for more information.
+        The start time for a one-hour period each week during which AWS OpsWorks CM performs maintenance on the instance. Valid values must be specified in the following format: DDD:HH:MM. MM must be specified as 00. The specified time is in coordinated universal time UTC. The default value is a random one-hour period on Tuesday, Wednesday, or Friday. See TimeWindowDefinition for more information.
 **Example:** Mon:08:00, which represents a start time of every Monday at 08:00 UTC. 8:00 a.m.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html#cfn-opsworkscm-server-preferredmaintenancewindow
@@ -92,7 +92,7 @@ function New-VSOpsWorksCMServer {
         The start time for a one-hour period during which AWS OpsWorks CM backs up application-level data on your server if automated backups are enabled. Valid values must be specified in one of the following formats:
 +  HH:MM for daily backups
 +  DDD:HH:MM for weekly backups
-The specified time is in coordinated universal time UTC. The default value is a random, daily start time.
+MM must be specified as 00. The specified time is in coordinated universal time UTC. The default value is a random, daily start time.
 **Example:** 08:00, which represents a daily start time of 08:00 UTC.
 **Example:** Mon:08:00, which represents a start time of every Monday at 08:00 UTC. 8:00 a.m.
 
@@ -173,8 +173,8 @@ For more information about supported Amazon EC2 platforms, see Supported Platfor
     .PARAMETER Tags
         A map that contains tag keys and tag values to attach to an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server.
 + The key cannot be empty.
-+ The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: + - = . _ : /
-+ The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: + - = . _ : /
++ The key can be a maximum of 127 characters, and can contain only Unicode letters, numbers, or separators, or the following special characters: + - = . _ : / @
++ The value can be a maximum 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters: + - = . _ : / @
 + Leading and trailing white spaces are trimmed from both the key and value.
 + A maximum of 50 user-applied tags is allowed for any AWS OpsWorks-CM server.
 
