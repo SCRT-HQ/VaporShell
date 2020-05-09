@@ -15,15 +15,6 @@ Add-VSAppStreamDirectoryConfigServiceAccountCredentials [-AccountName] <Object> 
 Adds an AWS::AppStream::DirectoryConfig.ServiceAccountCredentials resource property to the template.
 The credentials for the service account used by the streaming instance to connect to the directory.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -AccountName

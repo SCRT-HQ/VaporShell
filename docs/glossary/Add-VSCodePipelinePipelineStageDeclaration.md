@@ -15,15 +15,6 @@ Add-VSCodePipelinePipelineStageDeclaration [-Actions] <Object> [[-Blockers] <Obj
 Adds an AWS::CodePipeline::Pipeline.StageDeclaration resource property to the template.
 Represents information about a stage and its definition.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Actions

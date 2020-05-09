@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 Adds an AWS::AppMesh::VirtualNode.Backend resource property to the template.
-An object representing the backends that a virtual node is expected to send outbound traffic to.
+An object that represents the backends that a virtual node is expected to send outbound traffic to.
 
 ## SYNTAX
 
@@ -12,16 +12,7 @@ Add-VSAppMeshVirtualNodeBackend [[-VirtualService] <Object>] [<CommonParameters>
 
 ## DESCRIPTION
 Adds an AWS::AppMesh::VirtualNode.Backend resource property to the template.
-An object representing the backends that a virtual node is expected to send outbound traffic to.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+An object that represents the backends that a virtual node is expected to send outbound traffic to.
 
 ## PARAMETERS
 

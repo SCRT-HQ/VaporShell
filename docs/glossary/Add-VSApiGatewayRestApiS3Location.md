@@ -19,15 +19,6 @@ S3Location is a property of the AWS::ApiGateway::RestApi: https://docs.aws.amazo
 
 On January 1, 2016, the Swagger Specification was donated to the OpenAPI initiative: https://www.openapis.org/, becoming the foundation of the OpenAPI Specification.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Bucket

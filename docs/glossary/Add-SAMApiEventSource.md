@@ -13,15 +13,6 @@ Add-SAMApiEventSource [-LogicalId] <String> -Path <Object> -Method <Object> [-Re
 ## DESCRIPTION
 The object describing an event source with type Api.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -LogicalId

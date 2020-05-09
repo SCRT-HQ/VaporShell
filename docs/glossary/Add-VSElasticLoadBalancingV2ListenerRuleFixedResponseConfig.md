@@ -15,15 +15,6 @@ Add-VSElasticLoadBalancingV2ListenerRuleFixedResponseConfig [[-ContentType] <Obj
 Adds an AWS::ElasticLoadBalancingV2::ListenerRule.FixedResponseConfig resource property to the template.
 Specifies information required when returning a custom HTTP response.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ContentType

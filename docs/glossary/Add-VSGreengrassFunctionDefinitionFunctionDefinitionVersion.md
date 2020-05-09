@@ -22,15 +22,6 @@ For more information, see https://docs.aws.amazon.com/AWSCloudFormation/latest/U
 
 \<a name="aws-properties-greengrass-functiondefinition-functiondefinitionversion-inheritance"\>\</a\> In an AWS CloudFormation template, FunctionDefinitionVersion is the property type of the InitialVersion property in the  AWS::Greengrass::FunctionDefinition : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinition.html resource.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -DefaultConfig

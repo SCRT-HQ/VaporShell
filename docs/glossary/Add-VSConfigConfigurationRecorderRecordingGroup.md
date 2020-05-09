@@ -7,8 +7,8 @@ Specifies the types of AWS resource for which AWS Config records configuration c
 ## SYNTAX
 
 ```
-Add-VSConfigConfigurationRecorderRecordingGroup [[-AllSupported] <Boolean>]
- [[-IncludeGlobalResourceTypes] <Boolean>] [[-ResourceTypes] <Object>] [<CommonParameters>]
+Add-VSConfigConfigurationRecorderRecordingGroup [[-AllSupported] <Object>]
+ [[-IncludeGlobalResourceTypes] <Object>] [[-ResourceTypes] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -37,15 +37,6 @@ For a list of supported resource types, see Supported Resource Types: https://do
 
 For more information, see Selecting Which Resources AWS Config Records: https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -AllSupported
@@ -58,13 +49,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -81,13 +72,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

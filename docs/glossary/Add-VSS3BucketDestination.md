@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 Adds an AWS::S3::Bucket.Destination resource property to the template.
-Specifies information about where to publish analysis or configuration results for an Amazon S3 bucket.
+Specifies information about where to publish analysis or configuration results for an Amazon S3 bucket and S3 Replication Time Control (S3 RTC.
 
 ## SYNTAX
 
@@ -13,16 +13,7 @@ Add-VSS3BucketDestination [[-BucketAccountId] <Object>] [-BucketArn] <Object> [-
 
 ## DESCRIPTION
 Adds an AWS::S3::Bucket.Destination resource property to the template.
-Specifies information about where to publish analysis or configuration results for an Amazon S3 bucket.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+Specifies information about where to publish analysis or configuration results for an Amazon S3 bucket and S3 Replication Time Control (S3 RTC.
 
 ## PARAMETERS
 

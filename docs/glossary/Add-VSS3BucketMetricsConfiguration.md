@@ -21,19 +21,11 @@ If you're updating an existing metrics configuration, note that this is a full r
 If you don't include the elements you want to keep, they are erased.
 For more information, see  PUT Bucket metrics: https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTMetricConfiguration.html in the *Amazon Simple Storage Service API Reference*.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Id
 The ID used to identify the metrics configuration.
+This can be any value you choose that helps you identify your metrics configuration.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-metricsconfiguration.html#cfn-s3-bucket-metricsconfiguration-id
 PrimitiveType: String

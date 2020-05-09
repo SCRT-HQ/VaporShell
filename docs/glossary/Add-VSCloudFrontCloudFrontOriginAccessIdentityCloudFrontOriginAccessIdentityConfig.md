@@ -17,15 +17,6 @@ Adds an AWS::CloudFront::CloudFrontOriginAccessIdentity.CloudFrontOriginAccessId
 Origin access identity configuration.
 Send a GET request to the /CloudFront API version/CloudFront/identity ID/config resource.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Comment

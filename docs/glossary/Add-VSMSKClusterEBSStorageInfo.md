@@ -7,21 +7,12 @@ Contains information about the EBS storage volumes attached to brokers.
 ## SYNTAX
 
 ```
-Add-VSMSKClusterEBSStorageInfo [[-VolumeSize] <Int32>] [<CommonParameters>]
+Add-VSMSKClusterEBSStorageInfo [[-VolumeSize] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::MSK::Cluster.EBSStorageInfo resource property to the template.
 Contains information about the EBS storage volumes attached to brokers.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -33,13 +24,13 @@ PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

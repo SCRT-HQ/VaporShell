@@ -16,15 +16,6 @@ Adds an AWS::KinesisAnalytics::ApplicationOutput.DestinationSchema resource prop
 Describes the data format when records are written to the destination.
 For more information, see Configuring Application Output: https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -RecordFormatType

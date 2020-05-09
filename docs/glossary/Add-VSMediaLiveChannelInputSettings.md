@@ -7,7 +7,7 @@ Information about extracting content from the input and about handling the conte
 ## SYNTAX
 
 ```
-Add-VSMediaLiveChannelInputSettings [[-DeblockFilter] <Object>] [[-FilterStrength] <Int32>]
+Add-VSMediaLiveChannelInputSettings [[-DeblockFilter] <Object>] [[-FilterStrength] <Object>]
  [[-InputFilter] <Object>] [[-SourceEndBehavior] <Object>] [[-VideoSelector] <Object>]
  [[-AudioSelectors] <Object>] [[-CaptionSelectors] <Object>] [[-DenoiseFilter] <Object>]
  [[-NetworkInputSettings] <Object>] [<CommonParameters>]
@@ -18,15 +18,6 @@ Adds an AWS::MediaLive::Channel.InputSettings resource property to the template.
 Information about extracting content from the input and about handling the content.
 
 The parent of this entity is InputAttachment.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -57,13 +48,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

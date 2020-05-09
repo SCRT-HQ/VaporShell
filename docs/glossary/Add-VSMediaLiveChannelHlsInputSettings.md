@@ -7,8 +7,8 @@ Information about how to connect to the upstream system.
 ## SYNTAX
 
 ```
-Add-VSMediaLiveChannelHlsInputSettings [[-BufferSegments] <Int32>] [[-Retries] <Int32>] [[-Bandwidth] <Int32>]
- [[-RetryInterval] <Int32>] [<CommonParameters>]
+Add-VSMediaLiveChannelHlsInputSettings [[-BufferSegments] <Object>] [[-Retries] <Object>]
+ [[-Bandwidth] <Object>] [[-RetryInterval] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -16,15 +16,6 @@ Adds an AWS::MediaLive::Channel.HlsInputSettings resource property to the templa
 Information about how to connect to the upstream system.
 
 The parent of this entity is NetworkInputSettings.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -37,13 +28,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -56,13 +47,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -77,13 +68,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -96,13 +87,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 4
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

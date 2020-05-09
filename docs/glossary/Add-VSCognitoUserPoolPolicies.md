@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 Adds an AWS::Cognito::UserPool.Policies resource property to the template.
-Policies is a property of the AWS::Cognito::UserPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html resource that defines the password policies of an Amazon Cognito User Pool.
+The policy associated with a user pool.
 
 ## SYNTAX
 
@@ -12,16 +12,7 @@ Add-VSCognitoUserPoolPolicies [[-PasswordPolicy] <Object>] [<CommonParameters>]
 
 ## DESCRIPTION
 Adds an AWS::Cognito::UserPool.Policies resource property to the template.
-Policies is a property of the AWS::Cognito::UserPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html resource that defines the password policies of an Amazon Cognito User Pool.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+The policy associated with a user pool.
 
 ## PARAMETERS
 

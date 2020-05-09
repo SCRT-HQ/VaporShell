@@ -7,21 +7,13 @@ Information needed to set the timer.
 ## SYNTAX
 
 ```
-Add-VSIoTEventsDetectorModelSetTimer [[-Seconds] <Int32>] [[-TimerName] <Object>] [<CommonParameters>]
+Add-VSIoTEventsDetectorModelSetTimer [[-Seconds] <Object>] [[-TimerName] <Object>]
+ [[-DurationExpression] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::IoTEvents::DetectorModel.SetTimer resource property to the template.
 Information needed to set the timer.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -34,13 +26,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -59,6 +51,25 @@ Aliases:
 
 Required: False
 Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DurationExpression
+Not currently supported by AWS CloudFormation.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-settimer.html#cfn-iotevents-detectormodel-settimer-durationexpression
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

@@ -16,15 +16,6 @@ Adds an AWS::EC2::SpotFleet.ClassicLoadBalancersConfig resource property to the 
 Specifies the Classic Load Balancers to attach to a Spot Fleet.
 Spot Fleet registers the running Spot Instances with these Classic Load Balancers.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ClassicLoadBalancers

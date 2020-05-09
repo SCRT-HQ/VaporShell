@@ -16,15 +16,6 @@ When included in a receipt rule, this action adds a header to the received email
 
 For information about adding a header using a receipt rule, see the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-add-header.html.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -HeaderValue

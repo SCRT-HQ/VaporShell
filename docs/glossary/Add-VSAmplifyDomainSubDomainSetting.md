@@ -16,15 +16,6 @@ Adds an AWS::Amplify::Domain.SubDomainSetting resource property to the template.
 The SubDomainSetting property type allows you to connect a subdomain (e.g.
 foo.yourdomain.com to a specific branch.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Prefix

@@ -14,15 +14,6 @@ Add-VSDataPipelinePipelineParameterObject [-Attributes] <Object> [-Id] <Object> 
 Adds an AWS::DataPipeline::Pipeline.ParameterObject resource property to the template.
 Contains information about a parameter object.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Attributes

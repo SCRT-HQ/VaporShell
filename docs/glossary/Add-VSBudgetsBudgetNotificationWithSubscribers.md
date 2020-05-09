@@ -17,15 +17,6 @@ Adds an AWS::Budgets::Budget.NotificationWithSubscribers resource property to th
 A notification with subscribers.
 A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Subscribers

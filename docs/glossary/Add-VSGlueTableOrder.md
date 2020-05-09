@@ -7,21 +7,12 @@ Specifies the sort order of a sorted column.
 ## SYNTAX
 
 ```
-Add-VSGlueTableOrder [-Column] <Object> [-SortOrder] <Int32> [<CommonParameters>]
+Add-VSGlueTableOrder [-Column] <Object> [-SortOrder] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Glue::Table.Order resource property to the template.
 Specifies the sort order of a sorted column.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -52,13 +43,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

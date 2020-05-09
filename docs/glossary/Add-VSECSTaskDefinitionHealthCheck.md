@@ -8,8 +8,8 @@ Health check parameters that are specified in a container definition override an
 ## SYNTAX
 
 ```
-Add-VSECSTaskDefinitionHealthCheck [-Command] <Object> [[-Interval] <Int32>] [[-Retries] <Int32>]
- [[-StartPeriod] <Int32>] [[-Timeout] <Int32>] [<CommonParameters>]
+Add-VSECSTaskDefinitionHealthCheck [-Command] <Object> [[-Interval] <Object>] [[-Retries] <Object>]
+ [[-StartPeriod] <Object>] [[-Timeout] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -26,15 +26,6 @@ For more information, see Updating the Amazon ECS Container Agent: https://docs.
 For more information, see AWS Fargate Platform Versions: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html.
 
 + Container health checks are not supported for tasks that are part of a service that is configured to use a Classic Load Balancer.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -74,13 +65,13 @@ PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -95,13 +86,13 @@ PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -117,13 +108,13 @@ PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 4
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -138,13 +129,13 @@ PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 5
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

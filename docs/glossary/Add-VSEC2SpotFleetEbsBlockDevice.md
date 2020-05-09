@@ -7,65 +7,57 @@ Describes a block device for an EBS volume.
 ## SYNTAX
 
 ```
-Add-VSEC2SpotFleetEbsBlockDevice [[-DeleteOnTermination] <Boolean>] [[-Encrypted] <Boolean>] [[-Iops] <Int32>]
- [[-SnapshotId] <Object>] [[-VolumeSize] <Int32>] [[-VolumeType] <Object>] [<CommonParameters>]
+Add-VSEC2SpotFleetEbsBlockDevice [[-DeleteOnTermination] <Object>] [[-Encrypted] <Object>] [[-Iops] <Object>]
+ [[-SnapshotId] <Object>] [[-VolumeSize] <Object>] [[-VolumeType] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::EC2::SpotFleet.EbsBlockDevice resource property to the template.
 Describes a block device for an EBS volume.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -DeleteOnTermination
 Indicates whether the EBS volume is deleted on instance termination.
+For more information, see Preserving Amazon EBS Volumes on Instance Termination: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination in the Amazon Elastic Compute Cloud User Guide.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-blockdevicemappings-ebs.html#cfn-ec2-spotfleet-ebsblockdevice-deleteontermination
 PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Encrypted
 Indicates whether the encryption state of an EBS volume is changed while being restored from a backing snapshot.
-The default effect of setting the Encrypted parameter to true through the console, API, or CLI depends on the volume's origin new or from a snapshot, starting encryption state, ownership, and whether account-level encryption: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/account-level-encryption.html is enabled.
-Each default case can be overridden by specifying a customer master key CMK with the KmsKeyId parameter in addition to setting Encrypted to true.
-For a complete list of possible encryption cases, see Amazon EBS Encryption: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters in the *Amazon Elastic Compute Cloud User Guide*.
+The effect of setting the encryption state to true depends on the volume origin new or from a snapshot, starting encryption state, ownership, and whether encryption by default is enabled.
+For more information, see Amazon EBS Encryption: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters in the *Amazon Elastic Compute Cloud User Guide*.
 In no case can you remove encryption from an encrypted volume.
 Encrypted volumes can only be attached to instances that support Amazon EBS encryption.
 For more information, see Supported Instance Types: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances.
+This parameter is not returned by DescribeImageAttribute: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImageAttribute.html.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-blockdevicemappings-ebs.html#cfn-ec2-spotfleet-ebsblockdevice-encrypted
 PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -86,13 +78,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -127,21 +119,22 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 5
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -VolumeType
 The volume type.
-If you set the type to io1, you must also set the **Iops** property.
-Default: standard
+If you set the type to io1, you must also specify the **Iops** parameter.
+If you set the type to gp2, st1, sc1, or standard, you must omit the **Iops** parameter.
+Default: gp2
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-blockdevicemappings-ebs.html#cfn-ec2-spotfleet-ebsblockdevice-volumetype
 PrimitiveType: String

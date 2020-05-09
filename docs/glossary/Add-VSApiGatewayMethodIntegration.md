@@ -11,27 +11,18 @@ Add-VSApiGatewayMethodIntegration [[-CacheKeyParameters] <Object>] [[-CacheNames
  [[-ConnectionId] <Object>] [[-ConnectionType] <Object>] [[-ContentHandling] <Object>]
  [[-Credentials] <Object>] [[-IntegrationHttpMethod] <Object>] [[-IntegrationResponses] <Object>]
  [[-PassthroughBehavior] <Object>] [[-RequestParameters] <Hashtable>] [[-RequestTemplates] <Hashtable>]
- [[-TimeoutInMillis] <Int32>] [[-Type] <Object>] [[-Uri] <Object>] [<CommonParameters>]
+ [[-TimeoutInMillis] <Object>] [[-Type] <Object>] [[-Uri] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::ApiGateway::Method.Integration resource property to the template.
 Integration is a property of the AWS::ApiGateway::Method: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html resource that specifies information about the target backend that a method calls.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -CacheKeyParameters
 A list of request parameters whose values API Gateway caches.
-These parameters must also be specified in RequestParameters: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-requestparameters to be supported in CacheKeyParameters.
+For cases where the integration type allows for RequestParameters to be set, these parameters must also be specified in RequestParameters: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-requestparameters to be supported in CacheKeyParameters.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-cachekeyparameters
 DuplicatesAllowed: False
@@ -281,13 +272,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 12
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

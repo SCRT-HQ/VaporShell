@@ -15,15 +15,6 @@ Add-VSIoTAnalyticsPipelineMath [[-Attribute] <Object>] [[-Next] <Object>] [[-Mat
 Adds an AWS::IoTAnalytics::Pipeline.Math resource property to the template.
 An activity that computes an arithmetic expression using the message's attributes.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Attribute

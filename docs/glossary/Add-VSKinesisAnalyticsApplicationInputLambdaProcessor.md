@@ -15,15 +15,6 @@ Add-VSKinesisAnalyticsApplicationInputLambdaProcessor [-ResourceARN] <Object> [-
 Adds an AWS::KinesisAnalytics::Application.InputLambdaProcessor resource property to the template.
 An object that contains the Amazon Resource Name (ARN of the AWS Lambda: https://docs.aws.amazon.com/lambda/ function that is used to preprocess records in the stream, and the ARN of the IAM role that is used to access the AWS Lambda function.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ResourceARN

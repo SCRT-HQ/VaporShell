@@ -22,15 +22,6 @@ Packages the local artifacts (local paths) that your AWS CloudFormation template
 The command uploads local artifacts, such as source code for an AWS Lambda function or a Swagger file for an AWS API Gateway REST API, to an S3 bucket.
 The command returns a copy of your template, replacing references to local artifacts with the S3 location where the command uploaded the artifacts.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -TemplateBody

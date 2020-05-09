@@ -15,15 +15,6 @@ Add-VSKinesisAnalyticsV2ApplicationReferenceDataSourceRecordFormat [[-MappingPar
 Adds an AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource.RecordFormat resource property to the template.
 For an SQL-based Amazon Kinesis Data Analytics application, describes the record format and relevant mapping information that should be applied to schematize the records on the stream.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -MappingParameters

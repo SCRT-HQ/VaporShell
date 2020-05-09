@@ -12,15 +12,6 @@ Add-VSAppMeshVirtualNodeTagRef [[-Value] <Object>] [-Key] <Object> [<CommonParam
 ## DESCRIPTION
 Adds an AWS::AppMesh::VirtualNode.TagRef resource property to the template
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Value

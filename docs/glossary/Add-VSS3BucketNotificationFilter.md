@@ -16,15 +16,6 @@ Adds an AWS::S3::Bucket.NotificationFilter resource property to the template.
 Specifies object key name filtering rules.
 For information about key name filtering, see Configuring Event Notifications: https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html in the *Amazon Simple Storage Service Developer Guide*.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -S3Key

@@ -14,15 +14,6 @@ Add-VSPinpointEmailIdentityTags [[-Value] <Object>] [[-Key] <Object>] [<CommonPa
 Adds an AWS::PinpointEmail::Identity.Tags resource property to the template.
 An object that defines the tags (keys and values that you want to associate with the identity.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Value

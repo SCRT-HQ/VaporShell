@@ -15,15 +15,6 @@ Add-VSPinpointCampaignCampaignEmailMessage [[-FromAddress] <Object>] [[-HtmlBody
 Adds an AWS::Pinpoint::Campaign.CampaignEmailMessage resource property to the template.
 Specifies the content and "From" address for an email message that's sent to recipients of a campaign.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -FromAddress
@@ -47,7 +38,7 @@ Accept wildcard characters: False
 ```
 
 ### -HtmlBody
-The body of the email, in HTML format, for recipients whose email clients support HTML content.
+The body of the email, in HTML format, for recipients whose email clients render HTML content.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignemailmessage.html#cfn-pinpoint-campaign-campaignemailmessage-htmlbody
 PrimitiveType: String
@@ -85,7 +76,7 @@ Accept wildcard characters: False
 ```
 
 ### -Body
-The body of the email for recipients whose email clients don't support HTML content.
+The body of the email for recipients whose email clients don't render HTML content.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignemailmessage.html#cfn-pinpoint-campaign-campaignemailmessage-body
 PrimitiveType: String

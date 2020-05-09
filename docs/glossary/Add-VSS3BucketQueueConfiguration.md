@@ -14,15 +14,6 @@ Add-VSS3BucketQueueConfiguration [-Event] <Object> [[-Filter] <Object>] [-Queue]
 Adds an AWS::S3::Bucket.QueueConfiguration resource property to the template.
 Specifies the configuration for publishing messages to an Amazon Simple Queue Service (Amazon SQS queue when Amazon S3 detects specified events.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Event

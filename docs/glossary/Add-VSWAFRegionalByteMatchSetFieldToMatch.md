@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 Adds an AWS::WAFRegional::ByteMatchSet.FieldToMatch resource property to the template.
-Specifies where in a web request to look for TargetString.
+**Note**
 
 ## SYNTAX
 
@@ -12,16 +12,15 @@ Add-VSWAFRegionalByteMatchSetFieldToMatch [-Type] <Object> [[-Data] <Object>] [<
 
 ## DESCRIPTION
 Adds an AWS::WAFRegional::ByteMatchSet.FieldToMatch resource property to the template.
+**Note**
+
+This is **AWS WAF Classic** documentation.
+For more information, see AWS WAF Classic: https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html in the developer guide.
+
+**For the latest version of AWS WAF**, use the AWS WAFV2 API and see the AWS WAF Developer Guide: https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html.
+With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+
 Specifies where in a web request to look for TargetString.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -31,7 +30,6 @@ Parts of a request that you can search include the following:
 +  HEADER: A specified request header, for example, the value of the User-Agent or Referer header.
 If you choose HEADER for the type, specify the name of the header in Data.
 +  METHOD: The HTTP method, which indicated the type of operation that the request is asking the origin to perform.
-Amazon CloudFront supports the following methods: DELETE, GET, HEAD, OPTIONS, PATCH, POST, and PUT.
 +  QUERY_STRING: A query string, which is the part of a URL that appears after a ?
 character, if any.
 +  URI: The part of a web request that identifies a resource, for example, /images/daily-ad.jpg.

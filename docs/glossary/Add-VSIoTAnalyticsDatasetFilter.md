@@ -14,15 +14,6 @@ Add-VSIoTAnalyticsDatasetFilter [[-DeltaTime] <Object>] [<CommonParameters>]
 Adds an AWS::IoTAnalytics::Dataset.Filter resource property to the template.
 Information which is used to filter message data, to segregate it according to the time frame in which it arrives.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -DeltaTime

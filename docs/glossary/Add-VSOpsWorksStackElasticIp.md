@@ -14,15 +14,6 @@ Add-VSOpsWorksStackElasticIp [-Ip] <Object> [[-Name] <Object>] [<CommonParameter
 Adds an AWS::OpsWorks::Stack.ElasticIp resource property to the template.
 Describes an Elastic IP address.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Ip

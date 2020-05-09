@@ -17,15 +17,6 @@ Adds an AWS::ElasticBeanstalk::ApplicationVersion.SourceBundle resource property
 The SourceBundle property is an embedded property of the AWS::ElasticBeanstalk::ApplicationVersion: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-sourcebundle.html resource.
 It specifies the Amazon S3 location of the source bundle for an AWS Elastic Beanstalk application version.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -S3Bucket

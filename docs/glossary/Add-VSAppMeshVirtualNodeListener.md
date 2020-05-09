@@ -2,26 +2,18 @@
 
 ## SYNOPSIS
 Adds an AWS::AppMesh::VirtualNode.Listener resource property to the template.
-An object representing a listener for a virtual node.
+An object that represents a listener for a virtual node.
 
 ## SYNTAX
 
 ```
-Add-VSAppMeshVirtualNodeListener [[-HealthCheck] <Object>] [-PortMapping] <Object> [<CommonParameters>]
+Add-VSAppMeshVirtualNodeListener [[-HealthCheck] <Object>] [[-TLS] <Object>] [-PortMapping] <Object>
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::AppMesh::VirtualNode.Listener resource property to the template.
-An object representing a listener for a virtual node.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+An object that represents a listener for a virtual node.
 
 ## PARAMETERS
 
@@ -44,6 +36,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -TLS
+A reference to an object that represents the Transport Layer Security TLS properties for a listener.
+
+Type: ListenerTls
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listener.html#cfn-appmesh-virtualnode-listener-tls
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -PortMapping
 The port mapping information for the listener.
 
@@ -57,7 +68,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 2
+Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

@@ -18,20 +18,11 @@ A container for replication rules.
 You can add up to 1,000 rules.
 The maximum size of a replication configuration is 2 MB.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Role
 The Amazon Resource Name ARN of the AWS Identity and Access Management IAM role that Amazon S3 assumes when replicating objects.
-For more information, see How to Set Up Cross-Region Replication: https://docs.aws.amazon.com/AmazonS3/latest/dev/crr-how-setup.html in the *Amazon Simple Storage Service Developer Guide*.
+For more information, see How to Set Up Replication: https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-how-setup.html in the *Amazon Simple Storage Service Developer Guide*.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration.html#cfn-s3-bucket-replicationconfiguration-role
 PrimitiveType: String

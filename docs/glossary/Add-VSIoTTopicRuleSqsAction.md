@@ -7,22 +7,13 @@ Describes an action to publish data to an Amazon SQS queue.
 ## SYNTAX
 
 ```
-Add-VSIoTTopicRuleSqsAction [-QueueUrl] <Object> [-RoleArn] <Object> [[-UseBase64] <Boolean>]
+Add-VSIoTTopicRuleSqsAction [-QueueUrl] <Object> [-RoleArn] <Object> [[-UseBase64] <Object>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::IoT::TopicRule.SqsAction resource property to the template.
 Describes an action to publish data to an Amazon SQS queue.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -72,13 +63,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

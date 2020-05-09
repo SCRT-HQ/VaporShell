@@ -15,15 +15,6 @@ Add-VSBackupBackupSelectionBackupSelectionResourceType [[-ListOfTags] <Object>] 
 Adds an AWS::Backup::BackupSelection.BackupSelectionResourceType resource property to the template.
 Specifies an object containing properties used to assign a set of resources to a backup plan.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ListOfTags

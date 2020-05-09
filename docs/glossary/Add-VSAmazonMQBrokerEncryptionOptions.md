@@ -7,21 +7,12 @@ Encryption options for the broker.
 ## SYNTAX
 
 ```
-Add-VSAmazonMQBrokerEncryptionOptions [[-KmsKeyId] <Object>] [-UseAwsOwnedKey] <Boolean> [<CommonParameters>]
+Add-VSAmazonMQBrokerEncryptionOptions [[-KmsKeyId] <Object>] [-UseAwsOwnedKey] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::AmazonMQ::Broker.EncryptionOptions resource property to the template.
 Encryption options for the broker.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -54,13 +45,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

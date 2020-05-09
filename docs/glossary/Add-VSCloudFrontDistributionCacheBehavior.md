@@ -7,11 +7,11 @@ A complex type that describes how CloudFront processes requests.
 ## SYNTAX
 
 ```
-Add-VSCloudFrontDistributionCacheBehavior [[-Compress] <Boolean>] [[-LambdaFunctionAssociations] <Object>]
+Add-VSCloudFrontDistributionCacheBehavior [[-Compress] <Object>] [[-LambdaFunctionAssociations] <Object>]
  [-TargetOriginId] <Object> [-ViewerProtocolPolicy] <Object> [[-TrustedSigners] <Object>]
- [[-DefaultTTL] <Double>] [[-FieldLevelEncryptionId] <Object>] [[-AllowedMethods] <Object>]
- [-PathPattern] <Object> [[-CachedMethods] <Object>] [[-SmoothStreaming] <Boolean>] [-ForwardedValues] <Object>
- [[-MinTTL] <Double>] [[-MaxTTL] <Double>] [<CommonParameters>]
+ [[-DefaultTTL] <Object>] [[-FieldLevelEncryptionId] <Object>] [[-AllowedMethods] <Object>]
+ [-PathPattern] <Object> [[-CachedMethods] <Object>] [[-SmoothStreaming] <Object>] [-ForwardedValues] <Object>
+ [[-MinTTL] <Object>] [[-MaxTTL] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -33,15 +33,6 @@ To add, change, or remove one or more cache behaviors, update the distribution c
 
 For more information about cache behaviors, see Cache Behaviors: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior in the *Amazon CloudFront Developer Guide*.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Compress
@@ -54,13 +45,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -134,12 +125,9 @@ Accept wildcard characters: False
 ```
 
 ### -TrustedSigners
-A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for private content.
-If you want to require signed URLs in requests for objects in the target origin that match the PathPattern for this cache behavior, specify true for Enabled, and specify the applicable values for Quantity and Items.
+Specifies the AWS accounts, if any, that you want to allow to create signed URLs for private content.
+If you want to require signed URLs in requests for objects in the target origin that match the PathPattern for this cache behavior, specify a list of AWS account IDs.
 For more information, see Serving Private Content through CloudFront: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html in the *Amazon CloudFront Developer Guide*.
-If you don't want to require signed URLs in requests for objects that match PathPattern, specify false for Enabled and 0 for Quantity.
-Omit Items.
-To add, change, or remove one or more trusted signers, change Enabled to true if it's currently false, change Quantity as applicable, and specify all of the trusted signers that you want to include in the updated distribution.
 
 PrimitiveItemType: String
 Type: List
@@ -168,13 +156,13 @@ PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 6
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -284,19 +272,19 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 11
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ForwardedValues
-A complex type that specifies how CloudFront handles query strings and cookies.
+A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
 
 Type: ForwardedValues
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-forwardedvalues
@@ -324,13 +312,13 @@ PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 13
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -345,13 +333,13 @@ PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 14
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

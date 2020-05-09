@@ -14,15 +14,6 @@ Add-VSConfigRemediationConfigurationStaticValue [[-Values] <Object>] [<CommonPar
 Adds an AWS::Config::RemediationConfiguration.StaticValue resource property to the template.
 The static value of the resource.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Values

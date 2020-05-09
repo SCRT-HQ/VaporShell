@@ -7,21 +7,12 @@ The default retention period that you want to apply to new objects placed in the
 ## SYNTAX
 
 ```
-Add-VSS3BucketDefaultRetention [[-Days] <Int32>] [[-Mode] <Object>] [[-Years] <Int32>] [<CommonParameters>]
+Add-VSS3BucketDefaultRetention [[-Days] <Object>] [[-Mode] <Object>] [[-Years] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::S3::Bucket.DefaultRetention resource property to the template.
 The default retention period that you want to apply to new objects placed in the specified bucket.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -33,19 +24,19 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Mode
-The default object lock retention mode you want to apply to new objects placed in the specified bucket.
+The default Object Lock retention mode you want to apply to new objects placed in the specified bucket.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-defaultretention.html#cfn-s3-bucket-defaultretention-mode
 PrimitiveType: String
@@ -71,13 +62,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

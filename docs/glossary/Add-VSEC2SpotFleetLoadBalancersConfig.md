@@ -15,15 +15,6 @@ Add-VSEC2SpotFleetLoadBalancersConfig [[-ClassicLoadBalancersConfig] <Object>] [
 Adds an AWS::EC2::SpotFleet.LoadBalancersConfig resource property to the template.
 Specifies the Classic Load Balancers and target groups to attach to a Spot Fleet request.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ClassicLoadBalancersConfig

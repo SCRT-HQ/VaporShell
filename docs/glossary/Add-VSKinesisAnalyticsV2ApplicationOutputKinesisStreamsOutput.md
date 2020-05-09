@@ -16,15 +16,6 @@ Adds an AWS::KinesisAnalyticsV2::ApplicationOutput.KinesisStreamsOutput resource
 When you configure an SQL-based Amazon Kinesis Data Analytics application's output, identifies a Kinesis data stream as the destination.
 You provide the stream Amazon Resource Name (ARN.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ResourceARN

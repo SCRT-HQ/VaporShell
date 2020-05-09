@@ -15,15 +15,6 @@ Add-VSCertificateManagerCertificateDomainValidationOption [-DomainName] <Object>
 Adds an AWS::CertificateManager::Certificate.DomainValidationOption resource property to the template.
 DomainValidationOption is a property of the AWS::CertificateManager::Certificate: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html resource that specifies the AWS Certificate Manager (ACM certificate domain to which ACM will send validation emails.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -DomainName

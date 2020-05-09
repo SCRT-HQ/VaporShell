@@ -2,6 +2,7 @@
 
 ## SYNOPSIS
 Adds an AWS::Config::RemediationConfiguration.ExecutionControls resource property to the template.
+An ExecutionControls object.
 
 ## SYNTAX
 
@@ -11,19 +12,13 @@ Add-VSConfigRemediationConfigurationExecutionControls [[-SsmControls] <Object>] 
 
 ## DESCRIPTION
 Adds an AWS::Config::RemediationConfiguration.ExecutionControls resource property to the template.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+An ExecutionControls object.
 
 ## PARAMETERS
 
 ### -SsmControls
+A SsmControls object.
+
 Type: SsmControls
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-executioncontrols.html#cfn-config-remediationconfiguration-executioncontrols-ssmcontrols
 UpdateType: Mutable

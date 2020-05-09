@@ -15,15 +15,6 @@ Add-VSApiGatewayUsagePlanApiStage [[-ApiId] <Object>] [[-Stage] <Object>] [[-Thr
 Adds an AWS::ApiGateway::UsagePlan.ApiStage resource property to the template.
 ApiStage is a property of the AWS::ApiGateway::UsagePlan: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html resource that specifies which stages and APIs to associate with a usage plan.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ApiId

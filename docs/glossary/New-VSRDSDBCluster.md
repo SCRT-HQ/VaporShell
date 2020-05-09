@@ -9,17 +9,18 @@ For more information, see Managing an Amazon Aurora DB Cluster: https://docs.aws
 
 ```
 New-VSRDSDBCluster [-LogicalId] <String> [-AssociatedRoles <Object>] [-AvailabilityZones <Object>]
- [-BacktrackWindow <Object>] [-BackupRetentionPeriod <Int32>] [-DBClusterIdentifier <Object>]
+ [-BacktrackWindow <Object>] [-BackupRetentionPeriod <Object>] [-DBClusterIdentifier <Object>]
  [-DBClusterParameterGroupName <Object>] [-DBSubnetGroupName <Object>] [-DatabaseName <Object>]
- [-DeletionProtection <Boolean>] [-EnableCloudwatchLogsExports <Object>]
- [-EnableIAMDatabaseAuthentication <Boolean>] -Engine <Object> [-EngineMode <Object>] [-EngineVersion <Object>]
- [-KmsKeyId <Object>] [-MasterUserPassword <Object>] [-MasterUsername <Object>] [-Port <Int32>]
+ [-DeletionProtection <Object>] [-EnableCloudwatchLogsExports <Object>] [-EnableHttpEndpoint <Object>]
+ [-EnableIAMDatabaseAuthentication <Object>] -Engine <Object> [-EngineMode <Object>] [-EngineVersion <Object>]
+ [-KmsKeyId <Object>] [-MasterUserPassword <Object>] [-MasterUsername <Object>] [-Port <Object>]
  [-PreferredBackupWindow <Object>] [-PreferredMaintenanceWindow <Object>]
  [-ReplicationSourceIdentifier <Object>] [-RestoreType <Object>] [-ScalingConfiguration <Object>]
  [-SnapshotIdentifier <Object>] [-SourceDBClusterIdentifier <Object>] [-SourceRegion <Object>]
- [-StorageEncrypted <Boolean>] [-Tags <Object>] [-UseLatestRestorableTime <Boolean>]
- [-VpcSecurityGroupIds <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
- [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+ [-StorageEncrypted <Object>] [-Tags <Object>] [-UseLatestRestorableTime <Object>]
+ [-VpcSecurityGroupIds <Object>] [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>]
+ [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -33,15 +34,6 @@ You can only create this resource in regions where Amazon Aurora is supported.
 
 The default DeletionPolicy for AWS::RDS::DBCluster resources is Snapshot.
 For more information about how AWS CloudFormation deletes resources, see  DeletionPolicy Attribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -140,13 +132,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -249,13 +241,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -283,6 +275,29 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -EnableHttpEndpoint
+A value that indicates whether to enable the HTTP endpoint for an Aurora Serverless DB cluster.
+By default, the HTTP endpoint is disabled.
+When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the Aurora Serverless DB cluster.
+You can also query your database from inside the RDS console with the query editor.
+For more information, see Using the Data API for Aurora Serverless: https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html in the *Amazon Aurora User Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-enablehttpendpoint
+PrimitiveType: Boolean
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -EnableIAMDatabaseAuthentication
 A value that indicates whether to enable mapping of AWS Identity and Access Management IAM accounts to database accounts.
 By default, mapping is disabled.
@@ -293,13 +308,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -326,6 +341,14 @@ Accept wildcard characters: False
 
 ### -EngineMode
 The DB engine mode of the DB cluster, either provisioned, serverless, parallelquery, global, or multimaster.
+global engine mode only applies for global database clusters created with Aurora MySQL version 5.6.10a.
+For higher Aurora MySQL versions, the clusters in a global database use provisioned engine mode.
+Limitations and requirements apply to some DB engine modes.
+For more information, see the following sections in the *Amazon Aurora User Guide*:
++   Limitations of Aurora Serverless: https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations
++   Limitations of Parallel Query: https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations
++   Requirements for Aurora Global Databases: https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations
++   Limitations of Multi-Master Clusters: https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-enginemode
 PrimitiveType: String
@@ -391,7 +414,7 @@ Accept wildcard characters: False
 
 ### -MasterUserPassword
 The master password for the DB instance.
-If you specify the SourceDBInstanceIdentifier or DBSnapshotIdentifier property, don't specify this property.
+If you specify the SourceDBInstanceIdentifier or SnapshotIdentifier property, don't specify this property.
 The value is inherited from the source DB instance or snapshot.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-masteruserpassword
@@ -440,13 +463,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -502,7 +525,7 @@ Accept wildcard characters: False
 ```
 
 ### -ReplicationSourceIdentifier
-The Amazon Resource Name ARN of the source DB instance or DB cluster if this DB cluster is created as a Read Replica.
+The Amazon Resource Name ARN of the source DB instance or DB cluster if this DB cluster is created as a read replica.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-replicationsourceidentifier
 PrimitiveType: String
@@ -632,9 +655,9 @@ Accept wildcard characters: False
 ```
 
 ### -StorageEncrypted
-Indicates whether the DB instance is encrypted.
-If you specify the DBClusterIdentifier, DBSnapshotIdentifier, or SourceDBInstanceIdentifier property, don't specify this property.
-The value is inherited from the cluster, snapshot, or source DB instance.
+Indicates whether the DB cluster is encrypted.
+If you specify the SnapshotIdentifier or SourceDBInstanceIdentifier property, don't specify this property.
+The value is inherited from the snapshot or source DB instance.
 If you specify the KmsKeyId property, then you must enable encryption.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-storageencrypted
@@ -642,13 +665,13 @@ PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -677,20 +700,19 @@ Accept wildcard characters: False
 ### -UseLatestRestorableTime
 A value that indicates whether to restore the DB cluster to the latest restorable backup time.
 By default, the DB cluster is not restored to the latest restorable backup time.
-Constraints: Can't be specified if RestoreToTime parameter is provided.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-uselatestrestorabletime
 PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -724,6 +746,49 @@ If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the re
 To keep a resource when its stack is deleted, specify Retain for that resource.
 You can use retain for any resource.
 For example, you can retain a nested stack, S3 bucket, or EC2 instance so that you can continue to use or modify those resources after you delete their stacks.
+
+You must use one of the following options: "Delete","Retain","Snapshot"
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdateReplacePolicy
+Use the UpdateReplacePolicy attribute to retain or (in some cases) backup the existing physical instance of a resource when it is replaced during a stack update operation.
+
+When you initiate a stack update, AWS CloudFormation updates resources based on differences between what you submit and the stack's current template and parameters.
+If you update a resource property that requires that the resource be replaced, AWS CloudFormation recreates the resource during the update.
+Recreating the resource generates a new physical ID.
+AWS CloudFormation creates the replacement resource first, and then changes references from other dependent resources to point to the replacement resource.
+By default, AWS CloudFormation then deletes the old resource.
+Using the UpdateReplacePolicy, you can specify that AWS CloudFormation retain or (in some cases) create a snapshot of the old resource.
+
+For resources that support snapshots, such as AWS::EC2::Volume, specify Snapshot to have AWS CloudFormation create a snapshot before deleting the old resource instance.
+
+You can apply the UpdateReplacePolicy attribute to any resource.
+UpdateReplacePolicy is only executed if you update a resource property whose update behavior is specified as Replacement, thereby causing AWS CloudFormation to replace the old resource with a new one with a new physical ID.
+For example, if you update the Engine property of an AWS::RDS::DBInstance resource type, AWS CloudFormation creates a new resource and replaces the current DB instance resource with the new one.
+The UpdateReplacePolicy attribute would then dictate whether AWS CloudFormation deleted, retained, or created a snapshot of the old DB instance.
+The update behavior for each property of a resource is specified in the reference topic for that resource in the AWS Resource and Property Types Reference.
+For more information on resource update behavior, see Update Behaviors of Stack Resources.
+
+The UpdateReplacePolicy attribute applies to stack updates you perform directly, as well as stack updates performed using change sets.
+
+Note
+Resources that are retained continue to exist and continue to incur applicable charges until you delete those resources.
+Snapshots that are created with this policy continue to exist and continue to incur applicable charges until you delete those snapshots.
+UpdateReplacePolicy retains the old physical resource or snapshot, but removes it from AWS CloudFormation's scope.
+
+UpdateReplacePolicy differs from the DeletionPolicy attribute in that it only applies to resources replaced during stack updates.
+Use DeletionPolicy for resources deleted when a stack is deleted, or when the resource definition itself is deleted from the template as part of a stack update.
 
 You must use one of the following options: "Delete","Retain","Snapshot"
 

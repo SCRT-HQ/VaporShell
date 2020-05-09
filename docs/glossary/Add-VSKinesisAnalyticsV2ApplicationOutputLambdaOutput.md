@@ -16,15 +16,6 @@ Adds an AWS::KinesisAnalyticsV2::ApplicationOutput.LambdaOutput resource propert
 When you configure an SQL-based Amazon Kinesis Data Analytics application's output, identifies an AWS Lambda function as the destination.
 You provide the function Amazon Resource Name (ARN of the Lambda function.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ResourceARN

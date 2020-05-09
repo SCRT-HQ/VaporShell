@@ -7,8 +7,8 @@ StepAdjustment is a subproperty of StepScalingPolicyConfiguration: https://docs.
 ## SYNTAX
 
 ```
-Add-VSApplicationAutoScalingScalingPolicyStepAdjustment [[-MetricIntervalLowerBound] <Double>]
- [[-MetricIntervalUpperBound] <Double>] [-ScalingAdjustment] <Int32> [<CommonParameters>]
+Add-VSApplicationAutoScalingScalingPolicyStepAdjustment [[-MetricIntervalLowerBound] <Object>]
+ [[-MetricIntervalUpperBound] <Object>] [-ScalingAdjustment] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -23,14 +23,7 @@ For the following examples, suppose that you have an alarm with a breach thresho
 
 For more information, see Step Adjustments: https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html#as-scaling-steps in the *Application Auto Scaling User Guide*.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+You can find a sample template snippet in the Examples: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#aws-resource-applicationautoscaling-scalingpolicy--examples section of the AWS::ApplicationAutoScaling::ScalingPolicy documentation.
 
 ## PARAMETERS
 
@@ -46,13 +39,13 @@ PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -69,13 +62,13 @@ PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -90,13 +83,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 3
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

@@ -16,15 +16,6 @@ Adds an AWS::EMR::Cluster.PlacementType resource property to the template.
 PlacementType is a property of the AWS::EMR::Cluster resource.
 PlacementType determines the Amazon EC2 Availability Zone configuration of the cluster (job flow.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -AvailabilityZone

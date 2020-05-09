@@ -16,15 +16,6 @@ Adds an AWS::KinesisAnalyticsV2::Application.KinesisStreamsInput resource proper
 Identifies an Amazon Kinesis data stream as the streaming source.
 You provide the stream's Amazon Resource Name (ARN.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ResourceARN

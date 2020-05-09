@@ -15,15 +15,6 @@ Add-VSBackupBackupVaultNotificationObjectType [-SNSTopicArn] <Object> [-BackupVa
 Adds an AWS::Backup::BackupVault.NotificationObjectType resource property to the template.
 Specifies an object containing SNS event notification properties for the target backup vault.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -SNSTopicArn

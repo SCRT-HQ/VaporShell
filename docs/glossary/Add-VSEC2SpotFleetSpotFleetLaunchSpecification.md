@@ -8,11 +8,11 @@ If you include On-Demand capacity in your fleet request, you can't use SpotFleet
 ## SYNTAX
 
 ```
-Add-VSEC2SpotFleetSpotFleetLaunchSpecification [[-BlockDeviceMappings] <Object>] [[-EbsOptimized] <Boolean>]
+Add-VSEC2SpotFleetSpotFleetLaunchSpecification [[-BlockDeviceMappings] <Object>] [[-EbsOptimized] <Object>]
  [[-IamInstanceProfile] <Object>] [-ImageId] <Object> [-InstanceType] <Object> [[-KernelId] <Object>]
  [[-KeyName] <Object>] [[-Monitoring] <Object>] [[-NetworkInterfaces] <Object>] [[-Placement] <Object>]
  [[-RamdiskId] <Object>] [[-SecurityGroups] <Object>] [[-SpotPrice] <Object>] [[-SubnetId] <Object>]
- [[-TagSpecifications] <Object>] [[-UserData] <Object>] [[-WeightedCapacity] <Double>] [<CommonParameters>]
+ [[-TagSpecifications] <Object>] [[-UserData] <Object>] [[-WeightedCapacity] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -20,19 +20,10 @@ Adds an AWS::EC2::SpotFleet.SpotFleetLaunchSpecification resource property to th
 Specifies the launch specification for one or more Spot Instances.
 If you include On-Demand capacity in your fleet request, you can't use SpotFleetLaunchSpecification; you must use  LaunchTemplateConfig: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateconfig.html.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -BlockDeviceMappings
-One or more block devices that are mapped to the Spot instances.
+One or more block devices that are mapped to the Spot Instances.
 You can't specify both a snapshot ID and an encryption value.
 This is because only blank volumes can be encrypted on creation.
 If a snapshot is the basis for a volume, it is not blank and its encryption status is used for the volume encryption status.
@@ -67,13 +58,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -300,8 +291,8 @@ Accept wildcard characters: False
 ```
 
 ### -SubnetId
-The ID of the subnet in which to launch the instances.
-To specify multiple subnets, separate them using commas; for example, "subnet-a61dafcf, subnet-65ea5f08".
+The IDs of the subnets in which to launch the instances.
+To specify multiple subnets, separate them using commas; for example, "subnet-1234abcdeexample1, subnet-0987cdef6example2".
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications.html#cfn-ec2-spotfleet-spotfleetlaunchspecification-subnetid
 PrimitiveType: String
@@ -370,13 +361,13 @@ PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 17
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

@@ -23,15 +23,6 @@ This property applies only to Lambda functions that run in a Greengrass containe
 
 \<a name="aws-properties-greengrass-functiondefinitionversion-resourceaccesspolicy-inheritance"\>\</a\> In an AWS CloudFormation template, ResourceAccessPolicy is a property of the  Environment : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-environment.html property type.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ResourceId

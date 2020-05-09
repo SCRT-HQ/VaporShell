@@ -7,9 +7,9 @@ Adds an AWS::EMR::Cluster.InstanceTypeConfig resource property to the template.
 ## SYNTAX
 
 ```
-Add-VSEMRClusterInstanceTypeConfig [[-BidPrice] <Object>] [[-BidPriceAsPercentageOfOnDemandPrice] <Double>]
+Add-VSEMRClusterInstanceTypeConfig [[-BidPrice] <Object>] [[-BidPriceAsPercentageOfOnDemandPrice] <Object>]
  [[-Configurations] <Object>] [[-EbsConfiguration] <Object>] [-InstanceType] <Object>
- [[-WeightedCapacity] <Int32>] [<CommonParameters>]
+ [[-WeightedCapacity] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -21,15 +21,6 @@ The instance fleet configuration is available only in Amazon EMR versions 4.8.0 
 InstanceTypeConfig is a sub-property of InstanceFleetConfig.
 InstanceTypeConfig determines the EC2 instances that Amazon EMR attempts to provision to fulfill On-Demand and Spot target capacities.
 There can be a maximum of 5 instance type configurations in a fleet.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -64,13 +55,13 @@ PrimitiveType: Double
 UpdateType: Immutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -144,13 +135,13 @@ PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 6
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

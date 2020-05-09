@@ -10,7 +10,7 @@ For more information, see Create a Cluster with Instance Fleets or Uniform Insta
 
 ```
 Add-VSEMRClusterInstanceGroupConfig [[-AutoScalingPolicy] <Object>] [[-BidPrice] <Object>]
- [[-Configurations] <Object>] [[-EbsConfiguration] <Object>] [-InstanceCount] <Int32> [-InstanceType] <Object>
+ [[-Configurations] <Object>] [[-EbsConfiguration] <Object>] [-InstanceCount] <Object> [-InstanceType] <Object>
  [[-Market] <Object>] [[-Name] <Object>] [<CommonParameters>]
 ```
 
@@ -19,15 +19,6 @@ Adds an AWS::EMR::Cluster.InstanceGroupConfig resource property to the template.
 Use InstanceGroupConfig to define instance groups for an EMR cluster.
 A cluster can not use both instance groups and instance fleets.
 For more information, see Create a Cluster with Instance Fleets or Uniform Instance Groups: https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-instance-group-configuration.html in the *Amazon EMR Management Guide*.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -54,10 +45,9 @@ Accept wildcard characters: False
 ```
 
 ### -BidPrice
-The maximum Spot price your are willing to pay for EC2 instances.
-If BidPrice is specified, Amazon EMR uses Spot Instances for the instance group.
-Specified in USD.
-Alternatively, a value of OnDemandPrice indicates that the maximum Spot price is set equal to the On-Demand price.
+The bid price for each EC2 Spot instance type as defined by InstanceType.
+Expressed in USD.
+If neither BidPrice nor BidPriceAsPercentageOfOnDemandPrice is provided, BidPriceAsPercentageOfOnDemandPrice defaults to 100%.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html#cfn-elasticmapreduce-cluster-instancegroupconfig-bidprice
 PrimitiveType: String
@@ -125,13 +115,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 5
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

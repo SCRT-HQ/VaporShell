@@ -17,15 +17,6 @@ Describes the mapping of each data element in the streaming source to the corres
 
 Also used to describe the format of the reference data source.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Mapping

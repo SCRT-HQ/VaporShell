@@ -8,7 +8,7 @@ If your bucket is versioning-enabled (or versioning is suspended, you can set th
 ## SYNTAX
 
 ```
-Add-VSS3BucketNoncurrentVersionTransition [-StorageClass] <Object> [-TransitionInDays] <Int32>
+Add-VSS3BucketNoncurrentVersionTransition [-StorageClass] <Object> [-TransitionInDays] <Object>
  [<CommonParameters>]
 ```
 
@@ -16,15 +16,6 @@ Add-VSS3BucketNoncurrentVersionTransition [-StorageClass] <Object> [-TransitionI
 Adds an AWS::S3::Bucket.NoncurrentVersionTransition resource property to the template.
 Container for the transition rule that describes when noncurrent objects transition to the STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER, or DEEP_ARCHIVE storage class.
 If your bucket is versioning-enabled (or versioning is suspended, you can set this action to request that Amazon S3 transition noncurrent object versions to the STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER, or DEEP_ARCHIVE storage class at a specific period in the object's lifetime.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -49,20 +40,20 @@ Accept wildcard characters: False
 
 ### -TransitionInDays
 Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action.
-For information about the noncurrent days calculations, see How Amazon S3 Calculates When an Object Became Noncurrent: https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html in the *Amazon Simple Storage Service Developer Guide*.
+For information about the noncurrent days calculations, see How Amazon S3 Calculates How Long an Object Has Been Noncurrent: https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#non-current-days-calculations in the *Amazon Simple Storage Service Developer Guide*.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-noncurrentversiontransition.html#cfn-s3-bucket-lifecycleconfig-rule-noncurrentversiontransition-transitionindays
 PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

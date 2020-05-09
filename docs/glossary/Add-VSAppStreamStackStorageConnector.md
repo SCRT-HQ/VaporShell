@@ -15,15 +15,6 @@ Add-VSAppStreamStackStorageConnector [[-Domains] <Object>] [[-ResourceIdentifier
 Adds an AWS::AppStream::Stack.StorageConnector resource property to the template.
 A connector that enables persistent storage for users.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Domains

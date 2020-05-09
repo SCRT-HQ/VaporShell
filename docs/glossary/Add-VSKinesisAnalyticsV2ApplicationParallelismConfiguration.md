@@ -3,33 +3,26 @@
 ## SYNOPSIS
 Adds an AWS::KinesisAnalyticsV2::Application.ParallelismConfiguration resource property to the template.
 Describes parameters for how a Java-based Amazon Kinesis Data Analytics application executes multiple tasks simultaneously.
-For more information about parallelism, see Parallel Execution: https://ci.apache.org/projects/flink/flink-docs-stable/dev/parallel.html in the Apache Flink Documentation: https://ci.apache.org/projects/flink/flink-docs-release-1.6/.
+For more information about parallelism, see Parallel Execution: https://ci.apache.org/projects/flink/flink-docs-release-1.8/dev/parallel.html in the Apache Flink Documentation: https://ci.apache.org/projects/flink/flink-docs-release-1.8/.
 
 ## SYNTAX
 
 ```
 Add-VSKinesisAnalyticsV2ApplicationParallelismConfiguration [-ConfigurationType] <Object>
- [[-ParallelismPerKPU] <Int32>] [[-AutoScalingEnabled] <Boolean>] [[-Parallelism] <Int32>] [<CommonParameters>]
+ [[-ParallelismPerKPU] <Object>] [[-AutoScalingEnabled] <Object>] [[-Parallelism] <Object>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::KinesisAnalyticsV2::Application.ParallelismConfiguration resource property to the template.
 Describes parameters for how a Java-based Amazon Kinesis Data Analytics application executes multiple tasks simultaneously.
-For more information about parallelism, see Parallel Execution: https://ci.apache.org/projects/flink/flink-docs-stable/dev/parallel.html in the Apache Flink Documentation: https://ci.apache.org/projects/flink/flink-docs-release-1.6/.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+For more information about parallelism, see Parallel Execution: https://ci.apache.org/projects/flink/flink-docs-release-1.8/dev/parallel.html in the Apache Flink Documentation: https://ci.apache.org/projects/flink/flink-docs-release-1.8/.
 
 ## PARAMETERS
 
 ### -ConfigurationType
 Describes whether the application uses the default parallelism for the Kinesis Data Analytics service.
+You must set this property to CUSTOM in order to change your application's AutoScalingEnabled, Parallelism, or ParallelismPerKPU properties.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-parallelismconfiguration.html#cfn-kinesisanalyticsv2-application-parallelismconfiguration-configurationtype
 PrimitiveType: String
@@ -49,20 +42,20 @@ Accept wildcard characters: False
 
 ### -ParallelismPerKPU
 Describes the number of parallel tasks that a Java-based Kinesis Data Analytics application can perform per Kinesis Processing Unit KPU used by the application.
-For more information about KPUs, see Amazon Kinesis Data Analytics Pricing: http://aws.amazon.com/kinesis/data-analytics/pricing/.
+For more information about KPUs, see Amazon Kinesis Data Analytics Pricing: https://aws.amazon.com/kinesis/data-analytics/pricing/.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-parallelismconfiguration.html#cfn-kinesisanalyticsv2-application-parallelismconfiguration-parallelismperkpu
 PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -75,13 +68,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -95,13 +88,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 4
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

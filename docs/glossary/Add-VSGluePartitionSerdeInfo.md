@@ -15,15 +15,6 @@ Add-VSGluePartitionSerdeInfo [[-Parameters] <Object>] [[-SerializationLibrary] <
 Adds an AWS::Glue::Partition.SerdeInfo resource property to the template.
 Information about a serialization/deserialization program (SerDe that serves as an extractor and loader.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Parameters

@@ -14,15 +14,6 @@ Add-VSElasticLoadBalancingV2ListenerRuleHostHeaderConfig [[-Values] <Object>] [<
 Adds an AWS::ElasticLoadBalancingV2::ListenerRule.HostHeaderConfig resource property to the template.
 Information about a host header condition.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Values

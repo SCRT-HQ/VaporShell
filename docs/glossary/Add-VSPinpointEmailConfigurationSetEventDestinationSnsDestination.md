@@ -16,15 +16,6 @@ Adds an AWS::PinpointEmail::ConfigurationSetEventDestination.SnsDestination reso
 An object that defines an Amazon SNS destination for email events.
 You can use Amazon SNS to send notification when certain email events occur.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -TopicArn

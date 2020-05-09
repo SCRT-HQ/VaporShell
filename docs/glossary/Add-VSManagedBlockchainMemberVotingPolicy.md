@@ -14,15 +14,6 @@ Add-VSManagedBlockchainMemberVotingPolicy [[-ApprovalThresholdPolicy] <Object>] 
 Adds an AWS::ManagedBlockchain::Member.VotingPolicy resource property to the template.
 The voting rules for the network to decide if a proposal is accepted
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ApprovalThresholdPolicy

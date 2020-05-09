@@ -14,19 +14,10 @@ Add-VSS3BucketSseKmsEncryptedObjects [-Status] <Object> [<CommonParameters>]
 Adds an AWS::S3::Bucket.SseKmsEncryptedObjects resource property to the template.
 A container for filter information for the selection of S3 objects encrypted with AWS KMS.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Status
-Specifies whether Amazon S3 replicates objects created with server-side encryption using an AWS KMS-managed key.
+Specifies whether Amazon S3 replicates objects created with server-side encryption using a customer master key CMK stored in AWS Key Management Service.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-ssekmsencryptedobjects.html#cfn-s3-bucket-ssekmsencryptedobjects-status
 PrimitiveType: String

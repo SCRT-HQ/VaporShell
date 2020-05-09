@@ -8,10 +8,13 @@ Lambda reads items from the event source and triggers the function.
 ## SYNTAX
 
 ```
-New-VSLambdaEventSourceMapping [-LogicalId] <String> [-BatchSize <Int32>] [-Enabled <Boolean>]
- -EventSourceArn <Object> -FunctionName <Object> [-MaximumBatchingWindowInSeconds <Int32>]
- [-StartingPosition <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
- [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+New-VSLambdaEventSourceMapping [-LogicalId] <String> [-BatchSize <Object>]
+ [-BisectBatchOnFunctionError <Object>] [-DestinationConfig <Object>] [-Enabled <Object>]
+ -EventSourceArn <Object> -FunctionName <Object> [-MaximumBatchingWindowInSeconds <Object>]
+ [-MaximumRecordAgeInSeconds <Object>] [-MaximumRetryAttempts <Object>] [-ParallelizationFactor <Object>]
+ [-StartingPosition <Object>] [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>]
+ [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -26,15 +29,6 @@ For details about each event source type, see the following topics.
 +  Using AWS Lambda with Amazon SQS: https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html
 
 +  Using AWS Lambda with Amazon DynamoDB: https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -69,13 +63,51 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -BisectBatchOnFunctionError
+Streams If the function returns an error, split the batch in two and retry.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-bisectbatchonfunctionerror
+PrimitiveType: Boolean
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DestinationConfig
+Streams An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-destinationconfig
+Type: DestinationConfig
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -88,13 +120,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -148,20 +180,77 @@ Accept wildcard characters: False
 ```
 
 ### -MaximumBatchingWindowInSeconds
-The maximum amount of time to gather records before invoking the function, in seconds.
+Streams The maximum amount of time to gather records before invoking the function, in seconds.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-maximumbatchingwindowinseconds
 PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MaximumRecordAgeInSeconds
+Streams The maximum age of a record that Lambda sends to a function for processing.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-maximumrecordageinseconds
+PrimitiveType: Integer
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MaximumRetryAttempts
+Streams The maximum number of times to retry when the function returns an error.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-maximumretryattempts
+PrimitiveType: Integer
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ParallelizationFactor
+Streams The number of batches to process from each shard concurrently.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-parallelizationfactor
+PrimitiveType: Integer
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -169,7 +258,8 @@ Accept wildcard characters: False
 ### -StartingPosition
 The position in a stream from which to start reading.
 Required for Amazon Kinesis and Amazon DynamoDB Streams sources.
-AT_TIMESTAMP is only supported for Amazon Kinesis streams.
++ **LATEST** - Read only new records.
++ **TRIM_HORIZON** - Process all available records.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-startingposition
 PrimitiveType: String
@@ -195,6 +285,49 @@ If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the re
 To keep a resource when its stack is deleted, specify Retain for that resource.
 You can use retain for any resource.
 For example, you can retain a nested stack, S3 bucket, or EC2 instance so that you can continue to use or modify those resources after you delete their stacks.
+
+You must use one of the following options: "Delete","Retain","Snapshot"
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdateReplacePolicy
+Use the UpdateReplacePolicy attribute to retain or (in some cases) backup the existing physical instance of a resource when it is replaced during a stack update operation.
+
+When you initiate a stack update, AWS CloudFormation updates resources based on differences between what you submit and the stack's current template and parameters.
+If you update a resource property that requires that the resource be replaced, AWS CloudFormation recreates the resource during the update.
+Recreating the resource generates a new physical ID.
+AWS CloudFormation creates the replacement resource first, and then changes references from other dependent resources to point to the replacement resource.
+By default, AWS CloudFormation then deletes the old resource.
+Using the UpdateReplacePolicy, you can specify that AWS CloudFormation retain or (in some cases) create a snapshot of the old resource.
+
+For resources that support snapshots, such as AWS::EC2::Volume, specify Snapshot to have AWS CloudFormation create a snapshot before deleting the old resource instance.
+
+You can apply the UpdateReplacePolicy attribute to any resource.
+UpdateReplacePolicy is only executed if you update a resource property whose update behavior is specified as Replacement, thereby causing AWS CloudFormation to replace the old resource with a new one with a new physical ID.
+For example, if you update the Engine property of an AWS::RDS::DBInstance resource type, AWS CloudFormation creates a new resource and replaces the current DB instance resource with the new one.
+The UpdateReplacePolicy attribute would then dictate whether AWS CloudFormation deleted, retained, or created a snapshot of the old DB instance.
+The update behavior for each property of a resource is specified in the reference topic for that resource in the AWS Resource and Property Types Reference.
+For more information on resource update behavior, see Update Behaviors of Stack Resources.
+
+The UpdateReplacePolicy attribute applies to stack updates you perform directly, as well as stack updates performed using change sets.
+
+Note
+Resources that are retained continue to exist and continue to incur applicable charges until you delete those resources.
+Snapshots that are created with this policy continue to exist and continue to incur applicable charges until you delete those snapshots.
+UpdateReplacePolicy retains the old physical resource or snapshot, but removes it from AWS CloudFormation's scope.
+
+UpdateReplacePolicy differs from the DeletionPolicy attribute in that it only applies to resources replaced during stack updates.
+Use DeletionPolicy for resources deleted when a stack is deleted, or when the resource definition itself is deleted from the template as part of a stack update.
 
 You must use one of the following options: "Delete","Retain","Snapshot"
 

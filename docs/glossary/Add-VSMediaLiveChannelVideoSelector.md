@@ -19,15 +19,6 @@ An input can contain only one video selector.
 
 The parent of this entity is InputSettings.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -SelectorSettings

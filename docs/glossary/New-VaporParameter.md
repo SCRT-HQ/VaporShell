@@ -41,12 +41,11 @@ That way, whenever anyone describes your stack, the parameter value is shown as 
 ### EXAMPLE 1
 ```
 $template = Initialize-Vaporshell -Description "Testing Mapping addition"
-```
-
 $template.AddParameter(
     (New-VaporParameter -LogicalId "DBPort" -Default 3306 -Description "TCP/IP port for the Propertiesbase" -Type "Number" -MinValue 1150 -MaxValue 65535),
-    (New-VaporParameter -LogicalId "DBPwd" -NoEcho -Description "The Propertiesbase admin account password" -Type "String" -MinLength 1 -MaxLength 41 -AllowedPattern "^\[a-zA-Z0-9\]*$")
+    (New-VaporParameter -LogicalId "DBPwd" -NoEcho -Description "The Propertiesbase admin account password" -Type "String" -MinLength 1 -MaxLength 41 -AllowedPattern "^[a-zA-Z0-9]*$")
 )
+```
 
 When the template is exported, this will convert to: 
     {

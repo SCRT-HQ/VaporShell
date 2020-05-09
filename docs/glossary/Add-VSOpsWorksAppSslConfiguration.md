@@ -15,15 +15,6 @@ Add-VSOpsWorksAppSslConfiguration [[-Certificate] <Object>] [[-Chain] <Object>] 
 Adds an AWS::OpsWorks::App.SslConfiguration resource property to the template.
 Describes an app's SSL configuration.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Certificate

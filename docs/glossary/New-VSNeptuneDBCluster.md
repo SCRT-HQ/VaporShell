@@ -8,12 +8,13 @@ Neptune is a fully managed graph database.
 ## SYNTAX
 
 ```
-New-VSNeptuneDBCluster [-LogicalId] <String> [-StorageEncrypted <Boolean>] [-KmsKeyId <Object>]
- [-AvailabilityZones <Object>] [-SnapshotIdentifier <Object>] [-Port <Int32>] [-DBClusterIdentifier <Object>]
- [-PreferredMaintenanceWindow <Object>] [-IamAuthEnabled <Boolean>] [-DBSubnetGroupName <Object>]
- [-PreferredBackupWindow <Object>] [-VpcSecurityGroupIds <Object>] [-DBClusterParameterGroupName <Object>]
- [-BackupRetentionPeriod <Int32>] [-Tags <Object>] [-EnableCloudwatchLogsExports <Object>]
- [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
+New-VSNeptuneDBCluster [-LogicalId] <String> [-StorageEncrypted <Object>] [-EngineVersion <Object>]
+ [-KmsKeyId <Object>] [-AvailabilityZones <Object>] [-SnapshotIdentifier <Object>] [-Port <Object>]
+ [-DBClusterIdentifier <Object>] [-PreferredMaintenanceWindow <Object>] [-IamAuthEnabled <Object>]
+ [-DBSubnetGroupName <Object>] [-DeletionProtection <Object>] [-PreferredBackupWindow <Object>]
+ [-VpcSecurityGroupIds <Object>] [-DBClusterParameterGroupName <Object>] [-BackupRetentionPeriod <Object>]
+ [-Tags <Object>] [-EnableCloudwatchLogsExports <Object>] [-DeletionPolicy <String>]
+ [-UpdateReplacePolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
  [-Condition <Object>] [<CommonParameters>]
 ```
 
@@ -30,14 +31,7 @@ If no DeletionPolicy is set for AWS::Neptune::DBCluster resources, the default d
 To retain a backup of the volume, the DeletionPolicy should be set to Snapshot.
 For more information about how AWS CloudFormation deletes resources, see DeletionPolicy Attribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+You can use AWS::Neptune::DBCluster.DeletionProtection to help guard against unintended deletion of your DB cluster.
 
 ## PARAMETERS
 
@@ -70,13 +64,32 @@ PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EngineVersion
+Indicates the database engine version.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-engineversion
+PrimitiveType: String
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -121,7 +134,12 @@ Accept wildcard characters: False
 ```
 
 ### -SnapshotIdentifier
-Not supported by Neptune.
+Specifies the identifier for a DB cluster snapshot.
+Must match the identifier of an existing snapshot.
+After you restore a DB cluster using a SnapshotIdentifier, you must specify the same SnapshotIdentifier for any future updates to the DB cluster.
+When you specify this property for an update, the DB cluster is not restored from the snapshot again, and the data in the database is not changed.
+However, if you don't specify the SnapshotIdentifier, an empty DB cluster is created, and the original DB cluster is deleted.
+If you specify a property that is different from the previous snapshot restore property, the DB cluster is restored from the snapshot specified by the SnapshotIdentifier, and the original DB cluster is deleted.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-snapshotidentifier
 PrimitiveType: String
@@ -147,13 +165,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -205,13 +223,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -222,6 +240,26 @@ Specifies information on the subnet group associated with the DB cluster, includ
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-dbsubnetgroupname
 PrimitiveType: String
 UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DeletionProtection
+Indicates whether or not the DB cluster has deletion protection enabled.
+The database can't be deleted when deletion protection is enabled.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-deletionprotection
+PrimitiveType: Boolean
+UpdateType: Mutable
 
 ```yaml
 Type: Object
@@ -306,13 +344,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -365,6 +403,49 @@ If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the re
 To keep a resource when its stack is deleted, specify Retain for that resource.
 You can use retain for any resource.
 For example, you can retain a nested stack, S3 bucket, or EC2 instance so that you can continue to use or modify those resources after you delete their stacks.
+
+You must use one of the following options: "Delete","Retain","Snapshot"
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdateReplacePolicy
+Use the UpdateReplacePolicy attribute to retain or (in some cases) backup the existing physical instance of a resource when it is replaced during a stack update operation.
+
+When you initiate a stack update, AWS CloudFormation updates resources based on differences between what you submit and the stack's current template and parameters.
+If you update a resource property that requires that the resource be replaced, AWS CloudFormation recreates the resource during the update.
+Recreating the resource generates a new physical ID.
+AWS CloudFormation creates the replacement resource first, and then changes references from other dependent resources to point to the replacement resource.
+By default, AWS CloudFormation then deletes the old resource.
+Using the UpdateReplacePolicy, you can specify that AWS CloudFormation retain or (in some cases) create a snapshot of the old resource.
+
+For resources that support snapshots, such as AWS::EC2::Volume, specify Snapshot to have AWS CloudFormation create a snapshot before deleting the old resource instance.
+
+You can apply the UpdateReplacePolicy attribute to any resource.
+UpdateReplacePolicy is only executed if you update a resource property whose update behavior is specified as Replacement, thereby causing AWS CloudFormation to replace the old resource with a new one with a new physical ID.
+For example, if you update the Engine property of an AWS::RDS::DBInstance resource type, AWS CloudFormation creates a new resource and replaces the current DB instance resource with the new one.
+The UpdateReplacePolicy attribute would then dictate whether AWS CloudFormation deleted, retained, or created a snapshot of the old DB instance.
+The update behavior for each property of a resource is specified in the reference topic for that resource in the AWS Resource and Property Types Reference.
+For more information on resource update behavior, see Update Behaviors of Stack Resources.
+
+The UpdateReplacePolicy attribute applies to stack updates you perform directly, as well as stack updates performed using change sets.
+
+Note
+Resources that are retained continue to exist and continue to incur applicable charges until you delete those resources.
+Snapshots that are created with this policy continue to exist and continue to incur applicable charges until you delete those snapshots.
+UpdateReplacePolicy retains the old physical resource or snapshot, but removes it from AWS CloudFormation's scope.
+
+UpdateReplacePolicy differs from the DeletionPolicy attribute in that it only applies to resources replaced during stack updates.
+Use DeletionPolicy for resources deleted when a stack is deleted, or when the resource definition itself is deleted from the template as part of a stack update.
 
 You must use one of the following options: "Delete","Retain","Snapshot"
 

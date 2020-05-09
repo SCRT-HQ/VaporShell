@@ -7,10 +7,10 @@ Specifies a network interface that is to be attached to an instance.
 ## SYNTAX
 
 ```
-Add-VSEC2InstanceNetworkInterface [[-AssociatePublicIpAddress] <Boolean>] [[-DeleteOnTermination] <Boolean>]
- [[-Description] <Object>] [-DeviceIndex] <Object> [[-GroupSet] <Object>] [[-Ipv6AddressCount] <Int32>]
+Add-VSEC2InstanceNetworkInterface [[-AssociatePublicIpAddress] <Object>] [[-DeleteOnTermination] <Object>]
+ [[-Description] <Object>] [-DeviceIndex] <Object> [[-GroupSet] <Object>] [[-Ipv6AddressCount] <Object>]
  [[-Ipv6Addresses] <Object>] [[-NetworkInterfaceId] <Object>] [[-PrivateIpAddress] <Object>]
- [[-PrivateIpAddresses] <Object>] [[-SecondaryPrivateIpAddressCount] <Int32>] [[-SubnetId] <Object>]
+ [[-PrivateIpAddresses] <Object>] [[-SecondaryPrivateIpAddressCount] <Object>] [[-SubnetId] <Object>]
  [<CommonParameters>]
 ```
 
@@ -20,32 +20,26 @@ Specifies a network interface that is to be attached to an instance.
 
 NetworkInterface is a property of the AWS::EC2::Instance: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html resource.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -AssociatePublicIpAddress
-Whether or not to associates a public IPv4 address with eth0.
+Indicates whether to assign a public IPv4 address to an instance you launch in a VPC.
+The public IP address can only be assigned to a network interface for eth0, and can only be assigned to a new network interface, not an existing one.
+You cannot specify more than one network interface in the request.
+If launching into a default subnet, the default value is true.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-associatepubip
 PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -59,13 +53,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -144,13 +138,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 6
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -178,6 +172,7 @@ Accept wildcard characters: False
 
 ### -NetworkInterfaceId
 The ID of the network interface.
+If you are creating a Spot Fleet, omit this parameter because you can't specify a network interface ID in a launch specification.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-network-iface
 PrimitiveType: String
@@ -249,13 +244,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 11
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

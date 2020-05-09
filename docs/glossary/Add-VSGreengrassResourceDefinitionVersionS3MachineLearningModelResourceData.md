@@ -8,8 +8,8 @@ For more information, see Perform Machine Learning Inference: https://docs.aws.a
 ## SYNTAX
 
 ```
-Add-VSGreengrassResourceDefinitionVersionS3MachineLearningModelResourceData [-DestinationPath] <Object>
- [-S3Uri] <Object> [<CommonParameters>]
+Add-VSGreengrassResourceDefinitionVersionS3MachineLearningModelResourceData [[-OwnerSetting] <Object>]
+ [-DestinationPath] <Object> [-S3Uri] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -19,16 +19,27 @@ For more information, see Perform Machine Learning Inference: https://docs.aws.a
 
 \<a name="aws-properties-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata-inheritance"\>\</a\> In an AWS CloudFormation template, S3MachineLearningModelResourceData can be used in the https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html property type.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
+
+### -OwnerSetting
+The owner setting for the downloaded machine learning resource.
+For more information, see Access Machine Learning Resources from Lambda Functions: https://docs.aws.amazon.com/greengrass/latest/developerguide/access-ml-resources.html in the *AWS IoT Greengrass Developer Guide*.
+
+Type: ResourceDownloadOwnerSetting
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata-ownersetting
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -DestinationPath
 The absolute local path of the resource inside the Lambda environment.
@@ -43,7 +54,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 1
+Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -63,7 +74,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 2
+Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

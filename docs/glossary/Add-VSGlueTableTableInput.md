@@ -9,22 +9,13 @@ A structure used to define a table.
 ```
 Add-VSGlueTableTableInput [[-Owner] <Object>] [[-ViewOriginalText] <Object>] [[-Description] <Object>]
  [[-TableType] <Object>] [[-Parameters] <Object>] [[-ViewExpandedText] <Object>]
- [[-StorageDescriptor] <Object>] [[-PartitionKeys] <Object>] [[-Retention] <Int32>] [[-Name] <Object>]
+ [[-StorageDescriptor] <Object>] [[-PartitionKeys] <Object>] [[-Retention] <Object>] [[-Name] <Object>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Glue::Table.TableInput resource property to the template.
 A structure used to define a table.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -193,13 +184,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 9
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

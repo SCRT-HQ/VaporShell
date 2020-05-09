@@ -8,7 +8,7 @@ Can only be used to create a new domain, not update an existing one.
 ## SYNTAX
 
 ```
-Add-VSElasticsearchDomainEncryptionAtRestOptions [[-Enabled] <Boolean>] [[-KmsKeyId] <Object>]
+Add-VSElasticsearchDomainEncryptionAtRestOptions [[-Enabled] <Object>] [[-KmsKeyId] <Object>]
  [<CommonParameters>]
 ```
 
@@ -16,15 +16,6 @@ Add-VSElasticsearchDomainEncryptionAtRestOptions [[-Enabled] <Boolean>] [[-KmsKe
 Adds an AWS::Elasticsearch::Domain.EncryptionAtRestOptions resource property to the template.
 Whether the domain should encrypt data at rest, and if so, the AWS Key Management Service (KMS key to use.
 Can only be used to create a new domain, not update an existing one.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -36,13 +27,13 @@ PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

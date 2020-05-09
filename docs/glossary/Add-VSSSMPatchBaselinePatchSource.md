@@ -18,15 +18,6 @@ PatchSource is the property type for the Sources resource of the AWS::SSM::Patch
 The AWS CloudFormation AWS::SSM::PatchSource resource is used to provide information about the patches to use to update target instances, including target operating systems and source repository.
 Applies to Linux instances only.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Products

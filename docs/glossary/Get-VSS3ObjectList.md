@@ -13,15 +13,6 @@ Get-VSS3ObjectList [-BucketName] <String> [-Prefix <String>] [-StartAfter <Strin
 ## DESCRIPTION
 {{ Fill in the Description }}
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -BucketName

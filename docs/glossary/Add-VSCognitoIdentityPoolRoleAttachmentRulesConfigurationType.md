@@ -14,19 +14,10 @@ Add-VSCognitoIdentityPoolRoleAttachmentRulesConfigurationType [-Rules] <Object> 
 Adds an AWS::Cognito::IdentityPoolRoleAttachment.RulesConfigurationType resource property to the template.
 RulesConfigurationType is a subproperty of the RoleMapping: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rolemapping.html property that defines the rules to be used for mapping users to roles.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Rules
-A list of rules.
+The rules.
 You can specify up to 25 rules per identity provider.
 
 Type: List

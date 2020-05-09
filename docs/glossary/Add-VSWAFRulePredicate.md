@@ -7,21 +7,12 @@ Specifies the ByteMatchSet, IPSet, SqlInjectionMatchSet, XssMatchSet, RegexMatch
 ## SYNTAX
 
 ```
-Add-VSWAFRulePredicate [-DataId] <Object> [-Negated] <Boolean> [-Type] <Object> [<CommonParameters>]
+Add-VSWAFRulePredicate [-DataId] <Object> [-Negated] <Object> [-Type] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::WAF::Rule.Predicate resource property to the template.
 Specifies the ByteMatchSet, IPSet, SqlInjectionMatchSet, XssMatchSet, RegexMatchSet, GeoMatchSet, and SizeConstraintSet objects that you want to add to a Rule and, for each object, indicates whether you want to negate the settings, for example, requests that do NOT originate from the IP address 192.0.2.44.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -56,13 +47,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

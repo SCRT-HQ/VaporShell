@@ -19,22 +19,11 @@ StepConfig is a property of the AWS::EMR::Cluster resource.
 The StepConfig property type specifies a cluster (job flow step, which runs only on the master node.
 Steps are used to submit data processing jobs to the cluster.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ActionOnFailure
 The action to take when the cluster step fails.
-Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE.
-TERMINATE_JOB_FLOW is provided for backward compatibility.
-We recommend using TERMINATE_CLUSTER instead.
+Possible values are CANCEL_AND_WAIT and CONTINUE.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-stepconfig.html#cfn-elasticmapreduce-cluster-stepconfig-actiononfailure
 PrimitiveType: String

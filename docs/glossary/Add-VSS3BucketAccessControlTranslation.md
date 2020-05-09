@@ -16,15 +16,6 @@ Adds an AWS::S3::Bucket.AccessControlTranslation resource property to the templa
 Specify this only in a cross-account scenario (where source and destination bucket owners are not the same, and you want to change replica ownership to the AWS account that owns the destination bucket.
 If this is not specified in the replication configuration, the replicas are owned by same AWS account that owns the source object.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Owner

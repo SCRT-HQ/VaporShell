@@ -7,22 +7,13 @@ A complex type that controls whether access logs are written for the streaming d
 ## SYNTAX
 
 ```
-Add-VSCloudFrontStreamingDistributionLogging [-Bucket] <Object> [-Enabled] <Boolean> [-Prefix] <Object>
+Add-VSCloudFrontStreamingDistributionLogging [-Bucket] <Object> [-Enabled] <Object> [-Prefix] <Object>
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::CloudFront::StreamingDistribution.Logging resource property to the template.
 A complex type that controls whether access logs are written for the streaming distribution.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -55,13 +46,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

@@ -15,15 +15,6 @@ Add-VSIoTTopicRuleStepFunctionsAction [[-ExecutionNamePrefix] <Object>] [-RoleAr
 Adds an AWS::IoT::TopicRule.StepFunctionsAction resource property to the template.
 Starts execution of a Step Functions state machine.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ExecutionNamePrefix

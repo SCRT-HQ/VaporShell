@@ -14,15 +14,6 @@ Add-VSECSTaskDefinitionHostEntry [-Hostname] <Object> [-IpAddress] <Object> [<Co
 Adds an AWS::ECS::TaskDefinition.HostEntry resource property to the template.
 The HostEntry property specifies a hostname and an IP address that are added to the /etc/hosts file of a container through the extraHosts parameter of its ContainerDefinition resource.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Hostname

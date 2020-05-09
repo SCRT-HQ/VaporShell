@@ -15,15 +15,6 @@ Add-VSOpsWorksStackRdsDbInstance [-DbPassword] <Object> [-DbUser] <Object> [-Rds
 Adds an AWS::OpsWorks::Stack.RdsDbInstance resource property to the template.
 Describes an Amazon RDS instance.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -DbPassword

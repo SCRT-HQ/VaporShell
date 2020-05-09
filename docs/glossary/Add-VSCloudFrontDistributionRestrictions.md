@@ -14,20 +14,12 @@ Add-VSCloudFrontDistributionRestrictions [-GeoRestriction] <Object> [<CommonPara
 Adds an AWS::CloudFront::Distribution.Restrictions resource property to the template.
 A complex type that identifies ways in which you want to restrict distribution of your content.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -GeoRestriction
 A complex type that controls the countries in which your content is distributed.
 CloudFront determines the location of your users using MaxMind GeoIP databases.
+To disable geo restriction, remove the Restrictions: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-restrictions property from your stack template.
 
 Type: GeoRestriction
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-restrictions.html#cfn-cloudfront-distribution-restrictions-georestriction

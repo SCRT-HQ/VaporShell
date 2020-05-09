@@ -14,15 +14,6 @@ Add-VSGlueTableColumn [[-Comment] <Object>] [[-Type] <Object>] [-Name] <Object> 
 Adds an AWS::Glue::Table.Column resource property to the template.
 A column in a Table.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Comment

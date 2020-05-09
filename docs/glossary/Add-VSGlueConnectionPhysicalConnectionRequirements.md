@@ -15,15 +15,6 @@ Add-VSGlueConnectionPhysicalConnectionRequirements [[-AvailabilityZone] <Object>
 Adds an AWS::Glue::Connection.PhysicalConnectionRequirements resource property to the template.
 Specifies the physical requirements for a connection.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -AvailabilityZone

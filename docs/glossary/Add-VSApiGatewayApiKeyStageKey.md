@@ -16,15 +16,6 @@ Adds an AWS::ApiGateway::ApiKey.StageKey resource property to the template.
 StageKey is a property of the AWS::ApiGateway::ApiKey: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html resource that specifies the stage to associate with the API key.
 This association allows only clients with the key to make requests to methods in that stage.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -RestApiId

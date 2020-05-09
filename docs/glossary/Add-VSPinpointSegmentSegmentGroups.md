@@ -2,7 +2,8 @@
 
 ## SYNOPSIS
 Adds an AWS::Pinpoint::Segment.SegmentGroups resource property to the template.
-Specifies the set of segment criteria to evaluate when handling segment groups for the segment.
+Specifies one or more segment groups that apply to a segment.
+Each segment group consists of zero or more base segments and the dimensions that are applied to those base segments.
 
 ## SYNTAX
 
@@ -12,21 +13,13 @@ Add-VSPinpointSegmentSegmentGroups [[-Groups] <Object>] [[-Include] <Object>] [<
 
 ## DESCRIPTION
 Adds an AWS::Pinpoint::Segment.SegmentGroups resource property to the template.
-Specifies the set of segment criteria to evaluate when handling segment groups for the segment.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+Specifies one or more segment groups that apply to a segment.
+Each segment group consists of zero or more base segments and the dimensions that are applied to those base segments.
 
 ## PARAMETERS
 
 ### -Groups
-Specifies the set of segment criteria to evaluate when handling segment groups for the segment.
+An array that defines the set of segment criteria to evaluate when handling segment groups for the segment.
 
 Type: List
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentgroups.html#cfn-pinpoint-segment-segmentgroups-groups

@@ -15,15 +15,6 @@ Add-VSIoTTopicRuleElasticsearchAction [-Endpoint] <Object> [-Id] <Object> [-Inde
 Adds an AWS::IoT::TopicRule.ElasticsearchAction resource property to the template.
 Describes an action that writes data to an Amazon Elasticsearch Service domain.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Endpoint

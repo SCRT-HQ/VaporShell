@@ -26,15 +26,6 @@ An AWS::Serverless::Api resource need not be explicitly added to a AWS Serverles
 A resource of this type is implicitly created from the union of Api events defined on AWS::Serverless::Function resources defined in the template that do not refer to an AWS::Serverless::Api resource.
 An AWS::Serverless::Api resource should be used to define and document the API using Swagger, which provides more ability to configure the underlying Amazon API Gateway resources.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -LogicalId

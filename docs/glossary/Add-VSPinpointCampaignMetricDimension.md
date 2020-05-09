@@ -2,26 +2,19 @@
 
 ## SYNOPSIS
 Adds an AWS::Pinpoint::Campaign.MetricDimension resource property to the template.
-Specifies the dimension settings for custom metrics that your app reports to Amazon Pinpoint.
+Specifies metric-based criteria for including or excluding endpoints from a segment.
+These criteria derive from custom metrics that you define for endpoints.
 
 ## SYNTAX
 
 ```
-Add-VSPinpointCampaignMetricDimension [[-ComparisonOperator] <Object>] [[-Value] <Double>] [<CommonParameters>]
+Add-VSPinpointCampaignMetricDimension [[-ComparisonOperator] <Object>] [[-Value] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Pinpoint::Campaign.MetricDimension resource property to the template.
-Specifies the dimension settings for custom metrics that your app reports to Amazon Pinpoint.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+Specifies metric-based criteria for including or excluding endpoints from a segment.
+These criteria derive from custom metrics that you define for endpoints.
 
 ## PARAMETERS
 
@@ -53,13 +46,13 @@ PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

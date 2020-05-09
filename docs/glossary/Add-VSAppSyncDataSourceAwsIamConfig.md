@@ -17,15 +17,6 @@ Use the AwsIamConfig property type to specify AwsIamConfig for a AWS AppSync aut
 
 AwsIamConfig is a property of the AWS AppSync DataSource AuthorizationConfig: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-httpconfig-authorizationconfig.html resource.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -SigningRegion

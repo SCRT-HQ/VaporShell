@@ -20,15 +20,6 @@ Currently, only overriding values inside of the skill manifest component of the 
 
 Overrides is a property of the Alexa::ASK::Skill SkillPackage property type.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Manifest

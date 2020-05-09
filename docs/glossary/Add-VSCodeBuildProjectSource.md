@@ -7,23 +7,14 @@ Source is a property of the AWS::CodeBuild::Project: https://docs.aws.amazon.com
 ## SYNTAX
 
 ```
-Add-VSCodeBuildProjectSource [-Type] <Object> [[-ReportBuildStatus] <Boolean>] [[-Auth] <Object>]
- [[-SourceIdentifier] <Object>] [[-BuildSpec] <Object>] [[-GitCloneDepth] <Int32>]
- [[-GitSubmodulesConfig] <Object>] [[-InsecureSsl] <Boolean>] [[-Location] <Object>] [<CommonParameters>]
+Add-VSCodeBuildProjectSource [-Type] <Object> [[-ReportBuildStatus] <Object>] [[-Auth] <Object>]
+ [[-SourceIdentifier] <Object>] [[-BuildSpec] <Object>] [[-GitCloneDepth] <Object>]
+ [[-GitSubmodulesConfig] <Object>] [[-InsecureSsl] <Object>] [[-Location] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::CodeBuild::Project.Source resource property to the template.
 Source is a property of the AWS::CodeBuild::Project: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html resource that specifies the source code settings for the project, such as the source code's repository type and location.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -34,6 +25,7 @@ Valid values include:
 +  CODECOMMIT: The source code is in an AWS CodeCommit repository.
 +  CODEPIPELINE: The source code settings are specified in the source action of a pipeline in AWS CodePipeline.
 +  GITHUB: The source code is in a GitHub repository.
++  GITHUB_ENTERPRISE: The source code is in a GitHub Enterprise repository.
 +  NO_SOURCE: The project does not have input source code.
 +  S3: The source code is in an Amazon Simple Storage Service Amazon S3 input bucket.
 
@@ -63,13 +55,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -148,13 +140,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 6
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -190,13 +182,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 8
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

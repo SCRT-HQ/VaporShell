@@ -7,24 +7,15 @@ TargetTrackingConfiguration is a subproperty of ScalingInstruction: https://docs
 ## SYNTAX
 
 ```
-Add-VSAutoScalingPlansScalingPlanTargetTrackingConfiguration [[-ScaleOutCooldown] <Int32>]
- [-TargetValue] <Double> [[-PredefinedScalingMetricSpecification] <Object>] [[-DisableScaleIn] <Boolean>]
- [[-ScaleInCooldown] <Int32>] [[-EstimatedInstanceWarmup] <Int32>]
+Add-VSAutoScalingPlansScalingPlanTargetTrackingConfiguration [[-ScaleOutCooldown] <Object>]
+ [-TargetValue] <Object> [[-PredefinedScalingMetricSpecification] <Object>] [[-DisableScaleIn] <Object>]
+ [[-ScaleInCooldown] <Object>] [[-EstimatedInstanceWarmup] <Object>]
  [[-CustomizedScalingMetricSpecification] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::AutoScalingPlans::ScalingPlan.TargetTrackingConfiguration resource property to the template.
 TargetTrackingConfiguration is a subproperty of ScalingInstruction: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html that specifies a target tracking configuration to use with AWS Auto Scaling.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -37,13 +28,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -57,13 +48,13 @@ PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -99,13 +90,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 4
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -119,13 +110,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 5
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -139,13 +130,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 6
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

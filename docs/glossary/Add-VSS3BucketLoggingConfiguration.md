@@ -17,15 +17,6 @@ Adds an AWS::S3::Bucket.LoggingConfiguration resource property to the template.
 Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys for a bucket.
 For more information, see PUT Bucket logging: https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html in the *Amazon Simple Storage Service API Reference*.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -DestinationBucketName

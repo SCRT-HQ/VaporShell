@@ -21,15 +21,6 @@ For more information, see https://docs.aws.amazon.com/AWSCloudFormation/latest/U
 
 \<a name="aws-properties-greengrass-coredefinition-coredefinitionversion-inheritance"\>\</a\> In an AWS CloudFormation template, CoreDefinitionVersion is the property type of the InitialVersion property in the  AWS::Greengrass::CoreDefinition : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-coredefinition.html resource.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Cores

@@ -15,15 +15,6 @@ Add-VSIoTAnalyticsPipelineAddAttributes [[-Next] <Object>] [[-Attributes] <Objec
 Adds an AWS::IoTAnalytics::Pipeline.AddAttributes resource property to the template.
 An activity that adds other attributes based on existing attributes in the message.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Next

@@ -14,15 +14,6 @@ Add-VSDirectoryServiceSimpleADVpcSettings [-SubnetIds] <Object> [-VpcId] <Object
 Adds an AWS::DirectoryService::SimpleAD.VpcSettings resource property to the template.
 Contains VPC information for the CreateDirectory: https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateDirectory.html or CreateMicrosoftAD: https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateMicrosoftAD.html operation.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -SubnetIds

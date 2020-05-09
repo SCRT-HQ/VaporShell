@@ -14,15 +14,6 @@ Add-VSPinpointEmailConfigurationSetTags [[-Value] <Object>] [[-Key] <Object>] [<
 Adds an AWS::PinpointEmail::ConfigurationSet.Tags resource property to the template.
 An object that defines the tags (keys and values that you want to associate with the configuration set.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Value

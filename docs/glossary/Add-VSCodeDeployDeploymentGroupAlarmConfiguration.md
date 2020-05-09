@@ -8,23 +8,14 @@ AlarmConfiguration is a property of the DeploymentGroup: https://docs.aws.amazon
 ## SYNTAX
 
 ```
-Add-VSCodeDeployDeploymentGroupAlarmConfiguration [[-Alarms] <Object>] [[-Enabled] <Boolean>]
- [[-IgnorePollAlarmFailure] <Boolean>] [<CommonParameters>]
+Add-VSCodeDeployDeploymentGroupAlarmConfiguration [[-Alarms] <Object>] [[-Enabled] <Object>]
+ [[-IgnorePollAlarmFailure] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::CodeDeploy::DeploymentGroup.AlarmConfiguration resource property to the template.
 The AlarmConfiguration property type configuresCloudWatch alarms for an AWS CodeDeploy deployment group.
 AlarmConfiguration is a property of the DeploymentGroup: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html resource.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -58,13 +49,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -80,13 +71,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

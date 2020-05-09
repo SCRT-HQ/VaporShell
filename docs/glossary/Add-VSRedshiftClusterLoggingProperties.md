@@ -14,15 +14,6 @@ Add-VSRedshiftClusterLoggingProperties [-BucketName] <Object> [[-S3KeyPrefix] <O
 Adds an AWS::Redshift::Cluster.LoggingProperties resource property to the template.
 Specifies logging information, such as queries and connection attempts, for the specified Amazon Redshift cluster.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -BucketName

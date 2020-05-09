@@ -7,22 +7,13 @@ Describes the client connection logging options for the Client VPN endpoint.
 ## SYNTAX
 
 ```
-Add-VSEC2ClientVpnEndpointConnectionLogOptions [[-CloudwatchLogStream] <Object>] [-Enabled] <Boolean>
+Add-VSEC2ClientVpnEndpointConnectionLogOptions [[-CloudwatchLogStream] <Object>] [-Enabled] <Object>
  [[-CloudwatchLogGroup] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::EC2::ClientVpnEndpoint.ConnectionLogOptions resource property to the template.
 Describes the client connection logging options for the Client VPN endpoint.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -53,13 +44,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

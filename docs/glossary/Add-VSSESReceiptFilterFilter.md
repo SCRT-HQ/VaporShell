@@ -16,15 +16,6 @@ Adds an AWS::SES::ReceiptFilter.Filter resource property to the template.
 A data structure that describes the IP address filter that you want to specify.
 This structure consists of a name, an IP address range, and whether to allow or block mail from it.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -IpFilter

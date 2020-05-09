@@ -16,15 +16,6 @@ Add-VSManagedBlockchainMemberNetworkConfiguration [[-Description] <Object>] [-Fr
 Adds an AWS::ManagedBlockchain::Member.NetworkConfiguration resource property to the template.
 Configuration properties of the network to which the member belongs.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Description

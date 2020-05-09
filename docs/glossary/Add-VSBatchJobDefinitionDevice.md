@@ -15,15 +15,6 @@ Add-VSBatchJobDefinitionDevice [[-HostPath] <Object>] [[-Permissions] <Object>] 
 Adds an AWS::Batch::JobDefinition.Device resource property to the template.
 An object representing a container instance host device.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -HostPath

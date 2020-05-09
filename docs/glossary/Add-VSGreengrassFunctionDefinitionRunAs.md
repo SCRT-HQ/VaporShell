@@ -10,7 +10,7 @@ For more information, see Run as: https://docs.aws.amazon.com/greengrass/latest/
 ## SYNTAX
 
 ```
-Add-VSGreengrassFunctionDefinitionRunAs [[-Uid] <Int32>] [[-Gid] <Int32>] [<CommonParameters>]
+Add-VSGreengrassFunctionDefinitionRunAs [[-Uid] <Object>] [[-Gid] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -28,15 +28,6 @@ For more information and requirements, see Running a Lambda Function as Root: ht
 
 \<a name="aws-properties-greengrass-functiondefinition-runas-inheritance"\>\</a\> In an AWS CloudFormation template, RunAs is a property of the  Execution : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-execution.html property type.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Uid
@@ -48,13 +39,13 @@ PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -68,13 +59,13 @@ PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

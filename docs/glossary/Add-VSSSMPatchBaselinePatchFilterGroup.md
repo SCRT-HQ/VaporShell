@@ -16,15 +16,6 @@ The PatchFilterGroup property type specifies a set of patch filters for an AWS S
 
 PatchFilterGroup is the property type for the GlobalFilters property of the AWS::SSM::PatchBaseline: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html resource and the PatchFilterGroup property of the Rule: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html property type.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -PatchFilters

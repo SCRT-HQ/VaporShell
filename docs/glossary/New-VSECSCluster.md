@@ -7,23 +7,14 @@ The AWS::ECS::Cluster resource creates an Amazon Elastic Container Service (Amaz
 ## SYNTAX
 
 ```
-New-VSECSCluster [-LogicalId] <String> [-ClusterName <Object>] [-Tags <Object>] [-DeletionPolicy <String>]
- [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
- [<CommonParameters>]
+New-VSECSCluster [-LogicalId] <String> [-Tags <Object>] [-ClusterName <Object>] [-ClusterSettings <Object>]
+ [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
+ [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::ECS::Cluster resource to the template.
 The AWS::ECS::Cluster resource creates an Amazon Elastic Container Service (Amazon ECS cluster.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -44,13 +35,26 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ClusterName
-A user-generated string that you use to identify your cluster.
-If you don't specify a name, AWS CloudFormation generates a unique physical ID for the name.
+### -Tags
+The metadata that you apply to the cluster to help you categorize and organize them.
+Each tag consists of a key and an optional value, both of which you define.
+The following basic restrictions apply to tags:
++ Maximum number of tags per resource - 50
++ For each resource, each tag key must be unique, and each tag key can have only one value.
++ Maximum key length - 128 Unicode characters in UTF-8
++ Maximum value length - 256 Unicode characters in UTF-8
++ If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters.
+Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = .
+_ : / @.
++ Tag keys and values are case-sensitive.
++ Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for AWS use.
+You cannot edit or delete tag keys or values with this prefix.
+Tags with this prefix do not count against your tags per resource limit.
 
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-cluster.html#cfn-ecs-cluster-clustername
-PrimitiveType: String
-UpdateType: Immutable
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-cluster.html#cfn-ecs-cluster-tags
+UpdateType: Mutable
+Type: List
+ItemType: Tag
 
 ```yaml
 Type: Object
@@ -64,12 +68,35 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Tags
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-cluster.html#cfn-ecs-cluster-tags
-DuplicatesAllowed: True
-ItemType: Tag
-Type: List
+### -ClusterName
+A user-generated string that you use to identify your cluster.
+If you don't specify a name, AWS CloudFormation generates a unique physical ID for the name.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-cluster.html#cfn-ecs-cluster-clustername
+UpdateType: Immutable
+PrimitiveType: String
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ClusterSettings
+The setting to use when creating a cluster.
+This parameter is used to enable CloudWatch Container Insights for a cluster.
+If this value is specified, it will override the containerInsights value set with PutAccountSetting: https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSetting.html or PutAccountSettingDefault: https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSettingDefault.html.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-cluster.html#cfn-ecs-cluster-clustersettings
 UpdateType: Mutable
+Type: List
+ItemType: ClusterSettings
 
 ```yaml
 Type: Object
@@ -91,6 +118,49 @@ If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the re
 To keep a resource when its stack is deleted, specify Retain for that resource.
 You can use retain for any resource.
 For example, you can retain a nested stack, S3 bucket, or EC2 instance so that you can continue to use or modify those resources after you delete their stacks.
+
+You must use one of the following options: "Delete","Retain","Snapshot"
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdateReplacePolicy
+Use the UpdateReplacePolicy attribute to retain or (in some cases) backup the existing physical instance of a resource when it is replaced during a stack update operation.
+
+When you initiate a stack update, AWS CloudFormation updates resources based on differences between what you submit and the stack's current template and parameters.
+If you update a resource property that requires that the resource be replaced, AWS CloudFormation recreates the resource during the update.
+Recreating the resource generates a new physical ID.
+AWS CloudFormation creates the replacement resource first, and then changes references from other dependent resources to point to the replacement resource.
+By default, AWS CloudFormation then deletes the old resource.
+Using the UpdateReplacePolicy, you can specify that AWS CloudFormation retain or (in some cases) create a snapshot of the old resource.
+
+For resources that support snapshots, such as AWS::EC2::Volume, specify Snapshot to have AWS CloudFormation create a snapshot before deleting the old resource instance.
+
+You can apply the UpdateReplacePolicy attribute to any resource.
+UpdateReplacePolicy is only executed if you update a resource property whose update behavior is specified as Replacement, thereby causing AWS CloudFormation to replace the old resource with a new one with a new physical ID.
+For example, if you update the Engine property of an AWS::RDS::DBInstance resource type, AWS CloudFormation creates a new resource and replaces the current DB instance resource with the new one.
+The UpdateReplacePolicy attribute would then dictate whether AWS CloudFormation deleted, retained, or created a snapshot of the old DB instance.
+The update behavior for each property of a resource is specified in the reference topic for that resource in the AWS Resource and Property Types Reference.
+For more information on resource update behavior, see Update Behaviors of Stack Resources.
+
+The UpdateReplacePolicy attribute applies to stack updates you perform directly, as well as stack updates performed using change sets.
+
+Note
+Resources that are retained continue to exist and continue to incur applicable charges until you delete those resources.
+Snapshots that are created with this policy continue to exist and continue to incur applicable charges until you delete those snapshots.
+UpdateReplacePolicy retains the old physical resource or snapshot, but removes it from AWS CloudFormation's scope.
+
+UpdateReplacePolicy differs from the DeletionPolicy attribute in that it only applies to resources replaced during stack updates.
+Use DeletionPolicy for resources deleted when a stack is deleted, or when the resource definition itself is deleted from the template as part of a stack update.
 
 You must use one of the following options: "Delete","Retain","Snapshot"
 

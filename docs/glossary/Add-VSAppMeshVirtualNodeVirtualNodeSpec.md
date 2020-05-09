@@ -2,27 +2,18 @@
 
 ## SYNOPSIS
 Adds an AWS::AppMesh::VirtualNode.VirtualNodeSpec resource property to the template.
-An object representing the specification of a virtual node.
+An object that represents the specification of a virtual node.
 
 ## SYNTAX
 
 ```
 Add-VSAppMeshVirtualNodeVirtualNodeSpec [[-Logging] <Object>] [[-Backends] <Object>] [[-Listeners] <Object>]
- [[-ServiceDiscovery] <Object>] [<CommonParameters>]
+ [[-BackendDefaults] <Object>] [[-ServiceDiscovery] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::AppMesh::VirtualNode.VirtualNodeSpec resource property to the template.
-An object representing the specification of a virtual node.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+An object that represents the specification of a virtual node.
 
 ## PARAMETERS
 
@@ -66,8 +57,8 @@ Accept wildcard characters: False
 ```
 
 ### -Listeners
-The listeners that the virtual node is expected to receive inbound traffic from.
-Currently only one listener is supported per virtual node.
+The listener that the virtual node is expected to receive inbound traffic from.
+You can specify one listener.
 
 Type: List
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodespec.html#cfn-appmesh-virtualnode-virtualnodespec-listeners
@@ -86,9 +77,29 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -BackendDefaults
+A reference to an object that represents the defaults for backends.
+
+Type: BackendDefaults
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodespec.html#cfn-appmesh-virtualnode-virtualnodespec-backenddefaults
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ServiceDiscovery
 The service discovery information for the virtual node.
 If your virtual node does not expect ingress traffic, you can omit this parameter.
+If you specify a listener, then you must specify service discovery information.
 
 Type: ServiceDiscovery
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodespec.html#cfn-appmesh-virtualnode-virtualnodespec-servicediscovery
@@ -100,7 +111,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 4
+Position: 5
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

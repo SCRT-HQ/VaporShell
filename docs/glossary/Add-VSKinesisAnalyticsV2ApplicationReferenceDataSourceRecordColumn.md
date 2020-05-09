@@ -17,15 +17,6 @@ For an SQL-based Amazon Kinesis Data Analytics application, describes the mappin
 
 Also used to describe the format of the reference data source.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Mapping

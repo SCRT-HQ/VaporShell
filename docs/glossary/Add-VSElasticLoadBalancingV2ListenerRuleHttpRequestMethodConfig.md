@@ -18,15 +18,6 @@ HTTP defines a set of request methods, also referred to as HTTP verbs.
 For more information, see the HTTP Method Registry: https://www.iana.org/assignments/http-methods/http-methods.xhtml.
 You can also define custom HTTP methods.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Values

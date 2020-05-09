@@ -15,15 +15,6 @@ Add-VSS3BucketLambdaConfiguration [-Event] <Object> [[-Filter] <Object>] [-Funct
 Adds an AWS::S3::Bucket.LambdaConfiguration resource property to the template.
 Describes the AWS Lambda functions to invoke and the events for which to invoke them.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Event

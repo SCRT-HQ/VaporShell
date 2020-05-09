@@ -15,15 +15,6 @@ Add-VSGlueDatabaseDatabaseInput [[-LocationUri] <Object>] [[-Description] <Objec
 Adds an AWS::Glue::Database.DatabaseInput resource property to the template.
 The structure used to create or update a database.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -LocationUri
@@ -65,7 +56,6 @@ Accept wildcard characters: False
 ```
 
 ### -Parameters
-These key-value pairs define parameters and properties of the database.
 These key-value pairs define parameters and properties of the database.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseinput.html#cfn-glue-database-databaseinput-parameters

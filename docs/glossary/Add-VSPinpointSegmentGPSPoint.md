@@ -2,26 +2,17 @@
 
 ## SYNOPSIS
 Adds an AWS::Pinpoint::Segment.GPSPoint resource property to the template.
-The GPS coordinates of the endpoint location.
+Specifies GPS-based criteria for including or excluding endpoints from a segment.
 
 ## SYNTAX
 
 ```
-Add-VSPinpointSegmentGPSPoint [-RangeInKilometers] <Double> [-Coordinates] <Object> [<CommonParameters>]
+Add-VSPinpointSegmentGPSPoint [-RangeInKilometers] <Object> [-Coordinates] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Pinpoint::Segment.GPSPoint resource property to the template.
-The GPS coordinates of the endpoint location.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+Specifies GPS-based criteria for including or excluding endpoints from a segment.
 
 ## PARAMETERS
 
@@ -33,13 +24,13 @@ PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

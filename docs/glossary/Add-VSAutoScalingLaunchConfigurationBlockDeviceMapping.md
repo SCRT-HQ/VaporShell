@@ -2,32 +2,23 @@
 
 ## SYNOPSIS
 Adds an AWS::AutoScaling::LaunchConfiguration.BlockDeviceMapping resource property to the template.
-BlockDeviceMapping is a property of LaunchConfiguration: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html that describes a block device mapping for an Amazon EC2 Auto Scaling group.
+BlockDeviceMapping is a property of AWS::AutoScaling::LaunchConfiguration: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html that describes a block device mapping for an Auto Scaling group.
 
 ## SYNTAX
 
 ```
 Add-VSAutoScalingLaunchConfigurationBlockDeviceMapping [-DeviceName] <Object> [[-Ebs] <Object>]
- [[-NoDevice] <Boolean>] [[-VirtualName] <Object>] [<CommonParameters>]
+ [[-NoDevice] <Object>] [[-VirtualName] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::AutoScaling::LaunchConfiguration.BlockDeviceMapping resource property to the template.
-BlockDeviceMapping is a property of LaunchConfiguration: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html that describes a block device mapping for an Amazon EC2 Auto Scaling group.
+BlockDeviceMapping is a property of AWS::AutoScaling::LaunchConfiguration: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html that describes a block device mapping for an Auto Scaling group.
 
 Each instance that is launched has an associated root device volume, either an Amazon EBS volume or an instance store volume.
 You can use block device mappings to specify additional EBS volumes or instance store volumes to attach to an instance when it is launched.
 
 For more information, see Example Block Device Mapping: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#block-device-mapping-ex in the *Amazon EC2 User Guide for Linux Instances*.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -52,7 +43,7 @@ Accept wildcard characters: False
 ```
 
 ### -Ebs
-The information about the Amazon EBS volume.
+Parameters used to automatically set up EBS volumes when an instance is launched.
 You can specify either VirtualName or Ebs, but not both.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig-blockdev-mapping.html#cfn-as-launchconfig-blockdev-mapping-ebs
@@ -72,22 +63,23 @@ Accept wildcard characters: False
 ```
 
 ### -NoDevice
-Suppresses the device mapping.
-If this property is set to true for the root device, the instance might fail the Amazon EC2 health check.
-Amazon EC2 Auto Scaling launches a replacement instance if the instance fails the health check.
+Setting this value to true suppresses the specified device included in the block device mapping of the AMI.
+If NoDevice is true for the root device, instances might fail the EC2 health check.
+In that case, Amazon EC2 Auto Scaling launches replacement instances.
+If you specify NoDevice, you cannot specify Ebs.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig-blockdev-mapping.html#cfn-as-launchconfig-blockdev-mapping-nodevice
 PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

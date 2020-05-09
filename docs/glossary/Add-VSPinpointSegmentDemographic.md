@@ -2,7 +2,8 @@
 
 ## SYNOPSIS
 Adds an AWS::Pinpoint::Segment.Demographic resource property to the template.
-The demographic-based criteria, such as device platform, for the segment.
+Specifies demographic-based dimension settings for including or excluding endpoints from a segment.
+These settings derive from characteristics of endpoint devices, such as platform, make, and model.
 
 ## SYNTAX
 
@@ -13,16 +14,8 @@ Add-VSPinpointSegmentDemographic [[-AppVersion] <Object>] [[-DeviceType] <Object
 
 ## DESCRIPTION
 Adds an AWS::Pinpoint::Segment.Demographic resource property to the template.
-The demographic-based criteria, such as device platform, for the segment.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+Specifies demographic-based dimension settings for including or excluding endpoints from a segment.
+These settings derive from characteristics of endpoint devices, such as platform, make, and model.
 
 ## PARAMETERS
 

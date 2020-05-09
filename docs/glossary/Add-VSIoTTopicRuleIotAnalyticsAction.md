@@ -14,15 +14,6 @@ Add-VSIoTTopicRuleIotAnalyticsAction [-ChannelName] <Object> [-RoleArn] <Object>
 Adds an AWS::IoT::TopicRule.IotAnalyticsAction resource property to the template.
 Sends message data to an AWS IoT Analytics channel.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ChannelName

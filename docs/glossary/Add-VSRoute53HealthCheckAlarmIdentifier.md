@@ -14,15 +14,6 @@ Add-VSRoute53HealthCheckAlarmIdentifier [-Name] <Object> [-Region] <Object> [<Co
 Adds an AWS::Route53::HealthCheck.AlarmIdentifier resource property to the template.
 A complex type that identifies the CloudWatch alarm that you want Amazon Route 53 health checkers to use to determine whether the specified health check is healthy.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Name
@@ -30,7 +21,7 @@ The name of the CloudWatch alarm that you want Amazon Route 53 health checkers t
 Route 53 supports CloudWatch alarms with the following features:
 + Standard-resolution metrics.
 High-resolution metrics aren't supported.
-For more information, see High-Resolution Metrics: http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/publishingMetrics.html#high-resolution-metrics in the *Amazon CloudWatch User Guide*.
+For more information, see High-Resolution Metrics: https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/publishingMetrics.html#high-resolution-metrics in the *Amazon CloudWatch User Guide*.
 + Statistics: Average, Minimum, Maximum, Sum, and SampleCount.
 Extended statistics aren't supported.
 
@@ -52,7 +43,7 @@ Accept wildcard characters: False
 
 ### -Region
 For the CloudWatch alarm that you want Route 53 health checkers to use to determine whether this health check is healthy, the region that the alarm was created in.
-For the current list of CloudWatch regions, see Amazon CloudWatch: http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region in the *AWS Regions and Endpoints* chapter of the *Amazon Web Services General Reference*.
+For the current list of CloudWatch regions, see Amazon CloudWatch: https://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region in the *AWS Service Endpoints* chapter of the *Amazon Web Services General Reference*.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-alarmidentifier.html#cfn-route53-healthcheck-alarmidentifier-region
 PrimitiveType: String

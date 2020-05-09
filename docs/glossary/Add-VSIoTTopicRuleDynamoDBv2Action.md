@@ -16,15 +16,6 @@ Describes an action to write to a DynamoDB table.
 
 This DynamoDB action writes each attribute in the message payload into it's own column in the DynamoDB table.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -PutItem

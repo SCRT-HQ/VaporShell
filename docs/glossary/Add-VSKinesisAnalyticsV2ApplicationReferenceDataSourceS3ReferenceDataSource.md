@@ -18,15 +18,6 @@ For an SQL-based Amazon Kinesis Data Analytics application, identifies the Amazo
 A Kinesis Data Analytics application loads reference data only once.
 If the data changes, you call the UpdateApplication: https://docs.aws.amazon.com/kinesisanalytics/latest/apiv2/API_UpdateApplication.html operation to trigger reloading of data into your application.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -BucketARN

@@ -8,22 +8,13 @@ NodeGroupConfiguration is a property of the AWS::ElastiCache::ReplicationGroup r
 
 ```
 Add-VSElastiCacheReplicationGroupNodeGroupConfiguration [[-NodeGroupId] <Object>]
- [[-PrimaryAvailabilityZone] <Object>] [[-ReplicaAvailabilityZones] <Object>] [[-ReplicaCount] <Int32>]
+ [[-PrimaryAvailabilityZone] <Object>] [[-ReplicaAvailabilityZones] <Object>] [[-ReplicaCount] <Object>]
  [[-Slots] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::ElastiCache::ReplicationGroup.NodeGroupConfiguration resource property to the template.
 NodeGroupConfiguration is a property of the AWS::ElastiCache::ReplicationGroup resource that configures an Amazon ElastiCache (ElastiCache Redis cluster node group.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -95,13 +86,13 @@ PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 4
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

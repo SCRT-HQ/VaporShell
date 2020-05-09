@@ -21,15 +21,6 @@ For more information, see Deploy Secrets to the AWS IoT Greengrass Core: https:/
 
 \<a name="aws-properties-greengrass-resourcedefinitionversion-secretsmanagersecretresourcedata-inheritance"\>\</a\> In an AWS CloudFormation template, SecretsManagerSecretResourceData can be used in the https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html property type.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ARN

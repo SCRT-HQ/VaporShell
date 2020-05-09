@@ -14,15 +14,6 @@ Add-VSMSKClusterEncryptionAtRest [-DataVolumeKMSKeyId] <Object> [<CommonParamete
 Adds an AWS::MSK::Cluster.EncryptionAtRest resource property to the template.
 The data volume encryption details.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -DataVolumeKMSKeyId

@@ -11,8 +11,8 @@ For more information, see How Spot Fleet Works: https://docs.aws.amazon.com/AWSE
 Add-VSEC2SpotFleetSpotFleetRequestConfigData [[-AllocationStrategy] <Object>]
  [[-ExcessCapacityTerminationPolicy] <Object>] [-IamFleetRole] <Object>
  [[-InstanceInterruptionBehavior] <Object>] [[-LaunchSpecifications] <Object>]
- [[-LaunchTemplateConfigs] <Object>] [[-LoadBalancersConfig] <Object>] [[-ReplaceUnhealthyInstances] <Boolean>]
- [[-SpotPrice] <Object>] [-TargetCapacity] <Int32> [[-TerminateInstancesWithExpiration] <Boolean>]
+ [[-LaunchTemplateConfigs] <Object>] [[-LoadBalancersConfig] <Object>] [[-ReplaceUnhealthyInstances] <Object>]
+ [[-SpotPrice] <Object>] [-TargetCapacity] <Object> [[-TerminateInstancesWithExpiration] <Object>]
  [[-Type] <Object>] [[-ValidFrom] <Object>] [[-ValidUntil] <Object>] [<CommonParameters>]
 ```
 
@@ -23,20 +23,14 @@ For more information, see How Spot Fleet Works: https://docs.aws.amazon.com/AWSE
 
 You must specify either LaunchSpecifications or LaunchTemplateConfigs.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -AllocationStrategy
-Indicates how to allocate the target capacity across the Spot pools specified by the Spot Fleet request.
-The default is lowestPrice.
+Indicates how to allocate the target Spot Instance capacity across the Spot Instance pools specified by the Spot Fleet request.
+If the allocation strategy is lowestPrice, Spot Fleet launches instances from the Spot Instance pools with the lowest price.
+This is the default allocation strategy.
+If the allocation strategy is diversified, Spot Fleet launches instances from all the Spot Instance pools that you specify.
+If the allocation strategy is capacityOptimized, Spot Fleet launches instances from Spot Instance pools with optimal capacity for the number of instances that are launching.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-allocationstrategy
 PrimitiveType: String
@@ -117,7 +111,6 @@ Accept wildcard characters: False
 ### -LaunchSpecifications
 The launch specifications for the Spot Fleet request.
 If you specify LaunchSpecifications, you can't specify LaunchTemplateConfigs.
-If you include On-Demand capacity in your request, you must use LaunchTemplateConfigs.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications
 DuplicatesAllowed: False
@@ -140,7 +133,6 @@ Accept wildcard characters: False
 ### -LaunchTemplateConfigs
 The launch template and overrides.
 If you specify LaunchTemplateConfigs, you can't specify LaunchSpecifications.
-If you include On-Demand capacity in your request, you must use LaunchTemplateConfigs.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-launchtemplateconfigs
 DuplicatesAllowed: False
@@ -189,13 +181,13 @@ PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 8
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -230,13 +222,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 10
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -249,13 +241,13 @@ PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 11
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

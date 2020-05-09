@@ -16,15 +16,6 @@ The PatchFilter property type defines a patch filter for an AWS Systems Manager 
 
 The PatchFilters property of the PatchFilterGroup: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-patchfiltergroup.html property type contains a list of PatchFilter property types.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Values

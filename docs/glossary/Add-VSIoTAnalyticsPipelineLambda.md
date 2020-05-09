@@ -7,22 +7,13 @@ An activity that runs a Lambda function to modify the message.
 ## SYNTAX
 
 ```
-Add-VSIoTAnalyticsPipelineLambda [[-BatchSize] <Int32>] [[-Next] <Object>] [[-LambdaName] <Object>]
+Add-VSIoTAnalyticsPipelineLambda [[-BatchSize] <Object>] [[-Next] <Object>] [[-LambdaName] <Object>]
  [[-Name] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::IoTAnalytics::Pipeline.Lambda resource property to the template.
 An activity that runs a Lambda function to modify the message.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -35,13 +26,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

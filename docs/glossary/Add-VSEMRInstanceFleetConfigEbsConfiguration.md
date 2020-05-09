@@ -7,22 +7,13 @@ EbsConfiguration determines the EBS volumes to attach to EMR cluster instances.
 ## SYNTAX
 
 ```
-Add-VSEMRInstanceFleetConfigEbsConfiguration [[-EbsBlockDeviceConfigs] <Object>] [[-EbsOptimized] <Boolean>]
+Add-VSEMRInstanceFleetConfigEbsConfiguration [[-EbsBlockDeviceConfigs] <Object>] [[-EbsOptimized] <Object>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::EMR::InstanceFleetConfig.EbsConfiguration resource property to the template.
 EbsConfiguration determines the EBS volumes to attach to EMR cluster instances.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -55,13 +46,13 @@ PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

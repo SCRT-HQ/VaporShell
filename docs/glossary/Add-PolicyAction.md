@@ -23,9 +23,7 @@ Adds a tab-completing Policy Action for an IAM policy document
 ### EXAMPLE 1
 ```
 $policyDoc = [PSCustomObject]@{
-```
-
-Version   = '2012-10-17'
+    Version   = '2012-10-17'
     Statement = @(
         @{
             Effect   = 'Allow'
@@ -42,6 +40,7 @@ $newVSIAMPolicySplat = @{
     PolicyDocument = $policyDoc
 }
 $iamPolicy = New-VSIAMPolicy @newVSIAMPolicySplat
+```
 
 ## PARAMETERS
 

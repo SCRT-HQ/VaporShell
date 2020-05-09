@@ -16,15 +16,6 @@ The EndpointConfiguration property type specifies the endpoint types of an Amazo
 
 EndpointConfiguration is a property of the AWS::ApiGateway::DomainName: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html resource.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Types

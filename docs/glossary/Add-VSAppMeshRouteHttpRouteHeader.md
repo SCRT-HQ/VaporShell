@@ -2,32 +2,23 @@
 
 ## SYNOPSIS
 Adds an AWS::AppMesh::Route.HttpRouteHeader resource property to the template.
-An object representing the HTTP header in the request.
+An object that represents the HTTP header in the request.
 
 ## SYNTAX
 
 ```
-Add-VSAppMeshRouteHttpRouteHeader [[-Invert] <Boolean>] [-Name] <Object> [[-Match] <Object>]
+Add-VSAppMeshRouteHttpRouteHeader [[-Invert] <Object>] [-Name] <Object> [[-Match] <Object>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::AppMesh::Route.HttpRouteHeader resource property to the template.
-An object representing the HTTP header in the request.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+An object that represents the HTTP header in the request.
 
 ## PARAMETERS
 
 ### -Invert
-Specify True to match the opposite of the HeaderMatchMethod method and value.
+Specify True to match anything except the match criteria.
 The default value is False.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httprouteheader.html#cfn-appmesh-route-httprouteheader-invert
@@ -35,13 +26,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

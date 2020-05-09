@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 Adds an AWS::SecretsManager::SecretTargetAttachment resource to the template.
-The AWS::SecretsManager::SecretTargetAttachmentresource completes the final link between a Secrets Manager secret and its associated database.
+The AWS::SecretsManager::SecretTargetAttachment resource completes the final link between a Secrets Manager secret and the associated database.
 This is required because each has a dependency on the other.
 No matter which one you create first, the other doesn't exist yet.
 To resolve this, you must create the resources in the following order:
@@ -11,13 +11,13 @@ To resolve this, you must create the resources in the following order:
 
 ```
 New-VSSecretsManagerSecretTargetAttachment [-LogicalId] <String> -SecretId <Object> -TargetType <Object>
- -TargetId <Object> [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
- [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+ -TargetId <Object> [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>] [-DependsOn <String[]>]
+ [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::SecretsManager::SecretTargetAttachment resource to the template.
-The AWS::SecretsManager::SecretTargetAttachmentresource completes the final link between a Secrets Manager secret and its associated database.
+The AWS::SecretsManager::SecretTargetAttachment resource completes the final link between a Secrets Manager secret and the associated database.
 This is required because each has a dependency on the other.
 No matter which one you create first, the other doesn't exist yet.
 To resolve this, you must create the resources in the following order:
@@ -28,20 +28,11 @@ You can't reference the service or database because it doesn't exist yet.
 
 1.
 Next, define the service or database.
-Include the reference to the secret to use its stored credentials to define the database's master user and password.
+Include the reference to the secret to use stored credentials to define the database master user and password.
 
 1.
-Finally, define a SecretTargetAttachmentresource type to finish configuring the secret with the required database engine type and the connection details of the service or database.
-These details are required by a rotation function, if one is attached later by defining a AWS::SecretsManager::RotationSchedule : https://docs.aws.amazon.com/AWSCloudFormation/latest/userguide/aws-resource-secretsmanager-rotationschedule.html resource type.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+Finally, define a SecretTargetAttachment resource type to finish configuring the secret with the required database engine type and the connection details of the service or database.
+The rotation function requires the details, if you attach one later by defining a AWS::SecretsManager::RotationSchedule: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-rotationschedule.html resource type.
 
 ## PARAMETERS
 
@@ -64,7 +55,7 @@ Accept wildcard characters: False
 
 ### -SecretId
 The Amazon Resource Name ARN or the friendly name of the secret that contains the credentials that you want to use with the specified service or database.
-To reference a secret that's also created in this template, use the see Ref: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html function with the secret's logical ID.
+To reference a secret also created in this template, use the see Ref: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html function with the secret's logical ID.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secrettargetattachment.html#cfn-secretsmanager-secrettargetattachment-secretid
 PrimitiveType: String
@@ -83,11 +74,14 @@ Accept wildcard characters: False
 ```
 
 ### -TargetType
-A string used by the Secrets Manager console to determine how to parse the structure of the secret text and place the values in the proper fields of the console user interface.
-If you created this secret using the Secrets Manager console then we recommend that you do not modify this value.
-If this is a custom secret, then this field is available for your use.
-As a best practice, do not store any sensitive information in this field.
-Instead, store sensitive information in the SecretString or SecretBinary fields to ensure that it is encrypted.
+A string that defines the type of service or database associated with the secret.
+This value instructs AWS Secrets Manager how to update the secret with the details of the service or database.
+This value must be one of the following:
++ AWS::RDS::DBInstance
++ AWS::RDS::DBCluster
++ AWS::Redshift::Cluster
++ AWS::DocDB::DBInstance
++ AWS::DocDB::DBCluster
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secrettargetattachment.html#cfn-secretsmanager-secrettargetattachment-targettype
 PrimitiveType: String
@@ -106,7 +100,7 @@ Accept wildcard characters: False
 ```
 
 ### -TargetId
-The ARN of the service or database whose credentials are stored in the specified secret.
+The ARN of the service or database credentials stored in the specified secret.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secrettargetattachment.html#cfn-secretsmanager-secrettargetattachment-targetid
 PrimitiveType: String
@@ -132,6 +126,49 @@ If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the re
 To keep a resource when its stack is deleted, specify Retain for that resource.
 You can use retain for any resource.
 For example, you can retain a nested stack, S3 bucket, or EC2 instance so that you can continue to use or modify those resources after you delete their stacks.
+
+You must use one of the following options: "Delete","Retain","Snapshot"
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdateReplacePolicy
+Use the UpdateReplacePolicy attribute to retain or (in some cases) backup the existing physical instance of a resource when it is replaced during a stack update operation.
+
+When you initiate a stack update, AWS CloudFormation updates resources based on differences between what you submit and the stack's current template and parameters.
+If you update a resource property that requires that the resource be replaced, AWS CloudFormation recreates the resource during the update.
+Recreating the resource generates a new physical ID.
+AWS CloudFormation creates the replacement resource first, and then changes references from other dependent resources to point to the replacement resource.
+By default, AWS CloudFormation then deletes the old resource.
+Using the UpdateReplacePolicy, you can specify that AWS CloudFormation retain or (in some cases) create a snapshot of the old resource.
+
+For resources that support snapshots, such as AWS::EC2::Volume, specify Snapshot to have AWS CloudFormation create a snapshot before deleting the old resource instance.
+
+You can apply the UpdateReplacePolicy attribute to any resource.
+UpdateReplacePolicy is only executed if you update a resource property whose update behavior is specified as Replacement, thereby causing AWS CloudFormation to replace the old resource with a new one with a new physical ID.
+For example, if you update the Engine property of an AWS::RDS::DBInstance resource type, AWS CloudFormation creates a new resource and replaces the current DB instance resource with the new one.
+The UpdateReplacePolicy attribute would then dictate whether AWS CloudFormation deleted, retained, or created a snapshot of the old DB instance.
+The update behavior for each property of a resource is specified in the reference topic for that resource in the AWS Resource and Property Types Reference.
+For more information on resource update behavior, see Update Behaviors of Stack Resources.
+
+The UpdateReplacePolicy attribute applies to stack updates you perform directly, as well as stack updates performed using change sets.
+
+Note
+Resources that are retained continue to exist and continue to incur applicable charges until you delete those resources.
+Snapshots that are created with this policy continue to exist and continue to incur applicable charges until you delete those snapshots.
+UpdateReplacePolicy retains the old physical resource or snapshot, but removes it from AWS CloudFormation's scope.
+
+UpdateReplacePolicy differs from the DeletionPolicy attribute in that it only applies to resources replaced during stack updates.
+Use DeletionPolicy for resources deleted when a stack is deleted, or when the resource definition itself is deleted from the template as part of a stack update.
 
 You must use one of the following options: "Delete","Retain","Snapshot"
 

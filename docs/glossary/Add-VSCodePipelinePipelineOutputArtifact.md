@@ -14,15 +14,6 @@ Add-VSCodePipelinePipelineOutputArtifact [-Name] <Object> [<CommonParameters>]
 Adds an AWS::CodePipeline::Pipeline.OutputArtifact resource property to the template.
 Represents information about the output of an action.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Name

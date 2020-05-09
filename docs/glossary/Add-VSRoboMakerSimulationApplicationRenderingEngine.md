@@ -14,15 +14,6 @@ Add-VSRoboMakerSimulationApplicationRenderingEngine [-Version] <Object> [-Name] 
 Adds an AWS::RoboMaker::SimulationApplication.RenderingEngine resource property to the template.
 Information about a rendering engine.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Version

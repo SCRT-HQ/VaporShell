@@ -3,6 +3,7 @@
 ## SYNOPSIS
 Adds an AWS::KinesisFirehose::DeliveryStream.OutputFormatConfiguration resource property to the template.
 Specifies the serializer that you want Kinesis Data Firehose to use to convert the format of your data before it writes it to Amazon S3.
+This parameter is required if Enabled is set to true.
 
 ## SYNTAX
 
@@ -13,15 +14,7 @@ Add-VSKinesisFirehoseDeliveryStreamOutputFormatConfiguration [-Serializer] <Obje
 ## DESCRIPTION
 Adds an AWS::KinesisFirehose::DeliveryStream.OutputFormatConfiguration resource property to the template.
 Specifies the serializer that you want Kinesis Data Firehose to use to convert the format of your data before it writes it to Amazon S3.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+This parameter is required if Enabled is set to true.
 
 ## PARAMETERS
 

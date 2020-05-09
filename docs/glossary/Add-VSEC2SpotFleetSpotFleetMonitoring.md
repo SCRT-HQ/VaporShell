@@ -7,21 +7,12 @@ Describes whether monitoring is enabled.
 ## SYNTAX
 
 ```
-Add-VSEC2SpotFleetSpotFleetMonitoring [[-Enabled] <Boolean>] [<CommonParameters>]
+Add-VSEC2SpotFleetSpotFleetMonitoring [[-Enabled] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::EC2::SpotFleet.SpotFleetMonitoring resource property to the template.
 Describes whether monitoring is enabled.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -34,13 +25,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

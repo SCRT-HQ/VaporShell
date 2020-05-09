@@ -8,7 +8,7 @@ Adds an AWS::Greengrass::FunctionDefinition.Environment resource property to the
 
 ```
 Add-VSGreengrassFunctionDefinitionEnvironment [[-Variables] <Object>] [[-Execution] <Object>]
- [[-ResourceAccessPolicies] <Object>] [[-AccessSysfs] <Boolean>] [<CommonParameters>]
+ [[-ResourceAccessPolicies] <Object>] [[-AccessSysfs] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -16,15 +16,6 @@ Adds an AWS::Greengrass::FunctionDefinition.Environment resource property to the
 \<a name="aws-properties-greengrass-functiondefinition-environment-description"\>\</a\>The environment configuration for a Lambda function on the AWS IoT Greengrass core.
 
 \<a name="aws-properties-greengrass-functiondefinition-environment-inheritance"\>\</a\> In an AWS CloudFormation template, Environment is a property of the  FunctionConfiguration : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-functionconfiguration.html property type.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -97,13 +88,13 @@ PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 4
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

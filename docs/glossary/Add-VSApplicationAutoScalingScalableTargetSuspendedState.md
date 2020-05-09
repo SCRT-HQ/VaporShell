@@ -7,22 +7,13 @@ Specifies whether the scaling activities for a scalable target are in a suspende
 ## SYNTAX
 
 ```
-Add-VSApplicationAutoScalingScalableTargetSuspendedState [[-DynamicScalingInSuspended] <Boolean>]
- [[-DynamicScalingOutSuspended] <Boolean>] [[-ScheduledScalingSuspended] <Boolean>] [<CommonParameters>]
+Add-VSApplicationAutoScalingScalableTargetSuspendedState [[-DynamicScalingInSuspended] <Object>]
+ [[-DynamicScalingOutSuspended] <Object>] [[-ScheduledScalingSuspended] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::ApplicationAutoScaling::ScalableTarget.SuspendedState resource property to the template.
 Specifies whether the scaling activities for a scalable target are in a suspended state.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -36,13 +27,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -57,13 +48,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -78,13 +69,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

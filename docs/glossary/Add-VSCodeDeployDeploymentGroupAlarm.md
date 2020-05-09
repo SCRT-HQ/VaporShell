@@ -16,15 +16,6 @@ Adds an AWS::CodeDeploy::DeploymentGroup.Alarm resource property to the template
 The Alarm property type specifies a CloudWatch alarm to use for an AWS CodeDeploy deployment group.
 The Alarm property of the  CodeDeploy DeploymentGroup AlarmConfiguration : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-alarmconfiguration.html property contains a list of Alarm property types.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Name

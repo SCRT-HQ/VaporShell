@@ -15,15 +15,6 @@ Add-VSIoTTopicRuleKinesisAction [[-PartitionKey] <Object>] [-RoleArn] <Object> [
 Adds an AWS::IoT::TopicRule.KinesisAction resource property to the template.
 Describes an action to write data to an Amazon Kinesis stream.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -PartitionKey

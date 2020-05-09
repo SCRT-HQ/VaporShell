@@ -7,9 +7,9 @@ Specifies overrides for a launch template for an EC2 Fleet.
 ## SYNTAX
 
 ```
-Add-VSEC2EC2FleetFleetLaunchTemplateOverridesRequest [[-WeightedCapacity] <Double>] [[-Priority] <Double>]
- [[-AvailabilityZone] <Object>] [[-SubnetId] <Object>] [[-InstanceType] <Object>] [[-MaxPrice] <Object>]
- [<CommonParameters>]
+Add-VSEC2EC2FleetFleetLaunchTemplateOverridesRequest [[-WeightedCapacity] <Object>] [[-Placement] <Object>]
+ [[-Priority] <Object>] [[-AvailabilityZone] <Object>] [[-SubnetId] <Object>] [[-InstanceType] <Object>]
+ [[-MaxPrice] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -18,15 +18,6 @@ Specifies overrides for a launch template for an EC2 Fleet.
 
 FleetLaunchTemplateOverridesRequest is a property of the  FleetLaunchTemplateConfigRequest: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateconfigrequest.html property type.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -WeightedCapacity
@@ -34,16 +25,35 @@ The number of units provided by the specified instance type.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest-weightedcapacity
 PrimitiveType: Double
-UpdateType: Mutable
+UpdateType: Immutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Placement
+The location where the instance launched, if applicable.
+
+Type: Placement
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest-placement
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -58,26 +68,7 @@ If no number is set, the launch template override has the lowest priority.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest-priority
 PrimitiveType: Double
-UpdateType: Mutable
-
-```yaml
-Type: Double
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 2
-Default value: 0
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AvailabilityZone
-The Availability Zone in which to launch the instances.
-
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest-availabilityzone
-PrimitiveType: String
-UpdateType: Mutable
+UpdateType: Immutable
 
 ```yaml
 Type: Object
@@ -91,12 +82,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SubnetId
-The ID of the subnet in which to launch the instances.
+### -AvailabilityZone
+The Availability Zone in which to launch the instances.
 
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest-subnetid
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest-availabilityzone
 PrimitiveType: String
-UpdateType: Mutable
+UpdateType: Immutable
 
 ```yaml
 Type: Object
@@ -110,12 +101,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InstanceType
-The instance type.
+### -SubnetId
+The IDs of the subnets in which to launch the instances.
+Separate multiple subnet IDs using commas for example, subnet-1234abcdeexample1, subnet-0987cdef6example2.
+A request of type instant can have only one subnet ID.
 
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest-instancetype
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest-subnetid
 PrimitiveType: String
-UpdateType: Mutable
+UpdateType: Immutable
 
 ```yaml
 Type: Object
@@ -129,12 +122,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -MaxPrice
-The maximum price per unit hour that you are willing to pay for a Spot Instance.
+### -InstanceType
+The instance type.
 
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest-maxprice
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest-instancetype
 PrimitiveType: String
-UpdateType: Mutable
+UpdateType: Immutable
 
 ```yaml
 Type: Object
@@ -143,6 +136,25 @@ Aliases:
 
 Required: False
 Position: 6
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MaxPrice
+The maximum price per unit hour that you are willing to pay for a Spot Instance.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest-maxprice
+PrimitiveType: String
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 7
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

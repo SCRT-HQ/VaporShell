@@ -14,15 +14,6 @@ Add-VSApiGatewayV2StageAccessLogSettings [[-Format] <Object>] [[-DestinationArn]
 Adds an AWS::ApiGatewayV2::Stage.AccessLogSettings resource property to the template.
 Settings for logging access in a stage.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Format

@@ -14,15 +14,6 @@ Add-VSGluePartitionColumn [[-Comment] <Object>] [[-Type] <Object>] [-Name] <Obje
 Adds an AWS::Glue::Partition.Column resource property to the template.
 A column in a Table.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Comment

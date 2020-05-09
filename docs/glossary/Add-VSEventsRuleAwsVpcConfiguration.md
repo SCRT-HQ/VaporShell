@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 Adds an AWS::Events::Rule.AwsVpcConfiguration resource property to the template.
-This structure specifies the VPC subnets and security groups for the task and whether a public IP address is to be used.
+This structure specifies the VPC subnets and security groups for the task, and whether a public IP address is to be used.
 This structure is relevant only for ECS tasks that use the awsvpc network mode.
 
 ## SYNTAX
@@ -14,17 +14,8 @@ Add-VSEventsRuleAwsVpcConfiguration [[-AssignPublicIp] <Object>] [[-SecurityGrou
 
 ## DESCRIPTION
 Adds an AWS::Events::Rule.AwsVpcConfiguration resource property to the template.
-This structure specifies the VPC subnets and security groups for the task and whether a public IP address is to be used.
+This structure specifies the VPC subnets and security groups for the task, and whether a public IP address is to be used.
 This structure is relevant only for ECS tasks that use the awsvpc network mode.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -52,7 +43,7 @@ Accept wildcard characters: False
 Specifies the security groups associated with the task.
 These security groups must all be in the same VPC.
 You can specify as many as five security groups.
-If you don't specify a security group, the default security group for the VPC is used.
+If you do not specify a security group, the default security group for the VPC is used.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-awsvpcconfiguration.html#cfn-events-rule-awsvpcconfiguration-securitygroups
 DuplicatesAllowed: False

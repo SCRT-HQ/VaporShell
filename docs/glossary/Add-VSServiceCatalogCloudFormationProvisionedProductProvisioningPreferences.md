@@ -9,24 +9,15 @@ Not all preferences are applicable to all provisioned product types.
 
 ```
 Add-VSServiceCatalogCloudFormationProvisionedProductProvisioningPreferences [[-StackSetAccounts] <Object>]
- [[-StackSetFailureToleranceCount] <Int32>] [[-StackSetMaxConcurrencyPercentage] <Int32>]
- [[-StackSetMaxConcurrencyCount] <Int32>] [[-StackSetRegions] <Object>] [[-StackSetOperationType] <Object>]
- [[-StackSetFailureTolerancePercentage] <Int32>] [<CommonParameters>]
+ [[-StackSetFailureToleranceCount] <Object>] [[-StackSetMaxConcurrencyPercentage] <Object>]
+ [[-StackSetMaxConcurrencyCount] <Object>] [[-StackSetRegions] <Object>] [[-StackSetOperationType] <Object>]
+ [[-StackSetFailureTolerancePercentage] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::ServiceCatalog::CloudFormationProvisionedProduct.ProvisioningPreferences resource property to the template.
 The user-defined preferences that will be applied when updating a provisioned product.
 Not all preferences are applicable to all provisioned product types.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -66,13 +57,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -92,13 +83,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -117,13 +108,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 4
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -192,13 +183,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 7
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

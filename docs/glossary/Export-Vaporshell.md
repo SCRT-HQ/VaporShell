@@ -20,18 +20,16 @@ Requires the Vaporshell input object to be type 'Vaporshell.Template'
 ### EXAMPLE 1
 ```
 $Template = Initialize-Vaporshell -Description "This is a sample template that builds an S3 bucket"
-```
-
 # Add items to the $Template object here
 $Template | Export-Vaporshell -Path "C:\CloudFormation\Templates\S3Bucket.json" -Force
+```
 
 ### EXAMPLE 2
 ```
 $Template = Initialize-Vaporshell -Description "This is a sample template that builds an S3 bucket"
-```
-
 # Add items to the $Template object here
 Export-Vaporshell -VaporshellTemplate $Template -Path "C:\CloudFormation\Templates\S3Bucket.json" -Force
+```
 
 ## PARAMETERS
 

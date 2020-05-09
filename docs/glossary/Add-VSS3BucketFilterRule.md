@@ -14,15 +14,6 @@ Add-VSS3BucketFilterRule [-Name] <Object> [-Value] <Object> [<CommonParameters>]
 Adds an AWS::S3::Bucket.FilterRule resource property to the template.
 Specifies the Amazon S3 object key name to filter on and whether to filter on the suffix or prefix of the key name.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Name

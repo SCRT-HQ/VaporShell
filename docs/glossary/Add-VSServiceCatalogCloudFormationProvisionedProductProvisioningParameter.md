@@ -15,15 +15,6 @@ Add-VSServiceCatalogCloudFormationProvisionedProductProvisioningParameter [[-Val
 Adds an AWS::ServiceCatalog::CloudFormationProvisionedProduct.ProvisioningParameter resource property to the template.
 Information about a parameter used to provision a product.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Value

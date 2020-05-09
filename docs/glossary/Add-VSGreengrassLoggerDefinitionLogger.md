@@ -9,7 +9,7 @@ For more information, see Monitoring with AWS IoT Greengrass Logs: https://docs.
 ## SYNTAX
 
 ```
-Add-VSGreengrassLoggerDefinitionLogger [[-Space] <Int32>] [-Type] <Object> [-Level] <Object> [-Id] <Object>
+Add-VSGreengrassLoggerDefinitionLogger [[-Space] <Object>] [-Type] <Object> [-Level] <Object> [-Id] <Object>
  [-Component] <Object> [<CommonParameters>]
 ```
 
@@ -20,15 +20,6 @@ All log entries include a timestamp, log level, and information about the event.
 For more information, see Monitoring with AWS IoT Greengrass Logs: https://docs.aws.amazon.com/greengrass/latest/developerguide/greengrass-logs-overview.html in the *AWS IoT Greengrass Developer Guide*.
 
 \<a name="aws-properties-greengrass-loggerdefinition-logger-inheritance"\>\</a\> In an AWS CloudFormation template, the Loggers property of the  LoggerDefinitionVersion : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-loggerdefinitionversion.html property type contains a list of Logger property types.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -41,13 +32,13 @@ PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

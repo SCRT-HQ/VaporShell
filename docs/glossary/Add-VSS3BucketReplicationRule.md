@@ -15,19 +15,10 @@ Add-VSS3BucketReplicationRule [-Destination] <Object> [[-Id] <Object>] [-Prefix]
 Adds an AWS::S3::Bucket.ReplicationRule resource property to the template.
 Specifies which Amazon S3 objects to replicate and where to store the replicas.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Destination
-A container for information about the replication destination.
+A container for information about the replication destination and its configurations including enabling the S3 Replication Time Control S3 RTC.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules.html#cfn-s3-bucket-replicationconfiguration-rules-destination
 Type: ReplicationDestination
@@ -67,7 +58,7 @@ Accept wildcard characters: False
 ```
 
 ### -Prefix
-An object keyname prefix that identifies the object or objects to which the rule applies.
+An object key name prefix that identifies the object or objects to which the rule applies.
 The maximum prefix length is 1,024 characters.
 To include all objects in a bucket, specify an empty string.
 
@@ -90,7 +81,7 @@ Accept wildcard characters: False
 ### -SourceSelectionCriteria
 A container that describes additional filters for identifying the source objects that you want to replicate.
 You can choose to enable or disable the replication of these objects.
-Currently, Amazon S3 supports only the filter that you can specify for objects created with server-side encryption using an AWS KMS-Managed Key SSE-KMS.
+Currently, Amazon S3 supports only the filter that you can specify for objects created with server-side encryption using a customer master key CMK stored in AWS Key Management Service SSE-KMS.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules.html#cfn-s3-bucket-replicationrule-sourceselectioncriteria
 Type: SourceSelectionCriteria

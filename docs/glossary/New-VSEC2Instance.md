@@ -9,16 +9,17 @@ Specifies an EC2 instance.
 ```
 New-VSEC2Instance [-LogicalId] <String> [-AdditionalInfo <Object>] [-Affinity <Object>]
  [-AvailabilityZone <Object>] [-BlockDeviceMappings <Object>] [-CpuOptions <Object>]
- [-CreditSpecification <Object>] [-DisableApiTermination <Boolean>] [-EbsOptimized <Boolean>]
- [-ElasticGpuSpecifications <Object>] [-ElasticInferenceAccelerators <Object>] [-HostId <Object>]
- [-IamInstanceProfile <Object>] [-ImageId <Object>] [-InstanceInitiatedShutdownBehavior <Object>]
- [-InstanceType <Object>] [-Ipv6AddressCount <Int32>] [-Ipv6Addresses <Object>] [-KernelId <Object>]
- [-KeyName <Object>] [-LaunchTemplate <Object>] [-LicenseSpecifications <Object>] [-Monitoring <Boolean>]
- [-NetworkInterfaces <Object>] [-PlacementGroupName <Object>] [-PrivateIpAddress <Object>]
- [-RamdiskId <Object>] [-SecurityGroupIds <Object>] [-SecurityGroups <Object>] [-SourceDestCheck <Boolean>]
- [-SsmAssociations <Object>] [-SubnetId <Object>] [-Tags <Object>] [-Tenancy <Object>] [-UserData <Object>]
- [-Volumes <Object>] [-CreationPolicy <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>]
- [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+ [-CreditSpecification <Object>] [-DisableApiTermination <Object>] [-EbsOptimized <Object>]
+ [-ElasticGpuSpecifications <Object>] [-ElasticInferenceAccelerators <Object>] [-HibernationOptions <Object>]
+ [-HostId <Object>] [-HostResourceGroupArn <Object>] [-IamInstanceProfile <Object>] [-ImageId <Object>]
+ [-InstanceInitiatedShutdownBehavior <Object>] [-InstanceType <Object>] [-Ipv6AddressCount <Object>]
+ [-Ipv6Addresses <Object>] [-KernelId <Object>] [-KeyName <Object>] [-LaunchTemplate <Object>]
+ [-LicenseSpecifications <Object>] [-Monitoring <Object>] [-NetworkInterfaces <Object>]
+ [-PlacementGroupName <Object>] [-PrivateIpAddress <Object>] [-RamdiskId <Object>] [-SecurityGroupIds <Object>]
+ [-SecurityGroups <Object>] [-SourceDestCheck <Object>] [-SsmAssociations <Object>] [-SubnetId <Object>]
+ [-Tags <Object>] [-Tenancy <Object>] [-UserData <Object>] [-Volumes <Object>] [-CreationPolicy <Object>]
+ [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
+ [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -27,15 +28,6 @@ Specifies an EC2 instance.
 
 If an Elastic IP address is attached to your instance, AWS CloudFormation reattaches the Elastic IP address after it updates the instance.
 For more information about updating stacks, see  AWS CloudFormation Stacks Updates: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -57,7 +49,8 @@ Accept wildcard characters: False
 ```
 
 ### -AdditionalInfo
-Reserved.
+This property is reserved for internal use.
+If you use it, the stack fails with this error: Bad property set: Testing this property\] Service: AmazonEC2; Status Code: 400; Error Code: InvalidParameterCombination; Request ID: 0XXXXXX-49c7-4b40-8bcc-76885dcXXXXX.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-additionalinfo
 PrimitiveType: String
@@ -99,6 +92,7 @@ Accept wildcard characters: False
 ### -AvailabilityZone
 The Availability Zone of the instance.
 If not specified, an Availability Zone will be automatically chosen for you based on the load balancing criteria for the Region.
+This parameter is not supported by DescribeImageAttribute: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImageAttribute.html.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-availabilityzone
 PrimitiveType: String
@@ -161,11 +155,11 @@ Accept wildcard characters: False
 ```
 
 ### -CreditSpecification
-The credit option for CPU usage of the T2 or T3 instance.
+The credit option for CPU usage of the burstable performance instance.
 Valid values are standard and unlimited.
 To change this attribute after launch, use  ModifyInstanceCreditSpecification: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html.
 For more information, see Burstable Performance Instances: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html in the *Amazon Elastic Compute Cloud User Guide*.
-Default: standard T2 instances or unlimited T3 instances
+Default: standard T2 instances or unlimited T3/T3a instances
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-creditspecification
 Type: CreditSpecification
@@ -194,13 +188,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -217,13 +211,13 @@ PrimitiveType: Boolean
 UpdateType: Conditional
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -273,6 +267,26 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -HibernationOptions
+Indicates whether an instance is enabled for hibernation.
+For more information, see Hibernate Your Instance: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html in the *Amazon Elastic Compute Cloud User Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-hibernationoptions
+Type: HibernationOptions
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -HostId
 If you specify host for the Affinity property, the ID of a dedicated host that the instance is associated with.
 If you don't specify an ID, Amazon EC2 launches the instance onto any available, compatible dedicated host in your account.
@@ -295,8 +309,29 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -HostResourceGroupArn
+The ARN of the host resource group in which to launch the instances.
+If you specify a host resource group ARN, omit the **Tenancy** parameter or set it to host.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-hostresourcegrouparn
+PrimitiveType: String
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -IamInstanceProfile
 The IAM instance profile.
+See IamInstanceProfileSpecification: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfileSpecification.html in the *Amazon EC2 API Reference* for property values.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-iaminstanceprofile
 PrimitiveType: String
@@ -387,13 +422,13 @@ PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -514,13 +549,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -679,13 +714,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -735,10 +770,8 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-The tags to apply to the resources during launch.
-You can only tag instances and volumes on launch.
-The specified tags are applied to all instances or volumes that are created during launch.
-To tag a resource after it has been created, see CreateTags: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html.
+The tags to apply to the instance during launch.
+These tags are not applied to the EBS volumes, such as the root volume.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-tags
 DuplicatesAllowed: True
@@ -849,6 +882,49 @@ If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the re
 To keep a resource when its stack is deleted, specify Retain for that resource.
 You can use retain for any resource.
 For example, you can retain a nested stack, S3 bucket, or EC2 instance so that you can continue to use or modify those resources after you delete their stacks.
+
+You must use one of the following options: "Delete","Retain","Snapshot"
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdateReplacePolicy
+Use the UpdateReplacePolicy attribute to retain or (in some cases) backup the existing physical instance of a resource when it is replaced during a stack update operation.
+
+When you initiate a stack update, AWS CloudFormation updates resources based on differences between what you submit and the stack's current template and parameters.
+If you update a resource property that requires that the resource be replaced, AWS CloudFormation recreates the resource during the update.
+Recreating the resource generates a new physical ID.
+AWS CloudFormation creates the replacement resource first, and then changes references from other dependent resources to point to the replacement resource.
+By default, AWS CloudFormation then deletes the old resource.
+Using the UpdateReplacePolicy, you can specify that AWS CloudFormation retain or (in some cases) create a snapshot of the old resource.
+
+For resources that support snapshots, such as AWS::EC2::Volume, specify Snapshot to have AWS CloudFormation create a snapshot before deleting the old resource instance.
+
+You can apply the UpdateReplacePolicy attribute to any resource.
+UpdateReplacePolicy is only executed if you update a resource property whose update behavior is specified as Replacement, thereby causing AWS CloudFormation to replace the old resource with a new one with a new physical ID.
+For example, if you update the Engine property of an AWS::RDS::DBInstance resource type, AWS CloudFormation creates a new resource and replaces the current DB instance resource with the new one.
+The UpdateReplacePolicy attribute would then dictate whether AWS CloudFormation deleted, retained, or created a snapshot of the old DB instance.
+The update behavior for each property of a resource is specified in the reference topic for that resource in the AWS Resource and Property Types Reference.
+For more information on resource update behavior, see Update Behaviors of Stack Resources.
+
+The UpdateReplacePolicy attribute applies to stack updates you perform directly, as well as stack updates performed using change sets.
+
+Note
+Resources that are retained continue to exist and continue to incur applicable charges until you delete those resources.
+Snapshots that are created with this policy continue to exist and continue to incur applicable charges until you delete those snapshots.
+UpdateReplacePolicy retains the old physical resource or snapshot, but removes it from AWS CloudFormation's scope.
+
+UpdateReplacePolicy differs from the DeletionPolicy attribute in that it only applies to resources replaced during stack updates.
+Use DeletionPolicy for resources deleted when a stack is deleted, or when the resource definition itself is deleted from the template as part of a stack update.
 
 You must use one of the following options: "Delete","Retain","Snapshot"
 

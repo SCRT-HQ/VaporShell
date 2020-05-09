@@ -7,22 +7,13 @@ Adds an AWS::AutoScaling::AutoScalingGroup.InstancesDistribution resource proper
 
 ```
 Add-VSAutoScalingAutoScalingGroupInstancesDistribution [[-OnDemandAllocationStrategy] <Object>]
- [[-OnDemandBaseCapacity] <Int32>] [[-OnDemandPercentageAboveBaseCapacity] <Int32>]
- [[-SpotAllocationStrategy] <Object>] [[-SpotInstancePools] <Int32>] [[-SpotMaxPrice] <Object>]
+ [[-OnDemandBaseCapacity] <Object>] [[-OnDemandPercentageAboveBaseCapacity] <Object>]
+ [[-SpotAllocationStrategy] <Object>] [[-SpotInstancePools] <Object>] [[-SpotMaxPrice] <Object>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::AutoScaling::AutoScalingGroup.InstancesDistribution resource property to the template.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -49,13 +40,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -66,13 +57,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -100,13 +91,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 5
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

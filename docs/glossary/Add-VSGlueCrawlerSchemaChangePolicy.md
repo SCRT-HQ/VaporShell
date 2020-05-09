@@ -15,15 +15,6 @@ Add-VSGlueCrawlerSchemaChangePolicy [[-UpdateBehavior] <Object>] [[-DeleteBehavi
 Adds an AWS::Glue::Crawler.SchemaChangePolicy resource property to the template.
 A policy that specifies update and deletion behaviors for the crawler.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -UpdateBehavior

@@ -14,15 +14,6 @@ Add-VSSSMAssociationParameterValues [-ParameterValues] <Object> [<CommonParamete
 Adds an AWS::SSM::Association.ParameterValues resource property to the template.
 ParameterValues is a property of the AWS::SSM::Association: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html resource that specifies the parameters for the runtime configuration of the document.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ParameterValues

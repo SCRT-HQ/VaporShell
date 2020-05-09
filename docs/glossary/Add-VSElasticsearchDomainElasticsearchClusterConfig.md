@@ -9,9 +9,9 @@ For more information, see Configuring Amazon ES Domains: https://docs.aws.amazon
 ## SYNTAX
 
 ```
-Add-VSElasticsearchDomainElasticsearchClusterConfig [[-DedicatedMasterCount] <Int32>]
- [[-DedicatedMasterEnabled] <Boolean>] [[-DedicatedMasterType] <Object>] [[-InstanceCount] <Int32>]
- [[-InstanceType] <Object>] [[-ZoneAwarenessConfig] <Object>] [[-ZoneAwarenessEnabled] <Boolean>]
+Add-VSElasticsearchDomainElasticsearchClusterConfig [[-DedicatedMasterCount] <Object>]
+ [[-DedicatedMasterEnabled] <Object>] [[-DedicatedMasterType] <Object>] [[-InstanceCount] <Object>]
+ [[-InstanceType] <Object>] [[-ZoneAwarenessConfig] <Object>] [[-ZoneAwarenessEnabled] <Object>]
  [<CommonParameters>]
 ```
 
@@ -20,15 +20,6 @@ Adds an AWS::Elasticsearch::Domain.ElasticsearchClusterConfig resource property 
 The cluster configuration for the Amazon ES domain.
 You can specify options such as the instance type and the number of instances.
 For more information, see Configuring Amazon ES Domains: https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains-configure-cluster-cli in the *Amazon Elasticsearch Service Developer Guide*.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -41,13 +32,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -62,13 +53,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -102,13 +93,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 4
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -135,7 +126,7 @@ Accept wildcard characters: False
 
 ### -ZoneAwarenessConfig
 Specifies zone awareness configuration options.
-Only required if ZoneAwarenessEnabled is true.
+Only use if ZoneAwarenessEnabled is true.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticsearchclusterconfig-zoneawarenessconfig
 Type: ZoneAwarenessConfig
@@ -164,13 +155,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 7
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

@@ -17,15 +17,6 @@ Adds an AWS::KinesisAnalytics::Application.InputProcessingConfiguration resource
 Provides a description of a processor that is used to preprocess the records in the stream before being processed by your application code.
 Currently, the only input processor available is AWS Lambda: https://docs.aws.amazon.com/lambda/.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -InputLambdaProcessor

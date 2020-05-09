@@ -14,15 +14,6 @@ Add-VSAppStreamStackUserSetting [-Action] <Object> [-Permission] <Object> [<Comm
 Adds an AWS::AppStream::Stack.UserSetting resource property to the template.
 Specifies an action and whether the action is enabled or disabled for users during their streaming sessions.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Action

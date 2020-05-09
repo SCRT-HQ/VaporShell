@@ -20,15 +20,6 @@ Also identifies the IAM role Amazon Kinesis Analytics can assume to read this ob
 An Amazon Kinesis Analytics application loads reference data only once.
 If the data changes, you call the UpdateApplication: https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html operation to trigger reloading of data into your application.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -BucketARN

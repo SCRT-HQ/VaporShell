@@ -8,23 +8,15 @@ Describes the actions associated with a rule.
 
 ```
 Add-VSIoTTopicRuleAction [[-CloudwatchAlarm] <Object>] [[-CloudwatchMetric] <Object>] [[-DynamoDB] <Object>]
- [[-DynamoDBv2] <Object>] [[-Elasticsearch] <Object>] [[-Firehose] <Object>] [[-IotAnalytics] <Object>]
- [[-Kinesis] <Object>] [[-Lambda] <Object>] [[-Republish] <Object>] [[-S3] <Object>] [[-Sns] <Object>]
- [[-Sqs] <Object>] [[-StepFunctions] <Object>] [<CommonParameters>]
+ [[-DynamoDBv2] <Object>] [[-Elasticsearch] <Object>] [[-Firehose] <Object>] [[-Http] <Object>]
+ [[-IotAnalytics] <Object>] [[-IotEvents] <Object>] [[-IotSiteWise] <Object>] [[-Kinesis] <Object>]
+ [[-Lambda] <Object>] [[-Republish] <Object>] [[-S3] <Object>] [[-Sns] <Object>] [[-Sqs] <Object>]
+ [[-StepFunctions] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::IoT::TopicRule.Action resource property to the template.
 Describes the actions associated with a rule.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -144,6 +136,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Http
+Send data to an HTTPS endpoint.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-http
+Type: HttpAction
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 7
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -IotAnalytics
 Sends message data to an AWS IoT Analytics channel.
 
@@ -157,7 +168,45 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 7
+Position: 8
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IotEvents
+Sends an input to an AWS IoT Events detector.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-iotevents
+Type: IotEventsAction
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 9
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IotSiteWise
+Sends data from the MQTT message that triggered the rule to AWS IoT SiteWise asset properties.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-iotsitewise
+Type: IotSiteWiseAction
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 10
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -176,7 +225,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 8
+Position: 11
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -195,7 +244,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 9
+Position: 12
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -214,7 +263,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 10
+Position: 13
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -233,7 +282,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 11
+Position: 14
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -252,7 +301,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 12
+Position: 15
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -271,7 +320,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 13
+Position: 16
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -290,7 +339,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 14
+Position: 17
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

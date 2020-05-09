@@ -18,15 +18,6 @@ A structure for the table object.
 A table is a metadata definition that represents your data.
 You can Grant and Revoke table privileges to a principal.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -DatabaseName

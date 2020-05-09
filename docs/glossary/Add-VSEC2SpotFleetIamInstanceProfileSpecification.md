@@ -14,15 +14,6 @@ Add-VSEC2SpotFleetIamInstanceProfileSpecification [[-Arn] <Object>] [<CommonPara
 Adds an AWS::EC2::SpotFleet.IamInstanceProfileSpecification resource property to the template.
 Describes an IAM instance profile.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Arn

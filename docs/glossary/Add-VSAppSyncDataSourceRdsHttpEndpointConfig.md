@@ -17,15 +17,6 @@ Use the RdsHttpEndpointConfig property type to specify RdsHttpEndpoint for an AW
 
 RdsHttpEndpointConfig is a property of the AWS AppSync DataSource RelationalDatabaseConfig: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-relationaldatabaseconfig.html resource.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -AwsRegion
@@ -86,7 +77,7 @@ Accept wildcard characters: False
 ```
 
 ### -DbClusterIdentifier
-Amazon RDS cluster identifier.
+Amazon RDS cluster ARN.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-rdshttpendpointconfig.html#cfn-appsync-datasource-rdshttpendpointconfig-dbclusteridentifier
 PrimitiveType: String

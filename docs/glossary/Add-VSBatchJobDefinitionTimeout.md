@@ -7,21 +7,12 @@ An object representing a job timeout configuration.
 ## SYNTAX
 
 ```
-Add-VSBatchJobDefinitionTimeout [[-AttemptDurationSeconds] <Int32>] [<CommonParameters>]
+Add-VSBatchJobDefinitionTimeout [[-AttemptDurationSeconds] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Batch::JobDefinition.Timeout resource property to the template.
 An object representing a job timeout configuration.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -33,13 +24,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

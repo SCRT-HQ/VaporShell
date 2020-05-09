@@ -14,15 +14,6 @@ Add-VSEC2SpotFleetGroupIdentifier [-GroupId] <Object> [<CommonParameters>]
 Adds an AWS::EC2::SpotFleet.GroupIdentifier resource property to the template.
 Describes a security group.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -GroupId

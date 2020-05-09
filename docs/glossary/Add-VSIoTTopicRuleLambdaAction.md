@@ -14,15 +14,6 @@ Add-VSIoTTopicRuleLambdaAction [[-FunctionArn] <Object>] [<CommonParameters>]
 Adds an AWS::IoT::TopicRule.LambdaAction resource property to the template.
 Describes an action to invoke a Lambda function.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -FunctionArn

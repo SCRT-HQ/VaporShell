@@ -16,15 +16,6 @@ Specifies the tags to apply to a resource when the resource is being created for
 
 TagSpecification is a property of the  AWS::EC2::EC2Fleet: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html resource.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ResourceType
@@ -33,7 +24,7 @@ ResourceType must be fleet.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-tagspecification.html#cfn-ec2-ec2fleet-tagspecification-resourcetype
 PrimitiveType: String
-UpdateType: Mutable
+UpdateType: Immutable
 
 ```yaml
 Type: Object
@@ -52,8 +43,8 @@ The tags to apply to the resource.
 
 Type: List
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-tagspecification.html#cfn-ec2-ec2fleet-tagspecification-tags
-ItemType: TagRequest
-UpdateType: Mutable
+ItemType: Tag
+UpdateType: Immutable
 
 ```yaml
 Type: Object

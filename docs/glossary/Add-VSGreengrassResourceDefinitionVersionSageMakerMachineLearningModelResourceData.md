@@ -8,8 +8,8 @@ For more information, see Perform Machine Learning Inference: https://docs.aws.a
 ## SYNTAX
 
 ```
-Add-VSGreengrassResourceDefinitionVersionSageMakerMachineLearningModelResourceData [-DestinationPath] <Object>
- [-SageMakerJobArn] <Object> [<CommonParameters>]
+Add-VSGreengrassResourceDefinitionVersionSageMakerMachineLearningModelResourceData [[-OwnerSetting] <Object>]
+ [-DestinationPath] <Object> [-SageMakerJobArn] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -19,16 +19,27 @@ For more information, see Perform Machine Learning Inference: https://docs.aws.a
 
 \<a name="aws-properties-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata-inheritance"\>\</a\> In an AWS CloudFormation template, SageMakerMachineLearningModelResourceData can be used in the https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html property type.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
+
+### -OwnerSetting
+The owner setting for the downloaded machine learning resource.
+For more information, see Access Machine Learning Resources from Lambda Functions: https://docs.aws.amazon.com/greengrass/latest/developerguide/access-ml-resources.html in the *AWS IoT Greengrass Developer Guide*.
+
+Type: ResourceDownloadOwnerSetting
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata-ownersetting
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -DestinationPath
 The absolute local path of the resource inside the Lambda environment.
@@ -43,14 +54,14 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 1
+Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -SageMakerJobArn
-The Amazon Resource Name ARN of the Secrets Manager training job that represents the source model.
+The Amazon Resource Name ARN of the Amazon SageMaker training job that represents the source model.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata-sagemakerjobarn
 PrimitiveType: String
@@ -62,7 +73,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 2
+Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

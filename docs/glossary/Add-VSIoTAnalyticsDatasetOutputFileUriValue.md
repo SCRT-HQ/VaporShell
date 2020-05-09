@@ -14,19 +14,10 @@ Add-VSIoTAnalyticsDatasetOutputFileUriValue [[-FileName] <Object>] [<CommonParam
 Adds an AWS::IoTAnalytics::Dataset.OutputFileUriValue resource property to the template.
 The value of the variable as a structure that specifies an output file URI.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -FileName
-The URI of the location where data set contents are stored, usually the URI of a file in an S3 bucket.
+The URI of the location where dataset contents are stored, usually the URI of a file in an S3 bucket.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable-outputfileurivalue.html#cfn-iotanalytics-dataset-variable-outputfileurivalue-filename
 PrimitiveType: String

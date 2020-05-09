@@ -14,15 +14,6 @@ Add-VSIoTThingsGraphFlowTemplateDefinitionDocument [-Language] <Object> [-Text] 
 Adds an AWS::IoTThingsGraph::FlowTemplate.DefinitionDocument resource property to the template.
 A document that defines an entity.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Language

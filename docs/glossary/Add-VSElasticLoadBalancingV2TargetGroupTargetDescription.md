@@ -8,21 +8,12 @@ Specifies a target to add to a target group.
 
 ```
 Add-VSElasticLoadBalancingV2TargetGroupTargetDescription [[-AvailabilityZone] <Object>] [-Id] <Object>
- [[-Port] <Int32>] [<CommonParameters>]
+ [[-Port] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::ElasticLoadBalancingV2::TargetGroup.TargetDescription resource property to the template.
 Specifies a target to add to a target group.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -75,19 +66,20 @@ Accept wildcard characters: False
 
 ### -Port
 The port on which the target is listening.
+Not used if the target is a Lambda function.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-targetgroup-targetdescription.html#cfn-elasticloadbalancingv2-targetgroup-targetdescription-port
 PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

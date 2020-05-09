@@ -14,15 +14,6 @@ Add-VSMSKClusterClientAuthentication [[-Tls] <Object>] [<CommonParameters>]
 Adds an AWS::MSK::Cluster.ClientAuthentication resource property to the template.
 Includes information related to client authentication.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Tls

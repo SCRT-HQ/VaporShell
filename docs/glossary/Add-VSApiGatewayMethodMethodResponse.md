@@ -15,15 +15,6 @@ Add-VSApiGatewayMethodMethodResponse [[-ResponseModels] <Hashtable>] [[-Response
 Adds an AWS::ApiGateway::Method.MethodResponse resource property to the template.
 MethodResponse is a property of the AWS::ApiGateway::Method: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html resource that defines the responses that can be sent to the client that calls a method.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ResponseModels

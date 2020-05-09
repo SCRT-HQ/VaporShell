@@ -7,22 +7,13 @@ The settings used to enable point in time recovery.
 ## SYNTAX
 
 ```
-Add-VSDynamoDBTablePointInTimeRecoverySpecification [[-PointInTimeRecoveryEnabled] <Boolean>]
+Add-VSDynamoDBTablePointInTimeRecoverySpecification [[-PointInTimeRecoveryEnabled] <Object>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::DynamoDB::Table.PointInTimeRecoverySpecification resource property to the template.
 The settings used to enable point in time recovery.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -34,13 +25,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

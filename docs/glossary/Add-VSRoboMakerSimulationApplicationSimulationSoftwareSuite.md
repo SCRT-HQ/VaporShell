@@ -15,15 +15,6 @@ Add-VSRoboMakerSimulationApplicationSimulationSoftwareSuite [-Version] <Object> 
 Adds an AWS::RoboMaker::SimulationApplication.SimulationSoftwareSuite resource property to the template.
 Information about a simulation software suite.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Version

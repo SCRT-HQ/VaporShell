@@ -21,15 +21,6 @@ RunCommandTarget is a property of the RunCommandParameters: https://docs.aws.ama
 Information about the EC2 instances that are to be sent the command, specified as key-value pairs.
 Each RunCommandTarget block can include only one key, but this key may specify multiple values.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Key

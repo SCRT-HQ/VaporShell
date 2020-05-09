@@ -26,15 +26,6 @@ LayerCustomRecipes specifies the custom recipes for a particular layer to be run
 To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe name, which is the recipe's file name without the .rb extension.
 For example: phpapp2::dbsetup specifies the dbsetup.rb recipe in the repository's phpapp2 folder.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Configure

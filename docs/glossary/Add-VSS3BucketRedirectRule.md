@@ -17,15 +17,6 @@ Adds an AWS::S3::Bucket.RedirectRule resource property to the template.
 Specifies how requests are redirected.
 In the event of an error, you can specify a different error code to return.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -HostName

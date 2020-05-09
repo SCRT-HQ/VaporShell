@@ -8,12 +8,12 @@ Each scaling instruction applies to one resource.
 ## SYNTAX
 
 ```
-Add-VSAutoScalingPlansScalingPlanScalingInstruction [[-DisableDynamicScaling] <Boolean>]
+Add-VSAutoScalingPlansScalingPlanScalingInstruction [[-DisableDynamicScaling] <Object>]
  [-ServiceNamespace] <Object> [[-PredictiveScalingMaxCapacityBehavior] <Object>] [-ScalableDimension] <Object>
- [[-ScalingPolicyUpdateBehavior] <Object>] [-MinCapacity] <Int32> [-TargetTrackingConfigurations] <Object>
- [[-PredictiveScalingMaxCapacityBuffer] <Int32>] [[-CustomizedLoadMetricSpecification] <Object>]
- [[-PredefinedLoadMetricSpecification] <Object>] [-ResourceId] <Object> [[-ScheduledActionBufferTime] <Int32>]
- [-MaxCapacity] <Int32> [[-PredictiveScalingMode] <Object>] [<CommonParameters>]
+ [[-ScalingPolicyUpdateBehavior] <Object>] [-MinCapacity] <Object> [-TargetTrackingConfigurations] <Object>
+ [[-PredictiveScalingMaxCapacityBuffer] <Object>] [[-CustomizedLoadMetricSpecification] <Object>]
+ [[-PredefinedLoadMetricSpecification] <Object>] [-ResourceId] <Object> [[-ScheduledActionBufferTime] <Object>]
+ [-MaxCapacity] <Object> [[-PredictiveScalingMode] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -33,15 +33,6 @@ We recommend waiting a minimum of 24 hours after creating an Auto Scaling group 
 At minimum, there must be 24 hours of historical data to generate a forecast.
 For more information, see Best Practices for AWS Auto Scaling: https://docs.aws.amazon.com/autoscaling/plans/userguide/gs-best-practices.html in the *AWS Auto Scaling User Guide*.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -DisableDynamicScaling
@@ -54,13 +45,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -168,13 +159,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 6
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -214,13 +205,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 8
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -312,13 +303,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 12
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -332,13 +323,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 13
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

@@ -7,24 +7,34 @@ Defines a condition under which a trigger fires.
 ## SYNTAX
 
 ```
-Add-VSGlueTriggerCondition [[-State] <Object>] [[-LogicalOperator] <Object>] [[-JobName] <Object>]
- [<CommonParameters>]
+Add-VSGlueTriggerCondition [[-CrawlerName] <Object>] [[-State] <Object>] [[-CrawlState] <Object>]
+ [[-LogicalOperator] <Object>] [[-JobName] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Glue::Trigger.Condition resource property to the template.
 Defines a condition under which a trigger fires.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
+
+### -CrawlerName
+The name of the crawler to which this condition applies.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-crawlername
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -State
 The condition state.
@@ -40,7 +50,26 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 1
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CrawlState
+The state of the crawler to which this condition applies.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-crawlstate
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -59,7 +88,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 2
+Position: 4
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -78,7 +107,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 3
+Position: 5
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

@@ -14,15 +14,6 @@ Add-VSLakeFormationPermissionsDatabaseResource [[-Name] <Object>] [<CommonParame
 Adds an AWS::LakeFormation::Permissions.DatabaseResource resource property to the template.
 A structure for the database object.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Name

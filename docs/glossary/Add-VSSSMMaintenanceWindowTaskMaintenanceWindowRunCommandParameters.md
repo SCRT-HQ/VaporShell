@@ -7,7 +7,7 @@ The MaintenanceWindowRunCommandParameters property type specifies the parameters
 ## SYNTAX
 
 ```
-Add-VSSSMMaintenanceWindowTaskMaintenanceWindowRunCommandParameters [[-TimeoutSeconds] <Int32>]
+Add-VSSSMMaintenanceWindowTaskMaintenanceWindowRunCommandParameters [[-TimeoutSeconds] <Object>]
  [[-Comment] <Object>] [[-OutputS3KeyPrefix] <Object>] [[-Parameters] <Object>] [[-DocumentHashType] <Object>]
  [[-ServiceRoleArn] <Object>] [[-NotificationConfig] <Object>] [[-OutputS3BucketName] <Object>]
  [[-DocumentHash] <Object>] [<CommonParameters>]
@@ -19,15 +19,6 @@ The MaintenanceWindowRunCommandParameters property type specifies the parameters
 
 MaintenanceWindowRunCommandParameters is a property of the TaskInvocationParameters: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-taskinvocationparameters.html property type.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -TimeoutSeconds
@@ -38,13 +29,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -69,7 +60,7 @@ Accept wildcard characters: False
 ```
 
 ### -OutputS3KeyPrefix
-The Amazon S3 bucket subfolder.
+The S3 bucket subfolder.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-outputs3keyprefix
 PrimitiveType: String
@@ -165,7 +156,7 @@ Accept wildcard characters: False
 ```
 
 ### -OutputS3BucketName
-The name of the Amazon S3 bucket.
+The name of the S3 bucket.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-outputs3bucketname
 PrimitiveType: String

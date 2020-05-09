@@ -14,15 +14,6 @@ Add-VSRoute53HostedZoneHostedZoneTag [-Key] <Object> [-Value] <Object> [<CommonP
 Adds an AWS::Route53::HostedZone.HostedZoneTag resource property to the template.
 A complex type that contains information about a tag that you want to add or edit for the specified health check or hosted zone.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Key

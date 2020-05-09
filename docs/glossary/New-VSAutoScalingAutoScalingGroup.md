@@ -9,13 +9,14 @@ Defines an Amazon EC2 Auto Scaling group with the specified name and attributes.
 ```
 New-VSAutoScalingAutoScalingGroup [-LogicalId] <String> [-AutoScalingGroupName <Object>]
  [-AvailabilityZones <Object>] [-Cooldown <Object>] [-DesiredCapacity <Object>]
- [-HealthCheckGracePeriod <Int32>] [-HealthCheckType <Object>] [-InstanceId <Object>]
+ [-HealthCheckGracePeriod <Object>] [-HealthCheckType <Object>] [-InstanceId <Object>]
  [-LaunchConfigurationName <Object>] [-LaunchTemplate <Object>] [-LifecycleHookSpecificationList <Object>]
- [-LoadBalancerNames <Object>] -MaxSize <Object> [-MetricsCollection <Object>] -MinSize <Object>
- [-MixedInstancesPolicy <Object>] [-NotificationConfigurations <Object>] [-PlacementGroup <Object>]
- [-ServiceLinkedRoleARN <Object>] [-Tags <Object>] [-TargetGroupARNs <Object>] [-TerminationPolicies <Object>]
- [-VPCZoneIdentifier <Object>] [-CreationPolicy <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>]
- [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+ [-LoadBalancerNames <Object>] [-MaxInstanceLifetime <Object>] -MaxSize <Object> [-MetricsCollection <Object>]
+ -MinSize <Object> [-MixedInstancesPolicy <Object>] [-NotificationConfigurations <Object>]
+ [-PlacementGroup <Object>] [-ServiceLinkedRoleARN <Object>] [-Tags <Object>] [-TargetGroupARNs <Object>]
+ [-TerminationPolicies <Object>] [-VPCZoneIdentifier <Object>] [-CreationPolicy <Object>]
+ [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
+ [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -33,15 +34,6 @@ You can find sample update policies for rolling updates in the Examples: https:/
 
 For more information, see CreateAutoScalingGroup: https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CreateAutoScalingGroup.html and UpdateAutoScalingGroup: https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_UpdateAutoScalingGroup.html in the *Amazon EC2 Auto Scaling API Reference*.
 For more information about Amazon EC2 Auto Scaling, see the Amazon EC2 Auto Scaling User Guide: https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -128,7 +120,8 @@ Accept wildcard characters: False
 ```
 
 ### -DesiredCapacity
-The number of Amazon EC2 instances that the Auto Scaling group attempts to maintain.
+The desired capacity is the initial capacity of the Auto Scaling group at the time of its creation and the capacity it attempts to maintain.
+It can scale beyond this capacity if you configure automatic scaling.
 The number must be greater than or equal to the minimum size of the group and less than or equal to the maximum size of the group.
 If you do not specify a desired capacity, the default is the minimum size of the group.
 CloudFormation marks the Auto Scaling group as successful by setting its status to CREATE_COMPLETE when the desired capacity is reached.
@@ -153,6 +146,7 @@ Accept wildcard characters: False
 
 ### -HealthCheckGracePeriod
 The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2 instance that has come into service.
+The default value is 0.
 For more information, see Health Checks for Auto Scaling Instances: https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html in the *Amazon EC2 Auto Scaling User Guide*.
 If you are adding an ELB health check, you must specify this property.
 
@@ -161,13 +155,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -218,7 +212,7 @@ Accept wildcard characters: False
 ```
 
 ### -LaunchConfigurationName
-The name of the LaunchConfiguration: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html to use to launch instances.
+The name of the launch configuration: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html to use to launch instances.
 You must specify one of the following properties: LaunchConfigurationName, LaunchTemplate, InstanceId, or MixedInstancesPolicy.
 When you update LaunchConfigurationName, existing Amazon EC2 instances continue to run with the configuration that they were originally launched with.
 To update existing instances, specify an UpdatePolicy attribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatepolicy.html for the Auto Scaling group.
@@ -240,7 +234,7 @@ Accept wildcard characters: False
 ```
 
 ### -LaunchTemplate
-The LaunchTemplate: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html to use to launch instances.
+The EC2 launch template: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html to use to launch instances.
 You must specify one of the following properties: LaunchConfigurationName, LaunchTemplate, InstanceId, or MixedInstancesPolicy.
 When you update LaunchTemplate, existing Amazon EC2 instances continue to run with the configuration that they were originally launched with.
 To update existing instances, specify an UpdatePolicy attribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatepolicy.html for the Auto Scaling group.
@@ -305,8 +299,30 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -MaxInstanceLifetime
+The maximum amount of time, in seconds, that an instance can be in service.
+Valid Range: Minimum value of 604800.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-maxinstancelifetime
+PrimitiveType: Integer
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -MaxSize
-The maximum number of Amazon EC2 instances in the Auto Scaling group.
+The maximum size of the Auto Scaling group.
+With a mixed instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need to go above MaxSize to meet your capacity requirements.
+In this event, Amazon EC2 Auto Scaling will never go above MaxSize by more than your maximum instance weight weights that define how many capacity units each instance contributes to the capacity of the group.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-maxsize
 PrimitiveType: String
@@ -347,7 +363,7 @@ Accept wildcard characters: False
 ```
 
 ### -MinSize
-The minimum number of Amazon EC2 instances in the Auto Scaling group.
+The minimum size of the Auto Scaling group.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-minsize
 PrimitiveType: String
@@ -450,7 +466,8 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-The tags for the group.
+One or more tags.
+You can tag your Auto Scaling group and propagate the tags to the Amazon EC2 instances it launches.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-tags
 DuplicatesAllowed: True
@@ -570,6 +587,49 @@ If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the re
 To keep a resource when its stack is deleted, specify Retain for that resource.
 You can use retain for any resource.
 For example, you can retain a nested stack, S3 bucket, or EC2 instance so that you can continue to use or modify those resources after you delete their stacks.
+
+You must use one of the following options: "Delete","Retain","Snapshot"
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdateReplacePolicy
+Use the UpdateReplacePolicy attribute to retain or (in some cases) backup the existing physical instance of a resource when it is replaced during a stack update operation.
+
+When you initiate a stack update, AWS CloudFormation updates resources based on differences between what you submit and the stack's current template and parameters.
+If you update a resource property that requires that the resource be replaced, AWS CloudFormation recreates the resource during the update.
+Recreating the resource generates a new physical ID.
+AWS CloudFormation creates the replacement resource first, and then changes references from other dependent resources to point to the replacement resource.
+By default, AWS CloudFormation then deletes the old resource.
+Using the UpdateReplacePolicy, you can specify that AWS CloudFormation retain or (in some cases) create a snapshot of the old resource.
+
+For resources that support snapshots, such as AWS::EC2::Volume, specify Snapshot to have AWS CloudFormation create a snapshot before deleting the old resource instance.
+
+You can apply the UpdateReplacePolicy attribute to any resource.
+UpdateReplacePolicy is only executed if you update a resource property whose update behavior is specified as Replacement, thereby causing AWS CloudFormation to replace the old resource with a new one with a new physical ID.
+For example, if you update the Engine property of an AWS::RDS::DBInstance resource type, AWS CloudFormation creates a new resource and replaces the current DB instance resource with the new one.
+The UpdateReplacePolicy attribute would then dictate whether AWS CloudFormation deleted, retained, or created a snapshot of the old DB instance.
+The update behavior for each property of a resource is specified in the reference topic for that resource in the AWS Resource and Property Types Reference.
+For more information on resource update behavior, see Update Behaviors of Stack Resources.
+
+The UpdateReplacePolicy attribute applies to stack updates you perform directly, as well as stack updates performed using change sets.
+
+Note
+Resources that are retained continue to exist and continue to incur applicable charges until you delete those resources.
+Snapshots that are created with this policy continue to exist and continue to incur applicable charges until you delete those snapshots.
+UpdateReplacePolicy retains the old physical resource or snapshot, but removes it from AWS CloudFormation's scope.
+
+UpdateReplacePolicy differs from the DeletionPolicy attribute in that it only applies to resources replaced during stack updates.
+Use DeletionPolicy for resources deleted when a stack is deleted, or when the resource definition itself is deleted from the template as part of a stack update.
 
 You must use one of the following options: "Delete","Retain","Snapshot"
 

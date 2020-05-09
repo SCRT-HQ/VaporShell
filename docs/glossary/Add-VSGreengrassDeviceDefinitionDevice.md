@@ -9,7 +9,7 @@ For more information, see What Is AWS IoT Greengrass?: https://docs.aws.amazon.c
 ## SYNTAX
 
 ```
-Add-VSGreengrassDeviceDefinitionDevice [[-SyncShadow] <Boolean>] [-ThingArn] <Object> [-Id] <Object>
+Add-VSGreengrassDeviceDefinitionDevice [[-SyncShadow] <Object>] [-ThingArn] <Object> [-Id] <Object>
  [-CertificateArn] <Object> [<CommonParameters>]
 ```
 
@@ -21,15 +21,6 @@ For more information, see What Is AWS IoT Greengrass?: https://docs.aws.amazon.c
 
 \<a name="aws-properties-greengrass-devicedefinition-device-inheritance"\>\</a\> In an AWS CloudFormation template, the Devices property of the  DeviceDefinitionVersion : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-devicedefinition-devicedefinitionversion.html property type contains a list of Device property types.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -SyncShadow
@@ -40,13 +31,13 @@ PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

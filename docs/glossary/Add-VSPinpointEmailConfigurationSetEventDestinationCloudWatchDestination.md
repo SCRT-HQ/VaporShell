@@ -17,15 +17,6 @@ Adds an AWS::PinpointEmail::ConfigurationSetEventDestination.CloudWatchDestinati
 An object that defines an Amazon CloudWatch destination for email events.
 You can use Amazon CloudWatch to monitor and gain insights on your email sending metrics.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -DimensionConfigurations

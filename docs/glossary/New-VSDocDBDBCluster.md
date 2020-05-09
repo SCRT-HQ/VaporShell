@@ -9,12 +9,13 @@ For more information, see DBCluster: https://docs.aws.amazon.com/documentdb/late
 ## SYNTAX
 
 ```
-New-VSDocDBDBCluster [-LogicalId] <String> [-StorageEncrypted <Boolean>] [-EngineVersion <Object>]
- [-KmsKeyId <Object>] [-AvailabilityZones <Object>] [-SnapshotIdentifier <Object>] [-Port <Int32>]
+New-VSDocDBDBCluster [-LogicalId] <String> [-StorageEncrypted <Object>] [-EngineVersion <Object>]
+ [-KmsKeyId <Object>] [-AvailabilityZones <Object>] [-SnapshotIdentifier <Object>] [-Port <Object>]
  [-DBClusterIdentifier <Object>] [-PreferredMaintenanceWindow <Object>] [-DBSubnetGroupName <Object>]
- [-PreferredBackupWindow <Object>] [-MasterUserPassword <Object>] [-VpcSecurityGroupIds <Object>]
- [-MasterUsername <Object>] [-DBClusterParameterGroupName <Object>] [-BackupRetentionPeriod <Int32>]
- [-Tags <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
+ [-DeletionProtection <Object>] [-PreferredBackupWindow <Object>] -MasterUserPassword <Object>
+ [-VpcSecurityGroupIds <Object>] -MasterUsername <Object> [-DBClusterParameterGroupName <Object>]
+ [-BackupRetentionPeriod <Object>] [-Tags <Object>] [-EnableCloudwatchLogsExports <Object>]
+ [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
  [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
@@ -23,15 +24,6 @@ Adds an AWS::DocDB::DBCluster resource to the template.
 The AWS::DocDB::DBCluster Amazon DocumentDB (with MongoDB compatibility resource describes a DBCluster.
 Amazon DocumentDB is a fully managed, MongoDB-compatible document database engine.
 For more information, see DBCluster: https://docs.aws.amazon.com/documentdb/latest/developerguide/API_DBCluster.html in the *Amazon DocumentDB Developer Guide*.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -53,20 +45,20 @@ Accept wildcard characters: False
 ```
 
 ### -StorageEncrypted
-Specifies whether the DB cluster is encrypted.
+Specifies whether the cluster is encrypted.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-storageencrypted
 PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -91,16 +83,16 @@ Accept wildcard characters: False
 ```
 
 ### -KmsKeyId
-The AWS KMS key identifier for an encrypted DB cluster.
+The AWS KMS key identifier for an encrypted cluster.
 The AWS KMS key identifier is the Amazon Resource Name ARN for the AWS KMS encryption key.
-If you are creating a DB cluster using the same AWS account that owns the AWS KMS encryption key that is used to encrypt the new DB cluster, you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
+If you are creating a cluster using the same AWS account that owns the AWS KMS encryption key that is used to encrypt the new cluster, you can use the AWS KMS key alias instead of the ARN for the AWS KMS encryption key.
 If an encryption key is not specified in KmsKeyId:
 + If ReplicationSourceIdentifier identifies an encrypted source, then Amazon DocumentDB uses the encryption key that is used to encrypt the source.
 Otherwise, Amazon DocumentDB uses your default encryption key.
 + If the StorageEncrypted parameter is true and ReplicationSourceIdentifier is not specified, Amazon DocumentDB uses your default encryption key.
 AWS KMS creates the default encryption key for your AWS account.
 Your AWS account has a different default encryption key for each AWS Region.
-If you create a replica of an encrypted DB cluster in another AWS Region, you must set KmsKeyId to a KMS key ID that is valid in the destination AWS Region.
+If you create a replica of an encrypted cluster in another AWS Region, you must set KmsKeyId to a KMS key ID that is valid in the destination AWS Region.
 This key is used to encrypt the replica in that AWS Region.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-kmskeyid
@@ -120,7 +112,7 @@ Accept wildcard characters: False
 ```
 
 ### -AvailabilityZones
-A list of Amazon EC2 Availability Zones that instances in the DB cluster can be created in.
+A list of Amazon EC2 Availability Zones that instances in the cluster can be created in.
 
 PrimitiveItemType: String
 Type: List
@@ -140,9 +132,9 @@ Accept wildcard characters: False
 ```
 
 ### -SnapshotIdentifier
-The identifier for the DB snapshot or DB cluster snapshot to restore from.
-You can use either the name or the Amazon Resource Name ARN to specify a DB cluster snapshot.
-However, you can use only the ARN to specify a DB snapshot.
+The identifier for the snapshot or cluster snapshot to restore from.
+You can use either the name or the Amazon Resource Name ARN to specify a cluster snapshot.
+However, you can use only the ARN to specify a snapshot.
 Constraints:
 + Must match the identifier of an existing snapshot.
 
@@ -170,19 +162,19 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -DBClusterIdentifier
-The DB cluster identifier.
+The cluster identifier.
 This parameter is stored as a lowercase string.
 Constraints:
 + Must contain from 1 to 63 letters, numbers, or hyphens.
@@ -230,7 +222,7 @@ Accept wildcard characters: False
 ```
 
 ### -DBSubnetGroupName
-A DB subnet group to associate with this DB cluster.
+A subnet group to associate with this cluster.
 Constraints: Must match the name of an existing DBSubnetGroup.
 Must not be default.
 Example: mySubnetgroup
@@ -238,6 +230,26 @@ Example: mySubnetgroup
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-dbsubnetgroupname
 PrimitiveType: String
 UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DeletionProtection
+Protects clusters from being accidentally deleted.
+If enabled, the cluster cannot be deleted unless it is modified and DeletionProtection is disabled.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-deletionprotection
+PrimitiveType: Boolean
+UpdateType: Mutable
 
 ```yaml
 Type: Object
@@ -279,7 +291,7 @@ Accept wildcard characters: False
 ### -MasterUserPassword
 The password for the master database user.
 This password can contain any printable ASCII character except forward slash /, double quote ", or the "at" symbol @.
-Constraints: Must contain from 8 to 41 characters.
+Constraints: Must contain from 8 to 100 characters.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-masteruserpassword
 PrimitiveType: String
@@ -290,7 +302,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -298,7 +310,7 @@ Accept wildcard characters: False
 ```
 
 ### -VpcSecurityGroupIds
-A list of EC2 VPC security groups to associate with this DB cluster.
+A list of EC2 VPC security groups to associate with this cluster.
 
 PrimitiveItemType: String
 Type: List
@@ -318,9 +330,9 @@ Accept wildcard characters: False
 ```
 
 ### -MasterUsername
-The name of the master user for the DB cluster.
+The name of the master user for the cluster.
 Constraints:
-+ Must be from 1 to 16 letters or numbers.
++ Must be from 1 to 63 letters or numbers.
 + The first character must be a letter.
 + Cannot be a reserved word for the chosen database engine.
 
@@ -333,7 +345,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -341,7 +353,7 @@ Accept wildcard characters: False
 ```
 
 ### -DBClusterParameterGroupName
-The name of the DB cluster parameter group to associate with this DB cluster.
+The name of the cluster parameter group to associate with this cluster.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-dbclusterparametergroupname
 PrimitiveType: String
@@ -371,23 +383,43 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Tags
-The tags to be assigned to the DB cluster.
+The tags to be assigned to the cluster.
 
 Type: List
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-tags
 ItemType: Tag
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EnableCloudwatchLogsExports
+A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs.
+
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-enablecloudwatchlogsexports
 UpdateType: Mutable
 
 ```yaml
@@ -410,6 +442,49 @@ If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the re
 To keep a resource when its stack is deleted, specify Retain for that resource.
 You can use retain for any resource.
 For example, you can retain a nested stack, S3 bucket, or EC2 instance so that you can continue to use or modify those resources after you delete their stacks.
+
+You must use one of the following options: "Delete","Retain","Snapshot"
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdateReplacePolicy
+Use the UpdateReplacePolicy attribute to retain or (in some cases) backup the existing physical instance of a resource when it is replaced during a stack update operation.
+
+When you initiate a stack update, AWS CloudFormation updates resources based on differences between what you submit and the stack's current template and parameters.
+If you update a resource property that requires that the resource be replaced, AWS CloudFormation recreates the resource during the update.
+Recreating the resource generates a new physical ID.
+AWS CloudFormation creates the replacement resource first, and then changes references from other dependent resources to point to the replacement resource.
+By default, AWS CloudFormation then deletes the old resource.
+Using the UpdateReplacePolicy, you can specify that AWS CloudFormation retain or (in some cases) create a snapshot of the old resource.
+
+For resources that support snapshots, such as AWS::EC2::Volume, specify Snapshot to have AWS CloudFormation create a snapshot before deleting the old resource instance.
+
+You can apply the UpdateReplacePolicy attribute to any resource.
+UpdateReplacePolicy is only executed if you update a resource property whose update behavior is specified as Replacement, thereby causing AWS CloudFormation to replace the old resource with a new one with a new physical ID.
+For example, if you update the Engine property of an AWS::RDS::DBInstance resource type, AWS CloudFormation creates a new resource and replaces the current DB instance resource with the new one.
+The UpdateReplacePolicy attribute would then dictate whether AWS CloudFormation deleted, retained, or created a snapshot of the old DB instance.
+The update behavior for each property of a resource is specified in the reference topic for that resource in the AWS Resource and Property Types Reference.
+For more information on resource update behavior, see Update Behaviors of Stack Resources.
+
+The UpdateReplacePolicy attribute applies to stack updates you perform directly, as well as stack updates performed using change sets.
+
+Note
+Resources that are retained continue to exist and continue to incur applicable charges until you delete those resources.
+Snapshots that are created with this policy continue to exist and continue to incur applicable charges until you delete those snapshots.
+UpdateReplacePolicy retains the old physical resource or snapshot, but removes it from AWS CloudFormation's scope.
+
+UpdateReplacePolicy differs from the DeletionPolicy attribute in that it only applies to resources replaced during stack updates.
+Use DeletionPolicy for resources deleted when a stack is deleted, or when the resource definition itself is deleted from the template as part of a stack update.
 
 You must use one of the following options: "Delete","Retain","Snapshot"
 

@@ -7,21 +7,12 @@ Describes the ICMP type and code.
 ## SYNTAX
 
 ```
-Add-VSEC2NetworkAclEntryIcmp [[-Code] <Int32>] [[-Type] <Int32>] [<CommonParameters>]
+Add-VSEC2NetworkAclEntryIcmp [[-Code] <Object>] [[-Type] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::EC2::NetworkAclEntry.Icmp resource property to the template.
 Describes the ICMP type and code.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -35,13 +26,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -56,13 +47,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

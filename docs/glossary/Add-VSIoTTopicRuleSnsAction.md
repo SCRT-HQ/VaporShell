@@ -15,15 +15,6 @@ Add-VSIoTTopicRuleSnsAction [[-MessageFormat] <Object>] [-RoleArn] <Object> [-Ta
 Adds an AWS::IoT::TopicRule.SnsAction resource property to the template.
 Describes an action to publish to an Amazon SNS topic.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -MessageFormat

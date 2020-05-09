@@ -15,15 +15,6 @@ Add-VSKinesisAnalyticsV2ApplicationS3ContentLocation [[-BucketARN] <Object>] [[-
 Adds an AWS::KinesisAnalyticsV2::Application.S3ContentLocation resource property to the template.
 For a Java-based Amazon Kinesis Data Analytics application, provides a description of an Amazon S3 object, including the Amazon Resource Name (ARN of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -BucketARN

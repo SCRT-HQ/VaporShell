@@ -14,15 +14,6 @@ Add-VSDynamoDBTableAttributeDefinition [-AttributeName] <Object> [-AttributeType
 Adds an AWS::DynamoDB::Table.AttributeDefinition resource property to the template.
 Represents an attribute for describing the key schema for the table and indexes.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -AttributeName

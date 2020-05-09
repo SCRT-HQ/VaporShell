@@ -13,15 +13,6 @@ Add-VSAutoScalingAutoScalingGroupMixedInstancesPolicy [[-InstancesDistribution] 
 ## DESCRIPTION
 Adds an AWS::AutoScaling::AutoScalingGroup.MixedInstancesPolicy resource property to the template.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -InstancesDistribution

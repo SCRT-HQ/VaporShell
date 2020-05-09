@@ -19,15 +19,6 @@ The OptionSettings property of the AWS::ElasticBeanstalk::ConfigurationTemplate:
 
 For a list of possible namespaces and option values, see Option Values: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html in the *AWS Elastic Beanstalk Developer Guide*.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Namespace

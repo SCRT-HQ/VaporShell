@@ -8,17 +8,17 @@ A *cluster* is a fully managed data warehouse that consists of a set of compute 
 ## SYNTAX
 
 ```
-New-VSRedshiftCluster [-LogicalId] <String> [-AllowVersionUpgrade <Boolean>]
- [-AutomatedSnapshotRetentionPeriod <Int32>] [-AvailabilityZone <Object>] [-ClusterIdentifier <Object>]
+New-VSRedshiftCluster [-LogicalId] <String> [-AllowVersionUpgrade <Object>]
+ [-AutomatedSnapshotRetentionPeriod <Object>] [-AvailabilityZone <Object>] [-ClusterIdentifier <Object>]
  [-ClusterParameterGroupName <Object>] [-ClusterSecurityGroups <Object>] [-ClusterSubnetGroupName <Object>]
- -ClusterType <Object> [-ClusterVersion <Object>] -DBName <Object> [-ElasticIp <Object>] [-Encrypted <Boolean>]
+ -ClusterType <Object> [-ClusterVersion <Object>] -DBName <Object> [-ElasticIp <Object>] [-Encrypted <Object>]
  [-HsmClientCertificateIdentifier <Object>] [-HsmConfigurationIdentifier <Object>] [-IamRoles <Object>]
  [-KmsKeyId <Object>] [-LoggingProperties <Object>] -MasterUserPassword <Object> -MasterUsername <Object>
- -NodeType <Object> [-NumberOfNodes <Int32>] [-OwnerAccount <Object>] [-Port <Int32>]
- [-PreferredMaintenanceWindow <Object>] [-PubliclyAccessible <Boolean>] [-SnapshotClusterIdentifier <Object>]
+ -NodeType <Object> [-NumberOfNodes <Object>] [-OwnerAccount <Object>] [-Port <Object>]
+ [-PreferredMaintenanceWindow <Object>] [-PubliclyAccessible <Object>] [-SnapshotClusterIdentifier <Object>]
  [-SnapshotIdentifier <Object>] [-Tags <Object>] [-VpcSecurityGroupIds <Object>] [-DeletionPolicy <String>]
- [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
- [<CommonParameters>]
+ [-UpdateReplacePolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
+ [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -29,15 +29,6 @@ A *cluster* is a fully managed data warehouse that consists of a set of compute 
 To create a cluster in Virtual Private Cloud (VPC, you must provide a cluster subnet group name.
 The cluster subnet group identifies the subnets of your VPC that Amazon Redshift uses when creating the cluster.
 For more information about managing clusters, go to Amazon Redshift Clusters: https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html in the *Amazon Redshift Cluster Management Guide*.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -68,13 +59,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -91,13 +82,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -106,7 +97,7 @@ Accept wildcard characters: False
 The EC2 Availability Zone AZ in which you want Amazon Redshift to provision the cluster.
 For example, if you have several EC2 instances running in a specific Availability Zone, then you might want the cluster to be provisioned in the same zone in order to decrease network latency.
 Default: A random, system-chosen Availability Zone in the region that is specified by the endpoint.
-Example: us-east-1d
+Example: us-east-2d
 Constraint: The specified Availability Zone must be in the same region as the current endpoint.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-availabilityzone
@@ -323,13 +314,13 @@ PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -487,7 +478,7 @@ Accept wildcard characters: False
 ### -NodeType
 The node type to be provisioned for the cluster.
 For information about node types, go to  Working with Clusters: https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes in the *Amazon Redshift Cluster Management Guide*.
-Valid Values: ds2.xlarge | ds2.8xlarge | ds2.xlarge | ds2.8xlarge | dc1.large | dc1.8xlarge | dc2.large | dc2.8xlarge
+Valid Values: ds2.xlarge | ds2.8xlarge | dc1.large | dc1.8xlarge | dc2.large | dc2.8xlarge | ra3.4xlarge | ra3.16xlarge
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-nodetype
 PrimitiveType: String
@@ -519,13 +510,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -562,13 +553,13 @@ PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -605,13 +596,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -708,6 +699,49 @@ If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the re
 To keep a resource when its stack is deleted, specify Retain for that resource.
 You can use retain for any resource.
 For example, you can retain a nested stack, S3 bucket, or EC2 instance so that you can continue to use or modify those resources after you delete their stacks.
+
+You must use one of the following options: "Delete","Retain","Snapshot"
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdateReplacePolicy
+Use the UpdateReplacePolicy attribute to retain or (in some cases) backup the existing physical instance of a resource when it is replaced during a stack update operation.
+
+When you initiate a stack update, AWS CloudFormation updates resources based on differences between what you submit and the stack's current template and parameters.
+If you update a resource property that requires that the resource be replaced, AWS CloudFormation recreates the resource during the update.
+Recreating the resource generates a new physical ID.
+AWS CloudFormation creates the replacement resource first, and then changes references from other dependent resources to point to the replacement resource.
+By default, AWS CloudFormation then deletes the old resource.
+Using the UpdateReplacePolicy, you can specify that AWS CloudFormation retain or (in some cases) create a snapshot of the old resource.
+
+For resources that support snapshots, such as AWS::EC2::Volume, specify Snapshot to have AWS CloudFormation create a snapshot before deleting the old resource instance.
+
+You can apply the UpdateReplacePolicy attribute to any resource.
+UpdateReplacePolicy is only executed if you update a resource property whose update behavior is specified as Replacement, thereby causing AWS CloudFormation to replace the old resource with a new one with a new physical ID.
+For example, if you update the Engine property of an AWS::RDS::DBInstance resource type, AWS CloudFormation creates a new resource and replaces the current DB instance resource with the new one.
+The UpdateReplacePolicy attribute would then dictate whether AWS CloudFormation deleted, retained, or created a snapshot of the old DB instance.
+The update behavior for each property of a resource is specified in the reference topic for that resource in the AWS Resource and Property Types Reference.
+For more information on resource update behavior, see Update Behaviors of Stack Resources.
+
+The UpdateReplacePolicy attribute applies to stack updates you perform directly, as well as stack updates performed using change sets.
+
+Note
+Resources that are retained continue to exist and continue to incur applicable charges until you delete those resources.
+Snapshots that are created with this policy continue to exist and continue to incur applicable charges until you delete those snapshots.
+UpdateReplacePolicy retains the old physical resource or snapshot, but removes it from AWS CloudFormation's scope.
+
+UpdateReplacePolicy differs from the DeletionPolicy attribute in that it only applies to resources replaced during stack updates.
+Use DeletionPolicy for resources deleted when a stack is deleted, or when the resource definition itself is deleted from the template as part of a stack update.
 
 You must use one of the following options: "Delete","Retain","Snapshot"
 

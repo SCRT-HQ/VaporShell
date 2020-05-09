@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 Adds an AWS::WAF::ByteMatchSet.ByteMatchTuple resource property to the template.
-The bytes (typically a string that corresponds with ASCII characters that you want AWS WAF to search for in web requests, the location in requests that you want AWS WAF to search, and other settings.
+**Note**
 
 ## SYNTAX
 
@@ -14,16 +14,15 @@ Add-VSWAFByteMatchSetByteMatchTuple [-FieldToMatch] <Object> [-PositionalConstra
 
 ## DESCRIPTION
 Adds an AWS::WAF::ByteMatchSet.ByteMatchTuple resource property to the template.
+**Note**
+
+This is **AWS WAF Classic** documentation.
+For more information, see AWS WAF Classic: https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html in the developer guide.
+
+**For the latest version of AWS WAF**, use the AWS WAFV2 API and see the AWS WAF Developer Guide: https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html.
+With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+
 The bytes (typically a string that corresponds with ASCII characters that you want AWS WAF to search for in web requests, the location in requests that you want AWS WAF to search, and other settings.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -144,7 +143,7 @@ Accept wildcard characters: False
 
 ### -TextTransformation
 Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF.
-If you specify a transformation, AWS WAF performs the transformation on TargetString before inspecting a request for a match.
+If you specify a transformation, AWS WAF performs the transformation on FieldToMatch before inspecting it for a match.
 You can only specify a single type of TextTransformation.
 **CMD_LINE**
 When you're concerned that attackers are injecting an operating system command line command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:

@@ -17,15 +17,6 @@ Adds an AWS::KinesisFirehose::DeliveryStream.Serializer resource property to the
 The serializer that you want Kinesis Data Firehose to use to convert data to the target format before writing it to Amazon S3.
 Kinesis Data Firehose supports two types of serializers: the ORC SerDe: https://hive.apache.org/javadocs/r1.2.2/api/org/apache/hadoop/hive/ql/io/orc/OrcSerde.html and the Parquet SerDe: https://hive.apache.org/javadocs/r1.2.2/api/org/apache/hadoop/hive/ql/io/parquet/serde/ParquetHiveSerDe.html.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -OrcSerDe

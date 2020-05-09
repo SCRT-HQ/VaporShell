@@ -7,22 +7,13 @@ Describes a secondary private IPv4 address for a network interface.
 ## SYNTAX
 
 ```
-Add-VSEC2NetworkInterfacePrivateIpAddressSpecification [-Primary] <Boolean> [-PrivateIpAddress] <Object>
+Add-VSEC2NetworkInterfacePrivateIpAddressSpecification [-Primary] <Object> [-PrivateIpAddress] <Object>
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::EC2::NetworkInterface.PrivateIpAddressSpecification resource property to the template.
 Describes a secondary private IPv4 address for a network interface.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -36,13 +27,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

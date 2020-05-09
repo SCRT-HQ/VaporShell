@@ -14,15 +14,6 @@ Add-VSStepFunctionsStateMachineTagsEntry [-Value] <Object> [-Key] <Object> [<Com
 Adds an AWS::StepFunctions::StateMachine.TagsEntry resource property to the template.
 The TagsEntry property specifies *tags* to identify a state machine.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Value

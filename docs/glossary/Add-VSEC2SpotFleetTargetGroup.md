@@ -14,15 +14,6 @@ Add-VSEC2SpotFleetTargetGroup [-Arn] <Object> [<CommonParameters>]
 Adds an AWS::EC2::SpotFleet.TargetGroup resource property to the template.
 Describes a load balancer target group.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Arn

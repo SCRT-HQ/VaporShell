@@ -15,19 +15,10 @@ Add-VSElasticLoadBalancingV2LoadBalancerSubnetMapping [-AllocationId] <Object> [
 Adds an AWS::ElasticLoadBalancingV2::LoadBalancer.SubnetMapping resource property to the template.
 Specifies a subnet to attach to an Application Load Balancer or a Network Load Balancer.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -AllocationId
-Network Load Balancers\] The allocation ID of the Elastic IP address.
+Network Load Balancers\] The allocation ID of the Elastic IP address for an internet-facing load balancer.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-loadbalancer-subnetmapping.html#cfn-elasticloadbalancingv2-loadbalancer-subnetmapping-allocationid
 PrimitiveType: String

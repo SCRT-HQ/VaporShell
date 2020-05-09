@@ -15,19 +15,10 @@ Add-VSPinpointCampaignEventDimensions [[-Metrics] <Object>] [[-EventType] <Objec
 Adds an AWS::Pinpoint::Campaign.EventDimensions resource property to the template.
 Specifies the dimensions for an event filter that determines when a campaign is sent.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Metrics
-One or more custom metrics that your app reports to Amazon Pinpoint.
+One or more custom metrics that your application reports to Amazon Pinpoint.
 You can use these metrics as selection criteria when you create an event filter.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-eventdimensions.html#cfn-pinpoint-campaign-eventdimensions-metrics
@@ -48,7 +39,7 @@ Accept wildcard characters: False
 
 ### -EventType
 The name of the event that causes the campaign to be sent.
-This can be a standard type of event that Amazon Pinpoint generates, such as _session.start, or a custom event that's specific to your app.
+This can be a standard type of event that Amazon Pinpoint generates, such as _email.delivered, or a custom event that's specific to your application.
 
 Type: SetDimension
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-eventdimensions.html#cfn-pinpoint-campaign-eventdimensions-eventtype
@@ -67,7 +58,7 @@ Accept wildcard characters: False
 ```
 
 ### -Attributes
-One or more custom attributes that your app reports to Amazon Pinpoint.
+One or more custom attributes that your application reports to Amazon Pinpoint.
 You can use these attributes as selection criteria when you create an event filter.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-eventdimensions.html#cfn-pinpoint-campaign-eventdimensions-attributes

@@ -14,15 +14,6 @@ Add-VSIoTEventsDetectorModelClearTimer [[-TimerName] <Object>] [<CommonParameter
 Adds an AWS::IoTEvents::DetectorModel.ClearTimer resource property to the template.
 Information needed to clear the timer.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -TimerName

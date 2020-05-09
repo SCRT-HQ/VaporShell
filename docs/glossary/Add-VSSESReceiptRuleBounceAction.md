@@ -17,15 +17,6 @@ When included in a receipt rule, this action rejects the received email by retur
 
 For information about sending a bounce message in response to a received email, see the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-bounce.html.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Sender
@@ -88,7 +79,7 @@ Accept wildcard characters: False
 
 ### -TopicArn
 The Amazon Resource Name ARN of the Amazon SNS topic to notify when the bounce action is taken.
-An example of an Amazon SNS topic ARN is arn:aws:sns:us-west-2:123456789012:MyTopic.
+You can find the ARN of a topic by using the ListTopics: https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html operation in the Amazon SNS API.
 For more information about Amazon SNS topics, see the Amazon SNS Developer Guide: https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-bounceaction.html#cfn-ses-receiptrule-bounceaction-topicarn

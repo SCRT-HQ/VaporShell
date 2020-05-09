@@ -14,15 +14,6 @@ Add-VSMediaLiveInputMediaConnectFlowRequest [[-FlowArn] <Object>] [<CommonParame
 Adds an AWS::MediaLive::Input.MediaConnectFlowRequest resource property to the template.
 The settings for a MediaConnect Flow.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -FlowArn

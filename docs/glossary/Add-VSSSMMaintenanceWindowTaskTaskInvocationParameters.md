@@ -18,15 +18,6 @@ The TaskInvocationParameters property type specifies the task execution paramete
 
 TaskInvocationParameters is a property of the AWS::SSM::MaintenanceWindowTask: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html property type.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -MaintenanceWindowRunCommandParameters
@@ -68,7 +59,7 @@ Accept wildcard characters: False
 ```
 
 ### -MaintenanceWindowStepFunctionsParameters
-The parameters for a STEP_FUNCTION task type.
+The parameters for a STEP_FUNCTIONS task type.
 
 Type: MaintenanceWindowStepFunctionsParameters
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-taskinvocationparameters.html#cfn-ssm-maintenancewindowtask-taskinvocationparameters-maintenancewindowstepfunctionsparameters

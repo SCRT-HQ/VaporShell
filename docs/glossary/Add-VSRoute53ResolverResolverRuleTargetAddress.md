@@ -14,15 +14,6 @@ Add-VSRoute53ResolverResolverRuleTargetAddress [-Ip] <Object> [[-Port] <Object>]
 Adds an AWS::Route53Resolver::ResolverRule.TargetAddress resource property to the template.
 In a CreateResolverRule: https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverRule.html request, an array of the IPs that you want to forward DNS queries to.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Ip

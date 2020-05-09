@@ -15,17 +15,6 @@ Add-VSS3BucketAnalyticsConfiguration [-Id] <Object> [[-Prefix] <Object>] [-Stora
 Adds an AWS::S3::Bucket.AnalyticsConfiguration resource property to the template.
 Specifies the configuration and any analyses for the analytics filter of an Amazon S3 bucket.
 
-For more information, see GET Bucket analytics: https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETAnalyticsConfig.html in the *Amazon Simple Storage Service API Reference*.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Id

@@ -15,15 +15,6 @@ Add-VSManagedBlockchainMemberNetworkFrameworkConfiguration [[-NetworkFabricConfi
 Adds an AWS::ManagedBlockchain::Member.NetworkFrameworkConfiguration resource property to the template.
 Configuration properties relevant to the network for the blockchain framework that the network uses.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -NetworkFabricConfiguration

@@ -16,15 +16,6 @@ Add-VSOpsWorksInstanceTimeBasedAutoScaling [[-Friday] <Hashtable>] [[-Monday] <H
 Adds an AWS::OpsWorks::Instance.TimeBasedAutoScaling resource property to the template.
 Describes an instance's time-based auto scaling configuration.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Friday

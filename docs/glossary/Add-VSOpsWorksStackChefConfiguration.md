@@ -7,22 +7,13 @@ Describes the Chef configuration.
 ## SYNTAX
 
 ```
-Add-VSOpsWorksStackChefConfiguration [[-BerkshelfVersion] <Object>] [[-ManageBerkshelf] <Boolean>]
+Add-VSOpsWorksStackChefConfiguration [[-BerkshelfVersion] <Object>] [[-ManageBerkshelf] <Object>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::OpsWorks::Stack.ChefConfiguration resource property to the template.
 Describes the Chef configuration.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -53,13 +44,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

@@ -7,21 +7,12 @@ ProjectTriggers is a property of the AWS CodeBuild Project: https://docs.aws.ama
 ## SYNTAX
 
 ```
-Add-VSCodeBuildProjectProjectTriggers [[-FilterGroups] <Object>] [[-Webhook] <Boolean>] [<CommonParameters>]
+Add-VSCodeBuildProjectProjectTriggers [[-FilterGroups] <Object>] [[-Webhook] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::CodeBuild::Project.ProjectTriggers resource property to the template.
 ProjectTriggers is a property of the AWS CodeBuild Project: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html resource that specifies webhooks that trigger an AWS CodeBuild build.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -54,13 +45,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

@@ -15,15 +15,6 @@ Add-VSPinpointCampaignCampaignSmsMessage [[-SenderId] <Object>] [[-Body] <Object
 Adds an AWS::Pinpoint::Campaign.CampaignSmsMessage resource property to the template.
 Specifies the content and settings for an SMS message that's sent to recipients of a campaign.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -SenderId

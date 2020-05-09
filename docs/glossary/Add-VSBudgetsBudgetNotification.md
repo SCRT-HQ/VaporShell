@@ -9,7 +9,7 @@ A budget can have up to five notifications.
 
 ```
 Add-VSBudgetsBudgetNotification [-ComparisonOperator] <Object> [-NotificationType] <Object>
- [-Threshold] <Double> [[-ThresholdType] <Object>] [<CommonParameters>]
+ [-Threshold] <Object> [[-ThresholdType] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -29,15 +29,6 @@ For example, if you have a budget for 200 dollars and you want to be notified wh
 + A comparisonOperator of GREATER_THAN
 
 + A notification threshold of 80
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -81,20 +72,21 @@ Accept wildcard characters: False
 
 ### -Threshold
 The threshold that is associated with a notification.
-Thresholds are always a percentage.
+Thresholds are always a percentage, and many customers find value being alerted between 50% - 200% of the budgeted amount.
+The maximum limit for your threshold is 1,000,000% above the budgeted amount.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notification.html#cfn-budgets-budget-notification-threshold
 PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 3
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

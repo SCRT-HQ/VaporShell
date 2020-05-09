@@ -7,21 +7,12 @@ Represents the settings used to enable server-side encryption.
 ## SYNTAX
 
 ```
-Add-VSDAXClusterSSESpecification [[-SSEEnabled] <Boolean>] [<CommonParameters>]
+Add-VSDAXClusterSSESpecification [[-SSEEnabled] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::DAX::Cluster.SSESpecification resource property to the template.
 Represents the settings used to enable server-side encryption.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -33,13 +24,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

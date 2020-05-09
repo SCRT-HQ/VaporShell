@@ -20,15 +20,6 @@ An arbitrary set of tags (key-value pairs for this GraphQL API.
 
 *Update requires:* No interruption
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### CommonParameters

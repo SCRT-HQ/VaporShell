@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 Adds an AWS::AppMesh::Mesh.MeshSpec resource property to the template.
-An object representing the specification of a service mesh.
+An object that represents the specification of a service mesh.
 
 ## SYNTAX
 
@@ -12,16 +12,7 @@ Add-VSAppMeshMeshMeshSpec [[-EgressFilter] <Object>] [<CommonParameters>]
 
 ## DESCRIPTION
 Adds an AWS::AppMesh::Mesh.MeshSpec resource property to the template.
-An object representing the specification of a service mesh.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+An object that represents the specification of a service mesh.
 
 ## PARAMETERS
 

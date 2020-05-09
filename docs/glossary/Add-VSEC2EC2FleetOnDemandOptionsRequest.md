@@ -7,7 +7,9 @@ Specifies the allocation strategy of On-Demand Instances in an EC2 Fleet.
 ## SYNTAX
 
 ```
-Add-VSEC2EC2FleetOnDemandOptionsRequest [[-AllocationStrategy] <Object>] [<CommonParameters>]
+Add-VSEC2EC2FleetOnDemandOptionsRequest [[-SingleAvailabilityZone] <Object>] [[-AllocationStrategy] <Object>]
+ [[-SingleInstanceType] <Object>] [[-MinTargetCapacity] <Object>] [[-MaxTotalPrice] <Object>]
+ [[-CapacityReservationOptions] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -16,16 +18,27 @@ Specifies the allocation strategy of On-Demand Instances in an EC2 Fleet.
 
 OnDemandOptionsRequest is a property of the AWS::EC2::EC2Fleet: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html resource.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
+
+### -SingleAvailabilityZone
+Indicates that the fleet launches all On-Demand Instances into a single Availability Zone.
+Supported only for fleets of type instant.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-ondemandoptionsrequest.html#cfn-ec2-ec2fleet-ondemandoptionsrequest-singleavailabilityzone
+PrimitiveType: Boolean
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -AllocationStrategy
 The order of the launch template overrides to use in fulfilling On-Demand capacity.
@@ -35,7 +48,7 @@ If you do not specify a value, EC2 Fleet defaults to lowest-price.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-ondemandoptionsrequest.html#cfn-ec2-ec2fleet-ondemandoptionsrequest-allocationstrategy
 PrimitiveType: String
-UpdateType: Mutable
+UpdateType: Immutable
 
 ```yaml
 Type: Object
@@ -43,7 +56,86 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 1
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SingleInstanceType
+Indicates that the fleet uses a single instance type to launch all On-Demand Instances in the fleet.
+Supported only for fleets of type instant.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-ondemandoptionsrequest.html#cfn-ec2-ec2fleet-ondemandoptionsrequest-singleinstancetype
+PrimitiveType: Boolean
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MinTargetCapacity
+The minimum target capacity for On-Demand Instances in the fleet.
+If the minimum target capacity is not reached, the fleet launches no instances.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-ondemandoptionsrequest.html#cfn-ec2-ec2fleet-ondemandoptionsrequest-mintargetcapacity
+PrimitiveType: Integer
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MaxTotalPrice
+The maximum amount per hour for On-Demand Instances that you're willing to pay.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-ondemandoptionsrequest.html#cfn-ec2-ec2fleet-ondemandoptionsrequest-maxtotalprice
+PrimitiveType: String
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 5
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CapacityReservationOptions
+The strategy for using unused Capacity Reservations for fulfilling On-Demand capacity.
+Supported only for fleets of type instant.
+
+Type: CapacityReservationOptionsRequest
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-ondemandoptionsrequest.html#cfn-ec2-ec2fleet-ondemandoptionsrequest-capacityreservationoptions
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 6
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

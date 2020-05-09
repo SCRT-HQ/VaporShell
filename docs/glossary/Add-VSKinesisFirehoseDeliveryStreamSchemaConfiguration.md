@@ -3,6 +3,7 @@
 ## SYNOPSIS
 Adds an AWS::KinesisFirehose::DeliveryStream.SchemaConfiguration resource property to the template.
 Specifies the schema to which you want Kinesis Data Firehose to configure your data before it writes it to Amazon S3.
+This parameter is required if Enabled is set to true.
 
 ## SYNTAX
 
@@ -14,15 +15,7 @@ Add-VSKinesisFirehoseDeliveryStreamSchemaConfiguration [-CatalogId] <Object> [-D
 ## DESCRIPTION
 Adds an AWS::KinesisFirehose::DeliveryStream.SchemaConfiguration resource property to the template.
 Specifies the schema to which you want Kinesis Data Firehose to configure your data before it writes it to Amazon S3.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+This parameter is required if Enabled is set to true.
 
 ## PARAMETERS
 

@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 Adds an AWS::IoTAnalytics::Dataset.DatasetContentVersionValue resource property to the template.
-The data set whose latest contents are used as input to the notebook or application.
+The dataset whose latest contents are used as input to the notebook or application.
 
 ## SYNTAX
 
@@ -12,21 +12,12 @@ Add-VSIoTAnalyticsDatasetDatasetContentVersionValue [[-DatasetName] <Object>] [<
 
 ## DESCRIPTION
 Adds an AWS::IoTAnalytics::Dataset.DatasetContentVersionValue resource property to the template.
-The data set whose latest contents are used as input to the notebook or application.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+The dataset whose latest contents are used as input to the notebook or application.
 
 ## PARAMETERS
 
 ### -DatasetName
-The name of the data set whose latest contents are used as input to the notebook or application.
+The name of the dataset whose latest contents are used as input to the notebook or application.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable-datasetcontentversionvalue.html#cfn-iotanalytics-dataset-variable-datasetcontentversionvalue-datasetname
 PrimitiveType: String

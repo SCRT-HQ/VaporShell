@@ -15,15 +15,6 @@ Add-VSIoTAnalyticsPipelineRemoveAttributes [[-Next] <Object>] [[-Attributes] <Ob
 Adds an AWS::IoTAnalytics::Pipeline.RemoveAttributes resource property to the template.
 An activity that removes attributes from a message.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Next

@@ -22,15 +22,6 @@ The source bundle remains in S3 unless you configure the rule to delete it.
 
 ApplicationVersionLifecycleConfig is a property of the ApplicationResourceLifecycleConfig: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-applicationresourcelifecycleconfig.html property type.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -MaxAgeRule

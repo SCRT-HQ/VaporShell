@@ -3,26 +3,19 @@
 ## SYNOPSIS
 Adds an AWS::S3::Bucket.Transition resource property to the template.
 Specifies when an object transitions to a specified storage class.
+For more information about Amazon S3 lifecycle configuration rules, see Transitioning Objects Using Amazon S3 Lifecycle: https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html in the *Amazon Simple Storage Service Developer Guide*.
 
 ## SYNTAX
 
 ```
-Add-VSS3BucketTransition [-StorageClass] <Object> [[-TransitionDate] <Object>] [[-TransitionInDays] <Int32>]
+Add-VSS3BucketTransition [-StorageClass] <Object> [[-TransitionDate] <Object>] [[-TransitionInDays] <Object>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::S3::Bucket.Transition resource property to the template.
 Specifies when an object transitions to a specified storage class.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+For more information about Amazon S3 lifecycle configuration rules, see Transitioning Objects Using Amazon S3 Lifecycle: https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html in the *Amazon Simple Storage Service Developer Guide*.
 
 ## PARAMETERS
 
@@ -75,13 +68,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

@@ -16,15 +16,6 @@ Adds an AWS::S3::Bucket.LifecycleConfiguration resource property to the template
 Specifies the lifecycle configuration for objects in an Amazon S3 bucket.
 For more information, see Object Lifecycle Management: https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html in the *Amazon Simple Storage Service Developer Guide*.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Rules

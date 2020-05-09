@@ -14,15 +14,6 @@ Add-VSPinpointEmailConfigurationSetDeliveryOptions [[-SendingPoolName] <Object>]
 Adds an AWS::PinpointEmail::ConfigurationSet.DeliveryOptions resource property to the template.
 Used to associate a configuration set with a dedicated IP pool.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -SendingPoolName

@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 Adds an AWS::WAF::IPSet.IPSetDescriptor resource property to the template.
-Specifies the IP address type (IPV4 or IPV6 and the IP address range (in CIDR format that web requests originate from.
+**Note**
 
 ## SYNTAX
 
@@ -12,16 +12,15 @@ Add-VSWAFIPSetIPSetDescriptor [-Type] <Object> [-Value] <Object> [<CommonParamet
 
 ## DESCRIPTION
 Adds an AWS::WAF::IPSet.IPSetDescriptor resource property to the template.
+**Note**
+
+This is **AWS WAF Classic** documentation.
+For more information, see AWS WAF Classic: https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html in the developer guide.
+
+**For the latest version of AWS WAF**, use the AWS WAFV2 API and see the AWS WAF Developer Guide: https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html.
+With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+
 Specifies the IP address type (IPV4 or IPV6 and the IP address range (in CIDR format that web requests originate from.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

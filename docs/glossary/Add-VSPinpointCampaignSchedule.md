@@ -8,22 +8,13 @@ Specifies the schedule settings for a campaign.
 
 ```
 Add-VSPinpointCampaignSchedule [[-TimeZone] <Object>] [[-QuietTime] <Object>] [[-EndTime] <Object>]
- [[-StartTime] <Object>] [[-Frequency] <Object>] [[-EventFilter] <Object>] [[-IsLocalTime] <Boolean>]
+ [[-StartTime] <Object>] [[-Frequency] <Object>] [[-EventFilter] <Object>] [[-IsLocalTime] <Object>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Pinpoint::Campaign.Schedule resource property to the template.
 Specifies the schedule settings for a campaign.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -50,9 +41,9 @@ Accept wildcard characters: False
 ### -QuietTime
 The default quiet time for the campaign.
 Quiet time is a specific time range when a campaign doesn't send messages to endpoints, if all the following conditions are met:
-- The EndpointDemographic.Timezone property of the endpoint is set to a valid value.
-- The current time in the endpoint's time zone is later than or equal to the time specified by the QuietTime.Start property for the campaign.
-- The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the campaign.
++ The EndpointDemographic.Timezone property of the endpoint is set to a valid value.
++ The current time in the endpoint's time zone is later than or equal to the time specified by the QuietTime.Start property for the campaign.
++ The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the campaign.
 If any of the preceding conditions isn't met, the endpoint will receive messages from the campaign, even if quiet time is enabled.
 
 Type: QuietTime
@@ -72,7 +63,7 @@ Accept wildcard characters: False
 ```
 
 ### -EndTime
-The scheduled time, in ISO 8601 format, for the campaign to end.
+The scheduled time, in ISO 8601 format, when the campaign ended or will end.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-schedule.html#cfn-pinpoint-campaign-schedule-endtime
 PrimitiveType: String
@@ -91,7 +82,8 @@ Accept wildcard characters: False
 ```
 
 ### -StartTime
-The scheduled time, in ISO 8601 format, for the campaign to begin.
+The scheduled time when the campaign began or will begin.
+Valid values are: IMMEDIATE, to start the campaign immediately; or, a specific time in ISO 8601 format.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-schedule.html#cfn-pinpoint-campaign-schedule-starttime
 PrimitiveType: String
@@ -156,13 +148,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 7
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

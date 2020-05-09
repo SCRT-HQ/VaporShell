@@ -15,15 +15,6 @@ Add-VSBackupBackupPlanBackupPlanResourceType [-BackupPlanName] <Object> [-Backup
 Adds an AWS::Backup::BackupPlan.BackupPlanResourceType resource property to the template.
 Specifies an object containing properties used to create a backup plan.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -BackupPlanName

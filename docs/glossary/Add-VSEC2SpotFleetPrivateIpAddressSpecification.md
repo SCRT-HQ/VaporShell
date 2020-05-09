@@ -7,22 +7,13 @@ Describes a secondary private IPv4 address for a network interface.
 ## SYNTAX
 
 ```
-Add-VSEC2SpotFleetPrivateIpAddressSpecification [[-Primary] <Boolean>] [-PrivateIpAddress] <Object>
+Add-VSEC2SpotFleetPrivateIpAddressSpecification [[-Primary] <Object>] [-PrivateIpAddress] <Object>
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::EC2::SpotFleet.PrivateIpAddressSpecification resource property to the template.
 Describes a secondary private IPv4 address for a network interface.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -35,13 +26,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

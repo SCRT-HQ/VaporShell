@@ -18,15 +18,6 @@ In order for an instance to be included in the deployment group, it must be iden
 
 OnPremisesTagSetListObject is a property of the CodeDeploy DeploymentGroup OnPremisesTagSet: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-onpremisestagset.html property type.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -OnPremisesTagGroup

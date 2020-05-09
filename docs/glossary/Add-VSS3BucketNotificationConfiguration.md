@@ -26,14 +26,7 @@ If you're using Refs to pass the bucket name, this leads to a circular dependenc
 To avoid this dependency, you can create all resources without specifying the notification configuration.
 Then, update the stack with a notification configuration.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+For more information on permissions, see AWS::Lambda::Permission: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html and Granting Permissions to Publish Event Notification Messages to a Destination: https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html#grant-destinations-permissions-to-s3.
 
 ## PARAMETERS
 

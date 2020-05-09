@@ -9,24 +9,16 @@ For more information, see DBInstance: https://docs.aws.amazon.com/documentdb/lat
 
 ```
 New-VSDocDBDBInstance [-LogicalId] <String> -DBInstanceClass <Object> -DBClusterIdentifier <Object>
- [-AvailabilityZone <Object>] [-PreferredMaintenanceWindow <Object>] [-AutoMinorVersionUpgrade <Boolean>]
- [-DBInstanceIdentifier <Object>] [-Tags <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>]
- [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+ [-AvailabilityZone <Object>] [-PreferredMaintenanceWindow <Object>] [-AutoMinorVersionUpgrade <Object>]
+ [-DBInstanceIdentifier <Object>] [-Tags <Object>] [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>]
+ [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::DocDB::DBInstance resource to the template.
 The AWS::DocDB::DBInstance Amazon DocumentDB (with MongoDB compatibility resource describes a DBInstance.
 For more information, see DBInstance: https://docs.aws.amazon.com/documentdb/latest/developerguide/API_DBInstance.html in the *Amazon DocumentDB Developer Guide*.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -48,7 +40,7 @@ Accept wildcard characters: False
 ```
 
 ### -DBInstanceClass
-The compute and memory capacity of the DB instance; for example, db.m4.large.
+The compute and memory capacity of the instance; for example, db.m4.large.
 If you change the class of an instance there can be some interruption in the cluster's service.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbinstance.html#cfn-docdb-dbinstance-dbinstanceclass
@@ -68,7 +60,7 @@ Accept wildcard characters: False
 ```
 
 ### -DBClusterIdentifier
-The identifier of the DB cluster that the instance will belong to.
+The identifier of the cluster that the instance will belong to.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbinstance.html#cfn-docdb-dbinstance-dbclusteridentifier
 PrimitiveType: String
@@ -87,7 +79,7 @@ Accept wildcard characters: False
 ```
 
 ### -AvailabilityZone
-The Amazon EC2 Availability Zone that the DB instance is created in.
+The Amazon EC2 Availability Zone that the instance is created in.
 Default: A random, system-chosen Availability Zone in the endpoint's AWS Region.
 Example: us-east-1d
 Constraint: The AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to true.
@@ -133,7 +125,7 @@ Accept wildcard characters: False
 ```
 
 ### -AutoMinorVersionUpgrade
-Indicates that minor engine upgrades are applied automatically to the DB instance during the maintenance window.
+Indicates that minor engine upgrades are applied automatically to the instance during the maintenance window.
 Default: true
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbinstance.html#cfn-docdb-dbinstance-autominorversionupgrade
@@ -141,19 +133,19 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -DBInstanceIdentifier
-The DB instance identifier.
+The instance identifier.
 This parameter is stored as a lowercase string.
 Constraints:
 + Must contain from 1 to 63 letters, numbers, or hyphens.
@@ -178,7 +170,8 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-The tags to be assigned to the DB instance.
+The tags to be assigned to the instance.
+You can assign up to 10 tags to an instance.
 
 Type: List
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbinstance.html#cfn-docdb-dbinstance-tags
@@ -205,6 +198,49 @@ If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the re
 To keep a resource when its stack is deleted, specify Retain for that resource.
 You can use retain for any resource.
 For example, you can retain a nested stack, S3 bucket, or EC2 instance so that you can continue to use or modify those resources after you delete their stacks.
+
+You must use one of the following options: "Delete","Retain","Snapshot"
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdateReplacePolicy
+Use the UpdateReplacePolicy attribute to retain or (in some cases) backup the existing physical instance of a resource when it is replaced during a stack update operation.
+
+When you initiate a stack update, AWS CloudFormation updates resources based on differences between what you submit and the stack's current template and parameters.
+If you update a resource property that requires that the resource be replaced, AWS CloudFormation recreates the resource during the update.
+Recreating the resource generates a new physical ID.
+AWS CloudFormation creates the replacement resource first, and then changes references from other dependent resources to point to the replacement resource.
+By default, AWS CloudFormation then deletes the old resource.
+Using the UpdateReplacePolicy, you can specify that AWS CloudFormation retain or (in some cases) create a snapshot of the old resource.
+
+For resources that support snapshots, such as AWS::EC2::Volume, specify Snapshot to have AWS CloudFormation create a snapshot before deleting the old resource instance.
+
+You can apply the UpdateReplacePolicy attribute to any resource.
+UpdateReplacePolicy is only executed if you update a resource property whose update behavior is specified as Replacement, thereby causing AWS CloudFormation to replace the old resource with a new one with a new physical ID.
+For example, if you update the Engine property of an AWS::RDS::DBInstance resource type, AWS CloudFormation creates a new resource and replaces the current DB instance resource with the new one.
+The UpdateReplacePolicy attribute would then dictate whether AWS CloudFormation deleted, retained, or created a snapshot of the old DB instance.
+The update behavior for each property of a resource is specified in the reference topic for that resource in the AWS Resource and Property Types Reference.
+For more information on resource update behavior, see Update Behaviors of Stack Resources.
+
+The UpdateReplacePolicy attribute applies to stack updates you perform directly, as well as stack updates performed using change sets.
+
+Note
+Resources that are retained continue to exist and continue to incur applicable charges until you delete those resources.
+Snapshots that are created with this policy continue to exist and continue to incur applicable charges until you delete those snapshots.
+UpdateReplacePolicy retains the old physical resource or snapshot, but removes it from AWS CloudFormation's scope.
+
+UpdateReplacePolicy differs from the DeletionPolicy attribute in that it only applies to resources replaced during stack updates.
+Use DeletionPolicy for resources deleted when a stack is deleted, or when the resource definition itself is deleted from the template as part of a stack update.
 
 You must use one of the following options: "Delete","Retain","Snapshot"
 

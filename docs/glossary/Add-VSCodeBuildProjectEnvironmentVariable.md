@@ -19,22 +19,17 @@ EnvironmentVariable is a property of the AWS CodeBuild Project Environment: http
 When you use the environment to run a build, these variables are available for your builds to use.
 EnvironmentVariable contains a list of EnvironmentVariable property types.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Type
 The type of environment variable.
 Valid values include:
 +  PARAMETER_STORE: An environment variable stored in Amazon EC2 Systems Manager Parameter Store.
-+  PLAINTEXT: An environment variable in plaintext format.
+To learn how to specify a parameter store environment variable, see  parameter store reference-key in the buildspec file: https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#parameter-store-build-spec.
++  PLAINTEXT: An environment variable in plain text format.
+This is the default value.
++  SECRETS_MANAGER: An environment variable stored in AWS Secrets Manager.
+To learn how to specify a secrets manager environment variable, see  secrets manager reference-key in the buildspec file: https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#secrets-manager-build-spec.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environmentvariable.html#cfn-codebuild-project-environmentvariable-type
 PrimitiveType: String
@@ -54,8 +49,9 @@ Accept wildcard characters: False
 
 ### -Value
 The value of the environment variable.
-We strongly discourage the use of environment variables to store sensitive values, especially AWS secret key IDs and secret access keys.
-Environment variables can be displayed in plain text using the AWS CodeBuild console and the AWS Command Line Interface AWS CLI.
+We strongly discourage the use of PLAINTEXT environment variables to store sensitive values, especially AWS secret key IDs and secret access keys.
+PLAINTEXT environment variables can be displayed in plain text using the AWS CodeBuild console and the AWS Command Line Interface AWS CLI.
+For sensitive values, we recommend you use an environment variable of type PARAMETER_STORE or SECRETS_MANAGER.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environmentvariable.html#cfn-codebuild-project-environmentvariable-value
 PrimitiveType: String

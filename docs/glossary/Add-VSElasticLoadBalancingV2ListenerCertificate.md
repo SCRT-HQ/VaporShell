@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 Adds an AWS::ElasticLoadBalancingV2::Listener.Certificate resource property to the template.
-Specifies an SSL server certificate.
+Specifies an SSL server certificate for the certificate list of a secure listener.
 
 ## SYNTAX
 
@@ -12,16 +12,7 @@ Add-VSElasticLoadBalancingV2ListenerCertificate [[-CertificateArn] <Object>] [<C
 
 ## DESCRIPTION
 Adds an AWS::ElasticLoadBalancingV2::Listener.Certificate resource property to the template.
-Specifies an SSL server certificate.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+Specifies an SSL server certificate for the certificate list of a secure listener.
 
 ## PARAMETERS
 

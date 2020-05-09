@@ -14,15 +14,6 @@ Add-VSCodeCommitRepositoryCode [-S3] <Object> [<CommonParameters>]
 Adds an AWS::CodeCommit::Repository.Code resource property to the template.
 Information about code to be committed.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -S3

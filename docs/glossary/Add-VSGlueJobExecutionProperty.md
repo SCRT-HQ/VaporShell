@@ -7,21 +7,12 @@ An execution property of a job.
 ## SYNTAX
 
 ```
-Add-VSGlueJobExecutionProperty [[-MaxConcurrentRuns] <Double>] [<CommonParameters>]
+Add-VSGlueJobExecutionProperty [[-MaxConcurrentRuns] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Glue::Job.ExecutionProperty resource property to the template.
 An execution property of a job.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -36,13 +27,13 @@ PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

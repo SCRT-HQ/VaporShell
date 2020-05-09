@@ -15,20 +15,11 @@ Add-VSPinpointCampaignCampaignEventFilter [[-FilterType] <Object>] [[-Dimensions
 Adds an AWS::Pinpoint::Campaign.CampaignEventFilter resource property to the template.
 Specifies the settings for events that cause a campaign to be sent.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -FilterType
 The type of event that causes the campaign to be sent.
-Valid values are: SYSTEM, sends the campaign when a system event occurs; and, ENDPOINT, sends the campaign when an endpoint event Events resource occurs.
+Valid values are: SYSTEM, sends the campaign when a system event occurs; and, ENDPOINT, sends the campaign when an endpoint event occurs.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaigneventfilter.html#cfn-pinpoint-campaign-campaigneventfilter-filtertype
 PrimitiveType: String

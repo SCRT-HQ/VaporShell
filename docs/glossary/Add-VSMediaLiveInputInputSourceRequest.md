@@ -15,15 +15,6 @@ Add-VSMediaLiveInputInputSourceRequest [[-Username] <Object>] [[-PasswordParam] 
 Adds an AWS::MediaLive::Input.InputSourceRequest resource property to the template.
 The settings for a pull input.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Username

@@ -16,15 +16,6 @@ Information about the Teletext captions to extract from the input.
 
 The parent of this entity is CaptionSelectorSettings.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -PageNumber

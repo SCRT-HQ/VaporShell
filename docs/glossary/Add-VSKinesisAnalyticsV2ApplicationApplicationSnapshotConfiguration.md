@@ -7,22 +7,13 @@ Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics 
 ## SYNTAX
 
 ```
-Add-VSKinesisAnalyticsV2ApplicationApplicationSnapshotConfiguration [-SnapshotsEnabled] <Boolean>
+Add-VSKinesisAnalyticsV2ApplicationApplicationSnapshotConfiguration [-SnapshotsEnabled] <Object>
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::KinesisAnalyticsV2::Application.ApplicationSnapshotConfiguration resource property to the template.
 Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -34,13 +25,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

@@ -7,21 +7,12 @@ The CPU options for the instance.
 ## SYNTAX
 
 ```
-Add-VSEC2InstanceCpuOptions [[-CoreCount] <Int32>] [[-ThreadsPerCore] <Int32>] [<CommonParameters>]
+Add-VSEC2InstanceCpuOptions [[-CoreCount] <Object>] [[-ThreadsPerCore] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::EC2::Instance.CpuOptions resource property to the template.
 The CPU options for the instance.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -33,13 +24,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -52,13 +43,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

@@ -10,7 +10,7 @@ For more information, see Configure Instance Fleets: https://docs.aws.amazon.com
 
 ```
 Add-VSEMRClusterInstanceFleetConfig [[-InstanceTypeConfigs] <Object>] [[-LaunchSpecifications] <Object>]
- [[-Name] <Object>] [[-TargetOnDemandCapacity] <Int32>] [[-TargetSpotCapacity] <Int32>] [<CommonParameters>]
+ [[-Name] <Object>] [[-TargetOnDemandCapacity] <Object>] [[-TargetSpotCapacity] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -22,15 +22,6 @@ For more information, see Configure Instance Fleets: https://docs.aws.amazon.com
 **Note**
 
 The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -109,13 +100,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 4
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -136,13 +127,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 5
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

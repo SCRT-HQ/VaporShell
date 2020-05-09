@@ -16,15 +16,6 @@ Adds an AWS::Route53::HostedZone.HostedZoneConfig resource property to the templ
 A complex type that contains an optional comment about your hosted zone.
 If you don't want to specify a comment, omit both the HostedZoneConfig and Comment elements.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Comment

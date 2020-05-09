@@ -8,7 +8,7 @@ For more information, see Configuring EBS-based Storage: https://docs.aws.amazon
 ## SYNTAX
 
 ```
-Add-VSElasticsearchDomainEBSOptions [[-EBSEnabled] <Boolean>] [[-Iops] <Int32>] [[-VolumeSize] <Int32>]
+Add-VSElasticsearchDomainEBSOptions [[-EBSEnabled] <Object>] [[-Iops] <Object>] [[-VolumeSize] <Object>]
  [[-VolumeType] <Object>] [<CommonParameters>]
 ```
 
@@ -16,15 +16,6 @@ Add-VSElasticsearchDomainEBSOptions [[-EBSEnabled] <Boolean>] [[-Iops] <Int32>] 
 Adds an AWS::Elasticsearch::Domain.EBSOptions resource property to the template.
 The configurations of Amazon Elastic Block Store (Amazon EBS volumes that are attached to data nodes in the Amazon ES domain.
 For more information, see Configuring EBS-based Storage: https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs in the *Amazon Elasticsearch Service Developer Guide*.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -36,13 +27,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -56,13 +47,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -77,13 +68,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

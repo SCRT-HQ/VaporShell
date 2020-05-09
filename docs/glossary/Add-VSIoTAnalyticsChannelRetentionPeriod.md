@@ -7,7 +7,7 @@ How long, in days, message data is kept.
 ## SYNTAX
 
 ```
-Add-VSIoTAnalyticsChannelRetentionPeriod [[-NumberOfDays] <Int32>] [[-Unlimited] <Boolean>]
+Add-VSIoTAnalyticsChannelRetentionPeriod [[-NumberOfDays] <Object>] [[-Unlimited] <Object>]
  [<CommonParameters>]
 ```
 
@@ -15,33 +15,24 @@ Add-VSIoTAnalyticsChannelRetentionPeriod [[-NumberOfDays] <Int32>] [[-Unlimited]
 Adds an AWS::IoTAnalytics::Channel.RetentionPeriod resource property to the template.
 How long, in days, message data is kept.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -NumberOfDays
 The number of days that message data is kept.
-The "unlimited" parameter must be false.
+The unlimited parameter must be false.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-retentionperiod.html#cfn-iotanalytics-channel-retentionperiod-numberofdays
 PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -54,13 +45,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

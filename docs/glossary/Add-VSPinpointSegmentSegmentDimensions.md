@@ -15,15 +15,6 @@ Add-VSPinpointSegmentSegmentDimensions [[-Demographic] <Object>] [[-Metrics] <Ob
 Adds an AWS::Pinpoint::Segment.SegmentDimensions resource property to the template.
 Specifies the dimension settings for a segment.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Demographic

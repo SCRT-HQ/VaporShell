@@ -15,15 +15,6 @@ Add-VSRedshiftClusterParameterGroupParameter [-ParameterName] <Object> [-Paramet
 Adds an AWS::Redshift::ClusterParameterGroup.Parameter resource property to the template.
 Describes a parameter in a cluster parameter group.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ParameterName

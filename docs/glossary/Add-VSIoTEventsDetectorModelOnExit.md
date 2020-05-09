@@ -14,15 +14,6 @@ Add-VSIoTEventsDetectorModelOnExit [[-Events] <Object>] [<CommonParameters>]
 Adds an AWS::IoTEvents::DetectorModel.OnExit resource property to the template.
 When exiting this state, perform these "actions" if the "condition" is TRUE.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Events

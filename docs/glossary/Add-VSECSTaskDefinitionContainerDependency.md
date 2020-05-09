@@ -27,16 +27,7 @@ For more information, see Amazon ECS-optimized Linux AMI: https://docs.aws.amazo
 
 **Note**
 
-If you are using tasks that use the Fargate launch type, container dependency parameters are not supported.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+For tasks using the Fargate launch type, this parameter requires that the task or service uses platform version 1.3.0 or later.
 
 ## PARAMETERS
 

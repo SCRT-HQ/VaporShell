@@ -7,23 +7,15 @@ Specifies an object containing properties used to schedule a task to back up a s
 ## SYNTAX
 
 ```
-Add-VSBackupBackupPlanBackupRuleResourceType [[-CompletionWindowMinutes] <Double>]
- [[-ScheduleExpression] <Object>] [[-RecoveryPointTags] <Object>] [[-Lifecycle] <Object>]
- [-TargetBackupVault] <Object> [[-StartWindowMinutes] <Double>] [-RuleName] <Object> [<CommonParameters>]
+Add-VSBackupBackupPlanBackupRuleResourceType [[-CompletionWindowMinutes] <Object>]
+ [[-ScheduleExpression] <Object>] [[-RecoveryPointTags] <Object>] [[-CopyActions] <Object>]
+ [[-Lifecycle] <Object>] [-TargetBackupVault] <Object> [[-StartWindowMinutes] <Object>] [-RuleName] <Object>
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Backup::BackupPlan.BackupRuleResourceType resource property to the template.
 Specifies an object containing properties used to schedule a task to back up a selection of resources.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -35,13 +27,13 @@ PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -85,6 +77,26 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -CopyActions
+Not currently supported by AWS CloudFormation.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-copyactions
+ItemType: CopyActionResourceType
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Lifecycle
 The lifecycle defines when a protected resource is transitioned to cold storage and when it expires.
 AWS Backup transitions and expires backups automatically according to the lifecycle that you define.
@@ -99,7 +111,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 4
+Position: 5
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -120,7 +132,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 5
+Position: 6
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -134,19 +146,19 @@ PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 6
-Default value: 0
+Position: 7
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -RuleName
-An optional display name for a backup rule.
+A display name for a backup rule.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-rulename
 PrimitiveType: String
@@ -158,7 +170,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 7
+Position: 8
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

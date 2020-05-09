@@ -19,15 +19,6 @@ A typical query string contains key/value pairs separated by '&' characters.
 The allowed characters are specified by RFC 3986.
 Any character can be percentage encoded.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Values

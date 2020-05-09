@@ -8,23 +8,14 @@ If you specify an application revision, your target revision is deployed as soon
 ## SYNTAX
 
 ```
-Add-VSCodeDeployDeploymentGroupDeployment [[-Description] <Object>]
- [[-IgnoreApplicationStopFailures] <Boolean>] [-Revision] <Object> [<CommonParameters>]
+Add-VSCodeDeployDeploymentGroupDeployment [[-Description] <Object>] [[-IgnoreApplicationStopFailures] <Object>]
+ [-Revision] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::CodeDeploy::DeploymentGroup.Deployment resource property to the template.
 Deployment is a property of the DeploymentGroup: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html resource that specifies an AWS CodeDeploy application revision to be deployed to instances in the deployment group.
 If you specify an application revision, your target revision is deployed as soon as the provisioning process is complete.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -64,13 +55,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

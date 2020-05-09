@@ -12,8 +12,8 @@ New-VSDynamoDBTable [-LogicalId] <String> [-AttributeDefinitions <Object>] [-Bil
  [-GlobalSecondaryIndexes <Object>] -KeySchema <Object> [-LocalSecondaryIndexes <Object>]
  [-PointInTimeRecoverySpecification <Object>] [-ProvisionedThroughput <Object>] [-SSESpecification <Object>]
  [-StreamSpecification <Object>] [-TableName <Object>] [-Tags <Object>] [-TimeToLiveSpecification <Object>]
- [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
- [-Condition <Object>] [<CommonParameters>]
+ [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
+ [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -28,15 +28,6 @@ However, if your template includes multiple DynamoDB tables with indexes, you mu
 Amazon DynamoDB limits the number of tables with secondary indexes that are in the creating state.
 If you create multiple tables with indexes at the same time, DynamoDB returns an error and the stack operation fails.
 For an example, see DynamoDB Table with a DependsOn Attribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-examples-dependson.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -59,7 +50,7 @@ Accept wildcard characters: False
 
 ### -AttributeDefinitions
 A list of attributes that describe the key schema for the table and indexes.
-Duplicates are allowed.
+This property is required to create a DynamoDB table.
 Update requires: Some interruptions: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-some-interrupt.
 Replacement if you edit an existing AttributeDefinition.
 
@@ -84,10 +75,10 @@ Accept wildcard characters: False
 ### -BillingMode
 Specify how you are charged for read and write throughput and how you manage capacity.
 Valid values include:
-+  PROVISIONED - Sets the billing mode to PROVISIONED.
-We recommend using PROVISIONED for predictable workloads.
-+  PAY_PER_REQUEST - Sets the billing mode to PAY_PER_REQUEST.
-We recommend using PAY_PER_REQUEST for unpredictable workloads.
++  PROVISIONED - We recommend using PROVISIONED for predictable workloads.
+PROVISIONED sets the billing mode to Provisioned Mode: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual.
++  PAY_PER_REQUEST - We recommend using PAY_PER_REQUEST for unpredictable workloads.
+PAY_PER_REQUEST sets the billing mode to On-Demand Mode: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand.
 If not specified, the default is PROVISIONED.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-billingmode
@@ -339,6 +330,49 @@ If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the re
 To keep a resource when its stack is deleted, specify Retain for that resource.
 You can use retain for any resource.
 For example, you can retain a nested stack, S3 bucket, or EC2 instance so that you can continue to use or modify those resources after you delete their stacks.
+
+You must use one of the following options: "Delete","Retain","Snapshot"
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdateReplacePolicy
+Use the UpdateReplacePolicy attribute to retain or (in some cases) backup the existing physical instance of a resource when it is replaced during a stack update operation.
+
+When you initiate a stack update, AWS CloudFormation updates resources based on differences between what you submit and the stack's current template and parameters.
+If you update a resource property that requires that the resource be replaced, AWS CloudFormation recreates the resource during the update.
+Recreating the resource generates a new physical ID.
+AWS CloudFormation creates the replacement resource first, and then changes references from other dependent resources to point to the replacement resource.
+By default, AWS CloudFormation then deletes the old resource.
+Using the UpdateReplacePolicy, you can specify that AWS CloudFormation retain or (in some cases) create a snapshot of the old resource.
+
+For resources that support snapshots, such as AWS::EC2::Volume, specify Snapshot to have AWS CloudFormation create a snapshot before deleting the old resource instance.
+
+You can apply the UpdateReplacePolicy attribute to any resource.
+UpdateReplacePolicy is only executed if you update a resource property whose update behavior is specified as Replacement, thereby causing AWS CloudFormation to replace the old resource with a new one with a new physical ID.
+For example, if you update the Engine property of an AWS::RDS::DBInstance resource type, AWS CloudFormation creates a new resource and replaces the current DB instance resource with the new one.
+The UpdateReplacePolicy attribute would then dictate whether AWS CloudFormation deleted, retained, or created a snapshot of the old DB instance.
+The update behavior for each property of a resource is specified in the reference topic for that resource in the AWS Resource and Property Types Reference.
+For more information on resource update behavior, see Update Behaviors of Stack Resources.
+
+The UpdateReplacePolicy attribute applies to stack updates you perform directly, as well as stack updates performed using change sets.
+
+Note
+Resources that are retained continue to exist and continue to incur applicable charges until you delete those resources.
+Snapshots that are created with this policy continue to exist and continue to incur applicable charges until you delete those snapshots.
+UpdateReplacePolicy retains the old physical resource or snapshot, but removes it from AWS CloudFormation's scope.
+
+UpdateReplacePolicy differs from the DeletionPolicy attribute in that it only applies to resources replaced during stack updates.
+Use DeletionPolicy for resources deleted when a stack is deleted, or when the resource definition itself is deleted from the template as part of a stack update.
 
 You must use one of the following options: "Delete","Retain","Snapshot"
 

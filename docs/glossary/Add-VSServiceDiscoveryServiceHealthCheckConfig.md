@@ -2,19 +2,19 @@
 
 ## SYNOPSIS
 Adds an AWS::ServiceDiscovery::Service.HealthCheckConfig resource property to the template.
-*Public DNS namespaces only.* A complex type that contains settings for an optional health check.
+*Public DNS and HTTP namespaces only.* A complex type that contains settings for an optional health check.
 If you specify settings for a health check, AWS Cloud Map associates the health check with the records that you specify in DnsConfig.
 
 ## SYNTAX
 
 ```
 Add-VSServiceDiscoveryServiceHealthCheckConfig [-Type] <Object> [[-ResourcePath] <Object>]
- [[-FailureThreshold] <Double>] [<CommonParameters>]
+ [[-FailureThreshold] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::ServiceDiscovery::Service.HealthCheckConfig resource property to the template.
-*Public DNS namespaces only.* A complex type that contains settings for an optional health check.
+*Public DNS and HTTP namespaces only.* A complex type that contains settings for an optional health check.
 If you specify settings for a health check, AWS Cloud Map associates the health check with the records that you specify in DnsConfig.
 
 **Important**
@@ -63,15 +63,6 @@ For more information, see EvaluateTargetHealth: https://docs.aws.amazon.com/Rout
 
 Health checks are basic Route 53 health checks that monitor an AWS endpoint.
 For information about pricing for health checks, see Amazon Route 53 Pricing: http://aws.amazon.com/route53/pricing/.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -137,13 +128,13 @@ PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

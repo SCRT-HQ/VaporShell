@@ -7,10 +7,10 @@ The MethodSetting property type configures settings for all methods in a stage.
 ## SYNTAX
 
 ```
-Add-VSApiGatewayDeploymentMethodSetting [[-CacheDataEncrypted] <Boolean>] [[-CacheTtlInSeconds] <Int32>]
- [[-CachingEnabled] <Boolean>] [[-DataTraceEnabled] <Boolean>] [[-HttpMethod] <Object>]
- [[-LoggingLevel] <Object>] [[-MetricsEnabled] <Boolean>] [[-ResourcePath] <Object>]
- [[-ThrottlingBurstLimit] <Int32>] [[-ThrottlingRateLimit] <Double>] [<CommonParameters>]
+Add-VSApiGatewayDeploymentMethodSetting [[-CacheDataEncrypted] <Object>] [[-CacheTtlInSeconds] <Object>]
+ [[-CachingEnabled] <Object>] [[-DataTraceEnabled] <Object>] [[-HttpMethod] <Object>]
+ [[-LoggingLevel] <Object>] [[-MetricsEnabled] <Object>] [[-ResourcePath] <Object>]
+ [[-ThrottlingBurstLimit] <Object>] [[-ThrottlingRateLimit] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -18,15 +18,6 @@ Adds an AWS::ApiGateway::Deployment.MethodSetting resource property to the templ
 The MethodSetting property type configures settings for all methods in a stage.
 
 The MethodSettings property of the Amazon API Gateway Deployment StageDescription: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html property type contains a list of MethodSetting property types.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -38,13 +29,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -57,13 +48,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -78,13 +69,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -98,13 +89,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 4
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -156,13 +147,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 7
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -198,13 +189,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 9
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -218,13 +209,13 @@ PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 10
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

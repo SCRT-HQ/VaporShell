@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 Adds an AWS::IoTAnalytics::Dataset.GlueConfiguration resource property to the template.
-Configuration information for coordination with the AWS Glue ETL (extract, transform and load service.
+Configuration information for coordination with AWS Glue, a fully managed extract, transform and load (ETL service.
 
 ## SYNTAX
 
@@ -12,21 +12,12 @@ Add-VSIoTAnalyticsDatasetGlueConfiguration [-TableName] <Object> [-DatabaseName]
 
 ## DESCRIPTION
 Adds an AWS::IoTAnalytics::Dataset.GlueConfiguration resource property to the template.
-Configuration information for coordination with the AWS Glue ETL (extract, transform and load service.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+Configuration information for coordination with AWS Glue, a fully managed extract, transform and load (ETL service.
 
 ## PARAMETERS
 
 ### -TableName
-The name of the table in your AWS Glue Data Catalog which is used to perform the ETL extract, transform and load operations.
+The name of the table in your AWS Glue Data Catalog that is used to perform the ETL operations.
 An AWS Glue Data Catalog table contains partitioned data and descriptions of data sources and targets.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-glueconfiguration.html#cfn-iotanalytics-dataset-glueconfiguration-tablename
@@ -47,7 +38,7 @@ Accept wildcard characters: False
 
 ### -DatabaseName
 The name of the database in your AWS Glue Data Catalog in which the table is located.
-An AWS Glue Data Catalog database contains Glue Data tables.
+An AWS Glue Data Catalog database contains metadata tables.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-glueconfiguration.html#cfn-iotanalytics-dataset-glueconfiguration-databasename
 PrimitiveType: String

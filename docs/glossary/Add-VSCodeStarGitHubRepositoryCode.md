@@ -16,15 +16,6 @@ The Code property type specifies information about code to be committed.
 
 Code is a property of the AWS::CodeStar::GitHubRepository resource.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -S3

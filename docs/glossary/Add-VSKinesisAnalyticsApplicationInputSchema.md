@@ -17,15 +17,6 @@ Describes the format of the data in the streaming source, and how each data elem
 
 Also used to describe the format of the reference data source.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -RecordEncoding

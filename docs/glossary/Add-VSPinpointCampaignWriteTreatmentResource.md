@@ -3,34 +3,25 @@
 ## SYNOPSIS
 Adds an AWS::Pinpoint::Campaign.WriteTreatmentResource resource property to the template.
 Specifies the settings for a campaign treatment.
-A treatment is a variation of a campaign that's used for A/B testing of a campaign.
+A *treatment* is a variation of a campaign that's used for A/B testing of a campaign.
 
 ## SYNTAX
 
 ```
 Add-VSPinpointCampaignWriteTreatmentResource [[-TreatmentDescription] <Object>]
- [[-MessageConfiguration] <Object>] [[-Schedule] <Object>] [[-SizePercent] <Int32>] [[-TreatmentName] <Object>]
- [<CommonParameters>]
+ [[-MessageConfiguration] <Object>] [[-Schedule] <Object>] [[-SizePercent] <Object>]
+ [[-TreatmentName] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Pinpoint::Campaign.WriteTreatmentResource resource property to the template.
 Specifies the settings for a campaign treatment.
-A treatment is a variation of a campaign that's used for A/B testing of a campaign.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+A *treatment* is a variation of a campaign that's used for A/B testing of a campaign.
 
 ## PARAMETERS
 
 ### -TreatmentDescription
-The custom description of the treatment.
+A custom description of the treatment.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-writetreatmentresource.html#cfn-pinpoint-campaign-writetreatmentresource-treatmentdescription
 PrimitiveType: String
@@ -94,20 +85,19 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 4
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -TreatmentName
-The custom name of the treatment.
-A treatment is a variation of a campaign that's used for A/B testing of a campaign.
+A custom name for the treatment.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-writetreatmentresource.html#cfn-pinpoint-campaign-writetreatmentresource-treatmentname
 PrimitiveType: String

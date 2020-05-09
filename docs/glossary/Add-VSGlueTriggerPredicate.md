@@ -14,15 +14,6 @@ Add-VSGlueTriggerPredicate [[-Logical] <Object>] [[-Conditions] <Object>] [<Comm
 Adds an AWS::Glue::Trigger.Predicate resource property to the template.
 Defines the predicate of the trigger, which determines when it fires.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Logical

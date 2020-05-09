@@ -14,15 +14,6 @@ Add-VSGlueClassifierJsonClassifier [-JsonPath] <Object> [[-Name] <Object>] [<Com
 Adds an AWS::Glue::Classifier.JsonClassifier resource property to the template.
 A classifier for JSON content.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -JsonPath

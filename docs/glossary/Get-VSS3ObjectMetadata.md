@@ -12,15 +12,6 @@ Get-VSS3ObjectMetadata [-BucketName] <String> [-Key] <String> [-ProfileName <Str
 ## DESCRIPTION
 {{ Fill in the Description }}
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -BucketName

@@ -7,22 +7,13 @@ A collection of accounts and regions.
 ## SYNTAX
 
 ```
-Add-VSConfigConfigurationAggregatorAccountAggregationSource [[-AllAwsRegions] <Boolean>]
+Add-VSConfigConfigurationAggregatorAccountAggregationSource [[-AllAwsRegions] <Object>]
  [[-AwsRegions] <Object>] [-AccountIds] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Config::ConfigurationAggregator.AccountAggregationSource resource property to the template.
 A collection of accounts and regions.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -34,13 +25,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

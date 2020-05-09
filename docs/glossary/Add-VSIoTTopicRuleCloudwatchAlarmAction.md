@@ -15,15 +15,6 @@ Add-VSIoTTopicRuleCloudwatchAlarmAction [-AlarmName] <Object> [-RoleArn] <Object
 Adds an AWS::IoT::TopicRule.CloudwatchAlarmAction resource property to the template.
 Describes an action that updates a CloudWatch alarm.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -AlarmName

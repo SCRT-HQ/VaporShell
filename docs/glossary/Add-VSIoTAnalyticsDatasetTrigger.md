@@ -14,15 +14,6 @@ Add-VSIoTAnalyticsDatasetTrigger [[-Schedule] <Object>] [[-TriggeringDataset] <O
 Adds an AWS::IoTAnalytics::Dataset.Trigger resource property to the template.
 The "DatasetTrigger" that specifies when the data set is automatically updated.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Schedule

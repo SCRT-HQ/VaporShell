@@ -7,23 +7,14 @@ A custom origin or an Amazon S3 bucket configured as a website endpoint.
 ## SYNTAX
 
 ```
-Add-VSCloudFrontDistributionCustomOriginConfig [[-OriginReadTimeout] <Int32>] [[-HTTPSPort] <Int32>]
- [[-OriginKeepaliveTimeout] <Int32>] [[-OriginSSLProtocols] <Object>] [[-HTTPPort] <Int32>]
+Add-VSCloudFrontDistributionCustomOriginConfig [[-OriginReadTimeout] <Object>] [[-HTTPSPort] <Object>]
+ [[-OriginKeepaliveTimeout] <Object>] [[-OriginSSLProtocols] <Object>] [[-HTTPPort] <Object>]
  [-OriginProtocolPolicy] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::CloudFront::Distribution.CustomOriginConfig resource property to the template.
 A custom origin or an Amazon S3 bucket configured as a website endpoint.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -39,13 +30,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -58,13 +49,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -81,13 +72,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -120,13 +111,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 5
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

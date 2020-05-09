@@ -7,22 +7,13 @@ MetricTransformation is a property of the AWS::Logs::MetricFilter resource that 
 ## SYNTAX
 
 ```
-Add-VSLogsMetricFilterMetricTransformation [[-DefaultValue] <Double>] [-MetricName] <Object>
+Add-VSLogsMetricFilterMetricTransformation [[-DefaultValue] <Object>] [-MetricName] <Object>
  [-MetricNamespace] <Object> [-MetricValue] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Logs::MetricFilter.MetricTransformation resource property to the template.
 MetricTransformation is a property of the AWS::Logs::MetricFilter resource that describes how to transform log streams into a CloudWatch metric.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -35,13 +26,13 @@ PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -66,7 +57,9 @@ Accept wildcard characters: False
 ```
 
 ### -MetricNamespace
-The namespace of the CloudWatch metric.
+A custom namespace to contain your metric in CloudWatch.
+Use namespaces to group together metrics that are similar.
+For more information, see Namespaces: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Namespace.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-logs-metricfilter-metrictransformation.html#cfn-cwl-metricfilter-metrictransformation-metricnamespace
 PrimitiveType: String

@@ -15,15 +15,6 @@ Add-VSGlueSecurityConfigurationJobBookmarksEncryption [[-KmsKeyArn] <Object>]
 Adds an AWS::Glue::SecurityConfiguration.JobBookmarksEncryption resource property to the template.
 Specifies how job bookmark data should be encrypted.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -KmsKeyArn

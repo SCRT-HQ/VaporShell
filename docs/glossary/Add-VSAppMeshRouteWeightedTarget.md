@@ -2,30 +2,23 @@
 
 ## SYNOPSIS
 Adds an AWS::AppMesh::Route.WeightedTarget resource property to the template.
-An object representing a target and its relative weight.
+An object that represents a target and its relative weight.
 Traffic is distributed across targets according to their relative weight.
 For example, a weighted target with a relative weight of 50 receives five times as much traffic as one with a relative weight of 10.
+The total weight for all targets combined must be less than or equal to 100.
 
 ## SYNTAX
 
 ```
-Add-VSAppMeshRouteWeightedTarget [-VirtualNode] <Object> [-Weight] <Int32> [<CommonParameters>]
+Add-VSAppMeshRouteWeightedTarget [-VirtualNode] <Object> [-Weight] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::AppMesh::Route.WeightedTarget resource property to the template.
-An object representing a target and its relative weight.
+An object that represents a target and its relative weight.
 Traffic is distributed across targets according to their relative weight.
 For example, a weighted target with a relative weight of 50 receives five times as much traffic as one with a relative weight of 10.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+The total weight for all targets combined must be less than or equal to 100.
 
 ## PARAMETERS
 
@@ -56,13 +49,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

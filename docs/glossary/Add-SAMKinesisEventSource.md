@@ -13,15 +13,6 @@ Add-SAMKinesisEventSource [-LogicalId] <String> -Stream <Object> -StartingPositi
 ## DESCRIPTION
 The object describing an event source with type Kinesis.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -LogicalId

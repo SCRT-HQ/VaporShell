@@ -9,7 +9,7 @@ You can enable catalog encryption or only password encryption.
 
 ```
 Add-VSGlueDataCatalogEncryptionSettingsConnectionPasswordEncryption
- [[-ReturnConnectionPasswordEncrypted] <Boolean>] [[-KmsKeyId] <Object>] [<CommonParameters>]
+ [[-ReturnConnectionPasswordEncrypted] <Object>] [[-KmsKeyId] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -23,15 +23,6 @@ It then encrypts the whole connection object again if catalog encryption is also
 This encryption requires that you set AWS KMS key permissions to enable or restrict access on the password key according to your security requirements.
 For example, you might want only administrators to have decrypt permission on the password key.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ReturnConnectionPasswordEncrypted
@@ -43,13 +34,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

@@ -15,15 +15,6 @@ Add-VSAppStreamImageBuilderVpcConfig [[-SecurityGroupIds] <Object>] [[-SubnetIds
 Adds an AWS::AppStream::ImageBuilder.VpcConfig resource property to the template.
 The VPC configuration for the image builder.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -SecurityGroupIds

@@ -7,21 +7,12 @@ Specifies whether the parameter is required.
 ## SYNTAX
 
 ```
-Add-VSApiGatewayV2RouteParameterConstraints [-Required] <Boolean> [<CommonParameters>]
+Add-VSApiGatewayV2RouteParameterConstraints [-Required] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::ApiGatewayV2::Route.ParameterConstraints resource property to the template.
 Specifies whether the parameter is required.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -33,13 +24,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

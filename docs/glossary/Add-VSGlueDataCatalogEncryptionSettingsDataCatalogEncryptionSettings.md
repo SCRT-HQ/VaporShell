@@ -15,15 +15,6 @@ Add-VSGlueDataCatalogEncryptionSettingsDataCatalogEncryptionSettings [[-Connecti
 Adds an AWS::Glue::DataCatalogEncryptionSettings.DataCatalogEncryptionSettings resource property to the template.
 Contains configuration information for maintaining Data Catalog security.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ConnectionPasswordEncryption

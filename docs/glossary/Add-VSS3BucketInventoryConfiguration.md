@@ -8,7 +8,7 @@ For more information, see GET Bucket inventory: https://docs.aws.amazon.com/Amaz
 ## SYNTAX
 
 ```
-Add-VSS3BucketInventoryConfiguration [-Destination] <Object> [-Enabled] <Boolean> [-Id] <Object>
+Add-VSS3BucketInventoryConfiguration [-Destination] <Object> [-Enabled] <Object> [-Id] <Object>
  [-IncludedObjectVersions] <Object> [[-OptionalFields] <Object>] [[-Prefix] <Object>]
  [-ScheduleFrequency] <Object> [<CommonParameters>]
 ```
@@ -17,15 +17,6 @@ Add-VSS3BucketInventoryConfiguration [-Destination] <Object> [-Enabled] <Boolean
 Adds an AWS::S3::Bucket.InventoryConfiguration resource property to the template.
 Specifies the inventory configuration for an Amazon S3 bucket.
 For more information, see GET Bucket inventory: https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETInventoryConfig.html in the *Amazon Simple Storage Service API Reference*.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -58,13 +49,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -151,6 +142,7 @@ Accept wildcard characters: False
 
 ### -ScheduleFrequency
 Specifies the schedule for generating inventory results.
+Valid Values: Daily | Weekly.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventoryconfiguration.html#cfn-s3-bucket-inventoryconfiguration-schedulefrequency
 PrimitiveType: String

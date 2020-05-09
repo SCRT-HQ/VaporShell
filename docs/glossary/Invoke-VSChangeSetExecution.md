@@ -13,15 +13,6 @@ Invoke-VSChangeSetExecution [-ChangeSetName] <String> [-StackName] <String> [[-C
 ## DESCRIPTION
 Executes a Change Set
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ChangeSetName

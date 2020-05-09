@@ -7,22 +7,13 @@ The DeploymentCanarySettings property type specifies settings for the canary dep
 ## SYNTAX
 
 ```
-Add-VSApiGatewayDeploymentDeploymentCanarySettings [[-PercentTraffic] <Double>]
- [[-StageVariableOverrides] <Hashtable>] [[-UseStageCache] <Boolean>] [<CommonParameters>]
+Add-VSApiGatewayDeploymentDeploymentCanarySettings [[-PercentTraffic] <Object>]
+ [[-StageVariableOverrides] <Hashtable>] [[-UseStageCache] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::ApiGateway::Deployment.DeploymentCanarySettings resource property to the template.
 The DeploymentCanarySettings property type specifies settings for the canary deployment.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -34,13 +25,13 @@ PrimitiveType: Double
 UpdateType: Immutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -76,13 +67,13 @@ PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

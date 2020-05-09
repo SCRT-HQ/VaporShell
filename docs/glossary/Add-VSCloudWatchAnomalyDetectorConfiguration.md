@@ -17,15 +17,6 @@ Adds an AWS::CloudWatch::AnomalyDetector.Configuration resource property to the 
 Specifies details about how the anomaly detection model is to be trained, including time ranges to exclude when training and updating the model.
 The configuration can also include the time zone to use for the metric.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -MetricTimeZone

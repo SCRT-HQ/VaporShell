@@ -7,21 +7,12 @@ The settings for encrypting data in transit.
 ## SYNTAX
 
 ```
-Add-VSMSKClusterEncryptionInTransit [[-ClientBroker] <Object>] [[-InCluster] <Boolean>] [<CommonParameters>]
+Add-VSMSKClusterEncryptionInTransit [[-ClientBroker] <Object>] [[-InCluster] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::MSK::Cluster.EncryptionInTransit resource property to the template.
 The settings for encrypting data in transit.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -59,13 +50,13 @@ PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

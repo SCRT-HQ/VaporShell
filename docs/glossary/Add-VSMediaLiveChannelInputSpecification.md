@@ -19,15 +19,6 @@ It specifies the key characteristics of the inputs for this channel: the maximum
 
 This entity is at the top level in the channel.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Codec

@@ -16,15 +16,6 @@ Adds an AWS::EC2::SpotFleet.TargetGroupsConfig resource property to the template
 Describes the target groups to attach to a Spot Fleet.
 Spot Fleet registers the running Spot Instances with these target groups.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -TargetGroups

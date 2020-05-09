@@ -8,7 +8,7 @@ Specifies options for Spot instances.
 
 ```
 Add-VSEC2LaunchTemplateSpotOptions [[-SpotInstanceType] <Object>] [[-InstanceInterruptionBehavior] <Object>]
- [[-MaxPrice] <Object>] [[-BlockDurationMinutes] <Int32>] [[-ValidUntil] <Object>] [<CommonParameters>]
+ [[-MaxPrice] <Object>] [[-BlockDurationMinutes] <Object>] [[-ValidUntil] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -17,19 +17,11 @@ Specifies options for Spot instances.
 
 SpotOptions is a property of the Amazon EC2 LaunchTemplate InstanceMarketOptions: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancemarketoptions.html property type.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -SpotInstanceType
 The Spot Instance request type.
+If you are using Spot Instances with an Auto Scaling group, use one-time requests, as the Amazon EC2 Auto Scaling service handles requesting new Spot Instances whenever the group is below its desired capacity.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions-spotinstancetype
 PrimitiveType: String
@@ -95,13 +87,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 4
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

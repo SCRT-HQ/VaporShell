@@ -8,22 +8,13 @@ For more information, see  Aborting Incomplete Multipart Uploads Using a Bucket 
 ## SYNTAX
 
 ```
-Add-VSS3BucketAbortIncompleteMultipartUpload [-DaysAfterInitiation] <Int32> [<CommonParameters>]
+Add-VSS3BucketAbortIncompleteMultipartUpload [-DaysAfterInitiation] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::S3::Bucket.AbortIncompleteMultipartUpload resource property to the template.
 Specifies the days since the initiation of an incomplete multipart upload that Amazon S3 will wait before permanently removing all parts of the upload.
 For more information, see  Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy: https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config in the *Amazon Simple Storage Service Developer Guide*.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -35,13 +26,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

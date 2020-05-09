@@ -18,15 +18,6 @@ MetricDimension is a subproperty of CustomizedMetricSpecification: https://docs.
 Dimensions are arbitrary name/value pairs that can be associated with a CloudWatch metric.
 Duplicate dimensions are not allowed.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Name

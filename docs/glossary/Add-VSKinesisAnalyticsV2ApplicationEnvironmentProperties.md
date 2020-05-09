@@ -14,15 +14,6 @@ Add-VSKinesisAnalyticsV2ApplicationEnvironmentProperties [[-PropertyGroups] <Obj
 Adds an AWS::KinesisAnalyticsV2::Application.EnvironmentProperties resource property to the template.
 Describes execution properties for a Java-based Kinesis Data Analytics application.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -PropertyGroups

@@ -8,21 +8,12 @@ Information about a provisioning artifact (also known as a version for a product
 
 ```
 Add-VSServiceCatalogCloudFormationProductProvisioningArtifactProperties [[-Description] <Object>]
- [[-DisableTemplateValidation] <Boolean>] [-Info] <Object> [[-Name] <Object>] [<CommonParameters>]
+ [[-DisableTemplateValidation] <Object>] [-Info] <Object> [[-Name] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::ServiceCatalog::CloudFormationProduct.ProvisioningArtifactProperties resource property to the template.
 Information about a provisioning artifact (also known as a version for a product.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -53,13 +44,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

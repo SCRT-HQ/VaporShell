@@ -14,15 +14,6 @@ Add-VSManagedBlockchainMemberNetworkFabricConfiguration [-Edition] <Object> [<Co
 Adds an AWS::ManagedBlockchain::Member.NetworkFabricConfiguration resource property to the template.
 Hyperledger Fabric configuration properties for the network.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Edition

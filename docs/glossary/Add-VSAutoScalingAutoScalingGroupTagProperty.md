@@ -2,20 +2,20 @@
 
 ## SYNOPSIS
 Adds an AWS::AutoScaling::AutoScalingGroup.TagProperty resource property to the template.
-TagProperty specifies a list of tags for the Tag property of AutoScalingGroup: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html.
-TagProperty adds tags to all associated instances in an Amazon EC2 Auto Scaling group.
+TagProperty specifies a list of tags for the Tag property of AWS::AutoScaling::AutoScalingGroup: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html.
+TagProperty adds tags to all associated instances in an Auto Scaling group.
 
 ## SYNTAX
 
 ```
-Add-VSAutoScalingAutoScalingGroupTagProperty [-Key] <Object> [-PropagateAtLaunch] <Boolean> [-Value] <Object>
+Add-VSAutoScalingAutoScalingGroupTagProperty [-Key] <Object> [-PropagateAtLaunch] <Object> [-Value] <Object>
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::AutoScaling::AutoScalingGroup.TagProperty resource property to the template.
-TagProperty specifies a list of tags for the Tag property of AutoScalingGroup: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html.
-TagProperty adds tags to all associated instances in an Amazon EC2 Auto Scaling group.
+TagProperty specifies a list of tags for the Tag property of AWS::AutoScaling::AutoScalingGroup: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html.
+TagProperty adds tags to all associated instances in an Auto Scaling group.
 
 For more information, see Tagging Auto Scaling Groups and Instances: https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html in the *Amazon EC2 Auto Scaling User Guide*.
 You can find a sample template snippet in the Examples: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#aws-properties-as-group--examples section of the AWS::AutoScaling::AutoScalingGroup documentation.
@@ -27,15 +27,6 @@ AWS CloudFormation adds the following tags to all Auto Scaling groups and associ
 + aws:cloudformation:stack-id
 
 + aws:cloudformation:logical-id
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -67,13 +58,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

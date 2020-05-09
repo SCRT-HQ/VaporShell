@@ -3,6 +3,7 @@
 ## SYNOPSIS
 Adds an AWS::CodeBuild::Project.ProjectCache resource property to the template.
 ProjectCache is a property of the AWS CodeBuild Project: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html resource that specifies information about the cache for the build project.
+If ProjectCache is not specified, then both of its properties default to NO_CACHE.
 
 ## SYNTAX
 
@@ -14,15 +15,7 @@ Add-VSCodeBuildProjectProjectCache [[-Modes] <Object>] [-Type] <Object> [[-Locat
 ## DESCRIPTION
 Adds an AWS::CodeBuild::Project.ProjectCache resource property to the template.
 ProjectCache is a property of the AWS CodeBuild Project: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html resource that specifies information about the cache for the build project.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+If ProjectCache is not specified, then both of its properties default to NO_CACHE.
 
 ## PARAMETERS
 
@@ -47,7 +40,7 @@ If you use a custom cache:
 You cannot specify individual files.
 +  Symlinks are used to reference cached directories.
 +  Cached directories are linked to your build before it downloads its project sources.
-Cached items are overriden if a source item has the same name.
+Cached items are overridden if a source item has the same name.
 Directories are specified using cache paths in the buildspec file.
 
 PrimitiveItemType: String

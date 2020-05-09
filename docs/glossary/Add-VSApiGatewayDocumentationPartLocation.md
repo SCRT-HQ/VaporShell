@@ -21,15 +21,6 @@ Location is a property of the AWS::ApiGateway::DocumentationPart: https://docs.a
 
 For more information about each property, including constraints and valid values, see DocumentationPart: https://docs.aws.amazon.com/apigateway/api-reference/resource/documentation-part/#location in the *Amazon API Gateway REST API Reference*.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Method

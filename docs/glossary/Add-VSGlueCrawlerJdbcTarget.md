@@ -15,15 +15,6 @@ Add-VSGlueCrawlerJdbcTarget [[-ConnectionName] <Object>] [[-Path] <Object>] [[-E
 Adds an AWS::Glue::Crawler.JdbcTarget resource property to the template.
 Specifies a JDBC data store to crawl.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ConnectionName

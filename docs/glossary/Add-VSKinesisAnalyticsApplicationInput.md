@@ -18,15 +18,6 @@ Adds an AWS::KinesisAnalytics::Application.Input resource property to the templa
 When you configure the application input, you specify the streaming source, the in-application stream name that is created, and the mapping between the two.
 For more information, see Configuring Application Input: https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -NamePrefix

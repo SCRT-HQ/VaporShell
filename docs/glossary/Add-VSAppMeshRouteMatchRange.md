@@ -2,30 +2,21 @@
 
 ## SYNOPSIS
 Adds an AWS::AppMesh::Route.MatchRange resource property to the template.
-The range of values to match on.
+An object that represents the range of values to match on.
 The first character of the range is included in the range, though the last character is not.
 For example, if the range specified were 1-100, only values 1-99 would be matched.
 
 ## SYNTAX
 
 ```
-Add-VSAppMeshRouteMatchRange [-Start] <Int32> [-End] <Int32> [<CommonParameters>]
+Add-VSAppMeshRouteMatchRange [-Start] <Object> [-End] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::AppMesh::Route.MatchRange resource property to the template.
-The range of values to match on.
+An object that represents the range of values to match on.
 The first character of the range is included in the range, though the last character is not.
 For example, if the range specified were 1-100, only values 1-99 would be matched.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -37,13 +28,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -56,13 +47,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

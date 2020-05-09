@@ -15,15 +15,6 @@ Add-VSKinesisFirehoseDeliveryStreamCopyCommand [[-CopyOptions] <Object>] [[-Data
 Adds an AWS::KinesisFirehose::DeliveryStream.CopyCommand resource property to the template.
 The CopyCommand property type configures the Amazon Redshift COPY command that Amazon Kinesis Data Firehose (Kinesis Data Firehose uses to load data into an Amazon Redshift cluster from an Amazon S3 bucket.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -CopyOptions

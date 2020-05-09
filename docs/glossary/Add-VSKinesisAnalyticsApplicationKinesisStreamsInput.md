@@ -17,15 +17,6 @@ Adds an AWS::KinesisAnalytics::Application.KinesisStreamsInput resource property
 Identifies an Amazon Kinesis stream as the streaming source.
 You provide the stream's Amazon Resource Name (ARN and an IAM role ARN that enables Amazon Kinesis Analytics to access the stream on your behalf.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ResourceARN

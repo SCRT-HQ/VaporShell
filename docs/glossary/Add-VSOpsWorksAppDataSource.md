@@ -15,15 +15,6 @@ Add-VSOpsWorksAppDataSource [[-Arn] <Object>] [[-DatabaseName] <Object>] [[-Type
 Adds an AWS::OpsWorks::App.DataSource resource property to the template.
 Describes an app's data source.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Arn

@@ -16,19 +16,11 @@ When included in a receipt rule, this action terminates the evaluation of the re
 
 For information about setting a stop action in a receipt rule, see the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-stop.html.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Scope
-The name of the RuleSet that is being stopped.
+The scope of the StopAction.
+The only acceptable value is RuleSet.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-stopaction.html#cfn-ses-receiptrule-stopaction-scope
 PrimitiveType: String
@@ -48,7 +40,7 @@ Accept wildcard characters: False
 
 ### -TopicArn
 The Amazon Resource Name ARN of the Amazon SNS topic to notify when the stop action is taken.
-An example of an Amazon SNS topic ARN is arn:aws:sns:us-west-2:123456789012:MyTopic.
+You can find the ARN of a topic by using the ListTopics: https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html operation in the Amazon SNS API.
 For more information about Amazon SNS topics, see the Amazon SNS Developer Guide: https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-stopaction.html#cfn-ses-receiptrule-stopaction-topicarn

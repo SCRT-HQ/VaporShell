@@ -8,9 +8,9 @@ The AWS::SSM::Parameter resource creates an SSM parameter in AWS Systems Manager
 
 ```
 New-VSSSMParameter [-LogicalId] <String> -Type <Object> [-Description <Object>] [-Policies <Object>]
- [-AllowedPattern <Object>] [-Tier <Object>] -Value <Object> [-Tags <Object>] [-Name <Object>]
- [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
- [-Condition <Object>] [<CommonParameters>]
+ [-AllowedPattern <Object>] [-Tier <Object>] -Value <Object> [-DataType <Object>] [-Tags <Object>]
+ [-Name <Object>] [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>] [-DependsOn <String[]>]
+ [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -23,18 +23,9 @@ To create an SSM parameter, you must have the AWS Identity and Access Management
 On stack creation, AWS CloudFormation adds the following three tags to the parameter: aws:cloudformation:stack-name, aws:cloudformation:logical-id, and aws:cloudformation:stack-id, in addition to any custom tags you specify.
 
 To add, update, or remove tags during stack update, you must have IAM permissions for both ssm:AddTagsToResource and ssm:RemoveTagsFromResource.
-For more information, see AWS Systems Manager Permissions Reference: https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-permissions-reference.html in the *AWS Systems Manager User Guide*.
+For more information, see Managing Access Using Policies: https://docs.aws.amazon.com/systems-manager/latest/userguide/security-iam.html#security_iam_access-manage in the *AWS Systems Manager User Guide*.
 
 For information about valid values for parameters, see Requirements and Constraints for Parameter Names: https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html in the *AWS Systems Manager User Guide* and PutParameter: https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PutParameter.html in the *AWS Systems Manager API Reference*.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -57,8 +48,8 @@ Accept wildcard characters: False
 
 ### -Type
 The type of parameter.
-Valid values include the following: String or StringList.
-AWS CloudFormation doesn't support the SecureString parameter type.
+AWS CloudFormation doesn't support creating a SecureString parameter type.
+*Allowed Values*: String | StringList
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html#cfn-ssm-parameter-type
 PrimitiveType: String
@@ -97,7 +88,7 @@ Accept wildcard characters: False
 
 ### -Policies
 Information about the policies assigned to a parameter.
-Working with Parameter Policies: https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html in the *AWS Systems Manager User Guide*.
+Assigning parameter policies: https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html in the *AWS Systems Manager User Guide*.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html#cfn-ssm-parameter-policies
 PrimitiveType: String
@@ -173,9 +164,29 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -DataType
++  Working with Parameter Policies: https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html#cfn-ssm-parameter-datatype
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Tags
-An array of key-value pairs to apply to this resource.
-For more information, see Tag: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html.
+Optional metadata that you assign to a resource in the form of an arbitrary set of tags key-value pairs.
+Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment.
+For example, you might want to tag a Systems Manager parameter to identify the type of resource to which it applies, the environment, or the type of configuration data referenced by the parameter.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html#cfn-ssm-parameter-tags
 PrimitiveType: Json
@@ -220,6 +231,49 @@ If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the re
 To keep a resource when its stack is deleted, specify Retain for that resource.
 You can use retain for any resource.
 For example, you can retain a nested stack, S3 bucket, or EC2 instance so that you can continue to use or modify those resources after you delete their stacks.
+
+You must use one of the following options: "Delete","Retain","Snapshot"
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdateReplacePolicy
+Use the UpdateReplacePolicy attribute to retain or (in some cases) backup the existing physical instance of a resource when it is replaced during a stack update operation.
+
+When you initiate a stack update, AWS CloudFormation updates resources based on differences between what you submit and the stack's current template and parameters.
+If you update a resource property that requires that the resource be replaced, AWS CloudFormation recreates the resource during the update.
+Recreating the resource generates a new physical ID.
+AWS CloudFormation creates the replacement resource first, and then changes references from other dependent resources to point to the replacement resource.
+By default, AWS CloudFormation then deletes the old resource.
+Using the UpdateReplacePolicy, you can specify that AWS CloudFormation retain or (in some cases) create a snapshot of the old resource.
+
+For resources that support snapshots, such as AWS::EC2::Volume, specify Snapshot to have AWS CloudFormation create a snapshot before deleting the old resource instance.
+
+You can apply the UpdateReplacePolicy attribute to any resource.
+UpdateReplacePolicy is only executed if you update a resource property whose update behavior is specified as Replacement, thereby causing AWS CloudFormation to replace the old resource with a new one with a new physical ID.
+For example, if you update the Engine property of an AWS::RDS::DBInstance resource type, AWS CloudFormation creates a new resource and replaces the current DB instance resource with the new one.
+The UpdateReplacePolicy attribute would then dictate whether AWS CloudFormation deleted, retained, or created a snapshot of the old DB instance.
+The update behavior for each property of a resource is specified in the reference topic for that resource in the AWS Resource and Property Types Reference.
+For more information on resource update behavior, see Update Behaviors of Stack Resources.
+
+The UpdateReplacePolicy attribute applies to stack updates you perform directly, as well as stack updates performed using change sets.
+
+Note
+Resources that are retained continue to exist and continue to incur applicable charges until you delete those resources.
+Snapshots that are created with this policy continue to exist and continue to incur applicable charges until you delete those snapshots.
+UpdateReplacePolicy retains the old physical resource or snapshot, but removes it from AWS CloudFormation's scope.
+
+UpdateReplacePolicy differs from the DeletionPolicy attribute in that it only applies to resources replaced during stack updates.
+Use DeletionPolicy for resources deleted when a stack is deleted, or when the resource definition itself is deleted from the template as part of a stack update.
 
 You must use one of the following options: "Delete","Retain","Snapshot"
 

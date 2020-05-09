@@ -14,15 +14,6 @@ New-VSEC2TrunkInterfaceAssociation [-LogicalId] <String> -BranchInterfaceId <Obj
 ## DESCRIPTION
 Adds an AWS::EC2::TrunkInterfaceAssociation resource to the template
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -LogicalId

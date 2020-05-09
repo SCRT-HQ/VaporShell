@@ -17,15 +17,6 @@ Specifies a launch template and overrides for an EC2 Fleet.
 
 FleetLaunchTemplateConfigRequest is a property of the AWS::EC2::EC2Fleet: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html resource.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -LaunchTemplateSpecification
@@ -34,7 +25,7 @@ You must specify either the launch template ID or launch template name in the re
 
 Type: FleetLaunchTemplateSpecificationRequest
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateconfigrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplateconfigrequest-launchtemplatespecification
-UpdateType: Mutable
+UpdateType: Immutable
 
 ```yaml
 Type: Object
@@ -54,7 +45,7 @@ Any parameters that you specify override the same parameters in the launch templ
 Type: List
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateconfigrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplateconfigrequest-overrides
 ItemType: FleetLaunchTemplateOverridesRequest
-UpdateType: Mutable
+UpdateType: Immutable
 
 ```yaml
 Type: Object

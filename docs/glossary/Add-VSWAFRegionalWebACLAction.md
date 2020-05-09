@@ -14,15 +14,6 @@ Add-VSWAFRegionalWebACLAction [-Type] <Object> [<CommonParameters>]
 Adds an AWS::WAFRegional::WebACL.Action resource property to the template.
 Specifies the action AWS WAF takes when a web request matches or doesn't match all rule conditions.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Type

@@ -12,15 +12,6 @@ Add-SAMEventSource [-LogicalId] <String> -Type <String> [-Properties <Hashtable>
 ## DESCRIPTION
 Adds a Serverless Application Model Event Source
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -LogicalId

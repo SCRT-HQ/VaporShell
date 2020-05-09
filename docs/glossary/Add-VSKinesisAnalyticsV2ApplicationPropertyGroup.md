@@ -15,15 +15,6 @@ Add-VSKinesisAnalyticsV2ApplicationPropertyGroup [[-PropertyMap] <Object>] [[-Pr
 Adds an AWS::KinesisAnalyticsV2::Application.PropertyGroup resource property to the template.
 Property key-value pairs passed into a Java-based Kinesis Data Analytics application.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -PropertyMap

@@ -16,15 +16,6 @@ Receipt IP address filters enable you to specifically accept or reject incoming 
 
 For information about setting up IP address filters, see the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Policy

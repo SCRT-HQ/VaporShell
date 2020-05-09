@@ -14,15 +14,6 @@ Add-VSMediaLiveInputInputVpcRequest [[-SecurityGroupIds] <Object>] [[-SubnetIds]
 Adds an AWS::MediaLive::Input.InputVpcRequest resource property to the template.
 The settings for an Amazon VPC input.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -SecurityGroupIds

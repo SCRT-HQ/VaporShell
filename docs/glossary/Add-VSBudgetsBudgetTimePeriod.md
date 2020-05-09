@@ -20,15 +20,6 @@ The period has a start date and an end date.
 The start date must come before the end date.
 There are no restrictions on the end date.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Start

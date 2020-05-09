@@ -19,15 +19,6 @@ Use this to store channel data in an S3 bucket that you manage.
 When customer managed storage is selected, the "retentionPeriod" parameter is ignored.
 The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the channel.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Bucket

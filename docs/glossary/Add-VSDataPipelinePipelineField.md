@@ -19,15 +19,6 @@ A key-value pair that describes a property of a PipelineObject.
 The value is specified as either a string value (StringValue or a reference to another object (RefValue but not as both.
 To view fields for a data pipeline object, see Pipeline Object Reference: https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-pipeline-objects.html in the *AWS Data Pipeline Developer Guide*.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Key

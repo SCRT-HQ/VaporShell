@@ -7,21 +7,13 @@ Specifies data stores to crawl.
 ## SYNTAX
 
 ```
-Add-VSGlueCrawlerTargets [[-S3Targets] <Object>] [[-JdbcTargets] <Object>] [<CommonParameters>]
+Add-VSGlueCrawlerTargets [[-S3Targets] <Object>] [[-CatalogTargets] <Object>] [[-JdbcTargets] <Object>]
+ [[-DynamoDBTargets] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Glue::Crawler.Targets resource property to the template.
 Specifies data stores to crawl.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -45,6 +37,26 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -CatalogTargets
+Specifies AWS Glue Data Catalog targets.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-catalogtargets
+ItemType: CatalogTarget
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -JdbcTargets
 Specifies JDBC targets.
 
@@ -59,7 +71,27 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 2
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DynamoDBTargets
+Specifies Amazon DynamoDB targets.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-dynamodbtargets
+ItemType: DynamoDBTarget
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

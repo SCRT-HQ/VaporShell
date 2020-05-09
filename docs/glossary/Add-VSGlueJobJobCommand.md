@@ -15,15 +15,6 @@ Add-VSGlueJobJobCommand [[-PythonVersion] <Object>] [[-ScriptLocation] <Object>]
 Adds an AWS::Glue::Job.JobCommand resource property to the template.
 Specifies code executed when a job is run.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -PythonVersion

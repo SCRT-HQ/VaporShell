@@ -13,15 +13,6 @@ Add-SAMS3EventSource [-LogicalId] <String> -Bucket <Object> -Events <String[]> [
 ## DESCRIPTION
 The object describing an event source with type S3.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -LogicalId

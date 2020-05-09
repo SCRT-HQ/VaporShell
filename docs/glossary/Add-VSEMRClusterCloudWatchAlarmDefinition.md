@@ -9,23 +9,14 @@ Scaling activity begins when you satisfy the defined alarm conditions.
 
 ```
 Add-VSEMRClusterCloudWatchAlarmDefinition [-ComparisonOperator] <Object> [[-Dimensions] <Object>]
- [[-EvaluationPeriods] <Int32>] [-MetricName] <Object> [[-Namespace] <Object>] [-Period] <Int32>
- [[-Statistic] <Object>] [-Threshold] <Double> [[-Unit] <Object>] [<CommonParameters>]
+ [[-EvaluationPeriods] <Object>] [-MetricName] <Object> [[-Namespace] <Object>] [-Period] <Object>
+ [[-Statistic] <Object>] [-Threshold] <Object> [[-Unit] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::EMR::Cluster.CloudWatchAlarmDefinition resource property to the template.
 CloudWatchAlarmDefinition is a subproperty of the ScalingTrigger property, which determines when to trigger an automatic scaling activity.
 Scaling activity begins when you satisfy the defined alarm conditions.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -70,7 +61,7 @@ Accept wildcard characters: False
 ```
 
 ### -EvaluationPeriods
-The number of periods, expressed in seconds using Period, during which the alarm condition must exist before the alarm triggers automatic scaling activity.
+The number of periods, in five-minute increments, during which the alarm condition must exist before the alarm triggers automatic scaling activity.
 The default value is 1.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-evaluationperiods
@@ -78,13 +69,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -137,13 +128,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 6
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -176,13 +167,13 @@ PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 8
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

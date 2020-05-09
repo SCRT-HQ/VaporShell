@@ -2,30 +2,21 @@
 
 ## SYNOPSIS
 Adds an AWS::Events::Rule.Target resource property to the template.
-The Target property type specifies a target, such as an AWS Lambda function or an Amazon Kinesis data stream, that CloudWatch Events invokes when a rule is triggered.
+The Target property type specifies a target, such as an AWS Lambda function or an Amazon Kinesis data stream, that EventBridge invokes when a rule is triggered.
 
 ## SYNTAX
 
 ```
-Add-VSEventsRuleTarget [-Arn] <Object> [[-EcsParameters] <Object>] [-Id] <Object> [[-Input] <Object>]
- [[-InputPath] <Object>] [[-InputTransformer] <Object>] [[-KinesisParameters] <Object>] [[-RoleArn] <Object>]
- [[-RunCommandParameters] <Object>] [[-SqsParameters] <Object>] [<CommonParameters>]
+Add-VSEventsRuleTarget [-Arn] <Object> [[-BatchParameters] <Object>] [[-EcsParameters] <Object>] [-Id] <Object>
+ [[-Input] <Object>] [[-InputPath] <Object>] [[-InputTransformer] <Object>] [[-KinesisParameters] <Object>]
+ [[-RoleArn] <Object>] [[-RunCommandParameters] <Object>] [[-SqsParameters] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Events::Rule.Target resource property to the template.
-The Target property type specifies a target, such as an AWS Lambda function or an Amazon Kinesis data stream, that CloudWatch Events invokes when a rule is triggered.
+The Target property type specifies a target, such as an AWS Lambda function or an Amazon Kinesis data stream, that EventBridge invokes when a rule is triggered.
 
-Targets property of the AWS::Events::Rule: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html resource contains a list of one or more Target property types.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+The Targets property of the AWS::Events::Rule: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html resource contains a list of one or more Target property types.
 
 ## PARAMETERS
 
@@ -48,12 +39,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -EcsParameters
-Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task.
-For more information about Amazon ECS tasks, see Task Definitions : https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html in the *Amazon EC2 Container Service Developer Guide*.
+### -BatchParameters
+If the event target is an AWS Batch job, this contains the job definition, job name, and other parameters.
+For more information, see Jobs: https://docs.aws.amazon.com/batch/latest/userguide/jobs.html in the *AWS Batch User Guide*.
 
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-ecsparameters
-Type: EcsParameters
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-batchparameters
+Type: BatchParameters
 UpdateType: Mutable
 
 ```yaml
@@ -68,9 +59,31 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -EcsParameters
+Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task.
+For more information about Amazon ECS tasks, see Task Definitions : https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html in the *Amazon EC2 Container Service Developer Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-ecsparameters
+Type: EcsParameters
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Id
-The ID of the target.
-It can include alphanumeric characters, periods ., hyphens -, and underscores _.
+A name for the target.
+Use a string that will help you identify the target.
+Each target associated with a rule must have an Id unique for that rule.
+The Id can include alphanumeric characters, periods ., hyphens -, and underscores _.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-id
 PrimitiveType: String
@@ -82,7 +95,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 3
+Position: 4
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -102,7 +115,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 4
+Position: 5
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -121,7 +134,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 5
+Position: 6
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -141,7 +154,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 6
+Position: 7
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -161,7 +174,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 7
+Position: 8
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -170,6 +183,7 @@ Accept wildcard characters: False
 ### -RoleArn
 The Amazon Resource Name ARN of the IAM role to be used for this target when the rule is triggered.
 If one rule triggers multiple targets, you can use a different IAM role for each target.
+If you're setting an event bus in another account as the target and that account granted permission to your account through an organization instead of directly by the account ID, you must specify a RoleArn with proper permissions here in this parameter.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-rolearn
 PrimitiveType: String
@@ -181,7 +195,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 8
+Position: 9
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -200,7 +214,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 9
+Position: 10
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -220,7 +234,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 10
+Position: 11
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

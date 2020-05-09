@@ -15,15 +15,6 @@ Add-VSIoTTopicRuleFirehoseAction [-DeliveryStreamName] <Object> [-RoleArn] <Obje
 Adds an AWS::IoT::TopicRule.FirehoseAction resource property to the template.
 Describes an action that writes data to an Amazon Kinesis Firehose stream.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -DeliveryStreamName

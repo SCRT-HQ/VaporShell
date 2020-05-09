@@ -16,15 +16,6 @@ Adds an AWS::Batch::JobDefinition.ResourceRequirement resource property to the t
 The type and amount of a resource to assign to a container.
 Currently, the only supported resource type is GPU.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Type

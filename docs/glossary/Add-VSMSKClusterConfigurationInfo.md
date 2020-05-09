@@ -7,21 +7,12 @@ Specifies the Amazon MSK configuration to use for the brokers.
 ## SYNTAX
 
 ```
-Add-VSMSKClusterConfigurationInfo [-Revision] <Int32> [-Arn] <Object> [<CommonParameters>]
+Add-VSMSKClusterConfigurationInfo [-Revision] <Object> [-Arn] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::MSK::Cluster.ConfigurationInfo resource property to the template.
 Specifies the Amazon MSK configuration to use for the brokers.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -33,13 +24,13 @@ PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

@@ -15,15 +15,6 @@ Add-VSAppSyncGraphQLApiCognitoUserPoolConfig [[-AppIdClientRegex] <Object>] [[-U
 Adds an AWS::AppSync::GraphQLApi.CognitoUserPoolConfig resource property to the template.
 Describes an Amazon Cognito user pool configuration.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -AppIdClientRegex

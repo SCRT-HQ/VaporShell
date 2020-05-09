@@ -9,7 +9,7 @@ These permissions are in addition to the function's RunAs permissions.
 ## SYNTAX
 
 ```
-Add-VSGreengrassResourceDefinitionVersionGroupOwnerSetting [-AutoAddGroupOwner] <Boolean>
+Add-VSGreengrassResourceDefinitionVersionGroupOwnerSetting [-AutoAddGroupOwner] <Object>
  [[-GroupOwner] <Object>] [<CommonParameters>]
 ```
 
@@ -20,15 +20,6 @@ You can give the permissions of the Linux group that owns the resource or choose
 These permissions are in addition to the function's RunAs permissions.
 
 \<a name="aws-properties-greengrass-resourcedefinitionversion-groupownersetting-inheritance"\>\</a\> In an AWS CloudFormation template, GroupOwnerSetting is a property of the https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-localdeviceresourcedata.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-localdeviceresourcedata.html and https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-localvolumeresourcedata.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-localvolumeresourcedata.html property types.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -41,13 +32,13 @@ PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

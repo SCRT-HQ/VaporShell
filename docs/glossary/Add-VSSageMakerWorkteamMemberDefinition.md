@@ -14,15 +14,6 @@ Add-VSSageMakerWorkteamMemberDefinition [-CognitoMemberDefinition] <Object> [<Co
 Adds an AWS::SageMaker::Workteam.MemberDefinition resource property to the template.
 Defines the Amazon Cognito user group that is part of a work team.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -CognitoMemberDefinition

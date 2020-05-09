@@ -15,15 +15,6 @@ Add-VSLakeFormationDataLakeSettingsDataLakePrincipal [[-DataLakePrincipalIdentif
 Adds an AWS::LakeFormation::DataLakeSettings.DataLakePrincipal resource property to the template.
 The AWS Lake Formation principal.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -DataLakePrincipalIdentifier

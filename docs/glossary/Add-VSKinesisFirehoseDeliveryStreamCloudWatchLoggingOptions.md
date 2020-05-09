@@ -7,22 +7,13 @@ The CloudWatchLoggingOptions property type specifies Amazon CloudWatch Logs (Clo
 ## SYNTAX
 
 ```
-Add-VSKinesisFirehoseDeliveryStreamCloudWatchLoggingOptions [[-Enabled] <Boolean>] [[-LogGroupName] <Object>]
+Add-VSKinesisFirehoseDeliveryStreamCloudWatchLoggingOptions [[-Enabled] <Object>] [[-LogGroupName] <Object>]
  [[-LogStreamName] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::KinesisFirehose::DeliveryStream.CloudWatchLoggingOptions resource property to the template.
 The CloudWatchLoggingOptions property type specifies Amazon CloudWatch Logs (CloudWatch Logs logging options that Amazon Kinesis Data Firehose (Kinesis Data Firehose uses for the delivery stream.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -34,13 +25,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

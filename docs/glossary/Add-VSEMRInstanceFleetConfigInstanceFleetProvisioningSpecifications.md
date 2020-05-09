@@ -21,15 +21,6 @@ InstanceTypeConfig is a sub-property of InstanceFleetConfig.
 InstanceTypeConfig determines the EC2 instances that Amazon EMR attempts to provision to fulfill On-Demand and Spot target capacities.
 There can be a maximum of 5 instance type configurations in a fleet.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -SpotSpecification

@@ -15,15 +15,6 @@ Add-VSCodeDeployDeploymentGroupTriggerConfig [[-TriggerEvents] <Object>] [[-Trig
 Adds an AWS::CodeDeploy::DeploymentGroup.TriggerConfig resource property to the template.
 Information about notification triggers for the deployment group.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -TriggerEvents

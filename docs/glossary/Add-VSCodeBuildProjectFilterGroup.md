@@ -20,18 +20,9 @@ The FilterGroups property of the  AWS CodeBuild Project ProjectTriggers: https:/
 
 *Required:* No
 
-*Type:* A list of of WebhookFilter: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-webhookfilter.html objects
+*Type:* A list of WebhookFilter: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-webhookfilter.html objects
 
 *Update requires:* No interruption
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

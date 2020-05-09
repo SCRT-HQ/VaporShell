@@ -16,15 +16,6 @@ Adds an AWS::KinesisAnalyticsV2::Application.KinesisFirehoseInput resource prope
 For an SQL-based Amazon Kinesis Data Analytics application, identifies a Kinesis Data Firehose delivery stream as the streaming source.
 You provide the delivery stream's Amazon Resource Name (ARN.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ResourceARN

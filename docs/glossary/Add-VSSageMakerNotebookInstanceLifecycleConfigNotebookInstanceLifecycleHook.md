@@ -17,15 +17,6 @@ Adds an AWS::SageMaker::NotebookInstanceLifecycleConfig.NotebookInstanceLifecycl
 Specifies the notebook instance lifecycle configuration script.
 Each lifecycle configuration script has a limit of 16384 characters.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Content

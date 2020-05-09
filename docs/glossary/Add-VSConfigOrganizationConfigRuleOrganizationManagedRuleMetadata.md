@@ -19,15 +19,6 @@ Adds an AWS::Config::OrganizationConfigRule.OrganizationManagedRuleMetadata reso
 An object that specifies organization managed rule metadata such as resource type and ID of AWS resource along with the rule identifier.
 It also provides the frequency with which you want AWS Config to run evaluations for the rule if the trigger type is periodic.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -TagKeyScope

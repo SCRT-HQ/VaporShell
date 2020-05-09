@@ -9,23 +9,14 @@ A distribution configuration.
 ```
 Add-VSCloudFrontDistributionDistributionConfig [[-Logging] <Object>] [[-Comment] <Object>]
  [[-DefaultRootObject] <Object>] [[-Origins] <Object>] [[-ViewerCertificate] <Object>] [[-PriceClass] <Object>]
- [[-DefaultCacheBehavior] <Object>] [[-CustomErrorResponses] <Object>] [-Enabled] <Boolean>
- [[-Aliases] <Object>] [[-IPV6Enabled] <Boolean>] [[-WebACLId] <Object>] [[-HttpVersion] <Object>]
- [[-Restrictions] <Object>] [[-CacheBehaviors] <Object>] [<CommonParameters>]
+ [[-DefaultCacheBehavior] <Object>] [[-CustomErrorResponses] <Object>] [[-OriginGroups] <Object>]
+ [-Enabled] <Object> [[-Aliases] <Object>] [[-IPV6Enabled] <Object>] [[-WebACLId] <Object>]
+ [[-HttpVersion] <Object>] [[-Restrictions] <Object>] [[-CacheBehaviors] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::CloudFront::Distribution.DistributionConfig resource property to the template.
 A distribution configuration.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -118,7 +109,7 @@ Accept wildcard characters: False
 ```
 
 ### -ViewerCertificate
-A complex type that specifies whether you want viewers to use HTTP or HTTPS to request your objects, whether you're using an alternate domain name with HTTPS, and if so, if you're using AWS Certificate Manager ACM or a third-party certificate authority.
+A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.
 
 Type: ViewerCertificate
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-viewercertificate
@@ -204,6 +195,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -OriginGroups
+A complex type that contains information about origin groups for this distribution.
+
+Type: OriginGroups
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-origingroups
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 9
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Enabled
 From this field, you can enable or disable the selected distribution.
 
@@ -212,13 +222,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 9
-Default value: False
+Position: 10
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -237,7 +247,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 10
+Position: 11
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -263,23 +273,25 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 11
-Default value: False
+Position: 12
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -WebACLId
 A unique identifier that specifies the AWS WAF web ACL, if any, to associate with this distribution.
+To specify a web ACL created using the latest version of AWS WAF, use the ACL ARN, for example arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a.
+To specify a web ACL created using AWS WAF Classic, use the ACL ID, for example 473e64fd-f30b-4765-81a0-62ad96dd167a.
 AWS WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests that are forwarded to CloudFront, and lets you control access to your content.
 Based on conditions that you specify, such as the IP addresses that requests originate from or the values of query strings, CloudFront responds to requests either with the requested content or with an HTTP 403 status code Forbidden.
 You can also configure CloudFront to return a custom error page when a request is blocked.
-For more information about AWS WAF, see the AWS WAF Developer Guide: http://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html.
+For more information about AWS WAF, see the AWS WAF Developer Guide: https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-webaclid
 PrimitiveType: String
@@ -291,7 +303,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 12
+Position: 13
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -316,7 +328,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 13
+Position: 14
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -335,7 +347,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 14
+Position: 15
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -355,7 +367,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 15
+Position: 16
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

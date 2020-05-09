@@ -30,15 +30,6 @@ For information about terminology, available metrics, or how to publish new metr
 After creating your scaling plan, you can use the AWS Auto Scaling console to visualize forecasts for the specified metric.
 For more information, see View Scaling Information for a Resource: https://docs.aws.amazon.com/autoscaling/plans/userguide/gs-create-scaling-plan.html#gs-view-resource in the *AWS Auto Scaling User Guide*.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -MetricName

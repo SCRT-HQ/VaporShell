@@ -11,7 +11,7 @@ If the event doesn't match any event selector, the trail doesn't log the event.
 ## SYNTAX
 
 ```
-Add-VSCloudTrailTrailEventSelector [[-DataResources] <Object>] [[-IncludeManagementEvents] <Boolean>]
+Add-VSCloudTrailTrailEventSelector [[-DataResources] <Object>] [[-IncludeManagementEvents] <Object>]
  [[-ReadWriteType] <Object>] [<CommonParameters>]
 ```
 
@@ -24,15 +24,6 @@ For each trail, if the event matches any event selector, the trail processes and
 If the event doesn't match any event selector, the trail doesn't log the event.
 
 You can configure up to five event selectors for a trail.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -70,13 +61,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

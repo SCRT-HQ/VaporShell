@@ -16,15 +16,6 @@ Add-VSDMSEndpointS3Settings [[-ExternalTableDefinition] <Object>] [[-BucketName]
 Adds an AWS::DMS::Endpoint.S3Settings resource property to the template.
 Settings for exporting data to Amazon S3.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ExternalTableDefinition
@@ -67,8 +58,8 @@ Accept wildcard characters: False
 
 ### -BucketFolder
 An optional parameter to set a folder name in the S3 bucket.
-If provided, tables are created in the path \<bucketFolder\>/\<schema_name\>/\<table_name\>/.
-If this parameter is not specified, then the path used is \<schema_name\>/\<table_name\>/.
+If provided, tables are created in the path  bucketFolder/schema_name/table_name/.
+If this parameter isn't specified, then the path used is  schema_name/table_name/.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-bucketfolder
 PrimitiveType: String
@@ -148,8 +139,8 @@ Accept wildcard characters: False
 ### -CompressionType
 An optional parameter to use GZIP to compress the target files.
 Set to GZIP to compress the target files.
-Set to NONE the default or do not use to leave the files uncompressed.
-Applies to both CSV and PARQUET data formats.
+Either set this parameter to NONE the default or don't use it to leave the files uncompressed.
+This parameter applies to both .csv and .parquet file formats.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-compressiontype
 PrimitiveType: String

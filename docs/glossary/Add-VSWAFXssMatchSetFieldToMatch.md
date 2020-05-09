@@ -14,15 +14,6 @@ Add-VSWAFXssMatchSetFieldToMatch [[-Data] <Object>] [-Type] <Object> [<CommonPar
 Adds an AWS::WAF::XssMatchSet.FieldToMatch resource property to the template.
 Specifies the part of a web request that you want AWS WAF to search, such as a specific header or a query string.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Data

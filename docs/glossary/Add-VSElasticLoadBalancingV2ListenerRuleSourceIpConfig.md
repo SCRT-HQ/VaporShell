@@ -17,15 +17,6 @@ Information about a source IP condition.
 You can use this condition to route based on the IP address of the source that connects to the load balancer.
 If a client is behind a proxy, this is the IP address of the proxy not the IP address of the client.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Values

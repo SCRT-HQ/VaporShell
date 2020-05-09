@@ -7,8 +7,8 @@ The CanarySetting property type specifies settings for the canary deployment in 
 ## SYNTAX
 
 ```
-Add-VSApiGatewayDeploymentCanarySetting [[-PercentTraffic] <Double>] [[-StageVariableOverrides] <Hashtable>]
- [[-UseStageCache] <Boolean>] [<CommonParameters>]
+Add-VSApiGatewayDeploymentCanarySetting [[-PercentTraffic] <Object>] [[-StageVariableOverrides] <Hashtable>]
+ [[-UseStageCache] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -16,15 +16,6 @@ Adds an AWS::ApiGateway::Deployment.CanarySetting resource property to the templ
 The CanarySetting property type specifies settings for the canary deployment in this stage.
 
 CanarySetting is a property of the StageDescription: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html property type.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -36,13 +27,13 @@ PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -77,13 +68,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

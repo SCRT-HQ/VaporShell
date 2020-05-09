@@ -17,15 +17,6 @@ Adds an AWS::ElasticBeanstalk::Environment.Tier resource property to the templat
 Describes the environment tier for an AWS::ElasticBeanstalk::Environment: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html resource.
 For more information, see Environment Tiers: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features-managing-env-tiers.html in the *AWS Elastic Beanstalk Developer Guide*.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Name

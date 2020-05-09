@@ -2,31 +2,28 @@
 
 ## SYNOPSIS
 Adds an AWS::WAFRegional::SizeConstraintSet.SizeConstraint resource property to the template.
-Specifies a constraint on the size of a part of the web request.
-AWS WAF uses the Size, ComparisonOperator, and FieldToMatch to build an expression in the form of "Size ComparisonOperator size in bytes of FieldToMatch".
-If that expression is true, the SizeConstraint is considered to match.
+**Note**
 
 ## SYNTAX
 
 ```
-Add-VSWAFRegionalSizeConstraintSetSizeConstraint [-ComparisonOperator] <Object> [-Size] <Int32>
+Add-VSWAFRegionalSizeConstraintSetSizeConstraint [-ComparisonOperator] <Object> [-Size] <Object>
  [-TextTransformation] <Object> [-FieldToMatch] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::WAFRegional::SizeConstraintSet.SizeConstraint resource property to the template.
+**Note**
+
+This is **AWS WAF Classic** documentation.
+For more information, see AWS WAF Classic: https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html in the developer guide.
+
+**For the latest version of AWS WAF**, use the AWS WAFV2 API and see the AWS WAF Developer Guide: https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html.
+With the latest version, AWS WAF has a single set of endpoints for regional and global use.
+
 Specifies a constraint on the size of a part of the web request.
 AWS WAF uses the Size, ComparisonOperator, and FieldToMatch to build an expression in the form of "Size ComparisonOperator size in bytes of FieldToMatch".
 If that expression is true, the SizeConstraint is considered to match.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -70,13 +67,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -85,7 +82,7 @@ Accept wildcard characters: False
 Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF.
 If you specify a transformation, AWS WAF performs the transformation on FieldToMatch before inspecting a request for a match.
 You can only specify a single type of TextTransformation.
-Note that if you choose BODY for the value of Type, you must choose NONE for TextTransformation because CloudFront forwards only the first 8192 bytes for inspection.
+Note that if you choose BODY for the value of Type, you must choose NONE for TextTransformation because the API Gateway API or Application Load Balancer forward only the first 8192 bytes for inspection.
 **NONE**
 Specify NONE if you don't want to perform any text transformations.
 **CMD_LINE**

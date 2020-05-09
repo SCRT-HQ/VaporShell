@@ -8,23 +8,14 @@ This data type maps directly to the Amazon EC2 EbsBlockDevice: https://docs.aws.
 ## SYNTAX
 
 ```
-Add-VSOpsWorksInstanceEbsBlockDevice [[-DeleteOnTermination] <Boolean>] [[-Iops] <Int32>]
- [[-SnapshotId] <Object>] [[-VolumeSize] <Int32>] [[-VolumeType] <Object>] [<CommonParameters>]
+Add-VSOpsWorksInstanceEbsBlockDevice [[-DeleteOnTermination] <Object>] [[-Iops] <Object>]
+ [[-SnapshotId] <Object>] [[-VolumeSize] <Object>] [[-VolumeType] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::OpsWorks::Instance.EbsBlockDevice resource property to the template.
 Describes an Amazon EBS volume.
 This data type maps directly to the Amazon EC2 EbsBlockDevice: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EbsBlockDevice.html data type.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -36,13 +27,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -56,13 +47,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -95,13 +86,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 4
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

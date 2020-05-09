@@ -8,25 +8,16 @@ For more information, see Apache ORC: https://orc.apache.org/docs/.
 ## SYNTAX
 
 ```
-Add-VSKinesisFirehoseDeliveryStreamOrcSerDe [[-BlockSizeBytes] <Int32>] [[-BloomFilterColumns] <Object>]
- [[-BloomFilterFalsePositiveProbability] <Double>] [[-Compression] <Object>]
- [[-DictionaryKeyThreshold] <Double>] [[-EnablePadding] <Boolean>] [[-FormatVersion] <Object>]
- [[-PaddingTolerance] <Double>] [[-RowIndexStride] <Int32>] [[-StripeSizeBytes] <Int32>] [<CommonParameters>]
+Add-VSKinesisFirehoseDeliveryStreamOrcSerDe [[-BlockSizeBytes] <Object>] [[-BloomFilterColumns] <Object>]
+ [[-BloomFilterFalsePositiveProbability] <Object>] [[-Compression] <Object>]
+ [[-DictionaryKeyThreshold] <Object>] [[-EnablePadding] <Object>] [[-FormatVersion] <Object>]
+ [[-PaddingTolerance] <Object>] [[-RowIndexStride] <Object>] [[-StripeSizeBytes] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::KinesisFirehose::DeliveryStream.OrcSerDe resource property to the template.
 A serializer to use for converting data to the ORC format before storing it in Amazon S3.
 For more information, see Apache ORC: https://orc.apache.org/docs/.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -41,13 +32,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -84,13 +75,13 @@ PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -125,13 +116,13 @@ PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 5
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -146,13 +137,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 6
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -191,13 +182,13 @@ PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 8
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -211,13 +202,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 9
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -231,13 +222,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 10
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

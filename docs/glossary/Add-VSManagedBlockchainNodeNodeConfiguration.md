@@ -15,15 +15,6 @@ Add-VSManagedBlockchainNodeNodeConfiguration [-AvailabilityZone] <Object> [-Inst
 Adds an AWS::ManagedBlockchain::Node.NodeConfiguration resource property to the template.
 Configuration properties of a peer node within a membership.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -AvailabilityZone

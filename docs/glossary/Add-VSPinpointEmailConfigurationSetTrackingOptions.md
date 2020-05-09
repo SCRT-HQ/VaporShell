@@ -21,15 +21,6 @@ If your email contains links, those links are changed slightly in order to track
 These images and links include references to a domain operated by AWS.
 You can optionally configure Amazon Pinpoint to use a domain that you operate for these images and links.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -CustomRedirectDomain

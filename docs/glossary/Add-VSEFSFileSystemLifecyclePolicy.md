@@ -2,6 +2,7 @@
 
 ## SYNOPSIS
 Adds an AWS::EFS::FileSystem.LifecyclePolicy resource property to the template.
+Describes a policy used by EFS lifecycle management to transition files to the Infrequent Access (IA storage class.
 
 ## SYNTAX
 
@@ -11,19 +12,14 @@ Add-VSEFSFileSystemLifecyclePolicy [-TransitionToIA] <Object> [<CommonParameters
 
 ## DESCRIPTION
 Adds an AWS::EFS::FileSystem.LifecyclePolicy resource property to the template.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+Describes a policy used by EFS lifecycle management to transition files to the Infrequent Access (IA storage class.
 
 ## PARAMETERS
 
 ### -TransitionToIA
+A value that describes the period of time that a file is not accessed, after which it transitions to the IA storage class.
+Metadata operations such as listing the contents of a directory don't count as file access events.
+
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticfilesystem-filesystem-lifecyclepolicy.html#cfn-elasticfilesystem-filesystem-lifecyclepolicy-transitiontoia
 PrimitiveType: String
 UpdateType: Mutable

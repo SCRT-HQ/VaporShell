@@ -8,7 +8,7 @@ The MetricDataQuery property type specifies the metric data to return, and wheth
 
 ```
 Add-VSCloudWatchAlarmMetricDataQuery [[-Expression] <Object>] [-Id] <Object> [[-Label] <Object>]
- [[-MetricStat] <Object>] [[-ReturnData] <Boolean>] [<CommonParameters>]
+ [[-MetricStat] <Object>] [[-ReturnData] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -17,15 +17,6 @@ The MetricDataQuery property type specifies the metric data to return, and wheth
 
 Any expression used must return a single time series.
 For more information, see Metric Math Syntax and Functions: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax in the *Amazon CloudWatch User Guide*.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -127,13 +118,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 5
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

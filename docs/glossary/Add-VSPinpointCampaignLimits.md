@@ -2,27 +2,18 @@
 
 ## SYNOPSIS
 Adds an AWS::Pinpoint::Campaign.Limits resource property to the template.
-Specifies the limits on the messages that a campaign can send.
+Specifies limits on the messages that a campaign can send.
 
 ## SYNTAX
 
 ```
-Add-VSPinpointCampaignLimits [[-Daily] <Int32>] [[-MaximumDuration] <Int32>] [[-Total] <Int32>]
- [[-MessagesPerSecond] <Int32>] [<CommonParameters>]
+Add-VSPinpointCampaignLimits [[-Daily] <Object>] [[-MaximumDuration] <Object>] [[-Total] <Object>]
+ [[-MessagesPerSecond] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Pinpoint::Campaign.Limits resource property to the template.
-Specifies the limits on the messages that a campaign can send.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+Specifies limits on the messages that a campaign can send.
 
 ## PARAMETERS
 
@@ -35,13 +26,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -55,13 +46,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -75,13 +66,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -96,13 +87,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 4
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

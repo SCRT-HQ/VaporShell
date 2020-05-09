@@ -15,15 +15,6 @@ Add-VSGlueTableSerdeInfo [[-Parameters] <Object>] [[-SerializationLibrary] <Obje
 Adds an AWS::Glue::Table.SerdeInfo resource property to the template.
 Information about a serialization/deserialization program (SerDe that serves as an extractor and loader.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Parameters

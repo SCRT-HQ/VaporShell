@@ -19,15 +19,6 @@ Describes the authentication method to be used by a Client VPN endpoint.
 Client VPN supports Active Directory and mutual authentication.
 For more information, see Authentication: https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/authentication-authrization.html#client-authentication in the *AWS Client VPN Administrator Guide*.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -MutualAuthentication

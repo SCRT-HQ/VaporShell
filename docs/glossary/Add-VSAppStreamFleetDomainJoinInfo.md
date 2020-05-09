@@ -15,15 +15,6 @@ Add-VSAppStreamFleetDomainJoinInfo [[-OrganizationalUnitDistinguishedName] <Obje
 Adds an AWS::AppStream::Fleet.DomainJoinInfo resource property to the template.
 The name of the directory and organizational unit (OU to use to join a fleet to a Microsoft Active Directory domain.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -OrganizationalUnitDistinguishedName

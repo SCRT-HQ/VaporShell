@@ -15,15 +15,6 @@ Add-VSKinesisAnalyticsV2ApplicationCloudWatchLoggingOptionCloudWatchLoggingOptio
 Adds an AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption.CloudWatchLoggingOption resource property to the template.
 Provides a description of Amazon CloudWatch logging options, including the log stream Amazon Resource Name (ARN.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -LogStreamARN

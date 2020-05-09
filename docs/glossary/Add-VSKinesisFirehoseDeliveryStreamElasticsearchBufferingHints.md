@@ -8,8 +8,8 @@ The first buffer condition that is satisfied triggers Kinesis Data Firehose to d
 ## SYNTAX
 
 ```
-Add-VSKinesisFirehoseDeliveryStreamElasticsearchBufferingHints [-IntervalInSeconds] <Int32>
- [-SizeInMBs] <Int32> [<CommonParameters>]
+Add-VSKinesisFirehoseDeliveryStreamElasticsearchBufferingHints [-IntervalInSeconds] <Object>
+ [-SizeInMBs] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -18,15 +18,6 @@ The ElasticsearchBufferingHints property type specifies how Amazon Kinesis Data 
 The first buffer condition that is satisfied triggers Kinesis Data Firehose to deliver the data.
 
 ElasticsearchBufferingHints is the property type for the BufferingHints property of the Amazon Kinesis Data Firehose DeliveryStream ElasticsearchDestinationConfiguration: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html property type.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -39,13 +30,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -59,13 +50,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

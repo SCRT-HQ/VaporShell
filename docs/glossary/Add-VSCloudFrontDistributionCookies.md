@@ -16,19 +16,10 @@ Adds an AWS::CloudFront::Distribution.Cookies resource property to the template.
 A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so, which ones.
 For more information about forwarding cookies to the origin, see How CloudFront Forwards, Caches, and Logs Cookies: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html in the *Amazon CloudFront Developer Guide*.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -WhitelistedNames
-Required if you specify whitelist for the value of Forward:.
+Required if you specify whitelist for the value of Forward.
 A complex type that specifies how many different cookies you want CloudFront to forward to the origin for this cache behavior and, if you want to forward selected cookies, the names of those cookies.
 If you specify all or none for the value of Forward, omit WhitelistedNames.
 If you change the value of Forward from whitelist to all or none and you don't delete the WhitelistedNames element and its child elements, CloudFront deletes them automatically.

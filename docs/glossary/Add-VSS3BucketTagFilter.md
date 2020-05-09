@@ -14,15 +14,6 @@ Add-VSS3BucketTagFilter [-Key] <Object> [-Value] <Object> [<CommonParameters>]
 Adds an AWS::S3::Bucket.TagFilter resource property to the template.
 Specifies tags to use to identify a subset of objects for an Amazon S3 bucket.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Key

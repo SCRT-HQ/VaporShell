@@ -7,8 +7,8 @@ Represents a collection of route settings.
 ## SYNTAX
 
 ```
-Add-VSApiGatewayV2StageRouteSettings [[-LoggingLevel] <Object>] [[-DataTraceEnabled] <Boolean>]
- [[-ThrottlingBurstLimit] <Int32>] [[-DetailedMetricsEnabled] <Boolean>] [[-ThrottlingRateLimit] <Double>]
+Add-VSApiGatewayV2StageRouteSettings [[-LoggingLevel] <Object>] [[-DataTraceEnabled] <Object>]
+ [[-ThrottlingBurstLimit] <Object>] [[-DetailedMetricsEnabled] <Object>] [[-ThrottlingRateLimit] <Object>]
  [<CommonParameters>]
 ```
 
@@ -16,20 +16,12 @@ Add-VSApiGatewayV2StageRouteSettings [[-LoggingLevel] <Object>] [[-DataTraceEnab
 Adds an AWS::ApiGatewayV2::Stage.RouteSettings resource property to the template.
 Represents a collection of route settings.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -LoggingLevel
-Specifies the logging level for this route: DEBUG, INFO, or WARN.
+Specifies the logging level for this route: INFO, ERROR, or OFF.
 This property affects the log entries pushed to Amazon CloudWatch Logs.
+Supported only for WebSocket APIs.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-stage-routesettings.html#cfn-apigatewayv2-stage-routesettings-logginglevel
 PrimitiveType: String
@@ -50,19 +42,20 @@ Accept wildcard characters: False
 ### -DataTraceEnabled
 Specifies whether true or not false data trace logging is enabled for this route.
 This property affects the log entries pushed to Amazon CloudWatch Logs.
+Supported only for WebSocket APIs.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-stage-routesettings.html#cfn-apigatewayv2-stage-routesettings-datatraceenabled
 PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -75,13 +68,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -94,13 +87,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 4
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -113,13 +106,13 @@ PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 5
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

@@ -2,9 +2,9 @@
 
 ## SYNOPSIS
 Adds an AWS::Transfer::Server.IdentityProviderDetails resource property to the template.
-This parameter is required when the IdentityProviderType is set to API_GATEWAY.
+Required when IdentityProviderType is set to API_GATEWAY.
 Accepts an array containing all of the information required to call a customer-supplied authentication API, including the API Gateway URL.
-This property is not required when the IdentityProviderType is set to SERVICE_MANAGED.
+Not required when IdentityProviderType is set to SERVICE_MANAGED.
 
 ## SYNTAX
 
@@ -14,23 +14,14 @@ Add-VSTransferServerIdentityProviderDetails [-InvocationRole] <Object> [-Url] <O
 
 ## DESCRIPTION
 Adds an AWS::Transfer::Server.IdentityProviderDetails resource property to the template.
-This parameter is required when the IdentityProviderType is set to API_GATEWAY.
+Required when IdentityProviderType is set to API_GATEWAY.
 Accepts an array containing all of the information required to call a customer-supplied authentication API, including the API Gateway URL.
-This property is not required when the IdentityProviderType is set to SERVICE_MANAGED.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+Not required when IdentityProviderType is set to SERVICE_MANAGED.
 
 ## PARAMETERS
 
 ### -InvocationRole
-The InvocationRole parameter provides the type of InvocationRole used to authenticate the user account.
+Provides the type of InvocationRole used to authenticate the user account.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-identityproviderdetails.html#cfn-transfer-server-identityproviderdetails-invocationrole
 PrimitiveType: String
@@ -49,7 +40,7 @@ Accept wildcard characters: False
 ```
 
 ### -Url
-The Url parameter provides contains the location of the service endpoint used to authenticate users.
+Contains the location of the service endpoint used to authenticate users.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-identityproviderdetails.html#cfn-transfer-server-identityproviderdetails-url
 PrimitiveType: String

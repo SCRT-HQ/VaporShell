@@ -17,15 +17,6 @@ Adds an AWS::EMR::Step.HadoopJarStepConfig resource property to the template.
 A job flow step consisting of a JAR file whose main function will be executed.
 The main function submits a job for Hadoop to execute and waits for the job to finish or fail.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Args

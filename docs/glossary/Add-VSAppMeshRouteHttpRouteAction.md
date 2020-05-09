@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 Adds an AWS::AppMesh::Route.HttpRouteAction resource property to the template.
-An object representing the traffic distribution requirements for matched HTTP requests.
+An object that represents the action to take if a match is determined.
 
 ## SYNTAX
 
@@ -12,22 +12,12 @@ Add-VSAppMeshRouteHttpRouteAction [-WeightedTargets] <Object> [<CommonParameters
 
 ## DESCRIPTION
 Adds an AWS::AppMesh::Route.HttpRouteAction resource property to the template.
-An object representing the traffic distribution requirements for matched HTTP requests.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+An object that represents the action to take if a match is determined.
 
 ## PARAMETERS
 
 ### -WeightedTargets
-The targets that traffic is routed to when a request matches the route.
-You can specify one or more targets and their relative weights to distribute traffic with.
+An object that represents the targets that traffic is routed to when a request matches the route.
 
 Type: List
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httprouteaction.html#cfn-appmesh-route-httprouteaction-weightedtargets

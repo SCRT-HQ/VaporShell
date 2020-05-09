@@ -15,15 +15,6 @@ Add-VSKinesisAnalyticsApplicationMappingParameters [[-JSONMappingParameters] <Ob
 Adds an AWS::KinesisAnalytics::Application.MappingParameters resource property to the template.
 When configuring application input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter on the streaming source.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -JSONMappingParameters

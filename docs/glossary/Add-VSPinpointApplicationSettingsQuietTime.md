@@ -14,15 +14,6 @@ Add-VSPinpointApplicationSettingsQuietTime [-Start] <Object> [-End] <Object> [<C
 Adds an AWS::Pinpoint::ApplicationSettings.QuietTime resource property to the template.
 Specifies the start and end times that define a time range when messages aren't sent to endpoints.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Start

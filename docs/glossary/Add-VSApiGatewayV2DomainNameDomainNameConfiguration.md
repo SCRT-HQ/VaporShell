@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 Adds an AWS::ApiGatewayV2::DomainName.DomainNameConfiguration resource property to the template.
-The DomainNameConfiguration property type specifies the configuration for a WebSocket's domain name.
+The DomainNameConfiguration property type specifies the configuration for a an API's domain name.
 
 ## SYNTAX
 
@@ -13,18 +13,9 @@ Add-VSApiGatewayV2DomainNameDomainNameConfiguration [[-EndpointType] <Object>] [
 
 ## DESCRIPTION
 Adds an AWS::ApiGatewayV2::DomainName.DomainNameConfiguration resource property to the template.
-The DomainNameConfiguration property type specifies the configuration for a WebSocket's domain name.
+The DomainNameConfiguration property type specifies the configuration for a an API's domain name.
 
 DomainNameConfiguration is a property of the AWS::ApiGatewayV2::DomainName: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-domainname.html resource.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

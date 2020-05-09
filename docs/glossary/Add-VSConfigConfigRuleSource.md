@@ -15,15 +15,6 @@ Add-VSConfigConfigRuleSource [-Owner] <Object> [[-SourceDetails] <Object>] [-Sou
 Adds an AWS::Config::ConfigRule.Source resource property to the template.
 Provides the AWS Config rule owner (AWS or customer, the rule identifier, and the events that trigger the evaluation of your AWS resources.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Owner

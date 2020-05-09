@@ -8,8 +8,8 @@ For more information, see Apache Parquet: https://parquet.apache.org/documentati
 ## SYNTAX
 
 ```
-Add-VSKinesisFirehoseDeliveryStreamParquetSerDe [[-BlockSizeBytes] <Int32>] [[-Compression] <Object>]
- [[-EnableDictionaryCompression] <Boolean>] [[-MaxPaddingBytes] <Int32>] [[-PageSizeBytes] <Int32>]
+Add-VSKinesisFirehoseDeliveryStreamParquetSerDe [[-BlockSizeBytes] <Object>] [[-Compression] <Object>]
+ [[-EnableDictionaryCompression] <Object>] [[-MaxPaddingBytes] <Object>] [[-PageSizeBytes] <Object>]
  [[-WriterVersion] <Object>] [<CommonParameters>]
 ```
 
@@ -17,15 +17,6 @@ Add-VSKinesisFirehoseDeliveryStreamParquetSerDe [[-BlockSizeBytes] <Int32>] [[-C
 Adds an AWS::KinesisFirehose::DeliveryStream.ParquetSerDe resource property to the template.
 A serializer to use for converting data to the Parquet format before storing it in Amazon S3.
 For more information, see Apache Parquet: https://parquet.apache.org/documentation/latest/.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -40,13 +31,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -55,7 +46,7 @@ Accept wildcard characters: False
 The compression code to use over data blocks.
 The possible values are UNCOMPRESSED, SNAPPY, and GZIP, with the default being SNAPPY.
 Use SNAPPY for higher decompression speed.
-Use GZIP if the compression ration is more important than speed.
+Use GZIP if the compression ratio is more important than speed.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-parquetserde.html#cfn-kinesisfirehose-deliverystream-parquetserde-compression
 PrimitiveType: String
@@ -81,13 +72,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -102,13 +93,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 4
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -124,13 +115,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 5
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

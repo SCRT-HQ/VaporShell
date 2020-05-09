@@ -8,23 +8,14 @@ SimpleScalingPolicyConfiguration determines how an automatic scaling action adds
 ## SYNTAX
 
 ```
-Add-VSEMRInstanceGroupConfigSimpleScalingPolicyConfiguration [[-AdjustmentType] <Object>] [[-CoolDown] <Int32>]
- [-ScalingAdjustment] <Int32> [<CommonParameters>]
+Add-VSEMRInstanceGroupConfigSimpleScalingPolicyConfiguration [[-AdjustmentType] <Object>]
+ [[-CoolDown] <Object>] [-ScalingAdjustment] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::EMR::InstanceGroupConfig.SimpleScalingPolicyConfiguration resource property to the template.
 SimpleScalingPolicyConfiguration is a subproperty of the ScalingAction property type.
 SimpleScalingPolicyConfiguration determines how an automatic scaling action adds or removes instances, the cooldown period, and the number of EC2 instances that are added each time the CloudWatch metric alarm condition is satisfied.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -61,13 +52,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -84,13 +75,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 3
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

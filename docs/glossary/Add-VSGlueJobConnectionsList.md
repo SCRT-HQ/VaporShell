@@ -14,15 +14,6 @@ Add-VSGlueJobConnectionsList [[-Connections] <Object>] [<CommonParameters>]
 Adds an AWS::Glue::Job.ConnectionsList resource property to the template.
 Specifies the connections used by a job.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Connections

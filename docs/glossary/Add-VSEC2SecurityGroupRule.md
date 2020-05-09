@@ -14,15 +14,6 @@ Add-VSEC2SecurityGroupRule [[-CidrIp] <Object>] [[-FromPort] <Int32>] [-IpProtoc
 ## DESCRIPTION
 Adds an AWS::EC2::SecurityGroup.Rule resource property to the template
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -CidrIp

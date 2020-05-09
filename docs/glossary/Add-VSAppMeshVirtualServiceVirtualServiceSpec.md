@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 Adds an AWS::AppMesh::VirtualService.VirtualServiceSpec resource property to the template.
-An object representing the specification of a virtual service.
+An object that represents the specification of a virtual service.
 
 ## SYNTAX
 
@@ -12,16 +12,7 @@ Add-VSAppMeshVirtualServiceVirtualServiceSpec [[-Provider] <Object>] [<CommonPar
 
 ## DESCRIPTION
 Adds an AWS::AppMesh::VirtualService.VirtualServiceSpec resource property to the template.
-An object representing the specification of a virtual service.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+An object that represents the specification of a virtual service.
 
 ## PARAMETERS
 

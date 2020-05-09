@@ -9,7 +9,7 @@ Port mappings are specified as part of the container definition.
 ## SYNTAX
 
 ```
-Add-VSECSTaskDefinitionPortMapping [[-ContainerPort] <Int32>] [[-HostPort] <Int32>] [[-Protocol] <Object>]
+Add-VSECSTaskDefinitionPortMapping [[-ContainerPort] <Object>] [[-HostPort] <Object>] [[-Protocol] <Object>]
  [<CommonParameters>]
 ```
 
@@ -23,15 +23,6 @@ If you are using containers in a task with the awsvpc or host network mode, expo
 The hostPort can be left blank or it must be the same value as the containerPort.
 
 After a task reaches the RUNNING status, manual and automatic host and container port assignments are visible in the networkBindings section of DescribeTasks: https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html API responses.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -49,13 +40,13 @@ PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -80,13 +71,13 @@ PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

@@ -8,7 +8,7 @@ Parameters for a block device for an EBS volume in an Amazon EC2 launch template
 
 ```
 Add-VSEC2LaunchTemplateEbs [[-SnapshotId] <Object>] [[-VolumeType] <Object>] [[-KmsKeyId] <Object>]
- [[-Encrypted] <Boolean>] [[-Iops] <Int32>] [[-VolumeSize] <Int32>] [[-DeleteOnTermination] <Boolean>]
+ [[-Encrypted] <Object>] [[-Iops] <Object>] [[-VolumeSize] <Object>] [[-DeleteOnTermination] <Object>]
  [<CommonParameters>]
 ```
 
@@ -17,15 +17,6 @@ Adds an AWS::EC2::LaunchTemplate.Ebs resource property to the template.
 Parameters for a block device for an EBS volume in an Amazon EC2 launch template.
 
 Ebs is a property of the  Amazon EC2 LaunchTemplate BlockDeviceMapping: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping.html property type.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -68,7 +59,7 @@ Accept wildcard characters: False
 ```
 
 ### -KmsKeyId
-The ARN of the AWS Key Management Service AWS KMS CMK used for encryption.
+The ARN of the symmetric AWS Key Management Service AWS KMS CMK used for encryption.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-kmskeyid
 PrimitiveType: String
@@ -96,13 +87,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 4
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -119,13 +110,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 5
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -139,13 +130,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 6
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -158,13 +149,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 7
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

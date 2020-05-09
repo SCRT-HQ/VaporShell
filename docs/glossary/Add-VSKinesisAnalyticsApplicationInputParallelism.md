@@ -8,22 +8,13 @@ For information about parallelism, see Configuring Application Input: https://do
 ## SYNTAX
 
 ```
-Add-VSKinesisAnalyticsApplicationInputParallelism [[-Count] <Int32>] [<CommonParameters>]
+Add-VSKinesisAnalyticsApplicationInputParallelism [[-Count] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::KinesisAnalytics::Application.InputParallelism resource property to the template.
 Describes the number of in-application streams to create for a given streaming source.
 For information about parallelism, see Configuring Application Input: https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-input.html.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -36,13 +27,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

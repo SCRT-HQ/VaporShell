@@ -7,8 +7,8 @@ The ScalingConfiguration property type specifies the scaling configuration of an
 ## SYNTAX
 
 ```
-Add-VSRDSDBClusterScalingConfiguration [[-AutoPause] <Boolean>] [[-MaxCapacity] <Int32>]
- [[-MinCapacity] <Int32>] [[-SecondsUntilAutoPause] <Int32>] [<CommonParameters>]
+Add-VSRDSDBClusterScalingConfiguration [[-AutoPause] <Object>] [[-MaxCapacity] <Object>]
+ [[-MinCapacity] <Object>] [[-SecondsUntilAutoPause] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -16,15 +16,6 @@ Adds an AWS::RDS::DBCluster.ScalingConfiguration resource property to the templa
 The ScalingConfiguration property type specifies the scaling configuration of an Aurora Serverless DB cluster.
 
 For more information, see Using Amazon Aurora Serverless: https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html in the *Amazon Aurora User Guide*.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -39,20 +30,21 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -MaxCapacity
 The maximum capacity for an Aurora DB cluster in serverless DB engine mode.
-Valid capacity values are 1, 2, 4, 8, 16, 32, 64, 128, and 256.
+For Aurora MySQL, valid capacity values are 1, 2, 4, 8, 16, 32, 64, 128, and 256.
+For Aurora PostgreSQL, valid capacity values are 2, 4, 8, 16, 32, 64, 192, and 384.
 The maximum capacity must be greater than or equal to the minimum capacity.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-scalingconfiguration.html#cfn-rds-dbcluster-scalingconfiguration-maxcapacity
@@ -60,20 +52,21 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -MinCapacity
 The minimum capacity for an Aurora DB cluster in serverless DB engine mode.
-Valid capacity values are 1, 2, 4, 8, 16, 32, 64, 128, and 256.
+For Aurora MySQL, valid capacity values are 1, 2, 4, 8, 16, 32, 64, 128, and 256.
+For Aurora PostgreSQL, valid capacity values are 2, 4, 8, 16, 32, 64, 192, and 384.
 The minimum capacity must be less than or equal to the maximum capacity.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-scalingconfiguration.html#cfn-rds-dbcluster-scalingconfiguration-mincapacity
@@ -81,13 +74,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -100,13 +93,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 4
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

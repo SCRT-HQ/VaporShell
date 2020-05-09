@@ -16,15 +16,6 @@ Add-VSKinesisAnalyticsV2ApplicationApplicationConfiguration [[-ApplicationCodeCo
 Adds an AWS::KinesisAnalyticsV2::Application.ApplicationConfiguration resource property to the template.
 Specifies the creation parameters for an Amazon Kinesis Data Analytics application.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ApplicationCodeConfiguration

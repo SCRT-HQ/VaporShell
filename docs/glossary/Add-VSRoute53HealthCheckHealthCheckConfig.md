@@ -8,25 +8,16 @@ A complex type that contains information about the health check.
 
 ```
 Add-VSRoute53HealthCheckHealthCheckConfig [[-AlarmIdentifier] <Object>] [[-ChildHealthChecks] <Object>]
- [[-EnableSNI] <Boolean>] [[-FailureThreshold] <Int32>] [[-FullyQualifiedDomainName] <Object>]
- [[-HealthThreshold] <Int32>] [[-IPAddress] <Object>] [[-InsufficientDataHealthStatus] <Object>]
- [[-Inverted] <Boolean>] [[-MeasureLatency] <Boolean>] [[-Port] <Int32>] [[-Regions] <Object>]
- [[-RequestInterval] <Int32>] [[-ResourcePath] <Object>] [[-SearchString] <Object>] [-Type] <Object>
+ [[-EnableSNI] <Object>] [[-FailureThreshold] <Object>] [[-FullyQualifiedDomainName] <Object>]
+ [[-HealthThreshold] <Object>] [[-IPAddress] <Object>] [[-InsufficientDataHealthStatus] <Object>]
+ [[-Inverted] <Object>] [[-MeasureLatency] <Object>] [[-Port] <Object>] [[-Regions] <Object>]
+ [[-RequestInterval] <Object>] [[-ResourcePath] <Object>] [[-SearchString] <Object>] [-Type] <Object>
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Route53::HealthCheck.HealthCheckConfig resource property to the template.
 A complex type that contains information about the health check.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -87,20 +78,20 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -FailureThreshold
 The number of consecutive health checks that an endpoint must pass or fail for Amazon Route 53 to change the current status of the endpoint from unhealthy to healthy or vice versa.
-For more information, see How Amazon Route 53 Determines Whether an Endpoint Is Healthy: http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html in the *Amazon Route 53 Developer Guide*.
+For more information, see How Amazon Route 53 Determines Whether an Endpoint Is Healthy: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-determining-health-of-endpoints.html in the *Amazon Route 53 Developer Guide*.
 If you don't specify a value for FailureThreshold, the default value is three health checks.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-failurethreshold
@@ -108,13 +99,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 4
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -133,11 +124,11 @@ If you don't specify a value for FullyQualifiedDomainName, Route 53 substitutes 
 Route 53 sends a DNS request to the domain that you specify for FullyQualifiedDomainName at the interval that you specify for RequestInterval.
 Using an IPv4 address that DNS returns, Route 53 then checks the health of the endpoint.
 If you don't specify a value for IPAddress, Route 53 uses only IPv4 to send health checks to the endpoint.
-If there's no resource record set with a type of A for the name that you specify for FullyQualifiedDomainName, the health check fails with a "DNS resolution failed" error.
-If you want to check the health of weighted, latency, or failover resource record sets and you choose to specify the endpoint only by FullyQualifiedDomainName, we recommend that you create a separate health check for each endpoint.
+If there's no record with a type of A for the name that you specify for FullyQualifiedDomainName, the health check fails with a "DNS resolution failed" error.
+If you want to check the health of multiple records that have the same name and type, such as multiple weighted records, and if you choose to specify the endpoint only by FullyQualifiedDomainName, we recommend that you create a separate health check for each endpoint.
 For example, create a health check for each HTTP server that is serving content for www.example.com.
-For the value of FullyQualifiedDomainName, specify the domain name of the server such as us-east-2-www.example.com, not the name of the resource record sets www.example.com.
-In this configuration, if you create a health check for which the value of FullyQualifiedDomainName matches the name of the resource record sets and you then associate the health check with those resource record sets, health check results will be unpredictable.
+For the value of FullyQualifiedDomainName, specify the domain name of the server such as us-east-2-www.example.com, not the name of the records www.example.com.
+In this configuration, if you create a health check for which the value of FullyQualifiedDomainName matches the name of the records and you then associate the health check with those records, health check results will be unpredictable.
 In addition, if the value that you specify for Type is HTTP, HTTPS, HTTP_STR_MATCH, or HTTPS_STR_MATCH, Route 53 passes the value of FullyQualifiedDomainName in the Host header, as it does when you specify a value for IPAddress.
 If the value of Type is TCP, Route 53 doesn't pass a Host header.
 
@@ -169,13 +160,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 6
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -245,13 +236,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 9
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -265,33 +256,33 @@ PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 10
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Port
-The port on the endpoint on which you want Amazon Route 53 to perform health checks.
-Specify a value for Port only when you specify a value for IPAddress.
+The port on the endpoint that you want Amazon Route 53 to perform health checks on.
+Don't specify a value for Port when you specify a value for Type: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-type of CLOUDWATCH_METRIC or CALCULATED.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-port
 PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 11
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -330,13 +321,13 @@ PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 13
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -363,7 +354,7 @@ Accept wildcard characters: False
 ```
 
 ### -SearchString
-If the value of Type is HTTP_STR_MATCH or HTTP_STR_MATCH, the string that you want Amazon Route 53 to search for in the response body from the specified resource.
+If the value of Type is HTTP_STR_MATCH or HTTPS_STR_MATCH, the string that you want Amazon Route 53 to search for in the response body from the specified resource.
 If the string appears in the response body, Route 53 considers the resource healthy.
 Route 53 considers case when searching for SearchString in the response body.
 

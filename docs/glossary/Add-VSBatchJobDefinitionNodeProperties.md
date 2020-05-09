@@ -7,22 +7,13 @@ An object representing the node properties of a multi-node parallel job.
 ## SYNTAX
 
 ```
-Add-VSBatchJobDefinitionNodeProperties [-MainNode] <Int32> [-NodeRangeProperties] <Object> [-NumNodes] <Int32>
- [<CommonParameters>]
+Add-VSBatchJobDefinitionNodeProperties [-MainNode] <Object> [-NodeRangeProperties] <Object>
+ [-NumNodes] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Batch::JobDefinition.NodeProperties resource property to the template.
 An object representing the node properties of a multi-node parallel job.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -35,13 +26,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -74,13 +65,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 3
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

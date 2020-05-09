@@ -7,21 +7,12 @@ The ConfigurationId property type specifies a configuration Id and the revision 
 ## SYNTAX
 
 ```
-Add-VSAmazonMQConfigurationAssociationConfigurationId [-Revision] <Int32> [-Id] <Object> [<CommonParameters>]
+Add-VSAmazonMQConfigurationAssociationConfigurationId [-Revision] <Object> [-Id] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::AmazonMQ::ConfigurationAssociation.ConfigurationId resource property to the template.
 The ConfigurationId property type specifies a configuration Id and the revision of a configuration.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -33,13 +24,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

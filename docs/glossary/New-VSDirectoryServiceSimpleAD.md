@@ -9,10 +9,10 @@ For more information, see Simple Active Directory: https://docs.aws.amazon.com/d
 ## SYNTAX
 
 ```
-New-VSDirectoryServiceSimpleAD [-LogicalId] <String> [-CreateAlias <Boolean>] [-Description <Object>]
- [-EnableSso <Boolean>] -Name <Object> -Password <Object> [-ShortName <Object>] -Size <Object>
- -VpcSettings <Object> [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
- [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+New-VSDirectoryServiceSimpleAD [-LogicalId] <String> [-CreateAlias <Object>] [-Description <Object>]
+ [-EnableSso <Object>] -Name <Object> -Password <Object> [-ShortName <Object>] -Size <Object>
+ -VpcSettings <Object> [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>] [-DependsOn <String[]>]
+ [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -20,15 +20,6 @@ Adds an AWS::DirectoryService::SimpleAD resource to the template.
 The AWS::DirectoryService::SimpleAD resource specifies an AWS Directory Service Simple Active Directory (Simple AD in AWS so that your directory users and groups can access the AWS Management Console and AWS applications using their existing credentials.
 Simple AD is a Microsoft Active Directory-compatible directory.
 For more information, see Simple Active Directory: https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_simple_ad.html in the *AWS Directory Service Admin Guide*.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -60,19 +51,19 @@ PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Description
-A textual description for the directory.
+A description for the directory.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-description
 PrimitiveType: String
@@ -99,13 +90,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -132,6 +123,7 @@ Accept wildcard characters: False
 ### -Password
 The password for the directory administrator.
 The directory creation process creates a directory administrator account with the user name Administrator and this password.
+If you need to change the password for the administrator account, see the ResetUserPassword: https://docs.aws.amazon.com/directoryservice/latest/devguide/API_ResetUserPassword.html API call in the *AWS Directory Service API Reference*.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-password
 PrimitiveType: String
@@ -150,7 +142,7 @@ Accept wildcard characters: False
 ```
 
 ### -ShortName
-The short name of the directory, such as CORP.
+The NetBIOS name of the directory, such as CORP.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-shortname
 PrimitiveType: String
@@ -215,6 +207,49 @@ If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the re
 To keep a resource when its stack is deleted, specify Retain for that resource.
 You can use retain for any resource.
 For example, you can retain a nested stack, S3 bucket, or EC2 instance so that you can continue to use or modify those resources after you delete their stacks.
+
+You must use one of the following options: "Delete","Retain","Snapshot"
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdateReplacePolicy
+Use the UpdateReplacePolicy attribute to retain or (in some cases) backup the existing physical instance of a resource when it is replaced during a stack update operation.
+
+When you initiate a stack update, AWS CloudFormation updates resources based on differences between what you submit and the stack's current template and parameters.
+If you update a resource property that requires that the resource be replaced, AWS CloudFormation recreates the resource during the update.
+Recreating the resource generates a new physical ID.
+AWS CloudFormation creates the replacement resource first, and then changes references from other dependent resources to point to the replacement resource.
+By default, AWS CloudFormation then deletes the old resource.
+Using the UpdateReplacePolicy, you can specify that AWS CloudFormation retain or (in some cases) create a snapshot of the old resource.
+
+For resources that support snapshots, such as AWS::EC2::Volume, specify Snapshot to have AWS CloudFormation create a snapshot before deleting the old resource instance.
+
+You can apply the UpdateReplacePolicy attribute to any resource.
+UpdateReplacePolicy is only executed if you update a resource property whose update behavior is specified as Replacement, thereby causing AWS CloudFormation to replace the old resource with a new one with a new physical ID.
+For example, if you update the Engine property of an AWS::RDS::DBInstance resource type, AWS CloudFormation creates a new resource and replaces the current DB instance resource with the new one.
+The UpdateReplacePolicy attribute would then dictate whether AWS CloudFormation deleted, retained, or created a snapshot of the old DB instance.
+The update behavior for each property of a resource is specified in the reference topic for that resource in the AWS Resource and Property Types Reference.
+For more information on resource update behavior, see Update Behaviors of Stack Resources.
+
+The UpdateReplacePolicy attribute applies to stack updates you perform directly, as well as stack updates performed using change sets.
+
+Note
+Resources that are retained continue to exist and continue to incur applicable charges until you delete those resources.
+Snapshots that are created with this policy continue to exist and continue to incur applicable charges until you delete those snapshots.
+UpdateReplacePolicy retains the old physical resource or snapshot, but removes it from AWS CloudFormation's scope.
+
+UpdateReplacePolicy differs from the DeletionPolicy attribute in that it only applies to resources replaced during stack updates.
+Use DeletionPolicy for resources deleted when a stack is deleted, or when the resource definition itself is deleted from the template as part of a stack update.
 
 You must use one of the following options: "Delete","Retain","Snapshot"
 

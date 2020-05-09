@@ -14,15 +14,6 @@ Add-VSCodePipelinePipelineBlockerDeclaration [-Name] <Object> [-Type] <Object> [
 Adds an AWS::CodePipeline::Pipeline.BlockerDeclaration resource property to the template.
 Reserved for future use.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Name

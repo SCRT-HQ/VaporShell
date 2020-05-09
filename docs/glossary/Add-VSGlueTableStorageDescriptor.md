@@ -7,24 +7,15 @@ Describes the physical storage of table data.
 ## SYNTAX
 
 ```
-Add-VSGlueTableStorageDescriptor [[-StoredAsSubDirectories] <Boolean>] [[-Parameters] <Object>]
- [[-BucketColumns] <Object>] [[-SkewedInfo] <Object>] [[-InputFormat] <Object>] [[-NumberOfBuckets] <Int32>]
+Add-VSGlueTableStorageDescriptor [[-StoredAsSubDirectories] <Object>] [[-Parameters] <Object>]
+ [[-BucketColumns] <Object>] [[-SkewedInfo] <Object>] [[-InputFormat] <Object>] [[-NumberOfBuckets] <Object>]
  [[-OutputFormat] <Object>] [[-Columns] <Object>] [[-SerdeInfo] <Object>] [[-SortColumns] <Object>]
- [[-Compressed] <Boolean>] [[-Location] <Object>] [<CommonParameters>]
+ [[-Compressed] <Object>] [[-Location] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Glue::Table.StorageDescriptor resource property to the template.
 Describes the physical storage of table data.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -36,13 +27,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -132,13 +123,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 6
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -229,13 +220,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 11
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

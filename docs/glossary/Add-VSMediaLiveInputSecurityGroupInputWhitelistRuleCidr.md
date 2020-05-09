@@ -14,15 +14,6 @@ Add-VSMediaLiveInputSecurityGroupInputWhitelistRuleCidr [[-Cidr] <Object>] [<Com
 Adds an AWS::MediaLive::InputSecurityGroup.InputWhitelistRuleCidr resource property to the template.
 An IPv4 CIDR range to include in this input security group.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Cidr

@@ -8,7 +8,7 @@ VolumeSecification determines the volume type, IOPS, and size (GiB for EBS volum
 ## SYNTAX
 
 ```
-Add-VSEMRInstanceFleetConfigVolumeSpecification [[-Iops] <Int32>] [-SizeInGB] <Int32> [-VolumeType] <Object>
+Add-VSEMRInstanceFleetConfigVolumeSpecification [[-Iops] <Object>] [-SizeInGB] <Object> [-VolumeType] <Object>
  [<CommonParameters>]
 ```
 
@@ -16,15 +16,6 @@ Add-VSEMRInstanceFleetConfigVolumeSpecification [[-Iops] <Int32>] [-SizeInGB] <I
 Adds an AWS::EMR::InstanceFleetConfig.VolumeSpecification resource property to the template.
 VolumeSpecification is a subproperty of the EbsBlockDeviceConfig property type.
 VolumeSecification determines the volume type, IOPS, and size (GiB for EBS volumes attached to EC2 instances.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -36,13 +27,13 @@ PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -57,13 +48,13 @@ PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

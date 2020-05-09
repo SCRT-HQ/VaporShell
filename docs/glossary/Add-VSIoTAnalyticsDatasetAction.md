@@ -15,15 +15,6 @@ Add-VSIoTAnalyticsDatasetAction [-ActionName] <Object> [[-ContainerAction] <Obje
 Adds an AWS::IoTAnalytics::Dataset.Action resource property to the template.
 Information needed to run the "containerAction" to produce data set contents.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ActionName

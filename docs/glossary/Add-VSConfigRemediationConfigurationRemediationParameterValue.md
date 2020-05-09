@@ -17,15 +17,6 @@ Adds an AWS::Config::RemediationConfiguration.RemediationParameterValue resource
 The value is either a dynamic (resource value or a static value.
 You must select either a dynamic value or a static value.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ResourceValue

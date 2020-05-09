@@ -12,15 +12,6 @@ Add-VSAppMeshVirtualServiceTagRef [[-Value] <Object>] [-Key] <Object> [<CommonPa
 ## DESCRIPTION
 Adds an AWS::AppMesh::VirtualService.TagRef resource property to the template
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Value

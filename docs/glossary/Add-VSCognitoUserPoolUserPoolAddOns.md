@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 Adds an AWS::Cognito::UserPool.UserPoolAddOns resource property to the template.
-UserPoolAddOns is a property of the AWS::Cognito::UserPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html resource that enables advanced security risk detection.
+The user pool add-ons type.
 
 ## SYNTAX
 
@@ -12,16 +12,7 @@ Add-VSCognitoUserPoolUserPoolAddOns [[-AdvancedSecurityMode] <Object>] [<CommonP
 
 ## DESCRIPTION
 Adds an AWS::Cognito::UserPool.UserPoolAddOns resource property to the template.
-UserPoolAddOns is a property of the AWS::Cognito::UserPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html resource that enables advanced security risk detection.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+The user pool add-ons type.
 
 ## PARAMETERS
 

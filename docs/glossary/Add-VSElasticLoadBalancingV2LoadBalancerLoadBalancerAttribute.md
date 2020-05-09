@@ -15,15 +15,6 @@ Add-VSElasticLoadBalancingV2LoadBalancerLoadBalancerAttribute [[-Key] <Object>] 
 Adds an AWS::ElasticLoadBalancingV2::LoadBalancer.LoadBalancerAttribute resource property to the template.
 Specifies an attribute for an Application Load Balancer or a Network Load Balancer.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Key
@@ -43,9 +34,12 @@ The following attributes are supported by only Application Load Balancers:
 +  idle_timeout.timeout_seconds - The idle timeout value, in seconds.
 The valid range is 1-4000 seconds.
 The default is 60 seconds.
++  routing.http.drop_invalid_header_fields.enabled - Indicates whether HTTP headers with invalid header fields are removed by the load balancer true or routed to targets false.
+The default is false.
 +  routing.http2.enabled - Indicates whether HTTP/2 is enabled.
 The value is true or false.
 The default is true.
+Elastic Load Balancing requires that message header names contain only alphanumeric characters and hyphens.
 The following attributes are supported by only Network Load Balancers:
 +  load_balancing.cross_zone.enabled - Indicates whether cross-zone load balancing is enabled.
 The value is true or false.

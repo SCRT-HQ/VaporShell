@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 Adds an AWS::AppMesh::Route.HttpRouteMatch resource property to the template.
-An object representing the requirements for a route to match HTTP requests for a virtual router.
+An object that represents the requirements for a route to match HTTP requests for a virtual router.
 
 ## SYNTAX
 
@@ -13,21 +13,13 @@ Add-VSAppMeshRouteHttpRouteMatch [[-Scheme] <Object>] [[-Headers] <Object>] [-Pr
 
 ## DESCRIPTION
 Adds an AWS::AppMesh::Route.HttpRouteMatch resource property to the template.
-An object representing the requirements for a route to match HTTP requests for a virtual router.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+An object that represents the requirements for a route to match HTTP requests for a virtual router.
 
 ## PARAMETERS
 
 ### -Scheme
-The client request header scheme to match on.
+The client request scheme to match on.
+Specify only one.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html#cfn-appmesh-route-httproutematch-scheme
 PrimitiveType: String
@@ -46,7 +38,7 @@ Accept wildcard characters: False
 ```
 
 ### -Headers
-The client request headers to match on.
+An object that represents the client request headers to match on.
 
 Type: List
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html#cfn-appmesh-route-httproutematch-headers
@@ -88,7 +80,8 @@ Accept wildcard characters: False
 ```
 
 ### -Method
-The client request header method to match on.
+The client request method to match on.
+Specify only one.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html#cfn-appmesh-route-httproutematch-method
 PrimitiveType: String

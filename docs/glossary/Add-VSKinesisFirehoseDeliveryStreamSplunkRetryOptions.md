@@ -7,21 +7,12 @@ The SplunkRetryOptions property type specifies retry behavior in case Kinesis Da
 ## SYNTAX
 
 ```
-Add-VSKinesisFirehoseDeliveryStreamSplunkRetryOptions [-DurationInSeconds] <Int32> [<CommonParameters>]
+Add-VSKinesisFirehoseDeliveryStreamSplunkRetryOptions [-DurationInSeconds] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::KinesisFirehose::DeliveryStream.SplunkRetryOptions resource property to the template.
 The SplunkRetryOptions property type specifies retry behavior in case Kinesis Data Firehose is unable to deliver documents to Splunk or if it doesn't receive an acknowledgment from Splunk
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -35,13 +26,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

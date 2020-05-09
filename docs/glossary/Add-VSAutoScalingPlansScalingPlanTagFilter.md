@@ -14,15 +14,6 @@ Add-VSAutoScalingPlansScalingPlanTagFilter [[-Values] <Object>] [-Key] <Object> 
 Adds an AWS::AutoScalingPlans::ScalingPlan.TagFilter resource property to the template.
 TagFilter is a subproperty of ApplicationSource: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-applicationsource.html that specifies a tag for an application source to use with AWS Auto Scaling.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Values

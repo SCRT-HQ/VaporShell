@@ -14,15 +14,6 @@ Add-VSElasticLoadBalancingV2TargetGroupMatcher [-HttpCode] <Object> [<CommonPara
 Adds an AWS::ElasticLoadBalancingV2::TargetGroup.Matcher resource property to the template.
 Specifies the HTTP codes that healthy targets must use when responding to an HTTP health check.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -HttpCode

@@ -10,7 +10,7 @@ If more than one rule applies, the service uses the first applicable rule listed
 
 ```
 Add-VSMediaStoreContainerCorsRule [[-AllowedMethods] <Object>] [[-AllowedOrigins] <Object>]
- [[-ExposeHeaders] <Object>] [[-MaxAgeSeconds] <Int32>] [[-AllowedHeaders] <Object>] [<CommonParameters>]
+ [[-ExposeHeaders] <Object>] [[-MaxAgeSeconds] <Object>] [[-AllowedHeaders] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -18,15 +18,6 @@ Adds an AWS::MediaStore::Container.CorsRule resource property to the template.
 A rule for a CORS policy.
 You can add up to 100 rules to a CORS policy.
 If more than one rule applies, the service uses the first applicable rule listed.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -104,13 +95,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 4
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

@@ -15,15 +15,6 @@ Add-VSEC2SpotFleetSpotPlacement [[-AvailabilityZone] <Object>] [[-GroupName] <Ob
 Adds an AWS::EC2::SpotFleet.SpotPlacement resource property to the template.
 Describes Spot Instance placement.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -AvailabilityZone

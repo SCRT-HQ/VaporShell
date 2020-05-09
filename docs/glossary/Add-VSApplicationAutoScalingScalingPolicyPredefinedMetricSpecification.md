@@ -17,15 +17,6 @@ PredefinedMetricSpecification is a subproperty of TargetTrackingScalingPolicyCon
 
 For more information, see PredefinedMetricSpecification: https://docs.aws.amazon.com/autoscaling/application/APIReference/API_PredefinedMetricSpecification.html in the *Application Auto Scaling API Reference*.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -PredefinedMetricType

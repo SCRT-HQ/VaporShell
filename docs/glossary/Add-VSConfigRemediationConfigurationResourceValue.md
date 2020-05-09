@@ -14,15 +14,6 @@ Add-VSConfigRemediationConfigurationResourceValue [[-Value] <Object>] [<CommonPa
 Adds an AWS::Config::RemediationConfiguration.ResourceValue resource property to the template.
 The dynamic value of the resource.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Value

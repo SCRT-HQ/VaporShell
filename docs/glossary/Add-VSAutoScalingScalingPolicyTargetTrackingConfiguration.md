@@ -8,7 +8,7 @@ TargetTrackingConfiguration is a subproperty of ScalingPolicy: https://docs.aws.
 
 ```
 Add-VSAutoScalingScalingPolicyTargetTrackingConfiguration [[-CustomizedMetricSpecification] <Object>]
- [[-DisableScaleIn] <Boolean>] [[-PredefinedMetricSpecification] <Object>] [-TargetValue] <Double>
+ [[-DisableScaleIn] <Object>] [[-PredefinedMetricSpecification] <Object>] [-TargetValue] <Object>
  [<CommonParameters>]
 ```
 
@@ -18,15 +18,6 @@ TargetTrackingConfiguration is a subproperty of ScalingPolicy: https://docs.aws.
 
 For more information, see PutScalingPolicy: https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PutScalingPolicy.html in the *Amazon EC2 Auto Scaling API Reference*.
 For more information about scaling policies, see Dynamic Scaling: https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html in the *Amazon EC2 Auto Scaling User Guide*.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -61,13 +52,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -100,13 +91,13 @@ PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 4
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

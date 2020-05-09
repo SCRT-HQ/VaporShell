@@ -9,8 +9,8 @@ An outbound rule permits instances to send traffic to the specified IPv4 or IPv6
 
 ```
 Add-VSEC2SecurityGroupEgress [[-CidrIp] <Object>] [[-CidrIpv6] <Object>] [[-Description] <Object>]
- [[-DestinationPrefixListId] <Object>] [[-DestinationSecurityGroupId] <Object>] [[-FromPort] <Int32>]
- [-IpProtocol] <Object> [[-ToPort] <Int32>] [<CommonParameters>]
+ [[-DestinationPrefixListId] <Object>] [[-DestinationSecurityGroupId] <Object>] [[-FromPort] <Object>]
+ [-IpProtocol] <Object> [[-ToPort] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -22,19 +22,10 @@ You must specify only one of the following properties: CidrIp, CidrIpv6, Destina
 
 The EC2 Security Group Rule is an embedded property of the AWS::EC2::SecurityGroup type.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -CidrIp
-The IPv4 address range, in CIDR format.
+The destination IPv4 address range, in CIDR format.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-cidrip
 PrimitiveType: String
@@ -54,7 +45,7 @@ Accept wildcard characters: False
 
 ### -CidrIpv6
 EC2-VPC only\] The IPv6 ranges.
-The IPv6 address range, in CIDR format.
+The destination IPv6 address range, in CIDR format.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-cidripv6
 PrimitiveType: String
@@ -94,7 +85,7 @@ Accept wildcard characters: False
 ```
 
 ### -DestinationPrefixListId
-EC2-VPC only\] The prefix list IDs for an AWS service.
+EC2-VPC only\] The prefix list IDs for the destination AWS service.
 This is the AWS service that you want to access through a VPC endpoint from instances associated with the security group.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-destinationprefixlistid
@@ -142,13 +133,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 6
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -186,13 +177,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 8
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

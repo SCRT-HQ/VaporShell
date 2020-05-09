@@ -18,15 +18,6 @@ Add-VSKinesisFirehoseDeliveryStreamElasticsearchDestinationConfiguration [-Buffe
 Adds an AWS::KinesisFirehose::DeliveryStream.ElasticsearchDestinationConfiguration resource property to the template.
 The ElasticsearchDestinationConfiguration property type specifies an Amazon Elasticsearch Service (Amazon ES domain that Amazon Kinesis Data Firehose (Kinesis Data Firehose delivers data to.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -BufferingHints

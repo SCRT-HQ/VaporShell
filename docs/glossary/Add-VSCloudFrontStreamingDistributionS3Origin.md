@@ -15,15 +15,6 @@ Add-VSCloudFrontStreamingDistributionS3Origin [-DomainName] <Object> [-OriginAcc
 Adds an AWS::CloudFront::StreamingDistribution.S3Origin resource property to the template.
 A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -DomainName

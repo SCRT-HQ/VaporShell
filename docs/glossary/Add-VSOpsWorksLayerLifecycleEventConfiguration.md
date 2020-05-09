@@ -14,15 +14,6 @@ Add-VSOpsWorksLayerLifecycleEventConfiguration [[-ShutdownEventConfiguration] <O
 Adds an AWS::OpsWorks::Layer.LifecycleEventConfiguration resource property to the template.
 Specifies the lifecycle event configuration
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ShutdownEventConfiguration

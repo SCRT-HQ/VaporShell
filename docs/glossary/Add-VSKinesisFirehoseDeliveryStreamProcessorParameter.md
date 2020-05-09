@@ -15,15 +15,6 @@ Add-VSKinesisFirehoseDeliveryStreamProcessorParameter [-ParameterName] <Object> 
 Adds an AWS::KinesisFirehose::DeliveryStream.ProcessorParameter resource property to the template.
 The ProcessorParameter property specifies a processor parameter in a data processor for an Amazon Kinesis Data Firehose delivery stream.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ParameterName

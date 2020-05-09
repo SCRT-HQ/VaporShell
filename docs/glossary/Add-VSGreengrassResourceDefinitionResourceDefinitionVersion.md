@@ -23,15 +23,6 @@ For more information, see https://docs.aws.amazon.com/AWSCloudFormation/latest/U
 
 \<a name="aws-properties-greengrass-resourcedefinition-resourcedefinitionversion-inheritance"\>\</a\> In an AWS CloudFormation template, ResourceDefinitionVersion is the property type of the InitialVersion property in the https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-resourcedefinition.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-resourcedefinition.html resource.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Resources

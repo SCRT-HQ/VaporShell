@@ -18,15 +18,6 @@ BootstrapActionConfig is a property of AWS::EMR::Cluster that can be used to run
 You can use a bootstrap action to install software and configure EC2 instances for all cluster nodes before EMR installs and configures open-source big data applications on cluster instances.
 For more information, see Create Bootstrap Actions to Install Additional Software: https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-bootstrap.html in the *Amazon EMR Management Guide*.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Name

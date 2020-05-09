@@ -16,20 +16,11 @@ Add-VSPinpointCampaignMessageConfiguration [[-APNSMessage] <Object>] [[-BaiduMes
 Adds an AWS::Pinpoint::Campaign.MessageConfiguration resource property to the template.
 Specifies the message configuration settings for a campaign.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -APNSMessage
-The message that the campaign sends through the APNS Apple Push Notification service channel.
-This message overrides the default message.
+The message that the campaign sends through the APNs Apple Push Notification service channel.
+If specified, this message overrides the default message.
 
 Type: Message
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-messageconfiguration.html#cfn-pinpoint-campaign-messageconfiguration-apnsmessage
@@ -49,7 +40,7 @@ Accept wildcard characters: False
 
 ### -BaiduMessage
 The message that the campaign sends through the Baidu Baidu Cloud Push channel.
-This message overrides the default message.
+If specified, this message overrides the default message.
 
 Type: Message
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-messageconfiguration.html#cfn-pinpoint-campaign-messageconfiguration-baidumessage
@@ -88,6 +79,7 @@ Accept wildcard characters: False
 
 ### -EmailMessage
 The message that the campaign sends through the email channel.
+If specified, this message overrides the default message.
 
 Type: CampaignEmailMessage
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-messageconfiguration.html#cfn-pinpoint-campaign-messageconfiguration-emailmessage
@@ -107,7 +99,7 @@ Accept wildcard characters: False
 
 ### -GCMMessage
 The message that the campaign sends through the GCM channel, which enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging FCM, formerly Google Cloud Messaging GCM, service.
-This message overrides the default message.
+If specified, this message overrides the default message.
 
 Type: Message
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-messageconfiguration.html#cfn-pinpoint-campaign-messageconfiguration-gcmmessage
@@ -127,6 +119,7 @@ Accept wildcard characters: False
 
 ### -SMSMessage
 The message that the campaign sends through the SMS channel.
+If specified, this message overrides the default message.
 
 Type: CampaignSmsMessage
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-messageconfiguration.html#cfn-pinpoint-campaign-messageconfiguration-smsmessage
@@ -146,7 +139,7 @@ Accept wildcard characters: False
 
 ### -ADMMessage
 The message that the campaign sends through the ADM Amazon Device Messaging channel.
-This message overrides the default message.
+If specified, this message overrides the default message.
 
 Type: Message
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-messageconfiguration.html#cfn-pinpoint-campaign-messageconfiguration-admmessage

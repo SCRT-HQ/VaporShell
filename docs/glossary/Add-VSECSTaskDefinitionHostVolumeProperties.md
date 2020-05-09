@@ -14,15 +14,6 @@ Add-VSECSTaskDefinitionHostVolumeProperties [[-SourcePath] <Object>] [<CommonPar
 Adds an AWS::ECS::TaskDefinition.HostVolumeProperties resource property to the template.
 The HostVolumeProperties property specifies details on a container instance bind mount host volume.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -SourcePath

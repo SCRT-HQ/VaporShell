@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 Adds an AWS::AppMesh::Route.TcpRoute resource property to the template.
-An object representing the TCP routing specification for a route.
+An object that represents a TCP route type.
 
 ## SYNTAX
 
@@ -12,16 +12,7 @@ Add-VSAppMeshRouteTcpRoute [-Action] <Object> [<CommonParameters>]
 
 ## DESCRIPTION
 Adds an AWS::AppMesh::Route.TcpRoute resource property to the template.
-An object representing the TCP routing specification for a route.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+An object that represents a TCP route type.
 
 ## PARAMETERS
 

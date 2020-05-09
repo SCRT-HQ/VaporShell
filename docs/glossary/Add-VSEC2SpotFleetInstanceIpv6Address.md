@@ -14,15 +14,6 @@ Add-VSEC2SpotFleetInstanceIpv6Address [-Ipv6Address] <Object> [<CommonParameters
 Adds an AWS::EC2::SpotFleet.InstanceIpv6Address resource property to the template.
 Describes an IPv6 address.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Ipv6Address

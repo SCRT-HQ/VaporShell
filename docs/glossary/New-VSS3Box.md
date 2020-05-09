@@ -14,15 +14,6 @@ New-VSS3Box [-BucketName] <String> [-BucketRegionName <String>] [-CannedACL <Str
 ## DESCRIPTION
 {{ Fill in the Description }}
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -BucketName

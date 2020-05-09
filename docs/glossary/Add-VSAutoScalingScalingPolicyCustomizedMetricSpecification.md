@@ -17,15 +17,6 @@ CustomizedMetricSpecification is a subproperty of TargetTrackingConfiguration: h
 
 For more information, see CustomizedMetricSpecification: https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CustomizedMetricSpecification.html in the *Amazon EC2 Auto Scaling API Reference*.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Dimensions

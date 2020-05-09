@@ -15,15 +15,6 @@ Add-VSKinesisFirehoseDeliveryStreamKinesisStreamSourceConfiguration [-KinesisStr
 Adds an AWS::KinesisFirehose::DeliveryStream.KinesisStreamSourceConfiguration resource property to the template.
 The KinesisStreamSourceConfiguration property type specifies the stream and role Amazon Resource Names (ARNs for a Kinesis stream used as the source for a delivery stream.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -KinesisStreamARN

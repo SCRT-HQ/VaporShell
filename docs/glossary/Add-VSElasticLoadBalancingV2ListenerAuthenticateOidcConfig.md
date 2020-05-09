@@ -17,15 +17,6 @@ Add-VSElasticLoadBalancingV2ListenerAuthenticateOidcConfig [[-AuthenticationRequ
 Adds an AWS::ElasticLoadBalancingV2::Listener.AuthenticateOidcConfig resource property to the template.
 Specifies information required using an identity provide (IdP that is compliant with OpenID Connect (OIDC to authenticate users.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -AuthenticationRequestExtraParams

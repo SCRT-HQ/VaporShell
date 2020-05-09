@@ -16,15 +16,6 @@ Adds an AWS::OpsWorksCM::Server.EngineAttribute resource property to the templat
 The EngineAttribute property type specifies administrator credentials for an AWS OpsWorks for Chef Automate or OpsWorks for Puppet Enterprise server.
 EngineAttribute is a property of the AWS::OpsWorksCM::Server resource type.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Value

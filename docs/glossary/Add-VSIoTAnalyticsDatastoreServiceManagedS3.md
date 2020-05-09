@@ -16,15 +16,6 @@ Adds an AWS::IoTAnalytics::Datastore.ServiceManagedS3 resource property to the t
 Used to store data store data in an S3 bucket managed by the AWS IoT Analytics service.
 The choice of service-managed or customer-managed S3 storage cannot be changed after creation of the data store.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### CommonParameters

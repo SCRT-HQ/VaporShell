@@ -17,15 +17,6 @@ In AWS CloudFormation, use the PlacementTemplate property type to define the tem
 
 PlacementTemplate is a property of the AWS::IoT1Click::Project resource.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -DeviceTemplates

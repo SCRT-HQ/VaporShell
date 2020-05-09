@@ -7,8 +7,8 @@ A lifecycle rule that deletes application versions after the specified number of
 ## SYNTAX
 
 ```
-Add-VSElasticBeanstalkApplicationMaxAgeRule [[-DeleteSourceFromS3] <Boolean>] [[-Enabled] <Boolean>]
- [[-MaxAgeInDays] <Int32>] [<CommonParameters>]
+Add-VSElasticBeanstalkApplicationMaxAgeRule [[-DeleteSourceFromS3] <Object>] [[-Enabled] <Object>]
+ [[-MaxAgeInDays] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -16,15 +16,6 @@ Adds an AWS::ElasticBeanstalk::Application.MaxAgeRule resource property to the t
 A lifecycle rule that deletes application versions after the specified number of days.
 
 MaxAgeRule is a property of the ApplicationVersionLifecycleConfig: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-applicationversionlifecycleconfig.html property type.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -36,13 +27,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -55,13 +46,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -74,13 +65,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

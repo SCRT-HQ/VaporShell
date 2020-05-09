@@ -14,15 +14,6 @@ Add-VSKinesisAnalyticsV2ApplicationOutputDestinationSchema [[-RecordFormatType] 
 Adds an AWS::KinesisAnalyticsV2::ApplicationOutput.DestinationSchema resource property to the template.
 Describes the data format when records are written to the destination in an SQL-based Amazon Kinesis Data Analytics application.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -RecordFormatType

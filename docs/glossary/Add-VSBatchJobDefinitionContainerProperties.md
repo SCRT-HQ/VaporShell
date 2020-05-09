@@ -7,25 +7,16 @@ Container properties are used in job definitions to describe the container that 
 ## SYNTAX
 
 ```
-Add-VSBatchJobDefinitionContainerProperties [[-User] <Object>] [-Memory] <Int32> [[-Privileged] <Boolean>]
- [[-LinuxParameters] <Object>] [[-JobRoleArn] <Object>] [[-ReadonlyRootFilesystem] <Boolean>] [-Vcpus] <Int32>
- [-Image] <Object> [[-ResourceRequirements] <Object>] [[-MountPoints] <Object>] [[-Volumes] <Object>]
- [[-Command] <Object>] [[-Environment] <Object>] [[-Ulimits] <Object>] [[-InstanceType] <Object>]
- [<CommonParameters>]
+Add-VSBatchJobDefinitionContainerProperties [[-User] <Object>] [[-Memory] <Object>] [[-Privileged] <Object>]
+ [[-LinuxParameters] <Object>] [[-JobRoleArn] <Object>] [[-ReadonlyRootFilesystem] <Object>]
+ [[-Vcpus] <Object>] [-Image] <Object> [[-ResourceRequirements] <Object>] [[-MountPoints] <Object>]
+ [[-Volumes] <Object>] [[-Command] <Object>] [[-Environment] <Object>] [[-Ulimits] <Object>]
+ [[-InstanceType] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Batch::JobDefinition.ContainerProperties resource property to the template.
 Container properties are used in job definitions to describe the container that is launched as part of a job.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -61,13 +52,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -81,13 +72,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -139,13 +130,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 6
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -161,13 +152,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: 7
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

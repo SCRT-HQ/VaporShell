@@ -16,15 +16,6 @@ Adds an AWS::Amplify::App.EnvironmentVariable resource property to the template.
 Environment variables are key-value pairs that are available at build time.
 Set environment variables for all branches in your app.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Value

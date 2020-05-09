@@ -17,15 +17,6 @@ Contains the dimension configuration to use when you publish email sending event
 
 For information about publishing email sending events to Amazon CloudWatch, see the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/event-publishing-add-event-destination-cloudwatch.html.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -DimensionValueSource

@@ -19,15 +19,6 @@ Adds an AWS::Config::OrganizationConfigRule.OrganizationCustomRuleMetadata resou
 An object that specifies organization custom rule metadata such as resource type, resource ID of AWS resource, Lamdba function ARN, and organization trigger types that trigger AWS Config to evaluate your AWS resources against a rule.
 It also provides the frequency with which you want AWS Config to run evaluations for the rule if the trigger type is periodic.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -TagKeyScope

@@ -15,20 +15,17 @@ Add-VSCodePipelinePipelineActionTypeId [-Category] <Object> [-Owner] <Object> [-
 Adds an AWS::CodePipeline::Pipeline.ActionTypeId resource property to the template.
 Represents information about an action type.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Category
 A category defines what kind of action can be taken in the stage, and constrains the provider type for the action.
 Valid categories are limited to one of the values below.
++ Source
++ Build
++ Test
++ Deploy
++ Invoke
++ Approval
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-actiontypeid.html#cfn-codepipeline-pipeline-stages-actions-actiontypeid-category
 PrimitiveType: String
@@ -48,6 +45,8 @@ Accept wildcard characters: False
 
 ### -Owner
 The creator of the action being called.
+There are three valid values for the Owner field in the action category section within your pipeline structure: AWS, ThirdParty, and Custom.
+For more information, see Valid Action Types and Providers in CodePipeline: https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-actiontypeid.html#cfn-codepipeline-pipeline-stages-actions-actiontypeid-owner
 PrimitiveType: String
@@ -69,7 +68,7 @@ Accept wildcard characters: False
 The provider of the service being called by the action.
 Valid providers are determined by the action category.
 For example, an action in the Deploy category type might have a provider of AWS CodeDeploy, which would be specified as CodeDeploy.
-To reference a list of action providers by action type, see Valid Action Types and Providers in CodePipeline: https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers.
+For more information, see Valid Action Types and Providers in CodePipeline: https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#actions-valid-providers.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-actiontypeid.html#cfn-codepipeline-pipeline-stages-actions-actiontypeid-provider
 PrimitiveType: String

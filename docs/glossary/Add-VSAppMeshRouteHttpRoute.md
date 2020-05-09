@@ -2,31 +2,22 @@
 
 ## SYNOPSIS
 Adds an AWS::AppMesh::Route.HttpRoute resource property to the template.
-An object representing the HTTP routing specification for a route.
+An object that represents an HTTP or HTTP/2 route type.
 
 ## SYNTAX
 
 ```
-Add-VSAppMeshRouteHttpRoute [-Action] <Object> [-Match] <Object> [<CommonParameters>]
+Add-VSAppMeshRouteHttpRoute [-Action] <Object> [[-RetryPolicy] <Object>] [-Match] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::AppMesh::Route.HttpRoute resource property to the template.
-An object representing the HTTP routing specification for a route.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+An object that represents an HTTP or HTTP/2 route type.
 
 ## PARAMETERS
 
 ### -Action
-The action to take if a match is determined.
+An object that represents the action to take if a match is determined.
 
 Type: HttpRouteAction
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproute.html#cfn-appmesh-route-httproute-action
@@ -44,8 +35,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -RetryPolicy
+An object that represents a retry policy.
+
+Type: HttpRetryPolicy
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproute.html#cfn-appmesh-route-httproute-retrypolicy
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Match
-The criteria for determining an HTTP request match.
+An object that represents the criteria for determining a request match.
 
 Type: HttpRouteMatch
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproute.html#cfn-appmesh-route-httproute-match
@@ -57,7 +67,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 2
+Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

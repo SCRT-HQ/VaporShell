@@ -15,15 +15,6 @@ Add-VSCognitoIdentityPoolCognitoStreams [[-StreamingStatus] <Object>] [[-StreamN
 Adds an AWS::Cognito::IdentityPool.CognitoStreams resource property to the template.
 CognitoStreams is a property of the AWS::Cognito::IdentityPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html resource that defines configuration options for Amazon Cognito streams.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -StreamingStatus
@@ -48,7 +39,7 @@ Accept wildcard characters: False
 
 ### -StreamName
 The name of the Amazon Cognito stream to receive updates.
-This stream must be in the developer's account and in the same region as the identity pool.
+This stream must be in the developer's account and in the same Region as the identity pool.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-cognitostreams.html#cfn-cognito-identitypool-cognitostreams-streamname
 PrimitiveType: String

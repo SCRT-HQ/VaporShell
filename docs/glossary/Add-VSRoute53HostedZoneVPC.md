@@ -2,7 +2,8 @@
 
 ## SYNOPSIS
 Adds an AWS::Route53::HostedZone.VPC resource property to the template.
-(Private hosted zones only A complex type that contains information about an Amazon VPC.
+*Private hosted zones only:* A complex type that contains information about an Amazon VPC.
+Route 53 Resolver uses the records in the private hosted zone to route traffic in that VPC.
 
 ## SYNTAX
 
@@ -12,21 +13,18 @@ Add-VSRoute53HostedZoneVPC [-VPCId] <Object> [-VPCRegion] <Object> [<CommonParam
 
 ## DESCRIPTION
 Adds an AWS::Route53::HostedZone.VPC resource property to the template.
-(Private hosted zones only A complex type that contains information about an Amazon VPC.
+*Private hosted zones only:* A complex type that contains information about an Amazon VPC.
+Route 53 Resolver uses the records in the private hosted zone to route traffic in that VPC.
 
-## EXAMPLES
+**Note**
 
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+For public hosted zones, omit VPCs, VPCId, and VPCRegion.
 
 ## PARAMETERS
 
 ### -VPCId
-Private hosted zones only The ID of an Amazon VPC.
+*Private hosted zones only:* The ID of an Amazon VPC.
+For public hosted zones, omit VPCs, VPCId, and VPCRegion.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-hostedzone-hostedzonevpcs.html#cfn-route53-hostedzone-hostedzonevpcs-vpcid
 PrimitiveType: String
@@ -45,7 +43,8 @@ Accept wildcard characters: False
 ```
 
 ### -VPCRegion
-Private hosted zones only The region that an Amazon VPC was created in.
+*Private hosted zones only:* The region that an Amazon VPC was created in.
+For public hosted zones, omit VPCs, VPCId, and VPCRegion.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-hostedzone-hostedzonevpcs.html#cfn-route53-hostedzone-hostedzonevpcs-vpcregion
 PrimitiveType: String

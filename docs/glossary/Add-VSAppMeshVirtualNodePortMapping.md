@@ -7,21 +7,12 @@ An object representing a virtual node or virtual router listener port mapping.
 ## SYNTAX
 
 ```
-Add-VSAppMeshVirtualNodePortMapping [-Port] <Int32> [-Protocol] <Object> [<CommonParameters>]
+Add-VSAppMeshVirtualNodePortMapping [-Port] <Object> [-Protocol] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::AppMesh::VirtualNode.PortMapping resource property to the template.
 An object representing a virtual node or virtual router listener port mapping.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -33,19 +24,20 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Protocol
 The protocol used for the port mapping.
+Specify one protocol.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-portmapping.html#cfn-appmesh-virtualnode-portmapping-protocol
 PrimitiveType: String

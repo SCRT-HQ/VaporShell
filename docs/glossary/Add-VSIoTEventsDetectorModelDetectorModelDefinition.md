@@ -15,15 +15,6 @@ Add-VSIoTEventsDetectorModelDetectorModelDefinition [[-States] <Object>] [[-Init
 Adds an AWS::IoTEvents::DetectorModel.DetectorModelDefinition resource property to the template.
 Information that defines how a detector operates.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -States

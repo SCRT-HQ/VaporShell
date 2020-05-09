@@ -14,15 +14,6 @@ Add-VSIoTEventsDetectorModelOnInput [[-Events] <Object>] [[-TransitionEvents] <O
 Adds an AWS::IoTEvents::DetectorModel.OnInput resource property to the template.
 When an input is received and the "condition" is TRUE, perform the specified "actions".
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Events

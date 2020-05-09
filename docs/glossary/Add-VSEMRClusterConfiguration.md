@@ -24,15 +24,6 @@ A classification refers to an application-specific configuration file.
 Properties are the settings you want to change in that file.
 For more information, see Configuring Applications: https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html in the *Amazon EMR Release Guide*.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Classification

@@ -7,22 +7,13 @@ QuotaSettings is a property of the AWS::ApiGateway::UsagePlan: https://docs.aws.
 ## SYNTAX
 
 ```
-Add-VSApiGatewayUsagePlanQuotaSettings [[-Limit] <Int32>] [[-Offset] <Int32>] [[-Period] <Object>]
+Add-VSApiGatewayUsagePlanQuotaSettings [[-Limit] <Object>] [[-Offset] <Object>] [[-Period] <Object>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::ApiGateway::UsagePlan.QuotaSettings resource property to the template.
 QuotaSettings is a property of the AWS::ApiGateway::UsagePlan: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html resource that specifies the maximum number of requests users can make to your REST APIs.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -34,13 +25,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -55,13 +46,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

@@ -16,15 +16,6 @@ Add-VSIoTTopicRuleCloudwatchMetricAction [-MetricName] <Object> [-MetricNamespac
 Adds an AWS::IoT::TopicRule.CloudwatchMetricAction resource property to the template.
 Describes an action that captures a CloudWatch metric.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -MetricName

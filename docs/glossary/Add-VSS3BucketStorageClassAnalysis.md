@@ -14,15 +14,6 @@ Add-VSS3BucketStorageClassAnalysis [[-DataExport] <Object>] [<CommonParameters>]
 Adds an AWS::S3::Bucket.StorageClassAnalysis resource property to the template.
 Specifies data related to access patterns to be collected and made available to analyze the tradeoffs between different storage classes for an Amazon S3 bucket.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -DataExport

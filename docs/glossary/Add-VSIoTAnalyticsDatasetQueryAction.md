@@ -14,15 +14,6 @@ Add-VSIoTAnalyticsDatasetQueryAction [[-Filters] <Object>] [-SqlQuery] <Object> 
 Adds an AWS::IoTAnalytics::Dataset.QueryAction resource property to the template.
 An "SqlQueryDatasetAction" object that uses an SQL query to automatically create data set contents.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Filters

@@ -7,7 +7,7 @@ Information about the SCTE-27 captions to extract from the input.
 ## SYNTAX
 
 ```
-Add-VSMediaLiveChannelScte27SourceSettings [[-Pid] <Int32>] [<CommonParameters>]
+Add-VSMediaLiveChannelScte27SourceSettings [[-Pid] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -15,15 +15,6 @@ Adds an AWS::MediaLive::Channel.Scte27SourceSettings resource property to the te
 Information about the SCTE-27 captions to extract from the input.
 
 The parent of this entity is CaptionSelectorSettings.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -37,13 +28,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

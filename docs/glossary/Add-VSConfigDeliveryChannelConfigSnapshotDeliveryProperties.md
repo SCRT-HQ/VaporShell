@@ -46,15 +46,6 @@ You can view the deliveryFrequency value by using the DescribeDeliveryChannnels 
 
 To update the deliveryFrequency with which AWS Config delivers your configuration snapshots, use the PutDeliveryChannel action.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -DeliveryFrequency

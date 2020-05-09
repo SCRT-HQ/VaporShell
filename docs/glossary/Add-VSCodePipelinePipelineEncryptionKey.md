@@ -14,20 +14,13 @@ Add-VSCodePipelinePipelineEncryptionKey [-Id] <Object> [-Type] <Object> [<Common
 Adds an AWS::CodePipeline::Pipeline.EncryptionKey resource property to the template.
 Represents information about the key used to encrypt data in the artifact store, such as an AWS Key Management Service (AWS KMS key.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Id
 The ID used to identify the key.
-For an AWS KMS key, this is the key ID or key ARN.
+For an AWS KMS key, you can use the key ID, the key ARN, or the alias ARN.
+Aliases are recognized only in the account that created the customer master key CMK.
+For cross-account actions, you can only use the key ID or key ARN to identify the key.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-artifactstore-encryptionkey.html#cfn-codepipeline-pipeline-artifactstore-encryptionkey-id
 PrimitiveType: String

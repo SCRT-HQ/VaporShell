@@ -14,15 +14,6 @@ Add-VSMSKClusterTls [[-CertificateAuthorityArnList] <Object>] [<CommonParameters
 Adds an AWS::MSK::Cluster.Tls resource property to the template.
 Details for client authentication using TLS.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -CertificateAuthorityArnList

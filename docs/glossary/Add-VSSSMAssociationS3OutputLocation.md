@@ -7,31 +7,22 @@ S3OutputLocation is a property of the AWS::SSM::Association: https://docs.aws.am
 ## SYNTAX
 
 ```
-Add-VSSSMAssociationS3OutputLocation [[-OutputS3BucketName] <Object>] [[-OutputS3KeyPrefix] <Object>]
- [<CommonParameters>]
+Add-VSSSMAssociationS3OutputLocation [[-OutputS3Region] <Object>] [[-OutputS3BucketName] <Object>]
+ [[-OutputS3KeyPrefix] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::SSM::Association.S3OutputLocation resource property to the template.
 S3OutputLocation is a property of the AWS::SSM::Association: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html resource that specifies an Amazon S3 bucket where you want to store the results of this association request.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
-### -OutputS3BucketName
-The name of the Amazon S3 bucket.
+### -OutputS3Region
+*Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
 
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-s3outputlocation.html#cfn-ssm-association-s3outputlocation-outputs3bucketname
-PrimitiveType: String
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-s3outputlocation.html#cfn-ssm-association-s3outputlocation-outputs3region
 UpdateType: Mutable
+PrimitiveType: String
 
 ```yaml
 Type: Object
@@ -45,12 +36,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -OutputS3KeyPrefix
-The Amazon S3 bucket subfolder.
+### -OutputS3BucketName
+The name of the S3 bucket.
 
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-s3outputlocation.html#cfn-ssm-association-s3outputlocation-outputs3keyprefix
-PrimitiveType: String
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-s3outputlocation.html#cfn-ssm-association-s3outputlocation-outputs3bucketname
 UpdateType: Mutable
+PrimitiveType: String
 
 ```yaml
 Type: Object
@@ -59,6 +50,25 @@ Aliases:
 
 Required: False
 Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -OutputS3KeyPrefix
+The S3 bucket subfolder.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-s3outputlocation.html#cfn-ssm-association-s3outputlocation-outputs3keyprefix
+UpdateType: Mutable
+PrimitiveType: String
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

@@ -19,15 +19,6 @@ The deserializer you want Kinesis Data Firehose to use for converting the input 
 Kinesis Data Firehose then serializes the data to its final format using the Serializer.
 Kinesis Data Firehose supports two types of deserializers: the Apache Hive JSON SerDe: https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-JSON and the OpenX JSON SerDe: https://github.com/rcongiu/Hive-JSON-Serde.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -HiveJsonSerDe

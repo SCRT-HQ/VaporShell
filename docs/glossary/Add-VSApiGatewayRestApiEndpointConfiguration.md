@@ -7,7 +7,8 @@ The EndpointConfiguration property type specifies the endpoint types of a REST A
 ## SYNTAX
 
 ```
-Add-VSApiGatewayRestApiEndpointConfiguration [[-Types] <Object>] [<CommonParameters>]
+Add-VSApiGatewayRestApiEndpointConfiguration [[-Types] <Object>] [[-VpcEndpointIds] <Object>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -15,15 +16,6 @@ Adds an AWS::ApiGateway::RestApi.EndpointConfiguration resource property to the 
 The EndpointConfiguration property type specifies the endpoint types of a REST API.
 
 EndpointConfiguration is a property of the AWS::ApiGateway::RestApi: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html resource.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -47,6 +39,28 @@ Aliases:
 
 Required: False
 Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -VpcEndpointIds
+A list of VPC endpoint IDs of an API AWS::ApiGateway::RestApi: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html against which to create Route53 ALIASes.
+It is only supported for PRIVATE endpoint type.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-endpointconfiguration.html#cfn-apigateway-restapi-endpointconfiguration-vpcendpointids
+DuplicatesAllowed: False
+PrimitiveItemType: String
+Type: List
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

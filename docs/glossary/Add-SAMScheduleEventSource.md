@@ -12,15 +12,6 @@ Add-SAMScheduleEventSource [-LogicalId] <String> -Schedule <String> [-JSONInput 
 ## DESCRIPTION
 The object describing an event source with type Schedule.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -LogicalId

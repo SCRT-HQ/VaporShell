@@ -19,15 +19,6 @@ The destination can be an Amazon Kinesis stream or an Amazon Kinesis Firehose de
 
 For limits on how many destinations an application can write and other limitations, see Limits: https://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -DestinationSchema

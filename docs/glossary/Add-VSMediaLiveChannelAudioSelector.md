@@ -14,15 +14,6 @@ Add-VSMediaLiveChannelAudioSelector [[-SelectorSettings] <Object>] [[-Name] <Obj
 Adds an AWS::MediaLive::Channel.AudioSelector resource property to the template.
 Information about one audio to extract from the input.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -SelectorSettings

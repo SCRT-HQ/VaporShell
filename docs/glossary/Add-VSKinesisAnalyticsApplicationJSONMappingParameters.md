@@ -14,15 +14,6 @@ Add-VSKinesisAnalyticsApplicationJSONMappingParameters [-RecordRowPath] <Object>
 Adds an AWS::KinesisAnalytics::Application.JSONMappingParameters resource property to the template.
 Provides additional mapping information when JSON is the record format on the streaming source.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -RecordRowPath

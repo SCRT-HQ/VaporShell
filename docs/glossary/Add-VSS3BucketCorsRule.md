@@ -8,21 +8,12 @@ Specifies a cross-origin access rule for an Amazon S3 bucket.
 
 ```
 Add-VSS3BucketCorsRule [[-AllowedHeaders] <Object>] [-AllowedMethods] <Object> [-AllowedOrigins] <Object>
- [[-ExposedHeaders] <Object>] [[-Id] <Object>] [[-MaxAge] <Int32>] [<CommonParameters>]
+ [[-ExposedHeaders] <Object>] [[-Id] <Object>] [[-MaxAge] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::S3::Bucket.CorsRule resource property to the template.
 Specifies a cross-origin access rule for an Amazon S3 bucket.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -141,13 +132,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 6
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

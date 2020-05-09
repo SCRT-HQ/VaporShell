@@ -7,8 +7,9 @@ Specifies the placement of an instance.
 ## SYNTAX
 
 ```
-Add-VSEC2LaunchTemplatePlacement [[-GroupName] <Object>] [[-Tenancy] <Object>] [[-AvailabilityZone] <Object>]
- [[-Affinity] <Object>] [[-HostId] <Object>] [<CommonParameters>]
+Add-VSEC2LaunchTemplatePlacement [[-GroupName] <Object>] [[-Tenancy] <Object>] [[-SpreadDomain] <Object>]
+ [[-PartitionNumber] <Object>] [[-AvailabilityZone] <Object>] [[-Affinity] <Object>] [[-HostId] <Object>]
+ [[-HostResourceGroupArn] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -16,15 +17,6 @@ Adds an AWS::EC2::LaunchTemplate.Placement resource property to the template.
 Specifies the placement of an instance.
 
 Placement is a property of the Amazon EC2 LaunchTemplate LaunchTemplateData: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html property type.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -67,6 +59,45 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -SpreadDomain
+Reserved for future use.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-spreaddomain
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PartitionNumber
+The number of the partition the instance should launch in.
+Valid only if the placement group strategy is set to partition.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-partitionnumber
+PrimitiveType: Integer
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -AvailabilityZone
 The Availability Zone for the instance.
 
@@ -80,7 +111,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 3
+Position: 5
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -99,7 +130,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 4
+Position: 6
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -118,7 +149,27 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 5
+Position: 7
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -HostResourceGroupArn
+The ARN of the host resource group in which to launch the instances.
+If you specify a host resource group ARN, omit the **Tenancy** parameter or set it to host.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-hostresourcegrouparn
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 8
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

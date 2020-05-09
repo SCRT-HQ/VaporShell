@@ -10,7 +10,7 @@ This value must be 2-100 characters long.
 ## SYNTAX
 
 ```
-Add-VSAmazonMQBrokerUser [-Username] <Object> [[-Groups] <Object>] [[-ConsoleAccess] <Boolean>]
+Add-VSAmazonMQBrokerUser [-Username] <Object> [[-Groups] <Object>] [[-ConsoleAccess] <Object>]
  [-Password] <Object> [<CommonParameters>]
 ```
 
@@ -20,15 +20,6 @@ The list of ActiveMQ users (persons or applications who can access queues and to
 This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- .
 _ ~.
 This value must be 2-100 characters long.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -85,13 +76,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

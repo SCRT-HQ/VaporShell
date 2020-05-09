@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 Adds an AWS::AppMesh::VirtualRouter.VirtualRouterListener resource property to the template.
-An object representing a virtual router listener.
+An object that represents a virtual router listener.
 
 ## SYNTAX
 
@@ -12,16 +12,7 @@ Add-VSAppMeshVirtualRouterVirtualRouterListener [-PortMapping] <Object> [<Common
 
 ## DESCRIPTION
 Adds an AWS::AppMesh::VirtualRouter.VirtualRouterListener resource property to the template.
-An object representing a virtual router listener.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+An object that represents a virtual router listener.
 
 ## PARAMETERS
 

@@ -2,28 +2,39 @@
 
 ## SYNOPSIS
 Adds an AWS::AppMesh::VirtualNode.VirtualServiceBackend resource property to the template.
-An object representing a virtual service backend for a virtual node.
+An object that represents a virtual service backend for a virtual node.
 
 ## SYNTAX
 
 ```
-Add-VSAppMeshVirtualNodeVirtualServiceBackend [-VirtualServiceName] <Object> [<CommonParameters>]
+Add-VSAppMeshVirtualNodeVirtualServiceBackend [[-ClientPolicy] <Object>] [-VirtualServiceName] <Object>
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::AppMesh::VirtualNode.VirtualServiceBackend resource property to the template.
-An object representing a virtual service backend for a virtual node.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+An object that represents a virtual service backend for a virtual node.
 
 ## PARAMETERS
+
+### -ClientPolicy
+A reference to an object that represents the client policy for a backend.
+
+Type: ClientPolicy
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualservicebackend.html#cfn-appmesh-virtualnode-virtualservicebackend-clientpolicy
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -VirtualServiceName
 The name of the virtual service that is acting as a virtual node backend.
@@ -38,7 +49,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 1
+Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

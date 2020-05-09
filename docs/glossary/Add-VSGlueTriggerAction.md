@@ -7,24 +7,75 @@ Defines an action to be initiated by a trigger.
 ## SYNTAX
 
 ```
-Add-VSGlueTriggerAction [[-JobName] <Object>] [[-Arguments] <Object>] [[-SecurityConfiguration] <Object>]
- [<CommonParameters>]
+Add-VSGlueTriggerAction [[-NotificationProperty] <Object>] [[-CrawlerName] <Object>] [[-Timeout] <Object>]
+ [[-JobName] <Object>] [[-Arguments] <Object>] [[-SecurityConfiguration] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Glue::Trigger.Action resource property to the template.
 Defines an action to be initiated by a trigger.
 
-## EXAMPLES
+## PARAMETERS
 
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
+### -NotificationProperty
+Specifies configuration properties of a job run notification.
+
+Type: NotificationProperty
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-action.html#cfn-glue-trigger-action-notificationproperty
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
 ```
 
-{{ Add example description here }}
+### -CrawlerName
+The name of the crawler to be used with this action.
 
-## PARAMETERS
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-action.html#cfn-glue-trigger-action-crawlername
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Timeout
+The JobRun timeout in minutes.
+This is the maximum time that a job run can consume resources before it is terminated and enters TIMEOUT status.
+The default is 2,880 minutes 48 hours.
+This overrides the timeout value set in the parent job.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-action.html#cfn-glue-trigger-action-timeout
+PrimitiveType: Integer
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -JobName
 The name of a job to be executed.
@@ -39,7 +90,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 1
+Position: 4
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -62,7 +113,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 2
+Position: 5
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -81,7 +132,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 3
+Position: 6
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

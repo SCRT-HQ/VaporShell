@@ -7,23 +7,14 @@ Describes a load-based auto scaling upscaling or downscaling threshold configura
 ## SYNTAX
 
 ```
-Add-VSOpsWorksLayerAutoScalingThresholds [[-CpuThreshold] <Double>] [[-IgnoreMetricsTime] <Int32>]
- [[-InstanceCount] <Int32>] [[-LoadThreshold] <Double>] [[-MemoryThreshold] <Double>]
- [[-ThresholdsWaitTime] <Int32>] [<CommonParameters>]
+Add-VSOpsWorksLayerAutoScalingThresholds [[-CpuThreshold] <Object>] [[-IgnoreMetricsTime] <Object>]
+ [[-InstanceCount] <Object>] [[-LoadThreshold] <Object>] [[-MemoryThreshold] <Object>]
+ [[-ThresholdsWaitTime] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::OpsWorks::Layer.AutoScalingThresholds resource property to the template.
 Describes a load-based auto scaling upscaling or downscaling threshold configuration, which specifies when AWS OpsWorks Stacks starts or stops load-based instances.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -36,13 +27,13 @@ PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -58,13 +49,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -77,13 +68,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -98,13 +89,13 @@ PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 4
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -118,13 +109,13 @@ PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 5
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -137,13 +128,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 6
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

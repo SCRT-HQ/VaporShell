@@ -7,7 +7,7 @@ Specifies a secondary private IPv4 address for a network interface.
 ## SYNTAX
 
 ```
-Add-VSEC2LaunchTemplatePrivateIpAdd [[-PrivateIpAddress] <Object>] [[-Primary] <Boolean>] [<CommonParameters>]
+Add-VSEC2LaunchTemplatePrivateIpAdd [[-PrivateIpAddress] <Object>] [[-Primary] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -15,15 +15,6 @@ Adds an AWS::EC2::LaunchTemplate.PrivateIpAdd resource property to the template.
 Specifies a secondary private IPv4 address for a network interface.
 
 PrivateIpAdd is a property of the Amazon EC2 LaunchTemplate NetworkInterface: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html property type.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -55,13 +46,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

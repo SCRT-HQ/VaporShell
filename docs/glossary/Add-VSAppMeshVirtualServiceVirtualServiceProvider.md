@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 Adds an AWS::AppMesh::VirtualService.VirtualServiceProvider resource property to the template.
-An object representing the provider for a virtual service.
+An object that represents the provider for a virtual service.
 
 ## SYNTAX
 
@@ -13,16 +13,7 @@ Add-VSAppMeshVirtualServiceVirtualServiceProvider [[-VirtualNode] <Object>] [[-V
 
 ## DESCRIPTION
 Adds an AWS::AppMesh::VirtualService.VirtualServiceProvider resource property to the template.
-An object representing the provider for a virtual service.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+An object that represents the provider for a virtual service.
 
 ## PARAMETERS
 

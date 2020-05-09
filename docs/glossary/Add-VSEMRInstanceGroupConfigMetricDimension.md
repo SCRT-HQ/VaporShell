@@ -22,15 +22,6 @@ The key is known as a Name in CloudWatch.
 By default, Amazon EMR uses one dimension whose Key is JobFlowID and Value is a variable representing the cluster ID, which is ${emr.clusterId}.
 This enables the automatic scaling rule for EMR to bootstrap when the cluster ID becomes available during cluster creation.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Key

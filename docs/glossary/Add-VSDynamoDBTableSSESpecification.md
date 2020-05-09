@@ -7,7 +7,7 @@ Represents the settings used to enable server-side encryption.
 ## SYNTAX
 
 ```
-Add-VSDynamoDBTableSSESpecification [[-KMSMasterKeyId] <Object>] [-SSEEnabled] <Boolean> [[-SSEType] <Object>]
+Add-VSDynamoDBTableSSESpecification [[-KMSMasterKeyId] <Object>] [-SSEEnabled] <Object> [[-SSEType] <Object>]
  [<CommonParameters>]
 ```
 
@@ -15,19 +15,10 @@ Add-VSDynamoDBTableSSESpecification [[-KMSMasterKeyId] <Object>] [-SSEEnabled] <
 Adds an AWS::DynamoDB::Table.SSESpecification resource property to the template.
 Represents the settings used to enable server-side encryption.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -KMSMasterKeyId
-The KMS customer master key CMK that should be used for the AWS KMS encryption.
+The AWS KMS customer master key CMK that should be used for the AWS KMS encryption.
 To specify a CMK, use its key ID, Amazon Resource Name ARN, alias name, or alias ARN.
 Note that you should only provide this parameter if the key is different from the default DynamoDB customer master key alias/aws/dynamodb.
 
@@ -57,13 +48,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

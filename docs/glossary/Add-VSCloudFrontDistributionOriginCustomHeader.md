@@ -15,15 +15,6 @@ Add-VSCloudFrontDistributionOriginCustomHeader [-HeaderValue] <Object> [-HeaderN
 Adds an AWS::CloudFront::Distribution.OriginCustomHeader resource property to the template.
 A complex type that contains HeaderName and HeaderValue elements, if any, for this distribution.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -HeaderValue

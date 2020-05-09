@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 Adds an AWS::AppMesh::VirtualNode.AwsCloudMapServiceDiscovery resource property to the template.
-An object representing the AWS Cloud Map service discovery information for your virtual node.
+An object that represents the AWS Cloud Map service discovery information for your virtual node.
 
 ## SYNTAX
 
@@ -13,16 +13,7 @@ Add-VSAppMeshVirtualNodeAwsCloudMapServiceDiscovery [-NamespaceName] <Object> [-
 
 ## DESCRIPTION
 Adds an AWS::AppMesh::VirtualNode.AwsCloudMapServiceDiscovery resource property to the template.
-An object representing the AWS Cloud Map service discovery information for your virtual node.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+An object that represents the AWS Cloud Map service discovery information for your virtual node.
 
 ## PARAMETERS
 

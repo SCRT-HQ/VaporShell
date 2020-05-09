@@ -15,19 +15,11 @@ Add-VSCodeDeployDeploymentGroupDeploymentStyle [[-DeploymentOption] <Object>] [[
 Adds an AWS::CodeDeploy::DeploymentGroup.DeploymentStyle resource property to the template.
 Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -DeploymentOption
 Indicates whether to route deployment traffic behind a load balancer.
+An EC2 Application Load Balancer or Network Load Balancer is required for an Amazon ECS deployment.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deploymentstyle.html#cfn-codedeploy-deploymentgroup-deploymentstyle-deploymentoption
 PrimitiveType: String

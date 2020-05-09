@@ -8,23 +8,14 @@ Specifies a listener for an Application Load Balancer or Network Load Balancer.
 
 ```
 New-VSElasticLoadBalancingV2Listener [-LogicalId] <String> [-Certificates <Object>] -DefaultActions <Object>
- -LoadBalancerArn <Object> -Port <Int32> -Protocol <Object> [-SslPolicy <Object>] [-DeletionPolicy <String>]
- [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
- [<CommonParameters>]
+ -LoadBalancerArn <Object> -Port <Object> -Protocol <Object> [-SslPolicy <Object>] [-DeletionPolicy <String>]
+ [-UpdateReplacePolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
+ [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::ElasticLoadBalancingV2::Listener resource to the template.
 Specifies a listener for an Application Load Balancer or Network Load Balancer.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,8 +37,9 @@ Accept wildcard characters: False
 ```
 
 ### -Certificates
-The default SSL server certificate.
+The default SSL server certificate for a secure listener.
 You must provide exactly one certificate if the listener protocol is HTTPS or TLS.
+To create a certificate list for a secure listener, use AWS::ElasticLoadBalancingV2::ListenerCertificate: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenercertificate.html.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-certificates
 DuplicatesAllowed: False
@@ -69,6 +61,8 @@ Accept wildcard characters: False
 
 ### -DefaultActions
 The actions for the default rule.
+You cannot define a condition for a default rule.
+To create additional rules for an Application Load Balancer, use AWS::ElasticLoadBalancingV2::ListenerRule: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-defaultactions
 DuplicatesAllowed: False
@@ -115,13 +109,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: Named
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -129,7 +123,7 @@ Accept wildcard characters: False
 ### -Protocol
 The protocol for connections from clients to the load balancer.
 For Application Load Balancers, the supported protocols are HTTP and HTTPS.
-For Network Load Balancers, the supported protocols are TCP and TLS.
+For Network Load Balancers, the supported protocols are TCP, TLS, UDP, and TCP_UDP.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-protocol
 PrimitiveType: String
@@ -148,8 +142,18 @@ Accept wildcard characters: False
 ```
 
 ### -SslPolicy
-HTTPS and TLS listeners\] The security policy that defines which ciphers and protocols are supported.
-The default is the current predefined security policy.
+HTTPS and TLS listeners\] The security policy that defines which protocols and ciphers are supported.
+The following are the possible values:
++  ELBSecurityPolicy-2016-08
++  ELBSecurityPolicy-TLS-1-0-2015-04
++  ELBSecurityPolicy-TLS-1-1-2017-01
++  ELBSecurityPolicy-TLS-1-2-2017-01
++  ELBSecurityPolicy-TLS-1-2-Ext-2018-06
++  ELBSecurityPolicy-FS-2018-06
++  ELBSecurityPolicy-FS-1-1-2019-08
++  ELBSecurityPolicy-FS-1-2-2019-08
++  ELBSecurityPolicy-FS-1-2-Res-2019-08
+For more information, see Security Policies: https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies in the *Application Load Balancers Guide* and Security Policies: https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies in the *Network Load Balancers Guide*.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-sslpolicy
 PrimitiveType: String
@@ -175,6 +179,49 @@ If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the re
 To keep a resource when its stack is deleted, specify Retain for that resource.
 You can use retain for any resource.
 For example, you can retain a nested stack, S3 bucket, or EC2 instance so that you can continue to use or modify those resources after you delete their stacks.
+
+You must use one of the following options: "Delete","Retain","Snapshot"
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdateReplacePolicy
+Use the UpdateReplacePolicy attribute to retain or (in some cases) backup the existing physical instance of a resource when it is replaced during a stack update operation.
+
+When you initiate a stack update, AWS CloudFormation updates resources based on differences between what you submit and the stack's current template and parameters.
+If you update a resource property that requires that the resource be replaced, AWS CloudFormation recreates the resource during the update.
+Recreating the resource generates a new physical ID.
+AWS CloudFormation creates the replacement resource first, and then changes references from other dependent resources to point to the replacement resource.
+By default, AWS CloudFormation then deletes the old resource.
+Using the UpdateReplacePolicy, you can specify that AWS CloudFormation retain or (in some cases) create a snapshot of the old resource.
+
+For resources that support snapshots, such as AWS::EC2::Volume, specify Snapshot to have AWS CloudFormation create a snapshot before deleting the old resource instance.
+
+You can apply the UpdateReplacePolicy attribute to any resource.
+UpdateReplacePolicy is only executed if you update a resource property whose update behavior is specified as Replacement, thereby causing AWS CloudFormation to replace the old resource with a new one with a new physical ID.
+For example, if you update the Engine property of an AWS::RDS::DBInstance resource type, AWS CloudFormation creates a new resource and replaces the current DB instance resource with the new one.
+The UpdateReplacePolicy attribute would then dictate whether AWS CloudFormation deleted, retained, or created a snapshot of the old DB instance.
+The update behavior for each property of a resource is specified in the reference topic for that resource in the AWS Resource and Property Types Reference.
+For more information on resource update behavior, see Update Behaviors of Stack Resources.
+
+The UpdateReplacePolicy attribute applies to stack updates you perform directly, as well as stack updates performed using change sets.
+
+Note
+Resources that are retained continue to exist and continue to incur applicable charges until you delete those resources.
+Snapshots that are created with this policy continue to exist and continue to incur applicable charges until you delete those snapshots.
+UpdateReplacePolicy retains the old physical resource or snapshot, but removes it from AWS CloudFormation's scope.
+
+UpdateReplacePolicy differs from the DeletionPolicy attribute in that it only applies to resources replaced during stack updates.
+Use DeletionPolicy for resources deleted when a stack is deleted, or when the resource definition itself is deleted from the template as part of a stack update.
 
 You must use one of the following options: "Delete","Retain","Snapshot"
 

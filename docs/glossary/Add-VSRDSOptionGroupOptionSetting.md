@@ -14,15 +14,6 @@ Add-VSRDSOptionGroupOptionSetting [[-Name] <Object>] [[-Value] <Object>] [<Commo
 Adds an AWS::RDS::OptionGroup.OptionSetting resource property to the template.
 The OptionSetting property type specifies the value for an option within an OptionSetting property.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Name

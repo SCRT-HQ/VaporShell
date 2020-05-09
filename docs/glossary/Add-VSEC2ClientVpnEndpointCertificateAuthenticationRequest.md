@@ -15,15 +15,6 @@ Add-VSEC2ClientVpnEndpointCertificateAuthenticationRequest [-ClientRootCertifica
 Adds an AWS::EC2::ClientVpnEndpoint.CertificateAuthenticationRequest resource property to the template.
 Information about the client certificate to be used for authentication.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ClientRootCertificateChainArn

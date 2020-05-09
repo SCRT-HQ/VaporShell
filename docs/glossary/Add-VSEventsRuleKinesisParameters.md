@@ -19,15 +19,6 @@ KinesisParameters is a property of the Target: https://docs.aws.amazon.com/AWSCl
 This object enables you to specify a JSON path to extract from the event and use as the partition key for the Amazon Kinesis data stream, so that you can control the shard that the event goes to.
 If you don't include this parameter, the default is to use the eventId as the partition key.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -PartitionKeyPath

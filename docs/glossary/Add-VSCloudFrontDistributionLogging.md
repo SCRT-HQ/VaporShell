@@ -7,22 +7,13 @@ A complex type that controls whether access logs are written for the distributio
 ## SYNTAX
 
 ```
-Add-VSCloudFrontDistributionLogging [[-IncludeCookies] <Boolean>] [-Bucket] <Object> [[-Prefix] <Object>]
+Add-VSCloudFrontDistributionLogging [[-IncludeCookies] <Object>] [-Bucket] <Object> [[-Prefix] <Object>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::CloudFront::Distribution.Logging resource property to the template.
 A complex type that controls whether access logs are written for the distribution.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -36,13 +27,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

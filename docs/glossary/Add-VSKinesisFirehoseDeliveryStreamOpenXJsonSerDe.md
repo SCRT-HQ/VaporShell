@@ -10,9 +10,8 @@ The other option is the native Hive / HCatalog JsonSerDe.
 ## SYNTAX
 
 ```
-Add-VSKinesisFirehoseDeliveryStreamOpenXJsonSerDe [[-CaseInsensitive] <Boolean>]
- [[-ColumnToJsonKeyMappings] <Hashtable>] [[-ConvertDotsInJsonKeysToUnderscores] <Boolean>]
- [<CommonParameters>]
+Add-VSKinesisFirehoseDeliveryStreamOpenXJsonSerDe [[-CaseInsensitive] <Object>]
+ [[-ColumnToJsonKeyMappings] <Hashtable>] [[-ConvertDotsInJsonKeysToUnderscores] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -21,15 +20,6 @@ The OpenX SerDe.
 Used by Kinesis Data Firehose for deserializing data, which means converting it from the JSON format in preparation for serializing it to the Parquet or ORC format.
 This is one of two deserializers you can choose, depending on which one offers the functionality you need.
 The other option is the native Hive / HCatalog JsonSerDe.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -41,13 +31,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -87,13 +77,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

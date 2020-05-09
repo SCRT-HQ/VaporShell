@@ -7,8 +7,8 @@ Specifies a block device for an EBS volume.
 ## SYNTAX
 
 ```
-Add-VSEC2InstanceEbs [[-DeleteOnTermination] <Boolean>] [[-Encrypted] <Boolean>] [[-Iops] <Int32>]
- [[-KmsKeyId] <Object>] [[-SnapshotId] <Object>] [[-VolumeSize] <Int32>] [[-VolumeType] <Object>]
+Add-VSEC2InstanceEbs [[-DeleteOnTermination] <Object>] [[-Encrypted] <Object>] [[-Iops] <Object>]
+ [[-KmsKeyId] <Object>] [[-SnapshotId] <Object>] [[-VolumeSize] <Object>] [[-VolumeType] <Object>]
  [<CommonParameters>]
 ```
 
@@ -18,33 +18,24 @@ Specifies a block device for an EBS volume.
 
 Ebs is a property of the  Amazon EC2 BlockDeviceMapping: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-blockdev-mapping.html property.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -DeleteOnTermination
 Indicates whether the EBS volume is deleted on instance termination.
-For more information, see Preserving Amazon EBS Volumes on Instance Termination: url-doc-domain;AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination in the Amazon Elastic Compute Cloud User Guide.
+For more information, see Preserving Amazon EBS Volumes on Instance Termination: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#preserving-volumes-on-termination in the Amazon Elastic Compute Cloud User Guide.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-blockdev-template.html#cfn-ec2-blockdev-template-deleteontermination
 PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -61,13 +52,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -88,13 +79,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -149,20 +140,21 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 6
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -VolumeType
 The volume type.
-If you set the type to io1, you must also specify the IOPS that the volume supports.
+If you set the type to io1, you must also specify the **Iops** parameter.
+If you set the type to gp2, st1, sc1, or standard, you must omit the **Iops** parameter.
 Default: gp2
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-blockdev-template.html#cfn-ec2-blockdev-template-volumetype

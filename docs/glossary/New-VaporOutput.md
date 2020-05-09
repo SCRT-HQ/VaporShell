@@ -19,13 +19,12 @@ For example, you can output the S3 bucket name for a stack to make the bucket ea
 ### EXAMPLE 1
 ```
 $template = Initialize-Vaporshell -Description "Testing Output"
-```
-
 $template.AddOutput(
     (
         New-VaporOutput -LogicalId "BackupLoadBalancerDNSName" -Description "The DNSName of the backup load balancer" -Value (Add-FnGetAtt -LogicalNameOfResource "BackupLoadBalancer" -AttributeName "DNSName") -Condition "CreateProdResources"
     )
 )
+```
 
 When the template is exported, this will convert to: 
     {

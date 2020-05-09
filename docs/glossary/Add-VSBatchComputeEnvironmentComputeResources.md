@@ -9,11 +9,11 @@ For more information, see Compute Environments: https://docs.aws.amazon.com/batc
 ## SYNTAX
 
 ```
-Add-VSBatchComputeEnvironmentComputeResources [[-SpotIamFleetRole] <Object>] [-MaxvCpus] <Int32>
- [[-BidPercentage] <Int32>] [[-SecurityGroupIds] <Object>] [-Subnets] <Object> [-Type] <Object>
- [-MinvCpus] <Int32> [[-LaunchTemplate] <Object>] [[-ImageId] <Object>] [-InstanceRole] <Object>
- [-InstanceTypes] <Object> [[-Ec2KeyPair] <Object>] [[-PlacementGroup] <Object>] [[-Tags] <Object>]
- [[-DesiredvCpus] <Int32>] [<CommonParameters>]
+Add-VSBatchComputeEnvironmentComputeResources [[-SpotIamFleetRole] <Object>] [-MaxvCpus] <Object>
+ [[-BidPercentage] <Object>] [[-SecurityGroupIds] <Object>] [-Subnets] <Object> [-Type] <Object>
+ [[-AllocationStrategy] <Object>] [-MinvCpus] <Object> [[-LaunchTemplate] <Object>] [[-ImageId] <Object>]
+ [-InstanceRole] <Object> [-InstanceTypes] <Object> [[-Ec2KeyPair] <Object>] [[-PlacementGroup] <Object>]
+ [[-Tags] <Object>] [[-DesiredvCpus] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -22,19 +22,11 @@ Details of the compute resources managed by the compute environment.
 This parameter is required for managed compute environments.
 For more information, see Compute Environments: https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html in the *AWS Batch User Guide*.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -SpotIamFleetRole
 The Amazon Resource Name ARN of the Amazon EC2 Spot Fleet IAM role applied to a SPOT compute environment.
+This role is required if the allocation strategy set to BEST_FIT or if the allocation strategy is not specified.
 For more information, see Amazon EC2 Spot Fleet Role: https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html in the *AWS Batch User Guide*.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-spotiamfleetrole
@@ -54,27 +46,27 @@ Accept wildcard characters: False
 ```
 
 ### -MaxvCpus
-The maximum number of EC2 vCPUs that an environment can reach.
+The maximum number of Amazon EC2 vCPUs that an environment can reach.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-maxvcpus
 PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -BidPercentage
 The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance type before instances are launched.
-For example, if your maximum percentage is 20%, then the Spot price must be below 20% of the current On-Demand price for that EC2 instance.
+For example, if your maximum percentage is 20%, then the Spot price must be below 20% of the current On-Demand price for that Amazon EC2 instance.
 You always pay the lowest market price and never more than your maximum percentage.
 If you leave this field empty, the default value is 100% of the On-Demand price.
 
@@ -83,19 +75,21 @@ PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -SecurityGroupIds
-The EC2 security group that is associated with instances launched in the compute environment.
+The Amazon EC2 security groups associated with instances launched in the compute environment.
+One or more security groups must be specified, either in securityGroupIds or using a launch template referenced in launchTemplate.
+If security groups are specified using both securityGroupIds and launchTemplate, the values in securityGroupIds will be used.
 
 PrimitiveItemType: String
 Type: List
@@ -154,21 +148,47 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -AllocationStrategy
+The allocation strategy to use for the compute resource in case not enough instances of the best fitting instance type can be allocated.
+This could be due to availability of the instance type in the region or Amazon EC2 service limits: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html.
+If this is not specified, the default is BEST_FIT, which will use only the best fitting instance type, waiting for additional capacity if it's not available.
+This allocation strategy keeps costs lower but can limit scaling.
+If you are using Spot Fleets with BEST_FIT then the Spot Fleet IAM Role must be specified.
+BEST_FIT_PROGRESSIVE will select additional instance types that are large enough to meet the requirements of the jobs in the queue, with a preference for instance types with a lower cost per vCPU.
+SPOT_CAPACITY_OPTIMIZED is only available for Spot Instance compute resources and will select additional instance types that are large enough to meet the requirements of the jobs in the queue, with a preference for instance types that are less likely to be interrupted.
+For more information, see Allocation Strategies: https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html  in the *AWS Batch User Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-allocationstrategy
+PrimitiveType: String
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 7
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -MinvCpus
-The minimum number of EC2 vCPUs that an environment should maintain even if the compute environment is DISABLED.
+The minimum number of Amazon EC2 vCPUs that an environment should maintain even if the compute environment is DISABLED.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-minvcpus
 PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 7
-Default value: 0
+Position: 8
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -189,7 +209,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 8
+Position: 9
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -208,7 +228,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 9
+Position: 10
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -230,7 +250,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 10
+Position: 11
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -238,7 +258,7 @@ Accept wildcard characters: False
 
 ### -InstanceTypes
 The instances types that may be launched.
-You can specify instance families to launch any instance type within those families for example, c4 or p3, or you can specify specific sizes within a family such as c4.8xlarge.
+You can specify instance families to launch any instance type within those families for example, c5 or p3, or you can specify specific sizes within a family such as c5.8xlarge.
 You can also choose optimal to pick instance types from the C, M, and R instance families on the fly that match the demand of your job queues.
 
 PrimitiveItemType: String
@@ -252,14 +272,14 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 11
+Position: 12
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Ec2KeyPair
-The EC2 key pair that is used for instances launched in the compute environment.
+The Amazon EC2 key pair that is used for instances launched in the compute environment.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-ec2keypair
 PrimitiveType: String
@@ -271,7 +291,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 12
+Position: 13
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -293,7 +313,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 13
+Position: 14
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -313,27 +333,27 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 14
+Position: 15
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -DesiredvCpus
-The desired number of EC2 vCPUS in the compute environment.
+The desired number of Amazon EC2 vCPUS in the compute environment.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-desiredvcpus
 PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 15
-Default value: 0
+Position: 16
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

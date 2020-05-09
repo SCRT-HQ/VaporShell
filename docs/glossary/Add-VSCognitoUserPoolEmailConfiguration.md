@@ -2,27 +2,18 @@
 
 ## SYNOPSIS
 Adds an AWS::Cognito::UserPool.EmailConfiguration resource property to the template.
-EmailConfiguration is a property of the AWS::Cognito::UserPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html resource that defines the email configuration of an Amazon Cognito User Pool.
+The email configuration.
 
 ## SYNTAX
 
 ```
-Add-VSCognitoUserPoolEmailConfiguration [[-ReplyToEmailAddress] <Object>] [[-EmailSendingAccount] <Object>]
- [[-SourceArn] <Object>] [<CommonParameters>]
+Add-VSCognitoUserPoolEmailConfiguration [[-ReplyToEmailAddress] <Object>] [[-ConfigurationSet] <Object>]
+ [[-EmailSendingAccount] <Object>] [[-SourceArn] <Object>] [[-From] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Cognito::UserPool.EmailConfiguration resource property to the template.
-EmailConfiguration is a property of the AWS::Cognito::UserPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html resource that defines the email configuration of an Amazon Cognito User Pool.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+The email configuration.
 
 ## PARAMETERS
 
@@ -40,6 +31,32 @@ Aliases:
 
 Required: False
 Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ConfigurationSet
+The set of configuration rules that can be applied to emails sent using Amazon SES.
+A configuration set is applied to an email by including a reference to the configuration set in the headers of the email.
+Once applied, all of the rules in that configuration set are applied to the email.
+Configuration sets can be used to apply the following types of rules to emails:
++ Event publishing - Amazon SES can track the number of send, delivery, open, click, bounce, and complaint events for each email sent.
+Use event publishing to send information about these events to other AWS services such as SNS and CloudWatch.
++ IP pool management - When leasing dedicated IP addresses with Amazon SES, you can create groups of IP addresses, called dedicated IP pools.
+You can then associate the dedicated IP pools with configuration sets.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-emailconfiguration.html#cfn-cognito-userpool-emailconfiguration-configurationset
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -76,7 +93,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 2
+Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -98,7 +115,28 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 3
+Position: 4
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -From
+Identifies either the sender's email address or the sender's name with their email address.
+For example, testuser@example.com or Test User \<testuser@example.com\>.
+This address appears before the body of the email.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-emailconfiguration.html#cfn-cognito-userpool-emailconfiguration-from
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 5
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

@@ -7,27 +7,18 @@ StageDescription is a property of the AWS::ApiGateway::Deployment: https://docs.
 ## SYNTAX
 
 ```
-Add-VSApiGatewayDeploymentStageDescription [[-AccessLogSetting] <Object>] [[-CacheClusterEnabled] <Boolean>]
- [[-CacheClusterSize] <Object>] [[-CacheDataEncrypted] <Boolean>] [[-CacheTtlInSeconds] <Int32>]
- [[-CachingEnabled] <Boolean>] [[-CanarySetting] <Object>] [[-ClientCertificateId] <Object>]
- [[-DataTraceEnabled] <Boolean>] [[-Description] <Object>] [[-DocumentationVersion] <Object>]
- [[-LoggingLevel] <Object>] [[-MethodSettings] <Object>] [[-MetricsEnabled] <Boolean>] [[-Tags] <Object>]
- [[-ThrottlingBurstLimit] <Int32>] [[-ThrottlingRateLimit] <Double>] [[-TracingEnabled] <Boolean>]
+Add-VSApiGatewayDeploymentStageDescription [[-AccessLogSetting] <Object>] [[-CacheClusterEnabled] <Object>]
+ [[-CacheClusterSize] <Object>] [[-CacheDataEncrypted] <Object>] [[-CacheTtlInSeconds] <Object>]
+ [[-CachingEnabled] <Object>] [[-CanarySetting] <Object>] [[-ClientCertificateId] <Object>]
+ [[-DataTraceEnabled] <Object>] [[-Description] <Object>] [[-DocumentationVersion] <Object>]
+ [[-LoggingLevel] <Object>] [[-MethodSettings] <Object>] [[-MetricsEnabled] <Object>] [[-Tags] <Object>]
+ [[-ThrottlingBurstLimit] <Object>] [[-ThrottlingRateLimit] <Object>] [[-TracingEnabled] <Object>]
  [[-Variables] <Hashtable>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::ApiGateway::Deployment.StageDescription resource property to the template.
 StageDescription is a property of the AWS::ApiGateway::Deployment: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html resource that configures a deployment stage.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -58,13 +49,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -96,13 +87,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 4
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -115,13 +106,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 5
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -136,13 +127,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 6
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -194,13 +185,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 9
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -292,13 +283,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 14
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -333,13 +324,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 16
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -353,13 +344,13 @@ PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 17
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -373,13 +364,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 18
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

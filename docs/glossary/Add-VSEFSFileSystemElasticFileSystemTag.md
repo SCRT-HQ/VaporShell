@@ -18,15 +18,6 @@ A tag is a key-value pair attached to a file system.
 Allowed characters in the Key and Value properties are letters, white space, and numbers that can be represented in UTF-8, and the following characters: + - = .
 _ : /
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Key

@@ -16,15 +16,6 @@ Adds an AWS::DataPipeline::Pipeline.PipelineTag resource property to the templat
 A list of arbitrary tags (key-value pairs to associate with the pipeline, which you can use to control permissions.
 For more information, see Controlling Access to Pipelines and Resources: https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html in the *AWS Data Pipeline Developer Guide*.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Key

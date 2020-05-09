@@ -7,21 +7,12 @@ Sends an Amazon SNS message.
 ## SYNTAX
 
 ```
-Add-VSIoTEventsDetectorModelSns [[-TargetArn] <Object>] [<CommonParameters>]
+Add-VSIoTEventsDetectorModelSns [[-TargetArn] <Object>] [[-Payload] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::IoTEvents::DetectorModel.Sns resource property to the template.
 Sends an Amazon SNS message.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -39,6 +30,25 @@ Aliases:
 
 Required: False
 Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Payload
+*Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
+Type: Payload
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-sns.html#cfn-iotevents-detectormodel-sns-payload
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

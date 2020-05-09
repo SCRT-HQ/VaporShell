@@ -7,8 +7,8 @@ A complex type that controls:
 ## SYNTAX
 
 ```
-Add-VSCloudFrontDistributionCustomErrorResponse [[-ResponseCode] <Int32>] [[-ErrorCachingMinTTL] <Double>]
- [-ErrorCode] <Int32> [[-ResponsePagePath] <Object>] [<CommonParameters>]
+Add-VSCloudFrontDistributionCustomErrorResponse [[-ResponseCode] <Object>] [[-ErrorCachingMinTTL] <Object>]
+ [-ErrorCode] <Object> [[-ResponsePagePath] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -21,15 +21,6 @@ A complex type that controls:
 
 For more information about custom error pages, see Customizing Error Responses: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html in the *Amazon CloudFront Developer Guide*.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ResponseCode
@@ -40,20 +31,19 @@ If you substitute 200, the response typically won't be intercepted.
 + If you don't care about distinguishing among different client errors or server errors, you can specify 400 or 500 as the ResponseCode for all 4xx or 5xx errors.
 + You might want to return a 200 status code OK and static website so your customers don't know that your website is down.
 If you specify a value for ResponseCode, you must also specify a value for ResponsePagePath.
-If you don't want to specify a value, include an empty element, \<ResponseCode\>, in the XML document.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customerrorresponse.html#cfn-cloudfront-distribution-customerrorresponse-responsecode
 PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -61,7 +51,6 @@ Accept wildcard characters: False
 ### -ErrorCachingMinTTL
 The minimum amount of time, in seconds, that you want CloudFront to cache the HTTP status code specified in ErrorCode.
 When this time period has elapsed, CloudFront queries your origin to see whether the problem that caused the error has been resolved and the requested object is now available.
-If you don't want to specify a value, include an empty element, \<ErrorCachingMinTTL\>, in the XML document.
 For more information, see Customizing Error Responses: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html in the *Amazon CloudFront Developer Guide*.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customerrorresponse.html#cfn-cloudfront-distribution-customerrorresponse-errorcachingminttl
@@ -69,13 +58,13 @@ PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -88,13 +77,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 3
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -107,7 +96,6 @@ For example, suppose you saved custom error pages for 4xx errors in an Amazon S3
 Your distribution must include a cache behavior for which the path pattern routes requests for your custom error pages to that location, for example, /4xx-errors/*.
 + The value of TargetOriginId specifies the value of the ID element for the origin that contains your custom error pages.
 If you specify a value for ResponsePagePath, you must also specify a value for ResponseCode.
-If you don't want to specify a value, include an empty element, \<ResponsePagePath\>, in the XML document.
 We recommend that you store custom error pages in an Amazon S3 bucket.
 If you store custom error pages on an HTTP server and the server starts to return 5xx errors, CloudFront can't get the files that you want to return to viewers because the origin server is unavailable.
 

@@ -7,21 +7,12 @@ The Ulimit property specifies the ulimit settings to pass to the container.
 ## SYNTAX
 
 ```
-Add-VSECSTaskDefinitionUlimit [-HardLimit] <Int32> [-Name] <Object> [-SoftLimit] <Int32> [<CommonParameters>]
+Add-VSECSTaskDefinitionUlimit [-HardLimit] <Object> [-Name] <Object> [-SoftLimit] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::ECS::TaskDefinition.Ulimit resource property to the template.
 The Ulimit property specifies the ulimit settings to pass to the container.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -33,13 +24,13 @@ PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -71,13 +62,13 @@ PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 3
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

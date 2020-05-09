@@ -13,15 +13,6 @@ Add-VSElasticBeanstalkEnvironmentOptionSettings [-Namespace] <Object> [-OptionNa
 ## DESCRIPTION
 Adds an AWS::ElasticBeanstalk::Environment.OptionSettings resource property to the template
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Namespace

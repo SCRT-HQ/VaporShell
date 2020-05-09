@@ -14,15 +14,6 @@ Add-VSEC2ClientVpnEndpointDirectoryServiceAuthenticationRequest [-DirectoryId] <
 Adds an AWS::EC2::ClientVpnEndpoint.DirectoryServiceAuthenticationRequest resource property to the template.
 Describes the Active Directory to be used for client authentication.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -DirectoryId

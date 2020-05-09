@@ -7,22 +7,13 @@ Use the BasicAuthConfig property type to set password protection for a specific 
 ## SYNTAX
 
 ```
-Add-VSAmplifyBranchBasicAuthConfig [-Username] <Object> [[-EnableBasicAuth] <Boolean>] [-Password] <Object>
+Add-VSAmplifyBranchBasicAuthConfig [-Username] <Object> [[-EnableBasicAuth] <Object>] [-Password] <Object>
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Amplify::Branch.BasicAuthConfig resource property to the template.
 Use the BasicAuthConfig property type to set password protection for a specific branch.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -53,13 +44,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

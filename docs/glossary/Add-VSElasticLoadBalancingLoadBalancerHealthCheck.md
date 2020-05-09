@@ -15,15 +15,6 @@ Add-VSElasticLoadBalancingLoadBalancerHealthCheck [-HealthyThreshold] <Object> [
 Adds an AWS::ElasticLoadBalancing::LoadBalancer.HealthCheck resource property to the template.
 Specifies health check settings for your Classic Load Balancer.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -HealthyThreshold

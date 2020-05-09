@@ -4,7 +4,7 @@
 Adds an AWS::S3::Bucket.SourceSelectionCriteria resource property to the template.
 A container that describes additional filters for identifying the source objects that you want to replicate.
 You can choose to enable or disable the replication of these objects.
-Currently, Amazon S3 supports only the filter that you can specify for objects created with server-side encryption using an AWS KMS-Managed Key (SSE-KMS.
+Currently, Amazon S3 supports only the filter that you can specify for objects created with server-side encryption using a customer master key (CMK stored in AWS Key Management Service (SSE-KMS.
 
 ## SYNTAX
 
@@ -16,16 +16,7 @@ Add-VSS3BucketSourceSelectionCriteria [-SseKmsEncryptedObjects] <Object> [<Commo
 Adds an AWS::S3::Bucket.SourceSelectionCriteria resource property to the template.
 A container that describes additional filters for identifying the source objects that you want to replicate.
 You can choose to enable or disable the replication of these objects.
-Currently, Amazon S3 supports only the filter that you can specify for objects created with server-side encryption using an AWS KMS-Managed Key (SSE-KMS.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+Currently, Amazon S3 supports only the filter that you can specify for objects created with server-side encryption using a customer master key (CMK stored in AWS Key Management Service (SSE-KMS.
 
 ## PARAMETERS
 

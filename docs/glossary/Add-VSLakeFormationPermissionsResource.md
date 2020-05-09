@@ -8,21 +8,12 @@ A structure for the resource.
 
 ```
 Add-VSLakeFormationPermissionsResource [[-TableResource] <Object>] [[-DatabaseResource] <Object>]
- [<CommonParameters>]
+ [[-DataLocationResource] <Object>] [[-TableWithColumnsResource] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::LakeFormation::Permissions.Resource resource property to the template.
 A structure for the resource.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -61,6 +52,44 @@ Aliases:
 
 Required: False
 Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DataLocationResource
+Currently not supported by AWS CloudFormation.
+
+Type: DataLocationResource
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-resource.html#cfn-lakeformation-permissions-resource-datalocationresource
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TableWithColumnsResource
+Currently not supported by AWS CloudFormation.
+
+Type: TableWithColumnsResource
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-resource.html#cfn-lakeformation-permissions-resource-tablewithcolumnsresource
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

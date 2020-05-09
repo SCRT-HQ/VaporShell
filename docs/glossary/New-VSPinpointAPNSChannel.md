@@ -4,14 +4,14 @@
 Adds an AWS::Pinpoint::APNSChannel resource to the template.
 A *channel* is a type of platform that you can deliver messages to.
 You can use the APNs channel to send push notification messages to the Apple Push Notification service (APNs.
-Before you use Amazon Pinpoint to send notifications to APNs, you have to enable the APNs channel for an Amazon Pinpoint app.
+Before you can use Amazon Pinpoint to send notifications to APNs, you have to enable the APNs channel for an Amazon Pinpoint application.
 
 ## SYNTAX
 
 ```
-New-VSPinpointAPNSChannel [-LogicalId] <String> [-BundleId <Object>] [-PrivateKey <Object>]
- [-Enabled <Boolean>] [-DefaultAuthenticationMethod <Object>] [-TokenKey <Object>] -ApplicationId <Object>
- [-TeamId <Object>] [-Certificate <Object>] [-TokenKeyId <Object>] [-DeletionPolicy <String>]
+New-VSPinpointAPNSChannel [-LogicalId] <String> [-BundleId <Object>] [-PrivateKey <Object>] [-Enabled <Object>]
+ [-DefaultAuthenticationMethod <Object>] [-TokenKey <Object>] -ApplicationId <Object> [-TeamId <Object>]
+ [-Certificate <Object>] [-TokenKeyId <Object>] [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>]
  [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
  [<CommonParameters>]
 ```
@@ -20,19 +20,9 @@ New-VSPinpointAPNSChannel [-LogicalId] <String> [-BundleId <Object>] [-PrivateKe
 Adds an AWS::Pinpoint::APNSChannel resource to the template.
 A *channel* is a type of platform that you can deliver messages to.
 You can use the APNs channel to send push notification messages to the Apple Push Notification service (APNs.
-Before you use Amazon Pinpoint to send notifications to APNs, you have to enable the APNs channel for an Amazon Pinpoint app.
+Before you can use Amazon Pinpoint to send notifications to APNs, you have to enable the APNs channel for an Amazon Pinpoint application.
 
-The APNs Channel resource represents the status and authentication settings for the APNs channel for a specific application.
-You can use this resource to retrieve information about, update, or disable (delete the APNs channel for an application.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+The AWS::Pinpoint::APNSChannel resource defines the status and authentication settings of the APNs channel for an application.
 
 ## PARAMETERS
 
@@ -100,20 +90,19 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -DefaultAuthenticationMethod
-The default authentication method that you want Amazon Pinpoint to use when authenticating with APNs.
-Valid options are key or certificate.
+The default authentication method that you want Amazon Pinpoint to use when authenticating with APNs, key or certificate.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnschannel.html#cfn-pinpoint-apnschannel-defaultauthenticationmethod
 PrimitiveType: String
@@ -151,7 +140,7 @@ Accept wildcard characters: False
 ```
 
 ### -ApplicationId
-The unique identifier of the Amazon Pinpoint application that the APNs channel applies to.
+The unique identifier for the application that the APNs channel applies to.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnschannel.html#cfn-pinpoint-apnschannel-applicationid
 PrimitiveType: String
@@ -170,7 +159,7 @@ Accept wildcard characters: False
 ```
 
 ### -TeamId
-The identifier that's assigned to your Apple Developer Account team.
+The identifier that's assigned to your Apple developer account team.
 This identifier is used for APNs tokens.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnschannel.html#cfn-pinpoint-apnschannel-teamid
@@ -190,8 +179,7 @@ Accept wildcard characters: False
 ```
 
 ### -Certificate
-The APNs client certificate that you received from Apple.
-Specify this value if you want Amazon Pinpoint to communicate with APNs by using an APNs certificate.
+The APNs client certificate that you received from Apple, if you want Amazon Pinpoint to communicate with APNs by using an APNs certificate.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnschannel.html#cfn-pinpoint-apnschannel-certificate
 PrimitiveType: String
@@ -210,8 +198,7 @@ Accept wildcard characters: False
 ```
 
 ### -TokenKeyId
-The key identifier that's assigned to your APNs signing key.
-Specify this value if you want Amazon Pinpoint to communicate with APNs by using APNs tokens.
+The key identifier that's assigned to your APNs signing key, if you want Amazon Pinpoint to communicate with APNs by using APNs tokens.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnschannel.html#cfn-pinpoint-apnschannel-tokenkeyid
 PrimitiveType: String
@@ -237,6 +224,49 @@ If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the re
 To keep a resource when its stack is deleted, specify Retain for that resource.
 You can use retain for any resource.
 For example, you can retain a nested stack, S3 bucket, or EC2 instance so that you can continue to use or modify those resources after you delete their stacks.
+
+You must use one of the following options: "Delete","Retain","Snapshot"
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdateReplacePolicy
+Use the UpdateReplacePolicy attribute to retain or (in some cases) backup the existing physical instance of a resource when it is replaced during a stack update operation.
+
+When you initiate a stack update, AWS CloudFormation updates resources based on differences between what you submit and the stack's current template and parameters.
+If you update a resource property that requires that the resource be replaced, AWS CloudFormation recreates the resource during the update.
+Recreating the resource generates a new physical ID.
+AWS CloudFormation creates the replacement resource first, and then changes references from other dependent resources to point to the replacement resource.
+By default, AWS CloudFormation then deletes the old resource.
+Using the UpdateReplacePolicy, you can specify that AWS CloudFormation retain or (in some cases) create a snapshot of the old resource.
+
+For resources that support snapshots, such as AWS::EC2::Volume, specify Snapshot to have AWS CloudFormation create a snapshot before deleting the old resource instance.
+
+You can apply the UpdateReplacePolicy attribute to any resource.
+UpdateReplacePolicy is only executed if you update a resource property whose update behavior is specified as Replacement, thereby causing AWS CloudFormation to replace the old resource with a new one with a new physical ID.
+For example, if you update the Engine property of an AWS::RDS::DBInstance resource type, AWS CloudFormation creates a new resource and replaces the current DB instance resource with the new one.
+The UpdateReplacePolicy attribute would then dictate whether AWS CloudFormation deleted, retained, or created a snapshot of the old DB instance.
+The update behavior for each property of a resource is specified in the reference topic for that resource in the AWS Resource and Property Types Reference.
+For more information on resource update behavior, see Update Behaviors of Stack Resources.
+
+The UpdateReplacePolicy attribute applies to stack updates you perform directly, as well as stack updates performed using change sets.
+
+Note
+Resources that are retained continue to exist and continue to incur applicable charges until you delete those resources.
+Snapshots that are created with this policy continue to exist and continue to incur applicable charges until you delete those snapshots.
+UpdateReplacePolicy retains the old physical resource or snapshot, but removes it from AWS CloudFormation's scope.
+
+UpdateReplacePolicy differs from the DeletionPolicy attribute in that it only applies to resources replaced during stack updates.
+Use DeletionPolicy for resources deleted when a stack is deleted, or when the resource definition itself is deleted from the template as part of a stack update.
 
 You must use one of the following options: "Delete","Retain","Snapshot"
 

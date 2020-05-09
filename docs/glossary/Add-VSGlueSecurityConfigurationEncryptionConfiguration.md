@@ -15,15 +15,6 @@ Add-VSGlueSecurityConfigurationEncryptionConfiguration [[-S3Encryptions] <Object
 Adds an AWS::Glue::SecurityConfiguration.EncryptionConfiguration resource property to the template.
 Specifies an encryption configuration.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -S3Encryptions

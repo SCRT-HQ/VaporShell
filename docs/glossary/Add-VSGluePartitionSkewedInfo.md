@@ -17,15 +17,6 @@ Adds an AWS::Glue::Partition.SkewedInfo resource property to the template.
 Specifies skewed values in a table.
 Skewed values are those that occur with very high frequency.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -SkewedColumnNames

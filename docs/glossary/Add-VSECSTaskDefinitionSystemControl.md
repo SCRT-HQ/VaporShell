@@ -23,15 +23,6 @@ If you set different systemControls for multiple containers in a single task, th
 
 + For tasks that use the host network mode, the systemControls parameter applies to the container instance's kernel parameter as well as that of all containers of any tasks running on that container instance.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Namespace

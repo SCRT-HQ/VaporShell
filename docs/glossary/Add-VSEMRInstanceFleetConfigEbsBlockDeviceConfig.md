@@ -9,22 +9,13 @@ EbsBlockDeviceConfig defines the number and type of EBS volumes to associate wit
 
 ```
 Add-VSEMRInstanceFleetConfigEbsBlockDeviceConfig [-VolumeSpecification] <Object>
- [[-VolumesPerInstance] <Int32>] [<CommonParameters>]
+ [[-VolumesPerInstance] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::EMR::InstanceFleetConfig.EbsBlockDeviceConfig resource property to the template.
 EbsBlockDeviceConfig is a subproperty of the EbsConfiguration property type.
 EbsBlockDeviceConfig defines the number and type of EBS volumes to associate with all EC2 instances in an EMR cluster.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -55,13 +46,13 @@ PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

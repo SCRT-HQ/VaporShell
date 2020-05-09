@@ -14,25 +14,14 @@ Add-VSSSMAssociationTarget [-Key] <Object> [-Values] <Object> [<CommonParameters
 Adds an AWS::SSM::Association.Target resource property to the template.
 Target is a property of the AWS::SSM::Association: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html resource that specifies the targets for an SSM document in Systems Manager.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Key
 User-defined criteria for sending commands that target instances that meet the criteria.
-Key can be tag:\<Amazon EC2 tag\> or InstanceIds.
-For more information about how to send commands that target instances using Key,Value parameters, see Using Targets and Rate Controls to Send Commands to a Fleet: https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting in the *AWS Systems Manager User Guide*.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-target.html#cfn-ssm-association-target-key
+UpdateType: Mutable
 PrimitiveType: String
-UpdateType: Immutable
 
 ```yaml
 Type: Object
@@ -48,14 +37,12 @@ Accept wildcard characters: False
 
 ### -Values
 User-defined criteria that maps to Key.
-For example, if you specified tag:ServerRole, you could specify value:WebServer to run a command on instances that include Amazon EC2 tags of ServerRole,WebServer.
-For more information about how to send commands that target instances using Key,Value parameters, see Using Targets and Rate Controls to Send Commands to a Fleet: https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html in the *AWS Systems Manager User Guide*.
+For example, if you specified tag:ServerRole, you could specify value:WebServer to run a command on instances that include EC2 tags of ServerRole,WebServer.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-target.html#cfn-ssm-association-target-values
-DuplicatesAllowed: False
-PrimitiveItemType: String
+UpdateType: Mutable
 Type: List
-UpdateType: Immutable
+PrimitiveItemType: String
 
 ```yaml
 Type: Object

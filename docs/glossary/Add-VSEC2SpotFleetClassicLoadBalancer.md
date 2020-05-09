@@ -14,15 +14,6 @@ Add-VSEC2SpotFleetClassicLoadBalancer [-Name] <Object> [<CommonParameters>]
 Adds an AWS::EC2::SpotFleet.ClassicLoadBalancer resource property to the template.
 Specifies a Classic Load Balancer.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Name

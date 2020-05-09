@@ -17,15 +17,6 @@ Information about how to connect to the upstream system.
 
 The parent of this entity is InputSettings.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ServerValidation

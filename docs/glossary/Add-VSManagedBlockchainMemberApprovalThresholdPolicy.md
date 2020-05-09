@@ -11,7 +11,7 @@ The policy applies to all proposals and is specified when the network is created
 
 ```
 Add-VSManagedBlockchainMemberApprovalThresholdPolicy [[-ThresholdComparator] <Object>]
- [[-ThresholdPercentage] <Int32>] [[-ProposalDurationInHours] <Int32>] [<CommonParameters>]
+ [[-ThresholdPercentage] <Object>] [[-ProposalDurationInHours] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -20,15 +20,6 @@ A policy type that defines the voting rules for the network.
 The rules decide if a proposal is approved.
 Approval may be based on criteria such as the percentage of YES votes and the duration of the proposal.
 The policy applies to all proposals and is specified when the network is created.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -62,13 +53,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -82,13 +73,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

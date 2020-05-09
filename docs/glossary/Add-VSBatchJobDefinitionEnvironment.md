@@ -14,15 +14,6 @@ Add-VSBatchJobDefinitionEnvironment [[-Value] <Object>] [[-Name] <Object>] [<Com
 Adds an AWS::Batch::JobDefinition.Environment resource property to the template.
 The Environment property type specifies environment variables to use in a job definition.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Value

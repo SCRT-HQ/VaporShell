@@ -2,28 +2,19 @@
 
 ## SYNOPSIS
 Adds an AWS::Cognito::UserPool.PasswordPolicy resource property to the template.
-PasswordPolicy is a subproperty of the Policies: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-policies.html property that defines the password policy of an Amazon Cognito User Pool.
+The password policy type.
 
 ## SYNTAX
 
 ```
-Add-VSCognitoUserPoolPasswordPolicy [[-RequireNumbers] <Boolean>] [[-MinimumLength] <Int32>]
- [[-TemporaryPasswordValidityDays] <Int32>] [[-RequireUppercase] <Boolean>] [[-RequireLowercase] <Boolean>]
- [[-RequireSymbols] <Boolean>] [<CommonParameters>]
+Add-VSCognitoUserPoolPasswordPolicy [[-RequireNumbers] <Object>] [[-MinimumLength] <Object>]
+ [[-TemporaryPasswordValidityDays] <Object>] [[-RequireUppercase] <Object>] [[-RequireLowercase] <Object>]
+ [[-RequireSymbols] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Cognito::UserPool.PasswordPolicy resource property to the template.
-PasswordPolicy is a subproperty of the Policies: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-policies.html property that defines the password policy of an Amazon Cognito User Pool.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+The password policy type.
 
 ## PARAMETERS
 
@@ -35,13 +26,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -55,13 +46,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -76,13 +67,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -95,13 +86,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 4
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -114,13 +105,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 5
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -133,13 +124,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 6
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

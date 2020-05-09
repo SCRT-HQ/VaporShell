@@ -8,16 +8,16 @@ Container definitions are used in task definitions to describe the different con
 ## SYNTAX
 
 ```
-Add-VSECSTaskDefinitionContainerDefinition [[-Command] <Object>] [[-Cpu] <Int32>] [[-DependsOn] <Object>]
- [[-DisableNetworking] <Boolean>] [[-DnsSearchDomains] <Object>] [[-DnsServers] <Object>]
+Add-VSECSTaskDefinitionContainerDefinition [[-Command] <Object>] [[-Cpu] <Object>] [[-DependsOn] <Object>]
+ [[-DisableNetworking] <Object>] [[-DnsSearchDomains] <Object>] [[-DnsServers] <Object>]
  [[-DockerLabels] <Hashtable>] [[-DockerSecurityOptions] <Object>] [[-EntryPoint] <Object>]
- [[-Environment] <Object>] [[-Essential] <Boolean>] [[-ExtraHosts] <Object>] [[-HealthCheck] <Object>]
- [[-Hostname] <Object>] [[-Image] <Object>] [[-Interactive] <Boolean>] [[-Links] <Object>]
- [[-LinuxParameters] <Object>] [[-LogConfiguration] <Object>] [[-Memory] <Int32>]
- [[-MemoryReservation] <Int32>] [[-MountPoints] <Object>] [[-Name] <Object>] [[-PortMappings] <Object>]
- [[-Privileged] <Boolean>] [[-PseudoTerminal] <Boolean>] [[-ReadonlyRootFilesystem] <Boolean>]
+ [[-Environment] <Object>] [[-Essential] <Object>] [[-ExtraHosts] <Object>] [[-FirelensConfiguration] <Object>]
+ [[-HealthCheck] <Object>] [[-Hostname] <Object>] [[-Image] <Object>] [[-Interactive] <Object>]
+ [[-Links] <Object>] [[-LinuxParameters] <Object>] [[-LogConfiguration] <Object>] [[-Memory] <Object>]
+ [[-MemoryReservation] <Object>] [[-MountPoints] <Object>] [[-Name] <Object>] [[-PortMappings] <Object>]
+ [[-Privileged] <Object>] [[-PseudoTerminal] <Object>] [[-ReadonlyRootFilesystem] <Object>]
  [[-RepositoryCredentials] <Object>] [[-ResourceRequirements] <Object>] [[-Secrets] <Object>]
- [[-StartTimeout] <Int32>] [[-StopTimeout] <Int32>] [[-SystemControls] <Object>] [[-Ulimits] <Object>]
+ [[-StartTimeout] <Object>] [[-StopTimeout] <Object>] [[-SystemControls] <Object>] [[-Ulimits] <Object>]
  [[-User] <Object>] [[-VolumesFrom] <Object>] [[-WorkingDirectory] <Object>] [<CommonParameters>]
 ```
 
@@ -25,15 +25,6 @@ Add-VSECSTaskDefinitionContainerDefinition [[-Command] <Object>] [[-Cpu] <Int32>
 Adds an AWS::ECS::TaskDefinition.ContainerDefinition resource property to the template.
 The ContainerDefinition property specifies a container definition.
 Container definitions are used in task definitions to describe the different containers that are launched as part of a task.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -66,8 +57,6 @@ The number of cpu units reserved for the container.
 This parameter maps to CpuShares in the Create a container: https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate section of the Docker Remote API: https://docs.docker.com/engine/api/v1.35/ and the --cpu-shares option to docker run: https://docs.docker.com/engine/reference/run/.
 This field is optional for tasks using the Fargate launch type, and the only requirement is that the total amount of CPU reserved for all containers within a task be lower than the task-level cpu value.
 You can determine the number of CPU units that are available per EC2 instance type by multiplying the vCPUs listed for that instance type on the Amazon EC2 Instances: http://aws.amazon.com/ec2/instance-types/ detail page by 1,024.
-For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time.
-However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.
 Linux containers share unallocated CPU units with other containers on the container instance with the same ratio as their allocated amount.
 For example, if you run a single-container task on a single-core instance type with 512 CPU units specified for that container, and that is the only task running on the container instance, that container could use the full 1,024 CPU unit share at any given time.
 However, if you launched another copy of the same task on that container instance, each task would be guaranteed a minimum of 512 CPU units when needed, and each container could float to higher CPU usage if the other container was not using it, but if both tasks were 100% active all of the time, they would be limited to 512 CPU units.
@@ -77,13 +66,13 @@ PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -98,7 +87,7 @@ For information about checking your agent version and updating to the latest ver
 If you are using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the ecs-init package.
 If your container instances are launched from version 20190301 or later, then they contain the required versions of the container agent and ecs-init.
 For more information, see Amazon ECS-optimized Linux AMI: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html in the *Amazon Elastic Container Service Developer Guide*.
-This parameter is available for tasks using the Fargate launch type in the Ohio us-east-2 region only and the task or service requires platform version 1.3.0 or later.
+For tasks using the Fargate launch type, the task or service requires platform version 1.3.0 or later.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-dependson
 DuplicatesAllowed: False
@@ -128,13 +117,13 @@ PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 4
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -212,10 +201,11 @@ Accept wildcard characters: False
 ### -DockerSecurityOptions
 A list of strings to provide custom labels for SELinux and AppArmor multi-level security systems.
 This field is not valid for containers in tasks using the Fargate launch type.
+With Windows containers, this parameter can be used to reference a credential spec file when configuring a container for Active Directory authentication.
+For more information, see Using gMSAs for Windows Containers: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html in the *Amazon Elastic Container Service Developer Guide*.
 This parameter maps to SecurityOpt in the Create a container: https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate section of the Docker Remote API: https://docs.docker.com/engine/api/v1.35/ and the --security-opt option to docker run: https://docs.docker.com/engine/reference/run/.
 The Amazon ECS container agent running on a container instance must register with the ECS_SELINUX_CAPABLE=true or ECS_APPARMOR_CAPABLE=true environment variables before containers placed on that instance can use these security options.
 For more information, see Amazon ECS Container Agent Configuration: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html in the *Amazon Elastic Container Service Developer Guide*.
-This parameter is not supported for Windows containers.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-dockersecurityoptions
 DuplicatesAllowed: False
@@ -296,13 +286,13 @@ PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 11
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -330,8 +320,29 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -FirelensConfiguration
+The FireLens configuration for the container.
+This is used to specify and configure a log router for container logs.
+For more information, see Custom Log Routing: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html in the *Amazon Elastic Container Service Developer Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-firelensconfiguration
+Type: FirelensConfiguration
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 13
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -HealthCheck
-The health check command and associated configuration parameters for the container.
+The container health check command and associated configuration parameters for the container.
 This parameter maps to HealthCheck in the Create a container: https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate section of the Docker Remote API: https://docs.docker.com/engine/api/v1.35/ and the HEALTHCHECK parameter of docker run: https://docs.docker.com/engine/reference/run/.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-healthcheck
@@ -344,7 +355,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 13
+Position: 14
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -365,7 +376,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 14
+Position: 15
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -396,7 +407,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 15
+Position: 16
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -411,13 +422,13 @@ PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 16
-Default value: False
+Position: 17
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -445,7 +456,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 17
+Position: 18
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -466,7 +477,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 18
+Position: 19
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -497,7 +508,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 19
+Position: 20
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -520,13 +531,13 @@ PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 20
-Default value: 0
+Position: 21
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -549,13 +560,13 @@ PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 21
-Default value: 0
+Position: 22
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -578,7 +589,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 22
+Position: 23
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -600,7 +611,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 23
+Position: 24
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -631,7 +642,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 24
+Position: 25
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -647,13 +658,13 @@ PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 25
-Default value: False
+Position: 26
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -667,13 +678,13 @@ PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 26
-Default value: False
+Position: 27
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -688,13 +699,13 @@ PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 27
-Default value: False
+Position: 28
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -712,7 +723,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 28
+Position: 29
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -734,7 +745,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 29
+Position: 30
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -756,7 +767,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 30
+Position: 31
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -767,36 +778,40 @@ Time duration in seconds to wait before giving up on resolving dependencies for 
 For example, you specify two containers in a task definition with containerA having a dependency on containerB reaching a COMPLETE, SUCCESS, or HEALTHY status.
 If a startTimeout value is specified for containerB and it does not reach the desired status within that time then containerA will give up and not start.
 This results in the task transitioning to a STOPPED state.
-For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the container agent to enable a container start timeout value.
+For tasks using the Fargate launch type, this parameter requires that the task or service uses platform version 1.3.0 or later.
+If this parameter is not specified, the default value of 3 minutes is used.
+For tasks using the EC2 launch type, if the startTimeout parameter is not specified, the value set for the Amazon ECS container agent configuration variable ECS_CONTAINER_START_TIMEOUT is used by default.
+If neither the startTimeout parameter or the ECS_CONTAINER_START_TIMEOUT agent configuration variable are set, then the default values of 3 minutes for Linux containers and 8 minutes on Windows containers are used.
+Your container instances require at least version 1.26.0 of the container agent to enable a container start timeout value.
 However, we recommend using the latest container agent version.
 For information about checking your agent version and updating to the latest version, see Updating the Amazon ECS Container Agent: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html in the *Amazon Elastic Container Service Developer Guide*.
 If you are using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the ecs-init package.
 If your container instances are launched from version 20190301 or later, then they contain the required versions of the container agent and ecs-init.
 For more information, see Amazon ECS-optimized Linux AMI: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html in the *Amazon Elastic Container Service Developer Guide*.
-This parameter is available for tasks using the Fargate launch type in the Ohio us-east-2 region only and the task or service requires platform version 1.3.0 or later.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-starttimeout
 PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 31
-Default value: 0
+Position: 32
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -StopTimeout
 Time duration in seconds to wait before the container is forcefully killed if it doesn't exit normally on its own.
-For tasks using the Fargate launch type, the max stopTimeout value is 2 minutes.
-This parameter is available for tasks using the Fargate launch type in the Ohio us-east-2 region only and the task or service requires platform version 1.3.0 or later.
-For tasks using the EC2 launch type, the stop timeout value for the container takes precedence over the ECS_CONTAINER_STOP_TIMEOUT container agent configuration parameter, if used.
-Container instances require at least version 1.26.0 of the container agent to enable a container stop timeout value.
+For tasks using the Fargate launch type, the task or service requires platform version 1.3.0 or later.
+The max stop timeout value is 120 seconds and if the parameter is not specified, the default value of 30 seconds is used.
+For tasks using the EC2 launch type, if the stopTimeout parameter is not specified, the value set for the Amazon ECS container agent configuration variable ECS_CONTAINER_STOP_TIMEOUT is used by default.
+If neither the stopTimeout parameter or the ECS_CONTAINER_STOP_TIMEOUT agent configuration variable are set, then the default values of 30 seconds for Linux containers and 30 seconds on Windows containers are used.
+Your container instances require at least version 1.26.0 of the container agent to enable a container stop timeout value.
 However, we recommend using the latest container agent version.
 For information about checking your agent version and updating to the latest version, see Updating the Amazon ECS Container Agent: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html in the *Amazon Elastic Container Service Developer Guide*.
 If you are using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the ecs-init package.
@@ -808,13 +823,13 @@ PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 32
-Default value: 0
+Position: 33
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -838,7 +853,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 33
+Position: 34
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -864,7 +879,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 34
+Position: 35
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -893,7 +908,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 35
+Position: 36
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -915,7 +930,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 36
+Position: 37
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -935,7 +950,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 37
+Position: 38
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

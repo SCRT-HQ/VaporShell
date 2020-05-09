@@ -8,7 +8,7 @@ The first buffer condition that is satisfied triggers Kinesis Data Firehose to d
 ## SYNTAX
 
 ```
-Add-VSKinesisFirehoseDeliveryStreamBufferingHints [-IntervalInSeconds] <Int32> [-SizeInMBs] <Int32>
+Add-VSKinesisFirehoseDeliveryStreamBufferingHints [-IntervalInSeconds] <Object> [-SizeInMBs] <Object>
  [<CommonParameters>]
 ```
 
@@ -16,15 +16,6 @@ Add-VSKinesisFirehoseDeliveryStreamBufferingHints [-IntervalInSeconds] <Int32> [
 Adds an AWS::KinesisFirehose::DeliveryStream.BufferingHints resource property to the template.
 The BufferingHints property type specifies how Amazon Kinesis Data Firehose (Kinesis Data Firehose buffers incoming data before delivering it to the destination.
 The first buffer condition that is satisfied triggers Kinesis Data Firehose to deliver the data.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -37,13 +28,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -57,13 +48,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

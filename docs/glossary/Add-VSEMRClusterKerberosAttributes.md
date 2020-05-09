@@ -22,15 +22,6 @@ KerberosAttributes define the cluster-specific Kerberos configuration when Kerbe
 The cluster-specific configuration must be compatible with the security configuration.
 For more information see Use Kerberos Authentication: https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html in the *EMR Management Guide*.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ADDomainJoinPassword

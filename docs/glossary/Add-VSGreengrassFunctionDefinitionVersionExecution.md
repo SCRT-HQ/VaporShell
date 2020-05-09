@@ -17,15 +17,6 @@ Adds an AWS::Greengrass::FunctionDefinitionVersion.Execution resource property t
 
 \<a name="aws-properties-greengrass-functiondefinitionversion-execution-inheritance"\>\</a\> In an AWS CloudFormation template, Execution is a property of the  DefaultConfig : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-defaultconfig.html property type for a function definition version and the  Environment : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-environment.html property type for a function.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -IsolationMode

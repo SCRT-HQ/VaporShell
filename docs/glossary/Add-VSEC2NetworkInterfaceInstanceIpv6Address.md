@@ -14,15 +14,6 @@ Add-VSEC2NetworkInterfaceInstanceIpv6Address [-Ipv6Address] <Object> [<CommonPar
 Adds an AWS::EC2::NetworkInterface.InstanceIpv6Address resource property to the template.
 Describes an IPv6 address to associate with the network interface.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Ipv6Address

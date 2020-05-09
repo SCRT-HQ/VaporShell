@@ -7,22 +7,13 @@ Returns information about the details of an artifact.
 ## SYNTAX
 
 ```
-Add-VSCodePipelineCustomActionTypeArtifactDetails [-MaximumCount] <Int32> [-MinimumCount] <Int32>
+Add-VSCodePipelineCustomActionTypeArtifactDetails [-MaximumCount] <Object> [-MinimumCount] <Object>
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::CodePipeline::CustomActionType.ArtifactDetails resource property to the template.
 Returns information about the details of an artifact.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -34,13 +25,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -53,13 +44,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

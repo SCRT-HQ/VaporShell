@@ -15,15 +15,6 @@ Add-VSECSServiceAwsVpcConfiguration [[-AssignPublicIp] <Object>] [[-SecurityGrou
 Adds an AWS::ECS::Service.AwsVpcConfiguration resource property to the template.
 The AwsVpcConfiguration property specifies an object representing the networking details for a task or service.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -AssignPublicIp

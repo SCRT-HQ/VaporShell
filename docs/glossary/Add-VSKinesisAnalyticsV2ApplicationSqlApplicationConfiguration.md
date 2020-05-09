@@ -14,15 +14,6 @@ Add-VSKinesisAnalyticsV2ApplicationSqlApplicationConfiguration [[-Inputs] <Objec
 Adds an AWS::KinesisAnalyticsV2::Application.SqlApplicationConfiguration resource property to the template.
 Describes the inputs, outputs, and reference data sources for an SQL-based Kinesis Data Analytics application.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Inputs

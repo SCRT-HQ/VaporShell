@@ -8,23 +8,14 @@ Specifies the content and settings for a push notification that's sent to recipi
 
 ```
 Add-VSPinpointCampaignMessage [[-JsonBody] <Object>] [[-Action] <Object>] [[-MediaUrl] <Object>]
- [[-TimeToLive] <Int32>] [[-ImageSmallIconUrl] <Object>] [[-ImageUrl] <Object>] [[-Title] <Object>]
- [[-ImageIconUrl] <Object>] [[-SilentPush] <Boolean>] [[-Body] <Object>] [[-RawContent] <Object>]
+ [[-TimeToLive] <Object>] [[-ImageSmallIconUrl] <Object>] [[-ImageUrl] <Object>] [[-Title] <Object>]
+ [[-ImageIconUrl] <Object>] [[-SilentPush] <Object>] [[-Body] <Object>] [[-RawContent] <Object>]
  [[-Url] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Pinpoint::Campaign.Message resource property to the template.
 Specifies the content and settings for a push notification that's sent to recipients of a campaign.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -50,11 +41,11 @@ Accept wildcard characters: False
 ### -Action
 The action to occur if a recipient taps the push notification.
 Valid values are:
-+ OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background.
++  OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background.
 This is the default action.
-+ DEEP_LINK - Your app opens and displays a designated user interface in the app.
++  DEEP_LINK - Your app opens and displays a designated user interface in the app.
 This setting uses the deep-linking features of iOS and Android.
-+ URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.
++  URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-message.html#cfn-pinpoint-campaign-message-action
 PrimitiveType: String
@@ -102,13 +93,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 4
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -198,13 +189,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 9
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -231,7 +222,7 @@ Accept wildcard characters: False
 
 ### -RawContent
 The raw, JSON-formatted string to use as the payload for the notification message.
-This value overrides other values for the message.
+If specified, this value overrides all other content for the message.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-message.html#cfn-pinpoint-campaign-message-rawcontent
 PrimitiveType: String

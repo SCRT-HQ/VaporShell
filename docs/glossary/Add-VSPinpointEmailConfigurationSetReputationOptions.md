@@ -7,22 +7,13 @@ Enable or disable collection of reputation metrics for emails that you send usin
 ## SYNTAX
 
 ```
-Add-VSPinpointEmailConfigurationSetReputationOptions [[-ReputationMetricsEnabled] <Boolean>]
+Add-VSPinpointEmailConfigurationSetReputationOptions [[-ReputationMetricsEnabled] <Object>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::PinpointEmail::ConfigurationSet.ReputationOptions resource property to the template.
 Enable or disable collection of reputation metrics for emails that you send using this configuration set in the current AWS Region.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -35,13 +26,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

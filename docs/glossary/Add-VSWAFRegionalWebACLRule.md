@@ -8,7 +8,7 @@ For example, you might create a Rule that includes the following predicates:
 ## SYNTAX
 
 ```
-Add-VSWAFRegionalWebACLRule [-Action] <Object> [-Priority] <Int32> [-RuleId] <Object> [<CommonParameters>]
+Add-VSWAFRegionalWebACLRule [-Action] <Object> [-Priority] <Object> [-RuleId] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -21,15 +21,6 @@ For example, you might create a Rule that includes the following predicates:
 + A ByteMatchSet that causes AWS WAF to search for web requests for which the value of the User-Agent header is BadBot.
 
 To match the settings in this Rule, a request must originate from 192.0.2.44 AND include a User-Agent header for which the value is BadBot.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -63,13 +54,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

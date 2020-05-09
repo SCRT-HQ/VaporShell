@@ -14,9 +14,9 @@ Add-VSEMRClusterJobFlowInstancesConfig [[-AdditionalMasterSecurityGroups] <Objec
  [[-AdditionalSlaveSecurityGroups] <Object>] [[-CoreInstanceFleet] <Object>] [[-CoreInstanceGroup] <Object>]
  [[-Ec2KeyName] <Object>] [[-Ec2SubnetId] <Object>] [[-Ec2SubnetIds] <Object>]
  [[-EmrManagedMasterSecurityGroup] <Object>] [[-EmrManagedSlaveSecurityGroup] <Object>]
- [[-HadoopVersion] <Object>] [[-KeepJobFlowAliveWhenNoSteps] <Boolean>] [[-MasterInstanceFleet] <Object>]
+ [[-HadoopVersion] <Object>] [[-KeepJobFlowAliveWhenNoSteps] <Object>] [[-MasterInstanceFleet] <Object>]
  [[-MasterInstanceGroup] <Object>] [[-Placement] <Object>] [[-ServiceAccessSecurityGroup] <Object>]
- [[-TerminationProtected] <Boolean>] [<CommonParameters>]
+ [[-TerminationProtected] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -25,15 +25,6 @@ JobFlowInstancesConfig is a property of the AWS::EMR::Cluster resource.
 JobFlowInstancesConfig defines the instance groups or instance fleets that comprise the cluster.
 JobFlowInstancesConfig must contain either InstanceFleetConfig or InstanceGroupConfig.
 They cannot be used together.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -139,9 +130,7 @@ Accept wildcard characters: False
 ### -Ec2SubnetId
 Applies to clusters that use the uniform instance group configuration.
 To launch the cluster in Amazon Virtual Private Cloud Amazon VPC, set this parameter to the identifier of the Amazon VPC subnet where you want the cluster to launch.
-If you do not specify this value, the cluster launches in the normal Amazon Web Services cloud, outside of an Amazon VPC, if the account launching the cluster supports EC2 Classic networks in the region where the cluster launches.
-Amazon VPC currently does not support cluster compute quadruple extra large cc1.4xlarge instances.
-Thus you cannot specify the cc1.4xlarge instance type for clusters launched in an Amazon VPC.
+If you do not specify this value and your account supports EC2-Classic, the cluster launches in EC2-Classic.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-ec2subnetid
 PrimitiveType: String
@@ -250,13 +239,13 @@ PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 11
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -345,13 +334,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 16
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

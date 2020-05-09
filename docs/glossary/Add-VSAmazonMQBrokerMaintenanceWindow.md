@@ -15,15 +15,6 @@ Add-VSAmazonMQBrokerMaintenanceWindow [-DayOfWeek] <Object> [-TimeOfDay] <Object
 Adds an AWS::AmazonMQ::Broker.MaintenanceWindow resource property to the template.
 The parameters that determine the WeeklyStartTime to apply pending updates or patches to the broker.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -DayOfWeek

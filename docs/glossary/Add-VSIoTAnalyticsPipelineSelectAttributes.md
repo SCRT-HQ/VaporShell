@@ -15,15 +15,6 @@ Add-VSIoTAnalyticsPipelineSelectAttributes [[-Next] <Object>] [[-Attributes] <Ob
 Adds an AWS::IoTAnalytics::Pipeline.SelectAttributes resource property to the template.
 Creates a new message using only the specified attributes from the original message.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Next

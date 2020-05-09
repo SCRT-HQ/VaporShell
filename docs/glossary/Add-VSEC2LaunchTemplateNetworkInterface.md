@@ -8,10 +8,10 @@ Specifies the parameters for a network interface.
 
 ```
 Add-VSEC2LaunchTemplateNetworkInterface [[-Description] <Object>] [[-PrivateIpAddress] <Object>]
- [[-PrivateIpAddresses] <Object>] [[-SecondaryPrivateIpAddressCount] <Int32>] [[-DeviceIndex] <Int32>]
- [[-SubnetId] <Object>] [[-Ipv6Addresses] <Object>] [[-AssociatePublicIpAddress] <Boolean>]
- [[-NetworkInterfaceId] <Object>] [[-InterfaceType] <Object>] [[-Ipv6AddressCount] <Int32>]
- [[-Groups] <Object>] [[-DeleteOnTermination] <Boolean>] [<CommonParameters>]
+ [[-PrivateIpAddresses] <Object>] [[-SecondaryPrivateIpAddressCount] <Object>] [[-DeviceIndex] <Object>]
+ [[-SubnetId] <Object>] [[-Ipv6Addresses] <Object>] [[-AssociatePublicIpAddress] <Object>]
+ [[-NetworkInterfaceId] <Object>] [[-InterfaceType] <Object>] [[-Ipv6AddressCount] <Object>]
+ [[-Groups] <Object>] [[-DeleteOnTermination] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -19,15 +19,6 @@ Adds an AWS::EC2::LaunchTemplate.NetworkInterface resource property to the templ
 Specifies the parameters for a network interface.
 
 NetworkInterface is a property of the Amazon EC2 LaunchTemplate LaunchTemplateData: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html property type.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -97,13 +88,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 4
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -116,13 +107,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 5
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -175,13 +166,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 8
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -238,13 +229,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 11
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -277,13 +268,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 13
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

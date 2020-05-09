@@ -26,15 +26,6 @@ Get-VSStackSetOperation [-ListResults] -StackSetName <String> [-OperationId <Str
 ## DESCRIPTION
 Gets information about Stack Set Operations
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Description

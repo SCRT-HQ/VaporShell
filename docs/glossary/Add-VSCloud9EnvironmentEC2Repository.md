@@ -14,15 +14,6 @@ Add-VSCloud9EnvironmentEC2Repository [-PathComponent] <Object> [-RepositoryUrl] 
 Adds an AWS::Cloud9::EnvironmentEC2.Repository resource property to the template.
 The Repository property type specifies an AWS CodeCommit source code repository to be cloned into an AWS Cloud9 development environment.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -PathComponent

@@ -16,15 +16,6 @@ Adds an AWS::ECS::Service.PlacementStrategy resource property to the template.
 The PlacementStrategy property specifies the task placement strategy for a task or service.
 For more information, see Task Placement Strategies: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-strategies.html in the *Amazon Elastic Container Service Developer Guide*.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Field

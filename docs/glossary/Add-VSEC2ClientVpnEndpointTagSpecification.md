@@ -14,15 +14,6 @@ Add-VSEC2ClientVpnEndpointTagSpecification [-ResourceType] <Object> [-Tags] <Obj
 Adds an AWS::EC2::ClientVpnEndpoint.TagSpecification resource property to the template.
 The tags to apply to a resource when the resource is being created.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ResourceType

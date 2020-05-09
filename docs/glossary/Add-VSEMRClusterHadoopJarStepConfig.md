@@ -17,15 +17,6 @@ Adds an AWS::EMR::Cluster.HadoopJarStepConfig resource property to the template.
 The HadoopJarStepConfig property type specifies a job flow step consisting of a JAR file whose main function will be executed.
 The main function submits a job for the cluster to execute as a step on the master node, and then waits for the job to finish or fail before executing subsequent steps.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Args

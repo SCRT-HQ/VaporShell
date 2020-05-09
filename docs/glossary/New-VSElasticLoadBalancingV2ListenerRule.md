@@ -3,27 +3,23 @@
 ## SYNOPSIS
 Adds an AWS::ElasticLoadBalancingV2::ListenerRule resource to the template.
 Specifies a listener rule.
+The listener must be associated with an Application Load Balancer.
+Each rule consists of a priority, one or more actions, and one or more conditions.
 
 ## SYNTAX
 
 ```
 New-VSElasticLoadBalancingV2ListenerRule [-LogicalId] <String> -Actions <Object> -Conditions <Object>
- -ListenerArn <Object> -Priority <Int32> [-DeletionPolicy <String>] [-DependsOn <String[]>]
- [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+ -ListenerArn <Object> -Priority <Object> [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>]
+ [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::ElasticLoadBalancingV2::ListenerRule resource to the template.
 Specifies a listener rule.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+The listener must be associated with an Application Load Balancer.
+Each rule consists of a priority, one or more actions, and one or more conditions.
 
 ## PARAMETERS
 
@@ -46,6 +42,8 @@ Accept wildcard characters: False
 
 ### -Actions
 The actions.
+The rule must include exactly one of the following types of actions: forward, fixed-response, or redirect, and it must be the last action to be performed.
+If the rule is for an HTTPS listener, it can also optionally include an authentication action.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-actions
 DuplicatesAllowed: False
@@ -67,6 +65,8 @@ Accept wildcard characters: False
 
 ### -Conditions
 The conditions.
+The rule can optionally include up to one of each of the following conditions: http-request-method, host-header, path-pattern, and source-ip.
+A rule can also optionally include one or more of each of the following conditions: http-header and query-string.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-conditions
 DuplicatesAllowed: False
@@ -108,19 +108,21 @@ Accept wildcard characters: False
 ### -Priority
 The rule priority.
 A listener can't have multiple rules with the same priority.
+If you try to reorder rules by updating their priorities, do not specify a new priority if an existing rule already uses this priority, as this can cause an error.
+If you need to reuse a priority with a different rule, you must remove it as a priority first, and then specify it in a subsequent update.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-priority
 PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: Named
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -133,6 +135,49 @@ If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the re
 To keep a resource when its stack is deleted, specify Retain for that resource.
 You can use retain for any resource.
 For example, you can retain a nested stack, S3 bucket, or EC2 instance so that you can continue to use or modify those resources after you delete their stacks.
+
+You must use one of the following options: "Delete","Retain","Snapshot"
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdateReplacePolicy
+Use the UpdateReplacePolicy attribute to retain or (in some cases) backup the existing physical instance of a resource when it is replaced during a stack update operation.
+
+When you initiate a stack update, AWS CloudFormation updates resources based on differences between what you submit and the stack's current template and parameters.
+If you update a resource property that requires that the resource be replaced, AWS CloudFormation recreates the resource during the update.
+Recreating the resource generates a new physical ID.
+AWS CloudFormation creates the replacement resource first, and then changes references from other dependent resources to point to the replacement resource.
+By default, AWS CloudFormation then deletes the old resource.
+Using the UpdateReplacePolicy, you can specify that AWS CloudFormation retain or (in some cases) create a snapshot of the old resource.
+
+For resources that support snapshots, such as AWS::EC2::Volume, specify Snapshot to have AWS CloudFormation create a snapshot before deleting the old resource instance.
+
+You can apply the UpdateReplacePolicy attribute to any resource.
+UpdateReplacePolicy is only executed if you update a resource property whose update behavior is specified as Replacement, thereby causing AWS CloudFormation to replace the old resource with a new one with a new physical ID.
+For example, if you update the Engine property of an AWS::RDS::DBInstance resource type, AWS CloudFormation creates a new resource and replaces the current DB instance resource with the new one.
+The UpdateReplacePolicy attribute would then dictate whether AWS CloudFormation deleted, retained, or created a snapshot of the old DB instance.
+The update behavior for each property of a resource is specified in the reference topic for that resource in the AWS Resource and Property Types Reference.
+For more information on resource update behavior, see Update Behaviors of Stack Resources.
+
+The UpdateReplacePolicy attribute applies to stack updates you perform directly, as well as stack updates performed using change sets.
+
+Note
+Resources that are retained continue to exist and continue to incur applicable charges until you delete those resources.
+Snapshots that are created with this policy continue to exist and continue to incur applicable charges until you delete those snapshots.
+UpdateReplacePolicy retains the old physical resource or snapshot, but removes it from AWS CloudFormation's scope.
+
+UpdateReplacePolicy differs from the DeletionPolicy attribute in that it only applies to resources replaced during stack updates.
+Use DeletionPolicy for resources deleted when a stack is deleted, or when the resource definition itself is deleted from the template as part of a stack update.
 
 You must use one of the following options: "Delete","Retain","Snapshot"
 

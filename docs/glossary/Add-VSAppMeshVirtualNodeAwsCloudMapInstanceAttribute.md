@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 Adds an AWS::AppMesh::VirtualNode.AwsCloudMapInstanceAttribute resource property to the template.
-An object representing the AWS Cloud Map attribute information for your virtual node.
+An object that represents the AWS Cloud Map attribute information for your virtual node.
 
 ## SYNTAX
 
@@ -12,16 +12,7 @@ Add-VSAppMeshVirtualNodeAwsCloudMapInstanceAttribute [-Value] <Object> [-Key] <O
 
 ## DESCRIPTION
 Adds an AWS::AppMesh::VirtualNode.AwsCloudMapInstanceAttribute resource property to the template.
-An object representing the AWS Cloud Map attribute information for your virtual node.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+An object that represents the AWS Cloud Map attribute information for your virtual node.
 
 ## PARAMETERS
 

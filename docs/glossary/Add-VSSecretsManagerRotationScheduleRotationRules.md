@@ -7,21 +7,12 @@ The RotationRules property is used as part of the AWS::SecretsManager::RotationS
 ## SYNTAX
 
 ```
-Add-VSSecretsManagerRotationScheduleRotationRules [[-AutomaticallyAfterDays] <Int32>] [<CommonParameters>]
+Add-VSSecretsManagerRotationScheduleRotationRules [[-AutomaticallyAfterDays] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::SecretsManager::RotationSchedule.RotationRules resource property to the template.
 The RotationRules property is used as part of the AWS::SecretsManager::RotationSchedule: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-rotationschedule.html resource type to configure how and when Secrets Manager performs rotation for the associated secret.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -34,13 +25,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 Adds an AWS::RoboMaker::SimulationApplication.RobotSoftwareSuite resource property to the template.
-Information about a robot software suite.
+Information about a robot software suite (ROS distribution.
 
 ## SYNTAX
 
@@ -13,21 +13,12 @@ Add-VSRoboMakerSimulationApplicationRobotSoftwareSuite [-Version] <Object> [-Nam
 
 ## DESCRIPTION
 Adds an AWS::RoboMaker::SimulationApplication.RobotSoftwareSuite resource property to the template.
-Information about a robot software suite.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+Information about a robot software suite (ROS distribution.
 
 ## PARAMETERS
 
 ### -Version
-The version of the robot software suite.
+The version of the robot software suite ROS distribution.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-simulationapplication-robotsoftwaresuite.html#cfn-robomaker-simulationapplication-robotsoftwaresuite-version
 PrimitiveType: String
@@ -46,7 +37,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-The name of the robot software suite.
+The name of the robot software suite ROS distribution.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-simulationapplication-robotsoftwaresuite.html#cfn-robomaker-simulationapplication-robotsoftwaresuite-name
 PrimitiveType: String

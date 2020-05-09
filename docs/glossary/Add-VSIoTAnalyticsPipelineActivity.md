@@ -16,15 +16,6 @@ Add-VSIoTAnalyticsPipelineActivity [[-SelectAttributes] <Object>] [[-Datastore] 
 Adds an AWS::IoTAnalytics::Pipeline.Activity resource property to the template.
 An activity that performs a transformation on a message.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -SelectAttributes

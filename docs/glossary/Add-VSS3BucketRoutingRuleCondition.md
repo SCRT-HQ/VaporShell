@@ -2,7 +2,11 @@
 
 ## SYNOPSIS
 Adds an AWS::S3::Bucket.RoutingRuleCondition resource property to the template.
-Specifies a condition that must be met for a redirect to apply.
+A container for describing a condition that must be met for the specified redirect to apply.
+For example, 1.
+If request is for pages in the /docs folder, redirect to the /documents folder.
+2.
+If request results in HTTP error 4xx, redirect request to another host where you might process the error.
 
 ## SYNTAX
 
@@ -13,16 +17,11 @@ Add-VSS3BucketRoutingRuleCondition [[-HttpErrorCodeReturnedEquals] <Object>] [[-
 
 ## DESCRIPTION
 Adds an AWS::S3::Bucket.RoutingRuleCondition resource property to the template.
-Specifies a condition that must be met for a redirect to apply.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+A container for describing a condition that must be met for the specified redirect to apply.
+For example, 1.
+If request is for pages in the /docs folder, redirect to the /documents folder.
+2.
+If request results in HTTP error 4xx, redirect request to another host where you might process the error.
 
 ## PARAMETERS
 

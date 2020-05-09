@@ -14,20 +14,12 @@ Add-VSEC2SpotFleetSpotFleetTagSpecification [[-ResourceType] <Object>] [[-Tags] 
 Adds an AWS::EC2::SpotFleet.SpotFleetTagSpecification resource property to the template.
 The tags for a Spot Fleet resource.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ResourceType
 The type of resource.
 Currently, the only resource type that is supported is instance.
+To tag the Spot Fleet request on creation, use the TagSpecifications parameter in  SpotFleetRequestConfigData : https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotFleetRequestConfigData.html.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-tagspecifications.html#cfn-ec2-spotfleet-spotfleettagspecification-resourcetype
 PrimitiveType: String

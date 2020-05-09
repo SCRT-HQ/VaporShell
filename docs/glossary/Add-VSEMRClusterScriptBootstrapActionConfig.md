@@ -16,15 +16,6 @@ Adds an AWS::EMR::Cluster.ScriptBootstrapActionConfig resource property to the t
 ScriptBootstrapActionConfig is a subproperty of the BootstrapActionConfig property type.
 ScriptBootstrapActionConfig specifies the arguments and location of the bootstrap script for EMR to run on all cluster nodes before it installs open-source big data applications on them.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Args

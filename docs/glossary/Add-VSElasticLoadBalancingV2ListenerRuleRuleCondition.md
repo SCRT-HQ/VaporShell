@@ -16,15 +16,6 @@ Add-VSElasticLoadBalancingV2ListenerRuleRuleCondition [[-Field] <Object>] [[-Hos
 Adds an AWS::ElasticLoadBalancingV2::ListenerRule.RuleCondition resource property to the template.
 Specifies a condition for a listener rule.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Field
@@ -116,7 +107,6 @@ Accept wildcard characters: False
 ### -PathPatternConfig
 Information for a path pattern condition.
 Specify only when Field is path-pattern.
-Conditional: Required if HttpHeaderConfig is used.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-conditions.html#cfn-elasticloadbalancingv2-listenerrule-rulecondition-pathpatternconfig
 Type: PathPatternConfig
@@ -137,7 +127,6 @@ Accept wildcard characters: False
 ### -QueryStringConfig
 Information for a query string condition.
 Specify only when Field is query-string.
-Conditional: Required if HttpHeaderConfig is used.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-conditions.html#cfn-elasticloadbalancingv2-listenerrule-rulecondition-querystringconfig
 Type: QueryStringConfig
@@ -158,7 +147,6 @@ Accept wildcard characters: False
 ### -SourceIpConfig
 Information for a source IP condition.
 Specify only when Field is source-ip.
-Conditional: Required if HttpHeaderConfig is used.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-conditions.html#cfn-elasticloadbalancingv2-listenerrule-rulecondition-sourceipconfig
 Type: SourceIpConfig
@@ -178,16 +166,16 @@ Accept wildcard characters: False
 
 ### -Values
 The condition value.
-You can only use Values if the condition type is host-header and path-pattern.
-You can not specify both Values and HostHeaderConfig at the same time.
-If Field is host-header, you can specify a single host name for example, my.example.com.
+Specify only when Field is host-header or path-pattern.
+Alternatively, to specify multiple host names or multiple path patterns, use HostHeaderConfig or PathPatternConfig.
+If Field is host-header and you're not using HostHeaderConfig, you can specify a single host name for example, my.example.com.
 A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following characters.
 + A-Z, a-z, 0-9
 + - .
 + * matches 0 or more characters
 + ?
 matches exactly 1 character
-If Field is path-pattern, you can specify a single path pattern for example, /img/*.
+If Field is path-pattern and you're not using PathPatternConfig, you can specify a single path pattern for example, /img/*.
 A path pattern is case-sensitive, can be up to 128 characters in length, and can contain any of the following characters.
 + A-Z, a-z, 0-9
 + _ - .

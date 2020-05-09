@@ -14,15 +14,6 @@ Add-VSDynamoDBTableStreamSpecification [-StreamViewType] <Object> [<CommonParame
 Adds an AWS::DynamoDB::Table.StreamSpecification resource property to the template.
 Represents the DynamoDB Streams configuration for a table in DynamoDB.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -StreamViewType

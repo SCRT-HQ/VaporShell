@@ -14,15 +14,6 @@ Add-VSCloudWatchAnomalyDetectorDimension [-Value] <Object> [-Name] <Object> [<Co
 Adds an AWS::CloudWatch::AnomalyDetector.Dimension resource property to the template.
 Expands the identity of a metric.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Value

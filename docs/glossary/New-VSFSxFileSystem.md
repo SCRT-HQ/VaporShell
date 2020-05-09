@@ -7,25 +7,16 @@ The AWS::FSx::FileSystem resource is an Amazon FSx resource type that creates ei
 ## SYNTAX
 
 ```
-New-VSFSxFileSystem [-LogicalId] <String> [-KmsKeyId <Object>] [-StorageCapacity <Int32>]
- [-FileSystemType <Object>] [-LustreConfiguration <Object>] [-BackupId <Object>] [-SubnetIds <Object>]
- [-SecurityGroupIds <Object>] [-Tags <Object>] [-WindowsConfiguration <Object>] [-DeletionPolicy <String>]
- [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
- [<CommonParameters>]
+New-VSFSxFileSystem [-LogicalId] <String> [-StorageType <Object>] [-KmsKeyId <Object>]
+ [-StorageCapacity <Object>] -FileSystemType <Object> [-LustreConfiguration <Object>] [-BackupId <Object>]
+ -SubnetIds <Object> [-SecurityGroupIds <Object>] [-Tags <Object>] [-WindowsConfiguration <Object>]
+ [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
+ [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::FSx::FileSystem resource to the template.
 The AWS::FSx::FileSystem resource is an Amazon FSx resource type that creates either an Amazon FSx for Windows File Server file system or an Amazon FSx for Lustre file system.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -46,8 +37,37 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -StorageType
+Sets the storage type for the Amazon FSx for Windows file system you're creating.
+Valid values are SSD and HDD.
++ Set to SSD to use solid state drive storage.
+SSD is supported on all Windows deployment types.
++ Set to HDD to use hard disk drive storage.
+HDD is supported on SINGLE_AZ_2 and MULTI_AZ_1 Windows file system deployment types.
+Default value is SSD.
+For more information, see  Storage Type Options: https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options in the *Amazon FSx for Windows User Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-storagetype
+PrimitiveType: String
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -KmsKeyId
-The ID of the AWS Key Management Service AWS KMS key used to encrypt the file system's data for an Amazon FSx for Windows File Server file system.
+The ID of the AWS Key Management Service AWS KMS key used to encrypt the file system's data for Amazon FSx for Windows File Server file systems and persistent Amazon FSx for Lustre file systems at rest.
+In either case, if not specified, the Amazon FSx managed key is used.
+The scratch Amazon FSx for Lustre file systems are always encrypted at rest using Amazon FSx managed keys.
+For more information, see Encrypt: https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html in the *AWS Key Management Service API Reference*.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-kmskeyid
 PrimitiveType: String
@@ -66,33 +86,16 @@ Accept wildcard characters: False
 ```
 
 ### -StorageCapacity
-The storage capacity of the file system.
-For Windows file systems, the storage capacity has a minimum of 300 GiB, and a maximum of 65,536 GiB.
-For Lustre file systems, the storage capacity has a minimum of 3,600 GiB.
-Storage capacity is provisioned in increments of 3,600 GiB.
+Sets the storage capacity of the file system that you're creating.
+For Lustre file systems:
++ For SCRATCH_2 and PERSISTENT_1 deployment types, valid values are 1.2, 2.4, and increments of 2.4 TiB.
++ For SCRATCH_1 deployment type, valid values are 1.2, 2.4, and increments of 3.6 TiB.
+For Windows file systems:
++ If StorageType=SSD, valid values are 32 GiB - 65,536 GiB 64 TiB.
++ If StorageType=HDD, valid values are 2000 GiB - 65,536 GiB 64 TiB.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-storagecapacity
 PrimitiveType: Integer
-UpdateType: Immutable
-
-```yaml
-Type: Int32
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: 0
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -FileSystemType
-Type of file system.
-Currently the only supported type is WINDOWS.
-
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-filesystemtype
-PrimitiveType: String
 UpdateType: Immutable
 
 ```yaml
@@ -107,8 +110,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -FileSystemType
+The type of Amazon FSx file system, either LUSTRE or WINDOWS.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-filesystemtype
+PrimitiveType: String
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -LustreConfiguration
-The configuration object for Lustre file systems used in the CreateFileSystem operation.
+The Lustre configuration for the file system being created.
 
 Type: LustreConfiguration
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-lustreconfiguration
@@ -147,9 +169,11 @@ Accept wildcard characters: False
 ```
 
 ### -SubnetIds
-The IDs of the subnets to contain the endpoint for the file system.
-One and only one is supported.
-The file system is launched in the Availability Zone associated with this subnet.
+Specifies the IDs of the subnets that the file system will be accessible from.
+For Windows MULTI_AZ_1 file system deployment types, provide exactly two subnet IDs, one for the preferred file server and one for the standby file server.
+You specify one of these subnets as the preferred subnet using the WindowsConfiguration \> PreferredSubnetID property.
+For Windows SINGLE_AZ_1 and SINGLE_AZ_2 file system deployment types and Lustre file systems, provide exactly one subnet ID.
+The file server is launched in that subnet's Availability Zone.
 
 PrimitiveItemType: String
 Type: List
@@ -161,7 +185,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -169,9 +193,8 @@ Accept wildcard characters: False
 ```
 
 ### -SecurityGroupIds
-A list of IDs for the security groups that apply to the specified network interfaces created for file system access.
-These security groups will apply to all network interfaces.
-This list isn't returned in later describe requests.
+A list of IDs specifying the security groups to apply to all network interfaces created for file system access.
+This list isn't returned in later requests to describe the file system.
 
 PrimitiveItemType: String
 Type: List
@@ -213,6 +236,7 @@ Accept wildcard characters: False
 
 ### -WindowsConfiguration
 The configuration object for the Microsoft Windows file system you are creating.
+This value is required if FileSystemType is set to WINDOWS.
 
 Type: WindowsConfiguration
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-windowsconfiguration
@@ -238,6 +262,49 @@ If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the re
 To keep a resource when its stack is deleted, specify Retain for that resource.
 You can use retain for any resource.
 For example, you can retain a nested stack, S3 bucket, or EC2 instance so that you can continue to use or modify those resources after you delete their stacks.
+
+You must use one of the following options: "Delete","Retain","Snapshot"
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdateReplacePolicy
+Use the UpdateReplacePolicy attribute to retain or (in some cases) backup the existing physical instance of a resource when it is replaced during a stack update operation.
+
+When you initiate a stack update, AWS CloudFormation updates resources based on differences between what you submit and the stack's current template and parameters.
+If you update a resource property that requires that the resource be replaced, AWS CloudFormation recreates the resource during the update.
+Recreating the resource generates a new physical ID.
+AWS CloudFormation creates the replacement resource first, and then changes references from other dependent resources to point to the replacement resource.
+By default, AWS CloudFormation then deletes the old resource.
+Using the UpdateReplacePolicy, you can specify that AWS CloudFormation retain or (in some cases) create a snapshot of the old resource.
+
+For resources that support snapshots, such as AWS::EC2::Volume, specify Snapshot to have AWS CloudFormation create a snapshot before deleting the old resource instance.
+
+You can apply the UpdateReplacePolicy attribute to any resource.
+UpdateReplacePolicy is only executed if you update a resource property whose update behavior is specified as Replacement, thereby causing AWS CloudFormation to replace the old resource with a new one with a new physical ID.
+For example, if you update the Engine property of an AWS::RDS::DBInstance resource type, AWS CloudFormation creates a new resource and replaces the current DB instance resource with the new one.
+The UpdateReplacePolicy attribute would then dictate whether AWS CloudFormation deleted, retained, or created a snapshot of the old DB instance.
+The update behavior for each property of a resource is specified in the reference topic for that resource in the AWS Resource and Property Types Reference.
+For more information on resource update behavior, see Update Behaviors of Stack Resources.
+
+The UpdateReplacePolicy attribute applies to stack updates you perform directly, as well as stack updates performed using change sets.
+
+Note
+Resources that are retained continue to exist and continue to incur applicable charges until you delete those resources.
+Snapshots that are created with this policy continue to exist and continue to incur applicable charges until you delete those snapshots.
+UpdateReplacePolicy retains the old physical resource or snapshot, but removes it from AWS CloudFormation's scope.
+
+UpdateReplacePolicy differs from the DeletionPolicy attribute in that it only applies to resources replaced during stack updates.
+Use DeletionPolicy for resources deleted when a stack is deleted, or when the resource definition itself is deleted from the template as part of a stack update.
 
 You must use one of the following options: "Delete","Retain","Snapshot"
 

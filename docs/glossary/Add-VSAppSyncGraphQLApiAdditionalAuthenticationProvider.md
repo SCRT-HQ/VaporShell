@@ -15,15 +15,6 @@ Add-VSAppSyncGraphQLApiAdditionalAuthenticationProvider [[-OpenIDConnectConfig] 
 Adds an AWS::AppSync::GraphQLApi.AdditionalAuthenticationProvider resource property to the template.
 Describes an additional authentication provider.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -OpenIDConnectConfig

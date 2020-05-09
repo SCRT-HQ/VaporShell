@@ -15,15 +15,6 @@ Add-VSKinesisAnalyticsV2ApplicationApplicationCodeConfiguration [-CodeContentTyp
 Adds an AWS::KinesisAnalyticsV2::Application.ApplicationCodeConfiguration resource property to the template.
 Describes code configuration for a Java-based Kinesis Data Analytics application.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -CodeContentType

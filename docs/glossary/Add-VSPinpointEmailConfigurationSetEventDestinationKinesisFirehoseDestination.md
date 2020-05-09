@@ -17,15 +17,6 @@ Adds an AWS::PinpointEmail::ConfigurationSetEventDestination.KinesisFirehoseDest
 An object that defines an Amazon Kinesis Data Firehose destination for email events.
 You can use Amazon Kinesis Data Firehose to stream data to other services, such as Amazon S3 and Amazon Redshift.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -DeliveryStreamArn

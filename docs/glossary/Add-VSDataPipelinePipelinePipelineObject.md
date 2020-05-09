@@ -19,15 +19,6 @@ PipelineObject is property of the AWS::DataPipeline::Pipeline resource that cont
 This can be a logical, physical, or physical attempt pipeline object.
 The complete set of components of a pipeline defines the pipeline.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Fields

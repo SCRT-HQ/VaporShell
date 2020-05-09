@@ -18,15 +18,6 @@ Individual Lambda functions can override these settings.
 
 \<a name="aws-properties-greengrass-functiondefinition-defaultconfig-inheritance"\>\</a\> In an AWS CloudFormation template, DefaultConfig is a property of the  FunctionDefinitionVersion : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-functiondefinitionversion.html property type.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Execution

@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 Adds an AWS::IoTAnalytics::Dataset.DatasetContentDeliveryRuleDestination resource property to the template.
-The destination to which data set contents are delivered.
+The destination to which dataset contents are delivered.
 
 ## SYNTAX
 
@@ -13,21 +13,12 @@ Add-VSIoTAnalyticsDatasetDatasetContentDeliveryRuleDestination [[-IotEventsDesti
 
 ## DESCRIPTION
 Adds an AWS::IoTAnalytics::Dataset.DatasetContentDeliveryRuleDestination resource property to the template.
-The destination to which data set contents are delivered.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+The destination to which dataset contents are delivered.
 
 ## PARAMETERS
 
 ### -IotEventsDestinationConfiguration
-Configuration information for delivery of data set contents to AWS IoT Events.
+Configuration information for delivery of dataset contents to AWS IoT Events.
 
 Type: IotEventsDestinationConfiguration
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-datasetcontentdeliveryruledestination.html#cfn-iotanalytics-dataset-datasetcontentdeliveryruledestination-ioteventsdestinationconfiguration
@@ -46,7 +37,7 @@ Accept wildcard characters: False
 ```
 
 ### -S3DestinationConfiguration
-Configuration information for delivery of data set contents to Amazon S3.
+Configuration information for delivery of dataset contents to Amazon S3.
 
 Type: S3DestinationConfiguration
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-datasetcontentdeliveryruledestination.html#cfn-iotanalytics-dataset-datasetcontentdeliveryruledestination-s3destinationconfiguration

@@ -2,22 +2,22 @@
 
 ## SYNOPSIS
 Adds an AWS::AutoScaling::ScalingPolicy resource to the template.
-Specifies a scaling policy for an Amazon EC2 Auto Scaling group.
+Specifies an Amazon EC2 Auto Scaling scaling policy so that the Auto Scaling group can change the number of instances available for your application in response to changing demand.
 
 ## SYNTAX
 
 ```
 New-VSAutoScalingScalingPolicy [-LogicalId] <String> [-AdjustmentType <Object>] -AutoScalingGroupName <Object>
- [-Cooldown <Object>] [-EstimatedInstanceWarmup <Int32>] [-MetricAggregationType <Object>]
- [-MinAdjustmentMagnitude <Int32>] [-PolicyType <Object>] [-ScalingAdjustment <Int32>]
+ [-Cooldown <Object>] [-EstimatedInstanceWarmup <Object>] [-MetricAggregationType <Object>]
+ [-MinAdjustmentMagnitude <Object>] [-PolicyType <Object>] [-ScalingAdjustment <Object>]
  [-StepAdjustments <Object>] [-TargetTrackingConfiguration <Object>] [-DeletionPolicy <String>]
- [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
- [<CommonParameters>]
+ [-UpdateReplacePolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
+ [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::AutoScaling::ScalingPolicy resource to the template.
-Specifies a scaling policy for an Amazon EC2 Auto Scaling group.
+Specifies an Amazon EC2 Auto Scaling scaling policy so that the Auto Scaling group can change the number of instances available for your application in response to changing demand.
 
 To update an existing scaling policy, use the existing policy name and set the property to change.
 If you leave a property unspecified when updating a scaling policy, the corresponding value remains unchanged.
@@ -26,15 +26,6 @@ If you create either a step scaling policy or a simple scaling policy, you must 
 Note that you can associate a CloudWatch alarm with only one scaling policy.
 
 For more information about using scaling policies to scale your Auto Scaling group automatically, see Dynamic Scaling: https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html in the *Amazon EC2 Auto Scaling User Guide*.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -128,13 +119,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -162,34 +153,33 @@ Accept wildcard characters: False
 ```
 
 ### -MinAdjustmentMagnitude
-The minimum number of instances to scale.
-If the value of AdjustmentType is PercentChangeInCapacity, the scaling policy changes the DesiredCapacity of the Auto Scaling group by at least this many instances.
-This property replaces the MinAdjustmentStep property.
+The minimum value to scale by when scaling by percentages.
 For example, suppose that you create a step scaling policy to scale out an Auto Scaling group by 25 percent and you specify a MinAdjustmentMagnitude of 2.
 If the group has 4 instances and the scaling policy is performed, 25 percent of 4 is 1.
 However, because you specified a MinAdjustmentMagnitude of 2, Amazon EC2 Auto Scaling scales out the group by 2 instances.
-Valid only if the policy type is StepScaling or SimpleScaling.
+Valid only if the policy type is StepScaling or SimpleScaling and the adjustment type is PercentChangeInCapacity.
+For more information, see Scaling Adjustment Types: https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment in the *Amazon EC2 Auto Scaling User Guide*.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-minadjustmentmagnitude
 PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -PolicyType
 The policy type.
-The valid values are SimpleScaling, StepScaling, and TargetTrackingScaling.
-By default, AWS CloudFormation specifies SimpleScaling.
+The default value is SimpleScaling.
+*Allowed Values*: SimpleScaling, StepScaling, or TargetTrackingScaling
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-policytype
 PrimitiveType: String
@@ -220,13 +210,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -283,6 +273,49 @@ If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the re
 To keep a resource when its stack is deleted, specify Retain for that resource.
 You can use retain for any resource.
 For example, you can retain a nested stack, S3 bucket, or EC2 instance so that you can continue to use or modify those resources after you delete their stacks.
+
+You must use one of the following options: "Delete","Retain","Snapshot"
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdateReplacePolicy
+Use the UpdateReplacePolicy attribute to retain or (in some cases) backup the existing physical instance of a resource when it is replaced during a stack update operation.
+
+When you initiate a stack update, AWS CloudFormation updates resources based on differences between what you submit and the stack's current template and parameters.
+If you update a resource property that requires that the resource be replaced, AWS CloudFormation recreates the resource during the update.
+Recreating the resource generates a new physical ID.
+AWS CloudFormation creates the replacement resource first, and then changes references from other dependent resources to point to the replacement resource.
+By default, AWS CloudFormation then deletes the old resource.
+Using the UpdateReplacePolicy, you can specify that AWS CloudFormation retain or (in some cases) create a snapshot of the old resource.
+
+For resources that support snapshots, such as AWS::EC2::Volume, specify Snapshot to have AWS CloudFormation create a snapshot before deleting the old resource instance.
+
+You can apply the UpdateReplacePolicy attribute to any resource.
+UpdateReplacePolicy is only executed if you update a resource property whose update behavior is specified as Replacement, thereby causing AWS CloudFormation to replace the old resource with a new one with a new physical ID.
+For example, if you update the Engine property of an AWS::RDS::DBInstance resource type, AWS CloudFormation creates a new resource and replaces the current DB instance resource with the new one.
+The UpdateReplacePolicy attribute would then dictate whether AWS CloudFormation deleted, retained, or created a snapshot of the old DB instance.
+The update behavior for each property of a resource is specified in the reference topic for that resource in the AWS Resource and Property Types Reference.
+For more information on resource update behavior, see Update Behaviors of Stack Resources.
+
+The UpdateReplacePolicy attribute applies to stack updates you perform directly, as well as stack updates performed using change sets.
+
+Note
+Resources that are retained continue to exist and continue to incur applicable charges until you delete those resources.
+Snapshots that are created with this policy continue to exist and continue to incur applicable charges until you delete those snapshots.
+UpdateReplacePolicy retains the old physical resource or snapshot, but removes it from AWS CloudFormation's scope.
+
+UpdateReplacePolicy differs from the DeletionPolicy attribute in that it only applies to resources replaced during stack updates.
+Use DeletionPolicy for resources deleted when a stack is deleted, or when the resource definition itself is deleted from the template as part of a stack update.
 
 You must use one of the following options: "Delete","Retain","Snapshot"
 

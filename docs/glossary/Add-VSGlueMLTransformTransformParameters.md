@@ -15,15 +15,6 @@ Add-VSGlueMLTransformTransformParameters [-TransformType] <Object> [[-FindMatche
 Adds an AWS::Glue::MLTransform.TransformParameters resource property to the template.
 The algorithm-specific parameters that are associated with the machine learning transform.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -TransformType

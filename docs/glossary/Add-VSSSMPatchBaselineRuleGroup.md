@@ -16,15 +16,6 @@ The RuleGroup property type specifies a set of rules that define the approval ru
 
 RuleGroup is the property type for the ApprovalRules property of the AWS::SSM::PatchBaseline: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html resource.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -PatchRules

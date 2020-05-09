@@ -7,21 +7,12 @@ MinimumHealthyHosts is a property of the DeploymentConfig: https://docs.aws.amaz
 ## SYNTAX
 
 ```
-Add-VSCodeDeployDeploymentConfigMinimumHealthyHosts [-Type] <Object> [-Value] <Int32> [<CommonParameters>]
+Add-VSCodeDeployDeploymentConfigMinimumHealthyHosts [-Type] <Object> [-Value] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::CodeDeploy::DeploymentConfig.MinimumHealthyHosts resource property to the template.
 MinimumHealthyHosts is a property of the DeploymentConfig: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentconfig.html resource that defines how many instances must remain healthy during an AWS CodeDeploy deployment.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -66,13 +57,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

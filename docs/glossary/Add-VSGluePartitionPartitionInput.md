@@ -15,15 +15,6 @@ Add-VSGluePartitionPartitionInput [[-Parameters] <Object>] [[-StorageDescriptor]
 Adds an AWS::Glue::Partition.PartitionInput resource property to the template.
 The structure used to create and update a partition.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Parameters
@@ -67,6 +58,8 @@ Accept wildcard characters: False
 ### -Values
 The values of the partition.
 Although this parameter is not required by the SDK, you must specify this parameter for a valid input.
+The values for the keys for the new partition must be passed as an array of String objects that must be ordered in the same order as the partition keys appearing in the Amazon S3 prefix.
+Otherwise AWS Glue will add the values to the wrong keys.
 
 PrimitiveItemType: String
 Type: List

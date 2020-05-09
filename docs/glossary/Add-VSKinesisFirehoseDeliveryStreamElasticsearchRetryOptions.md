@@ -7,21 +7,12 @@ The ElasticsearchRetryOptions property type configures the retry behavior for wh
 ## SYNTAX
 
 ```
-Add-VSKinesisFirehoseDeliveryStreamElasticsearchRetryOptions [-DurationInSeconds] <Int32> [<CommonParameters>]
+Add-VSKinesisFirehoseDeliveryStreamElasticsearchRetryOptions [-DurationInSeconds] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::KinesisFirehose::DeliveryStream.ElasticsearchRetryOptions resource property to the template.
 The ElasticsearchRetryOptions property type configures the retry behavior for when Amazon Kinesis Data Firehose (Kinesis Data Firehose can't deliver data to Amazon Elasticsearch Service (Amazon ES.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -35,13 +26,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

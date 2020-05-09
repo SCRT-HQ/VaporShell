@@ -15,15 +15,6 @@ Add-VSKinesisAnalyticsV2ApplicationReferenceDataSourceReferenceSchema [[-RecordE
 Adds an AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource.ReferenceSchema resource property to the template.
 For an SQL-based Amazon Kinesis Data Analytics application, describes the format of the data in the streaming source, and how each data element maps to corresponding columns created in the in-application stream.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -RecordEncoding

@@ -16,15 +16,6 @@ Adds an AWS::Amplify::Branch.EnvironmentVariable resource property to the templa
 The EnvironmentVariable property type sets environment variables for a specific branch.
 Environment variables are key-value pairs that are available at build time.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Value

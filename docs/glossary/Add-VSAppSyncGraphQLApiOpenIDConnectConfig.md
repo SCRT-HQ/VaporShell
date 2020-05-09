@@ -7,8 +7,8 @@ The OpenIDConnectConfig property type specifies the optional authorization confi
 ## SYNTAX
 
 ```
-Add-VSAppSyncGraphQLApiOpenIDConnectConfig [[-Issuer] <Object>] [[-ClientId] <Object>] [[-AuthTTL] <Double>]
- [[-IatTTL] <Double>] [<CommonParameters>]
+Add-VSAppSyncGraphQLApiOpenIDConnectConfig [[-Issuer] <Object>] [[-ClientId] <Object>] [[-AuthTTL] <Object>]
+ [[-IatTTL] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -16,15 +16,6 @@ Adds an AWS::AppSync::GraphQLApi.OpenIDConnectConfig resource property to the te
 The OpenIDConnectConfig property type specifies the optional authorization configuration for using an OpenID Connect compliant service with your GraphQL endpoint for an AWS AppSync GraphQL API.
 
 OpenIDConnectConfig is a property of the AWS::AppSync::GraphQLApi: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html property type.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -77,13 +68,13 @@ PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -96,13 +87,13 @@ PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 4
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

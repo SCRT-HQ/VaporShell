@@ -7,22 +7,13 @@ Specifies an object containing an array of Transition objects that determine how
 ## SYNTAX
 
 ```
-Add-VSBackupBackupPlanLifecycleResourceType [[-DeleteAfterDays] <Double>]
- [[-MoveToColdStorageAfterDays] <Double>] [<CommonParameters>]
+Add-VSBackupBackupPlanLifecycleResourceType [[-DeleteAfterDays] <Object>]
+ [[-MoveToColdStorageAfterDays] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Backup::BackupPlan.LifecycleResourceType resource property to the template.
 Specifies an object containing an array of Transition objects that determine how long in days before a recovery point transitions to cold storage or is deleted.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -35,13 +26,13 @@ PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -54,13 +45,13 @@ PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

@@ -12,15 +12,6 @@ Add-SAMS3LocationObject [-Bucket] <String> [-Key] <String> [[-Version] <String>]
 ## DESCRIPTION
 Specifies the location of an S3 object as a dictionary containing Bucket, Key, and optional Version properties.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Bucket

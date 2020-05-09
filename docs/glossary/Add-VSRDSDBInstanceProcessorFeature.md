@@ -14,15 +14,6 @@ Add-VSRDSDBInstanceProcessorFeature [[-Name] <Object>] [[-Value] <Object>] [<Com
 Adds an AWS::RDS::DBInstance.ProcessorFeature resource property to the template.
 The ProcessorFeature property type specifies the processor features of a DB instance class status.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Name

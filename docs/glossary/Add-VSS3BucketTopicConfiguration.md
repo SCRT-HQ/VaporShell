@@ -14,15 +14,6 @@ Add-VSS3BucketTopicConfiguration [-Event] <Object> [[-Filter] <Object>] [-Topic]
 Adds an AWS::S3::Bucket.TopicConfiguration resource property to the template.
 A container for specifying the configuration for publication of messages to an Amazon Simple Notification Service (Amazon SNS topic when Amazon S3 detects specified events.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Event

@@ -17,15 +17,6 @@ Specifies a block device mapping.
 
 You can specify Ebs or VirtualName, but not both.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -DeviceName

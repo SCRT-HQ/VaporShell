@@ -14,15 +14,6 @@ Add-VSLambdaAliasAliasRoutingConfiguration [-AdditionalVersionWeights] <Object> 
 Adds an AWS::Lambda::Alias.AliasRoutingConfiguration resource property to the template.
 The traffic-shifting: https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html configuration of a Lambda function alias.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -AdditionalVersionWeights

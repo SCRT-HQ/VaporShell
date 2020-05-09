@@ -17,15 +17,6 @@ The NotificationConfig property type specifies configurations for sending notifi
 
 NotificationConfig is a property of the MaintenanceWindowRunCommandParameters: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html property type.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -NotificationArn

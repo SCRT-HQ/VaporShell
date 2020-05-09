@@ -21,15 +21,6 @@ For more information, see Run Lambda Functions on the AWS IoT Greengrass Core: h
 
 \<a name="aws-properties-greengrass-functiondefinition-function-inheritance"\>\</a\> In an AWS CloudFormation template, the Functions property of the  FunctionDefinitionVersion : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-functiondefinitionversion.html property type contains a list of Function property types.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -FunctionArn

@@ -15,15 +15,6 @@ Add-VSS3BucketReplicationDestination [[-AccessControlTranslation] <Object>] [[-A
 Adds an AWS::S3::Bucket.ReplicationDestination resource property to the template.
 Specifies which Amazon S3 bucket to store replicated objects in and their storage class.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -AccessControlTranslation
@@ -69,9 +60,7 @@ Accept wildcard characters: False
 ```
 
 ### -Bucket
-The Amazon Resource Name ARN of the bucket where you want Amazon S3 to store replicas of the object identified by the rule.
-A replication configuration can replicate objects to only one destination bucket.
-If there are multiple rules in your replication configuration, all rules must specify the same destination bucket.
+The Amazon Resource Name ARN of the bucket where you want Amazon S3 to store the results.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules-destination.html#cfn-s3-bucket-replicationconfiguration-rules-destination-bucket
 PrimitiveType: String
@@ -109,7 +98,7 @@ Accept wildcard characters: False
 ```
 
 ### -StorageClass
-The storage class to use when replicating objects, such as standard or reduced redundancy.
+The storage class to use when replicating objects, such as S3 Standard or reduced redundancy.
 By default, Amazon S3 uses the storage class of the source object to create the object replica.
 For valid values, see the StorageClass element of the PUT Bucket replication: https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html action in the *Amazon Simple Storage Service API Reference*.
 

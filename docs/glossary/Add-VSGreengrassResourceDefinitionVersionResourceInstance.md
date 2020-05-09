@@ -19,15 +19,6 @@ For more information, see Access Local Resources with Lambda Functions: https://
 
 \<a name="aws-properties-greengrass-resourcedefinitionversion-resourceinstance-inheritance"\>\</a\> In an AWS CloudFormation template, the Resources property of the  AWS::Greengrass::ResourceDefinitionVersion : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-resourcedefinitionversion.html resource contains a list of ResourceInstance property types.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ResourceDataContainer

@@ -15,15 +15,6 @@ The AWS::Serverless::SimpleTable resource creates a DynamoDB table with a single
 It is useful when data only needs to be accessed via a primary key.
 To use the more advanced functionality of DynamoDB, use an AWS::DynamoDB::Table resource instead.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -LogicalId

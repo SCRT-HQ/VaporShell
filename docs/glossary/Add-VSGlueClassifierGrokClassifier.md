@@ -15,15 +15,6 @@ Add-VSGlueClassifierGrokClassifier [[-CustomPatterns] <Object>] [-GrokPattern] <
 Adds an AWS::Glue::Classifier.GrokClassifier resource property to the template.
 A classifier that uses grok patterns.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -CustomPatterns

@@ -9,8 +9,8 @@ The AWS::Route53::HostedZone resource is a Route 53 resource type that contains 
 ```
 New-VSRoute53HostedZone [-LogicalId] <String> [-HostedZoneConfig <Object>] [-HostedZoneTags <Object>]
  -Name <Object> [-QueryLoggingConfig <Object>] [-VPCs <Object>] [-DeletionPolicy <String>]
- [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
- [<CommonParameters>]
+ [-UpdateReplacePolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
+ [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -24,7 +24,7 @@ The AWS::Route53::HostedZone resource is a Route 53 resource type that contains 
 **Important**
 
 You can't convert a public hosted zone to a private hosted zone or vice versa.
-Instead, you must create a new hosted zone with the same name and create new resource record sets.
+Instead, you must create a new hosted zone with the same name and create new records.
 
 For more information about charges for hosted zones, see Amazon Route 53 Pricing: http://aws.amazon.com/route53/pricing/.
 
@@ -36,7 +36,14 @@ Note the following:
 For more information about SOA and NS records, see NS and SOA Records that Route 53 Creates for a Hosted Zone: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/SOA-NSrecords.html in the *Amazon Route 53 Developer Guide*.
 
 If you want to use the same name servers for multiple public hosted zones, you can optionally associate a reusable delegation set with the hosted zone.
-See the DelegationSetId element.
+Using CloudFormation to create reusable delegation sets isn't supported, but you can create them programmatically using other methods, such as the Route 53 API: https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html, the AWS CLI: https://docs.aws.amazon.com/cli/latest/reference/route53/create-reusable-delegation-set.html, or AWS SDKs: https://docs.aws.amazon.com/ (see the "SDKs & Toolkits" section.
+
++ To create a private hosted zone, specify the VPC ID and Region for one VPC in the VPCs: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-hostedzone.html#cfn-route53-hostedzone-vpcs object.
+
+**Note**
+
+You can specify only one Amazon VPC when you create a private hosted zone.
+To associate additional Amazon VPCs with the hosted zone, use AssociateVPCWithHostedZone: https://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html after you create the hosted zone.
 
 + If your domain is registered with a registrar other than Route 53, you must update the name servers with your registrar to make Route 53 the DNS service for the domain.
 For more information, see Making Amazon Route 53 the DNS Service for an Existing Domain: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/MigratingDNS.html in the *Amazon Route 53 Developer Guide*.
@@ -44,15 +51,6 @@ For more information, see Making Amazon Route 53 the DNS Service for an Existing
 When you submit a CreateHostedZone request, the initial status of the hosted zone is PENDING.
 For public hosted zones, this means that the NS and SOA records are not yet available on all Route 53 DNS servers.
 When the NS and SOA records are available, the status of the zone changes to INSYNC.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -74,10 +72,8 @@ Accept wildcard characters: False
 ```
 
 ### -HostedZoneConfig
-Optional A complex type that contains the following optional values:
-+ For public and private hosted zones, an optional comment
-+ For private hosted zones, an optional PrivateZone element
-If you don't specify a comment or the PrivateZone element, omit HostedZoneConfig and the other elements.
+A complex type that contains an optional comment.
+If you don't want to specify a comment, omit the HostedZoneConfig and Comment elements.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-hostedzone.html#cfn-route53-hostedzone-hostedzoneconfig
 Type: HostedZoneConfig
@@ -123,7 +119,7 @@ Specify a fully qualified domain name, for example, *www.example.com*.
 The trailing dot is optional; Amazon Route 53 assumes that the domain name is fully qualified.
 This means that Route 53 treats *www.example.com* without a trailing dot and *www.example.com.* with a trailing dot as identical.
 If you're creating a public hosted zone, this is the name you have registered with your DNS registrar.
-If your domain name is registered with a registrar other than Route 53, change the name servers for your domain to the set of NameServers that CreateHostedZone returns in DelegationSet.
+If your domain name is registered with a registrar other than Route 53, change the name servers for your domain to the set of NameServers that are returned by the Fn::GetAtt intrinsic function.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-hostedzone.html#cfn-route53-hostedzone-name
 PrimitiveType: String
@@ -211,7 +207,8 @@ Accept wildcard characters: False
 ```
 
 ### -VPCs
-A complex type that contains information about the VPCs that are associated with the specified hosted zone.
+*Private hosted zones:* A complex type that contains information about the VPCs that are associated with the specified hosted zone.
+For public hosted zones, omit VPCs, VPCId, and VPCRegion.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-hostedzone.html#cfn-route53-hostedzone-vpcs
 DuplicatesAllowed: True
@@ -239,6 +236,49 @@ If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the re
 To keep a resource when its stack is deleted, specify Retain for that resource.
 You can use retain for any resource.
 For example, you can retain a nested stack, S3 bucket, or EC2 instance so that you can continue to use or modify those resources after you delete their stacks.
+
+You must use one of the following options: "Delete","Retain","Snapshot"
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdateReplacePolicy
+Use the UpdateReplacePolicy attribute to retain or (in some cases) backup the existing physical instance of a resource when it is replaced during a stack update operation.
+
+When you initiate a stack update, AWS CloudFormation updates resources based on differences between what you submit and the stack's current template and parameters.
+If you update a resource property that requires that the resource be replaced, AWS CloudFormation recreates the resource during the update.
+Recreating the resource generates a new physical ID.
+AWS CloudFormation creates the replacement resource first, and then changes references from other dependent resources to point to the replacement resource.
+By default, AWS CloudFormation then deletes the old resource.
+Using the UpdateReplacePolicy, you can specify that AWS CloudFormation retain or (in some cases) create a snapshot of the old resource.
+
+For resources that support snapshots, such as AWS::EC2::Volume, specify Snapshot to have AWS CloudFormation create a snapshot before deleting the old resource instance.
+
+You can apply the UpdateReplacePolicy attribute to any resource.
+UpdateReplacePolicy is only executed if you update a resource property whose update behavior is specified as Replacement, thereby causing AWS CloudFormation to replace the old resource with a new one with a new physical ID.
+For example, if you update the Engine property of an AWS::RDS::DBInstance resource type, AWS CloudFormation creates a new resource and replaces the current DB instance resource with the new one.
+The UpdateReplacePolicy attribute would then dictate whether AWS CloudFormation deleted, retained, or created a snapshot of the old DB instance.
+The update behavior for each property of a resource is specified in the reference topic for that resource in the AWS Resource and Property Types Reference.
+For more information on resource update behavior, see Update Behaviors of Stack Resources.
+
+The UpdateReplacePolicy attribute applies to stack updates you perform directly, as well as stack updates performed using change sets.
+
+Note
+Resources that are retained continue to exist and continue to incur applicable charges until you delete those resources.
+Snapshots that are created with this policy continue to exist and continue to incur applicable charges until you delete those snapshots.
+UpdateReplacePolicy retains the old physical resource or snapshot, but removes it from AWS CloudFormation's scope.
+
+UpdateReplacePolicy differs from the DeletionPolicy attribute in that it only applies to resources replaced during stack updates.
+Use DeletionPolicy for resources deleted when a stack is deleted, or when the resource definition itself is deleted from the template as part of a stack update.
 
 You must use one of the following options: "Delete","Retain","Snapshot"
 

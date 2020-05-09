@@ -15,15 +15,6 @@ Add-VSRDSDBSecurityGroupIngress [[-CIDRIP] <Object>] [[-EC2SecurityGroupId] <Obj
 Adds an AWS::RDS::DBSecurityGroup.Ingress resource property to the template.
 The Ingress property type specifies an individual ingress rule within an AWS::RDS::DBSecurityGroup resource.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -CIDRIP

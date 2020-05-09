@@ -8,22 +8,13 @@ The OptionConfiguration property type specifies an individual option, and its se
 
 ```
 Add-VSRDSOptionGroupOptionConfiguration [[-DBSecurityGroupMemberships] <Object>] [-OptionName] <Object>
- [[-OptionSettings] <Object>] [[-OptionVersion] <Object>] [[-Port] <Int32>]
+ [[-OptionSettings] <Object>] [[-OptionVersion] <Object>] [[-Port] <Object>]
  [[-VpcSecurityGroupMemberships] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::RDS::OptionGroup.OptionConfiguration resource property to the template.
 The OptionConfiguration property type specifies an individual option, and its settings, within an AWS::RDS::OptionGroup resource.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -115,13 +106,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 5
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

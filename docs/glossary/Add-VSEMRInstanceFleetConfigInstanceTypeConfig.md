@@ -11,8 +11,8 @@ There can be a maximum of 5 instance type configurations in a fleet.
 
 ```
 Add-VSEMRInstanceFleetConfigInstanceTypeConfig [[-BidPrice] <Object>]
- [[-BidPriceAsPercentageOfOnDemandPrice] <Double>] [[-Configurations] <Object>] [[-EbsConfiguration] <Object>]
- [-InstanceType] <Object> [[-WeightedCapacity] <Int32>] [<CommonParameters>]
+ [[-BidPriceAsPercentageOfOnDemandPrice] <Object>] [[-Configurations] <Object>] [[-EbsConfiguration] <Object>]
+ [-InstanceType] <Object> [[-WeightedCapacity] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -25,15 +25,6 @@ There can be a maximum of 5 instance type configurations in a fleet.
 **Note**
 
 The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -68,13 +59,13 @@ PrimitiveType: Double
 UpdateType: Immutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -153,13 +144,13 @@ PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 6
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

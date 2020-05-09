@@ -2,27 +2,20 @@
 
 ## SYNOPSIS
 Adds an AWS::Pinpoint::ApplicationSettings.Limits resource property to the template.
-The default sending limits for campaigns in the application.
+Specifies the default sending limits for campaigns in the application.
+You can override these limits for a specific campaign.
 
 ## SYNTAX
 
 ```
-Add-VSPinpointApplicationSettingsLimits [[-Daily] <Int32>] [[-MaximumDuration] <Int32>] [[-Total] <Int32>]
- [[-MessagesPerSecond] <Int32>] [<CommonParameters>]
+Add-VSPinpointApplicationSettingsLimits [[-Daily] <Object>] [[-MaximumDuration] <Object>] [[-Total] <Object>]
+ [[-MessagesPerSecond] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Pinpoint::ApplicationSettings.Limits resource property to the template.
-The default sending limits for campaigns in the application.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+Specifies the default sending limits for campaigns in the application.
+You can override these limits for a specific campaign.
 
 ## PARAMETERS
 
@@ -35,13 +28,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -55,13 +48,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -75,13 +68,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -96,13 +89,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 4
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

@@ -17,15 +17,6 @@ Adds an AWS::AutoScalingPlans::ScalingPlan.ApplicationSource resource property t
 ApplicationSource is a property of ScalingPlan: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscalingplans-scalingplan.html that specifies the application source to use with AWS Auto Scaling.
 You can create one scaling plan per application source.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -CloudFormationStackARN

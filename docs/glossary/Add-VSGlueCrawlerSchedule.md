@@ -14,15 +14,6 @@ Add-VSGlueCrawlerSchedule [[-ScheduleExpression] <Object>] [<CommonParameters>]
 Adds an AWS::Glue::Crawler.Schedule resource property to the template.
 A scheduling object using a cron statement to schedule an event.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ScheduleExpression

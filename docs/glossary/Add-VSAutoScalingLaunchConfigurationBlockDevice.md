@@ -7,8 +7,8 @@ BlockDevice is a subproperty of BlockDeviceMapping: https://docs.aws.amazon.com/
 ## SYNTAX
 
 ```
-Add-VSAutoScalingLaunchConfigurationBlockDevice [[-DeleteOnTermination] <Boolean>] [[-Encrypted] <Boolean>]
- [[-Iops] <Int32>] [[-SnapshotId] <Object>] [[-VolumeSize] <Int32>] [[-VolumeType] <Object>]
+Add-VSAutoScalingLaunchConfigurationBlockDevice [[-DeleteOnTermination] <Object>] [[-Encrypted] <Object>]
+ [[-Iops] <Object>] [[-SnapshotId] <Object>] [[-VolumeSize] <Object>] [[-VolumeType] <Object>]
  [<CommonParameters>]
 ```
 
@@ -17,15 +17,6 @@ Adds an AWS::AutoScaling::LaunchConfiguration.BlockDevice resource property to t
 BlockDevice is a subproperty of BlockDeviceMapping: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig-blockdev-mapping.html that describes an Amazon EBS volume.
 
 For Amazon EC2 Auto Scaling EBS Block Device snippets, see Auto Scaling Launch Configuration Resource: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/quickref-autoscaling.html#scenario-as-launch-config.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -38,13 +29,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -66,13 +57,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -89,13 +80,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -132,13 +123,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 5
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

@@ -14,15 +14,6 @@ Add-VSS3BucketDataExport [-Destination] <Object> [-OutputSchemaVersion] <Object>
 Adds an AWS::S3::Bucket.DataExport resource property to the template.
 Specifies how data related to the storage class analysis for an Amazon S3 bucket should be exported.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Destination

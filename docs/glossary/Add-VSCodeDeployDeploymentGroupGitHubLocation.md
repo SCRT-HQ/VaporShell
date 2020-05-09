@@ -14,15 +14,6 @@ Add-VSCodeDeployDeploymentGroupGitHubLocation [-CommitId] <Object> [-Repository]
 Adds an AWS::CodeDeploy::DeploymentGroup.GitHubLocation resource property to the template.
 GitHubLocation is a property of the CodeDeploy DeploymentGroup Revision: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision.html property that specifies the location of an application revision that is stored in GitHub.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -CommitId

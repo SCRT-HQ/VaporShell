@@ -17,15 +17,6 @@ Adds an AWS::CloudWatch::Alarm.Metric resource property to the template.
 The Metric property type represents a specific metric.
 Metric is a property of the MetricStat: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-metricstat.html property type.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Dimensions

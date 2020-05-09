@@ -15,15 +15,6 @@ Add-VSS3BucketWebsiteConfiguration [[-ErrorDocument] <Object>] [[-IndexDocument]
 Adds an AWS::S3::Bucket.WebsiteConfiguration resource property to the template.
 Specifies website configuration parameters for an Amazon S3 bucket.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ErrorDocument

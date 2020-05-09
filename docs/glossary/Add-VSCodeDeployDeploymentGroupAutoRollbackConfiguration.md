@@ -8,7 +8,7 @@ For more information, see Automatic Rollbacks: https://docs.aws.amazon.com/coded
 ## SYNTAX
 
 ```
-Add-VSCodeDeployDeploymentGroupAutoRollbackConfiguration [[-Enabled] <Boolean>] [[-Events] <Object>]
+Add-VSCodeDeployDeploymentGroupAutoRollbackConfiguration [[-Enabled] <Object>] [[-Events] <Object>]
  [<CommonParameters>]
 ```
 
@@ -18,15 +18,6 @@ The AutoRollbackConfiguration property type configures automatic rollback for an
 For more information, see Automatic Rollbacks: https://docs.aws.amazon.com/codedeploy/latest/userguide/deployments-rollback-and-redeploy.html#deployments-rollback-and-redeploy-automatic-rollbacks in the *AWS CodeDeploy User Guide*.
 
 AutoRollbackConfiguration is a property of the DeploymentGroup: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html resource.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -38,13 +29,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

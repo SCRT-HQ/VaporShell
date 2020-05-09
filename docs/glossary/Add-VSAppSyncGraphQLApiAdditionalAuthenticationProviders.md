@@ -20,15 +20,6 @@ A list of additional authentication providers for the GraphqlApi API.
 
 *Update requires:* No interruption
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### CommonParameters

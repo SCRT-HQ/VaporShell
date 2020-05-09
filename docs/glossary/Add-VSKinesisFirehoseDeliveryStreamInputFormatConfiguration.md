@@ -3,6 +3,7 @@
 ## SYNOPSIS
 Adds an AWS::KinesisFirehose::DeliveryStream.InputFormatConfiguration resource property to the template.
 Specifies the deserializer you want to use to convert the format of the input data.
+This parameter is required if Enabled is set to true.
 
 ## SYNTAX
 
@@ -13,15 +14,7 @@ Add-VSKinesisFirehoseDeliveryStreamInputFormatConfiguration [-Deserializer] <Obj
 ## DESCRIPTION
 Adds an AWS::KinesisFirehose::DeliveryStream.InputFormatConfiguration resource property to the template.
 Specifies the deserializer you want to use to convert the format of the input data.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+This parameter is required if Enabled is set to true.
 
 ## PARAMETERS
 

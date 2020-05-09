@@ -20,16 +20,14 @@ A complex type that describes the Amazon S3 bucket, HTTP server (for example, a 
 This can also be an origin group, if you've created an origin group.
 You must specify at least one origin or origin group.
 
-For the current limit on the number of origins or origin groups that you can specify for a distribution, see Amazon CloudFront Limits: https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_cloudfront in the *AWS General Reference*.
+For the current quota (limit on the number of origins or origin groups that you can specify for a distribution, see Quotas: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html in the *Amazon CloudFront Developer Guide*.
 
-## EXAMPLES
+**Note**
 
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+If you use CloudFormation to create a CloudFront distribution and an S3 bucket origin at the same time, the distribution might return HTTP 307 Temporary Redirect responses for up to 24 hours.
+It can take up to 24 hours for the S3 bucket name to propagate to all AWS Regions.
+When the propagation is complete, the CloudFront distribution will automatically stop sending these redirect responses; you don't need to take any action.
+For more information, see Why am I getting an HTTP 307 Temporary Redirect response from Amazon S3?: http://aws.amazon.com/premiumsupport/knowledge-center/s3-http-307-response/ and Temporary Request Redirection: https://docs.aws.amazon.com/AmazonS3/latest/dev/Redirects.html#TemporaryRedirection.
 
 ## PARAMETERS
 
@@ -54,11 +52,12 @@ Accept wildcard characters: False
 ```
 
 ### -DomainName
-**Amazon S3 origins**: The DNS name of the Amazon S3 bucket from which you want CloudFront to get objects for this origin, for example, myawsbucket.s3.amazonaws.com.
-If you set up your bucket to be configured as a website endpoint, enter the Amazon S3 static website hosting endpoint for the bucket.
+**Amazon S3 origins**: The DNS name of the Amazon S3 bucket from which you want CloudFront to get objects for this origin, for example, my-aws-bucket.s3.amazonaws.com.
+For S3 buckets configured as a static website, use CustomOriginConfig instead.
 For more information about specifying this value for different types of origins, see Origin Domain Name: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName in the *Amazon CloudFront Developer Guide*.
 Constraints for Amazon S3 origins:
 + If you configured Amazon S3 Transfer Acceleration for your bucket, don't specify the s3-accelerate endpoint for DomainName.
++ If you configured your bucket as a static website, use CustomOriginConfig instead.
 + The bucket name must be between 3 and 63 characters long inclusive.
 + The bucket name must contain only lowercase characters, numbers, periods, underscores, and dashes.
 + The bucket name must not contain adjacent periods.
@@ -85,7 +84,7 @@ Accept wildcard characters: False
 
 ### -S3OriginConfig
 A complex type that contains information about the Amazon S3 origin.
-If the origin is a custom origin, use the CustomOriginConfig element instead.
+If the origin is a custom origin or an S3 bucket that is configured as a website endpoint, use the CustomOriginConfig element instead.
 
 Type: S3OriginConfig
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-s3originconfig
@@ -155,8 +154,8 @@ Accept wildcard characters: False
 ```
 
 ### -CustomOriginConfig
-A complex type that contains information about a custom origin.
-If the origin is an Amazon S3 bucket, use the S3OriginConfig element instead.
+A complex type that contains information about a custom origin or an Amazon S3 bucket that is configured as a static website.
+If the origin is an Amazon S3 bucket that is *not* configured as a static website, use the S3OriginConfig element instead.
 
 Type: CustomOriginConfig
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-customoriginconfig

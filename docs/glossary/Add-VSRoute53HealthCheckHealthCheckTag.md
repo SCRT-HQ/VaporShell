@@ -14,15 +14,6 @@ Add-VSRoute53HealthCheckHealthCheckTag [-Key] <Object> [-Value] <Object> [<Commo
 Adds an AWS::Route53::HealthCheck.HealthCheckTag resource property to the template.
 The HealthCheckTag property describes one key-value pair that is associated with an AWS::Route53::HealthCheck resource.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Key

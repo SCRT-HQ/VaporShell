@@ -14,15 +14,6 @@ Add-VSCloudWatchAnomalyDetectorRange [-EndTime] <Object> [-StartTime] <Object> [
 Adds an AWS::CloudWatch::AnomalyDetector.Range resource property to the template.
 Each Range specifies one range of days or times to exclude from use for training or updating an anomaly detection model.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -EndTime

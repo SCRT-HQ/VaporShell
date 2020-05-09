@@ -25,15 +25,6 @@ With earlier Amazon EMR releases, the application is any Amazon or third-party s
 You can specify the version of the application and arguments to pass to it.
 Amazon EMR accepts and forwards the argument list to the corresponding installation script as a bootstrap action argument.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -AdditionalInfo

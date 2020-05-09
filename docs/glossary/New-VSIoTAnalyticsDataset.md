@@ -11,8 +11,9 @@ For more information, see  How to Use AWS IoT Analytics: https://docs.aws.amazon
 ```
 New-VSIoTAnalyticsDataset [-LogicalId] <String> -Actions <Object> [-DatasetName <Object>]
  [-ContentDeliveryRules <Object>] [-Triggers <Object>] [-VersioningConfiguration <Object>]
- [-RetentionPeriod <Object>] [-Tags <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>]
- [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+ [-RetentionPeriod <Object>] [-Tags <Object>] [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>]
+ [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -20,15 +21,6 @@ Adds an AWS::IoTAnalytics::Dataset resource to the template.
 The AWS::IoTAnalytics::Dataset resource stores data retrieved from a data store by applying a "queryAction" (an SQL query or a "containerAction" (executing a containerized application.
 The data set can be populated manually by calling "CreateDatasetContent" or automatically according to a "trigger" you specify.
 For more information, see  How to Use AWS IoT Analytics: https://docs.aws.amazon.com/iotanalytics/latest/userguide/welcome.html#aws-iot-analytics-how in the *AWS IoT Analytics User Guide*.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -50,7 +42,7 @@ Accept wildcard characters: False
 ```
 
 ### -Actions
-The "DatasetAction" objects that automatically create the data set contents.
+The DatasetAction objects that automatically create the data set contents.
 
 Type: List
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-dataset.html#cfn-iotanalytics-dataset-actions
@@ -89,7 +81,7 @@ Accept wildcard characters: False
 ```
 
 ### -ContentDeliveryRules
-When data set contents are created they are delivered to destinations specified here.
+When dataset contents are created they are delivered to destinations specified here.
 
 Type: List
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-dataset.html#cfn-iotanalytics-dataset-contentdeliveryrules
@@ -109,7 +101,7 @@ Accept wildcard characters: False
 ```
 
 ### -Triggers
-The "DatasetTrigger" objects that specify when the data set is automatically updated.
+The DatasetTrigger objects that specify when the data set is automatically updated.
 
 Type: List
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-dataset.html#cfn-iotanalytics-dataset-triggers
@@ -129,9 +121,10 @@ Accept wildcard characters: False
 ```
 
 ### -VersioningConfiguration
-Optional\] How many versions of data set contents are kept.
-If not specified or set to null, only the latest version plus the latest succeeded version if they are different are kept for the time period specified by the "retentionPeriod" parameter.
-For more information, see https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions
+Optional.
+How many versions of dataset contents are kept.
+If not specified or set to null, only the latest version plus the latest succeeded version if they are different are kept for the time period specified by the retentionPeriod parameter.
+For more information, see Keeping Multiple Versions of AWS IoT Analytics Data Sets: https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions in the *AWS IoT Analytics User Guide*.
 
 Type: VersioningConfiguration
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-dataset.html#cfn-iotanalytics-dataset-versioningconfiguration
@@ -150,7 +143,8 @@ Accept wildcard characters: False
 ```
 
 ### -RetentionPeriod
-Optional\] How long, in days, message data is kept for the data set.
+Optional.
+How long, in days, message data is kept for the data set.
 
 Type: RetentionPeriod
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-dataset.html#cfn-iotanalytics-dataset-retentionperiod
@@ -197,6 +191,49 @@ If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the re
 To keep a resource when its stack is deleted, specify Retain for that resource.
 You can use retain for any resource.
 For example, you can retain a nested stack, S3 bucket, or EC2 instance so that you can continue to use or modify those resources after you delete their stacks.
+
+You must use one of the following options: "Delete","Retain","Snapshot"
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdateReplacePolicy
+Use the UpdateReplacePolicy attribute to retain or (in some cases) backup the existing physical instance of a resource when it is replaced during a stack update operation.
+
+When you initiate a stack update, AWS CloudFormation updates resources based on differences between what you submit and the stack's current template and parameters.
+If you update a resource property that requires that the resource be replaced, AWS CloudFormation recreates the resource during the update.
+Recreating the resource generates a new physical ID.
+AWS CloudFormation creates the replacement resource first, and then changes references from other dependent resources to point to the replacement resource.
+By default, AWS CloudFormation then deletes the old resource.
+Using the UpdateReplacePolicy, you can specify that AWS CloudFormation retain or (in some cases) create a snapshot of the old resource.
+
+For resources that support snapshots, such as AWS::EC2::Volume, specify Snapshot to have AWS CloudFormation create a snapshot before deleting the old resource instance.
+
+You can apply the UpdateReplacePolicy attribute to any resource.
+UpdateReplacePolicy is only executed if you update a resource property whose update behavior is specified as Replacement, thereby causing AWS CloudFormation to replace the old resource with a new one with a new physical ID.
+For example, if you update the Engine property of an AWS::RDS::DBInstance resource type, AWS CloudFormation creates a new resource and replaces the current DB instance resource with the new one.
+The UpdateReplacePolicy attribute would then dictate whether AWS CloudFormation deleted, retained, or created a snapshot of the old DB instance.
+The update behavior for each property of a resource is specified in the reference topic for that resource in the AWS Resource and Property Types Reference.
+For more information on resource update behavior, see Update Behaviors of Stack Resources.
+
+The UpdateReplacePolicy attribute applies to stack updates you perform directly, as well as stack updates performed using change sets.
+
+Note
+Resources that are retained continue to exist and continue to incur applicable charges until you delete those resources.
+Snapshots that are created with this policy continue to exist and continue to incur applicable charges until you delete those snapshots.
+UpdateReplacePolicy retains the old physical resource or snapshot, but removes it from AWS CloudFormation's scope.
+
+UpdateReplacePolicy differs from the DeletionPolicy attribute in that it only applies to resources replaced during stack updates.
+Use DeletionPolicy for resources deleted when a stack is deleted, or when the resource definition itself is deleted from the template as part of a stack update.
 
 You must use one of the following options: "Delete","Retain","Snapshot"
 

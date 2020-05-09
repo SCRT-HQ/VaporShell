@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 Adds an AWS::IoTAnalytics::Dataset.TriggeringDataset resource property to the template.
-Information about the data set whose content generation triggers the new data set content generation.
+Information about the dataset whose content generation triggers the new dataset content generation.
 
 ## SYNTAX
 
@@ -12,16 +12,7 @@ Add-VSIoTAnalyticsDatasetTriggeringDataset [-DatasetName] <Object> [<CommonParam
 
 ## DESCRIPTION
 Adds an AWS::IoTAnalytics::Dataset.TriggeringDataset resource property to the template.
-Information about the data set whose content generation triggers the new data set content generation.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+Information about the dataset whose content generation triggers the new dataset content generation.
 
 ## PARAMETERS
 

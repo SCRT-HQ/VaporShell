@@ -19,15 +19,6 @@ You can specify only one option at a time.
 
 CapacityReservationSpecification is a property of the  Amazon EC2 LaunchTemplate LaunchTemplateData: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html property type.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -CapacityReservationPreference
@@ -37,8 +28,8 @@ Possible preferences include:
 +  none - The instance avoids running in a Capacity Reservation even if one is available.
 The instance runs in On-Demand capacity.
 
-Type: CapacityReservationPreference
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-capacityreservationspecification.html#cfn-ec2-launchtemplate-launchtemplatedata-capacityreservationspecification-capacityreservationpreference
+PrimitiveType: String
 UpdateType: Mutable
 
 ```yaml

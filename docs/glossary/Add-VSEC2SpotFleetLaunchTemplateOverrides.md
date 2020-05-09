@@ -8,21 +8,12 @@ Specifies overrides for a launch template.
 
 ```
 Add-VSEC2SpotFleetLaunchTemplateOverrides [[-AvailabilityZone] <Object>] [[-InstanceType] <Object>]
- [[-SpotPrice] <Object>] [[-SubnetId] <Object>] [[-WeightedCapacity] <Double>] [<CommonParameters>]
+ [[-SpotPrice] <Object>] [[-SubnetId] <Object>] [[-WeightedCapacity] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::EC2::SpotFleet.LaunchTemplateOverrides resource property to the template.
 Specifies overrides for a launch template.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -110,13 +101,13 @@ PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 5
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

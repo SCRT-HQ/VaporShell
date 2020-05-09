@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 Adds an AWS::EC2::VPNConnection.VpnTunnelOptionsSpecification resource property to the template.
-The tunnel options for a VPN connection.
+The tunnel options for a single VPN tunnel.
 
 ## SYNTAX
 
@@ -13,22 +13,13 @@ Add-VSEC2VPNConnectionVpnTunnelOptionsSpecification [[-PreSharedKey] <Object>] [
 
 ## DESCRIPTION
 Adds an AWS::EC2::VPNConnection.VpnTunnelOptionsSpecification resource property to the template.
-The tunnel options for a VPN connection.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+The tunnel options for a single VPN tunnel.
 
 ## PARAMETERS
 
 ### -PreSharedKey
 The pre-shared key PSK to establish initial authentication between the virtual private gateway and customer gateway.
-Constraints: Allowed characters are alphanumeric characters and ._.
+Constraints: Allowed characters are alphanumeric characters, periods ., and underscores _.
 Must be between 8 and 64 characters in length and cannot start with zero 0.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-presharedkey

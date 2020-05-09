@@ -14,15 +14,6 @@ Add-VSECSTaskDefinitionRepositoryCredentials [[-CredentialsParameter] <Object>] 
 Adds an AWS::ECS::TaskDefinition.RepositoryCredentials resource property to the template.
 The RepositoryCredentials property specifies the repository credentials for private registry authentication.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -CredentialsParameter

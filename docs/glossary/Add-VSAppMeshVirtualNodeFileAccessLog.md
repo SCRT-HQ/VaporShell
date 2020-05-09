@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 Adds an AWS::AppMesh::VirtualNode.FileAccessLog resource property to the template.
-An object representing an access log file.
+An object that represents an access log file.
 
 ## SYNTAX
 
@@ -12,16 +12,7 @@ Add-VSAppMeshVirtualNodeFileAccessLog [-Path] <Object> [<CommonParameters>]
 
 ## DESCRIPTION
 Adds an AWS::AppMesh::VirtualNode.FileAccessLog resource property to the template.
-An object representing an access log file.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+An object that represents an access log file.
 
 ## PARAMETERS
 

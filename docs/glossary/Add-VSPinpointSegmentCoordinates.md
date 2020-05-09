@@ -2,26 +2,17 @@
 
 ## SYNOPSIS
 Adds an AWS::Pinpoint::Segment.Coordinates resource property to the template.
-The latitude and longitude of the location.
+Specifies the GPS coordinates of a location.
 
 ## SYNTAX
 
 ```
-Add-VSPinpointSegmentCoordinates [-Latitude] <Double> [-Longitude] <Double> [<CommonParameters>]
+Add-VSPinpointSegmentCoordinates [-Latitude] <Object> [-Longitude] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Pinpoint::Segment.Coordinates resource property to the template.
-The latitude and longitude of the location.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+Specifies the GPS coordinates of a location.
 
 ## PARAMETERS
 
@@ -33,13 +24,13 @@ PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -52,13 +43,13 @@ PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

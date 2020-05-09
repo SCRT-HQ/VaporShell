@@ -20,15 +20,6 @@ Used by Kinesis Data Firehose for deserializing data, which means converting it 
 This is one of two deserializers you can choose, depending on which one offers the functionality you need.
 The other option is the OpenX SerDe.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -TimestampFormats

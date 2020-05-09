@@ -2,27 +2,18 @@
 
 ## SYNOPSIS
 Adds an AWS::Cognito::UserPool.DeviceConfiguration resource property to the template.
-DeviceConfiguration is a property of the AWS::Cognito::UserPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html resource that defines the device configuration of an Amazon Cognito User Pool.
+The configuration for the user pool's device tracking.
 
 ## SYNTAX
 
 ```
-Add-VSCognitoUserPoolDeviceConfiguration [[-DeviceOnlyRememberedOnUserPrompt] <Boolean>]
- [[-ChallengeRequiredOnNewDevice] <Boolean>] [<CommonParameters>]
+Add-VSCognitoUserPoolDeviceConfiguration [[-DeviceOnlyRememberedOnUserPrompt] <Object>]
+ [[-ChallengeRequiredOnNewDevice] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Cognito::UserPool.DeviceConfiguration resource property to the template.
-DeviceConfiguration is a property of the AWS::Cognito::UserPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html resource that defines the device configuration of an Amazon Cognito User Pool.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+The configuration for the user pool's device tracking.
 
 ## PARAMETERS
 
@@ -34,13 +25,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -54,13 +45,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

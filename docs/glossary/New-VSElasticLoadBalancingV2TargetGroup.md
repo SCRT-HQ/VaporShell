@@ -7,13 +7,14 @@ Specifies a target group for an Application Load Balancer or Network Load Balanc
 ## SYNTAX
 
 ```
-New-VSElasticLoadBalancingV2TargetGroup [-LogicalId] <String> [-HealthCheckEnabled <Boolean>]
- [-HealthCheckIntervalSeconds <Int32>] [-HealthCheckPath <Object>] [-HealthCheckPort <Object>]
- [-HealthCheckProtocol <Object>] [-HealthCheckTimeoutSeconds <Int32>] [-HealthyThresholdCount <Int32>]
- [-Matcher <Object>] [-Name <Object>] [-Port <Int32>] [-Protocol <Object>] [-Tags <Object>]
+New-VSElasticLoadBalancingV2TargetGroup [-LogicalId] <String> [-HealthCheckEnabled <Object>]
+ [-HealthCheckIntervalSeconds <Object>] [-HealthCheckPath <Object>] [-HealthCheckPort <Object>]
+ [-HealthCheckProtocol <Object>] [-HealthCheckTimeoutSeconds <Object>] [-HealthyThresholdCount <Object>]
+ [-Matcher <Object>] [-Name <Object>] [-Port <Object>] [-Protocol <Object>] [-Tags <Object>]
  [-TargetGroupAttributes <Object>] [-TargetType <Object>] [-Targets <Object>]
- [-UnhealthyThresholdCount <Int32>] [-VpcId <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>]
- [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+ [-UnhealthyThresholdCount <Object>] [-VpcId <Object>] [-DeletionPolicy <String>]
+ [-UpdateReplacePolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
+ [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -21,15 +22,6 @@ Adds an AWS::ElasticLoadBalancingV2::TargetGroup resource to the template.
 Specifies a target group for an Application Load Balancer or Network Load Balancer.
 
 Before you register a Lambda function as a target, you must create a AWS::Lambda::Permission resource that grants the Elastic Load Balancing service principal permission to invoke the Lambda function.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -60,13 +52,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -83,13 +75,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -138,8 +130,8 @@ Accept wildcard characters: False
 The protocol the load balancer uses when performing health checks on targets.
 For Application Load Balancers, the default is HTTP.
 For Network Load Balancers, the default is TCP.
-The TCP protocol is supported for health checks only if the protocol of the target group is TCP or TLS.
-The TLS protocol is not supported for health checks.
+The TCP protocol is supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP.
+The TLS, UDP, and TCP_UDP protocols are not supported for health checks.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-healthcheckprotocol
 PrimitiveType: String
@@ -168,13 +160,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -190,13 +182,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -250,13 +242,13 @@ PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -264,7 +256,8 @@ Accept wildcard characters: False
 ### -Protocol
 The protocol to use for routing traffic to the targets.
 For Application Load Balancers, the supported protocols are HTTP and HTTPS.
-For Network Load Balancers, the supported protocols are TCP and TLS.
+For Network Load Balancers, the supported protocols are TCP, TLS, UDP, or TCP_UDP.
+A TCP_UDP listener must be associated with a TCP_UDP target group.
 If the target is a Lambda function, this parameter does not apply.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-protocol
@@ -285,7 +278,6 @@ Accept wildcard characters: False
 
 ### -Tags
 The tags.
-Each resource can have a maximum of 10 tags.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-tags
 DuplicatesAllowed: True
@@ -331,6 +323,7 @@ The type of target that you must specify when registering targets with this targ
 You can't specify targets for a target group using more than one target type.
 +  instance - Targets are specified by instance ID.
 This is the default value.
+If the target group protocol is UDP or TCP_UDP, the target type must be instance.
 +  ip - Targets are specified by IP address.
 You can specify IP addresses from the subnets of the virtual private cloud VPC for the target group, the RFC 1918 range 10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16, and the RFC 6598 range 100.64.0.0/10.
 You can't specify publicly routable IP addresses.
@@ -384,13 +377,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -398,6 +391,7 @@ Accept wildcard characters: False
 ### -VpcId
 The identifier of the virtual private cloud VPC.
 If the target is a Lambda function, this parameter does not apply.
+Otherwise, this parameter is required.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-vpcid
 PrimitiveType: String
@@ -423,6 +417,49 @@ If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the re
 To keep a resource when its stack is deleted, specify Retain for that resource.
 You can use retain for any resource.
 For example, you can retain a nested stack, S3 bucket, or EC2 instance so that you can continue to use or modify those resources after you delete their stacks.
+
+You must use one of the following options: "Delete","Retain","Snapshot"
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdateReplacePolicy
+Use the UpdateReplacePolicy attribute to retain or (in some cases) backup the existing physical instance of a resource when it is replaced during a stack update operation.
+
+When you initiate a stack update, AWS CloudFormation updates resources based on differences between what you submit and the stack's current template and parameters.
+If you update a resource property that requires that the resource be replaced, AWS CloudFormation recreates the resource during the update.
+Recreating the resource generates a new physical ID.
+AWS CloudFormation creates the replacement resource first, and then changes references from other dependent resources to point to the replacement resource.
+By default, AWS CloudFormation then deletes the old resource.
+Using the UpdateReplacePolicy, you can specify that AWS CloudFormation retain or (in some cases) create a snapshot of the old resource.
+
+For resources that support snapshots, such as AWS::EC2::Volume, specify Snapshot to have AWS CloudFormation create a snapshot before deleting the old resource instance.
+
+You can apply the UpdateReplacePolicy attribute to any resource.
+UpdateReplacePolicy is only executed if you update a resource property whose update behavior is specified as Replacement, thereby causing AWS CloudFormation to replace the old resource with a new one with a new physical ID.
+For example, if you update the Engine property of an AWS::RDS::DBInstance resource type, AWS CloudFormation creates a new resource and replaces the current DB instance resource with the new one.
+The UpdateReplacePolicy attribute would then dictate whether AWS CloudFormation deleted, retained, or created a snapshot of the old DB instance.
+The update behavior for each property of a resource is specified in the reference topic for that resource in the AWS Resource and Property Types Reference.
+For more information on resource update behavior, see Update Behaviors of Stack Resources.
+
+The UpdateReplacePolicy attribute applies to stack updates you perform directly, as well as stack updates performed using change sets.
+
+Note
+Resources that are retained continue to exist and continue to incur applicable charges until you delete those resources.
+Snapshots that are created with this policy continue to exist and continue to incur applicable charges until you delete those snapshots.
+UpdateReplacePolicy retains the old physical resource or snapshot, but removes it from AWS CloudFormation's scope.
+
+UpdateReplacePolicy differs from the DeletionPolicy attribute in that it only applies to resources replaced during stack updates.
+Use DeletionPolicy for resources deleted when a stack is deleted, or when the resource definition itself is deleted from the template as part of a stack update.
 
 You must use one of the following options: "Delete","Retain","Snapshot"
 

@@ -14,15 +14,6 @@ Add-VSGlueCrawlerS3Target [[-Path] <Object>] [[-Exclusions] <Object>] [<CommonPa
 Adds an AWS::Glue::Crawler.S3Target resource property to the template.
 Specifies a data store in Amazon Simple Storage Service (Amazon S3.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Path

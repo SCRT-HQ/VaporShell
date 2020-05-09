@@ -15,15 +15,6 @@ Add-VSLambdaLayerVersionContent [[-S3ObjectVersion] <Object>] [-S3Bucket] <Objec
 Adds an AWS::Lambda::LayerVersion.Content resource property to the template.
 A ZIP archive that contains the contents of an AWS Lambda layer: https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -S3ObjectVersion

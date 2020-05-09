@@ -14,15 +14,6 @@ Add-VSBatchJobDefinitionLinuxParameters [[-Devices] <Object>] [<CommonParameters
 Adds an AWS::Batch::JobDefinition.LinuxParameters resource property to the template.
 Linux-specific modifications that are applied to the container, such as details for device mappings.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Devices

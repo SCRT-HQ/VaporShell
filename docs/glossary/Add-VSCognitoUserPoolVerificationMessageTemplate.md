@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 Adds an AWS::Cognito::UserPool.VerificationMessageTemplate resource property to the template.
-VerificationMessageTemplate is a property of the AWS::Cognito::UserPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html resource that defines the template for verification messages.
+The template for verification messages.
 
 ## SYNTAX
 
@@ -14,16 +14,7 @@ Add-VSCognitoUserPoolVerificationMessageTemplate [[-EmailMessageByLink] <Object>
 
 ## DESCRIPTION
 Adds an AWS::Cognito::UserPool.VerificationMessageTemplate resource property to the template.
-VerificationMessageTemplate is a property of the AWS::Cognito::UserPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html resource that defines the template for verification messages.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+The template for verification messages.
 
 ## PARAMETERS
 

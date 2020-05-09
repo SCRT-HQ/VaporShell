@@ -15,15 +15,6 @@ Add-VSIoTAnalyticsPipelineDeviceShadowEnrich [[-Attribute] <Object>] [[-Next] <O
 Adds an AWS::IoTAnalytics::Pipeline.DeviceShadowEnrich resource property to the template.
 An activity that adds information from the AWS IoT Device Shadows service to a message.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Attribute

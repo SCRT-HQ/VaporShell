@@ -8,22 +8,13 @@ A classifier for custom CSV content.
 
 ```
 Add-VSGlueClassifierCsvClassifier [[-QuoteSymbol] <Object>] [[-ContainsHeader] <Object>]
- [[-Delimiter] <Object>] [[-Header] <Object>] [[-AllowSingleColumn] <Boolean>]
- [[-DisableValueTrimming] <Boolean>] [[-Name] <Object>] [<CommonParameters>]
+ [[-Delimiter] <Object>] [[-Header] <Object>] [[-AllowSingleColumn] <Object>]
+ [[-DisableValueTrimming] <Object>] [[-Name] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Glue::Classifier.CsvClassifier resource property to the template.
 A classifier for custom CSV content.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -113,13 +104,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 5
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -133,13 +124,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 6
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

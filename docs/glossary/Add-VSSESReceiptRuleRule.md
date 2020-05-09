@@ -7,8 +7,8 @@ Receipt rules enable you to specify which actions Amazon SES should take when it
 ## SYNTAX
 
 ```
-Add-VSSESReceiptRuleRule [[-ScanEnabled] <Boolean>] [[-Recipients] <Object>] [[-Actions] <Object>]
- [[-Enabled] <Boolean>] [[-Name] <Object>] [[-TlsPolicy] <Object>] [<CommonParameters>]
+Add-VSSESReceiptRuleRule [[-ScanEnabled] <Object>] [[-Recipients] <Object>] [[-Actions] <Object>]
+ [[-Enabled] <Object>] [[-Name] <Object>] [[-TlsPolicy] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -19,15 +19,6 @@ Each receipt rule defines a set of email addresses or domains that it applies to
 If the email addresses or domains match at least one recipient address of the message, Amazon SES executes all of the receipt rule's actions on the message.
 
 For information about setting up receipt rules, see the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-receipt-rules.html.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -40,19 +31,19 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Recipients
-Containts the recipient domains and email addresses that the receipt rule applies to.
+Contains the recipient domains and email addresses that the receipt rule applies to.
 If this field isn't specified, this rule matches all recipients on all verified domains.
 
 PrimitiveItemType: String
@@ -101,13 +92,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 4
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

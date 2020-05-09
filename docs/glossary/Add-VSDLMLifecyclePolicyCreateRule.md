@@ -7,22 +7,13 @@ Specifies when to create snapshots of EBS volumes.
 ## SYNTAX
 
 ```
-Add-VSDLMLifecyclePolicyCreateRule [-IntervalUnit] <Object> [[-Times] <Object>] [-Interval] <Int32>
+Add-VSDLMLifecyclePolicyCreateRule [-IntervalUnit] <Object> [[-Times] <Object>] [-Interval] <Object>
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::DLM::LifecyclePolicy.CreateRule resource property to the template.
 Specifies when to create snapshots of EBS volumes.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -49,6 +40,7 @@ Accept wildcard characters: False
 The time, in UTC, to start the operation.
 The supported format is hh:mm.
 The operation occurs within a one-hour window following the specified time.
+If you do not specify a time, Amazon DLM selects a time within the next 24 hours.
 
 PrimitiveItemType: String
 Type: List
@@ -69,20 +61,20 @@ Accept wildcard characters: False
 
 ### -Interval
 The interval between snapshots.
-The supported values are 2, 3, 4, 6, 8, 12, and 24.
+The supported values are 1, 2, 3, 4, 6, 8, 12, and 24.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-createrule.html#cfn-dlm-lifecyclepolicy-createrule-interval
 PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 3
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

@@ -8,22 +8,14 @@ Specifies an action for a listener rule.
 
 ```
 Add-VSElasticLoadBalancingV2ListenerRuleAction [[-AuthenticateCognitoConfig] <Object>]
- [[-AuthenticateOidcConfig] <Object>] [[-FixedResponseConfig] <Object>] [[-Order] <Int32>]
- [[-RedirectConfig] <Object>] [[-TargetGroupArn] <Object>] [-Type] <Object> [<CommonParameters>]
+ [[-AuthenticateOidcConfig] <Object>] [[-FixedResponseConfig] <Object>] [[-ForwardConfig] <Object>]
+ [[-Order] <Object>] [[-RedirectConfig] <Object>] [[-TargetGroupArn] <Object>] [-Type] <Object>
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::ElasticLoadBalancingV2::ListenerRule.Action resource property to the template.
 Specifies an action for a listener rule.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -87,24 +79,45 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ForwardConfig
+Information for creating an action that distributes requests among one or more target groups.
+For Network Load Balancers, you can specify a single target group.
+Specify only when Type is forward.
+If you specify both ForwardConfig and TargetGroupArn, you can specify only one target group using ForwardConfig and it must be the same target group specified in TargetGroupArn.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-actions.html#cfn-elasticloadbalancingv2-listenerrule-action-forwardconfig
+Type: ForwardConfig
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Order
 The order for the action.
 This value is required for rules with multiple actions.
 The action with the lowest value for order is performed first.
-The final action to be performed must be a forward or a fixed-response action.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-actions.html#cfn-elasticloadbalancingv2-listenerrule-action-order
 PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 4
-Default value: 0
+Position: 5
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -123,7 +136,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 5
+Position: 6
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -131,7 +144,8 @@ Accept wildcard characters: False
 
 ### -TargetGroupArn
 The Amazon Resource Name ARN of the target group.
-Specify only when Type is forward.
+Specify only when Type is forward and you want to route to a single target group.
+To route to one or more target groups, use ForwardConfig instead.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-actions.html#cfn-elasticloadbalancingv2-listener-actions-targetgrouparn
 PrimitiveType: String
@@ -143,7 +157,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 6
+Position: 7
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -151,7 +165,6 @@ Accept wildcard characters: False
 
 ### -Type
 The type of action.
-Each rule must include exactly one of the following types of actions: forward, fixed-response, or redirect.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-actions.html#cfn-elasticloadbalancingv2-listener-actions-type
 PrimitiveType: String
@@ -163,7 +176,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 7
+Position: 8
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

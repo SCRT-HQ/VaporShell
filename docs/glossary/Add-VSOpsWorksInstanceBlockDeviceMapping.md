@@ -17,15 +17,6 @@ Adds an AWS::OpsWorks::Instance.BlockDeviceMapping resource property to the temp
 Describes a block device mapping.
 This data type maps directly to the Amazon EC2 BlockDeviceMapping: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BlockDeviceMapping.html data type.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -DeviceName

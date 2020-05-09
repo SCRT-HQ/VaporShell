@@ -14,15 +14,6 @@ Add-VSLakeFormationDataLakeSettingsAdmins [<CommonParameters>]
 Adds an AWS::LakeFormation::DataLakeSettings.Admins resource property to the template.
 A list of AWS Lake Formation principals.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### CommonParameters

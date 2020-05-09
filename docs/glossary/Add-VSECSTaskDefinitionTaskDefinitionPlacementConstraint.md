@@ -19,15 +19,6 @@ If you are using the Fargate launch type, task placement constraints are not sup
 
 For more information, see Task Placement Constraints: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html in the *Amazon Elastic Container Service Developer Guide*.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Expression
@@ -52,7 +43,6 @@ Accept wildcard characters: False
 
 ### -Type
 The type of constraint.
-The DistinctInstance constraint ensures that each task in a particular group is running on a different container instance.
 The MemberOf constraint restricts selection to be from a group of valid candidates.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-taskdefinitionplacementconstraint.html#cfn-ecs-taskdefinition-taskdefinitionplacementconstraint-type

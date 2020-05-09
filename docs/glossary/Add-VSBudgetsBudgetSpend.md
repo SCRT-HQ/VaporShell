@@ -7,7 +7,7 @@ The amount of cost or usage that is measured for a budget.
 ## SYNTAX
 
 ```
-Add-VSBudgetsBudgetSpend [-Amount] <Double> [-Unit] <Object> [<CommonParameters>]
+Add-VSBudgetsBudgetSpend [-Amount] <Object> [-Unit] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -20,15 +20,6 @@ For example, a Spend for 3 GB of S3 usage would have the following parameters:
 
 + A unit of GB
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Amount
@@ -39,13 +30,13 @@ PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

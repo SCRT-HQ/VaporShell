@@ -3,7 +3,7 @@
 ## SYNOPSIS
 Adds an AWS::CloudFront::Distribution.S3OriginConfig resource property to the template.
 A complex type that contains information about the Amazon S3 origin.
-If the origin is a custom origin, use the CustomOriginConfig element instead.
+If the origin is a custom origin or an S3 bucket that is configured as a website endpoint, use the CustomOriginConfig element instead.
 
 ## SYNTAX
 
@@ -14,16 +14,7 @@ Add-VSCloudFrontDistributionS3OriginConfig [[-OriginAccessIdentity] <Object>] [<
 ## DESCRIPTION
 Adds an AWS::CloudFront::Distribution.S3OriginConfig resource property to the template.
 A complex type that contains information about the Amazon S3 origin.
-If the origin is a custom origin, use the CustomOriginConfig element instead.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+If the origin is a custom origin or an S3 bucket that is configured as a website endpoint, use the CustomOriginConfig element instead.
 
 ## PARAMETERS
 

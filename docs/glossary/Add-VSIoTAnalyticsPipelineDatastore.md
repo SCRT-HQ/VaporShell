@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 Adds an AWS::IoTAnalytics::Pipeline.Datastore resource property to the template.
-The 'datastore' activity that specifies where to store the processed data.
+The datastore activity that specifies where to store the processed data.
 
 ## SYNTAX
 
@@ -12,16 +12,7 @@ Add-VSIoTAnalyticsPipelineDatastore [[-DatastoreName] <Object>] [[-Name] <Object
 
 ## DESCRIPTION
 Adds an AWS::IoTAnalytics::Pipeline.Datastore resource property to the template.
-The 'datastore' activity that specifies where to store the processed data.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+The datastore activity that specifies where to store the processed data.
 
 ## PARAMETERS
 
@@ -45,7 +36,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-The name of the 'datastore' activity.
+The name of the datastore activity.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-datastore.html#cfn-iotanalytics-pipeline-datastore-name
 PrimitiveType: String

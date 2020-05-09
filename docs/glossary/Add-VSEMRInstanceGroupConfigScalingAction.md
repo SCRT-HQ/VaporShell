@@ -17,15 +17,6 @@ Adds an AWS::EMR::InstanceGroupConfig.ScalingAction resource property to the tem
 ScalingAction is a subproperty of the ScalingRule property type.
 ScalingAction determines the type of adjustment the automatic scaling activity makes when triggered, and the periodicity of the adjustment.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Market

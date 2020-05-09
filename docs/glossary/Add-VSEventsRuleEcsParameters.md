@@ -8,7 +8,7 @@ The EcsParameters property type specifies custom parameters to be used when the 
 
 ```
 Add-VSEventsRuleEcsParameters [[-Group] <Object>] [[-LaunchType] <Object>] [[-NetworkConfiguration] <Object>]
- [[-PlatformVersion] <Object>] [[-TaskCount] <Int32>] [-TaskDefinitionArn] <Object> [<CommonParameters>]
+ [[-PlatformVersion] <Object>] [[-TaskCount] <Object>] [-TaskDefinitionArn] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -17,20 +17,12 @@ The EcsParameters property type specifies custom parameters to be used when the 
 
 EcsParameters is a property of the Target: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html property type.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Group
 Specifies an ECS task group for the task.
 The maximum length is 255 characters.
+For more information, see Task Groups: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#task-groups.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-ecsparameters.html#cfn-events-rule-ecsparameters-group
 PrimitiveType: String
@@ -72,9 +64,9 @@ Accept wildcard characters: False
 
 ### -NetworkConfiguration
 Use this structure if the ECS task uses the awsvpc network mode.
-This structure specifies the VPC subnets and security groups associated with the task and whether a public IP address is to be used.
+This structure specifies the VPC subnets and security groups associated with the task, and whether a public IP address is to be used.
 This structure is required if LaunchType is FARGATE because the awsvpc mode is required for Fargate tasks.
-If you specify NetworkConfiguration when the target ECS task doesn't use the awsvpc network mode, the task fails.
+If you specify NetworkConfiguration when the target ECS task does not use the awsvpc network mode, the task fails.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-ecsparameters.html#cfn-events-rule-ecsparameters-networkconfiguration
 Type: NetworkConfiguration
@@ -95,6 +87,7 @@ Accept wildcard characters: False
 ### -PlatformVersion
 Specifies the platform version for the task.
 Specify only the numeric portion of the platform version, such as 1.1.0.
+If you omit this, the latest platform version is used.
 This structure is used only if LaunchType is FARGATE.
 For more information about valid platform versions, see AWS Fargate Platform Versions: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html in the *Amazon Elastic Container Service Developer Guide*.
 
@@ -123,13 +116,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 5
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

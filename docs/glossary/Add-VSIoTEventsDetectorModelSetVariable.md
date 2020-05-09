@@ -14,15 +14,6 @@ Add-VSIoTEventsDetectorModelSetVariable [[-VariableName] <Object>] [[-Value] <Ob
 Adds an AWS::IoTEvents::DetectorModel.SetVariable resource property to the template.
 Sets a variable to a specified value.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -VariableName

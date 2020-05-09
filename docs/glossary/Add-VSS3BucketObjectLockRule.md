@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 Adds an AWS::S3::Bucket.ObjectLockRule resource property to the template.
-The object lock rule in place for the specified object.
+The Object Lock rule in place for the specified object.
 
 ## SYNTAX
 
@@ -12,16 +12,7 @@ Add-VSS3BucketObjectLockRule [[-DefaultRetention] <Object>] [<CommonParameters>]
 
 ## DESCRIPTION
 Adds an AWS::S3::Bucket.ObjectLockRule resource property to the template.
-The object lock rule in place for the specified object.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+The Object Lock rule in place for the specified object.
 
 ## PARAMETERS
 

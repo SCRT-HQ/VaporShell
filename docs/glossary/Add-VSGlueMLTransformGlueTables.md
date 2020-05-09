@@ -15,15 +15,6 @@ Add-VSGlueMLTransformGlueTables [[-ConnectionName] <Object>] [-TableName] <Objec
 Adds an AWS::Glue::MLTransform.GlueTables resource property to the template.
 The database and table in the AWS Glue Data Catalog that is used for input or output data.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ConnectionName

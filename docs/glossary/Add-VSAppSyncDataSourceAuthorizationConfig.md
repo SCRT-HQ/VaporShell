@@ -17,15 +17,6 @@ The AuthorizationConfig property type specifies the authorization type and confi
 
 AuthorizationConfig is a property of the AWS AppSync DataSource HttpConfig: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-httpconfig.html property type.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -AwsIamConfig

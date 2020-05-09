@@ -14,15 +14,6 @@ Add-VSDataPipelinePipelineParameterValue [-Id] <Object> [-StringValue] <Object> 
 Adds an AWS::DataPipeline::Pipeline.ParameterValue resource property to the template.
 A value or list of parameter values.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Id

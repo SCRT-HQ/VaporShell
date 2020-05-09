@@ -14,15 +14,6 @@ Add-VSRoute53HostedZoneQueryLoggingConfig [-CloudWatchLogsLogGroupArn] <Object> 
 Adds an AWS::Route53::HostedZone.QueryLoggingConfig resource property to the template.
 A complex type that contains information about a configuration for DNS query logging.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -CloudWatchLogsLogGroupArn

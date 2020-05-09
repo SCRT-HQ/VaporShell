@@ -7,7 +7,7 @@ The LogConfig property type specifies the logging configuration when writing Gra
 ## SYNTAX
 
 ```
-Add-VSAppSyncGraphQLApiLogConfig [[-CloudWatchLogsRoleArn] <Object>] [[-ExcludeVerboseContent] <Boolean>]
+Add-VSAppSyncGraphQLApiLogConfig [[-CloudWatchLogsRoleArn] <Object>] [[-ExcludeVerboseContent] <Object>]
  [[-FieldLogLevel] <Object>] [<CommonParameters>]
 ```
 
@@ -16,15 +16,6 @@ Adds an AWS::AppSync::GraphQLApi.LogConfig resource property to the template.
 The LogConfig property type specifies the logging configuration when writing GraphQL operations and tracing to Amazon CloudWatch for a AWS AppSync GraphQL API.
 
 LogConfig is a property of the AWS::AppSync::GraphQLApi: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html property type.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -55,13 +46,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

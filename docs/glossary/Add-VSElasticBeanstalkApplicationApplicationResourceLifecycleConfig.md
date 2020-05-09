@@ -21,19 +21,13 @@ The version lifecycle configuration defines lifecycle settings for application v
 
 ApplicationResourceLifecycleConfig is a property of the AWS::ElasticBeanstalk::Application: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk.html resource.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ServiceRole
 The ARN of an IAM service role that Elastic Beanstalk has permission to assume.
+The ServiceRole property is required the first time that you provide a ResourceLifecycleConfig for the application.
+After you provide it once, Elastic Beanstalk persists the Service Role with the application, and you don't need to specify it again.
+You can, however, specify it in subsequent updates to change the Service Role to another value.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-applicationresourcelifecycleconfig.html#cfn-elasticbeanstalk-application-applicationresourcelifecycleconfig-servicerole
 PrimitiveType: String

@@ -15,15 +15,6 @@ Add-VSGlueSecurityConfigurationS3Encryption [[-KmsKeyArn] <Object>] [[-S3Encrypt
 Adds an AWS::Glue::SecurityConfiguration.S3Encryption resource property to the template.
 Specifies how Amazon Simple Storage Service (Amazon S3 data should be encrypted.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -KmsKeyArn

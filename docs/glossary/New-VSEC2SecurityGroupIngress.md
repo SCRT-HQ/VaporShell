@@ -2,40 +2,34 @@
 
 ## SYNOPSIS
 Adds an AWS::EC2::SecurityGroupIngress resource to the template.
-Adds the specified ingress rules to a security group.
+Adds an inbound rule to a security group.
 
 ## SYNTAX
 
 ```
 New-VSEC2SecurityGroupIngress [-LogicalId] <String> [-CidrIp <Object>] [-CidrIpv6 <Object>]
- [-Description <Object>] [-FromPort <Int32>] [-GroupId <Object>] [-GroupName <Object>] -IpProtocol <Object>
+ [-Description <Object>] [-FromPort <Object>] [-GroupId <Object>] [-GroupName <Object>] -IpProtocol <Object>
  [-SourcePrefixListId <Object>] [-SourceSecurityGroupId <Object>] [-SourceSecurityGroupName <Object>]
- [-SourceSecurityGroupOwnerId <Object>] [-ToPort <Int32>] [-DeletionPolicy <String>] [-DependsOn <String[]>]
- [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+ [-SourceSecurityGroupOwnerId <Object>] [-ToPort <Object>] [-DeletionPolicy <String>]
+ [-UpdateReplacePolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
+ [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::EC2::SecurityGroupIngress resource to the template.
-Adds the specified ingress rules to a security group.
+Adds an inbound rule to a security group.
 
-An inbound rule permits instances to receive traffic from the specified destination IPv4 or IPv6 CIDR address ranges, or from the specified destination security groups.
+An inbound rule permits instances to receive traffic from the specified IPv4 or IPv6 CIDR address range, or from the instances associated with the specified security group.
 
 You specify a protocol for each rule (for example, TCP.
-For TCP and UDP, you must also specify the destination port or port range.
+For TCP and UDP, you must also specify a port or port range.
 For ICMP/ICMPv6, you must also specify the ICMP/ICMPv6 type and code.
 You can use -1 to mean all types or all codes.
 
+You must specify a source security group (SourcePrefixListId, SourceSecurityGroupId, or SourceSecurityGroupName or a CIDR range (CidrIp or CidrIpv6.
+
 Rule changes are propagated to instances within the security group as quickly as possible.
 However, a small delay might occur.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -125,13 +119,13 @@ PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -142,7 +136,6 @@ You must specify either the security group ID or the security group name in the 
 For security groups in a nondefault VPC, you must specify the security group ID.
 You must specify the GroupName property or the GroupId property.
 For security groups that are in a VPC, you must use the GroupId property.
-For example, EC2-VPC: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-classic-platform.html accounts must use the GroupId property.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html#cfn-ec2-security-group-ingress-groupid
 PrimitiveType: String
@@ -209,7 +202,6 @@ Accept wildcard characters: False
 ### -SourcePrefixListId
 EC2-VPC only\] The prefix list IDs for an AWS service.
 This is the AWS service that you want to access through a VPC endpoint from instances associated with the security group.
-You must specify a source security group SourcePrefixListId, SourceSecurityGroupId, or SourceSecurityGroupName or a CIDR range CidrIp or CidrIpv6.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html#cfn-ec2-securitygroupingress-sourceprefixlistid
 PrimitiveType: String
@@ -229,9 +221,8 @@ Accept wildcard characters: False
 
 ### -SourceSecurityGroupId
 The ID of the security group.
-You must specify either the security group ID or the security group name in the request.
+You must specify either the security group ID or the security group name.
 For security groups in a nondefault VPC, you must specify the security group ID.
-If you specify SourceSecurityGroupName or SourceSecurityGroupId and that security group is owned by a different account than the account creating the stack, you must specify the SourceSecurityGroupOwnerId; otherwise, this property is optional.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html#cfn-ec2-security-group-ingress-sourcesecuritygroupid
 PrimitiveType: String
@@ -251,13 +242,8 @@ Accept wildcard characters: False
 
 ### -SourceSecurityGroupName
 EC2-Classic, default VPC\] The name of the source security group.
-You can't specify this parameter in combination with the following parameters: the CIDR IP address range, the start of the port range, the IP protocol, and the end of the port range.
-Creates rules that grant full ICMP, UDP, and TCP access.
-To create a rule with a specific IP protocol and port range, use a set of IP permissions instead.
-For EC2-VPC, the source security group must be in the same VPC.
 You must specify the GroupName property or the GroupId property.
 For security groups that are in a VPC, you must use the GroupId property.
-For example, EC2-VPC: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-classic-platform.html accounts must use the GroupId property.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html#cfn-ec2-security-group-ingress-sourcesecuritygroupname
 PrimitiveType: String
@@ -279,7 +265,6 @@ Accept wildcard characters: False
 nondefault VPC\] The AWS account ID for the source security group, if the source security group is in a different account.
 You can't specify this parameter in combination with the following parameters: the CIDR IP address range, the IP protocol, the start of the port range, and the end of the port range.
 Creates rules that grant full ICMP, UDP, and TCP access.
-To create a rule with a specific IP protocol and port range, use a set of IP permissions instead.
 If you specify SourceSecurityGroupName or SourceSecurityGroupId and that security group is owned by a different account than the account creating the stack, you must specify the SourceSecurityGroupOwnerId; otherwise, this property is optional.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html#cfn-ec2-security-group-ingress-sourcesecuritygroupownerid
@@ -309,13 +294,13 @@ PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -328,6 +313,49 @@ If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the re
 To keep a resource when its stack is deleted, specify Retain for that resource.
 You can use retain for any resource.
 For example, you can retain a nested stack, S3 bucket, or EC2 instance so that you can continue to use or modify those resources after you delete their stacks.
+
+You must use one of the following options: "Delete","Retain","Snapshot"
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdateReplacePolicy
+Use the UpdateReplacePolicy attribute to retain or (in some cases) backup the existing physical instance of a resource when it is replaced during a stack update operation.
+
+When you initiate a stack update, AWS CloudFormation updates resources based on differences between what you submit and the stack's current template and parameters.
+If you update a resource property that requires that the resource be replaced, AWS CloudFormation recreates the resource during the update.
+Recreating the resource generates a new physical ID.
+AWS CloudFormation creates the replacement resource first, and then changes references from other dependent resources to point to the replacement resource.
+By default, AWS CloudFormation then deletes the old resource.
+Using the UpdateReplacePolicy, you can specify that AWS CloudFormation retain or (in some cases) create a snapshot of the old resource.
+
+For resources that support snapshots, such as AWS::EC2::Volume, specify Snapshot to have AWS CloudFormation create a snapshot before deleting the old resource instance.
+
+You can apply the UpdateReplacePolicy attribute to any resource.
+UpdateReplacePolicy is only executed if you update a resource property whose update behavior is specified as Replacement, thereby causing AWS CloudFormation to replace the old resource with a new one with a new physical ID.
+For example, if you update the Engine property of an AWS::RDS::DBInstance resource type, AWS CloudFormation creates a new resource and replaces the current DB instance resource with the new one.
+The UpdateReplacePolicy attribute would then dictate whether AWS CloudFormation deleted, retained, or created a snapshot of the old DB instance.
+The update behavior for each property of a resource is specified in the reference topic for that resource in the AWS Resource and Property Types Reference.
+For more information on resource update behavior, see Update Behaviors of Stack Resources.
+
+The UpdateReplacePolicy attribute applies to stack updates you perform directly, as well as stack updates performed using change sets.
+
+Note
+Resources that are retained continue to exist and continue to incur applicable charges until you delete those resources.
+Snapshots that are created with this policy continue to exist and continue to incur applicable charges until you delete those snapshots.
+UpdateReplacePolicy retains the old physical resource or snapshot, but removes it from AWS CloudFormation's scope.
+
+UpdateReplacePolicy differs from the DeletionPolicy attribute in that it only applies to resources replaced during stack updates.
+Use DeletionPolicy for resources deleted when a stack is deleted, or when the resource definition itself is deleted from the template as part of a stack update.
 
 You must use one of the following options: "Delete","Retain","Snapshot"
 

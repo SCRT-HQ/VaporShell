@@ -7,21 +7,12 @@ Used to enable or disable email sending for messages that use this configuration
 ## SYNTAX
 
 ```
-Add-VSPinpointEmailConfigurationSetSendingOptions [[-SendingEnabled] <Boolean>] [<CommonParameters>]
+Add-VSPinpointEmailConfigurationSetSendingOptions [[-SendingEnabled] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::PinpointEmail::ConfigurationSet.SendingOptions resource property to the template.
 Used to enable or disable email sending for messages that use this configuration set in the current AWS Region.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -34,13 +25,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

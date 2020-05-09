@@ -7,10 +7,11 @@ The AWS::ApplicationAutoScaling::ScalableTarget resource specifies a resource th
 ## SYNTAX
 
 ```
-New-VSApplicationAutoScalingScalableTarget [-LogicalId] <String> -MaxCapacity <Int32> -MinCapacity <Int32>
+New-VSApplicationAutoScalingScalableTarget [-LogicalId] <String> -MaxCapacity <Object> -MinCapacity <Object>
  -ResourceId <Object> -RoleARN <Object> -ScalableDimension <Object> [-ScheduledActions <Object>]
- -ServiceNamespace <Object> [-SuspendedState <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>]
- [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+ -ServiceNamespace <Object> [-SuspendedState <Object>] [-DeletionPolicy <String>]
+ [-UpdateReplacePolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
+ [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -18,15 +19,6 @@ Adds an AWS::ApplicationAutoScaling::ScalableTarget resource to the template.
 The AWS::ApplicationAutoScaling::ScalableTarget resource specifies a resource that Application Auto Scaling can scale.
 
 For more information, see RegisterScalableTarget: https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html in the *Application Auto Scaling API Reference*.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -48,39 +40,41 @@ Accept wildcard characters: False
 ```
 
 ### -MaxCapacity
-The maximum value to scale to in response to a scale-out event.
+The maximum value that you plan to scale out to.
+When a scaling policy is in effect, Application Auto Scaling can scale out expand as needed to the maximum capacity limit in response to changing demand.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-maxcapacity
 PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: Named
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -MinCapacity
-The minimum value to scale to in response to a scale-in event.
+The minimum value that you plan to scale in to.
+When a scaling policy is in effect, Application Auto Scaling can scale in contract as needed to the minimum capacity limit in response to changing demand.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-mincapacity
 PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: Named
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -107,7 +101,11 @@ Accept wildcard characters: False
 ```
 
 ### -RoleARN
-The Amazon Resource Name ARN of an AWS Identity and Access Management IAM role that allows Application Auto Scaling to modify the scalable target on your behalf.
+Specify the Amazon Resource Name ARN of an AWS Identity and Access Management IAM role that allows Application Auto Scaling to modify the scalable target on your behalf.
+This can be either an IAM service role that Application Auto Scaling can assume to make calls to other AWS resources on your behalf, or a service-linked role for the specified service.
+For more information, see How Application Auto Scaling Works with IAM: https://docs.aws.amazon.com/autoscaling/application/userguide/security_iam_service-with-iam.html in the *Application Auto Scaling User Guide*.
+To automatically create a service-linked role, specify the full ARN of the service-linked role in your stack template.
+For examples of the ARN format and more information, see Service-Linked Roles: https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-service-linked-roles.html in the *Application Auto Scaling User Guide*.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-rolearn
 PrimitiveType: String
@@ -149,6 +147,7 @@ Accept wildcard characters: False
 ### -ScheduledActions
 The scheduled actions for the scalable target.
 Duplicates aren't allowed.
+For more information about using scheduled scaling, see Scheduled Scaling: https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scheduled-scaling.html in the *Application Auto Scaling User Guide*.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-scheduledactions
 DuplicatesAllowed: False
@@ -196,7 +195,7 @@ Setting it to false default resumes the specified scaling activities.
 + For DynamicScalingInSuspended, while a suspension is in effect, all scale-in activities that are triggered by a scaling policy are suspended.
 + For DynamicScalingOutSuspended, while a suspension is in effect, all scale-out activities that are triggered by a scaling policy are suspended.
 + For ScheduledScalingSuspended, while a suspension is in effect, all scaling activities that involve scheduled actions are suspended.
-For more information, see Suspend and Resume Application Auto Scaling: https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html in the *Application Auto Scaling User Guide*.
+For more information, see Suspending and Resuming Scaling: https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html in the *Application Auto Scaling User Guide*.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-suspendedstate
 Type: SuspendedState
@@ -222,6 +221,49 @@ If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the re
 To keep a resource when its stack is deleted, specify Retain for that resource.
 You can use retain for any resource.
 For example, you can retain a nested stack, S3 bucket, or EC2 instance so that you can continue to use or modify those resources after you delete their stacks.
+
+You must use one of the following options: "Delete","Retain","Snapshot"
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdateReplacePolicy
+Use the UpdateReplacePolicy attribute to retain or (in some cases) backup the existing physical instance of a resource when it is replaced during a stack update operation.
+
+When you initiate a stack update, AWS CloudFormation updates resources based on differences between what you submit and the stack's current template and parameters.
+If you update a resource property that requires that the resource be replaced, AWS CloudFormation recreates the resource during the update.
+Recreating the resource generates a new physical ID.
+AWS CloudFormation creates the replacement resource first, and then changes references from other dependent resources to point to the replacement resource.
+By default, AWS CloudFormation then deletes the old resource.
+Using the UpdateReplacePolicy, you can specify that AWS CloudFormation retain or (in some cases) create a snapshot of the old resource.
+
+For resources that support snapshots, such as AWS::EC2::Volume, specify Snapshot to have AWS CloudFormation create a snapshot before deleting the old resource instance.
+
+You can apply the UpdateReplacePolicy attribute to any resource.
+UpdateReplacePolicy is only executed if you update a resource property whose update behavior is specified as Replacement, thereby causing AWS CloudFormation to replace the old resource with a new one with a new physical ID.
+For example, if you update the Engine property of an AWS::RDS::DBInstance resource type, AWS CloudFormation creates a new resource and replaces the current DB instance resource with the new one.
+The UpdateReplacePolicy attribute would then dictate whether AWS CloudFormation deleted, retained, or created a snapshot of the old DB instance.
+The update behavior for each property of a resource is specified in the reference topic for that resource in the AWS Resource and Property Types Reference.
+For more information on resource update behavior, see Update Behaviors of Stack Resources.
+
+The UpdateReplacePolicy attribute applies to stack updates you perform directly, as well as stack updates performed using change sets.
+
+Note
+Resources that are retained continue to exist and continue to incur applicable charges until you delete those resources.
+Snapshots that are created with this policy continue to exist and continue to incur applicable charges until you delete those snapshots.
+UpdateReplacePolicy retains the old physical resource or snapshot, but removes it from AWS CloudFormation's scope.
+
+UpdateReplacePolicy differs from the DeletionPolicy attribute in that it only applies to resources replaced during stack updates.
+Use DeletionPolicy for resources deleted when a stack is deleted, or when the resource definition itself is deleted from the template as part of a stack update.
 
 You must use one of the following options: "Delete","Retain","Snapshot"
 

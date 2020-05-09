@@ -8,7 +8,7 @@ This parameter maps to Volumes in the Create a container: https://docs.docker.co
 ## SYNTAX
 
 ```
-Add-VSBatchJobDefinitionMountPoints [[-ReadOnly] <Boolean>] [[-SourceVolume] <Object>]
+Add-VSBatchJobDefinitionMountPoints [[-ReadOnly] <Object>] [[-SourceVolume] <Object>]
  [[-ContainerPath] <Object>] [<CommonParameters>]
 ```
 
@@ -16,15 +16,6 @@ Add-VSBatchJobDefinitionMountPoints [[-ReadOnly] <Boolean>] [[-SourceVolume] <Ob
 Adds an AWS::Batch::JobDefinition.MountPoints resource property to the template.
 Details on a Docker volume mount point that is used in a job's container properties.
 This parameter maps to Volumes in the Create a container: https://docs.docker.com/engine/reference/api/docker_remote_api_v1.19/#create-a-container section of the Docker Remote API and the --volume option to docker run.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -37,13 +28,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

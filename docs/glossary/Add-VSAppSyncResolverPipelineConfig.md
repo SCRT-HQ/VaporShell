@@ -16,15 +16,6 @@ Use the PipelineConfig property type to specify PipelineConfig for an AWS AppSyn
 
 PipelineConfig is a property of the AWS::AppSync::Resolver: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html resource.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Functions

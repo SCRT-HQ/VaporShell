@@ -14,15 +14,6 @@ Add-VSIoTTopicRulePutItemInput [-TableName] <Object> [<CommonParameters>]
 Adds an AWS::IoT::TopicRule.PutItemInput resource property to the template.
 The input for the DynamoActionVS action that specifies the DynamoDB table to which the message data will be written.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -TableName

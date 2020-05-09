@@ -15,15 +15,6 @@ Add-VSCognitoIdentityPoolRoleAttachmentMappingRule [-MatchType] <Object> [-Value
 Adds an AWS::Cognito::IdentityPoolRoleAttachment.MappingRule resource property to the template.
 Defines how to map a claim to a role ARN.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -MatchType
@@ -47,7 +38,8 @@ Accept wildcard characters: False
 ```
 
 ### -Value
-A brief string that the claim must match, for example, "paid" or "yes."
+A brief string that the claim must match.
+For example, "paid" or "yes".
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-mappingrule.html#cfn-cognito-identitypoolroleattachment-mappingrule-value
 PrimitiveType: String
@@ -66,7 +58,8 @@ Accept wildcard characters: False
 ```
 
 ### -Claim
-The claim name that must be present in the token, for example, "isAdmin" or "paid."
+The claim name that must be present in the token.
+For example: "isAdmin" or "paid".
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-mappingrule.html#cfn-cognito-identitypoolroleattachment-mappingrule-claim
 PrimitiveType: String

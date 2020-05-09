@@ -9,7 +9,7 @@ Automatic scaling activities triggered by automatic scaling rules will not cause
 ## SYNTAX
 
 ```
-Add-VSEMRClusterScalingConstraints [-MaxCapacity] <Int32> [-MinCapacity] <Int32> [<CommonParameters>]
+Add-VSEMRClusterScalingConstraints [-MaxCapacity] <Object> [-MinCapacity] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -17,15 +17,6 @@ Adds an AWS::EMR::Cluster.ScalingConstraints resource property to the template.
 ScalingConstraints is a subproperty of the AutoScalingPolicy property type.
 ScalingConstraints defines the upper and lower EC2 instance limits for an automatic scaling policy.
 Automatic scaling activities triggered by automatic scaling rules will not cause an instance group to grow above or shrink below these limits.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -38,13 +29,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -58,13 +49,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

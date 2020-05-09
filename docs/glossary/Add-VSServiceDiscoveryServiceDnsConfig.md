@@ -15,15 +15,6 @@ Add-VSServiceDiscoveryServiceDnsConfig [-DnsRecords] <Object> [[-RoutingPolicy] 
 Adds an AWS::ServiceDiscovery::Service.DnsConfig resource property to the template.
 A complex type that contains information about the Amazon Route 53 DNS records that you want AWS Cloud Map to create when you register an instance.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -DnsRecords
@@ -84,6 +75,8 @@ Accept wildcard characters: False
 
 ### -NamespaceId
 The ID of the namespace to use for DNS configuration.
+You must specify a value for NamespaceId either for DnsConfig or for the service properties: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html.
+Don't specify a value in both places.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-dnsconfig.html#cfn-servicediscovery-service-dnsconfig-namespaceid
 PrimitiveType: String

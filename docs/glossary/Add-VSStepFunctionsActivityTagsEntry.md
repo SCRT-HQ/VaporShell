@@ -14,15 +14,6 @@ Add-VSStepFunctionsActivityTagsEntry [-Value] <Object> [-Key] <Object> [<CommonP
 Adds an AWS::StepFunctions::Activity.TagsEntry resource property to the template.
 The TagsEntry property specifies *tags* to identify an activity.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Value

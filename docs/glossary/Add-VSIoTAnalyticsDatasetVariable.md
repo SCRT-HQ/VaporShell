@@ -2,34 +2,25 @@
 
 ## SYNOPSIS
 Adds an AWS::IoTAnalytics::Dataset.Variable resource property to the template.
-An instance of a variable to be passed to the "containerAction" execution.
-Each variable must have a name and a value given by one of "stringValue", "datasetContentVersionValue", or "outputFileUriValue".
+An instance of a variable to be passed to the containerAction execution.
+Each variable must have a name and a value given by one of stringValue, datasetContentVersionValue, or outputFileUriValue.
 
 ## SYNTAX
 
 ```
-Add-VSIoTAnalyticsDatasetVariable [[-DatasetContentVersionValue] <Object>] [[-DoubleValue] <Double>]
+Add-VSIoTAnalyticsDatasetVariable [[-DatasetContentVersionValue] <Object>] [[-DoubleValue] <Object>]
  [[-OutputFileUriValue] <Object>] [-VariableName] <Object> [[-StringValue] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::IoTAnalytics::Dataset.Variable resource property to the template.
-An instance of a variable to be passed to the "containerAction" execution.
-Each variable must have a name and a value given by one of "stringValue", "datasetContentVersionValue", or "outputFileUriValue".
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+An instance of a variable to be passed to the containerAction execution.
+Each variable must have a name and a value given by one of stringValue, datasetContentVersionValue, or outputFileUriValue.
 
 ## PARAMETERS
 
 ### -DatasetContentVersionValue
-The value of the variable as a structure that specifies a data set content version.
+The value of the variable as a structure that specifies a dataset content version.
 
 Type: DatasetContentVersionValue
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable.html#cfn-iotanalytics-dataset-variable-datasetcontentversionvalue
@@ -55,13 +46,13 @@ PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

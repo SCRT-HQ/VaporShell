@@ -3,6 +3,7 @@
 ## SYNOPSIS
 Adds an AWS::Lambda::Function.TracingConfig resource property to the template.
 The function's AWS X-Ray tracing configuration.
+To sample and record incoming requests, set Mode to Active.
 
 ## SYNTAX
 
@@ -13,15 +14,7 @@ Add-VSLambdaFunctionTracingConfig [[-Mode] <Object>] [<CommonParameters>]
 ## DESCRIPTION
 Adds an AWS::Lambda::Function.TracingConfig resource property to the template.
 The function's AWS X-Ray tracing configuration.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+To sample and record incoming requests, set Mode to Active.
 
 ## PARAMETERS
 

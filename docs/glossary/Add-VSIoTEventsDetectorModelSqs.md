@@ -7,21 +7,13 @@ Sends information about the detector model instance and the event which triggere
 ## SYNTAX
 
 ```
-Add-VSIoTEventsDetectorModelSqs [[-UseBase64] <Boolean>] [[-QueueUrl] <Object>] [<CommonParameters>]
+Add-VSIoTEventsDetectorModelSqs [[-UseBase64] <Object>] [[-Payload] <Object>] [[-QueueUrl] <Object>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::IoTEvents::DetectorModel.Sqs resource property to the template.
 Sends information about the detector model instance and the event which triggered the action to an Amazon SQS queue.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -34,13 +26,32 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Payload
+*Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
+Type: Payload
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-sqs.html#cfn-iotevents-detectormodel-sqs-payload
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -58,7 +69,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 2
+Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

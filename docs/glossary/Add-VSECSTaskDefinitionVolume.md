@@ -21,22 +21,13 @@ For tasks that use a Docker volume, specify a DockerVolumeConfiguration.
 For tasks that use a bind mount host volume, specify a host and optional sourcePath.
 For more information, see Using Data Volumes in Tasks: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -DockerVolumeConfiguration
 This parameter is specified when you are using Docker volumes.
 Docker volumes are only supported when you are using the EC2 launch type.
 Windows containers only support the use of the local driver.
-To use bind mounts, specify a host instead.
+To use bind mounts, specify the host parameter instead.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-volumes.html#cfn-ecs-taskdefinition-volume-dockervolumeconfiguration
 Type: DockerVolumeConfiguration

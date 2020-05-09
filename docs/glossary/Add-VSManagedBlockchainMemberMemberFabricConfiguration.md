@@ -15,15 +15,6 @@ Add-VSManagedBlockchainMemberMemberFabricConfiguration [-AdminUsername] <Object>
 Adds an AWS::ManagedBlockchain::Member.MemberFabricConfiguration resource property to the template.
 Configuration properties for Hyperledger Fabric for a member in a Managed Blockchain network using the Hyperledger Fabric framework.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -AdminUsername

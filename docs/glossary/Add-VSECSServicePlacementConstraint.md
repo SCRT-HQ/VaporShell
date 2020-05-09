@@ -16,15 +16,6 @@ Adds an AWS::ECS::Service.PlacementConstraint resource property to the template.
 The PlacementConstraint property specifies an object representing a constraint on task placement in the task definition.
 For more information, see Task Placement Constraints: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html in the *Amazon Elastic Container Service Developer Guide*.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Expression
@@ -52,7 +43,6 @@ Accept wildcard characters: False
 The type of constraint.
 Use distinctInstance to ensure that each task in a particular group is running on a different container instance.
 Use memberOf to restrict the selection to a group of valid candidates.
-The value distinctInstance is not supported in task definitions.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-placementconstraint.html#cfn-ecs-service-placementconstraint-type
 PrimitiveType: String

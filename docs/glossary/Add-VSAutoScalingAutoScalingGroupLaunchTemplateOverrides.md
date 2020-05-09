@@ -6,20 +6,12 @@ Adds an AWS::AutoScaling::AutoScalingGroup.LaunchTemplateOverrides resource prop
 ## SYNTAX
 
 ```
-Add-VSAutoScalingAutoScalingGroupLaunchTemplateOverrides [[-InstanceType] <Object>] [<CommonParameters>]
+Add-VSAutoScalingAutoScalingGroupLaunchTemplateOverrides [[-InstanceType] <Object>]
+ [[-WeightedCapacity] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::AutoScaling::AutoScalingGroup.LaunchTemplateOverrides resource property to the template.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -35,6 +27,23 @@ Aliases:
 
 Required: False
 Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WeightedCapacity
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-launchtemplateoverrides.html#cfn-autoscaling-autoscalinggroup-launchtemplateoverrides-weightedcapacity
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

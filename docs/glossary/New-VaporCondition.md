@@ -54,11 +54,10 @@ For more information, see Condition Functions.
 ### EXAMPLE 1
 ```
 $template = Initialize-Vaporshell -Description "Testing Condition addition"
-```
-
 $template.AddResource((
     New-VaporCondition -LogicalId "CreateProdResources" -Condition (Add-ConEquals -FirstValue (Add-FnRef -Ref "EnvType") -SecondValue "prod")
 ))
+```
 
 When the template is exported, this will convert to: 
     {

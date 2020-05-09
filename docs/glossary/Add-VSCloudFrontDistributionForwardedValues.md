@@ -2,27 +2,18 @@
 
 ## SYNOPSIS
 Adds an AWS::CloudFront::Distribution.ForwardedValues resource property to the template.
-A complex type that specifies how CloudFront handles query strings and cookies.
+A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
 
 ## SYNTAX
 
 ```
-Add-VSCloudFrontDistributionForwardedValues [[-Cookies] <Object>] [[-Headers] <Object>]
- [-QueryString] <Boolean> [[-QueryStringCacheKeys] <Object>] [<CommonParameters>]
+Add-VSCloudFrontDistributionForwardedValues [[-Cookies] <Object>] [[-Headers] <Object>] [-QueryString] <Object>
+ [[-QueryStringCacheKeys] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::CloudFront::Distribution.ForwardedValues resource property to the template.
-A complex type that specifies how CloudFront handles query strings and cookies.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
 
 ## PARAMETERS
 
@@ -49,7 +40,7 @@ Accept wildcard characters: False
 ### -Headers
 A complex type that specifies the Headers, if any, that you want CloudFront to forward to the origin for this cache behavior whitelisted headers.
 For the headers that you specify, CloudFront also caches separate versions of a specified object that is based on the header values in viewer requests.
-For more information, see Caching Content Based on Request Headers: https://docs.aws.amazon.com/Cookies.html in the *Amazon CloudFront Developer Guide*.
+For more information, see  Caching Content Based on Request Headers: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html in the *Amazon CloudFront Developer Guide*.
 
 PrimitiveItemType: String
 Type: List
@@ -82,13 +73,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 3
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

@@ -24,15 +24,6 @@ Only one resource type can be defined for a ResourceDataContainer instance.
 
 \<a name="aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer-inheritance"\>\</a\> In an AWS CloudFormation template, ResourceDataContainer is a property of the https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourceinstance.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourceinstance.html property type.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -SecretsManagerSecretResourceData

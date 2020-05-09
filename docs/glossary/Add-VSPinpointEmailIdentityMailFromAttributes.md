@@ -15,15 +15,6 @@ Add-VSPinpointEmailIdentityMailFromAttributes [[-MailFromDomain] <Object>] [[-Be
 Adds an AWS::PinpointEmail::Identity.MailFromAttributes resource property to the template.
 A list of attributes that are associated with a MAIL FROM domain.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -MailFromDomain

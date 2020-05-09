@@ -16,15 +16,6 @@ Adds an AWS::EMR::InstanceGroupConfig.ScalingTrigger resource property to the te
 ScalingTrigger is a subproperty of the ScalingRule property type.
 ScalingTrigger determines the conditions that trigger an automatic scaling activity.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -CloudWatchAlarmDefinition

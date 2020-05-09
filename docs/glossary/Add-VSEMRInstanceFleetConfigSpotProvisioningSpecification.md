@@ -8,8 +8,8 @@ SpotProvisioningSpecification determines the launch specification for Spot insta
 ## SYNTAX
 
 ```
-Add-VSEMRInstanceFleetConfigSpotProvisioningSpecification [[-BlockDurationMinutes] <Int32>]
- [-TimeoutAction] <Object> [-TimeoutDurationMinutes] <Int32> [<CommonParameters>]
+Add-VSEMRInstanceFleetConfigSpotProvisioningSpecification [[-BlockDurationMinutes] <Object>]
+ [-TimeoutAction] <Object> [-TimeoutDurationMinutes] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -20,15 +20,6 @@ SpotProvisioningSpecification determines the launch specification for Spot insta
 **Note**
 
 The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -44,13 +35,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -87,13 +78,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 3
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

@@ -15,15 +15,6 @@ Add-VSEC2SpotFleetLaunchTemplateConfig [[-LaunchTemplateSpecification] <Object>]
 Adds an AWS::EC2::SpotFleet.LaunchTemplateConfig resource property to the template.
 Specifies a launch template and overrides.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -LaunchTemplateSpecification

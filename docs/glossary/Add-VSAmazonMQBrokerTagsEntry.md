@@ -14,15 +14,6 @@ Add-VSAmazonMQBrokerTagsEntry [-Value] <Object> [-Key] <Object> [<CommonParamete
 Adds an AWS::AmazonMQ::Broker.TagsEntry resource property to the template.
 A key-value pair to associate with the broker.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Value

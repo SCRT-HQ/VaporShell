@@ -14,15 +14,6 @@ Add-VSS3BucketServerSideEncryptionRule [[-ServerSideEncryptionByDefault] <Object
 Adds an AWS::S3::Bucket.ServerSideEncryptionRule resource property to the template.
 Specifies the default server-side encryption configuration.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ServerSideEncryptionByDefault

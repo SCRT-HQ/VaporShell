@@ -14,15 +14,6 @@ Add-VSIoTTopicRuleS3Action [-BucketName] <Object> [-Key] <Object> [-RoleArn] <Ob
 Adds an AWS::IoT::TopicRule.S3Action resource property to the template.
 Describes an action to write data to an Amazon S3 bucket.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -BucketName

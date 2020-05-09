@@ -3,29 +3,20 @@
 ## SYNOPSIS
 Adds an AWS::SageMaker::EndpointConfig.ProductionVariant resource property to the template.
 Specifies a model that you want to host and the resources to deploy for hosting it.
-If you are deploying multiple models, tell Amazon SageMaker how to distribute traffic among the models by specifying the InitiaVariantWeight objects.
+If you are deploying multiple models, tell Amazon SageMaker how to distribute traffic among the models by specifying the InitialVariantWeight objects.
 
 ## SYNTAX
 
 ```
 Add-VSSageMakerEndpointConfigProductionVariant [-ModelName] <Object> [-VariantName] <Object>
- [-InitialInstanceCount] <Int32> [-InstanceType] <Object> [[-AcceleratorType] <Object>]
- [-InitialVariantWeight] <Double> [<CommonParameters>]
+ [-InitialInstanceCount] <Object> [-InstanceType] <Object> [[-AcceleratorType] <Object>]
+ [-InitialVariantWeight] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::SageMaker::EndpointConfig.ProductionVariant resource property to the template.
 Specifies a model that you want to host and the resources to deploy for hosting it.
-If you are deploying multiple models, tell Amazon SageMaker how to distribute traffic among the models by specifying the InitiaVariantWeight objects.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+If you are deploying multiple models, tell Amazon SageMaker how to distribute traffic among the models by specifying the InitialVariantWeight objects.
 
 ## PARAMETERS
 
@@ -76,13 +67,13 @@ PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 3
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -109,8 +100,8 @@ Accept wildcard characters: False
 ### -AcceleratorType
 The size of the Elastic Inference EI instance to use for the production variant.
 EI instances provide on-demand GPU computing for inference.
-For more information, see Using Elastic Inference in Amazon SageMaker: http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html.
-For more information, see Using Elastic Inference in Amazon SageMaker: http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html.
+For more information, see Using Elastic Inference in Amazon SageMaker: https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html.
+For more information, see Using Elastic Inference in Amazon SageMaker: https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html#cfn-sagemaker-endpointconfig-productionvariant-acceleratortype
 PrimitiveType: String
@@ -138,13 +129,13 @@ PrimitiveType: Double
 UpdateType: Immutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 6
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

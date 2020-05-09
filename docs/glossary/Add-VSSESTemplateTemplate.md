@@ -15,15 +15,6 @@ Add-VSSESTemplateTemplate [[-HtmlPart] <Object>] [[-TextPart] <Object>] [[-Templ
 Adds an AWS::SES::Template.Template resource property to the template.
 The content of the email, composed of a subject line, an HTML part, and a text-only part.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -HtmlPart

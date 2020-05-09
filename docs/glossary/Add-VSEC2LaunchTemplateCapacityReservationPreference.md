@@ -12,15 +12,6 @@ Add-VSEC2LaunchTemplateCapacityReservationPreference [<CommonParameters>]
 ## DESCRIPTION
 Adds an AWS::EC2::LaunchTemplate.CapacityReservationPreference resource property to the template.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### CommonParameters

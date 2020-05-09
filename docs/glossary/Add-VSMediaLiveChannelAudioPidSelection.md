@@ -7,7 +7,7 @@ Used to extract audio by The PID.
 ## SYNTAX
 
 ```
-Add-VSMediaLiveChannelAudioPidSelection [[-Pid] <Int32>] [<CommonParameters>]
+Add-VSMediaLiveChannelAudioPidSelection [[-Pid] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -15,15 +15,6 @@ Adds an AWS::MediaLive::Channel.AudioPidSelection resource property to the templ
 Used to extract audio by The PID.
 
 The parent of this entity is AudioSelectorSettings.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -35,13 +26,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

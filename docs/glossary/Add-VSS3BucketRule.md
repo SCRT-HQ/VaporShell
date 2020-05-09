@@ -3,13 +3,14 @@
 ## SYNOPSIS
 Adds an AWS::S3::Bucket.Rule resource property to the template.
 Specifies lifecycle rules for an Amazon S3 bucket.
-For more information, see PUT Bucket lifecycle: https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlifecycle.html in the *Amazon Simple Storage Service API Reference*.
+For more information, see Put Bucket Lifecycle Configuration: https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlifecycle.html in the *Amazon Simple Storage Service API Reference*.
+For examples, see Put Bucket Lifecycle Configuration Examples: https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html#API_PutBucketLifecycleConfiguration_Examples
 
 ## SYNTAX
 
 ```
 Add-VSS3BucketRule [[-AbortIncompleteMultipartUpload] <Object>] [[-ExpirationDate] <Object>]
- [[-ExpirationInDays] <Int32>] [[-Id] <Object>] [[-NoncurrentVersionExpirationInDays] <Int32>]
+ [[-ExpirationInDays] <Object>] [[-Id] <Object>] [[-NoncurrentVersionExpirationInDays] <Object>]
  [[-NoncurrentVersionTransition] <Object>] [[-NoncurrentVersionTransitions] <Object>] [[-Prefix] <Object>]
  [-Status] <Object> [[-TagFilters] <Object>] [[-Transition] <Object>] [[-Transitions] <Object>]
  [<CommonParameters>]
@@ -18,16 +19,8 @@ Add-VSS3BucketRule [[-AbortIncompleteMultipartUpload] <Object>] [[-ExpirationDat
 ## DESCRIPTION
 Adds an AWS::S3::Bucket.Rule resource property to the template.
 Specifies lifecycle rules for an Amazon S3 bucket.
-For more information, see PUT Bucket lifecycle: https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlifecycle.html in the *Amazon Simple Storage Service API Reference*.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+For more information, see Put Bucket Lifecycle Configuration: https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlifecycle.html in the *Amazon Simple Storage Service API Reference*.
+For examples, see Put Bucket Lifecycle Configuration Examples: https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html#API_PutBucketLifecycleConfiguration_Examples
 
 ## PARAMETERS
 
@@ -86,13 +79,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -128,13 +121,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 5
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

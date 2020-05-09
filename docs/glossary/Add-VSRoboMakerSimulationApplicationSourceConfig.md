@@ -15,15 +15,6 @@ Add-VSRoboMakerSimulationApplicationSourceConfig [-S3Bucket] <Object> [-Architec
 Adds an AWS::RoboMaker::SimulationApplication.SourceConfig resource property to the template.
 Information about a source configuration.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -S3Bucket

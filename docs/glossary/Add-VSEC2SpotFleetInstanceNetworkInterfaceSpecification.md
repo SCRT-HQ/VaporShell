@@ -7,25 +7,16 @@ Describes a network interface.
 ## SYNTAX
 
 ```
-Add-VSEC2SpotFleetInstanceNetworkInterfaceSpecification [[-AssociatePublicIpAddress] <Boolean>]
- [[-DeleteOnTermination] <Boolean>] [[-Description] <Object>] [[-DeviceIndex] <Int32>] [[-Groups] <Object>]
- [[-Ipv6AddressCount] <Int32>] [[-Ipv6Addresses] <Object>] [[-NetworkInterfaceId] <Object>]
- [[-PrivateIpAddresses] <Object>] [[-SecondaryPrivateIpAddressCount] <Int32>] [[-SubnetId] <Object>]
+Add-VSEC2SpotFleetInstanceNetworkInterfaceSpecification [[-AssociatePublicIpAddress] <Object>]
+ [[-DeleteOnTermination] <Object>] [[-Description] <Object>] [[-DeviceIndex] <Object>] [[-Groups] <Object>]
+ [[-Ipv6AddressCount] <Object>] [[-Ipv6Addresses] <Object>] [[-NetworkInterfaceId] <Object>]
+ [[-PrivateIpAddresses] <Object>] [[-SecondaryPrivateIpAddressCount] <Object>] [[-SubnetId] <Object>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::EC2::SpotFleet.InstanceNetworkInterfaceSpecification resource property to the template.
 Describes a network interface.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -40,13 +31,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -60,13 +51,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -101,13 +92,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 4
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -145,13 +136,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 6
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -181,6 +172,7 @@ Accept wildcard characters: False
 
 ### -NetworkInterfaceId
 The ID of the network interface.
+If you are creating a Spot Fleet, omit this parameter because you can't specify a network interface ID in a launch specification.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-networkinterfaces.html#cfn-ec2-spotfleet-instancenetworkinterfacespecification-networkinterfaceid
 PrimitiveType: String
@@ -231,19 +223,19 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 10
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -SubnetId
-The ID of the subnet associated with the network string.
+The ID of the subnet associated with the network interface.
 Applies only if creating a network interface when launching an instance.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata-launchspecifications-networkinterfaces.html#cfn-ec2-spotfleet-instancenetworkinterfacespecification-subnetid

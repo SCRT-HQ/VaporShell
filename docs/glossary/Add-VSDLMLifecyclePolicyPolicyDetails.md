@@ -7,28 +7,18 @@ Specifies the configuration of a lifecycle policy.
 ## SYNTAX
 
 ```
-Add-VSDLMLifecyclePolicyPolicyDetails [[-ResourceTypes] <Object>] [[-Schedules] <Object>]
- [[-PolicyType] <Object>] [[-Parameters] <Object>] [[-TargetTags] <Object>] [<CommonParameters>]
+Add-VSDLMLifecyclePolicyPolicyDetails [-ResourceTypes] <Object> [-Schedules] <Object> [[-PolicyType] <Object>]
+ [[-Parameters] <Object>] [-TargetTags] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::DLM::LifecyclePolicy.PolicyDetails resource property to the template.
 Specifies the configuration of a lifecycle policy.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ResourceTypes
 The resource type.
-Specify one of INSTANCE or VOLUME.
 
 PrimitiveItemType: String
 Type: List
@@ -40,7 +30,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: 1
 Default value: None
 Accept pipeline input: False
@@ -60,7 +50,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: 2
 Default value: None
 Accept pipeline input: False
@@ -68,7 +58,8 @@ Accept wildcard characters: False
 ```
 
 ### -PolicyType
-*Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+The valid target resource types and actions a policy can manage.
+The default is EBS_SNAPSHOT_MANAGEMENT.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-policydetails.html#cfn-dlm-lifecyclepolicy-policydetails-policytype
 PrimitiveType: String
@@ -87,7 +78,7 @@ Accept wildcard characters: False
 ```
 
 ### -Parameters
-*Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+A set of optional parameters for the policy.
 
 Type: Parameters
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-policydetails.html#cfn-dlm-lifecyclepolicy-policydetails-parameters
@@ -118,7 +109,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: 5
 Default value: None
 Accept pipeline input: False

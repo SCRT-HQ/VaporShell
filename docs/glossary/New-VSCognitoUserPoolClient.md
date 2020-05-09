@@ -2,32 +2,24 @@
 
 ## SYNOPSIS
 Adds an AWS::Cognito::UserPoolClient resource to the template.
-The AWS::Cognito::UserPoolClient resource creates an Amazon Cognito user pool client.
+The AWS::Cognito::UserPoolClient resource specifies an Amazon Cognito user pool client.
 
 ## SYNTAX
 
 ```
-New-VSCognitoUserPoolClient [-LogicalId] <String> [-AnalyticsConfiguration <Object>]
- [-GenerateSecret <Boolean>] [-CallbackURLs <Object>] [-AllowedOAuthScopes <Object>] [-ReadAttributes <Object>]
- [-AllowedOAuthFlowsUserPoolClient <Boolean>] [-DefaultRedirectURI <Object>]
+New-VSCognitoUserPoolClient [-LogicalId] <String> [-AnalyticsConfiguration <Object>] [-GenerateSecret <Object>]
+ [-CallbackURLs <Object>] [-AllowedOAuthScopes <Object>] [-ReadAttributes <Object>]
+ [-AllowedOAuthFlowsUserPoolClient <Object>] [-DefaultRedirectURI <Object>]
  [-SupportedIdentityProviders <Object>] [-ClientName <Object>] -UserPoolId <Object>
  [-AllowedOAuthFlows <Object>] [-ExplicitAuthFlows <Object>] [-LogoutURLs <Object>]
- [-RefreshTokenValidity <Int32>] [-WriteAttributes <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>]
- [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+ [-RefreshTokenValidity <Object>] [-WriteAttributes <Object>] [-PreventUserExistenceErrors <Object>]
+ [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
+ [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Cognito::UserPoolClient resource to the template.
-The AWS::Cognito::UserPoolClient resource creates an Amazon Cognito user pool client.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+The AWS::Cognito::UserPoolClient resource specifies an Amazon Cognito user pool client.
 
 ## PARAMETERS
 
@@ -50,6 +42,8 @@ Accept wildcard characters: False
 
 ### -AnalyticsConfiguration
 The Amazon Pinpoint analytics configuration for collecting metrics for this user pool.
+Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East N.
+Virginia us-east-1 Region, regardless of the region in which the user pool resides.
 
 Type: AnalyticsConfiguration
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-analyticsconfiguration
@@ -75,13 +69,13 @@ PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -114,8 +108,10 @@ Accept wildcard characters: False
 ```
 
 ### -AllowedOAuthScopes
-A list of allowed OAuth scopes.
-Currently supported values are "phone", "email", "openid", and "Cognito".
+The allowed OAuth scopes.
+Possible values provided by OAuth are: phone, email, openid, and profile.
+Possible values provided by AWS are: aws.cognito.signin.user.admin.
+Custom scopes created in Resource Servers are also supported.
 
 PrimitiveItemType: String
 Type: List
@@ -155,20 +151,20 @@ Accept wildcard characters: False
 ```
 
 ### -AllowedOAuthFlowsUserPoolClient
-Set to True if the client is allowed to follow the OAuth protocol when interacting with Cognito user pools.
+Set to true if the client is allowed to follow the OAuth protocol when interacting with Cognito user pools.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-allowedoauthflowsuserpoolclient
 PrimitiveType: Boolean
-UpdateType: Immutable
+UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -260,9 +256,11 @@ Accept wildcard characters: False
 ```
 
 ### -AllowedOAuthFlows
+The allowed OAuth flows.
 Set to code to initiate a code grant flow, which provides an authorization code as the response.
 This code can be exchanged for access tokens with the token endpoint.
-Set to token to specify that the client should get the access token and, optionally, ID token, based on scopes directly.
+Set to implicit to specify that the client should get the access token and, optionally, ID token, based on scopes directly.
+Set to client_credentials to specify that the client should get the access token and, optionally, ID token, based on scopes from the token endpoint using a combination of client and client_secret.
 
 PrimitiveItemType: String
 Type: List
@@ -282,7 +280,18 @@ Accept wildcard characters: False
 ```
 
 ### -ExplicitAuthFlows
-The explicit authentication flows, which can be one of the following: ADMIN_NO_SRP_AUTH, CUSTOM_AUTH_FLOW_ONLY, or USER_PASSWORD_AUTH.
+The authentication flows that are supported by the user pool clients.
+Flow names without the ALLOW_ prefix are deprecated in favor of new names with the ALLOW_ prefix.
+Note that values with ALLOW_ prefix cannot be used along with values without ALLOW_ prefix.
+Valid values include:
++  ALLOW_ADMIN_USER_PASSWORD_AUTH: Enable admin based user password authentication flow ADMIN_USER_PASSWORD_AUTH.
+This setting replaces the ADMIN_NO_SRP_AUTH setting.
+With this authentication flow, Cognito receives the password in the request instead of using the SRP Secure Remote Password protocol protocol to verify passwords.
++  ALLOW_CUSTOM_AUTH: Enable Lambda trigger based authentication.
++  ALLOW_USER_PASSWORD_AUTH: Enable user password-based authentication.
+In this flow, Cognito receives the password in the request instead of using the SRP protocol to verify passwords.
++  ALLOW_USER_SRP_AUTH: Enable SRP based authentication.
++  ALLOW_REFRESH_TOKEN_AUTH: Enable authflow to refresh tokens.
 
 PrimitiveItemType: String
 Type: List
@@ -329,13 +338,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -364,6 +373,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -PreventUserExistenceErrors
+Use this setting to choose which errors and responses are returned by Cognito APIs during authentication, account confirmation, and password recovery when the user does not exist in the user pool.
+When set to ENABLED and the user does not exist, authentication returns an error indicating either the username or password was incorrect, and account confirmation and password recovery return a response indicating a code was sent to a simulated destination.
+When set to LEGACY, those APIs will return a UserNotFoundException exception if the user does not exist in the user pool.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-preventuserexistenceerrors
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -DeletionPolicy
 With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted.
 You specify a DeletionPolicy attribute for each resource that you want to control.
@@ -372,6 +402,49 @@ If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the re
 To keep a resource when its stack is deleted, specify Retain for that resource.
 You can use retain for any resource.
 For example, you can retain a nested stack, S3 bucket, or EC2 instance so that you can continue to use or modify those resources after you delete their stacks.
+
+You must use one of the following options: "Delete","Retain","Snapshot"
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdateReplacePolicy
+Use the UpdateReplacePolicy attribute to retain or (in some cases) backup the existing physical instance of a resource when it is replaced during a stack update operation.
+
+When you initiate a stack update, AWS CloudFormation updates resources based on differences between what you submit and the stack's current template and parameters.
+If you update a resource property that requires that the resource be replaced, AWS CloudFormation recreates the resource during the update.
+Recreating the resource generates a new physical ID.
+AWS CloudFormation creates the replacement resource first, and then changes references from other dependent resources to point to the replacement resource.
+By default, AWS CloudFormation then deletes the old resource.
+Using the UpdateReplacePolicy, you can specify that AWS CloudFormation retain or (in some cases) create a snapshot of the old resource.
+
+For resources that support snapshots, such as AWS::EC2::Volume, specify Snapshot to have AWS CloudFormation create a snapshot before deleting the old resource instance.
+
+You can apply the UpdateReplacePolicy attribute to any resource.
+UpdateReplacePolicy is only executed if you update a resource property whose update behavior is specified as Replacement, thereby causing AWS CloudFormation to replace the old resource with a new one with a new physical ID.
+For example, if you update the Engine property of an AWS::RDS::DBInstance resource type, AWS CloudFormation creates a new resource and replaces the current DB instance resource with the new one.
+The UpdateReplacePolicy attribute would then dictate whether AWS CloudFormation deleted, retained, or created a snapshot of the old DB instance.
+The update behavior for each property of a resource is specified in the reference topic for that resource in the AWS Resource and Property Types Reference.
+For more information on resource update behavior, see Update Behaviors of Stack Resources.
+
+The UpdateReplacePolicy attribute applies to stack updates you perform directly, as well as stack updates performed using change sets.
+
+Note
+Resources that are retained continue to exist and continue to incur applicable charges until you delete those resources.
+Snapshots that are created with this policy continue to exist and continue to incur applicable charges until you delete those snapshots.
+UpdateReplacePolicy retains the old physical resource or snapshot, but removes it from AWS CloudFormation's scope.
+
+UpdateReplacePolicy differs from the DeletionPolicy attribute in that it only applies to resources replaced during stack updates.
+Use DeletionPolicy for resources deleted when a stack is deleted, or when the resource definition itself is deleted from the template as part of a stack update.
 
 You must use one of the following options: "Delete","Retain","Snapshot"
 

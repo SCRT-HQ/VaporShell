@@ -7,21 +7,12 @@ The desired capacity for a fleet.
 ## SYNTAX
 
 ```
-Add-VSAppStreamFleetComputeCapacity [-DesiredInstances] <Int32> [<CommonParameters>]
+Add-VSAppStreamFleetComputeCapacity [-DesiredInstances] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::AppStream::Fleet.ComputeCapacity resource property to the template.
 The desired capacity for a fleet.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -33,13 +24,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

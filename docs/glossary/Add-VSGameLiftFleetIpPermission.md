@@ -2,57 +2,48 @@
 
 ## SYNOPSIS
 Adds an AWS::GameLift::Fleet.IpPermission resource property to the template.
-A range of IP addresses and port settings that allow inbound traffic to connect to server processes on Amazon GameLift.
-Each game session hosted on a fleet is assigned a unique combination of IP address and port number, which must fall into the fleet's allowed ranges.
+A range of IP addresses and port settings that allow inbound traffic to connect to server processes on an Amazon GameLift hosting resource.
+New game sessions that are started on the fleet are assigned an IP address/port number combination, which must fall into the fleet's allowed ranges.
 For fleets created with a custom game server, the ranges reflect the server's game session assignments.
-For Realtime Servers fleets, Amazon GameLift automatically opens two port ranges, one for TCP messaging and one for UDP for use by the Realtime servers.
+For Realtime Servers fleets, Amazon GameLift automatically opens two port ranges, one for TCP messaging and one for UDP, for use by the Realtime servers.
 
 ## SYNTAX
 
 ```
-Add-VSGameLiftFleetIpPermission [-FromPort] <Int32> [-IpRange] <Object> [-Protocol] <Object> [-ToPort] <Int32>
- [<CommonParameters>]
+Add-VSGameLiftFleetIpPermission [-FromPort] <Object> [-IpRange] <Object> [-Protocol] <Object>
+ [-ToPort] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::GameLift::Fleet.IpPermission resource property to the template.
-A range of IP addresses and port settings that allow inbound traffic to connect to server processes on Amazon GameLift.
-Each game session hosted on a fleet is assigned a unique combination of IP address and port number, which must fall into the fleet's allowed ranges.
+A range of IP addresses and port settings that allow inbound traffic to connect to server processes on an Amazon GameLift hosting resource.
+New game sessions that are started on the fleet are assigned an IP address/port number combination, which must fall into the fleet's allowed ranges.
 For fleets created with a custom game server, the ranges reflect the server's game session assignments.
-For Realtime Servers fleets, Amazon GameLift automatically opens two port ranges, one for TCP messaging and one for UDP for use by the Realtime servers.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+For Realtime Servers fleets, Amazon GameLift automatically opens two port ranges, one for TCP messaging and one for UDP, for use by the Realtime servers.
 
 ## PARAMETERS
 
 ### -FromPort
-Starting value for a range of allowed port numbers.
+A starting value for a range of allowed port numbers.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-ec2inboundpermission.html#cfn-gamelift-fleet-ec2inboundpermissions-fromport
 PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -IpRange
-Range of allowed IP addresses.
+A range of allowed IP addresses.
 This value must be expressed in CIDR notation.
 Example: "000.000.000.000/subnet mask\]" or optionally the shortened version "0.0.0.0/subnet mask\]".
 
@@ -73,7 +64,7 @@ Accept wildcard characters: False
 ```
 
 ### -Protocol
-Network communication protocol used by the fleet.
+The network communication protocol used by the fleet.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-ec2inboundpermission.html#cfn-gamelift-fleet-ec2inboundpermissions-protocol
 PrimitiveType: String
@@ -92,7 +83,7 @@ Accept wildcard characters: False
 ```
 
 ### -ToPort
-Ending value for a range of allowed port numbers.
+An ending value for a range of allowed port numbers.
 Port numbers are end-inclusive.
 This value must be higher than FromPort.
 
@@ -101,13 +92,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 4
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

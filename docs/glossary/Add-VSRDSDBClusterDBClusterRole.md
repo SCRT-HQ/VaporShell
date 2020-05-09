@@ -7,22 +7,12 @@ Describes an AWS Identity and Access Management (IAM role that is associated wit
 ## SYNTAX
 
 ```
-Add-VSRDSDBClusterDBClusterRole [[-FeatureName] <Object>] [-RoleArn] <Object> [[-Status] <Object>]
- [<CommonParameters>]
+Add-VSRDSDBClusterDBClusterRole [[-FeatureName] <Object>] [-RoleArn] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::RDS::DBCluster.DBClusterRole resource property to the template.
 Describes an AWS Identity and Access Management (IAM role that is associated with a DB cluster.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -60,29 +50,6 @@ Aliases:
 
 Required: True
 Position: 2
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Status
-Describes the state of association between the IAM role and the DB cluster.
-The Status property returns one of the following values:
-+  ACTIVE - the IAM role ARN is associated with the DB cluster and can be used to access other AWS services on your behalf.
-+  PENDING - the IAM role ARN is being associated with the DB cluster.
-+  INVALID - the IAM role ARN is associated with the DB cluster, but the DB cluster is unable to assume the IAM role in order to access other AWS services on your behalf.
-
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-dbclusterrole.html#cfn-rds-dbcluster-dbclusterrole-status
-PrimitiveType: String
-UpdateType: Mutable
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

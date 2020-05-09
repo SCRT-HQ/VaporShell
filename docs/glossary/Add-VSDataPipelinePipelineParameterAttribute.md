@@ -14,15 +14,6 @@ Add-VSDataPipelinePipelineParameterAttribute [-Key] <Object> [-StringValue] <Obj
 Adds an AWS::DataPipeline::Pipeline.ParameterAttribute resource property to the template.
 Attribute is a property of ParameterObject that defines the attributes of a parameter object as key-value pairs.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Key

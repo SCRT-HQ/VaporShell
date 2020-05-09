@@ -7,24 +7,25 @@ The AWS::RDS::DBInstance resource creates an Amazon RDS DB instance.
 ## SYNTAX
 
 ```
-New-VSRDSDBInstance [-LogicalId] <String> [-AllocatedStorage <Object>] [-AllowMajorVersionUpgrade <Boolean>]
- [-AssociatedRoles <Object>] [-AutoMinorVersionUpgrade <Boolean>] [-AvailabilityZone <Object>]
- [-BackupRetentionPeriod <Int32>] [-CharacterSetName <Object>] [-CopyTagsToSnapshot <Boolean>]
- [-DBClusterIdentifier <Object>] -DBInstanceClass <Object> [-DBInstanceIdentifier <Object>] [-DBName <Object>]
- [-DBParameterGroupName <Object>] [-DBSecurityGroups <Object>] [-DBSnapshotIdentifier <Object>]
- [-DBSubnetGroupName <Object>] [-DeleteAutomatedBackups <Boolean>] [-DeletionProtection <Boolean>]
- [-Domain <Object>] [-DomainIAMRoleName <Object>] [-EnableCloudwatchLogsExports <Object>]
- [-EnableIAMDatabaseAuthentication <Boolean>] [-EnablePerformanceInsights <Boolean>] [-Engine <Object>]
- [-EngineVersion <Object>] [-Iops <Int32>] [-KmsKeyId <Object>] [-LicenseModel <Object>]
- [-MasterUserPassword <Object>] [-MasterUsername <Object>] [-MonitoringInterval <Int32>]
- [-MonitoringRoleArn <Object>] [-MultiAZ <Boolean>] [-OptionGroupName <Object>]
- [-PerformanceInsightsKMSKeyId <Object>] [-PerformanceInsightsRetentionPeriod <Int32>] [-Port <Object>]
+New-VSRDSDBInstance [-LogicalId] <String> [-AllocatedStorage <Object>] [-AllowMajorVersionUpgrade <Object>]
+ [-AssociatedRoles <Object>] [-AutoMinorVersionUpgrade <Object>] [-AvailabilityZone <Object>]
+ [-BackupRetentionPeriod <Object>] [-CACertificateIdentifier <Object>] [-CharacterSetName <Object>]
+ [-CopyTagsToSnapshot <Object>] [-DBClusterIdentifier <Object>] -DBInstanceClass <Object>
+ [-DBInstanceIdentifier <Object>] [-DBName <Object>] [-DBParameterGroupName <Object>]
+ [-DBSecurityGroups <Object>] [-DBSnapshotIdentifier <Object>] [-DBSubnetGroupName <Object>]
+ [-DeleteAutomatedBackups <Object>] [-DeletionProtection <Object>] [-Domain <Object>]
+ [-DomainIAMRoleName <Object>] [-EnableCloudwatchLogsExports <Object>]
+ [-EnableIAMDatabaseAuthentication <Object>] [-EnablePerformanceInsights <Object>] [-Engine <Object>]
+ [-EngineVersion <Object>] [-Iops <Object>] [-KmsKeyId <Object>] [-LicenseModel <Object>]
+ [-MasterUserPassword <Object>] [-MasterUsername <Object>] [-MaxAllocatedStorage <Object>]
+ [-MonitoringInterval <Object>] [-MonitoringRoleArn <Object>] [-MultiAZ <Object>] [-OptionGroupName <Object>]
+ [-PerformanceInsightsKMSKeyId <Object>] [-PerformanceInsightsRetentionPeriod <Object>] [-Port <Object>]
  [-PreferredBackupWindow <Object>] [-PreferredMaintenanceWindow <Object>] [-ProcessorFeatures <Object>]
- [-PromotionTier <Int32>] [-PubliclyAccessible <Boolean>] [-SourceDBInstanceIdentifier <Object>]
- [-SourceRegion <Object>] [-StorageEncrypted <Boolean>] [-StorageType <Object>] [-Tags <Object>]
- [-Timezone <Object>] [-UseDefaultProcessorFeatures <Boolean>] [-VPCSecurityGroups <Object>]
- [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
- [-Condition <Object>] [<CommonParameters>]
+ [-PromotionTier <Object>] [-PubliclyAccessible <Object>] [-SourceDBInstanceIdentifier <Object>]
+ [-SourceRegion <Object>] [-StorageEncrypted <Object>] [-StorageType <Object>] [-Tags <Object>]
+ [-Timezone <Object>] [-UseDefaultProcessorFeatures <Object>] [-VPCSecurityGroups <Object>]
+ [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
+ [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -79,15 +80,6 @@ For AWS::RDS::DBInstance resources that do specify the DBClusterIdentifier prope
 
 For more information, see DeletionPolicy Attribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -LogicalId
@@ -138,13 +130,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -179,13 +171,13 @@ PrimitiveType: Boolean
 UpdateType: Conditional
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -217,23 +209,46 @@ Accept wildcard characters: False
 The number of days for which automated backups are retained.
 Setting this parameter to a positive number enables backups.
 Setting this parameter to 0 disables automated backups.
+**Amazon Aurora**
+Not applicable.
+The retention period for automated backups is managed by the DB cluster.
 Default: 1
 Constraints:
-+ Must be a value from 0 to 8
-+ Cannot be set to 0 if the DB Instance is a master instance with read replicas
++ Must be a value from 0 to 35
++ Can't be set to 0 if the DB instance is a source to Read Replicas
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-backupretentionperiod
 PrimitiveType: Integer
 UpdateType: Conditional
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CACertificateIdentifier
+The identifier of the CA certificate for this DB instance.
+Specifying or updating this property triggers a reboot.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-cacertificateidentifier
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -270,13 +285,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -553,13 +568,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -569,27 +584,35 @@ A value that indicates whether the DB instance has deletion protection enabled.
 The database can't be deleted when deletion protection is enabled.
 By default, deletion protection is disabled.
 For more information, see  Deleting a DB Instance: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html.
+**Amazon Aurora**
+Not applicable.
+You can enable or disable deletion protection for the DB cluster.
+For more information, see CreateDBCluster.
+DB instances in a DB cluster can be deleted even when deletion protection is enabled for the DB cluster.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-deletionprotection
 PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Domain
-For an Amazon RDS DB instance that's running Microsoft SQL Server, this parameter specifies the Active Directory directory ID to create the instance in.
-Amazon RDS uses Windows Authentication to authenticate users that connect to the DB instance.
-For more information, see Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server: https://docs.aws.amazon.com/AmazonRDS/latest/DeveloperGuide/USER_SQLServerWinAuth.html in the *Amazon RDS User Guide*.
+The Active Directory directory ID to create the DB instance in.
+Currently, only Microsoft SQL Server and Oracle DB instances can be created in an Active Directory Domain.
+For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users that connect to the DB instance.
+For more information, see  Using Windows Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html in the *Amazon RDS User Guide*.
+For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB instance.
+For more information, see  Using Kerberos Authentication with Amazon RDS for Oracle: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html in the *Amazon RDS User Guide*.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-domain
 PrimitiveType: String
@@ -671,13 +694,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -691,13 +714,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -763,13 +786,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -823,15 +846,21 @@ Accept wildcard characters: False
 ```
 
 ### -MasterUserPassword
-The password for the master database user.
-Can be any printable ASCII character except "/", "", or "@".
-Type: String
+The password for the master user.
+The password can include any printable ASCII character except "/", """, or "@".
+**Amazon Aurora**
+Not applicable.
+The password for the master user is managed by the DB cluster.
+**MariaDB**
+Constraints: Must contain from 8 to 41 characters.
+**Microsoft SQL Server**
+Constraints: Must contain from 8 to 128 characters.
 **MySQL**
-Constraints: Must contain from 8 to 41 alphanumeric characters.
+Constraints: Must contain from 8 to 41 characters.
 **Oracle**
-Constraints: Must contain from 8 to 30 alphanumeric characters.
-**SQL Server**
-Constraints: Must contain from 8 to 128 alphanumeric characters.
+Constraints: Must contain from 8 to 30 characters.
+**PostgreSQL**
+Constraints: Must contain from 8 to 128 characters.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-masteruserpassword
 PrimitiveType: String
@@ -870,6 +899,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -MaxAllocatedStorage
+The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-maxallocatedstorage
+PrimitiveType: Integer
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -MonitoringInterval
 The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB instance.
 To disable collecting Enhanced Monitoring metrics, specify 0.
@@ -882,13 +930,13 @@ PrimitiveType: Integer
 UpdateType: Conditional
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -925,13 +973,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -987,13 +1035,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -1104,13 +1152,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -1132,13 +1180,13 @@ PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -1155,8 +1203,8 @@ However, if you update the stack, AWS CloudFormation reverts the replica's VPCSe
 This change might cause unexpected issues.
 + Read Replicas don't support deletion policies.
 AWS CloudFormation ignores any deletion policy that's associated with a Read Replica.
-+ If you specify SourceDBInstanceIdentifier, don't set the MultiAZ property to true, and don't specify the DBSnapshotIdentifier property.
-You can't deploy Read Replicas in multiple Availability Zones, and you can't create a Read Replica from a snapshot.
++ If you specify SourceDBInstanceIdentifier, don't specify the DBSnapshotIdentifier property.
+You can't create a Read Replica from a snapshot.
 +  Don't set the BackupRetentionPeriod, DBName, MasterUsername, MasterUserPassword, and PreferredBackupWindow properties.
 The database attributes are inherited from the source DB instance, and backups are disabled for Read Replicas.
 + If the source DB instance is in a different region than the Read Replica, specify the source region in SourceRegion, and specify an ARN for a valid DB instance in SourceDBInstanceIdentifier.
@@ -1201,7 +1249,7 @@ Accept wildcard characters: False
 
 ### -StorageEncrypted
 A value that indicates whether the DB instance is encrypted.
-By default, it is not encrypted.
+By default, it isn't encrypted.
 **Amazon Aurora**
 Not applicable.
 The encryption for DB instances is managed by the DB cluster.
@@ -1211,19 +1259,23 @@ PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -StorageType
-Specifies storage type to be associated with the DB Instance.
+Specifies the storage type to be associated with the DB instance.
+Valid values: standard | gp2 | io1
+If you specify io1, you must also include a value for the Iops parameter.
+Default: io1 if the Iops parameter is specified, otherwise standard
+For more information, see Amazon RDS DB Instance Storage: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html in the *Amazon RDS User Guide*.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-storagetype
 PrimitiveType: String
@@ -1290,13 +1342,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -1338,6 +1390,49 @@ If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the re
 To keep a resource when its stack is deleted, specify Retain for that resource.
 You can use retain for any resource.
 For example, you can retain a nested stack, S3 bucket, or EC2 instance so that you can continue to use or modify those resources after you delete their stacks.
+
+You must use one of the following options: "Delete","Retain","Snapshot"
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdateReplacePolicy
+Use the UpdateReplacePolicy attribute to retain or (in some cases) backup the existing physical instance of a resource when it is replaced during a stack update operation.
+
+When you initiate a stack update, AWS CloudFormation updates resources based on differences between what you submit and the stack's current template and parameters.
+If you update a resource property that requires that the resource be replaced, AWS CloudFormation recreates the resource during the update.
+Recreating the resource generates a new physical ID.
+AWS CloudFormation creates the replacement resource first, and then changes references from other dependent resources to point to the replacement resource.
+By default, AWS CloudFormation then deletes the old resource.
+Using the UpdateReplacePolicy, you can specify that AWS CloudFormation retain or (in some cases) create a snapshot of the old resource.
+
+For resources that support snapshots, such as AWS::EC2::Volume, specify Snapshot to have AWS CloudFormation create a snapshot before deleting the old resource instance.
+
+You can apply the UpdateReplacePolicy attribute to any resource.
+UpdateReplacePolicy is only executed if you update a resource property whose update behavior is specified as Replacement, thereby causing AWS CloudFormation to replace the old resource with a new one with a new physical ID.
+For example, if you update the Engine property of an AWS::RDS::DBInstance resource type, AWS CloudFormation creates a new resource and replaces the current DB instance resource with the new one.
+The UpdateReplacePolicy attribute would then dictate whether AWS CloudFormation deleted, retained, or created a snapshot of the old DB instance.
+The update behavior for each property of a resource is specified in the reference topic for that resource in the AWS Resource and Property Types Reference.
+For more information on resource update behavior, see Update Behaviors of Stack Resources.
+
+The UpdateReplacePolicy attribute applies to stack updates you perform directly, as well as stack updates performed using change sets.
+
+Note
+Resources that are retained continue to exist and continue to incur applicable charges until you delete those resources.
+Snapshots that are created with this policy continue to exist and continue to incur applicable charges until you delete those snapshots.
+UpdateReplacePolicy retains the old physical resource or snapshot, but removes it from AWS CloudFormation's scope.
+
+UpdateReplacePolicy differs from the DeletionPolicy attribute in that it only applies to resources replaced during stack updates.
+Use DeletionPolicy for resources deleted when a stack is deleted, or when the resource definition itself is deleted from the template as part of a stack update.
 
 You must use one of the following options: "Delete","Retain","Snapshot"
 

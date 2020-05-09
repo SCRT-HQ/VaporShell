@@ -15,15 +15,6 @@ Add-VSIoTAnalyticsPipelineDeviceRegistryEnrich [[-Attribute] <Object>] [[-Next] 
 Adds an AWS::IoTAnalytics::Pipeline.DeviceRegistryEnrich resource property to the template.
 An activity that adds data from the AWS IoT device registry to your message.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Attribute

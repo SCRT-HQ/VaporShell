@@ -2,34 +2,25 @@
 
 ## SYNOPSIS
 Adds an AWS::AutoScaling::AutoScalingGroup.LifecycleHookSpecification resource property to the template.
-LifecycleHookSpecification specifies a list of lifecycle hooks for the LifecycleHookSpecificationList property of AutoScalingGroup: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html.
+LifecycleHookSpecification specifies a list of lifecycle hooks for the LifecycleHookSpecificationList property of AWS::AutoScaling::AutoScalingGroup: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html.
 LifecycleHookSpecification defines lifecycle hooks for an Auto Scaling group that specify actions to perform when Amazon EC2 Auto Scaling launches or terminates instances.
 
 ## SYNTAX
 
 ```
 Add-VSAutoScalingAutoScalingGroupLifecycleHookSpecification [[-DefaultResult] <Object>]
- [[-HeartbeatTimeout] <Int32>] [-LifecycleHookName] <Object> [-LifecycleTransition] <Object>
+ [[-HeartbeatTimeout] <Object>] [-LifecycleHookName] <Object> [-LifecycleTransition] <Object>
  [[-NotificationMetadata] <Object>] [[-NotificationTargetARN] <Object>] [[-RoleARN] <Object>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::AutoScaling::AutoScalingGroup.LifecycleHookSpecification resource property to the template.
-LifecycleHookSpecification specifies a list of lifecycle hooks for the LifecycleHookSpecificationList property of AutoScalingGroup: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html.
+LifecycleHookSpecification specifies a list of lifecycle hooks for the LifecycleHookSpecificationList property of AWS::AutoScaling::AutoScalingGroup: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html.
 LifecycleHookSpecification defines lifecycle hooks for an Auto Scaling group that specify actions to perform when Amazon EC2 Auto Scaling launches or terminates instances.
 
 For more information, see Amazon EC2 Auto Scaling Lifecycle Hooks: https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html in the *Amazon EC2 Auto Scaling User Guide*.
 You can find a sample template snippet in the Examples: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-lifecyclehook.html#aws-resource-as-lifecyclehook--examples section of the AWS::AutoScaling::LifecycleHook documentation.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -62,13 +53,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

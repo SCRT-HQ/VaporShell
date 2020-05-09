@@ -15,15 +15,6 @@ Add-VSElasticLoadBalancingV2ListenerRuleQueryStringKeyValue [[-Key] <Object>] [[
 Adds an AWS::ElasticLoadBalancingV2::ListenerRule.QueryStringKeyValue resource property to the template.
 Information about a key/value pair.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Key

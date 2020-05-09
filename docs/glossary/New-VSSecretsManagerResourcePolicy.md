@@ -4,34 +4,25 @@
 Adds an AWS::SecretsManager::ResourcePolicy resource to the template.
 Attaches the contents of the specified resource-based permission policy to a secret.
 A resource-based policy is optional.
-Alternatively, you can use IAM identity-based policies that specify the secret's Amazon Resource Name (ARN in the policy statement's Resources element.
+Alternatively, you can use IAM identity-based policies to specify the Amazon Resource Name (ARN of the secret in the policy statement Resources element.
 You can also use a combination of both identity-based and resource-based policies.
-The affected users and roles receive the permissions that are permitted by all relevant policies.
+The affected users and roles receive the permissions permitted by all relevant policies.
 
 ## SYNTAX
 
 ```
 New-VSSecretsManagerResourcePolicy [-LogicalId] <String> -SecretId <Object> -ResourcePolicy <Object>
- [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
- [-Condition <Object>] [<CommonParameters>]
+ [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
+ [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::SecretsManager::ResourcePolicy resource to the template.
 Attaches the contents of the specified resource-based permission policy to a secret.
 A resource-based policy is optional.
-Alternatively, you can use IAM identity-based policies that specify the secret's Amazon Resource Name (ARN in the policy statement's Resources element.
+Alternatively, you can use IAM identity-based policies to specify the Amazon Resource Name (ARN of the secret in the policy statement Resources element.
 You can also use a combination of both identity-based and resource-based policies.
-The affected users and roles receive the permissions that are permitted by all relevant policies.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+The affected users and roles receive the permissions permitted by all relevant policies.
 
 ## PARAMETERS
 
@@ -53,8 +44,8 @@ Accept wildcard characters: False
 ```
 
 ### -SecretId
-Specifies the Amazon Resource Name ARN or the friendly name of the secret that you want to attach a resource-based permissions policy to.
-If you use this property to change the SecretId for an existing resource-based policy, it removes the policy from the original secret, and then attaches the policy to the secret with the specified SecretId.
+Specifies the Amazon Resource Name ARN or the friendly name of the secret to attach a resource-based permissions policy.
+If you use this property to change the SecretId for an existing resource-based policy, Secrets Manager removes the policy from the original secret, and then attaches the policy to the secret with the specified SecretId.
 This results in changing the permissions for two secrets.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-resourcepolicy.html#cfn-secretsmanager-resourcepolicy-secretid
@@ -74,9 +65,9 @@ Accept wildcard characters: False
 ```
 
 ### -ResourcePolicy
-Specifies a JSON object that's constructed according to the grammar and syntax for a resource-based policy.
-The policy identifies who can access or manage this secret and its versions.
-For information on how to format a JSON object as a parameter for this resource type, see Using Resource-based Policies for Secrets Manager: https://docs.aws.amazon.com/secretsmanager/latest/UserGuide/auth-and-access-resource-based-policies.htmlin the AWS Secrets Manager User Guide.
+Specifies a JSON object constructed according to the grammar and syntax for a resource-based policy.
+The policy identifies who can access or manage this secret and associated versions.
+For information on how to format a JSON object as a parameter for this resource type, see Using Resource-based Policies for Secrets Manager: https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-based-policies.html in the AWS Secrets Manager User Guide.
 Those same rules apply here.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-resourcepolicy.html#cfn-secretsmanager-resourcepolicy-resourcepolicy
@@ -103,6 +94,49 @@ If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the re
 To keep a resource when its stack is deleted, specify Retain for that resource.
 You can use retain for any resource.
 For example, you can retain a nested stack, S3 bucket, or EC2 instance so that you can continue to use or modify those resources after you delete their stacks.
+
+You must use one of the following options: "Delete","Retain","Snapshot"
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdateReplacePolicy
+Use the UpdateReplacePolicy attribute to retain or (in some cases) backup the existing physical instance of a resource when it is replaced during a stack update operation.
+
+When you initiate a stack update, AWS CloudFormation updates resources based on differences between what you submit and the stack's current template and parameters.
+If you update a resource property that requires that the resource be replaced, AWS CloudFormation recreates the resource during the update.
+Recreating the resource generates a new physical ID.
+AWS CloudFormation creates the replacement resource first, and then changes references from other dependent resources to point to the replacement resource.
+By default, AWS CloudFormation then deletes the old resource.
+Using the UpdateReplacePolicy, you can specify that AWS CloudFormation retain or (in some cases) create a snapshot of the old resource.
+
+For resources that support snapshots, such as AWS::EC2::Volume, specify Snapshot to have AWS CloudFormation create a snapshot before deleting the old resource instance.
+
+You can apply the UpdateReplacePolicy attribute to any resource.
+UpdateReplacePolicy is only executed if you update a resource property whose update behavior is specified as Replacement, thereby causing AWS CloudFormation to replace the old resource with a new one with a new physical ID.
+For example, if you update the Engine property of an AWS::RDS::DBInstance resource type, AWS CloudFormation creates a new resource and replaces the current DB instance resource with the new one.
+The UpdateReplacePolicy attribute would then dictate whether AWS CloudFormation deleted, retained, or created a snapshot of the old DB instance.
+The update behavior for each property of a resource is specified in the reference topic for that resource in the AWS Resource and Property Types Reference.
+For more information on resource update behavior, see Update Behaviors of Stack Resources.
+
+The UpdateReplacePolicy attribute applies to stack updates you perform directly, as well as stack updates performed using change sets.
+
+Note
+Resources that are retained continue to exist and continue to incur applicable charges until you delete those resources.
+Snapshots that are created with this policy continue to exist and continue to incur applicable charges until you delete those snapshots.
+UpdateReplacePolicy retains the old physical resource or snapshot, but removes it from AWS CloudFormation's scope.
+
+UpdateReplacePolicy differs from the DeletionPolicy attribute in that it only applies to resources replaced during stack updates.
+Use DeletionPolicy for resources deleted when a stack is deleted, or when the resource definition itself is deleted from the template as part of a stack update.
 
 You must use one of the following options: "Delete","Retain","Snapshot"
 

@@ -14,15 +14,6 @@ Add-VSIoTEventsDetectorModelOnEnter [[-Events] <Object>] [<CommonParameters>]
 Adds an AWS::IoTEvents::DetectorModel.OnEnter resource property to the template.
 When entering this state, perform these "actions" if the "condition" is TRUE.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Events

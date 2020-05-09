@@ -7,7 +7,7 @@ The ActivatedRule object in an UpdateWebACL request specifies a Rule that you wa
 ## SYNTAX
 
 ```
-Add-VSWAFWebACLActivatedRule [[-Action] <Object>] [-Priority] <Int32> [-RuleId] <Object> [<CommonParameters>]
+Add-VSWAFWebACLActivatedRule [[-Action] <Object>] [-Priority] <Object> [-RuleId] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -15,15 +15,6 @@ Adds an AWS::WAF::WebACL.ActivatedRule resource property to the template.
 The ActivatedRule object in an UpdateWebACL request specifies a Rule that you want to insert or delete, the priority of the Rule in the WebACL, and the action that you want AWS WAF to take when a web request matches the Rule (ALLOW, BLOCK, or COUNT.
 
 To specify whether to insert or delete a Rule, use the Action parameter in the WebACLUpdate data type.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -64,13 +55,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

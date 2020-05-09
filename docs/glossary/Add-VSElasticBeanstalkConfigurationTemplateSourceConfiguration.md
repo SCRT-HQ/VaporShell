@@ -17,15 +17,6 @@ Adds an AWS::ElasticBeanstalk::ConfigurationTemplate.SourceConfiguration resourc
 An AWS Elastic Beanstalk configuration template to base a new one on.
 You can use it to define a AWS::ElasticBeanstalk::ConfigurationTemplate: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-beanstalk-configurationtemplate.html resource.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ApplicationName

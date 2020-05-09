@@ -17,15 +17,6 @@ Adds an AWS::Route53Resolver::ResolverEndpoint.IpAddressRequest resource propert
 In a CreateResolverEndpoint: https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html request, the IP address that DNS queries originate from (for outbound endpoints or that you forward DNS queries to (for inbound endpoints.
 IpAddressRequest also includes the ID of the subnet that contains the IP address.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Ip

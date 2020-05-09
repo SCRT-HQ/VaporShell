@@ -15,15 +15,6 @@ Add-VSGlueDataCatalogEncryptionSettingsEncryptionAtRest [[-CatalogEncryptionMode
 Adds an AWS::Glue::DataCatalogEncryptionSettings.EncryptionAtRest resource property to the template.
 Specifies the encryption-at-rest configuration for the Data Catalog.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -CatalogEncryptionMode

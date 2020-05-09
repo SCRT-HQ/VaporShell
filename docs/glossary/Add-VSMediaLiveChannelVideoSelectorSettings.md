@@ -17,15 +17,6 @@ Information about the video to extract from the input.
 
 The parent of this entity is VideoSelector.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -VideoSelectorProgramId

@@ -7,22 +7,13 @@ WebhookFilter is a structure of the FilterGroups property on the AWS CodeBuild P
 ## SYNTAX
 
 ```
-Add-VSCodeBuildProjectWebhookFilter [-Pattern] <Object> [-Type] <Object> [[-ExcludeMatchedPattern] <Boolean>]
+Add-VSCodeBuildProjectWebhookFilter [-Pattern] <Object> [-Type] <Object> [[-ExcludeMatchedPattern] <Object>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::CodeBuild::Project.WebhookFilter resource property to the template.
 WebhookFilter is a structure of the FilterGroups property on the AWS CodeBuild Project ProjectTriggers: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html property type that specifies which webhooks trigger an AWS CodeBuild build.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -52,7 +43,7 @@ Accept wildcard characters: False
 The type of webhook filter.
 There are five webhook filter types: EVENT, ACTOR_ACCOUNT_ID, HEAD_REF, BASE_REF, and FILE_PATH.
 EVENT
-A webhook event triggers a build when the provided pattern matches one of four event types: PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED, and PULL_REQUEST_REOPENED.
+A webhook event triggers a build when the provided pattern matches one of five event types: PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED, PULL_REQUEST_REOPENED, and PULL_REQUEST_MERGED.
 The EVENT patterns are specified as a comma-separated string.
 For example, PUSH, PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED filters all push, pull request created, and pull request updated events.
 The PULL_REQUEST_REOPENED works with GitHub and GitHub Enterprise only.
@@ -96,13 +87,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

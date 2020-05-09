@@ -7,21 +7,12 @@ The list of information about logs to be enabled for the specified broker.
 ## SYNTAX
 
 ```
-Add-VSAmazonMQBrokerLogList [[-Audit] <Boolean>] [[-General] <Boolean>] [<CommonParameters>]
+Add-VSAmazonMQBrokerLogList [[-Audit] <Object>] [[-General] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::AmazonMQ::Broker.LogList resource property to the template.
 The list of information about logs to be enabled for the specified broker.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -34,13 +25,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -53,13 +44,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

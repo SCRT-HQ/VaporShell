@@ -16,15 +16,6 @@ Adds an AWS::Batch::JobDefinition.VolumesHost resource property to the template.
 Determine whether your data volume persists on the host container instance and where it is stored.
 If this parameter is empty, then the Docker daemon assigns a host path for your data volume, but the data is not guaranteed to persist after the containers associated with it stop running.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -SourcePath

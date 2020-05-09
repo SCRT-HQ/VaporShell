@@ -16,15 +16,6 @@ Adds an AWS::S3::Bucket.VersioningConfiguration resource property to the templat
 Describes the versioning state of an Amazon S3 bucket.
 For more information, see PUT Bucket versioning: https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTVersioningStatus.html in the *Amazon Simple Storage Service API Reference*.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Status

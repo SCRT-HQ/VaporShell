@@ -23,19 +23,10 @@ LoggingInfo has been deprecated.
 To specify an S3 bucket to contain logs, instead use the OutputS3BucketName and OutputS3KeyPrefix options in the TaskInvocationParameters structure.
 For information about how Systems Manager handles these options for the supported maintenance window task types, see AWS Systems Manager MaintenanceWindowTask TaskInvocationParameters: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-taskinvocationparameters.html.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -S3Bucket
-The name of an Amazon S3 bucket where execution logs are stored .
+The name of an S3 bucket where execution logs are stored .
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-logginginfo.html#cfn-ssm-maintenancewindowtask-logginginfo-s3bucket
 PrimitiveType: String
@@ -54,7 +45,7 @@ Accept wildcard characters: False
 ```
 
 ### -Region
-The region where the Amazon S3 bucket is located.
+The Region where the S3 bucket is located.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-logginginfo.html#cfn-ssm-maintenancewindowtask-logginginfo-region
 PrimitiveType: String

@@ -15,15 +15,6 @@ Add-VSMSKClusterEncryptionInfo [[-EncryptionAtRest] <Object>] [[-EncryptionInTra
 Adds an AWS::MSK::Cluster.EncryptionInfo resource property to the template.
 Includes encryption-related information, such as the AWS KMS key used for encrypting data at rest and whether you want MSK to encrypt your data in transit.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -EncryptionAtRest

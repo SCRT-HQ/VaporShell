@@ -2,58 +2,62 @@
 
 ## SYNOPSIS
 Adds an AWS::Config::RemediationConfiguration.SsmControls resource property to the template.
+\<a name="aws-properties-config-remediationconfiguration-ssmcontrols-description"\>\</a\>The SsmControls property type specifies Not currently supported by AWS CloudFormation.
+for an AWS::Config::RemediationConfiguration: aws-resource-config-remediationconfiguration.md.
 
 ## SYNTAX
 
 ```
-Add-VSConfigRemediationConfigurationSsmControls [[-ErrorPercentage] <Int32>]
- [[-ConcurrentExecutionRatePercentage] <Int32>] [<CommonParameters>]
+Add-VSConfigRemediationConfigurationSsmControls [[-ErrorPercentage] <Object>]
+ [[-ConcurrentExecutionRatePercentage] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Config::RemediationConfiguration.SsmControls resource property to the template.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+\<a name="aws-properties-config-remediationconfiguration-ssmcontrols-description"\>\</a\>The SsmControls property type specifies Not currently supported by AWS CloudFormation.
+for an AWS::Config::RemediationConfiguration: aws-resource-config-remediationconfiguration.md.
 
 ## PARAMETERS
 
 ### -ErrorPercentage
+The percentage of errors that are allowed before SSM stops running automations on non-compliant resources for that specific rule.
+You can specify a percentage of errors, for example 10%.
+If you do not specifiy a percentage, the default is 50%.
+For example, if you set the ErrorPercentage to 40% for 10 non-compliant resources, then SSM stops running the automations when the fifth error is received.
+
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-ssmcontrols.html#cfn-config-remediationconfiguration-ssmcontrols-errorpercentage
 PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ConcurrentExecutionRatePercentage
+The maximum percentage of remediation actions allowed to run in parallel on the non-compliant resources for that specific rule.
+You can specify a percentage, such as 10%.
+The default value is 10.
+
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-ssmcontrols.html#cfn-config-remediationconfiguration-ssmcontrols-concurrentexecutionratepercentage
 PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

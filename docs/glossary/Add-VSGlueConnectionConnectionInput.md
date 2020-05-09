@@ -16,15 +16,6 @@ Add-VSGlueConnectionConnectionInput [[-Description] <Object>] [-ConnectionType] 
 Adds an AWS::Glue::Connection.ConnectionInput resource property to the template.
 A structure that is used to specify a connection to create or update.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Description

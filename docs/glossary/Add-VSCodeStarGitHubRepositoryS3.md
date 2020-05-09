@@ -17,15 +17,6 @@ The S3 property type specifies information about the Amazon S3 bucket that conta
 
 S3 is a property of the AWS::CodeStar::GitHubRepository resource.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ObjectVersion

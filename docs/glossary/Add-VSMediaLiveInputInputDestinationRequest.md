@@ -14,15 +14,6 @@ Add-VSMediaLiveInputInputDestinationRequest [[-StreamName] <Object>] [<CommonPar
 Adds an AWS::MediaLive::Input.InputDestinationRequest resource property to the template.
 The settings for a push input, to set up the destination addresses on MediaLive.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -StreamName

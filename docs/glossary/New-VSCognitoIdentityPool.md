@@ -9,24 +9,17 @@ The AWS::Cognito::IdentityPool resource creates an Amazon Cognito identity pool.
 ```
 New-VSCognitoIdentityPool [-LogicalId] <String> [-PushSync <Object>] [-CognitoIdentityProviders <Object>]
  [-CognitoEvents <Object>] [-DeveloperProviderName <Object>] [-CognitoStreams <Object>]
- [-IdentityPoolName <Object>] -AllowUnauthenticatedIdentities <Boolean> [-SupportedLoginProviders <Object>]
- [-SamlProviderARNs <Object>] [-OpenIdConnectProviderARNs <Object>] [-DeletionPolicy <String>]
- [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
- [<CommonParameters>]
+ [-IdentityPoolName <Object>] -AllowUnauthenticatedIdentities <Object> [-SupportedLoginProviders <Object>]
+ [-SamlProviderARNs <Object>] [-OpenIdConnectProviderARNs <Object>] [-AllowClassicFlow <Object>]
+ [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
+ [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Cognito::IdentityPool resource to the template.
 The AWS::Cognito::IdentityPool resource creates an Amazon Cognito identity pool.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+To avoid deleting the resource accidentally from AWS CloudFormation, use DeletionPolicy Attribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html and the UpdateReplacePolicy Attribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html to retain the resource on deletion or replacement.
 
 ## PARAMETERS
 
@@ -48,7 +41,7 @@ Accept wildcard characters: False
 ```
 
 ### -PushSync
-Configuration options to be applied to the identity pool.
+The configuration options to be applied to the identity pool.
 
 Type: PushSync
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-pushsync
@@ -67,7 +60,7 @@ Accept wildcard characters: False
 ```
 
 ### -CognitoIdentityProviders
-An array of Amazon Cognito user pools and their client IDs.
+The Amazon Cognito user pools and their client IDs.
 
 Type: List
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-cognitoidentityproviders
@@ -106,7 +99,7 @@ Accept wildcard characters: False
 ```
 
 ### -DeveloperProviderName
-The "domain" by which Amazon Cognito will refer to your users.
+The "domain" Amazon Cognito uses when referencing your users.
 This name acts as a placeholder that allows your backend and the Amazon Cognito service to communicate about the developer provider.
 For the DeveloperProviderName, you can use letters and periods ., underscores _, and dashes -.
 *Minimum length*: 1
@@ -151,7 +144,7 @@ Accept wildcard characters: False
 The name of your Amazon Cognito identity pool.
 *Minimum length*: 1
 *Maximum length*: 128
-*Pattern*: w \]+
+*Pattern*: ws+=,.@-\]+
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-identitypoolname
 PrimitiveType: String
@@ -177,13 +170,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -208,7 +201,7 @@ Accept wildcard characters: False
 ```
 
 ### -SamlProviderARNs
-A list of Amazon Resource Names ARNs of Security Assertion Markup Language SAML providers.
+The Amazon Resource Names ARNs of the Security Assertion Markup Language SAML providers.
 
 PrimitiveItemType: String
 Type: List
@@ -228,11 +221,30 @@ Accept wildcard characters: False
 ```
 
 ### -OpenIdConnectProviderARNs
-A list of ARNs for the OpendID Connect provider.
+The Amazon Resource Names ARNs of the OpenID connect providers.
 
 PrimitiveItemType: String
 Type: List
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-openidconnectproviderarns
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AllowClassicFlow
+Enables the Basic Classic authentication flow.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-allowclassicflow
+PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
@@ -255,6 +267,49 @@ If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the re
 To keep a resource when its stack is deleted, specify Retain for that resource.
 You can use retain for any resource.
 For example, you can retain a nested stack, S3 bucket, or EC2 instance so that you can continue to use or modify those resources after you delete their stacks.
+
+You must use one of the following options: "Delete","Retain","Snapshot"
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdateReplacePolicy
+Use the UpdateReplacePolicy attribute to retain or (in some cases) backup the existing physical instance of a resource when it is replaced during a stack update operation.
+
+When you initiate a stack update, AWS CloudFormation updates resources based on differences between what you submit and the stack's current template and parameters.
+If you update a resource property that requires that the resource be replaced, AWS CloudFormation recreates the resource during the update.
+Recreating the resource generates a new physical ID.
+AWS CloudFormation creates the replacement resource first, and then changes references from other dependent resources to point to the replacement resource.
+By default, AWS CloudFormation then deletes the old resource.
+Using the UpdateReplacePolicy, you can specify that AWS CloudFormation retain or (in some cases) create a snapshot of the old resource.
+
+For resources that support snapshots, such as AWS::EC2::Volume, specify Snapshot to have AWS CloudFormation create a snapshot before deleting the old resource instance.
+
+You can apply the UpdateReplacePolicy attribute to any resource.
+UpdateReplacePolicy is only executed if you update a resource property whose update behavior is specified as Replacement, thereby causing AWS CloudFormation to replace the old resource with a new one with a new physical ID.
+For example, if you update the Engine property of an AWS::RDS::DBInstance resource type, AWS CloudFormation creates a new resource and replaces the current DB instance resource with the new one.
+The UpdateReplacePolicy attribute would then dictate whether AWS CloudFormation deleted, retained, or created a snapshot of the old DB instance.
+The update behavior for each property of a resource is specified in the reference topic for that resource in the AWS Resource and Property Types Reference.
+For more information on resource update behavior, see Update Behaviors of Stack Resources.
+
+The UpdateReplacePolicy attribute applies to stack updates you perform directly, as well as stack updates performed using change sets.
+
+Note
+Resources that are retained continue to exist and continue to incur applicable charges until you delete those resources.
+Snapshots that are created with this policy continue to exist and continue to incur applicable charges until you delete those snapshots.
+UpdateReplacePolicy retains the old physical resource or snapshot, but removes it from AWS CloudFormation's scope.
+
+UpdateReplacePolicy differs from the DeletionPolicy attribute in that it only applies to resources replaced during stack updates.
+Use DeletionPolicy for resources deleted when a stack is deleted, or when the resource definition itself is deleted from the template as part of a stack update.
 
 You must use one of the following options: "Delete","Retain","Snapshot"
 

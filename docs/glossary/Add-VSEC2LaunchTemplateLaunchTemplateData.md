@@ -9,27 +9,19 @@ The information to include in the launch template.
 ```
 Add-VSEC2LaunchTemplateLaunchTemplateData [[-SecurityGroups] <Object>] [[-TagSpecifications] <Object>]
  [[-UserData] <Object>] [[-BlockDeviceMappings] <Object>] [[-IamInstanceProfile] <Object>]
- [[-KernelId] <Object>] [[-EbsOptimized] <Boolean>] [[-ElasticGpuSpecifications] <Object>]
+ [[-KernelId] <Object>] [[-EbsOptimized] <Object>] [[-ElasticGpuSpecifications] <Object>]
  [[-ElasticInferenceAccelerators] <Object>] [[-Placement] <Object>] [[-NetworkInterfaces] <Object>]
  [[-ImageId] <Object>] [[-InstanceType] <Object>] [[-Monitoring] <Object>] [[-HibernationOptions] <Object>]
- [[-LicenseSpecifications] <Object>] [[-InstanceInitiatedShutdownBehavior] <Object>] [[-CpuOptions] <Object>]
- [[-SecurityGroupIds] <Object>] [[-KeyName] <Object>] [[-DisableApiTermination] <Boolean>]
- [[-InstanceMarketOptions] <Object>] [[-RamDiskId] <Object>] [[-CapacityReservationSpecification] <Object>]
- [[-CreditSpecification] <Object>] [<CommonParameters>]
+ [[-MetadataOptions] <Object>] [[-LicenseSpecifications] <Object>]
+ [[-InstanceInitiatedShutdownBehavior] <Object>] [[-CpuOptions] <Object>] [[-SecurityGroupIds] <Object>]
+ [[-KeyName] <Object>] [[-DisableApiTermination] <Object>] [[-InstanceMarketOptions] <Object>]
+ [[-RamDiskId] <Object>] [[-CapacityReservationSpecification] <Object>] [[-CreditSpecification] <Object>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::EC2::LaunchTemplate.LaunchTemplateData resource property to the template.
 The information to include in the launch template.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -59,7 +51,6 @@ Accept wildcard characters: False
 The tags to apply to the resources during launch.
 You can only tag instances and volumes on launch.
 The specified tags are applied to all instances or volumes that are created during launch.
-To tag a resource after it has been created, see CreateTags: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html.
 
 Type: List
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-tagspecifications
@@ -169,13 +160,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 7
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -241,7 +232,7 @@ Accept wildcard characters: False
 
 ### -NetworkInterfaces
 One or more network interfaces.
-If you specify a network interface, you must specify any security groups as part of the network interface.
+If you specify a network interface, you must specify any security groups and subnets as part of the network interface.
 
 Type: List
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-networkinterfaces
@@ -321,7 +312,6 @@ Accept wildcard characters: False
 ### -HibernationOptions
 Indicates whether an instance is enabled for hibernation.
 This parameter is valid only if the instance meets the hibernation prerequisites: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites.
-Hibernation is currently supported only for Amazon Linux.
 For more information, see Hibernate Your Instance: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html in the *Amazon Elastic Compute Cloud User Guide*.
 
 Type: HibernationOptions
@@ -335,6 +325,26 @@ Aliases:
 
 Required: False
 Position: 15
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MetadataOptions
+The metadata options for the instance.
+For more information, see Instance Metadata and User Data: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html in the *Amazon Elastic Compute Cloud User Guide*.
+
+Type: MetadataOptions
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-metadataoptions
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 16
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -354,7 +364,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 16
+Position: 17
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -374,7 +384,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 17
+Position: 18
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -394,7 +404,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 18
+Position: 19
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -416,7 +426,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 19
+Position: 20
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -437,7 +447,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 20
+Position: 21
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -453,13 +463,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 21
-Default value: False
+Position: 22
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -477,7 +487,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 22
+Position: 23
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -498,7 +508,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 23
+Position: 24
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -518,7 +528,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 24
+Position: 25
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -538,7 +548,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 25
+Position: 26
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

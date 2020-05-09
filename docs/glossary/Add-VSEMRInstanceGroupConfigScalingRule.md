@@ -19,15 +19,6 @@ ScalingRule is a subproperty of the AutoScalingPolicy property type.
 ScalingRule defines the scale-in or scale-out rules for scaling activity, including the CloudWatch metric alarm that triggers activity, how EC2 instances are added or removed, and the periodicity of adjustments.
 The automatic scaling policy for an instance group can comprise one or more automatic scaling rules.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Action

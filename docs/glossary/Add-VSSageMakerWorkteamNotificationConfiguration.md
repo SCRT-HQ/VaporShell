@@ -14,15 +14,6 @@ Add-VSSageMakerWorkteamNotificationConfiguration [-NotificationTopicArn] <Object
 Adds an AWS::SageMaker::Workteam.NotificationConfiguration resource property to the template.
 Configures SNS notifications of available or expiring work items for work teams.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -NotificationTopicArn

@@ -14,15 +14,6 @@ Add-VSBatchJobDefinitionNodeRangeProperty [[-Container] <Object>] [-TargetNodes]
 Adds an AWS::Batch::JobDefinition.NodeRangeProperty resource property to the template.
 An object representing the properties of the node range for a multi-node parallel job.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Container

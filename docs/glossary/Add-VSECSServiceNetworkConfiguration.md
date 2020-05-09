@@ -14,15 +14,6 @@ Add-VSECSServiceNetworkConfiguration [[-AwsvpcConfiguration] <Object>] [<CommonP
 Adds an AWS::ECS::Service.NetworkConfiguration resource property to the template.
 The NetworkConfiguration property specifies an object representing the network configuration for a task or service.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -AwsvpcConfiguration

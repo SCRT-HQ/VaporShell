@@ -7,7 +7,8 @@ Specifies an elastic inference accelerator.
 ## SYNTAX
 
 ```
-Add-VSEC2LaunchTemplateLaunchTemplateElasticInferenceAccelerator [[-Type] <Object>] [<CommonParameters>]
+Add-VSEC2LaunchTemplateLaunchTemplateElasticInferenceAccelerator [[-Type] <Object>] [[-Count] <Object>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -15,15 +16,6 @@ Adds an AWS::EC2::LaunchTemplate.LaunchTemplateElasticInferenceAccelerator resou
 Specifies an elastic inference accelerator.
 
 LaunchTemplateElasticInferenceAccelerator is a property of the Amazon EC2 LaunchTemplate LaunchTemplateData: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html property type.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -42,6 +34,26 @@ Aliases:
 
 Required: False
 Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Count
+The number of elastic inference accelerators to attach to the instance.
+Default: 1
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplateelasticinferenceaccelerator.html#cfn-ec2-launchtemplate-launchtemplateelasticinferenceaccelerator-count
+PrimitiveType: Integer
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

@@ -22,15 +22,6 @@ For example, an email subscriber would have the following parameters:
 
 + An address of example@example.com
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -SubscriptionType

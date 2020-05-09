@@ -18,15 +18,6 @@ Information about an HTTP header condition.
 There is a set of standard HTTP header fields.
 You can also define custom HTTP header fields.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -HttpHeaderName

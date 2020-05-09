@@ -8,21 +8,13 @@ Specifies a backup schedule.
 
 ```
 Add-VSDLMLifecyclePolicySchedule [[-TagsToAdd] <Object>] [[-CreateRule] <Object>] [[-VariableTags] <Object>]
- [[-RetainRule] <Object>] [[-Name] <Object>] [[-CopyTags] <Boolean>] [<CommonParameters>]
+ [[-FastRestoreRule] <Object>] [[-RetainRule] <Object>] [[-CrossRegionCopyRules] <Object>] [[-Name] <Object>]
+ [[-CopyTags] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::DLM::LifecyclePolicy.Schedule resource property to the template.
 Specifies a backup schedule.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -48,7 +40,7 @@ Accept wildcard characters: False
 ```
 
 ### -CreateRule
-The create rule.
+The creation rule.
 
 Type: CreateRule
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-schedule.html#cfn-dlm-lifecyclepolicy-schedule-createrule
@@ -67,7 +59,10 @@ Accept wildcard characters: False
 ```
 
 ### -VariableTags
-*Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+A collection of key/value pairs with values determined dynamically when the policy is executed.
+Keys may be any valid Amazon EC2 tag key.
+Values must be in one of the two following formats: $instance-id or $timestamp.
+Variable tags are only valid for EBS Snapshot Management - Instance policies.
 
 Type: List
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-schedule.html#cfn-dlm-lifecyclepolicy-schedule-variabletags
@@ -86,8 +81,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -FastRestoreRule
+The rule for enabling fast snapshot restore.
+
+Type: FastRestoreRule
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-schedule.html#cfn-dlm-lifecyclepolicy-schedule-fastrestorerule
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -RetainRule
-The retain rule.
+The retention rule.
 
 Type: RetainRule
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-schedule.html#cfn-dlm-lifecyclepolicy-schedule-retainrule
@@ -99,7 +113,27 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 4
+Position: 5
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CrossRegionCopyRules
+The rule for cross-Region snapshot copies.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-schedule.html#cfn-dlm-lifecyclepolicy-schedule-crossregioncopyrules
+ItemType: CrossRegionCopyRule
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 6
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -118,7 +152,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 5
+Position: 7
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -132,13 +166,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 6
-Default value: False
+Position: 8
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

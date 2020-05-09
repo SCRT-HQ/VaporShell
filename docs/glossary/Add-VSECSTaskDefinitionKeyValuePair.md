@@ -14,15 +14,6 @@ Add-VSECSTaskDefinitionKeyValuePair [[-Name] <Object>] [[-Value] <Object>] [<Com
 Adds an AWS::ECS::TaskDefinition.KeyValuePair resource property to the template.
 The KeyValuePair property specifies a key-value pair object.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Name

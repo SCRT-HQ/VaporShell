@@ -22,15 +22,6 @@ If you specify the TargetGroupInfo property, the DeploymentStyle.DeploymentOptio
 
 TargetGroupInfo is a property of the LoadBalancerInfo: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-loadbalancerinfo.html property type.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Name

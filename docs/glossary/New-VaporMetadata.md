@@ -21,12 +21,11 @@ You can update it only when you include changes that add, modify, or delete reso
 ### EXAMPLE 1
 ```
 $template = Initialize-Vaporshell -Description "Testing Metadata addition"
-```
-
 $template.AddMetadata(
-    (New-VaporMetadata -LogicalId "Instances" -Metadata \[PSCustomObject\]@{"Description" = "Information about the instances"}),
-    (New-VaporMetadata -LogicalId "Databases" -Metadata \[PSCustomObject\]@{"Description" = "Information about the databases"})
+    (New-VaporMetadata -LogicalId "Instances" -Metadata [PSCustomObject]@{"Description" = "Information about the instances"}),
+    (New-VaporMetadata -LogicalId "Databases" -Metadata [PSCustomObject]@{"Description" = "Information about the databases"})
 )
+```
 
 When the template is exported, this will convert to:
     {

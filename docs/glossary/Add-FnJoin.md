@@ -77,9 +77,11 @@ For the Fn::Join list of values, you can use the following functions:
     Fn::GetAtt
     Fn::GetAZs
     Fn::If
+    Fn::ImportValue
     Fn::Join
     Fn::Split
     Fn::Select
+    Fn::Sub
     Ref
 
 ## RELATED LINKS

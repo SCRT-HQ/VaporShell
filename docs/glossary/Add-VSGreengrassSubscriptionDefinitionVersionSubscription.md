@@ -23,20 +23,11 @@ For two-way communication, you must set up two subscriptions, one for each direc
 
 \<a name="aws-properties-greengrass-subscriptiondefinitionversion-subscription-inheritance"\>\</a\> In an AWS CloudFormation template, the Subscriptions property of the  AWS::Greengrass::SubscriptionDefinitionVersion : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-subscriptiondefinitionversion.html resource contains a list of Subscription property types.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Target
 The destination of the message.
-The value can be a thing ARN, a Lambda function ARN, a connector ARN, cloud which represents the AWS IoT cloud, or GGShadowService.
+The value can be a thing ARN, the ARN of a Lambda function alias recommended or version, a connector ARN, cloud which represents the AWS IoT cloud, or GGShadowService.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinitionversion-subscription.html#cfn-greengrass-subscriptiondefinitionversion-subscription-target
 PrimitiveType: String
@@ -77,7 +68,7 @@ Accept wildcard characters: False
 
 ### -Source
 The originator of the message.
-The value can be a thing ARN, a Lambda function ARN, a connector ARN, cloud which represents the AWS IoT cloud, or GGShadowService.
+The value can be a thing ARN, the ARN of a Lambda function alias recommended or version, a connector ARN, cloud which represents the AWS IoT cloud, or GGShadowService.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinitionversion-subscription.html#cfn-greengrass-subscriptiondefinitionversion-subscription-source
 PrimitiveType: String

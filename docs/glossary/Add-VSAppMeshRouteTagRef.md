@@ -12,15 +12,6 @@ Add-VSAppMeshRouteTagRef [[-Value] <Object>] [-Key] <Object> [<CommonParameters>
 ## DESCRIPTION
 Adds an AWS::AppMesh::Route.TagRef resource property to the template
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Value

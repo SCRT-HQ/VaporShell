@@ -17,19 +17,11 @@ The AccessLogSetting property type specifies settings for logging access in this
 
 AccessLogSetting is a property of the StageDescription: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html property type.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -DestinationArn
-The Amazon Resource Name ARN of the CloudWatch Logs log group to receive access logs.
+The Amazon Resource Name ARN of the CloudWatch Logs log group or Kinesis Data Firehose delivery stream to receive access logs.
+If you specify a Kinesis Data Firehose delivery stream, the stream name must begin with amazon-apigateway-.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-accesslogsetting.html#cfn-apigateway-deployment-accesslogsetting-destinationarn
 PrimitiveType: String

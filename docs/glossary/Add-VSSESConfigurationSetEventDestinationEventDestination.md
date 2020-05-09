@@ -2,36 +2,31 @@
 
 ## SYNOPSIS
 Adds an AWS::SES::ConfigurationSetEventDestination.EventDestination resource property to the template.
-Contains information about the event destination that the specified email sending events are published to.
+Contains information about the event destination that email sending events are published to.
+Event destinations are associated with configuration sets.
+When you specify an event destination, you provide one, and only one, destination.
+You can send event data to Amazon CloudWatch or Amazon Kinesis Data Firehose.
+For more information about using configuration sets, see the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html.
 
 ## SYNTAX
 
 ```
 Add-VSSESConfigurationSetEventDestinationEventDestination [[-CloudWatchDestination] <Object>]
- [[-Enabled] <Boolean>] [-MatchingEventTypes] <Object> [[-Name] <Object>]
+ [[-Enabled] <Object>] [-MatchingEventTypes] <Object> [[-Name] <Object>]
  [[-KinesisFirehoseDestination] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::SES::ConfigurationSetEventDestination.EventDestination resource property to the template.
-Contains information about the event destination that the specified email sending events are published to.
+Contains information about the event destination that email sending events are published to.
+Event destinations are associated with configuration sets.
+When you specify an event destination, you provide one, and only one, destination.
+You can send event data to Amazon CloudWatch or Amazon Kinesis Data Firehose.
+For more information about using configuration sets, see the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html.
 
 **Note**
 
-When you specify an event destination, you must provide one, and only one, destination.
-The destination can be Amazon CloudWatch, Amazon Kinesis Data Firehose or Amazon Simple Notification Service (Amazon SNS.
-
-Event destinations are associated with configuration sets, which enable you to publish email sending events to Amazon CloudWatch, Amazon Kinesis Data Firehose, or Amazon Simple Notification Service (Amazon SNS.
-For information about using configuration sets, see the Amazon SES Developer Guide: https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+You can't specify Amazon SNS event destinations in CloudFormation templates.
 
 ## PARAMETERS
 
@@ -64,13 +59,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -99,7 +94,7 @@ Accept wildcard characters: False
 The name of the event destination.
 The name must:
 + This value can only contain ASCII letters a-z, A-Z, numbers 0-9, underscores _, or dashes -.
-+ Contain less than 64 characters.
++ Contain fewer than 64 characters.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-eventdestination.html#cfn-ses-configurationseteventdestination-eventdestination-name
 PrimitiveType: String

@@ -18,21 +18,11 @@ Specifies a VPC that your training jobs and hosted models have access to.
 Control access to and from your training and model containers by configuring the VPC.
 For more information, see Protect Endpoints by Using an Amazon Virtual Private Cloud: https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html and Protect Training Jobs by Using an Amazon Virtual Private Cloud: https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Subnets
 The ID of the subnets in the VPC to which you want to connect your training job or model.
-Amazon EC2 P3 accelerated computing instances are not available in the c/d/e availability zones of region us-east-1.
-If you want to create endpoints with P3 instances in VPC mode in region us-east-1, create subnets in a/b/f availability zones instead.
+For information about the availability of specific instance types, see Supported Instance Types and Availability Zones: https://docs.aws.amazon.com/sagemaker/latest/dg/instance-types-az.html.
 
 PrimitiveItemType: String
 Type: List

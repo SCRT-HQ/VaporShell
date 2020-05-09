@@ -15,15 +15,6 @@ Add-VSIoTAnalyticsPipelineChannel [[-ChannelName] <Object>] [[-Next] <Object>] [
 Adds an AWS::IoTAnalytics::Pipeline.Channel resource property to the template.
 Determines the source of the messages to be processed.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ChannelName

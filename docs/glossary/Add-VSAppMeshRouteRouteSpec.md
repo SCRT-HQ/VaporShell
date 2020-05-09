@@ -2,32 +2,25 @@
 
 ## SYNOPSIS
 Adds an AWS::AppMesh::Route.RouteSpec resource property to the template.
-An object representing the specification of a route.
+An object that represents a route specification.
+Specify one route type.
 
 ## SYNTAX
 
 ```
-Add-VSAppMeshRouteRouteSpec [[-HttpRoute] <Object>] [[-Priority] <Int32>] [[-TcpRoute] <Object>]
- [<CommonParameters>]
+Add-VSAppMeshRouteRouteSpec [[-HttpRoute] <Object>] [[-Priority] <Object>] [[-Http2Route] <Object>]
+ [[-GrpcRoute] <Object>] [[-TcpRoute] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::AppMesh::Route.RouteSpec resource property to the template.
-An object representing the specification of a route.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+An object that represents a route specification.
+Specify one route type.
 
 ## PARAMETERS
 
 ### -HttpRoute
-The HTTP routing information for the route.
+An object that represents the specification of an HTTP route.
 
 Type: HttpRoute
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-routespec.html#cfn-appmesh-route-routespec-httproute
@@ -46,26 +39,65 @@ Accept wildcard characters: False
 ```
 
 ### -Priority
-*Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+The priority for the route.
+Routes are matched based on the specified value, where 0 is the highest priority.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-routespec.html#cfn-appmesh-route-routespec-priority
 PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Http2Route
+An object that represents the specification of an HTTP/2 route.
+
+Type: HttpRoute
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-routespec.html#cfn-appmesh-route-routespec-http2route
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -GrpcRoute
+An object that represents the specification of a gRPC route.
+
+Type: GrpcRoute
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-routespec.html#cfn-appmesh-route-routespec-grpcroute
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -TcpRoute
-The TCP routing information for the route.
+An object that represents the specification of a TCP route.
 
 Type: TcpRoute
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-routespec.html#cfn-appmesh-route-routespec-tcproute
@@ -77,7 +109,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 3
+Position: 5
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

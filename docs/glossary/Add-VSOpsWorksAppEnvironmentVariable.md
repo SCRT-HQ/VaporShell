@@ -7,22 +7,13 @@ Represents an app's environment variable.
 ## SYNTAX
 
 ```
-Add-VSOpsWorksAppEnvironmentVariable [-Key] <Object> [[-Secure] <Boolean>] [-Value] <Object>
+Add-VSOpsWorksAppEnvironmentVariable [-Key] <Object> [[-Secure] <Object>] [-Value] <Object>
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::OpsWorks::App.EnvironmentVariable resource property to the template.
 Represents an app's environment variable.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -57,13 +48,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

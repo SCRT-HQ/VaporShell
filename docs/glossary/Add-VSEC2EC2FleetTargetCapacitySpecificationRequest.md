@@ -10,7 +10,7 @@ If the request type is maintain, you can specify a target capacity of 0 and add 
 
 ```
 Add-VSEC2EC2FleetTargetCapacitySpecificationRequest [[-DefaultTargetCapacityType] <Object>]
- [-TotalTargetCapacity] <Int32> [[-OnDemandTargetCapacity] <Int32>] [[-SpotTargetCapacity] <Int32>]
+ [-TotalTargetCapacity] <Object> [[-OnDemandTargetCapacity] <Object>] [[-SpotTargetCapacity] <Object>]
  [<CommonParameters>]
 ```
 
@@ -21,15 +21,6 @@ You can choose to set the target capacity in terms of instances or a performance
 If the request type is maintain, you can specify a target capacity of 0 and add capacity later.
 
 TargetCapacitySpecificationRequest is a property of the AWS::EC2::EC2Fleet: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html resource.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -60,13 +51,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -79,13 +70,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -98,13 +89,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 4
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

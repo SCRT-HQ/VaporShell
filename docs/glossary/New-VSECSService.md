@@ -8,27 +8,18 @@ The AWS::ECS::Service resource creates an Amazon Elastic Container Service (Amaz
 
 ```
 New-VSECSService [-LogicalId] <String> [-Cluster <Object>] [-DeploymentConfiguration <Object>]
- [-DesiredCount <Int32>] [-EnableECSManagedTags <Boolean>] [-HealthCheckGracePeriodSeconds <Int32>]
- [-LaunchType <Object>] [-LoadBalancers <Object>] [-NetworkConfiguration <Object>]
- [-PlacementConstraints <Object>] [-PlacementStrategies <Object>] [-PlatformVersion <Object>]
- [-PropagateTags <Object>] [-Role <Object>] [-SchedulingStrategy <Object>] [-ServiceName <Object>]
- [-ServiceRegistries <Object>] [-Tags <Object>] -TaskDefinition <Object> [-DeletionPolicy <String>]
- [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
- [<CommonParameters>]
+ [-DeploymentController <Object>] [-DesiredCount <Object>] [-EnableECSManagedTags <Object>]
+ [-HealthCheckGracePeriodSeconds <Object>] [-LaunchType <Object>] [-LoadBalancers <Object>]
+ [-NetworkConfiguration <Object>] [-PlacementConstraints <Object>] [-PlacementStrategies <Object>]
+ [-PlatformVersion <Object>] [-PropagateTags <Object>] [-Role <Object>] [-SchedulingStrategy <Object>]
+ [-ServiceName <Object>] [-ServiceRegistries <Object>] [-Tags <Object>] [-TaskDefinition <Object>]
+ [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
+ [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::ECS::Service resource to the template.
 The AWS::ECS::Service resource creates an Amazon Elastic Container Service (Amazon ECS service that runs and maintains the requested number of tasks and associated load balancers.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -88,61 +79,86 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -DeploymentController
+The deployment controller to use for the service.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-deploymentcontroller
+Type: DeploymentController
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -DesiredCount
 The number of instantiations of the specified task definition to place and keep running on your cluster.
+This is required if schedulingStrategy is REPLICA or is not specified.
+If schedulingStrategy is DAEMON then this is not required.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-desiredcount
 PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -EnableECSManagedTags
+Specifies whether to enable Amazon ECS managed tags for the tasks within the service.
+For more information, see Tagging Your Amazon ECS Resources: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html in the *Amazon Elastic Container Service Developer Guide*.
+
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-enableecsmanagedtags
 PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -HealthCheckGracePeriodSeconds
 The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load Balancing target health checks after a task has first started.
-This is only valid if your service is configured to use a load balancer.
+This is only used when your service is configured to use a load balancer.
+If your service has a load balancer defined and you don't specify a health check grace period value, the default value of 0 is used.
 If your service's tasks take a while to start and respond to Elastic Load Balancing health checks, you can specify a health check grace period of up to 2,147,483,647 seconds.
-During that time, the ECS service scheduler ignores health check status.
-This grace period can prevent the ECS service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
+During that time, the Amazon ECS service scheduler ignores health check status.
+This grace period can prevent the service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-healthcheckgraceperiodseconds
 PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -279,6 +295,11 @@ Accept wildcard characters: False
 ```
 
 ### -PropagateTags
+Specifies whether to propagate the tags from the task definition or the service to the tasks in the service.
+If no value is specified, the tags are not propagated.
+Tags can only be propagated to the tasks within the service during service creation.
+To add tags to a task after service creation, use the TagResource: https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html API action.
+
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-propagatetags
 PrimitiveType: String
 UpdateType: Immutable
@@ -300,7 +321,7 @@ The name or full Amazon Resource Name ARN of the IAM role that allows Amazon ECS
 This parameter is only permitted if you are using a load balancer with your service and your task definition does not use the awsvpc network mode.
 If you specify the role parameter, you must also specify a load balancer object with the loadBalancers parameter.
 If your account has already created the Amazon ECS service-linked role, that role is used by default for your service unless you specify a role here.
-The service-linked role is required if your task definition uses the awsvpc network mode, in which case you should not specify a role here.
+The service-linked role is required if your task definition uses the awsvpc network mode or if the service is configured to use service discovery, an external deployment controller, multiple target groups, or Elastic Inference accelerators in which case you should not specify a role here.
 For more information, see Using Service-Linked Roles for Amazon ECS: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html in the *Amazon Elastic Container Service Developer Guide*.
 If your specified role has a path other than /, then you must either specify the full role ARN this is recommended or prefix the role name with the path.
 For example, if a role with the name bar has a path of /foo/ then you would specify /foo/bar as the role name.
@@ -331,6 +352,7 @@ By default, the service scheduler spreads tasks across Availability Zones.
 You can use task placement strategies and constraints to customize task placement decisions.
 This scheduler strategy is required if the service is using the CODE_DEPLOY or EXTERNAL deployment controller types.
 +  DAEMON-The daemon scheduling strategy deploys exactly one task on each active container instance that meets all of the task placement constraints that you specify in your cluster.
+The service scheduler also evaluates the task placement constraints for running tasks and will stop tasks that do not meet the placement constraints.
 When you're using this strategy, you don't need to specify a desired number of tasks, a task placement strategy, or use Service Auto Scaling policies.
 **Note**
 Tasks using the Fargate launch type or the CODE_DEPLOY or EXTERNAL deployment controller types don't support the DAEMON scheduling strategy.
@@ -397,6 +419,22 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
+The metadata that you apply to the service to help you categorize and organize them.
+Each tag consists of a key and an optional value, both of which you define.
+When a service is deleted, the tags are deleted as well.
+The following basic restrictions apply to tags:
++ Maximum number of tags per resource - 50
++ For each resource, each tag key must be unique, and each tag key can have only one value.
++ Maximum key length - 128 Unicode characters in UTF-8
++ Maximum value length - 256 Unicode characters in UTF-8
++ If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters.
+Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = .
+_ : / @.
++ Tag keys and values are case-sensitive.
++ Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for AWS use.
+You cannot edit or delete tag keys or values with this prefix.
+Tags with this prefix do not count against your tags per resource limit.
+
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-tags
 DuplicatesAllowed: True
 ItemType: Tag
@@ -417,7 +455,7 @@ Accept wildcard characters: False
 
 ### -TaskDefinition
 The family and revision family:revision or full ARN of the task definition to run in your service.
-If a revision is not specified, the latest ACTIVE revision is used.
+The revision is required in order for the resource to stabilize.
 A task definition must be specified if the service is using the ECS deployment controller.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-taskdefinition
@@ -429,7 +467,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -444,6 +482,49 @@ If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the re
 To keep a resource when its stack is deleted, specify Retain for that resource.
 You can use retain for any resource.
 For example, you can retain a nested stack, S3 bucket, or EC2 instance so that you can continue to use or modify those resources after you delete their stacks.
+
+You must use one of the following options: "Delete","Retain","Snapshot"
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdateReplacePolicy
+Use the UpdateReplacePolicy attribute to retain or (in some cases) backup the existing physical instance of a resource when it is replaced during a stack update operation.
+
+When you initiate a stack update, AWS CloudFormation updates resources based on differences between what you submit and the stack's current template and parameters.
+If you update a resource property that requires that the resource be replaced, AWS CloudFormation recreates the resource during the update.
+Recreating the resource generates a new physical ID.
+AWS CloudFormation creates the replacement resource first, and then changes references from other dependent resources to point to the replacement resource.
+By default, AWS CloudFormation then deletes the old resource.
+Using the UpdateReplacePolicy, you can specify that AWS CloudFormation retain or (in some cases) create a snapshot of the old resource.
+
+For resources that support snapshots, such as AWS::EC2::Volume, specify Snapshot to have AWS CloudFormation create a snapshot before deleting the old resource instance.
+
+You can apply the UpdateReplacePolicy attribute to any resource.
+UpdateReplacePolicy is only executed if you update a resource property whose update behavior is specified as Replacement, thereby causing AWS CloudFormation to replace the old resource with a new one with a new physical ID.
+For example, if you update the Engine property of an AWS::RDS::DBInstance resource type, AWS CloudFormation creates a new resource and replaces the current DB instance resource with the new one.
+The UpdateReplacePolicy attribute would then dictate whether AWS CloudFormation deleted, retained, or created a snapshot of the old DB instance.
+The update behavior for each property of a resource is specified in the reference topic for that resource in the AWS Resource and Property Types Reference.
+For more information on resource update behavior, see Update Behaviors of Stack Resources.
+
+The UpdateReplacePolicy attribute applies to stack updates you perform directly, as well as stack updates performed using change sets.
+
+Note
+Resources that are retained continue to exist and continue to incur applicable charges until you delete those resources.
+Snapshots that are created with this policy continue to exist and continue to incur applicable charges until you delete those snapshots.
+UpdateReplacePolicy retains the old physical resource or snapshot, but removes it from AWS CloudFormation's scope.
+
+UpdateReplacePolicy differs from the DeletionPolicy attribute in that it only applies to resources replaced during stack updates.
+Use DeletionPolicy for resources deleted when a stack is deleted, or when the resource definition itself is deleted from the template as part of a stack update.
 
 You must use one of the following options: "Delete","Retain","Snapshot"
 

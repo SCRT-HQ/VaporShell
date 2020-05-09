@@ -2,31 +2,24 @@
 
 ## SYNOPSIS
 Adds an AWS::Pinpoint::Campaign resource to the template.
-Updates the settings for a campaign.
+A *campaign* is a messaging initiative that engages a specific segment of users for an Amazon Pinpoint application.
+The AWS::Pinpoint::Campaign resource defines the configuration and other settings for a campaign.
 
 ## SYNTAX
 
 ```
-New-VSPinpointCampaign [-LogicalId] <String> [-Description <Object>] -SegmentId <Object> [-IsPaused <Boolean>]
- [-AdditionalTreatments <Object>] -Name <Object> [-SegmentVersion <Int32>] [-TreatmentDescription <Object>]
- -MessageConfiguration <Object> [-Limits <Object>] [-HoldoutPercent <Int32>] -Schedule <Object>
- -ApplicationId <Object> [-CampaignHook <Object>] [-TreatmentName <Object>] [-DeletionPolicy <String>]
- [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
- [<CommonParameters>]
+New-VSPinpointCampaign [-LogicalId] <String> [-Description <Object>] -SegmentId <Object> [-IsPaused <Object>]
+ [-AdditionalTreatments <Object>] -Name <Object> [-SegmentVersion <Object>] [-TreatmentDescription <Object>]
+ -MessageConfiguration <Object> [-Limits <Object>] [-HoldoutPercent <Object>] -Schedule <Object>
+ -ApplicationId <Object> [-CampaignHook <Object>] [-Tags <Object>] [-TreatmentName <Object>]
+ [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
+ [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Pinpoint::Campaign resource to the template.
-Updates the settings for a campaign.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+A *campaign* is a messaging initiative that engages a specific segment of users for an Amazon Pinpoint application.
+The AWS::Pinpoint::Campaign resource defines the configuration and other settings for a campaign.
 
 ## PARAMETERS
 
@@ -48,7 +41,7 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-The custom description of the campaign.
+A custom description of the campaign.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-description
 PrimitiveType: String
@@ -87,20 +80,20 @@ Accept wildcard characters: False
 
 ### -IsPaused
 Specifies whether to pause the campaign.
-A paused campaign doesn't run unless you resume it by setting this value to false.
+A paused campaign doesn't run unless you resume it by changing this value to false.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-ispaused
 PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -126,7 +119,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-The custom name of the campaign.
+The name of the campaign.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-name
 PrimitiveType: String
@@ -152,19 +145,19 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -TreatmentDescription
-The custom description of a variation of the campaign to use for A/B testing.
+A custom description of the default treatment for the campaign.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-treatmentdescription
 PrimitiveType: String
@@ -228,13 +221,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -259,7 +252,7 @@ Accept wildcard characters: False
 ```
 
 ### -ApplicationId
-The unique ID of the Amazon Pinpoint app that the campaign is associated with.
+The unique identifier for the Amazon Pinpoint application that the campaign is associated with.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-applicationid
 PrimitiveType: String
@@ -296,8 +289,29 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Tags
+A string-to-string map of key-value pairs that defines the tags to associate with the campaign.
+Each tag consists of a required tag key and an associated tag value.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-tags
+PrimitiveType: Json
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -TreatmentName
-The custom name of a variation of the campaign to use for A/B testing.
+A custom name of the default treatment for the campaign, if the campaign has multiple treatments.
+A *treatment* is a variation of a campaign that's used for A/B testing.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-treatmentname
 PrimitiveType: String
@@ -323,6 +337,49 @@ If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the re
 To keep a resource when its stack is deleted, specify Retain for that resource.
 You can use retain for any resource.
 For example, you can retain a nested stack, S3 bucket, or EC2 instance so that you can continue to use or modify those resources after you delete their stacks.
+
+You must use one of the following options: "Delete","Retain","Snapshot"
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdateReplacePolicy
+Use the UpdateReplacePolicy attribute to retain or (in some cases) backup the existing physical instance of a resource when it is replaced during a stack update operation.
+
+When you initiate a stack update, AWS CloudFormation updates resources based on differences between what you submit and the stack's current template and parameters.
+If you update a resource property that requires that the resource be replaced, AWS CloudFormation recreates the resource during the update.
+Recreating the resource generates a new physical ID.
+AWS CloudFormation creates the replacement resource first, and then changes references from other dependent resources to point to the replacement resource.
+By default, AWS CloudFormation then deletes the old resource.
+Using the UpdateReplacePolicy, you can specify that AWS CloudFormation retain or (in some cases) create a snapshot of the old resource.
+
+For resources that support snapshots, such as AWS::EC2::Volume, specify Snapshot to have AWS CloudFormation create a snapshot before deleting the old resource instance.
+
+You can apply the UpdateReplacePolicy attribute to any resource.
+UpdateReplacePolicy is only executed if you update a resource property whose update behavior is specified as Replacement, thereby causing AWS CloudFormation to replace the old resource with a new one with a new physical ID.
+For example, if you update the Engine property of an AWS::RDS::DBInstance resource type, AWS CloudFormation creates a new resource and replaces the current DB instance resource with the new one.
+The UpdateReplacePolicy attribute would then dictate whether AWS CloudFormation deleted, retained, or created a snapshot of the old DB instance.
+The update behavior for each property of a resource is specified in the reference topic for that resource in the AWS Resource and Property Types Reference.
+For more information on resource update behavior, see Update Behaviors of Stack Resources.
+
+The UpdateReplacePolicy attribute applies to stack updates you perform directly, as well as stack updates performed using change sets.
+
+Note
+Resources that are retained continue to exist and continue to incur applicable charges until you delete those resources.
+Snapshots that are created with this policy continue to exist and continue to incur applicable charges until you delete those snapshots.
+UpdateReplacePolicy retains the old physical resource or snapshot, but removes it from AWS CloudFormation's scope.
+
+UpdateReplacePolicy differs from the DeletionPolicy attribute in that it only applies to resources replaced during stack updates.
+Use DeletionPolicy for resources deleted when a stack is deleted, or when the resource definition itself is deleted from the template as part of a stack update.
 
 You must use one of the following options: "Delete","Retain","Snapshot"
 

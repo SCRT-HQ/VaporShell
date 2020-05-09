@@ -7,21 +7,12 @@ The VolumeFrom property specifies details on a data volume from another containe
 ## SYNTAX
 
 ```
-Add-VSECSTaskDefinitionVolumeFrom [[-ReadOnly] <Boolean>] [[-SourceContainer] <Object>] [<CommonParameters>]
+Add-VSECSTaskDefinitionVolumeFrom [[-ReadOnly] <Object>] [[-SourceContainer] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::ECS::TaskDefinition.VolumeFrom resource property to the template.
 The VolumeFrom property specifies details on a data volume from another container in the same task definition.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -35,13 +26,13 @@ PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

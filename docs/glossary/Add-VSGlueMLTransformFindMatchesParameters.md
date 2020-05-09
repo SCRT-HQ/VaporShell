@@ -7,23 +7,14 @@ The parameters to configure the find matches transform.
 ## SYNTAX
 
 ```
-Add-VSGlueMLTransformFindMatchesParameters [[-PrecisionRecallTradeoff] <Double>]
- [[-EnforceProvidedLabels] <Boolean>] [-PrimaryKeyColumnName] <Object> [[-AccuracyCostTradeoff] <Double>]
+Add-VSGlueMLTransformFindMatchesParameters [[-PrecisionRecallTradeoff] <Object>]
+ [[-EnforceProvidedLabels] <Object>] [-PrimaryKeyColumnName] <Object> [[-AccuracyCostTradeoff] <Object>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Glue::MLTransform.FindMatchesParameters resource property to the template.
 The parameters to configure the find matches transform.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -39,13 +30,13 @@ PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -62,13 +53,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -108,13 +99,13 @@ PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 4
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

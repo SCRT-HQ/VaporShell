@@ -7,8 +7,9 @@ The Rule property type specifies an approval rule for a Systems Manager patch ba
 ## SYNTAX
 
 ```
-Add-VSSSMPatchBaselineRule [[-EnableNonSecurity] <Boolean>] [[-PatchFilterGroup] <Object>]
- [[-ApproveAfterDays] <Int32>] [[-ComplianceLevel] <Object>] [<CommonParameters>]
+Add-VSSSMPatchBaselineRule [[-ApproveUntilDate] <Object>] [[-EnableNonSecurity] <Object>]
+ [[-PatchFilterGroup] <Object>] [[-ApproveAfterDays] <Object>] [[-ComplianceLevel] <Object>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -17,16 +18,26 @@ The Rule property type specifies an approval rule for a Systems Manager patch ba
 
 The PatchRules property of the RuleGroup: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rulegroup.html property type contains a list of Rule property types.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
+
+### -ApproveUntilDate
+Not currently supported by AWS CloudFormation.
+
+Type: PatchStringDate
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html#cfn-ssm-patchbaseline-rule-approveuntildate
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -EnableNonSecurity
 For instances identified by the approval rule filters, enables a patch baseline to apply non-security updates available in the specified repository.
@@ -38,13 +49,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 1
-Default value: False
+Position: 2
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -62,7 +73,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 2
+Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -71,19 +82,20 @@ Accept wildcard characters: False
 ### -ApproveAfterDays
 The number of days after the release date of each patch matched by the rule that the patch is marked as approved in the patch baseline.
 For example, a value of 7 means that patches are approved seven days after they are released.
+You must specify a value for ApproveAfterDays.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html#cfn-ssm-patchbaseline-rule-approveafterdays
 PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 3
-Default value: 0
+Position: 4
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -102,7 +114,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 4
+Position: 5
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

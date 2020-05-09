@@ -16,15 +16,6 @@ Adds an AWS::DynamoDB::Table.Projection resource property to the template.
 Represents attributes that are copied (projected from the table into an index.
 These are in addition to the primary key attributes and index key attributes, which are automatically projected.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -NonKeyAttributes
@@ -54,7 +45,7 @@ Accept wildcard characters: False
 The set of attributes that are projected into the index:
 +  KEYS_ONLY - Only the index and primary keys are projected into the index.
 +  INCLUDE - Only the specified table attributes are projected into the index.
-The list of projected attributes are in NonKeyAttributes.
+The list of projected attributes is in NonKeyAttributes.
 +  ALL - All of the table attributes are projected into the index.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-projectionobject.html#cfn-dynamodb-projectionobj-projtype

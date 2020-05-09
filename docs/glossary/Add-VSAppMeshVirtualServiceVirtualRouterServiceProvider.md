@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 Adds an AWS::AppMesh::VirtualService.VirtualRouterServiceProvider resource property to the template.
-An object representing a virtual node service provider.
+An object that represents a virtual node service provider.
 
 ## SYNTAX
 
@@ -12,16 +12,7 @@ Add-VSAppMeshVirtualServiceVirtualRouterServiceProvider [-VirtualRouterName] <Ob
 
 ## DESCRIPTION
 Adds an AWS::AppMesh::VirtualService.VirtualRouterServiceProvider resource property to the template.
-An object representing a virtual node service provider.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+An object that represents a virtual node service provider.
 
 ## PARAMETERS
 

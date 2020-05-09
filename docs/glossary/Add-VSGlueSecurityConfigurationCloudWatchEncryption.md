@@ -15,15 +15,6 @@ Add-VSGlueSecurityConfigurationCloudWatchEncryption [[-KmsKeyArn] <Object>]
 Adds an AWS::Glue::SecurityConfiguration.CloudWatchEncryption resource property to the template.
 Specifies how Amazon CloudWatch data should be encrypted.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -KmsKeyArn

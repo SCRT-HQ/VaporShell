@@ -7,21 +7,12 @@ Sends information about the detector model instance and the event which triggere
 ## SYNTAX
 
 ```
-Add-VSIoTEventsDetectorModelIotTopicPublish [[-MqttTopic] <Object>] [<CommonParameters>]
+Add-VSIoTEventsDetectorModelIotTopicPublish [[-MqttTopic] <Object>] [[-Payload] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::IoTEvents::DetectorModel.IotTopicPublish resource property to the template.
 Sends information about the detector model instance and the event which triggered the action in an MQTT message with the given topic to the AWS IoT message broker.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -39,6 +30,25 @@ Aliases:
 
 Required: False
 Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Payload
+*Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
+Type: Payload
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-iottopicpublish.html#cfn-iotevents-detectormodel-iottopicpublish-payload
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

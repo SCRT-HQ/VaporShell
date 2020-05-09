@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 Adds an AWS::ApiGatewayV2::IntegrationResponse resource to the template.
-The AWS::ApiGatewayV2::IntegrationResponse resource updates an integration response for an API.
+The AWS::ApiGatewayV2::IntegrationResponse resource updates an integration response for an WebSocket API.
 For more information, see Set up WebSocket API Integration Responses in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-integration-responses.html in the *API Gateway Developer Guide*.
 
 ## SYNTAX
@@ -11,23 +11,14 @@ For more information, see Set up WebSocket API Integration Responses in API Gate
 New-VSApiGatewayV2IntegrationResponse [-LogicalId] <String> [-ResponseTemplates <Object>]
  [-TemplateSelectionExpression <Object>] [-ResponseParameters <Object>] [-ContentHandlingStrategy <Object>]
  -IntegrationId <Object> -IntegrationResponseKey <Object> -ApiId <Object> [-DeletionPolicy <String>]
- [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
- [<CommonParameters>]
+ [-UpdateReplacePolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
+ [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::ApiGatewayV2::IntegrationResponse resource to the template.
-The AWS::ApiGatewayV2::IntegrationResponse resource updates an integration response for an API.
+The AWS::ApiGatewayV2::IntegrationResponse resource updates an integration response for an WebSocket API.
 For more information, see Set up WebSocket API Integration Responses in API Gateway: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-integration-responses.html in the *API Gateway Developer Guide*.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -70,6 +61,7 @@ Accept wildcard characters: False
 
 ### -TemplateSelectionExpression
 The template selection expression for the integration response.
+Supported only for WebSocket APIs.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integrationresponse.html#cfn-apigatewayv2-integrationresponse-templateselectionexpression
 PrimitiveType: String
@@ -110,6 +102,7 @@ Accept wildcard characters: False
 ```
 
 ### -ContentHandlingStrategy
+Supported only for WebSocket APIs.
 Specifies how to handle response payload content type conversions.
 Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:
 CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.
@@ -197,6 +190,49 @@ If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the re
 To keep a resource when its stack is deleted, specify Retain for that resource.
 You can use retain for any resource.
 For example, you can retain a nested stack, S3 bucket, or EC2 instance so that you can continue to use or modify those resources after you delete their stacks.
+
+You must use one of the following options: "Delete","Retain","Snapshot"
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdateReplacePolicy
+Use the UpdateReplacePolicy attribute to retain or (in some cases) backup the existing physical instance of a resource when it is replaced during a stack update operation.
+
+When you initiate a stack update, AWS CloudFormation updates resources based on differences between what you submit and the stack's current template and parameters.
+If you update a resource property that requires that the resource be replaced, AWS CloudFormation recreates the resource during the update.
+Recreating the resource generates a new physical ID.
+AWS CloudFormation creates the replacement resource first, and then changes references from other dependent resources to point to the replacement resource.
+By default, AWS CloudFormation then deletes the old resource.
+Using the UpdateReplacePolicy, you can specify that AWS CloudFormation retain or (in some cases) create a snapshot of the old resource.
+
+For resources that support snapshots, such as AWS::EC2::Volume, specify Snapshot to have AWS CloudFormation create a snapshot before deleting the old resource instance.
+
+You can apply the UpdateReplacePolicy attribute to any resource.
+UpdateReplacePolicy is only executed if you update a resource property whose update behavior is specified as Replacement, thereby causing AWS CloudFormation to replace the old resource with a new one with a new physical ID.
+For example, if you update the Engine property of an AWS::RDS::DBInstance resource type, AWS CloudFormation creates a new resource and replaces the current DB instance resource with the new one.
+The UpdateReplacePolicy attribute would then dictate whether AWS CloudFormation deleted, retained, or created a snapshot of the old DB instance.
+The update behavior for each property of a resource is specified in the reference topic for that resource in the AWS Resource and Property Types Reference.
+For more information on resource update behavior, see Update Behaviors of Stack Resources.
+
+The UpdateReplacePolicy attribute applies to stack updates you perform directly, as well as stack updates performed using change sets.
+
+Note
+Resources that are retained continue to exist and continue to incur applicable charges until you delete those resources.
+Snapshots that are created with this policy continue to exist and continue to incur applicable charges until you delete those snapshots.
+UpdateReplacePolicy retains the old physical resource or snapshot, but removes it from AWS CloudFormation's scope.
+
+UpdateReplacePolicy differs from the DeletionPolicy attribute in that it only applies to resources replaced during stack updates.
+Use DeletionPolicy for resources deleted when a stack is deleted, or when the resource definition itself is deleted from the template as part of a stack update.
 
 You must use one of the following options: "Delete","Retain","Snapshot"
 

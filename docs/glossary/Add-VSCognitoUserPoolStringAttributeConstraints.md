@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 Adds an AWS::Cognito::UserPool.StringAttributeConstraints resource property to the template.
-The StringAttributeConstraints property type defines the string attribute constraints of an Amazon Cognito User Pool.
+The StringAttributeConstraints property type defines the string attribute constraints of an Amazon Cognito user pool.
 StringAttributeConstraints is a subproperty of the SchemaAttribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html property type.
 
 ## SYNTAX
@@ -14,17 +14,8 @@ Add-VSCognitoUserPoolStringAttributeConstraints [[-MinLength] <Object>] [[-MaxLe
 
 ## DESCRIPTION
 Adds an AWS::Cognito::UserPool.StringAttributeConstraints resource property to the template.
-The StringAttributeConstraints property type defines the string attribute constraints of an Amazon Cognito User Pool.
+The StringAttributeConstraints property type defines the string attribute constraints of an Amazon Cognito user pool.
 StringAttributeConstraints is a subproperty of the SchemaAttribute: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html property type.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

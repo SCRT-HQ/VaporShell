@@ -16,15 +16,6 @@ Adds an AWS::EMR::Step.KeyValue resource property to the template.
 KeyValue is a subproperty of the HadoopJarStepConfig property type.
 KeyValue is used to pass parameters to a step.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Key

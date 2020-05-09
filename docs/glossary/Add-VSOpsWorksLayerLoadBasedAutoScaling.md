@@ -7,22 +7,13 @@ Describes a layer's load-based auto scaling configuration.
 ## SYNTAX
 
 ```
-Add-VSOpsWorksLayerLoadBasedAutoScaling [[-DownScaling] <Object>] [[-Enable] <Boolean>] [[-UpScaling] <Object>]
+Add-VSOpsWorksLayerLoadBasedAutoScaling [[-DownScaling] <Object>] [[-Enable] <Object>] [[-UpScaling] <Object>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::OpsWorks::Layer.LoadBasedAutoScaling resource property to the template.
 Describes a layer's load-based auto scaling configuration.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -53,13 +44,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

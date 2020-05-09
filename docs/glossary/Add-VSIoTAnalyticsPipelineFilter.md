@@ -15,15 +15,6 @@ Add-VSIoTAnalyticsPipelineFilter [[-Filter] <Object>] [[-Next] <Object>] [[-Name
 Adds an AWS::IoTAnalytics::Pipeline.Filter resource property to the template.
 An activity that filters a message based on its attributes.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Filter

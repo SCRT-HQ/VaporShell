@@ -22,18 +22,9 @@ If DeploymentStyle.DeploymentOption is not set to WITH_TRAFFIC_CONTROL, AWS Clou
 
 **Note**
 
-AWS CloudFormation supports blue/green deployments on EC2/On-premises compute platforms only.
+AWS CloudFormation supports blue/green deployments on the AWS Lambda compute platform only.
 
 LoadBalancerInfo is a property of the DeploymentGroup: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html resource.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

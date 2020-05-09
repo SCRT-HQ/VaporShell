@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 Adds an AWS::AppMesh::Mesh.EgressFilter resource property to the template.
-An object representing the egress filter rules for a service mesh.
+An object that represents the egress filter rules for a service mesh.
 
 ## SYNTAX
 
@@ -12,16 +12,7 @@ Add-VSAppMeshMeshEgressFilter [-Type] <Object> [<CommonParameters>]
 
 ## DESCRIPTION
 Adds an AWS::AppMesh::Mesh.EgressFilter resource property to the template.
-An object representing the egress filter rules for a service mesh.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+An object that represents the egress filter rules for a service mesh.
 
 ## PARAMETERS
 

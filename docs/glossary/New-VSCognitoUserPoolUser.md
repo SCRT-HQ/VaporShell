@@ -8,23 +8,15 @@ The AWS::Cognito::UserPoolUser resource creates an Amazon Cognito user pool user
 
 ```
 New-VSCognitoUserPoolUser [-LogicalId] <String> [-ValidationData <Object>] -UserPoolId <Object>
- [-Username <Object>] [-MessageAction <Object>] [-DesiredDeliveryMediums <Object>]
- [-ForceAliasCreation <Boolean>] [-UserAttributes <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>]
- [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+ [-Username <Object>] [-MessageAction <Object>] [-ClientMetadata <Object>] [-DesiredDeliveryMediums <Object>]
+ [-ForceAliasCreation <Object>] [-UserAttributes <Object>] [-DeletionPolicy <String>]
+ [-UpdateReplacePolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
+ [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Cognito::UserPoolUser resource to the template.
 The AWS::Cognito::UserPoolUser resource creates an Amazon Cognito user pool user.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -132,6 +124,37 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ClientMetadata
+A map of custom key-value pairs that you can provide as input for the custom workflow that is invoked by the *pre sign-up* trigger.
+You create custom workflows by assigning AWS Lambda functions to user pool triggers.
+When you create a UserPoolUser resource and include the ClientMetadata property, Amazon Cognito invokes the function that is assigned to the *pre sign-up* trigger.
+When Amazon Cognito invokes this function, it passes a JSON payload, which the function receives as input.
+This payload contains a clientMetadata attribute, which provides the data that you assigned to the ClientMetadata property.
+In your function code in AWS Lambda, you can process the clientMetadata value to enhance your workflow for your specific needs.
+For more information, see Customizing User Pool Workflows with Lambda Triggers: https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html in the *Amazon Cognito Developer Guide*.
+Take the following limitations into consideration when you use the ClientMetadata parameter:
++ Amazon Cognito does not store the ClientMetadata value.
+This data is available only to AWS Lambda triggers that are assigned to a user pool to support custom workflows.
+If your user pool configuration does not include triggers, the ClientMetadata parameter serves no purpose.
++ Amazon Cognito does not validate the ClientMetadata value.
++ Amazon Cognito does not encrypt the the ClientMetadata value, so don't use it to provide sensitive information.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-clientmetadata
+PrimitiveType: Json
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -DesiredDeliveryMediums
 Specify "EMAIL" if email will be used to send the welcome message.
 Specify "SMS" if the phone number will be used.
@@ -168,29 +191,29 @@ PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -UserAttributes
-An array of name-value pairs that contain user attributes and attribute values to be set for the user to be created.
-You can create a user without specifying any attributes other than Username.
-However, any attributes that you specify as required in https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html: https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html or in the **Attributes** tab of the console must be supplied either by you in your call to AdminCreateUser or by the user when he or she signs up in response to your welcome message.
+The user attributes and attribute values to be set for the user to be created.
+These are name-value pairs You can create a user without specifying any attributes other than Username.
+However, any attributes that you specify as required in https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html: https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html or in the **Attributes** tab of the console must be supplied either by you in your call to AdminCreateUser or by the user when they sign up in response to your welcome message.
 For custom attributes, you must prepend the custom: prefix to the attribute name.
 To send a message inviting the user to sign up, you must specify the user's email address or phone number.
 This can be done in your call to AdminCreateUser or in the **Users** tab of the Amazon Cognito console for managing your user pools.
 In your call to AdminCreateUser, you can set the email_verified attribute to True, and you can set the phone_number_verified attribute to True.
 You can also do this by calling https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html: https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html.
-+  **email**: The email address of the user to whom the message that contains the code and username will be sent.
++  **email**: The email address of the user to whom the message that contains the code and user name will be sent.
 Required if the email_verified attribute is set to True, or if "EMAIL" is specified in the DesiredDeliveryMediums parameter.
-+  **phone_number**: The phone number of the user to whom the message that contains the code and username will be sent.
++  **phone_number**: The phone number of the user to whom the message that contains the code and user name will be sent.
 Required if the phone_number_verified attribute is set to True, or if "SMS" is specified in the DesiredDeliveryMediums parameter.
 
 Type: List
@@ -218,6 +241,49 @@ If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the re
 To keep a resource when its stack is deleted, specify Retain for that resource.
 You can use retain for any resource.
 For example, you can retain a nested stack, S3 bucket, or EC2 instance so that you can continue to use or modify those resources after you delete their stacks.
+
+You must use one of the following options: "Delete","Retain","Snapshot"
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdateReplacePolicy
+Use the UpdateReplacePolicy attribute to retain or (in some cases) backup the existing physical instance of a resource when it is replaced during a stack update operation.
+
+When you initiate a stack update, AWS CloudFormation updates resources based on differences between what you submit and the stack's current template and parameters.
+If you update a resource property that requires that the resource be replaced, AWS CloudFormation recreates the resource during the update.
+Recreating the resource generates a new physical ID.
+AWS CloudFormation creates the replacement resource first, and then changes references from other dependent resources to point to the replacement resource.
+By default, AWS CloudFormation then deletes the old resource.
+Using the UpdateReplacePolicy, you can specify that AWS CloudFormation retain or (in some cases) create a snapshot of the old resource.
+
+For resources that support snapshots, such as AWS::EC2::Volume, specify Snapshot to have AWS CloudFormation create a snapshot before deleting the old resource instance.
+
+You can apply the UpdateReplacePolicy attribute to any resource.
+UpdateReplacePolicy is only executed if you update a resource property whose update behavior is specified as Replacement, thereby causing AWS CloudFormation to replace the old resource with a new one with a new physical ID.
+For example, if you update the Engine property of an AWS::RDS::DBInstance resource type, AWS CloudFormation creates a new resource and replaces the current DB instance resource with the new one.
+The UpdateReplacePolicy attribute would then dictate whether AWS CloudFormation deleted, retained, or created a snapshot of the old DB instance.
+The update behavior for each property of a resource is specified in the reference topic for that resource in the AWS Resource and Property Types Reference.
+For more information on resource update behavior, see Update Behaviors of Stack Resources.
+
+The UpdateReplacePolicy attribute applies to stack updates you perform directly, as well as stack updates performed using change sets.
+
+Note
+Resources that are retained continue to exist and continue to incur applicable charges until you delete those resources.
+Snapshots that are created with this policy continue to exist and continue to incur applicable charges until you delete those snapshots.
+UpdateReplacePolicy retains the old physical resource or snapshot, but removes it from AWS CloudFormation's scope.
+
+UpdateReplacePolicy differs from the DeletionPolicy attribute in that it only applies to resources replaced during stack updates.
+Use DeletionPolicy for resources deleted when a stack is deleted, or when the resource definition itself is deleted from the template as part of a stack update.
 
 You must use one of the following options: "Delete","Retain","Snapshot"
 

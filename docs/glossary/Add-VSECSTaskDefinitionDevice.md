@@ -15,15 +15,6 @@ Add-VSECSTaskDefinitionDevice [[-ContainerPath] <Object>] [-HostPath] <Object> [
 Adds an AWS::ECS::TaskDefinition.Device resource property to the template.
 The Device property specifies an object representing a container instance host device.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ContainerPath

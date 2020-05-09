@@ -14,19 +14,10 @@ Add-VSCodePipelinePipelineStageTransition [-Reason] <Object> [-StageName] <Objec
 Adds an AWS::CodePipeline::Pipeline.StageTransition resource property to the template.
 The name of the pipeline in which you want to disable the flow of artifacts from one stage to another.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Reason
-The reason given to the user why a stage is disabled, such as waiting for manual approval or manual tests.
+The reason given to the user that a stage is disabled, such as waiting for manual approval or manual tests.
 This message is displayed in the pipeline console UI.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-disableinboundstagetransitions.html#cfn-codepipeline-pipeline-disableinboundstagetransitions-reason

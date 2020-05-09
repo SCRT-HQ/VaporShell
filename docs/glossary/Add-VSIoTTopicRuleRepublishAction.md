@@ -7,23 +7,34 @@ Describes an action to republish to another topic.
 ## SYNTAX
 
 ```
-Add-VSIoTTopicRuleRepublishAction [-RoleArn] <Object> [-Topic] <Object> [<CommonParameters>]
+Add-VSIoTTopicRuleRepublishAction [[-Qos] <Object>] [-RoleArn] <Object> [-Topic] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::IoT::TopicRule.RepublishAction resource property to the template.
 Describes an action to republish to another topic.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
+
+### -Qos
+The Quality of Service QoS level to use when republishing messages.
+The default value is 0.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-republishaction.html#cfn-iot-topicrule-republishaction-qos
+PrimitiveType: Integer
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -RoleArn
 The ARN of the IAM role that grants access.
@@ -38,7 +49,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 1
+Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -57,7 +68,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 2
+Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

@@ -4,7 +4,8 @@
 Adds an AWS::IoTEvents::Input.Attribute resource property to the template.
 The attributes from the JSON payload that are made available by the input.
 Inputs are derived from messages sent to the AWS IoT Events system using BatchPutMessage.
-Each such message contains a JSON payload, and those attributes (and their paired values specified here are available for use in the condition expressions used by detectors.
+Each such message contains a JSON payload.
+Those attributes (and their paired values specified here are available for use in the condition expressions used by detectors.
 
 ## SYNTAX
 
@@ -16,24 +17,17 @@ Add-VSIoTEventsInputAttribute [[-JsonPath] <Object>] [<CommonParameters>]
 Adds an AWS::IoTEvents::Input.Attribute resource property to the template.
 The attributes from the JSON payload that are made available by the input.
 Inputs are derived from messages sent to the AWS IoT Events system using BatchPutMessage.
-Each such message contains a JSON payload, and those attributes (and their paired values specified here are available for use in the condition expressions used by detectors.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+Each such message contains a JSON payload.
+Those attributes (and their paired values specified here are available for use in the condition expressions used by detectors.
 
 ## PARAMETERS
 
 ### -JsonPath
 An expression that specifies an attribute-value pair in a JSON structure.
 Use this to specify an attribute from the JSON payload that is made available by the input.
-Inputs are derived from messages sent to the AWS IoT Events system BatchPutMessage.
-Each such message contains a JSON payload, and the attribute and its paired value specified here are available for use in the "condition" expressions used by detectors.
+Inputs are derived from messages sent to AWS IoT Events BatchPutMessage.
+Each such message contains a JSON payload.
+The attribute and its paired value specified here are available for use in the condition expressions used by detectors.
 Syntax: \<field-name\>.\<field-name\>...
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-input-attribute.html#cfn-iotevents-input-attribute-jsonpath

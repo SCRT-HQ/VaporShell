@@ -17,15 +17,6 @@ Adds an AWS::Backup::BackupSelection.ConditionResourceType resource property to 
 Specifies an object that contains an array of triplets made up of a condition type (such as StringEquals, a key, and a value.
 Conditions are used to filter resources in a selection that is assigned to a backup plan.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ConditionValue

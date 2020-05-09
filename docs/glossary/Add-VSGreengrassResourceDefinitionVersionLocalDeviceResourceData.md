@@ -19,15 +19,6 @@ For more information, see Access Local Resources with Lambda Functions: https://
 
 \<a name="aws-properties-greengrass-resourcedefinitionversion-localdeviceresourcedata-inheritance"\>\</a\> In an AWS CloudFormation template, LocalDeviceResourceData can be used in the https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html property type.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -SourcePath

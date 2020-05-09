@@ -3,7 +3,7 @@
 ## SYNOPSIS
 Adds an AWS::CloudTrail::Trail.DataResource resource property to the template.
 The Amazon S3 buckets or AWS Lambda functions that you specify in your event selectors for your trail to log data events.
-Data events provide insight into the resource operations performed on or within a resource itself.
+Data events provide information about the resource operations performed on or within a resource itself.
 These are also known as data plane operations.
 You can specify up to 250 data resources for a trail.
 
@@ -16,7 +16,7 @@ Add-VSCloudTrailTrailDataResource [-Type] <Object> [[-Values] <Object>] [<Common
 ## DESCRIPTION
 Adds an AWS::CloudTrail::Trail.DataResource resource property to the template.
 The Amazon S3 buckets or AWS Lambda functions that you specify in your event selectors for your trail to log data events.
-Data events provide insight into the resource operations performed on or within a resource itself.
+Data events provide information about the resource operations performed on or within a resource itself.
 These are also known as data plane operations.
 You can specify up to 250 data resources for a trail.
 
@@ -59,15 +59,6 @@ The trail processes and logs the event.
 The Invoke API operation on *MyOtherLambdaFunction* is an AWS Lambda API.
 Because the CloudTrail user did not specify logging data events for all Lambda functions, the Invoke operation for *MyOtherLambdaFunction* does not match the function specified for the trail.
 The trail doesn't log the event.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 

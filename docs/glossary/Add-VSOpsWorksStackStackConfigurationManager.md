@@ -14,15 +14,6 @@ Add-VSOpsWorksStackStackConfigurationManager [[-Name] <Object>] [[-Version] <Obj
 Adds an AWS::OpsWorks::Stack.StackConfigurationManager resource property to the template.
 Describes the configuration manager.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Name

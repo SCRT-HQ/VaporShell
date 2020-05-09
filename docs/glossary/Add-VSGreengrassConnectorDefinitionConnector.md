@@ -19,15 +19,6 @@ For more information, see Integrate with Services and Protocols Using Greengrass
 
 \<a name="aws-properties-greengrass-connectordefinitionversion-connector-inheritance"\>\</a\> In an AWS CloudFormation template, the Connectors property of the  ConnectorDefinitionVersion : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-connectordefinition-connectordefinitionversion.html property type contains a list of Connector property types.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ConnectorArn

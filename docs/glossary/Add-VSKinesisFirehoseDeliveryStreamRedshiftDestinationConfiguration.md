@@ -16,15 +16,6 @@ Add-VSKinesisFirehoseDeliveryStreamRedshiftDestinationConfiguration [[-CloudWatc
 Adds an AWS::KinesisFirehose::DeliveryStream.RedshiftDestinationConfiguration resource property to the template.
 The RedshiftDestinationConfiguration property type specifies an Amazon Redshift cluster to which Amazon Kinesis Data Firehose (Kinesis Data Firehose delivers data.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -CloudWatchLoggingOptions

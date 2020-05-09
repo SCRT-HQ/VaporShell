@@ -7,28 +7,20 @@ The AWS::ElastiCache::CacheCluster type creates an Amazon ElastiCache cache clus
 ## SYNTAX
 
 ```
-New-VSElastiCacheCacheCluster [-LogicalId] <String> [-AZMode <Object>] [-AutoMinorVersionUpgrade <Boolean>]
+New-VSElastiCacheCacheCluster [-LogicalId] <String> [-AZMode <Object>] [-AutoMinorVersionUpgrade <Object>]
  -CacheNodeType <Object> [-CacheParameterGroupName <Object>] [-CacheSecurityGroupNames <Object>]
  [-CacheSubnetGroupName <Object>] [-ClusterName <Object>] -Engine <Object> [-EngineVersion <Object>]
- [-NotificationTopicArn <Object>] -NumCacheNodes <Int32> [-Port <Int32>] [-PreferredAvailabilityZone <Object>]
- [-PreferredAvailabilityZones <Object>] [-PreferredMaintenanceWindow <Object>] [-SnapshotArns <Object>]
- [-SnapshotName <Object>] [-SnapshotRetentionLimit <Int32>] [-SnapshotWindow <Object>] [-Tags <Object>]
- [-VpcSecurityGroupIds <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
+ [-NotificationTopicArn <Object>] -NumCacheNodes <Object> [-Port <Object>]
+ [-PreferredAvailabilityZone <Object>] [-PreferredAvailabilityZones <Object>]
+ [-PreferredMaintenanceWindow <Object>] [-SnapshotArns <Object>] [-SnapshotName <Object>]
+ [-SnapshotRetentionLimit <Object>] [-SnapshotWindow <Object>] [-Tags <Object>] [-VpcSecurityGroupIds <Object>]
+ [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
  [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::ElastiCache::CacheCluster resource to the template.
 The AWS::ElastiCache::CacheCluster type creates an Amazon ElastiCache cache cluster.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -78,13 +70,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -93,10 +85,13 @@ Accept wildcard characters: False
 The compute and memory capacity of the nodes in the node group shard.
 The following node types are supported by ElastiCache.
 Generally speaking, the current generation types provide more memory and computational power at lower cost when compared to their equivalent previous generation counterparts.
+Changing the CacheNodeType of a Memcached instance is currently not supported.
+If you need to scale using Memcached, we recommend forcing a replacement update by changing the LogicalResourceId of the resource.
 + General purpose:
 + Current generation:
 **M5 node types:** cache.m5.large, cache.m5.xlarge, cache.m5.2xlarge, cache.m5.4xlarge, cache.m5.12xlarge, cache.m5.24xlarge
 **M4 node types:** cache.m4.large, cache.m4.xlarge, cache.m4.2xlarge, cache.m4.4xlarge, cache.m4.10xlarge
+**T3 node types:** cache.t3.micro, cache.t3.small, cache.t3.medium
 **T2 node types:** cache.t2.micro, cache.t2.small, cache.t2.medium
 + Previous generation: not recommended
 **T1 node types:** cache.t1.micro
@@ -203,7 +198,7 @@ Accept wildcard characters: False
 A name for the cache cluster.
 If you don't specify a name, AWSCloudFormation generates a unique physical ID and uses that ID for the cache cluster.
 For more information, see Name Type: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html.
-The name must contain 1 to 20 alphanumeric characters or hyphens.
+The name must contain 1 to 50 alphanumeric characters or hyphens.
 The name must start with a letter and cannot end with a hyphen or contain two consecutive hyphens.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-clustername
@@ -293,13 +288,13 @@ PrimitiveType: Integer
 UpdateType: Conditional
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: Named
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -312,13 +307,13 @@ PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -463,13 +458,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -547,6 +542,49 @@ If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the re
 To keep a resource when its stack is deleted, specify Retain for that resource.
 You can use retain for any resource.
 For example, you can retain a nested stack, S3 bucket, or EC2 instance so that you can continue to use or modify those resources after you delete their stacks.
+
+You must use one of the following options: "Delete","Retain","Snapshot"
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdateReplacePolicy
+Use the UpdateReplacePolicy attribute to retain or (in some cases) backup the existing physical instance of a resource when it is replaced during a stack update operation.
+
+When you initiate a stack update, AWS CloudFormation updates resources based on differences between what you submit and the stack's current template and parameters.
+If you update a resource property that requires that the resource be replaced, AWS CloudFormation recreates the resource during the update.
+Recreating the resource generates a new physical ID.
+AWS CloudFormation creates the replacement resource first, and then changes references from other dependent resources to point to the replacement resource.
+By default, AWS CloudFormation then deletes the old resource.
+Using the UpdateReplacePolicy, you can specify that AWS CloudFormation retain or (in some cases) create a snapshot of the old resource.
+
+For resources that support snapshots, such as AWS::EC2::Volume, specify Snapshot to have AWS CloudFormation create a snapshot before deleting the old resource instance.
+
+You can apply the UpdateReplacePolicy attribute to any resource.
+UpdateReplacePolicy is only executed if you update a resource property whose update behavior is specified as Replacement, thereby causing AWS CloudFormation to replace the old resource with a new one with a new physical ID.
+For example, if you update the Engine property of an AWS::RDS::DBInstance resource type, AWS CloudFormation creates a new resource and replaces the current DB instance resource with the new one.
+The UpdateReplacePolicy attribute would then dictate whether AWS CloudFormation deleted, retained, or created a snapshot of the old DB instance.
+The update behavior for each property of a resource is specified in the reference topic for that resource in the AWS Resource and Property Types Reference.
+For more information on resource update behavior, see Update Behaviors of Stack Resources.
+
+The UpdateReplacePolicy attribute applies to stack updates you perform directly, as well as stack updates performed using change sets.
+
+Note
+Resources that are retained continue to exist and continue to incur applicable charges until you delete those resources.
+Snapshots that are created with this policy continue to exist and continue to incur applicable charges until you delete those snapshots.
+UpdateReplacePolicy retains the old physical resource or snapshot, but removes it from AWS CloudFormation's scope.
+
+UpdateReplacePolicy differs from the DeletionPolicy attribute in that it only applies to resources replaced during stack updates.
+Use DeletionPolicy for resources deleted when a stack is deleted, or when the resource definition itself is deleted from the template as part of a stack update.
 
 You must use one of the following options: "Delete","Retain","Snapshot"
 

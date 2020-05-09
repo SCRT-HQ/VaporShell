@@ -19,15 +19,6 @@ Provides the source and the message types that trigger AWS Config to evaluate yo
 It also provides the frequency with which you want AWS Config to run evaluations for the rule if the trigger type is periodic.
 You can specify the parameter values for SourceDetail only for custom rules.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -EventSource

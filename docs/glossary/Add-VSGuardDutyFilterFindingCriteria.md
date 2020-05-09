@@ -14,15 +14,6 @@ Add-VSGuardDutyFilterFindingCriteria [[-Criterion] <Object>] [[-ItemType] <Objec
 Adds an AWS::GuardDuty::Filter.FindingCriteria resource property to the template.
 Represents a map of finding properties that match specified conditions and values when querying findings.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Criterion

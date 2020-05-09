@@ -16,15 +16,6 @@ Adds an AWS::ECS::TaskDefinition.Secret resource property to the template.
 The Secret property specifies an object representing the secret to expose to your container.
 For more information, see Specifying Sensitive Data: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html in the *Amazon Elastic Container Service Developer Guide*.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Name

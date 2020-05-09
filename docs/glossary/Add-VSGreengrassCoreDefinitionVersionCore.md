@@ -8,7 +8,7 @@ For more information, see What Is AWS IoT Greengrass?: https://docs.aws.amazon.c
 ## SYNTAX
 
 ```
-Add-VSGreengrassCoreDefinitionVersionCore [[-SyncShadow] <Boolean>] [-ThingArn] <Object> [-Id] <Object>
+Add-VSGreengrassCoreDefinitionVersionCore [[-SyncShadow] <Object>] [-ThingArn] <Object> [-Id] <Object>
  [-CertificateArn] <Object> [<CommonParameters>]
 ```
 
@@ -19,15 +19,6 @@ For more information, see What Is AWS IoT Greengrass?: https://docs.aws.amazon.c
 
 \<a name="aws-properties-greengrass-coredefinitionversion-core-inheritance"\>\</a\> In an AWS CloudFormation template, the Cores property of the  AWS::Greengrass::CoreDefinitionVersion : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-coredefinitionversion.html resource contains a list of Core property types.
 Currently, the list can contain only one core.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -40,13 +31,13 @@ PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

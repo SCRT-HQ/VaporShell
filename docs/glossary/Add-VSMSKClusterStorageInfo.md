@@ -14,15 +14,6 @@ Add-VSMSKClusterStorageInfo [[-EBSStorageInfo] <Object>] [<CommonParameters>]
 Adds an AWS::MSK::Cluster.StorageInfo resource property to the template.
 Contains information about storage volumes attached to MSK broker nodes.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -EBSStorageInfo

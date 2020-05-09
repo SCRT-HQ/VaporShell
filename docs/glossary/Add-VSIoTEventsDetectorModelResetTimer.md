@@ -14,15 +14,6 @@ Add-VSIoTEventsDetectorModelResetTimer [[-TimerName] <Object>] [<CommonParameter
 Adds an AWS::IoTEvents::DetectorModel.ResetTimer resource property to the template.
 Information needed to reset the timer.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -TimerName

@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 Adds an AWS::Pinpoint::Campaign.AttributeDimension resource property to the template.
-Specifies the criteria for including or excluding endpoints from a segment.
+Specifies attribute-based criteria for including or excluding endpoints from a segment.
 
 ## SYNTAX
 
@@ -12,16 +12,7 @@ Add-VSPinpointCampaignAttributeDimension [[-AttributeType] <Object>] [[-Values] 
 
 ## DESCRIPTION
 Adds an AWS::Pinpoint::Campaign.AttributeDimension resource property to the template.
-Specifies the criteria for including or excluding endpoints from a segment.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+Specifies attribute-based criteria for including or excluding endpoints from a segment.
 
 ## PARAMETERS
 

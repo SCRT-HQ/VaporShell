@@ -14,15 +14,6 @@ Add-VSWAFRegionalSizeConstraintSetFieldToMatch [-Type] <Object> [[-Data] <Object
 Adds an AWS::WAFRegional::SizeConstraintSet.FieldToMatch resource property to the template.
 Specifies the part of a web request that you want AWS WAF to check for a size constraint, such as a specific header or a query string.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Type
@@ -30,8 +21,7 @@ The part of the web request that you want AWS WAF to search for a specified stri
 Parts of a request that you can search include the following:
 +  HEADER: A specified request header, for example, the value of the User-Agent or Referer header.
 If you choose HEADER for the type, specify the name of the header in Data.
-+  METHOD: The HTTP method, which indicated the type of operation that the request is asking the origin to perform.
-Amazon CloudFront supports the following methods: DELETE, GET, HEAD, OPTIONS, PATCH, POST, and PUT.
++  METHOD: The HTTP method, which indicates the type of operation that the request is asking the origin to perform.
 +  QUERY_STRING: A query string, which is the part of a URL that appears after a ?
 character, if any.
 +  URI: The part of a web request that identifies a resource, for example, /images/daily-ad.jpg.

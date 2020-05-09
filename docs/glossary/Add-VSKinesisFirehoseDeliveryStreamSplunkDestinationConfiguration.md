@@ -8,7 +8,7 @@ The SplunkDestinationConfiguration property type specifies the configuration of 
 
 ```
 Add-VSKinesisFirehoseDeliveryStreamSplunkDestinationConfiguration [[-CloudWatchLoggingOptions] <Object>]
- [[-HECAcknowledgmentTimeoutInSeconds] <Int32>] [-HECEndpoint] <Object> [-HECEndpointType] <Object>
+ [[-HECAcknowledgmentTimeoutInSeconds] <Object>] [-HECEndpoint] <Object> [-HECEndpointType] <Object>
  [-HECToken] <Object> [[-ProcessingConfiguration] <Object>] [[-RetryOptions] <Object>]
  [[-S3BackupMode] <Object>] [-S3Configuration] <Object> [<CommonParameters>]
 ```
@@ -16,15 +16,6 @@ Add-VSKinesisFirehoseDeliveryStreamSplunkDestinationConfiguration [[-CloudWatchL
 ## DESCRIPTION
 Adds an AWS::KinesisFirehose::DeliveryStream.SplunkDestinationConfiguration resource property to the template.
 The SplunkDestinationConfiguration property type specifies the configuration of a destination in Splunk for a Kinesis Data Firehose delivery stream.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -56,13 +47,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

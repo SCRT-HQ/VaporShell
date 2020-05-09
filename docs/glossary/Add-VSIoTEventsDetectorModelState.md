@@ -15,19 +15,10 @@ Add-VSIoTEventsDetectorModelState [[-OnInput] <Object>] [[-OnExit] <Object>] [[-
 Adds an AWS::IoTEvents::DetectorModel.State resource property to the template.
 Information that defines a state of a detector.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -OnInput
-When an input is received and the "condition" is TRUE, perform the specified "actions".
+When an input is received and the condition is TRUE, perform the specified actions.
 
 Type: OnInput
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-state.html#cfn-iotevents-detectormodel-state-oninput
@@ -46,7 +37,7 @@ Accept wildcard characters: False
 ```
 
 ### -OnExit
-When exiting this state, perform these "actions" if the specified "condition" is TRUE.
+When exiting this state, perform these actions if the specified condition is TRUE.
 
 Type: OnExit
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-state.html#cfn-iotevents-detectormodel-state-onexit
@@ -84,7 +75,7 @@ Accept wildcard characters: False
 ```
 
 ### -OnEnter
-When entering this state, perform these "actions" if the "condition" is TRUE.
+When entering this state, perform these actions if the condition is TRUE.
 
 Type: OnEnter
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-state.html#cfn-iotevents-detectormodel-state-onenter

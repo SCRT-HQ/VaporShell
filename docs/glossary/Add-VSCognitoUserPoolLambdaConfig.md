@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 Adds an AWS::Cognito::UserPool.LambdaConfig resource property to the template.
-LambdaConfig is a property of the AWS::Cognito::UserPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html resource that defines the AWS Lambda configuration of an Amazon Cognito User Pool.
+Specifies the configuration for AWS Lambda triggers.
 
 ## SYNTAX
 
@@ -15,25 +15,7 @@ Add-VSCognitoUserPoolLambdaConfig [[-CreateAuthChallenge] <Object>] [[-PreAuthen
 
 ## DESCRIPTION
 Adds an AWS::Cognito::UserPool.LambdaConfig resource property to the template.
-LambdaConfig is a property of the AWS::Cognito::UserPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html resource that defines the AWS Lambda configuration of an Amazon Cognito User Pool.
-
-**Note**
-
-In a push model, event sources (such as Amazon S3 and custom applications need permission to invoke a function.
-So you will need to make an extra call to add permission for these event sources to invoke your Lambda function.
-
-For more information on using the Lambda API to add permission, see  AddPermission : https://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html.
-
-For adding permission using the AWS CLI, see  add-permission : https://docs.aws.amazon.com/cli/latest/reference/lambda/add-permission.html.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+Specifies the configuration for AWS Lambda triggers.
 
 ## PARAMETERS
 
@@ -114,7 +96,7 @@ Accept wildcard characters: False
 ```
 
 ### -PreTokenGeneration
-*Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+A Lambda trigger that is invoked before token generation.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html#cfn-cognito-userpool-lambdaconfig-pretokengeneration
 PrimitiveType: String
@@ -133,7 +115,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserMigration
-*Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+The user migration Lambda config type.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html#cfn-cognito-userpool-lambdaconfig-usermigration
 PrimitiveType: String

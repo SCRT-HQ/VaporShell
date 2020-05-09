@@ -19,20 +19,17 @@ Describes the default server-side encryption to apply to new objects in the buck
 If a PUT Object request doesn't specify any server-side encryption, this default encryption will be applied.
 For more information, see PUT Bucket encryption: https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTencryption.html in the *Amazon Simple Storage Service API Reference*.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -KMSMasterKeyID
-KMS master key ID to use for the default encryption.
-This parameter is allowed if and only if SSEAlgorithm is set to aws:kms.
+KMS key ID to use for the default encryption.
+This parameter is allowed if SSEAlgorithm is aws:kms.
+You can specify the key ID or the Amazon Resource Name ARN of the CMK.
+For example:
++ Key ID: 1234abcd-12ab-34cd-56ef-1234567890ab
++ Key ARN: arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab
+Amazon S3 only supports symmetric CMKs and not asymmetric CMKs.
+For more information, see Using Symmetric and Asymmetric Keys: https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html in the *AWS Key Management Service Developer Guide*.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-serversideencryptionbydefault.html#cfn-s3-bucket-serversideencryptionbydefault-kmsmasterkeyid
 PrimitiveType: String

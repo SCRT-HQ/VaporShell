@@ -17,15 +17,6 @@ Add-VSElasticLoadBalancingV2ListenerRuleAuthenticateCognitoConfig
 Adds an AWS::ElasticLoadBalancingV2::ListenerRule.AuthenticateCognitoConfig resource property to the template.
 Specifies information required when integrating with Amazon Cognito to authenticate users.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -AuthenticationRequestExtraParams

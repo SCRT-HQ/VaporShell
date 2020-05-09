@@ -9,9 +9,9 @@ An outbound rule permits instances to send traffic to the specified IPv4 or IPv6
 
 ```
 Add-VSEC2SecurityGroupIngress [[-CidrIp] <Object>] [[-CidrIpv6] <Object>] [[-Description] <Object>]
- [[-FromPort] <Int32>] [-IpProtocol] <Object> [[-SourcePrefixListId] <Object>]
+ [[-FromPort] <Object>] [-IpProtocol] <Object> [[-SourcePrefixListId] <Object>]
  [[-SourceSecurityGroupId] <Object>] [[-SourceSecurityGroupName] <Object>]
- [[-SourceSecurityGroupOwnerId] <Object>] [[-ToPort] <Int32>] [<CommonParameters>]
+ [[-SourceSecurityGroupOwnerId] <Object>] [[-ToPort] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -23,19 +23,10 @@ You must specify only one of the following properties: CidrIp, CidrIpv6, Destina
 
 The EC2 Security Group Rule is an embedded property of the AWS::EC2::SecurityGroup type.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -CidrIp
-The IPv4 address range, in CIDR format.
+The destination IPv4 address range, in CIDR format.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-cidrip
 PrimitiveType: String
@@ -55,7 +46,7 @@ Accept wildcard characters: False
 
 ### -CidrIpv6
 EC2-VPC only\] The IPv6 ranges.
-The IPv6 address range, in CIDR format.
+The destination IPv6 address range, in CIDR format.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-cidripv6
 PrimitiveType: String
@@ -104,13 +95,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 4
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -224,13 +215,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 10
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

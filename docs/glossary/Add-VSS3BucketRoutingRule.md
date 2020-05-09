@@ -14,15 +14,6 @@ Add-VSS3BucketRoutingRule [-RedirectRule] <Object> [[-RoutingRuleCondition] <Obj
 Adds an AWS::S3::Bucket.RoutingRule resource property to the template.
 Specifies the redirect behavior and when a redirect is applied.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -RedirectRule

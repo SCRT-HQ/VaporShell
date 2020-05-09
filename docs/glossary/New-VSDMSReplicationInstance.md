@@ -9,25 +9,17 @@ The AWS::DMS::ReplicationInstance resource creates an AWS DMS replication instan
 ```
 New-VSDMSReplicationInstance [-LogicalId] <String> [-ReplicationInstanceIdentifier <Object>]
  [-EngineVersion <Object>] [-KmsKeyId <Object>] [-AvailabilityZone <Object>]
- [-PreferredMaintenanceWindow <Object>] [-AutoMinorVersionUpgrade <Boolean>]
- [-ReplicationSubnetGroupIdentifier <Object>] [-AllocatedStorage <Int32>] [-VpcSecurityGroupIds <Object>]
- [-AllowMajorVersionUpgrade <Boolean>] -ReplicationInstanceClass <Object> [-PubliclyAccessible <Boolean>]
- [-MultiAZ <Boolean>] [-Tags <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
- [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+ [-PreferredMaintenanceWindow <Object>] [-AutoMinorVersionUpgrade <Object>]
+ [-ReplicationSubnetGroupIdentifier <Object>] [-AllocatedStorage <Object>] [-VpcSecurityGroupIds <Object>]
+ [-AllowMajorVersionUpgrade <Object>] -ReplicationInstanceClass <Object> [-PubliclyAccessible <Object>]
+ [-MultiAZ <Object>] [-Tags <Object>] [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>]
+ [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::DMS::ReplicationInstance resource to the template.
 The AWS::DMS::ReplicationInstance resource creates an AWS DMS replication instance.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -54,7 +46,7 @@ This parameter is stored as a lowercase string.
 Constraints:
 + Must contain from 1 to 63 alphanumeric characters or hyphens.
 + First character must be a letter.
-+ Cannot end with a hyphen or contain two consecutive hyphens.
++ Can't end with a hyphen or contain two consecutive hyphens.
 Example: myrepinstance
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-replicationinstanceidentifier
@@ -93,7 +85,7 @@ Accept wildcard characters: False
 ```
 
 ### -KmsKeyId
-The AWS KMS key identifier that is used to encrypt the content on the replication instance.
+An AWS KMS key identifier that is used to encrypt the data on the replication instance.
 If you don't specify a value for the KmsKeyId parameter, then AWS DMS uses your default encryption key.
 AWS KMS creates the default encryption key for your AWS account.
 Your AWS account has a different default encryption key for each AWS Region.
@@ -137,7 +129,7 @@ Accept wildcard characters: False
 ### -PreferredMaintenanceWindow
 The weekly time range during which system maintenance can occur, in Universal Coordinated Time UTC.
 Format: ddd:hh24:mi-ddd:hh24:mi
-Default: A 30-minute window selected at random from an 8-hour block of time per region, occurring on a random day of the week.
+Default: A 30-minute window selected at random from an 8-hour block of time per AWS Region, occurring on a random day of the week.
 Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
 Constraints: Minimum 30-minute window.
 
@@ -158,7 +150,8 @@ Accept wildcard characters: False
 ```
 
 ### -AutoMinorVersionUpgrade
-Indicates that minor engine upgrades will be applied automatically to the replication instance during the maintenance window.
+A value that indicates whether minor engine upgrades are applied automatically to the replication instance during the maintenance window.
+This parameter defaults to true.
 Default: true
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-autominorversionupgrade
@@ -166,13 +159,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -204,13 +197,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -238,21 +231,21 @@ Accept wildcard characters: False
 
 ### -AllowMajorVersionUpgrade
 Indicates that major version upgrades are allowed.
-Changing this parameter does not result in an outage and the change is asynchronously applied as soon as possible.
-Constraints: This parameter must be set to true when specifying a value for the EngineVersion parameter that is a different major version than the replication instance's current version.
+Changing this parameter does not result in an outage, and the change is asynchronously applied as soon as possible.
+This parameter must be set to true when specifying a value for the EngineVersion parameter that is a different major version than the replication instance's current version.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-allowmajorversionupgrade
 PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -288,39 +281,39 @@ PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -MultiAZ
-Specifies if the replication instance is a Multi-AZ deployment.
-You cannot set the AvailabilityZone parameter if the Multi-AZ parameter is set to true.
+Specifies whether the replication instance is a Multi-AZ deployment.
+You can't set the AvailabilityZone parameter if the Multi-AZ parameter is set to true.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-multiaz
 PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Tags
-Tags to be associated with the replication instance.
+One or more tags to be assigned to the replication instance.
 
 Type: List
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-tags
@@ -347,6 +340,49 @@ If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the re
 To keep a resource when its stack is deleted, specify Retain for that resource.
 You can use retain for any resource.
 For example, you can retain a nested stack, S3 bucket, or EC2 instance so that you can continue to use or modify those resources after you delete their stacks.
+
+You must use one of the following options: "Delete","Retain","Snapshot"
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdateReplacePolicy
+Use the UpdateReplacePolicy attribute to retain or (in some cases) backup the existing physical instance of a resource when it is replaced during a stack update operation.
+
+When you initiate a stack update, AWS CloudFormation updates resources based on differences between what you submit and the stack's current template and parameters.
+If you update a resource property that requires that the resource be replaced, AWS CloudFormation recreates the resource during the update.
+Recreating the resource generates a new physical ID.
+AWS CloudFormation creates the replacement resource first, and then changes references from other dependent resources to point to the replacement resource.
+By default, AWS CloudFormation then deletes the old resource.
+Using the UpdateReplacePolicy, you can specify that AWS CloudFormation retain or (in some cases) create a snapshot of the old resource.
+
+For resources that support snapshots, such as AWS::EC2::Volume, specify Snapshot to have AWS CloudFormation create a snapshot before deleting the old resource instance.
+
+You can apply the UpdateReplacePolicy attribute to any resource.
+UpdateReplacePolicy is only executed if you update a resource property whose update behavior is specified as Replacement, thereby causing AWS CloudFormation to replace the old resource with a new one with a new physical ID.
+For example, if you update the Engine property of an AWS::RDS::DBInstance resource type, AWS CloudFormation creates a new resource and replaces the current DB instance resource with the new one.
+The UpdateReplacePolicy attribute would then dictate whether AWS CloudFormation deleted, retained, or created a snapshot of the old DB instance.
+The update behavior for each property of a resource is specified in the reference topic for that resource in the AWS Resource and Property Types Reference.
+For more information on resource update behavior, see Update Behaviors of Stack Resources.
+
+The UpdateReplacePolicy attribute applies to stack updates you perform directly, as well as stack updates performed using change sets.
+
+Note
+Resources that are retained continue to exist and continue to incur applicable charges until you delete those resources.
+Snapshots that are created with this policy continue to exist and continue to incur applicable charges until you delete those snapshots.
+UpdateReplacePolicy retains the old physical resource or snapshot, but removes it from AWS CloudFormation's scope.
+
+UpdateReplacePolicy differs from the DeletionPolicy attribute in that it only applies to resources replaced during stack updates.
+Use DeletionPolicy for resources deleted when a stack is deleted, or when the resource definition itself is deleted from the template as part of a stack update.
 
 You must use one of the following options: "Delete","Retain","Snapshot"
 

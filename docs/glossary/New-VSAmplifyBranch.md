@@ -8,23 +8,16 @@ The AWS::Amplify::Branch resource creates a new branch within an app.
 
 ```
 New-VSAmplifyBranch [-LogicalId] <String> [-Description <Object>] [-EnvironmentVariables <Object>]
- -AppId <Object> [-EnableAutoBuild <Boolean>] [-BuildSpec <Object>] [-Stage <Object>] -BranchName <Object>
- [-BasicAuthConfig <Object>] [-Tags <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>]
- [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+ -AppId <Object> [-PullRequestEnvironmentName <Object>] [-EnablePullRequestPreview <Object>]
+ [-EnableAutoBuild <Object>] [-BuildSpec <Object>] [-Stage <Object>] -BranchName <Object>
+ [-BasicAuthConfig <Object>] [-Tags <Object>] [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>]
+ [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Amplify::Branch resource to the template.
 The AWS::Amplify::Branch resource creates a new branch within an app.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -103,6 +96,54 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -PullRequestEnvironmentName
+If pull request previews are enabled for this branch, you can use this property to specify a dedicated backend environment for your previews.
+For example, you could specify an environment named prod, test, or dev that you initialized with the Amplify CLI and mapped to this branch.
+To enable pull request previews, set the EnablePullRequestPreview property to true.
+If you don't specify an environment, the Amplify Console provides backend support for each preview by automatically provisioning a temporary backend environment.
+Amplify Console deletes this environment when the pull request is closed.
+For more information about creating backend environments, see Feature Branch Deployments and Team Workflows: https://docs.aws.amazon.com/amplify/latest/userguide/multi-environments.html in the *AWS Amplify Console User Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-pullrequestenvironmentname
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EnablePullRequestPreview
+Sets whether the Amplify Console creates a preview for each pull request that is made for this branch.
+If this property is enabled, the Amplify Console deploys your app to a unique preview URL after each pull request is opened.
+Development and QA teams can use this preview to test the pull request before it's merged into a production or integration branch.
+To provide backend support for your preview, the Amplify Console automatically provisions a temporary backend environment that it deletes when the pull request is closed.
+If you want to specify a dedicated backend environment for your previews, use the PullRequestEnvironmentName property.
+For more information, see Web Previews: https://docs.aws.amazon.com/amplify/latest/userguide/pr-previews.html in the *AWS Amplify Console User Guide*.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-enablepullrequestpreview
+PrimitiveType: Boolean
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -EnableAutoBuild
 Enables auto building for the branch.
 
@@ -111,13 +152,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -226,6 +267,49 @@ If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the re
 To keep a resource when its stack is deleted, specify Retain for that resource.
 You can use retain for any resource.
 For example, you can retain a nested stack, S3 bucket, or EC2 instance so that you can continue to use or modify those resources after you delete their stacks.
+
+You must use one of the following options: "Delete","Retain","Snapshot"
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdateReplacePolicy
+Use the UpdateReplacePolicy attribute to retain or (in some cases) backup the existing physical instance of a resource when it is replaced during a stack update operation.
+
+When you initiate a stack update, AWS CloudFormation updates resources based on differences between what you submit and the stack's current template and parameters.
+If you update a resource property that requires that the resource be replaced, AWS CloudFormation recreates the resource during the update.
+Recreating the resource generates a new physical ID.
+AWS CloudFormation creates the replacement resource first, and then changes references from other dependent resources to point to the replacement resource.
+By default, AWS CloudFormation then deletes the old resource.
+Using the UpdateReplacePolicy, you can specify that AWS CloudFormation retain or (in some cases) create a snapshot of the old resource.
+
+For resources that support snapshots, such as AWS::EC2::Volume, specify Snapshot to have AWS CloudFormation create a snapshot before deleting the old resource instance.
+
+You can apply the UpdateReplacePolicy attribute to any resource.
+UpdateReplacePolicy is only executed if you update a resource property whose update behavior is specified as Replacement, thereby causing AWS CloudFormation to replace the old resource with a new one with a new physical ID.
+For example, if you update the Engine property of an AWS::RDS::DBInstance resource type, AWS CloudFormation creates a new resource and replaces the current DB instance resource with the new one.
+The UpdateReplacePolicy attribute would then dictate whether AWS CloudFormation deleted, retained, or created a snapshot of the old DB instance.
+The update behavior for each property of a resource is specified in the reference topic for that resource in the AWS Resource and Property Types Reference.
+For more information on resource update behavior, see Update Behaviors of Stack Resources.
+
+The UpdateReplacePolicy attribute applies to stack updates you perform directly, as well as stack updates performed using change sets.
+
+Note
+Resources that are retained continue to exist and continue to incur applicable charges until you delete those resources.
+Snapshots that are created with this policy continue to exist and continue to incur applicable charges until you delete those snapshots.
+UpdateReplacePolicy retains the old physical resource or snapshot, but removes it from AWS CloudFormation's scope.
+
+UpdateReplacePolicy differs from the DeletionPolicy attribute in that it only applies to resources replaced during stack updates.
+Use DeletionPolicy for resources deleted when a stack is deleted, or when the resource definition itself is deleted from the template as part of a stack update.
 
 You must use one of the following options: "Delete","Retain","Snapshot"
 

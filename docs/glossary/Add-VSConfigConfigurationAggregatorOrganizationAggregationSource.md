@@ -7,22 +7,13 @@ This object contains regions to set up the aggregator and an IAM role to retriev
 ## SYNTAX
 
 ```
-Add-VSConfigConfigurationAggregatorOrganizationAggregationSource [[-AllAwsRegions] <Boolean>]
+Add-VSConfigConfigurationAggregatorOrganizationAggregationSource [[-AllAwsRegions] <Object>]
  [[-AwsRegions] <Object>] [-RoleArn] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Config::ConfigurationAggregator.OrganizationAggregationSource resource property to the template.
 This object contains regions to set up the aggregator and an IAM role to retrieve organization details.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -34,13 +25,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

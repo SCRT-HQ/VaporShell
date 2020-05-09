@@ -14,15 +14,6 @@ Add-VSEKSClusterResourcesVpcConfig [[-SecurityGroupIds] <Object>] [-SubnetIds] <
 Adds an AWS::EKS::Cluster.ResourcesVpcConfig resource property to the template.
 An object representing the VPC configuration to use for an Amazon EKS cluster.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -SecurityGroupIds

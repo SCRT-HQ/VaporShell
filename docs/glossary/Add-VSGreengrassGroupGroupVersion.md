@@ -24,15 +24,6 @@ Other version types are optionally included, depending on your business need.
 
 \<a name="aws-properties-greengrass-group-groupversion-inheritance"\>\</a\> In an AWS CloudFormation template, GroupVersion is the property type of the InitialVersion property in the  AWS::Greengrass::Group : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html resource.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -LoggerDefinitionVersionArn

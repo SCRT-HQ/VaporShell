@@ -17,15 +17,6 @@ Adds an AWS::KinesisAnalytics::ApplicationOutput.KinesisFirehoseOutput resource 
 When configuring application output, identifies an Amazon Kinesis Firehose delivery stream as the destination.
 You provide the stream Amazon Resource Name (ARN and an IAM role that enables Amazon Kinesis Analytics to write to the stream on your behalf.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ResourceARN

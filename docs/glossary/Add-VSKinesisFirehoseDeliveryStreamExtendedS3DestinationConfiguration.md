@@ -18,15 +18,6 @@ Add-VSKinesisFirehoseDeliveryStreamExtendedS3DestinationConfiguration [-BucketAR
 Adds an AWS::KinesisFirehose::DeliveryStream.ExtendedS3DestinationConfiguration resource property to the template.
 The ExtendedS3DestinationConfiguration property type configures an Amazon S3 destination for an Amazon Kinesis Data Firehose delivery stream.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -BucketARN

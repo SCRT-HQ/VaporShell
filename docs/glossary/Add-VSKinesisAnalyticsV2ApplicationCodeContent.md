@@ -15,15 +15,6 @@ Add-VSKinesisAnalyticsV2ApplicationCodeContent [[-ZipFileContent] <Object>] [[-S
 Adds an AWS::KinesisAnalyticsV2::Application.CodeContent resource property to the template.
 Specifies either the application code, or the location of the application code, for a Java-based Amazon Kinesis Data Analytics application.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ZipFileContent

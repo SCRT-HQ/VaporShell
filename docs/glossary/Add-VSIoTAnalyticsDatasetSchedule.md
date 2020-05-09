@@ -14,15 +14,6 @@ Add-VSIoTAnalyticsDatasetSchedule [-ScheduleExpression] <Object> [<CommonParamet
 Adds an AWS::IoTAnalytics::Dataset.Schedule resource property to the template.
 The schedule for when to trigger an update.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ScheduleExpression

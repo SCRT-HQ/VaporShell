@@ -7,7 +7,7 @@ Configuration information for an output.
 ## SYNTAX
 
 ```
-Add-VSMediaLiveChannelOutputDestination [[-Id] <Object>] [[-Settings] <Object>]
+Add-VSMediaLiveChannelOutputDestination [[-MultiplexSettings] <Object>] [[-Id] <Object>] [[-Settings] <Object>]
  [[-MediaPackageSettings] <Object>] [<CommonParameters>]
 ```
 
@@ -17,16 +17,26 @@ Configuration information for an output.
 
 This entity is at the top level in the channel.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
+
+### -MultiplexSettings
+Not currently supported by AWS CloudFormation.
+
+Type: MultiplexProgramChannelDestinationSettings
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestination.html#cfn-medialive-channel-outputdestination-multiplexsettings
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -Id
 The ID for this destination.
@@ -41,7 +51,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 1
+Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -61,7 +71,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 2
+Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -81,7 +91,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 3
+Position: 4
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

@@ -2,27 +2,22 @@
 
 ## SYNOPSIS
 Adds an AWS::S3::Bucket.PublicAccessBlockConfiguration resource property to the template.
-Specifies the Block Public Access configuration for an Amazon S3 bucket.
+The PublicAccessBlock configuration that you want to apply to this Amazon S3 bucket.
+You can enable the configuration options in any combination.
+For more information about when Amazon S3 considers a bucket or object public, see The Meaning of "Public": https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status in the Amazon Simple Storage Service Developer Guide.
 
 ## SYNTAX
 
 ```
-Add-VSS3BucketPublicAccessBlockConfiguration [[-BlockPublicAcls] <Boolean>] [[-BlockPublicPolicy] <Boolean>]
- [[-IgnorePublicAcls] <Boolean>] [[-RestrictPublicBuckets] <Boolean>] [<CommonParameters>]
+Add-VSS3BucketPublicAccessBlockConfiguration [[-BlockPublicAcls] <Object>] [[-BlockPublicPolicy] <Object>]
+ [[-IgnorePublicAcls] <Object>] [[-RestrictPublicBuckets] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::S3::Bucket.PublicAccessBlockConfiguration resource property to the template.
-Specifies the Block Public Access configuration for an Amazon S3 bucket.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+The PublicAccessBlock configuration that you want to apply to this Amazon S3 bucket.
+You can enable the configuration options in any combination.
+For more information about when Amazon S3 considers a bucket or object public, see The Meaning of "Public": https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status in the Amazon Simple Storage Service Developer Guide.
 
 ## PARAMETERS
 
@@ -31,6 +26,7 @@ Specifies whether Amazon S3 should block public access control lists ACLs for th
 Setting this element to TRUE causes the following behavior:
 + PUT Bucket acl and PUT Object acl calls fail if the specified ACL is public.
 + PUT Object calls fail if the request includes a public ACL.
++ PUT Bucket calls fail if the request includes a public ACL.
 Enabling this setting doesn't affect existing policies or ACLs.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-publicaccessblockconfiguration.html#cfn-s3-bucket-publicaccessblockconfiguration-blockpublicacls
@@ -38,13 +34,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -59,13 +55,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -80,13 +76,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -101,13 +97,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 4
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

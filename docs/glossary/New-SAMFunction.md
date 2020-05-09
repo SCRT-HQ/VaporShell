@@ -15,15 +15,6 @@ New-SAMFunction [-LogicalId] <String> -Handler <Object> -Runtime <Object> -CodeU
 ## DESCRIPTION
 Creates a Lambda function, IAM execution role, and event source mappings which trigger the function.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -LogicalId

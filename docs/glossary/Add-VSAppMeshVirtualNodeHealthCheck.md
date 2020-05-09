@@ -2,35 +2,26 @@
 
 ## SYNOPSIS
 Adds an AWS::AppMesh::VirtualNode.HealthCheck resource property to the template.
-An object representing the health check policy for a virtual node's listener.
+An object that represents the health check policy for a virtual node's listener.
 
 ## SYNTAX
 
 ```
-Add-VSAppMeshVirtualNodeHealthCheck [[-Path] <Object>] [-UnhealthyThreshold] <Int32> [[-Port] <Int32>]
- [-HealthyThreshold] <Int32> [-TimeoutMillis] <Int32> [-Protocol] <Object> [-IntervalMillis] <Int32>
+Add-VSAppMeshVirtualNodeHealthCheck [[-Path] <Object>] [-UnhealthyThreshold] <Object> [[-Port] <Object>]
+ [-HealthyThreshold] <Object> [-TimeoutMillis] <Object> [-Protocol] <Object> [-IntervalMillis] <Object>
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::AppMesh::VirtualNode.HealthCheck resource property to the template.
-An object representing the health check policy for a virtual node's listener.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+An object that represents the health check policy for a virtual node's listener.
 
 ## PARAMETERS
 
 ### -Path
 The destination path for the health check request.
-This is required only if the specified protocol is HTTP.
-If the protocol is TCP, this parameter is ignored.
+This value is only used if the specified protocol is HTTP or HTTP/2.
+For any other protocol, this value is ignored.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-healthcheck.html#cfn-appmesh-virtualnode-healthcheck-path
 PrimitiveType: String
@@ -56,13 +47,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -76,13 +67,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -95,13 +86,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 4
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -114,19 +105,20 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 5
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -Protocol
 The protocol for the health check request.
+If you specify grpc, then your service must conform to the GRPC Health Checking Protocol: https://github.com/grpc/grpc/blob/master/doc/health-checking.md.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-healthcheck.html#cfn-appmesh-virtualnode-healthcheck-protocol
 PrimitiveType: String
@@ -152,13 +144,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 7
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

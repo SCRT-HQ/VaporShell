@@ -7,21 +7,12 @@ For an SQL-based Amazon Kinesis Data Analytics application, describes the number
 ## SYNTAX
 
 ```
-Add-VSKinesisAnalyticsV2ApplicationInputParallelism [[-Count] <Int32>] [<CommonParameters>]
+Add-VSKinesisAnalyticsV2ApplicationInputParallelism [[-Count] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::KinesisAnalyticsV2::Application.InputParallelism resource property to the template.
 For an SQL-based Amazon Kinesis Data Analytics application, describes the number of in-application streams to create for a given streaming source.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -33,13 +24,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

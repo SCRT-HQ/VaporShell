@@ -7,26 +7,17 @@ The traffic-shifting: https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffi
 ## SYNTAX
 
 ```
-Add-VSLambdaAliasVersionWeight [-FunctionVersion] <Object> [-FunctionWeight] <Double> [<CommonParameters>]
+Add-VSLambdaAliasVersionWeight [-FunctionVersion] <Object> [-FunctionWeight] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Lambda::Alias.VersionWeight resource property to the template.
 The traffic-shifting: https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html configuration of a Lambda function alias.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -FunctionVersion
-The name of the second alias.
+The qualifier of the second version.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-versionweight.html#cfn-lambda-alias-versionweight-functionversion
 PrimitiveType: String
@@ -45,20 +36,20 @@ Accept wildcard characters: False
 ```
 
 ### -FunctionWeight
-The percentage of traffic that's routed to the second alias.
+The percentage of traffic that the alias routes to the second version.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-versionweight.html#cfn-lambda-alias-versionweight-functionweight
 PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

@@ -16,15 +16,6 @@ Adds an AWS::IoT::Thing.AttributePayload resource property to the template.
 The AttributePayload property specifies up to three attributes for an AWS IoT as key-value pairs.
 AttributePayload is a property of the AWS::IoT::Thing: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thing.html resource.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Attributes

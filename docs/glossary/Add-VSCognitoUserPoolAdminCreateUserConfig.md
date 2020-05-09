@@ -2,29 +2,18 @@
 
 ## SYNOPSIS
 Adds an AWS::Cognito::UserPool.AdminCreateUserConfig resource property to the template.
-AdminCreateUserConfig is a property of the AWS::Cognito::UserPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html resource.
-The AdminCreateUserConfig property configures the AdminCreateUser requests for an Amazon Cognito User Pool.
+The configuration for AdminCreateUser requests.
 
 ## SYNTAX
 
 ```
 Add-VSCognitoUserPoolAdminCreateUserConfig [[-InviteMessageTemplate] <Object>]
- [[-UnusedAccountValidityDays] <Int32>] [[-AllowAdminCreateUserOnly] <Boolean>] [<CommonParameters>]
+ [[-UnusedAccountValidityDays] <Object>] [[-AllowAdminCreateUserOnly] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Cognito::UserPool.AdminCreateUserConfig resource property to the template.
-AdminCreateUserConfig is a property of the AWS::Cognito::UserPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html resource.
-The AdminCreateUserConfig property configures the AdminCreateUser requests for an Amazon Cognito User Pool.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+The configuration for AdminCreateUser requests.
 
 ## PARAMETERS
 
@@ -59,13 +48,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -79,13 +68,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

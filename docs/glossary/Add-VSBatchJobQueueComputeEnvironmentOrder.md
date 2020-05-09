@@ -9,7 +9,8 @@ For example, if two compute environments are associated with a job queue, the co
 ## SYNTAX
 
 ```
-Add-VSBatchJobQueueComputeEnvironmentOrder [-ComputeEnvironment] <Object> [-Order] <Int32> [<CommonParameters>]
+Add-VSBatchJobQueueComputeEnvironmentOrder [-ComputeEnvironment] <Object> [-Order] <Object>
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -17,15 +18,6 @@ Adds an AWS::Batch::JobQueue.ComputeEnvironmentOrder resource property to the te
 The order in which compute environments are tried for job placement within a queue.
 Compute environments are tried in ascending order.
 For example, if two compute environments are associated with a job queue, the compute environment with a lower order integer value is tried for job placement first.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -56,13 +48,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

@@ -14,15 +14,6 @@ Add-VSLambdaFunctionEnvironment [[-Variables] <Hashtable>] [<CommonParameters>]
 Adds an AWS::Lambda::Function.Environment resource property to the template.
 A function's environment variable settings.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Variables

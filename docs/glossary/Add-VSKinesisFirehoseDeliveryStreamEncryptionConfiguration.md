@@ -15,15 +15,6 @@ Add-VSKinesisFirehoseDeliveryStreamEncryptionConfiguration [[-KMSEncryptionConfi
 Adds an AWS::KinesisFirehose::DeliveryStream.EncryptionConfiguration resource property to the template.
 The EncryptionConfiguration property type specifies the encryption settings that Amazon Kinesis Data Firehose (Kinesis Data Firehose uses when delivering data to Amazon Simple Storage Service (Amazon S3.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -KMSEncryptionConfig

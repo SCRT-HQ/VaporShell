@@ -46,11 +46,9 @@ In such cases, you can add a CreationPolicy attribute to the instance, and then 
 ### EXAMPLE 1
 ```
 $templateInit = Initialize-Vaporshell -Description "Testing"
-```
-
 $templateInit.AddResource(
     (
-        New-VaporResource -LogicalId "AutoScalingGroup" -Type "AWS::AutoScaling::AutoScalingGroup" -Properties (\[PSCustomObject\]\[Ordered\]@{
+        New-VaporResource -LogicalId "AutoScalingGroup" -Type "AWS::AutoScaling::AutoScalingGroup" -Properties ([PSCustomObject][Ordered]@{
                 "AvailabilityZones"       = (Add-FnGetAZs -Region "$_AWSRegion")
                 "LaunchConfigurationName" = (Add-FnRef -Ref "LaunchConfig")
                 "DesiredCapacity"         = "3"
@@ -59,6 +57,7 @@ $templateInit.AddResource(
             }) -CreationPolicy (Add-CreationPolicy -Count 3 -Timeout "PT15M") -UpdatePolicy (Add-UpdatePolicy -IgnoreUnmodifiedGroupSizeProperties True -MinInstancesInService 1 -MaxBatchSize 2 -WaitOnResourceSignals True -PauseTime "PT10M")
     )
 )
+```
 
 When the template is exported, this will convert to: 
 \`\`\`json

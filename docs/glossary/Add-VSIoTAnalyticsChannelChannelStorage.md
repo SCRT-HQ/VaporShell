@@ -15,15 +15,6 @@ Add-VSIoTAnalyticsChannelChannelStorage [[-CustomerManagedS3] <Object>] [[-Servi
 Adds an AWS::IoTAnalytics::Channel.ChannelStorage resource property to the template.
 Where channel data is stored.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -CustomerManagedS3

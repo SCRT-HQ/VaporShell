@@ -7,21 +7,12 @@ Specifies whether node-to-node encryption is enabled.
 ## SYNTAX
 
 ```
-Add-VSElasticsearchDomainNodeToNodeEncryptionOptions [[-Enabled] <Boolean>] [<CommonParameters>]
+Add-VSElasticsearchDomainNodeToNodeEncryptionOptions [[-Enabled] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Elasticsearch::Domain.NodeToNodeEncryptionOptions resource property to the template.
 Specifies whether node-to-node encryption is enabled.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -33,13 +24,13 @@ PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

@@ -14,15 +14,6 @@ Add-VSAmazonMQConfigurationTagsEntry [-Value] <Object> [-Key] <Object> [<CommonP
 Adds an AWS::AmazonMQ::Configuration.TagsEntry resource property to the template.
 A key-value pair to associate with the configuration.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Value

@@ -16,17 +16,7 @@ Subscription is an embedded property that describes the subscription endpoints o
 
 **Note**
 
-For full control over subscription behavior such as delivery policy, filtering, raw message delivery, cross-region subscriptions, etc.
-use  AWS::SNS::Subscription: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html  resource instead of this embedded property .
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+For full control over subscription behavior (for example, delivery policy, filtering, raw message delivery, and cross-region subscriptions, use the AWS::SNS::Subscription: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html resource.
 
 ## PARAMETERS
 

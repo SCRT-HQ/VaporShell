@@ -15,15 +15,6 @@ Add-VSGlueClassifierXMLClassifier [-RowTag] <Object> [-Classification] <Object> 
 Adds an AWS::Glue::Classifier.XMLClassifier resource property to the template.
 A classifier for XML content.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -RowTag

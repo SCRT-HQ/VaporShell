@@ -19,15 +19,6 @@ Get-VSStackSet [-List] [-StackSetName <String>] [-MaxResults <Int32>] [-Status <
 ## DESCRIPTION
 Gets information about a Stack Set
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Description

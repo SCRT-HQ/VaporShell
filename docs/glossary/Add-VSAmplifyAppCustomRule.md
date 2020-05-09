@@ -17,15 +17,6 @@ Adds an AWS::Amplify::App.CustomRule resource property to the template.
 The CustomRule property type allows you to specify redirects, rewrites, and reverse proxies.
 Redirects enable a web app to reroute navigation from one URL to another.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Condition

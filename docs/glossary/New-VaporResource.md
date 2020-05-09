@@ -7,8 +7,8 @@ Adds a Resource object to the template
 
 ```
 New-VaporResource [-LogicalId] <String> [-Type] <String> [[-Properties] <Object>] [[-CreationPolicy] <Object>]
- [[-DeletionPolicy] <String>] [[-DependsOn] <String[]>] [[-Metadata] <Object>] [[-UpdatePolicy] <Object>]
- [[-Condition] <Object>] [<CommonParameters>]
+ [[-DeletionPolicy] <String>] [-UpdateReplacePolicy <String>] [[-DependsOn] <String[]>] [[-Metadata] <Object>]
+ [[-UpdatePolicy] <Object>] [[-Condition] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -20,17 +20,16 @@ You must declare each resource separately; however, if you have multiple resourc
 ### EXAMPLE 1
 ```
 $template = Initialize-Vaporshell -Description "Testing Resource addition"
-```
-
 $template.AddResource((
-    New-VaporResource -LogicalId "MyInstance" -Type "AWS::EC2::Instance" -Properties \[PSCustomObject\]@{
+    New-VaporResource -LogicalId "MyInstance" -Type "AWS::EC2::Instance" -Properties [PSCustomObject]@{
         "UserProperties" = (Add-FnBase64 -ValueToEncode (Add-FnJoin -ListOfValues "Queue=",(Add-FnRef -Ref "MyQueue")))
         "AvailabilityZone" = "us-east-1a"
         "ImageId" = "ami-20b65349"
     }
 ))
+```
 
-When the template is exported, this will convert to: 
+When the template is exported, this will convert to:
 \`\`\`json
 {
 "AWSTemplateFormatVersion": "2010-09-09",
@@ -45,7 +44,7 @@ When the template is exported, this will convert to:
                     "",
                     \[
                         "Queue=",
-                        {    
+                        {
                         "Ref": "MyQueue"
                         }
                     \]
@@ -54,8 +53,8 @@ When the template is exported, this will convert to:
         },
         "AvailabilityZone": "us-east-1a",
         "ImageId": "ami-20b65349"
-    }  
-}    
+    }
+}
 }
 }
 \`\`\`
@@ -158,6 +157,21 @@ Aliases:
 
 Required: False
 Position: 5
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdateReplacePolicy
+{{ Fill UpdateReplacePolicy Description }}
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

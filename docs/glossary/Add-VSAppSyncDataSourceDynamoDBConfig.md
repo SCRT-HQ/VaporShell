@@ -7,8 +7,8 @@ The DynamoDBConfig property type specifies the AwsRegion and TableName for an Am
 ## SYNTAX
 
 ```
-Add-VSAppSyncDataSourceDynamoDBConfig [-TableName] <Object> [-AwsRegion] <Object>
- [[-UseCallerCredentials] <Boolean>] [<CommonParameters>]
+Add-VSAppSyncDataSourceDynamoDBConfig [-TableName] <Object> [-AwsRegion] <Object> [[-Versioned] <Object>]
+ [[-DeltaSyncConfig] <Object>] [[-UseCallerCredentials] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -16,15 +16,6 @@ Adds an AWS::AppSync::DataSource.DynamoDBConfig resource property to the templat
 The DynamoDBConfig property type specifies the AwsRegion and TableName for an Amazon DynamoDB table in your account for an AWS AppSync data source.
 
 DynamoDBConfig is a property of the AWS::AppSync::DataSource: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html property type.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -66,6 +57,44 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -Versioned
+Set to TRUE to use Conflict Detection and Resolution with this data source.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-dynamodbconfig.html#cfn-appsync-datasource-dynamodbconfig-versioned
+PrimitiveType: Boolean
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DeltaSyncConfig
+The DeltaSyncConfig for a versioned datasource.
+
+Type: DeltaSyncConfig
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-dynamodbconfig.html#cfn-appsync-datasource-dynamodbconfig-deltasyncconfig
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -UseCallerCredentials
 Set to TRUE to use AWS IAM with this data source.
 
@@ -74,13 +103,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 3
-Default value: False
+Position: 5
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

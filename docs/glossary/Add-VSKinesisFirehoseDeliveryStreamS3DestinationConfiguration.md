@@ -16,15 +16,6 @@ Add-VSKinesisFirehoseDeliveryStreamS3DestinationConfiguration [-BucketARN] <Obje
 Adds an AWS::KinesisFirehose::DeliveryStream.S3DestinationConfiguration resource property to the template.
 The S3DestinationConfiguration property type specifies an Amazon Simple Storage Service (Amazon S3 destination to which Amazon Kinesis Data Firehose (Kinesis Data Firehose delivers data.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -BucketARN

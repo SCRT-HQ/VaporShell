@@ -14,15 +14,6 @@ Add-VSAppStreamFleetVpcConfig [[-SubnetIds] <Object>] [[-SecurityGroupIds] <Obje
 Adds an AWS::AppStream::Fleet.VpcConfig resource property to the template.
 The VPC configuration information for the fleet.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -SubnetIds

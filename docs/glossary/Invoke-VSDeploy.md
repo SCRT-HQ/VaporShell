@@ -24,15 +24,6 @@ Invokes a change set in CloudFormation.
 If the stack name already exists, it updates that stack.
 If it does not, it creates a new stack.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -TemplateBody

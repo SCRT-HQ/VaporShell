@@ -17,15 +17,6 @@ SourceAuth is a property of the AWS CodeBuild Project Source : https://docs.aws.
 SourceAuth is for use by the CodeBuild console only.
 Do not get or set it directly.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Type

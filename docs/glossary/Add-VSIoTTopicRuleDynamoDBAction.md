@@ -33,15 +33,6 @@ The following field uses the timestamp:
 
 For more information, see DynamoDBv2 Action: https://docs.aws.amazon.com/iot/latest/developerguide/iot-rule-actions.html in the *AWS IoT Developer Guide*.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -HashKeyField

@@ -21,15 +21,6 @@ For more information, see Amazon ECS-optimized Linux AMI: https://docs.aws.amazo
 
 For tasks using the Fargate launch type, the task or service requires platform version 1.3.0 or later.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ContainerName

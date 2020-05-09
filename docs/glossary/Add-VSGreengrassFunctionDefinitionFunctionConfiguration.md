@@ -9,8 +9,8 @@ For more information, see Controlling Execution of Greengrass Lambda Functions b
 ## SYNTAX
 
 ```
-Add-VSGreengrassFunctionDefinitionFunctionConfiguration [[-MemorySize] <Int32>] [[-Pinned] <Boolean>]
- [[-ExecArgs] <Object>] [[-Timeout] <Int32>] [[-EncodingType] <Object>] [[-Environment] <Object>]
+Add-VSGreengrassFunctionDefinitionFunctionConfiguration [[-MemorySize] <Object>] [[-Pinned] <Object>]
+ [[-ExecArgs] <Object>] [[-Timeout] <Object>] [[-EncodingType] <Object>] [[-Environment] <Object>]
  [[-Executable] <Object>] [<CommonParameters>]
 ```
 
@@ -21,15 +21,6 @@ These settings configure the function's behavior in the Greengrass group.
 For more information, see Controlling Execution of Greengrass Lambda Functions by Using Group-Specific Configuration: https://docs.aws.amazon.com/greengrass/latest/developerguide/lambda-group-config.html in the *AWS IoT Greengrass Developer Guide*.
 
 \<a name="aws-properties-greengrass-functiondefinition-functionconfiguration-inheritance"\>\</a\> In an AWS CloudFormation template, FunctionConfiguration is a property of the  Function : https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-function.html property type.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -42,13 +33,13 @@ PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -63,13 +54,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -102,13 +93,13 @@ PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 4
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

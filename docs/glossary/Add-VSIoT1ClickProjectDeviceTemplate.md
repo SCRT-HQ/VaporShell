@@ -17,15 +17,6 @@ In AWS CloudFormation, use the DeviceTemplate property type to define the templa
 
 DeviceTemplate is a property of the AWS::IoT1Click::Project resource.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -DeviceType

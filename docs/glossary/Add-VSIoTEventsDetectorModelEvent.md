@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 Adds an AWS::IoTEvents::DetectorModel.Event resource property to the template.
-Specifies the "actions" to be performed when the "condition" evaluates to TRUE.
+Specifies the actions to be performed when the condition evaluates to TRUE.
 
 ## SYNTAX
 
@@ -13,22 +13,15 @@ Add-VSIoTEventsDetectorModelEvent [[-Condition] <Object>] [[-Actions] <Object>] 
 
 ## DESCRIPTION
 Adds an AWS::IoTEvents::DetectorModel.Event resource property to the template.
-Specifies the "actions" to be performed when the "condition" evaluates to TRUE.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+Specifies the actions to be performed when the condition evaluates to TRUE.
 
 ## PARAMETERS
 
 ### -Condition
-Optional\] The Boolean expression that when TRUE causes the "actions" to be performed.
-If not present, the actions are performed =TRUE; if the expression result is not a Boolean value, the actions are NOT performed =FALSE.
+Optional.
+The Boolean expression that, when TRUE, causes the actions to be performed.
+If not present, the actions are performed =TRUE.
+If the expression result is not a Boolean value, the actions are not performed =FALSE.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-event.html#cfn-iotevents-detectormodel-event-condition
 PrimitiveType: String

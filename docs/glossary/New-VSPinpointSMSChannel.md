@@ -2,35 +2,26 @@
 
 ## SYNOPSIS
 Adds an AWS::Pinpoint::SMSChannel resource to the template.
-A channel is a type of platform that you can deliver messages to.
+A *channel* is a type of platform that you can deliver messages to.
 To send an SMS text message, you send the message through the SMS channel.
-Before you use Amazon Pinpoint to send text messages, you have enable the SMS channel for an Amazon Pinpoint application.
+Before you can use Amazon Pinpoint to send text messages, you have to enable the SMS channel for an Amazon Pinpoint application.
 
 ## SYNTAX
 
 ```
-New-VSPinpointSMSChannel [-LogicalId] <String> [-ShortCode <Object>] [-Enabled <Boolean>]
- -ApplicationId <Object> [-SenderId <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>]
- [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+New-VSPinpointSMSChannel [-LogicalId] <String> [-ShortCode <Object>] [-Enabled <Object>]
+ -ApplicationId <Object> [-SenderId <Object>] [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>]
+ [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Pinpoint::SMSChannel resource to the template.
-A channel is a type of platform that you can deliver messages to.
+A *channel* is a type of platform that you can deliver messages to.
 To send an SMS text message, you send the message through the SMS channel.
-Before you use Amazon Pinpoint to send text messages, you have enable the SMS channel for an Amazon Pinpoint application.
+Before you can use Amazon Pinpoint to send text messages, you have to enable the SMS channel for an Amazon Pinpoint application.
 
-The SMS Channel resource represents the status, sender ID, and other settings for the SMS channel for a specific application.
-You can use this resource to retrieve information about, update, or disable (delete the SMS channel for an application.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+The AWS::Pinpoint::SMSChannel resource defines the status, sender ID, and other settings of the SMS channel for an application.
 
 ## PARAMETERS
 
@@ -53,7 +44,7 @@ Accept wildcard characters: False
 
 ### -ShortCode
 The registered short code that you want to use when you send messages through the SMS channel.
-For information about obtaining a dedicated short code for sending SMS messages, see Requesting Dedicated Short Codes for SMS Messaging with Amazon Pinpoint: https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-awssupport-short-code.html in the *Amazon Pinpoint User Guide*.
+For information about obtaining a dedicated short code for sending SMS messages, see Requesting Dedicated Short Codes for SMS Messaging: https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-awssupport-short-code.html in the *Amazon Pinpoint User Guide*.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-smschannel.html#cfn-pinpoint-smschannel-shortcode
 PrimitiveType: String
@@ -72,26 +63,26 @@ Accept wildcard characters: False
 ```
 
 ### -Enabled
-Specifies whether to enable the SMS channel for the app.
+Specifies whether to enable the SMS channel for the application.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-smschannel.html#cfn-pinpoint-smschannel-enabled
 PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -ApplicationId
-The unique identifier for the Amazon Pinpoint app that the SMS channel applies to.
+The unique identifier for the application that the SMS channel applies to.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-smschannel.html#cfn-pinpoint-smschannel-applicationid
 PrimitiveType: String
@@ -138,6 +129,49 @@ If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the re
 To keep a resource when its stack is deleted, specify Retain for that resource.
 You can use retain for any resource.
 For example, you can retain a nested stack, S3 bucket, or EC2 instance so that you can continue to use or modify those resources after you delete their stacks.
+
+You must use one of the following options: "Delete","Retain","Snapshot"
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdateReplacePolicy
+Use the UpdateReplacePolicy attribute to retain or (in some cases) backup the existing physical instance of a resource when it is replaced during a stack update operation.
+
+When you initiate a stack update, AWS CloudFormation updates resources based on differences between what you submit and the stack's current template and parameters.
+If you update a resource property that requires that the resource be replaced, AWS CloudFormation recreates the resource during the update.
+Recreating the resource generates a new physical ID.
+AWS CloudFormation creates the replacement resource first, and then changes references from other dependent resources to point to the replacement resource.
+By default, AWS CloudFormation then deletes the old resource.
+Using the UpdateReplacePolicy, you can specify that AWS CloudFormation retain or (in some cases) create a snapshot of the old resource.
+
+For resources that support snapshots, such as AWS::EC2::Volume, specify Snapshot to have AWS CloudFormation create a snapshot before deleting the old resource instance.
+
+You can apply the UpdateReplacePolicy attribute to any resource.
+UpdateReplacePolicy is only executed if you update a resource property whose update behavior is specified as Replacement, thereby causing AWS CloudFormation to replace the old resource with a new one with a new physical ID.
+For example, if you update the Engine property of an AWS::RDS::DBInstance resource type, AWS CloudFormation creates a new resource and replaces the current DB instance resource with the new one.
+The UpdateReplacePolicy attribute would then dictate whether AWS CloudFormation deleted, retained, or created a snapshot of the old DB instance.
+The update behavior for each property of a resource is specified in the reference topic for that resource in the AWS Resource and Property Types Reference.
+For more information on resource update behavior, see Update Behaviors of Stack Resources.
+
+The UpdateReplacePolicy attribute applies to stack updates you perform directly, as well as stack updates performed using change sets.
+
+Note
+Resources that are retained continue to exist and continue to incur applicable charges until you delete those resources.
+Snapshots that are created with this policy continue to exist and continue to incur applicable charges until you delete those snapshots.
+UpdateReplacePolicy retains the old physical resource or snapshot, but removes it from AWS CloudFormation's scope.
+
+UpdateReplacePolicy differs from the DeletionPolicy attribute in that it only applies to resources replaced during stack updates.
+Use DeletionPolicy for resources deleted when a stack is deleted, or when the resource definition itself is deleted from the template as part of a stack update.
 
 You must use one of the following options: "Delete","Retain","Snapshot"
 

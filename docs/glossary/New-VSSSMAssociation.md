@@ -8,23 +8,17 @@ The AWS::SSM::Association resource associates an SSM document in AWS Systems Man
 
 ```
 New-VSSSMAssociation [-LogicalId] <String> [-AssociationName <Object>] [-DocumentVersion <Object>]
- [-InstanceId <Object>] -Name <Object> [-OutputLocation <Object>] [-Parameters <Object>]
- [-ScheduleExpression <Object>] [-Targets <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>]
- [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+ [-InstanceId <Object>] -Name <Object> [-Parameters <Object>] [-ScheduleExpression <Object>]
+ [-Targets <Object>] [-OutputLocation <Object>] [-AutomationTargetParameterName <Object>] [-MaxErrors <Object>]
+ [-MaxConcurrency <Object>] [-ComplianceSeverity <Object>] [-SyncCompliance <Object>]
+ [-WaitForSuccessTimeoutSeconds <Object>] [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>]
+ [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::SSM::Association resource to the template.
 The AWS::SSM::Association resource associates an SSM document in AWS Systems Manager with managed instances that contain a configuration agent to process the document.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -49,8 +43,8 @@ Accept wildcard characters: False
 The name of the association.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-associationname
-PrimitiveType: String
 UpdateType: Mutable
+PrimitiveType: String
 
 ```yaml
 Type: Object
@@ -68,8 +62,8 @@ Accept wildcard characters: False
 The version of the SSM document to associate with the target.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-documentversion
-PrimitiveType: String
 UpdateType: Mutable
+PrimitiveType: String
 
 ```yaml
 Type: Object
@@ -86,10 +80,14 @@ Accept wildcard characters: False
 ### -InstanceId
 The ID of the instance that the SSM document is associated with.
 You must specify the InstanceId or Targets property.
+InstanceId has been deprecated.
+To specify an instance ID for an association, use the Targets parameter.
+If you use the parameter InstanceId, you cannot use the parameters AssociationName, DocumentVersion, MaxErrors, MaxConcurrency, OutputLocation, or ScheduleExpression.
+To use these parameters, you must use the Targets parameter.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-instanceid
+UpdateType: Mutable
 PrimitiveType: String
-UpdateType: Immutable
 
 ```yaml
 Type: Object
@@ -107,8 +105,8 @@ Accept wildcard characters: False
 The name of the Systems Manager document.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-name
+UpdateType: Mutable
 PrimitiveType: String
-UpdateType: Immutable
 
 ```yaml
 Type: Object
@@ -122,33 +120,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -OutputLocation
-An Amazon S3 bucket where you want to store the output details of the request.
-
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-outputlocation
-Type: InstanceAssociationOutputLocation
-UpdateType: Mutable
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Parameters
 The parameters for the runtime configuration of the document.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-parameters
-DuplicatesAllowed: False
-ItemType: ParameterValues
-Type: Map
 UpdateType: Mutable
+Type: Map
+ItemType: ParameterValues
 
 ```yaml
 Type: Object
@@ -166,8 +144,8 @@ Accept wildcard characters: False
 A cron expression that specifies a schedule when the association runs.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-scheduleexpression
-PrimitiveType: String
 UpdateType: Mutable
+PrimitiveType: String
 
 ```yaml
 Type: Object
@@ -182,14 +160,146 @@ Accept wildcard characters: False
 ```
 
 ### -Targets
-The targets that the SSM document sends commands to.
+The targets for the association.
 You must specify the InstanceId or Targets property.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-targets
-DuplicatesAllowed: False
-ItemType: Target
+UpdateType: Mutable
 Type: List
-UpdateType: Immutable
+ItemType: Target
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -OutputLocation
+An S3 bucket where you want to store the output details of the request.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-outputlocation
+UpdateType: Mutable
+Type: InstanceAssociationOutputLocation
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AutomationTargetParameterName
++  Reference: Cron and Rate Expressions for Systems Manager: https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-automationtargetparametername
+UpdateType: Mutable
+PrimitiveType: String
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MaxErrors
++  Reference: Cron and Rate Expressions for Systems Manager: https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-maxerrors
+UpdateType: Mutable
+PrimitiveType: String
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MaxConcurrency
++  Reference: Cron and Rate Expressions for Systems Manager: https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-maxconcurrency
+UpdateType: Mutable
+PrimitiveType: String
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ComplianceSeverity
++  Reference: Cron and Rate Expressions for Systems Manager: https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-complianceseverity
+UpdateType: Mutable
+PrimitiveType: String
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SyncCompliance
++  Reference: Cron and Rate Expressions for Systems Manager: https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-synccompliance
+UpdateType: Mutable
+PrimitiveType: String
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WaitForSuccessTimeoutSeconds
++  Reference: Cron and Rate Expressions for Systems Manager: https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-waitforsuccesstimeoutseconds
+UpdateType: Mutable
+PrimitiveType: Integer
 
 ```yaml
 Type: Object
@@ -211,6 +321,49 @@ If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the re
 To keep a resource when its stack is deleted, specify Retain for that resource.
 You can use retain for any resource.
 For example, you can retain a nested stack, S3 bucket, or EC2 instance so that you can continue to use or modify those resources after you delete their stacks.
+
+You must use one of the following options: "Delete","Retain","Snapshot"
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdateReplacePolicy
+Use the UpdateReplacePolicy attribute to retain or (in some cases) backup the existing physical instance of a resource when it is replaced during a stack update operation.
+
+When you initiate a stack update, AWS CloudFormation updates resources based on differences between what you submit and the stack's current template and parameters.
+If you update a resource property that requires that the resource be replaced, AWS CloudFormation recreates the resource during the update.
+Recreating the resource generates a new physical ID.
+AWS CloudFormation creates the replacement resource first, and then changes references from other dependent resources to point to the replacement resource.
+By default, AWS CloudFormation then deletes the old resource.
+Using the UpdateReplacePolicy, you can specify that AWS CloudFormation retain or (in some cases) create a snapshot of the old resource.
+
+For resources that support snapshots, such as AWS::EC2::Volume, specify Snapshot to have AWS CloudFormation create a snapshot before deleting the old resource instance.
+
+You can apply the UpdateReplacePolicy attribute to any resource.
+UpdateReplacePolicy is only executed if you update a resource property whose update behavior is specified as Replacement, thereby causing AWS CloudFormation to replace the old resource with a new one with a new physical ID.
+For example, if you update the Engine property of an AWS::RDS::DBInstance resource type, AWS CloudFormation creates a new resource and replaces the current DB instance resource with the new one.
+The UpdateReplacePolicy attribute would then dictate whether AWS CloudFormation deleted, retained, or created a snapshot of the old DB instance.
+The update behavior for each property of a resource is specified in the reference topic for that resource in the AWS Resource and Property Types Reference.
+For more information on resource update behavior, see Update Behaviors of Stack Resources.
+
+The UpdateReplacePolicy attribute applies to stack updates you perform directly, as well as stack updates performed using change sets.
+
+Note
+Resources that are retained continue to exist and continue to incur applicable charges until you delete those resources.
+Snapshots that are created with this policy continue to exist and continue to incur applicable charges until you delete those snapshots.
+UpdateReplacePolicy retains the old physical resource or snapshot, but removes it from AWS CloudFormation's scope.
+
+UpdateReplacePolicy differs from the DeletionPolicy attribute in that it only applies to resources replaced during stack updates.
+Use DeletionPolicy for resources deleted when a stack is deleted, or when the resource definition itself is deleted from the template as part of a stack update.
 
 You must use one of the following options: "Delete","Retain","Snapshot"
 

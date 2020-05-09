@@ -11,10 +11,11 @@ New-VSS3Bucket [-LogicalId] <String> [-AccelerateConfiguration <Object>] [-Acces
  [-AnalyticsConfigurations <Object>] [-BucketEncryption <Object>] [-BucketName <Object>]
  [-CorsConfiguration <Object>] [-InventoryConfigurations <Object>] [-LifecycleConfiguration <Object>]
  [-LoggingConfiguration <Object>] [-MetricsConfigurations <Object>] [-NotificationConfiguration <Object>]
- [-ObjectLockConfiguration <Object>] [-ObjectLockEnabled <Boolean>] [-PublicAccessBlockConfiguration <Object>]
+ [-ObjectLockConfiguration <Object>] [-ObjectLockEnabled <Object>] [-PublicAccessBlockConfiguration <Object>]
  [-ReplicationConfiguration <Object>] [-Tags <Object>] [-VersioningConfiguration <Object>]
- [-WebsiteConfiguration <Object>] [-DeletionPolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
- [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+ [-WebsiteConfiguration <Object>] [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>]
+ [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -29,15 +30,6 @@ For more information, see DeletionPolicy Attribute: https://docs.aws.amazon.com/
 
 You can only delete empty buckets.
 Deletion fails for buckets that have contents.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -81,6 +73,8 @@ Accept wildcard characters: False
 ### -AccessControl
 A canned access control list ACL that grants predefined permissions to the bucket.
 For more information about canned ACLs, see Canned ACL: https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl in the *Amazon Simple Storage Service Developer Guide*.
+Be aware that the syntax for this property differs from the information provided in the *Amazon Simple Storage Service Developer Guide*.
+The AccessControl property is case-sensitive and must be one of the following values: Private, PublicRead, PublicReadWrite, AuthenticatedRead, LogDeliveryWrite, BucketOwnerRead, BucketOwnerFullControl, or AwsExecRead.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-accesscontrol
 PrimitiveType: String
@@ -100,7 +94,6 @@ Accept wildcard characters: False
 
 ### -AnalyticsConfigurations
 Specifies the configuration and any analyses for the analytics filter of an Amazon S3 bucket.
-For more information, see GET Bucket analytics: https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETAnalyticsConfig.html in the *Amazon Simple Storage Service API Reference*.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-analyticsconfigurations
 DuplicatesAllowed: False
@@ -290,8 +283,12 @@ Accept wildcard characters: False
 ```
 
 ### -ObjectLockConfiguration
-Places an object lock configuration on the specified bucket.
-The rule specified in the object lock configuration will be applied by default to every new object placed in the specified bucket.
+Places an Object Lock configuration on the specified bucket.
+The rule specified in the Object Lock configuration will be applied by default to every new object placed in the specified bucket.
+DefaultRetention requires either Days or Years.
+You can't specify both at the same time.
+**Related Resources**
++  Locking Objects: https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-objectlockconfiguration
 Type: ObjectLockConfiguration
@@ -310,20 +307,20 @@ Accept wildcard characters: False
 ```
 
 ### -ObjectLockEnabled
-Indicates whether this bucket has an object lock configuration enabled.
+Indicates whether this bucket has an Object Lock configuration enabled.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-objectlockenabled
 PrimitiveType: Boolean
 UpdateType: Immutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -371,8 +368,6 @@ Accept wildcard characters: False
 
 ### -Tags
 An arbitrary set of tags key-value pairs for this S3 bucket.
-We recommend limiting the number of tags to seven.
-Applying more than seven tags prevents the AWS CLI and the AWS CloudFormation console and API actions from listing the tags for the bucket.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-tags
 DuplicatesAllowed: True
@@ -440,6 +435,49 @@ If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the re
 To keep a resource when its stack is deleted, specify Retain for that resource.
 You can use retain for any resource.
 For example, you can retain a nested stack, S3 bucket, or EC2 instance so that you can continue to use or modify those resources after you delete their stacks.
+
+You must use one of the following options: "Delete","Retain","Snapshot"
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UpdateReplacePolicy
+Use the UpdateReplacePolicy attribute to retain or (in some cases) backup the existing physical instance of a resource when it is replaced during a stack update operation.
+
+When you initiate a stack update, AWS CloudFormation updates resources based on differences between what you submit and the stack's current template and parameters.
+If you update a resource property that requires that the resource be replaced, AWS CloudFormation recreates the resource during the update.
+Recreating the resource generates a new physical ID.
+AWS CloudFormation creates the replacement resource first, and then changes references from other dependent resources to point to the replacement resource.
+By default, AWS CloudFormation then deletes the old resource.
+Using the UpdateReplacePolicy, you can specify that AWS CloudFormation retain or (in some cases) create a snapshot of the old resource.
+
+For resources that support snapshots, such as AWS::EC2::Volume, specify Snapshot to have AWS CloudFormation create a snapshot before deleting the old resource instance.
+
+You can apply the UpdateReplacePolicy attribute to any resource.
+UpdateReplacePolicy is only executed if you update a resource property whose update behavior is specified as Replacement, thereby causing AWS CloudFormation to replace the old resource with a new one with a new physical ID.
+For example, if you update the Engine property of an AWS::RDS::DBInstance resource type, AWS CloudFormation creates a new resource and replaces the current DB instance resource with the new one.
+The UpdateReplacePolicy attribute would then dictate whether AWS CloudFormation deleted, retained, or created a snapshot of the old DB instance.
+The update behavior for each property of a resource is specified in the reference topic for that resource in the AWS Resource and Property Types Reference.
+For more information on resource update behavior, see Update Behaviors of Stack Resources.
+
+The UpdateReplacePolicy attribute applies to stack updates you perform directly, as well as stack updates performed using change sets.
+
+Note
+Resources that are retained continue to exist and continue to incur applicable charges until you delete those resources.
+Snapshots that are created with this policy continue to exist and continue to incur applicable charges until you delete those snapshots.
+UpdateReplacePolicy retains the old physical resource or snapshot, but removes it from AWS CloudFormation's scope.
+
+UpdateReplacePolicy differs from the DeletionPolicy attribute in that it only applies to resources replaced during stack updates.
+Use DeletionPolicy for resources deleted when a stack is deleted, or when the resource definition itself is deleted from the template as part of a stack update.
 
 You must use one of the following options: "Delete","Retain","Snapshot"
 

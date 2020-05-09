@@ -21,15 +21,6 @@ The scope can include one or more resource types, a combination of a tag key and
 Specify a scope to constrain which resources trigger an evaluation for a rule.
 Otherwise, evaluations for the rule are triggered when any resource in your recording group changes in configuration.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -ComplianceResourceId

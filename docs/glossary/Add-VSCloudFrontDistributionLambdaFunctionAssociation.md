@@ -7,24 +7,35 @@ A complex type that contains a Lambda function association.
 ## SYNTAX
 
 ```
-Add-VSCloudFrontDistributionLambdaFunctionAssociation [[-EventType] <Object>] [[-LambdaFunctionARN] <Object>]
- [<CommonParameters>]
+Add-VSCloudFrontDistributionLambdaFunctionAssociation [[-IncludeBody] <Object>] [[-EventType] <Object>]
+ [[-LambdaFunctionARN] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::CloudFront::Distribution.LambdaFunctionAssociation resource property to the template.
 A complex type that contains a Lambda function association.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
+
+### -IncludeBody
+A flag that allows a Lambda function to have read access to the body content.
+For more information, see Accessing the Request Body by Choosing the Include Body Option: https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html in the Amazon CloudFront Developer Guide.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-lambdafunctionassociation.html#cfn-cloudfront-distribution-lambdafunctionassociation-includebody
+PrimitiveType: Boolean
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -EventType
 Specifies the event type that triggers a Lambda function invocation.
@@ -48,7 +59,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 1
+Position: 2
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -68,7 +79,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: 2
+Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

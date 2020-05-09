@@ -7,21 +7,12 @@ A complex type that contains information about the Route 53 DNS records that you
 ## SYNTAX
 
 ```
-Add-VSServiceDiscoveryServiceDnsRecord [-Type] <Object> [-TTL] <Double> [<CommonParameters>]
+Add-VSServiceDiscoveryServiceDnsRecord [-Type] <Object> [-TTL] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::ServiceDiscovery::Service.DnsRecord resource property to the template.
 A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to create when you register an instance.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -92,13 +83,13 @@ PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

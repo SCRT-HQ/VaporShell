@@ -26,15 +26,6 @@ For more information, see Configuring Applications: https://docs.aws.amazon.com/
 
 Applies only to Amazon EMR releases 4.0 and later.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Classification

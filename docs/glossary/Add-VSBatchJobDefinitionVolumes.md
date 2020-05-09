@@ -14,15 +14,6 @@ Add-VSBatchJobDefinitionVolumes [[-Host] <Object>] [[-Name] <Object>] [<CommonPa
 Adds an AWS::Batch::JobDefinition.Volumes resource property to the template.
 A list of volumes associated with the job.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -Host

@@ -2,7 +2,7 @@
 
 ## SYNOPSIS
 Adds an AWS::AppMesh::VirtualNode.Logging resource property to the template.
-An object representing the logging information for a virtual node.
+An object that represents the logging information for a virtual node.
 
 ## SYNTAX
 
@@ -12,16 +12,7 @@ Add-VSAppMeshVirtualNodeLogging [[-AccessLog] <Object>] [<CommonParameters>]
 
 ## DESCRIPTION
 Adds an AWS::AppMesh::VirtualNode.Logging resource property to the template.
-An object representing the logging information for a virtual node.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+An object that represents the logging information for a virtual node.
 
 ## PARAMETERS
 

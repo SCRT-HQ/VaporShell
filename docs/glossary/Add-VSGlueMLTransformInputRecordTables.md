@@ -14,15 +14,6 @@ Add-VSGlueMLTransformInputRecordTables [[-GlueTables] <Object>] [<CommonParamete
 Adds an AWS::Glue::MLTransform.InputRecordTables resource property to the template.
 A list of AWS Glue table definitions used by the transform.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -GlueTables

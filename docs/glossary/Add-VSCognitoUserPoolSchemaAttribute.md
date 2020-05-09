@@ -2,46 +2,40 @@
 
 ## SYNOPSIS
 Adds an AWS::Cognito::UserPool.SchemaAttribute resource property to the template.
-SchemaAttribute is a property of the AWS::Cognito::UserPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html resource that defines the schema attributes of an Amazon Cognito User Pool.
+Contains information about the schema attribute.
 
 ## SYNTAX
 
 ```
-Add-VSCognitoUserPoolSchemaAttribute [[-DeveloperOnlyAttribute] <Boolean>] [[-Mutable] <Boolean>]
- [[-AttributeDataType] <Object>] [[-StringAttributeConstraints] <Object>] [[-Required] <Boolean>]
+Add-VSCognitoUserPoolSchemaAttribute [[-DeveloperOnlyAttribute] <Object>] [[-Mutable] <Object>]
+ [[-AttributeDataType] <Object>] [[-StringAttributeConstraints] <Object>] [[-Required] <Object>]
  [[-NumberAttributeConstraints] <Object>] [[-Name] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::Cognito::UserPool.SchemaAttribute resource property to the template.
-SchemaAttribute is a property of the AWS::Cognito::UserPool: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html resource that defines the schema attributes of an Amazon Cognito User Pool.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+Contains information about the schema attribute.
 
 ## PARAMETERS
 
 ### -DeveloperOnlyAttribute
+We recommend that you use WriteAttributes: https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UserPoolClientType.html#CognitoUserPools-Type-UserPoolClientType-WriteAttributes in the user pool client to control how attributes can be mutated for new use cases instead of using DeveloperOnlyAttribute.
 Specifies whether the attribute type is developer only.
+This attribute can only be modified by an administrator.
+Users will not be able to modify this attribute using their access token.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html#cfn-cognito-userpool-schemaattribute-developeronlyattribute
 PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -58,13 +52,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -116,13 +110,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 5
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

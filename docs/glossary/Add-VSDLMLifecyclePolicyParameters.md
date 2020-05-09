@@ -2,40 +2,38 @@
 
 ## SYNOPSIS
 Adds an AWS::DLM::LifecyclePolicy.Parameters resource property to the template.
+Specifies optional parameters to add to a policy.
+The set of valid parameters depends on the combination of policy type and resource type.
 
 ## SYNTAX
 
 ```
-Add-VSDLMLifecyclePolicyParameters [[-ExcludeBootVolume] <Boolean>] [<CommonParameters>]
+Add-VSDLMLifecyclePolicyParameters [[-ExcludeBootVolume] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::DLM::LifecyclePolicy.Parameters resource property to the template.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
+Specifies optional parameters to add to a policy.
+The set of valid parameters depends on the combination of policy type and resource type.
 
 ## PARAMETERS
 
 ### -ExcludeBootVolume
+EBS Snapshot Management - Instance policies only\] Indicates whether to exclude the root volume from snapshots created using CreateSnapshots: https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSnapshots.html.
+The default is false.
+
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-parameters.html#cfn-dlm-lifecyclepolicy-parameters-excludebootvolume
 PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

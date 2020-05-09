@@ -7,22 +7,13 @@ The Tmpfs property specifies the container path, mount options, and size of the 
 ## SYNTAX
 
 ```
-Add-VSECSTaskDefinitionTmpfs [[-ContainerPath] <Object>] [[-MountOptions] <Object>] [-Size] <Int32>
+Add-VSECSTaskDefinitionTmpfs [[-ContainerPath] <Object>] [[-MountOptions] <Object>] [-Size] <Object>
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::ECS::TaskDefinition.Tmpfs resource property to the template.
 The Tmpfs property specifies the container path, mount options, and size of the tmpfs mount.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -75,13 +66,13 @@ PrimitiveType: Integer
 UpdateType: Immutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: 3
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

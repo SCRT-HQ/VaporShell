@@ -7,8 +7,8 @@ Information about the embedded captions to extract from the input.
 ## SYNTAX
 
 ```
-Add-VSMediaLiveChannelEmbeddedSourceSettings [[-Source608ChannelNumber] <Int32>] [[-Scte20Detection] <Object>]
- [[-Source608TrackNumber] <Int32>] [[-Convert608To708] <Object>] [<CommonParameters>]
+Add-VSMediaLiveChannelEmbeddedSourceSettings [[-Source608ChannelNumber] <Object>] [[-Scte20Detection] <Object>]
+ [[-Source608TrackNumber] <Object>] [[-Convert608To708] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -16,15 +16,6 @@ Adds an AWS::MediaLive::Channel.EmbeddedSourceSettings resource property to the 
 Information about the embedded captions to extract from the input.
 
 The parent of this entity is CaptionSelectorSettings.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -37,13 +28,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -75,13 +66,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 3
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

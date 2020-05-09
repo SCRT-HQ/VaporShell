@@ -7,21 +7,12 @@ Contains the user name and password create date for a user.
 ## SYNTAX
 
 ```
-Add-VSIAMUserLoginProfile [-Password] <Object> [[-PasswordResetRequired] <Boolean>] [<CommonParameters>]
+Add-VSIAMUserLoginProfile [-Password] <Object> [[-PasswordResetRequired] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::IAM::User.LoginProfile resource property to the template.
 Contains the user name and password create date for a user.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -52,13 +43,13 @@ PrimitiveType: Boolean
 UpdateType: Mutable
 
 ```yaml
-Type: Boolean
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

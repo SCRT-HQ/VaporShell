@@ -21,15 +21,6 @@ For example, the following sample records use CSV format, where the records use 
 
 "name2", "address2"
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -RecordRowDelimiter

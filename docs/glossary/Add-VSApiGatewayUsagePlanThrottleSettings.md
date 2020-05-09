@@ -7,21 +7,12 @@ ThrottleSettings is a property of the AWS::ApiGateway::UsagePlan: https://docs.a
 ## SYNTAX
 
 ```
-Add-VSApiGatewayUsagePlanThrottleSettings [[-BurstLimit] <Int32>] [[-RateLimit] <Double>] [<CommonParameters>]
+Add-VSApiGatewayUsagePlanThrottleSettings [[-BurstLimit] <Object>] [[-RateLimit] <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Adds an AWS::ApiGateway::UsagePlan.ThrottleSettings resource property to the template.
 ThrottleSettings is a property of the AWS::ApiGateway::UsagePlan: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html resource that specifies the overall request rate (average requests per second and burst capacity when users call your REST APIs.
-
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
 
 ## PARAMETERS
 
@@ -35,13 +26,13 @@ PrimitiveType: Integer
 UpdateType: Mutable
 
 ```yaml
-Type: Int32
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 1
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -55,13 +46,13 @@ PrimitiveType: Double
 UpdateType: Mutable
 
 ```yaml
-Type: Double
+Type: Object
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 2
-Default value: 0
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```

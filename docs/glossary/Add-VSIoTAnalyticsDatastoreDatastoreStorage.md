@@ -15,15 +15,6 @@ Add-VSIoTAnalyticsDatastoreDatastoreStorage [[-CustomerManagedS3] <Object>] [[-S
 Adds an AWS::IoTAnalytics::Datastore.DatastoreStorage resource property to the template.
 Where data store data is stored.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -CustomerManagedS3

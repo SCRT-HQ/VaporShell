@@ -17,15 +17,6 @@ Specifies a policy for application-controlled session stickiness for your Classi
 
 To associate a policy with a listener, use the PolicyNames: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-policynames property for the listener.
 
-## EXAMPLES
-
-### Example 1
-```powershell
-PS C:\> {{ Add example code here }}
-```
-
-{{ Add example description here }}
-
 ## PARAMETERS
 
 ### -CookieName
