@@ -65,6 +65,13 @@ Assigning parameter policies: https://docs.aws.amazon.com/systems-manager/latest
         PrimitiveType: String
         UpdateType: Mutable
 
+    .PARAMETER DataType
+        +  Working with Parameter Policies: https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html#cfn-ssm-parameter-datatype
+        PrimitiveType: String
+        UpdateType: Mutable
+
     .PARAMETER Tags
         Optional metadata that you assign to a resource in the form of an arbitrary set of tags key-value pairs. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For example, you might want to tag a Systems Manager parameter to identify the type of resource to which it applies, the environment, or the type of configuration data referenced by the parameter.
 
@@ -207,6 +214,17 @@ Assigning parameter policies: https://docs.aws.amazon.com/systems-manager/latest
                 }
             })]
         $Value,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $DataType,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","System.Collections.Hashtable","System.Management.Automation.PSCustomObject"

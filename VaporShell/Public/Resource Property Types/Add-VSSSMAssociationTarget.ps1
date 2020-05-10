@@ -14,17 +14,16 @@ Target is a property of the AWS::SSM::Association: https://docs.aws.amazon.com/A
         User-defined criteria for sending commands that target instances that meet the criteria.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-target.html#cfn-ssm-association-target-key
+        UpdateType: Mutable
         PrimitiveType: String
-        UpdateType: Immutable
 
     .PARAMETER Values
         User-defined criteria that maps to Key. For example, if you specified tag:ServerRole, you could specify value:WebServer to run a command on instances that include EC2 tags of ServerRole,WebServer.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-target.html#cfn-ssm-association-target-values
-        DuplicatesAllowed: False
-        PrimitiveItemType: String
+        UpdateType: Mutable
         Type: List
-        UpdateType: Immutable
+        PrimitiveItemType: String
 
     .FUNCTIONALITY
         Vaporshell

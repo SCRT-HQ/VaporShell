@@ -34,6 +34,13 @@ function New-VSCloud9EnvironmentEC2 {
         PrimitiveType: String
         UpdateType: Mutable
 
+    .PARAMETER ConnectionType
+        The name of the environment.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-connectiontype
+        PrimitiveType: String
+        UpdateType: Immutable
+
     .PARAMETER AutomaticStopTimeMinutes
         The number of minutes until the running instance is shut down after the environment was last used.
 
@@ -165,6 +172,17 @@ function New-VSCloud9EnvironmentEC2 {
                 }
             })]
         $Description,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $ConnectionType,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.Int32","Vaporshell.Function"
