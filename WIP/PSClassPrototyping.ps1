@@ -1,9 +1,11 @@
+#using module ../BuildOutput/VaporShell/2.12.2.20200511/VaporShell.psm1
+
 $classPath = (Resolve-Path "$PSScriptRoot\..\VaporShell\Classes").Path
 Get-ChildItem $classPath -Recurse -Filter '*.ps1' | Sort-Object FullName | ForEach-Object {
     . $_.FullName
 }
 
-$t = [Template]@{
+$t = [VaporShell.Template]@{
     Description = "My template"
     Resources   = @(
         [S3Bucket]@{
@@ -46,6 +48,5 @@ $resource = [S3Bucket]@{
 }
 
 $t.ToYaml()
-$t2.ToYaml()
 $resource.ToJson()
 $resource.ToYaml()

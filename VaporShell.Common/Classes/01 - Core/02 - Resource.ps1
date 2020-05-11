@@ -16,8 +16,8 @@ class ResourceProperties : VSObject {
 
 class Resource : VSObject {
     hidden [string] $_logicalId
-    hidden [string] $_deletionPolicy
-    hidden [string] $_updateReplacePolicy
+    hidden [object] $_deletionPolicy
+    hidden [object] $_updateReplacePolicy
 
     [string] $LogicalId
     [string] $Type
@@ -46,8 +46,13 @@ class Resource : VSObject {
             }
         }
         $this | Add-Member -Force -MemberType ScriptProperty -Name DeletionPolicy -Value {$this._deletionPolicy} -SecondValue {
-            param([DeletionPolicy] $deletionPolicy)
-            $this._deletionPolicy = $deletionPolicy.ToString()
+            param([object] $deletionPolicy)
+            if ($deletionPolicy -is [DeletionPolicy]) {
+                $this._deletionPolicy = $deletionPolicy.ToString()
+            }
+            else {
+                $this._deletionPolicy = $deletionPolicy
+            }
         }
         $this | Add-Member -Force -MemberType ScriptProperty -Name UpdateReplacePolicy -Value {$this._updateReplacePolicy} -SecondValue {
             param([UpdateReplacePolicy] $updateReplacePolicy)
