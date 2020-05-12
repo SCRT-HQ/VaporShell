@@ -17,6 +17,9 @@ Param(
     $SourceModuleDirectory,
     [Parameter()]
     [String]
+    $SourceAdditionalModuleDirectory,
+    [Parameter()]
+    [String]
     $SourceManifestPath,
     [Parameter()]
     [String]
@@ -34,16 +37,11 @@ Param(
     [String]
     $TargetVersionDirectory,
     [Parameter()]
-    [String[]]
-    $SubmodulesToBuild = @(
-        'VaporShell.Common'
-    ),
-    [Parameter()]
     [Switch]
     $NoUpdate
 )
 
-Task . Build
+Task . Build, Import
 
 Task Init {
     Import-Module Configuration
@@ -51,6 +49,7 @@ Task Init {
         . $_.FullName
     }
     $Script:SourceModuleDirectory = [System.IO.Path]::Combine($BuildRoot, $ModuleName)
+    $Script:SourceAdditionalModuleDirectory = [System.IO.Path]::Combine($BuildRoot, 'OtherModules')
     $Script:GalleryVersion = (Get-PSGalleryVersion $ModuleName).Version
     $Script:SourceManifestPath = Join-Path $SourceModuleDirectory "$($ModuleName).psd1"
     $Script:ManifestVersion = (Import-Metadata -Path $SourceManifestPath).ModuleVersion
@@ -63,15 +62,15 @@ Task Init {
     Write-BuildLog "Build System Details:"
     @(
         ""
-        "~~~~~ Summary ~~~~~"
-        "In CI?              : $($IsCI -or (Test-Path Env:\TF_BUILD))"
-        "Project             : $ModuleName"
-        "Manifest Version    : $ManifestVersion"
-        "Gallery Version     : $GalleryVersion"
-        "Next Module Version : $NextModuleVersion"
-        "Engine              : PowerShell $($PSVersionTable.PSVersion.ToString())"
-        "Host OS             : $(if($PSVersionTable.PSVersion.Major -le 5 -or $IsWindows){"Windows"}elseif($IsLinux){"Linux"}elseif($IsMacOS){"macOS"}else{"[UNKNOWN]"})"
-        "PWD                 : $PWD"
+        "~~~~~~~ Summary ~~~~~~~"
+        "In CI?                 : $($IsCI -or (Test-Path Env:\TF_BUILD))"
+        "Project                : $ModuleName"
+        "Manifest Version       : $ManifestVersion"
+        "Gallery Version        : $GalleryVersion"
+        "Next Module Version    : $NextModuleVersion"
+        "Engine                 : PowerShell $($PSVersionTable.PSVersion.ToString())"
+        "Host OS                : $(if($PSVersionTable.PSVersion.Major -le 5 -or $IsWindows){"Windows"}elseif($IsLinux){"Linux"}elseif($IsMacOS){"macOS"}else{"[UNKNOWN]"})"
+        "PWD                    : $PWD"
         ""
         "~~~~~ Directories ~~~~~"
         "SourceModuleDirectory  : $SourceModuleDirectory"
@@ -84,6 +83,9 @@ Task Init {
         "~~~~~ Environment ~~~~~"
     ) | Write-BuildLog
     Write-BuildLog "$((Get-ChildItem Env: | Where-Object {$_.Name -match "^(BUILD_|BH)"} | Sort-Object Name | Format-Table Name,Value -AutoSize | Out-String).Trim())"
+    if (-not (Test-Path $TargetDirectory)) {
+        New-Item $TargetDirectory -ItemType Directory -Force
+    }
 }
 
 Task Clean Init, {
@@ -92,6 +94,7 @@ Task Clean Init, {
 
 # Synopsis: Updates module functions before compilation
 Task Update -If { -not $NoUpdate } Clean, {
+    git submodule update --recursive
     Get-ChildItem (Join-Path $PSScriptRoot 'ci') -Filter '*.ps1' | Where-Object { $_.BaseName -notmatch "(GitHubReleaseNotes|gist\.githubusercontent\.com.*scrthq)" } | ForEach-Object {
         . $_.FullName
     }
@@ -101,8 +104,9 @@ Task Update -If { -not $NoUpdate } Clean, {
 
 # Synopsis: Compile the submodules
 Task BuildSubmodules Init, {
+    $submodulesToBuild = Get-ChildItem $SourceAdditionalModuleDirectory -Directory | Select-Object -ExpandProperty BaseName
     foreach ($sub in $SubmodulesToBuild) {
-        $subSourceModuleDirectory = [System.IO.Path]::Combine($BuildRoot, $sub)
+        $subSourceModuleDirectory = [System.IO.Path]::Combine($SourceAdditionalModuleDirectory, $sub)
         $subSourceManifestPath = Join-Path $subSourceModuleDirectory "$($sub).psd1"
         $subTargetModuleDirectory = [System.IO.Path]::Combine($TargetDirectory, $sub)
         $subTargetVersionDirectory = [System.IO.Path]::Combine($subTargetModuleDirectory, $NextModuleVersion)
@@ -128,46 +132,46 @@ Task BuildSubmodules Init, {
                         "Export-ModuleMember -Function '$($_.BaseName)'`n" | Add-Content -Path $psm1 -Encoding UTF8
                     }
                 }
+            }
+        }
+
+        Get-ChildItem -Path $subSourceModuleDirectory -Directory | Where-Object { $_.BaseName -notin @('Classes', 'Private', 'Public') } | ForEach-Object {
+            Write-BuildLog "Copying source folder to target: $($_.BaseName)"
+            Copy-Item $_.FullName -Destination $subTargetVersionDirectory -Container -Recurse
+        }
+
+        if ($ManifestVersion -ne $NextModuleVersion) {
+            Write-BuildLog "Bumping source manifest version from '$ManifestVersion' to '$NextModuleVersion' to prevent errors"
+            Update-Metadata -Path $subSourceManifestPath -PropertyName ModuleVersion -Value $NextModuleVersion
+            ([System.IO.File]::ReadAllText($subSourceManifestPath)).Trim() | Set-Content $subSourceManifestPath
+        }
+
+        # Copy over manifest
+        Write-BuildLog "Copying source manifest to target folder"
+        Copy-Item -Path $subSourceManifestPath -Destination $subTargetVersionDirectory
+
+        # Update FunctionsToExport and AliasesToExport on manifest
+        $params = @{
+            Path = $subTargetManifestPath
+        }
+        if ($functionsToExport.Count) {
+            Update-Metadata @params -PropertyName FunctionsToExport -Value ($functionsToExport | Sort-Object)
+        }
+        if ($functionsToExport.Count) {
+            Update-Metadata @params -PropertyName AliasesToExport -Value ($aliasesToExport | Sort-Object)
+        }
+
+        Write-BuildLog "Updating target manifest file with exports"
+
+        if ($ManifestVersion -ne $NextModuleVersion) {
+            Write-BuildLog "Reverting bumped source manifest version from '$NextModuleVersion' to '$ManifestVersion'"
+            Update-Metadata -Path $subSourceManifestPath -PropertyName ModuleVersion -Value $ManifestVersion
+            ([System.IO.File]::ReadAllText($subSourceManifestPath)).Trim() | Set-Content $subSourceManifestPath
+        }
+        Write-BuildLog "Created compiled module at [$subTargetVersionDirectory]!"
+        Write-BuildLog 'Output version directory contents:'
+        Get-ChildItem $subTargetVersionDirectory | Format-Table -AutoSize
     }
-}
-
-Get-ChildItem -Path $subSourceModuleDirectory -Directory | Where-Object { $_.BaseName -notin @('Classes', 'Private', 'Public') } | ForEach-Object {
-    Write-BuildLog "Copying source folder to target: $($_.BaseName)"
-    Copy-Item $_.FullName -Destination $subTargetVersionDirectory -Container -Recurse
-}
-
-if ($ManifestVersion -ne $NextModuleVersion) {
-    Write-BuildLog "Bumping source manifest version from '$ManifestVersion' to '$NextModuleVersion' to prevent errors"
-    Update-Metadata -Path $subSourceManifestPath -PropertyName ModuleVersion -Value $NextModuleVersion
-    ([System.IO.File]::ReadAllText($subSourceManifestPath)).Trim() | Set-Content $subSourceManifestPath
-}
-
-# Copy over manifest
-Write-BuildLog "Copying source manifest to target folder"
-Copy-Item -Path $subSourceManifestPath -Destination $subTargetVersionDirectory
-
-# Update FunctionsToExport and AliasesToExport on manifest
-$params = @{
-    Path = $subTargetManifestPath
-}
-if ($functionsToExport.Count) {
-    Update-Metadata @params -PropertyName FunctionsToExport -Value ($functionsToExport | Sort-Object)
-}
-if ($functionsToExport.Count) {
-    Update-Metadata @params -PropertyName AliasesToExport -Value ($aliasesToExport | Sort-Object)
-}
-
-Write-BuildLog "Updating target manifest file with exports"
-
-if ($ManifestVersion -ne $NextModuleVersion) {
-    Write-BuildLog "Reverting bumped source manifest version from '$NextModuleVersion' to '$ManifestVersion'"
-    Update-Metadata -Path $subSourceManifestPath -PropertyName ModuleVersion -Value $ManifestVersion
-    ([System.IO.File]::ReadAllText($subSourceManifestPath)).Trim() | Set-Content $subSourceManifestPath
-}
-Write-BuildLog "Created compiled module at [$subTargetVersionDirectory]!"
-Write-BuildLog 'Output version directory contents:'
-Get-ChildItem $subTargetVersionDirectory | Format-Table -Autosize
-}
 }
 
 # Synopsis: Compile the dotnet dll
@@ -178,7 +182,7 @@ Task BuildDotnet Init, {
 }
 
 # Synopsis: Compiles module from source
-Task Build Update, BuildSubmodules, BuildDotnet, {
+Task BuildMain Update, {
     $functionsToExport = @()
     $aliasesToExport = @()
     Write-BuildLog 'Creating psm1...'
@@ -192,7 +196,7 @@ Task Build Update, BuildSubmodules, BuildDotnet, {
     }
 
     $psm1Header = @(
-        "using module $usingModule"
+        #"using module $usingModule"
         '[CmdletBinding()]'
         'Param ('
         '    # This no longer does anything as of v2.6.0, leaving for backwards compatiblity'
@@ -210,10 +214,11 @@ Task Build Update, BuildSubmodules, BuildDotnet, {
         $gciPath = [System.IO.Path]::Combine($SourceModuleDirectory, $scope)
         if (Test-Path $gciPath) {
             Write-BuildLog "Copying contents from files in source folder to PSM1: $($scope)"
-            Get-ChildItem -Path $gciPath -Filter "*.ps1" -Recurse -File | Where-Object {
+            $files = Get-ChildItem -Path $gciPath -Filter "*.ps1" -Recurse -File | Where-Object {
                 $_.Name -ne 'PseudoParams.txt' -and
                 $_.FullName -notlike "*Development Tools*"
-            } | Sort-Object FullName | ForEach-Object {
+            }
+            $files | Sort-Object FullName | ForEach-Object {
                 Write-BuildLog "Working on: $($_.FullName.Replace("$gciPath\",''))"
                 "$(Get-Content $_.FullName -Raw)`n" | Add-Content -Path $psm1 -Encoding UTF8
                 if ($scope -eq 'Public') {
@@ -221,126 +226,118 @@ Task Build Update, BuildSubmodules, BuildDotnet, {
                     "Export-ModuleMember -Function '$($_.BaseName)'`n" | Add-Content -Path $psm1 -Encoding UTF8
                 }
             }
+        }
+    }
+
+    Get-ChildItem -Path $SourceModuleDirectory -Directory | Where-Object { $_.BaseName -notin @('Classes', 'Private', 'Public') } | ForEach-Object {
+        Write-BuildLog "Copying source folder to target: $($_.BaseName)"
+        Copy-Item $_.FullName -Destination $TargetVersionDirectory -Container -Recurse
+    }
+
+    if ($ManifestVersion -ne $NextModuleVersion) {
+        Write-BuildLog "Bumping source manifest version from '$ManifestVersion' to '$NextModuleVersion' to prevent errors"
+        Update-Metadata -Path $SourceManifestPath -PropertyName ModuleVersion -Value $NextModuleVersion
+        ([System.IO.File]::ReadAllText($SourceManifestPath)).Trim() | Set-Content $SourceManifestPath
+    }
+
+    Write-BuildLog 'Copying latest AWSSDK assembly dependencies to output path'
+    Save-Module 'AWS.Tools.CloudFormation', 'AWS.Tools.S3' -Path $PSScriptRoot -Repository PSGallery -Force
+    Get-Item 'AWS.Tools.*' | ForEach-Object {
+        Get-ChildItem $_.FullName -Recurse -Filter 'AWSSDK.*.dll' | Copy-Item -Destination $TargetVersionDirectory -Recurse -ErrorAction SilentlyContinue
+        Remove-Item $_.FullName -Recurse -Force
+    }
+
+    Write-BuildLog 'Copying DSL module'
+    Copy-Item -Path "$SourceModuleDirectory\VaporShell.DSL.psm1" -Destination "$TargetVersionDirectory" -Recurse -ErrorAction SilentlyContinue
+
+    Write-BuildLog 'Creating Variable hash'
+    $varHash = @("@{")
+    Get-Content -Path "$SourceModuleDirectory\Private\PseudoParams.txt" | ForEach-Object {
+        $name = "_$(($_ -replace "::").Trim())"
+        $varHash += "    '$name' = '$($_.Trim())'"
+    }
+    $varHash += "}"
+
+    Write-BuildLog 'Creating Alias hash'
+    $aliasHash = @("@{")
+    Get-ChildItem "$SourceModuleDirectory\Public\Intrinsic Functions" | ForEach-Object {
+        $name = ($_.BaseName).Replace('Add-', '')
+        $aliasesToExport += $name
+        $aliasHash += "    '$name' = '$($_.BaseName.Trim())'"
+    }
+    Get-ChildItem "$SourceModuleDirectory\Public\Condition Functions" | ForEach-Object {
+        $name = ($_.BaseName).Replace('Add-', '')
+        $aliasesToExport += $name
+        $aliasHash += "    '$name' = '$($_.BaseName.Trim())'"
+    }
+    $aliasHash += "}"
+
+    Write-BuildLog 'Setting remainder of PSM1 contents'
+    $hashDefinitions = @(
+        '$aliases = @()'
+        "`$aliasHash = $($aliasHash -join "`n")"
+        'foreach ($key in $aliasHash.Keys) {'
+        '    New-Alias -Name `$key -Value $aliasHash[$key] -Force'
+        '    $aliases += $key'
+        '}'
+        ''
+        '$vars = @()'
+        "`$varHash = $($varHash -join "`n")"
+        'foreach ($key in $varHash.Keys) {'
+        '    New-Variable -Name $key -Value $varHash[$key]'
+        '    $vars += $key'
+        '}'
+        ''
+        '$DSLModulePath = (Resolve-Path "$PSScriptRoot\VaporShell.DSL.psm1").Path'
+        'Import-Module $DSLModulePath -DisableNameChecking -Force -Scope Global'
+        ''
+        'Export-ModuleMember -Variable $vars -Alias $aliases'
+    ) -join "`n"
+    $hashDefinitions | Add-Content -Path $psm1 -Encoding UTF8
+
+    # Copy over manifest
+    Write-BuildLog "Copying source manifest to target folder"
+    Copy-Item -Path $SourceManifestPath -Destination $TargetVersionDirectory
+
+    $aliases = @()
+    Get-ChildItem "$SourceModuleDirectory\Public\Intrinsic Functions" | ForEach-Object {
+        $aliases += ($_.BaseName).Replace('Add-', '')
+    }
+    Get-ChildItem "$SourceModuleDirectory\Public\Condition Functions" | ForEach-Object {
+        $aliases += ($_.BaseName).Replace('Add-', '')
+    }
+    $vars = @()
+    Get-Content -Path "$SourceModuleDirectory\Private\PseudoParams.txt" | ForEach-Object {
+        $vars += "_$(($_ -replace "::").Trim())"
+    }
+
+    # Update FunctionsToExport and AliasesToExport on manifest
+    $params = @{
+        Path              = $TargetManifestPath
+        FunctionsToExport = ($functionsToExport | Sort-Object)
+        VariablesToExport = $vars
+        AliasesToExport   = ($aliasesToExport | Sort-Object)
+    }
+
+    Write-BuildLog "Updating target manifest file with exports"
+    Update-ModuleManifest @params
+
+    if ($ManifestVersion -ne $NextModuleVersion) {
+        Write-BuildLog "Reverting bumped source manifest version from '$NextModuleVersion' to '$ManifestVersion'"
+        Update-Metadata -Path $SourceManifestPath -PropertyName ModuleVersion -Value $ManifestVersion
+        ([System.IO.File]::ReadAllText($SourceManifestPath)).Trim() | Set-Content $SourceManifestPath
+    }
+    Write-BuildLog "Created compiled module at [$TargetVersionDirectory]!"
+    Write-BuildLog 'Output version directory contents:'
+    Get-ChildItem $TargetVersionDirectory | Format-Table -AutoSize
 }
-}
 
-Get-ChildItem -Path $SourceModuleDirectory -Directory | Where-Object { $_.BaseName -notin @('Classes', 'Private', 'Public') } | ForEach-Object {
-    Write-BuildLog "Copying source folder to target: $($_.BaseName)"
-    Copy-Item $_.FullName -Destination $TargetVersionDirectory -Container -Recurse
-}
-
-if ($ManifestVersion -ne $NextModuleVersion) {
-    Write-BuildLog "Bumping source manifest version from '$ManifestVersion' to '$NextModuleVersion' to prevent errors"
-    Update-Metadata -Path $SourceManifestPath -PropertyName ModuleVersion -Value $NextModuleVersion
-    ([System.IO.File]::ReadAllText($SourceManifestPath)).Trim() | Set-Content $SourceManifestPath
-}
-
-<#
-    Write-BuildLog 'Compiling VaporShell.Core.dll'
-    dotnet build .\VaporShell.Core\
-    Get-Item ".\VaporShell.Core\obj\Debug\netstandard2.0\VaporShell.Core.dll" | Copy-Item -Destination $TargetVersionDirectory -Recurse -ErrorAction SilentlyContinue
-    #>
-
-Write-BuildLog 'Copying latest AWSSDK assembly dependencies to output path'
-Save-Module 'AWS.Tools.CloudFormation', 'AWS.Tools.S3' -Path $PSScriptRoot -Repository PSGallery -Force
-Get-Item 'AWS.Tools.*' | ForEach-Object {
-    Get-ChildItem $_.FullName -Recurse -Filter 'AWSSDK.*.dll' | Copy-Item -Destination $TargetVersionDirectory -Recurse -ErrorAction SilentlyContinue
-    Remove-Item $_.FullName -Recurse -Force
-}
-
-Write-BuildLog 'Copying DSL module'
-Copy-Item -Path "$SourceModuleDirectory\VaporShell.DSL.psm1" -Destination "$TargetVersionDirectory" -Recurse -ErrorAction SilentlyContinue
-
-Write-BuildLog 'Creating Variable hash'
-$varHash = @("@{")
-Get-Content -Path "$SourceModuleDirectory\Private\PseudoParams.txt" | ForEach-Object {
-    $name = "_$(($_ -replace "::").Trim())"
-    $varHash += "    '$name' = '$($_.Trim())'"
-}
-$varHash += "}"
-
-Write-BuildLog 'Creating Alias hash'
-$aliasHash = @("@{")
-Get-ChildItem "$SourceModuleDirectory\Public\Intrinsic Functions" | ForEach-Object {
-    $name = ($_.BaseName).Replace('Add-', '')
-    $aliasesToExport += $name
-    $aliasHash += "    '$name' = '$($_.BaseName.Trim())'"
-}
-Get-ChildItem "$SourceModuleDirectory\Public\Condition Functions" | ForEach-Object {
-    $name = ($_.BaseName).Replace('Add-', '')
-    $aliasesToExport += $name
-    $aliasHash += "    '$name' = '$($_.BaseName.Trim())'"
-}
-$aliasHash += "}"
-
-Write-BuildLog 'Setting remainder of PSM1 contents'
-@"
-`$aliases = @()
-`$aliasHash = $($aliasHash -join "`n")
-foreach (`$key in `$aliasHash.Keys) {
-    New-Alias -Name `$key -Value `$aliasHash[`$key] -Force
-    `$aliases += `$key
-}
-
-`$vars = @()
-`$varHash = $($varHash -join "`n")
-foreach (`$key in `$varHash.Keys) {
-    New-Variable -Name `$key -Value `$varHash[`$key]
-    `$vars += `$key
-}
-
-`$DSLModulePath = (Resolve-Path "`$PSScriptRoot\VaporShell.DSL.psm1").Path
-Import-Module `$DSLModulePath -DisableNameChecking -Force -Scope Global
-
-Export-ModuleMember -Variable `$vars -Alias `$aliases
-"@ | Add-Content -Path $psm1 -Encoding UTF8
-
-# Copy over manifest
-Write-BuildLog "Copying source manifest to target folder"
-Copy-Item -Path $SourceManifestPath -Destination $TargetVersionDirectory
-
-Write-BuildLog 'Updating manifest'
-$dslModuleName = "VaporShell.DSL"
-Import-Module "$SourceModuleDirectory\$($dslModuleName).psm1" -DisableNameChecking -Force -Verbose:$false
-$dslFunctions = (Get-Command -Module $dslModuleName).Name
-Remove-Module $dslModuleName -Force -Verbose:$false -ErrorAction SilentlyContinue
-
-$aliases = @()
-Get-ChildItem "$SourceModuleDirectory\Public\Intrinsic Functions" | ForEach-Object {
-    $aliases += ($_.BaseName).Replace('Add-', '')
-}
-Get-ChildItem "$SourceModuleDirectory\Public\Condition Functions" | ForEach-Object {
-    $aliases += ($_.BaseName).Replace('Add-', '')
-}
-$vars = @()
-Get-Content -Path "$SourceModuleDirectory\Private\PseudoParams.txt" | ForEach-Object {
-    $vars += "_$(($_ -replace "::").Trim())"
-}
-
-# Update FunctionsToExport and AliasesToExport on manifest
-$params = @{
-    Path              = $TargetManifestPath
-    FunctionsToExport = ($functionsToExport | Sort-Object)
-    VariablesToExport = $vars
-    AliasesToExport   = ($aliasesToExport | Sort-Object)
-}
-
-Write-BuildLog "Updating target manifest file with exports"
-Update-ModuleManifest @params
-
-if ($ManifestVersion -ne $NextModuleVersion) {
-    Write-BuildLog "Reverting bumped source manifest version from '$NextModuleVersion' to '$ManifestVersion'"
-    Update-Metadata -Path $SourceManifestPath -PropertyName ModuleVersion -Value $ManifestVersion
-    ([System.IO.File]::ReadAllText($SourceManifestPath)).Trim() | Set-Content $SourceManifestPath
-}
-Write-BuildLog "Created compiled module at [$TargetVersionDirectory]!"
-Write-BuildLog 'Output version directory contents:'
-Get-ChildItem $TargetVersionDirectory | Format-Table -Autosize
-}
+# Synopsis: Builds everything
+Task Build  BuildMain, BuildSubmodules, BuildDotnet
 
 # Synopsis: Imports the newly compiled module
-Task Import -If { Test-Path $TargetManifestPath } Build, {
-    Import-Module -Name $TargetModuleDirectory -ErrorAction Stop
+Task Import -If { Test-Path $TargetManifestPath } Init, {
+    Import-Module -name $TargetModuleDirectory -ErrorAction Stop
 }
 
 $pesterScriptBlock = {
@@ -469,28 +466,54 @@ Task PublishToPSGallery -If $psGalleryConditions {
     Write-BuildLog "Deployment successful!"
 }
 
-Task PublishToGitHub -If $gitHubConditions {
-    $commitId = git rev-parse --verify HEAD
-    Write-BuildLog "Creating Release ZIP..."
-    $zipPath = [System.IO.Path]::Combine($BuildRoot, "$($ModuleName).zip")
-    if (Test-Path $zipPath) {
-        Remove-Item $zipPath -Force
+Task BuildReleaseZips Init, {
+    Write-BuildLog "Creating Release ZIPs..."
+    $releaseZipPath = [System.IO.Path]::Combine($BuildRoot, 'ReleaseZips')
+    if (-not (Test-Path $releaseZipPath)) {
+        New-Item $releaseZipPath -ItemType Directory -Force
     }
-    Add-Type -Assembly System.IO.Compression.FileSystem
-    [System.IO.Compression.ZipFile]::CreateFromDirectory($TargetModuleDirectory, $zipPath)
+    $zipPaths = @(
+        @{
+            ZipPath = [System.IO.Path]::Combine($releaseZipPath, "$($ModuleName).zip")
+            SourcePath = $TargetModuleDirectory
+        }
+    )
+    Get-ChildItem $SourceAdditionalModuleDirectory -Directory | ForEach-Object {
+        $zipPaths += @{
+            ZipPath = [System.IO.Path]::Combine($releaseZipPath, "$($_.BaseName).zip")
+            SourcePath = [System.IO.Path]::Combine($TargetDirectory, $_.BaseName)
+        }
+    }
+    foreach ($zip in $zipPaths) {
+        if (Test-Path $zip.ZipPath) {
+            Remove-Item $zip.ZipPath -Force
+        }
+        Add-Type -Assembly System.IO.Compression.FileSystem
+        [System.IO.Compression.ZipFile]::CreateFromDirectory($zip.SourcePath, $zip.ZipPath)
+        Get-Item $zip.ZipPath
+    }
+}
+
+Task PublishToGitHub -If $gitHubConditions BuildReleaseZips, {
+    $commitId = git rev-parse --verify HEAD
+
     Write-BuildLog "Publishing Release v$($NextModuleVersion) @ commit Id [$($commitId)] to GitHub..."
 
     $ReleaseNotes = . .\ci\GitHubReleaseNotes.ps1 -ModuleName $ModuleName -ModuleVersion $NextModuleVersion
+
+    $zipPath = Get-ChildItem ([System.IO.Path]::Combine($BuildRoot, 'ReleaseZips')) -Filter '*.zip' | Select-Object -ExpandProperty FullName
 
     $gitHubParams = @{
         VersionNumber    = $NextModuleVersion.ToString()
         CommitId         = $commitId
         ReleaseNotes     = $ReleaseNotes
-        ArtifactPath     = $zipPath
         GitHubUsername   = 'SCRT-HQ'
         GitHubRepository = $ModuleName
         GitHubApiKey     = $env:GitHubPAT
         Draft            = $false
+    }
+    if ($null -ne $zipPath) {
+        $gitHubParams['ArtifactPath'] = $zipPath
     }
     Publish-GitHubRelease @gitHubParams
     Write-BuildLog "Release creation successful!"

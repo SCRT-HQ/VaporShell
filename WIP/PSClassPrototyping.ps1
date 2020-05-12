@@ -1,52 +1,97 @@
-#using module ../BuildOutput/VaporShell/2.12.2.20200511/VaporShell.psm1
+Start-BuildScript -Project VaporShell -Task BuildSubmodules -Verbose
 
-$classPath = (Resolve-Path "$PSScriptRoot\..\VaporShell\Classes").Path
-Get-ChildItem $classPath -Recurse -Filter '*.ps1' | Sort-Object FullName | ForEach-Object {
-    . $_.FullName
-}
+$origDbgPref = $DebugPreference
+$DebugPreference = 'Continue'
+Write-Debug "DebugPreference set to $DebugPreference"
 
-$t = [VaporShell.Template]@{
-    Description = "My template"
-    Resources   = @(
-        [S3Bucket]@{
-            LogicalId      = 'MyBucket'
-            DeletionPolicy = 'RETAIN'
-            Properties     = [S3BucketProperties]@{
-                BucketName = 'my-test-bucket'
+try {
+    $modPath = (Get-ChildItem "$PSScriptRoot/../BuildOutput/VaporShell.Common/*/VaporShell.Common.psm1").FullName | Sort-Object FullName | Select-Object -Last 1
+    $scriptBody = [System.IO.File]::ReadAllText($modPath)
+    $script = [ScriptBlock]::Create($scriptBody)
+    . $script
+
+    $t = [Template]@{
+        Description = "My template"
+        Resources   = @(
+            [Bucket]@{
+                LogicalId      = 'MyBucket'
+                DeletionPolicy = 'RETAIN'
+                Properties     = [BucketProperties]@{
+                    BucketName = 'my-test-bucket'
+                }
             }
-        }
-        [S3Bucket]@{
-            LogicalId      = 'MyOtherBucket'
-            DeletionPolicy = 'RETAIN'
-            Properties     = [S3BucketProperties]@{
-                BucketName = [FnBase64][FnRef]'BucketName'
+            [Bucket]@{
+                LogicalId      = 'MyOtherBucket'
+                DeletionPolicy = 'RETAIN'
+                Properties     = [BucketProperties]@{
+                    BucketName = [FnBase64][FnRef]'BucketName'
+                }
             }
-        }
-    )
-}
+        )
+    }
 
-$t2Hash = @{
-    Resources = @(
-        [S3Bucket]@{
-            LogicalId      = 'MyOtherBucket'
-            DeletionPolicy = 'RETAIN'
-            Properties     = [S3BucketProperties]@{
-                BucketName = [FnBase64][FnRef]'BucketName'
+    $t2Hash = @{
+        Description = "My template"
+        Resources   = @(
+            [Bucket]@{
+                LogicalId      = 'MyBucket'
+                DeletionPolicy = 'RETAIN'
+                Properties     = [BucketProperties]@{
+                    BucketName = 'my-test-bucket'
+                }
             }
-        }
-    )
-}
-$t2 = [Template]::new($t2Hash)
+            [Bucket]@{
+                LogicalId      = 'MyOtherBucket'
+                DeletionPolicy = 'RETAIN'
+                Properties     = [BucketProperties]@{
+                    BucketName = [FnBase64][FnRef]'BucketName'
+                }
+            }
+        )
+    }
+    $t2 = [Template]::new($t2Hash)
 
-$resource = [S3Bucket]@{
-    LogicalId           = 'MyBucket'
-    DeletionPolicy      = 'RETAIN'
-    UpdateReplacePolicy = 'RETAIN'
-    Properties          = [S3BucketProperties]@{
+    $resource = [Bucket]@{
+        LogicalId           = 'MyBucket'
+        DeletionPolicy      = 'RETAIN'
+        UpdateReplacePolicy = 'RETAIN'
+        Properties          = [BucketProperties]@{
+            BucketName = [FnBase64][FnRef]'BucketName'
+        }
+    }
+
+
+    $res2PropHash = @{
         BucketName = [FnBase64][FnRef]'BucketName'
     }
-}
+    $res2Props = [BucketProperties]::new($res2PropHash)
 
-$t.ToYaml()
-$resource.ToJson()
-$resource.ToYaml()
+    $res2Hash = @{
+        LogicalId           = 'MyBucket'
+        DeletionPolicy      = 'RETAIN'
+        UpdateReplacePolicy = 'RETAIN'
+        Properties          = [BucketProperties]@{   #$res2Props
+            BucketName = [FnBase64][FnRef]'BucketName'
+        }
+    }
+    $res2 = [Bucket]$res2Hash
+
+    $res3 = [Bucket]@{
+        LogicalId           = 'MyBucket'
+        DeletionPolicy      = 'RETAIN'
+        UpdateReplacePolicy = 'RETAIN'
+        Properties          = @{
+            BucketName = [FnBase64][FnRef]'BucketName'
+        }
+    }
+
+    $t.ToYaml()
+    $resource.ToJson()
+    $resource.ToYaml()
+    $res2.Properties | Format-List
+    $res3.Properties | Format-List
+}
+finally {
+    Write-Debug "Setting DebugPreference back to $origDbgPref"
+    $DebugPreference = $origDbgPref
+}

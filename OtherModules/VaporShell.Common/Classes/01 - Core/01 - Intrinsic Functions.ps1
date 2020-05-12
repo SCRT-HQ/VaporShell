@@ -1,5 +1,5 @@
-class IntrinsicFunction : hashtable {
-    IntrinsicFunction() {}
+class IntrinsicFunction : VSHashtable {
+    IntrinsicFunction() : base() {}
 }
 
 class FnRef : IntrinsicFunction {

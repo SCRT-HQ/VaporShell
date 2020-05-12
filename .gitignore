@@ -8,6 +8,7 @@ vaporshell-snippets**
 TestResults**.xml
 VaporShell.zip
 ci/https*
+ReleaseZips
 
 # User-specific files
 *.suo
