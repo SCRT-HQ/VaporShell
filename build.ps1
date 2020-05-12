@@ -11,13 +11,14 @@ Param(
         PackageManagement = '1.3.1'
         PowerShellGet     = '2.1.2'
         InvokeBuild       = '5.5.2'
+        PSScriptAnalyzer  = '1.19.0'
     },
     [Parameter()]
     [Switch]
     $NoUpdate,
     #region: Invoke-Build parameters
     [Parameter()]
-    [ValidateSet('Init','Clean','Build','BuildSubmodules','BuildDotnet','Test','Analyze','Deploy','Full')]
+    [ValidateSet('Init','Clean','Build','BuildSubmodules','BuildDotnet','BuildReleaseZips','Test','Analyze','Deploy','Full')]
     [string[]]
     $Task,
     [Parameter()]
@@ -39,7 +40,7 @@ $helperUri = @(
     'scrthq'                                    # User
     'a99cc06e75eb31769d01b2adddc6d200'          # Gist ID
     'raw'
-    '958909a13527fa8c345b6bb552a737b0d9862bc0'  # Commit SHA
+    '21c22f8a6bdff28ddfd1ce5644c1c1fd6a091847'  # Commit SHA
     'AzurePipelineHelpers.ps1'                  # Filename
 ) -join '/'
 $fileUri = $helperUri -replace "[$([RegEx]::Escape("$(([System.IO.Path]::GetInvalidFileNameChars() + [System.IO.Path]::GetInvalidPathChars()) -join '')"))]","_"

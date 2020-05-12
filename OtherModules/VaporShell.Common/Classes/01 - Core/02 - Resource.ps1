@@ -1,17 +1,7 @@
 class ResourceProperties : VSObject {
-    ResourceProperties() { }
-
-<#     ResourceProperties([hashtable] $props) {
-        $props.GetEnumerator() | ForEach-Object {
-            $this | Add-Member -MemberType NoteProperty -Name $_.Key -Value $_.Value -Force
-        }
-    }
-
-    ResourceProperties([psobject] $props) {
-        $props.PSObject.Properties.Name | ForEach-Object {
-            $this | Add-Member -MemberType NoteProperty -Name $_ -Value $props."$_" -Force
-        }
-    } #>
+    ResourceProperties() : base() {}
+    ResourceProperties([hashtable] $props) : base($props) {}
+    ResourceProperties([psobject] $props) : base($props)  {}
 }
 
 class Resource : VSObject {
@@ -55,30 +45,17 @@ class Resource : VSObject {
             }
         }
         $this | Add-Member -Force -MemberType ScriptProperty -Name UpdateReplacePolicy -Value {$this._updateReplacePolicy} -SecondValue {
-            param([UpdateReplacePolicy] $updateReplacePolicy)
-            $this._updateReplacePolicy = $updateReplacePolicy.ToString()
-        }
-    }
-
-    Resource() {
-        $this._addAccessors()
-    }
-
-    Resource([hashtable] $props) {
-        $this._addAccessors()
-        $props.GetEnumerator() | ForEach-Object {
-            if ($this.PSObject.Properties.Name -contains $_.Key) {
-                $this."$($_.Key)" = $_.Value
+            param([object] $updateReplacePolicy)
+            if ($updateReplacePolicy -is [UpdateReplacePolicy]) {
+                $this._updateReplacePolicy = $updateReplacePolicy.ToString()
+            }
+            else {
+                $this._updateReplacePolicy = $updateReplacePolicy
             }
         }
     }
 
-    Resource([psobject] $props) {
-        $this._addAccessors()
-        $props.PSObject.Properties.Name | ForEach-Object {
-            if ($this.PSObject.Properties.Name -contains $_) {
-                $this."$($_)" = $props."$_"
-            }
-        }
-    }
+    Resource() : base() {}
+    Resource([hashtable] $props) : base($props) {}
+    Resource([psobject] $props) : base($props)  {}
 }
