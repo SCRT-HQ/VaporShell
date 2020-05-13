@@ -52,7 +52,7 @@ try {
     $t2 = [Template]::new($t2Hash)
 
     $resource = [Bucket]@{
-        LogicalId           = 'MyBucket'
+        LogicalId           = 'MyFancyBucket'
         DeletionPolicy      = 'RETAIN'
         UpdateReplacePolicy = [FnRef]'ReplacePolicyParam'
         Properties          = [BucketProperties]@{
@@ -70,20 +70,21 @@ try {
         LogicalId           = 'MyBucket'
         DeletionPolicy      = 'RETAIN'
         UpdateReplacePolicy = 'RETAIN'
-        Properties          = [BucketProperties]@{   #$res2Props
+        Properties          = [BucketProperties]@{
             BucketName = [FnBase64][FnRef]'BucketName'
         }
     }
     $res2 = [Bucket]$res2Hash
 
     $res3 = [Bucket]@{
-        LogicalId           = 'MyBucket'
+        LogicalId           = 'My3rdBucket'
         DeletionPolicy      = 'RETAIN'
         UpdateReplacePolicy = 'RETAIN'
         Properties          = @{
             BucketName = [FnBase64][FnRef]'BucketName'
         }
     }
+    $t.AddResource($resource)
 
     $t.ToYaml()
     $resource.ToJson()
