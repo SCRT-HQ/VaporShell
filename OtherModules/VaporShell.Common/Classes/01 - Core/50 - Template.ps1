@@ -19,8 +19,12 @@ class Template : VSObject {
     }
 
     [void] AddResource([Resource] $resource) {
-        $cleanProps = $resource.PSObject.Properties.Name.Where({$_ -notmatch '^(_|LogicalId$)' -and $null -ne $resource."$_"})
-        $this._resources[$resource.LogicalId] = $resource | Select-Object $cleanProps
+        if ($this._resources.ContainsKey($resource.LogicalId)) {
+            throw "The Template already contains a Resource with a LogicalId of '$($resource.LogicalId)'. LogicalId must be unique within the Template."
+        }
+        else {
+            $this._resources[$resource.LogicalId] = $resource.ToOrderedDictionary()
+        }
     }
 
     [void] AddResource([Resource[]] $resources) {
@@ -30,7 +34,16 @@ class Template : VSObject {
     }
 
     hidden [void] _addAccessors() {
-        $this | Add-Member -Force -MemberType ScriptProperty -Name Resources -Value {$this._resources} -SecondValue {
+        $this | Add-Member -Force -MemberType ScriptProperty -Name Resources -Value {
+            $this._resources.GetEnumerator() | ForEach-Object {
+                $new = [ordered]@{}
+                $new['LogicalId'] = $_.Key
+                $_.Value.GetEnumerator() | ForEach-Object {
+                    $new[$_.Key] = $_.Value
+                }
+                [Serializer]::ToResource($new)
+            }
+        } -SecondValue {
             param([Resource[]] $resources)
             $this.AddResource($resources)
         }
