@@ -1,13 +1,13 @@
-Start-BuildScript -Project VaporShell -Task BuildSubmodules -Verbose
+[CmdletBinding()]
+Param()
 
-$origDbgPref = $DebugPreference
-$DebugPreference = 'Continue'
-Write-Debug "DebugPreference set to $DebugPreference"
+Start-BuildScript -Project VaporShell -Task BuildSubmodules
 
 try {
     $modPath = (Get-ChildItem "$PSScriptRoot/../BuildOutput/VaporShell.Common/*/VaporShell.Common.psm1").FullName | Sort-Object FullName | Select-Object -Last 1
     $scriptBody = [System.IO.File]::ReadAllText($modPath)
     $script = [ScriptBlock]::Create($scriptBody)
+    #$script = [ScriptBlock]::Create("using module '$modPath'")
     . $script
 
     $t = [Template]@{
@@ -54,7 +54,7 @@ try {
     $resource = [Bucket]@{
         LogicalId           = 'MyBucket'
         DeletionPolicy      = 'RETAIN'
-        UpdateReplacePolicy = 'RETAIN'
+        UpdateReplacePolicy = [FnRef]'ReplacePolicyParam'
         Properties          = [BucketProperties]@{
             BucketName = [FnBase64][FnRef]'BucketName'
         }
@@ -91,7 +91,6 @@ try {
     $res2.Properties | Format-List
     $res3.Properties | Format-List
 }
-finally {
-    Write-Debug "Setting DebugPreference back to $origDbgPref"
-    $DebugPreference = $origDbgPref
+catch {
+    $_
 }

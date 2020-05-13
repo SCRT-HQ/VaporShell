@@ -12,11 +12,14 @@ class VSObject {
 
     [System.Collections.Specialized.OrderedDictionary] ToOrderedDictionary([bool] $addAllProperties) {
         $clean = [ordered]@{}
-        $this.PSObject.Properties.Name | ForEach-Object {
-            $key = $_
-            $value = $this."$key"
+        $this.PSObject.Properties | ForEach-Object {
+            $key = $_.Name
+            $value = $_.Value
             if ($addAllProperties -or ($key -notmatch '^(_|LogicalId$)' -and ($null -ne $value -or $key -match '::'))) {
                 $clean[$key] = if ($null -ne ($value | Get-Member -Name ToOrderedDictionary* -MemberType Method)) {
+                    $value.ToOrderedDictionary($addAllProperties)
+                }
+                elseif ($null -ne ($value | Get-Member -Name ToOrderedDictionary* -MemberType Method)) {
                     $value.ToOrderedDictionary($addAllProperties)
                 }
                 else {

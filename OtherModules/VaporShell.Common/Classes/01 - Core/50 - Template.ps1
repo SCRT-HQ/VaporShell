@@ -1,9 +1,13 @@
 class Template : VSObject {
     hidden [hashtable] $_resources = @{}
-    # The description of the template
+    [string] $AWSTemplateFormatVersion
+    [object] $Transform
     [string] $Description
-    # The resources on the template
+    [object] $Parameters
+    [object] $Mappings
     [Resource[]] $Resources
+    [object] $Outputs
+    [object] $Rules
 
     static [string] Help() {
         $help = "This is the Template help."
