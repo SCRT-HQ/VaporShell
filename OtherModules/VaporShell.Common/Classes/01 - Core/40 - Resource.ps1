@@ -28,12 +28,7 @@ class Resource : VSObject {
     hidden [void] _addAccessors() {
         $this | Add-Member -Force -MemberType ScriptProperty -Name LogicalId -Value {$this._logicalId} -SecondValue {
             param([string] $logicalId)
-            if ($logicalId -notmatch '^[a-zA-Z0-9]*$') {
-                throw "The LogicalId must be alphanumeric (a-z, A-Z, 0-9) and unique within the template. Value provided: '$logicalId'"
-            }
-            else {
-                $this._logicalId = $logicalId
-            }
+            $this._logicalId = [Validator]::LogicalId($logicalId)
         }
         $this | Add-Member -Force -MemberType ScriptProperty -Name DeletionPolicy -Value {$this._deletionPolicy} -SecondValue {
             param([object] $deletionPolicy)
