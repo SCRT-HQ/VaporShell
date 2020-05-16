@@ -1,5 +1,18 @@
 class BucketProperties : ResourceProperties {
-    [object] $BucketName
+    hidden [IntrinsicOrString([FnRef])] [object]
+    $_bucketName
+    [object]
+    $BucketName
+
+    hidden [void] _addAccessors() {
+        $this | Add-Member -MemberType ScriptProperty -Name BucketName -Value {
+            $this._bucketName
+        } -SecondValue {
+            param([object] $value)
+            $this._bucketName = $value
+        }
+    }
+
     BucketProperties() : base() {}
     BucketProperties([hashtable] $props) : base($props) {}
     BucketProperties([psobject] $props) : base($props)  {}

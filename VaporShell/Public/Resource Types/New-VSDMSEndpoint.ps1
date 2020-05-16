@@ -42,6 +42,13 @@ AWS KMS creates the default encryption key for your AWS account. Your AWS accoun
         PrimitiveType: String
         UpdateType: Mutable
 
+    .PARAMETER NeptuneSettings
+        +  AWS CloudFormation Stacks Updates: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html
+
+        Type: NeptuneSettings
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-neptunesettings
+        UpdateType: Mutable
+
     .PARAMETER ElasticsearchSettings
         Settings in JSON format for the target Elasticsearch endpoint. For more information about the available settings, see Extra Connection Attributes When Using Elasticsearch as a Target for AWS DMS: https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration in the *AWS Database Migration User Guide.*
 
@@ -247,6 +254,8 @@ AWS KMS creates the default encryption key for your AWS account. Your AWS accoun
                 }
             })]
         $DatabaseName,
+        [parameter(Mandatory = $false)]
+        $NeptuneSettings,
         [parameter(Mandatory = $false)]
         $ElasticsearchSettings,
         [parameter(Mandatory = $false)]
