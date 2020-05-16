@@ -1,14 +1,14 @@
 class BucketProperties : ResourceProperties {
-    hidden [IntrinsicOrString([FnRef])] [object]
+    hidden [object]
     $_bucketName
     [object]
     $BucketName
 
     hidden [void] _addAccessors() {
-        $this | Add-Member -MemberType ScriptProperty -Name BucketName -Value {
+        $this | Add-Member -Force -MemberType ScriptProperty -Name BucketName -Value {
             $this._bucketName
         } -SecondValue {
-            param([object] $value)
+            param([ValidateType([string],[FnRef],[FnBase64])][object] $value)
             $this._bucketName = $value
         }
     }

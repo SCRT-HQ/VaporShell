@@ -4,11 +4,13 @@ Param()
 Start-BuildScript -Project VaporShell -Task BuildSubmodules
 
 try {
-    $modPath = (Get-ChildItem "$PSScriptRoot/../BuildOutput/VaporShell.Common/*/VaporShell.Common.psm1").FullName | Sort-Object FullName | Select-Object -Last 1
+    <# $modPath = (Get-ChildItem "$PSScriptRoot/../BuildOutput/VaporShell.Common/*/VaporShell.Common.psm1").FullName | Sort-Object FullName | Select-Object -Last 1
     $scriptBody = [System.IO.File]::ReadAllText($modPath)
     $script = [ScriptBlock]::Create($scriptBody)
     #$script = [ScriptBlock]::Create("using module '$modPath'")
-    . $script
+    . $script #>
+    $modPath = (Get-ChildItem "$PSScriptRoot/../BuildOutput/VaporShell.Common/*/VaporShell.Common.psd1").FullName | Sort-Object FullName | Select-Object -Last 1
+    Import-Module $modPath
 
     $t = [Template]@{
         Description = "My template"
