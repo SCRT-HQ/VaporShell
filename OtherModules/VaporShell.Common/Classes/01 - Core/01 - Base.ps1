@@ -16,11 +16,16 @@ class VSObject {
             $key = $_.Name
             $value = $_.Value
             if ($addAllProperties -or ($key -notmatch '^(_|LogicalId$)' -and ($null -ne $value -or $key -match '::'))) {
-                $clean[$key] = if ($null -ne ($value | Get-Member -Name ToOrderedDictionary* -MemberType Method)) {
-                    $value.ToOrderedDictionary($addAllProperties)
+                $clean[$key] = if ($value -is [System.Collections.IDictionary] -and $value -isnot [VSHashtable]) {
+                    $value
                 }
-                elseif ($null -ne ($value | Get-Member -Name ToOrderedDictionary* -MemberType Method)) {
-                    $value.ToOrderedDictionary($addAllProperties)
+                elseif ($value | Get-Member -Name ToOrderedDictionary* -MemberType Method -ErrorAction SilentlyContinue) {
+                    try {
+                        $value.ToOrderedDictionary($addAllProperties)
+                    }
+                    catch {
+                        $value
+                    }
                 }
                 else {
                     $value
@@ -96,12 +101,22 @@ class VSHashtable : hashtable {
     [System.Collections.Specialized.OrderedDictionary] ToOrderedDictionary([bool] $addAllProperties) {
         $clean = [ordered]@{}
         $this.GetEnumerator() | ForEach-Object {
-            if ($addAllProperties -or ($_.Key -notmatch '^(_|LogicalId$)' -and ($null -ne $_.Value -or $_.Key -match '::'))) {
-                $clean[$_.Key] = if ($null -ne ($_.Value | Get-Member -Name ToOrderedDictionary* -MemberType Method)) {
-                    $_.Value.ToOrderedDictionary($addAllProperties)
+            $key = $_.Key
+            $value = $_.Value
+            if ($addAllProperties -or ($key -notmatch '^(_|LogicalId$)' -and ($null -ne $value -or $key -match '::'))) {
+                $clean[$key] = if ($value -is [System.Collections.IDictionary] -and $value -isnot [VSHashtable]) {
+                    $value
+                }
+                elseif ($value | Get-Member -Name ToOrderedDictionary* -MemberType Method -ErrorAction SilentlyContinue) {
+                    try {
+                        $value.ToOrderedDictionary($addAllProperties)
+                    }
+                    catch {
+                        $value
+                    }
                 }
                 else {
-                    $_.Value
+                    $value
                 }
             }
         }
