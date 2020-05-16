@@ -37,7 +37,7 @@ class ValidateType : ValidateEnumeratedArgumentsAttribute {
     ) {
         if ($element.GetType().FullName -notin $this.ValidTypes.FullName) {
             $errorRecord = [ErrorRecord]::new(
-                [ArgumentException]::new("$($element.GetType().FullName) is not a valid type for this property. Valid types include: $(($this.ValidTypes | Sort-Object FullName -Unique).FullName -join ', ')"),
+                [ArgumentException]::new("$($element.GetType().FullName) is not a valid type for this property. Valid types include: $(($this.ValidTypes.FullName | Sort-Object -Unique) -join ', ')"),
                 'InvalidType',
                 [ErrorCategory]::InvalidArgument,
                 $element
