@@ -22,6 +22,13 @@ For this release of the REST API, you can create only one policy for a container
         PrimitiveType: String
         UpdateType: Mutable
 
+    .PARAMETER MetricPolicy
+        The DNS endpoint of the container. Use the endpoint to identify the specific container when sending requests to the data plane. The service assigns this value when the container is created. Once the value has been assigned, it does not change.
+
+        Type: MetricPolicy
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediastore-container.html#cfn-mediastore-container-metricpolicy
+        UpdateType: Mutable
+
     .PARAMETER ContainerName
         The name for the container. The name must be from 1 to 255 characters. Container names must be unique to your AWS account within a specific region. As an example, you could create a container named movies in every region, as long as you don’t have an existing container with that name.
 
@@ -52,6 +59,14 @@ For information about how to construct an object lifecycle policy, see Component
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediastore-container.html#cfn-mediastore-container-accessloggingenabled
         PrimitiveType: Boolean
+        UpdateType: Mutable
+
+    .PARAMETER Tags
+        The DNS endpoint of the container. Use the endpoint to identify the specific container when sending requests to the data plane. The service assigns this value when the container is created. Once the value has been assigned, it does not change.
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediastore-container.html#cfn-mediastore-container-tags
+        ItemType: Tag
         UpdateType: Mutable
 
     .PARAMETER DeletionPolicy
@@ -127,6 +142,8 @@ For information about how to construct an object lifecycle policy, see Component
                 }
             })]
         $Policy,
+        [parameter(Mandatory = $false)]
+        $MetricPolicy,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
@@ -171,6 +188,9 @@ For information about how to construct an object lifecycle policy, see Component
                 }
             })]
         $AccessLoggingEnabled,
+        [VaporShell.Core.TransformTag()]
+        [parameter(Mandatory = $false)]
+        $Tags,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
@@ -239,6 +259,12 @@ For information about how to construct an object lifecycle policy, see Component
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
                     }
                     $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name CorsPolicy -Value @($CorsPolicy)
+                }
+                Tags {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name Tags -Value @($Tags)
                 }
                 Default {
                     if (!($ResourceParams["Properties"])) {

@@ -1,3 +1,13 @@
+class ResourceTag {
+    [string] $Key
+    [object] $Value
+
+    ResourceTag([object] $key, [object] $value) {
+        $this.Key = $key.ToString()
+        $this.Value = $value
+    }
+}
+
 class ResourceProperties : VSObject {
     ResourceProperties() : base() {}
     ResourceProperties([hashtable] $props) : base($props) {}

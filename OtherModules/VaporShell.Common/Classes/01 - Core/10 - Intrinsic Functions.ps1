@@ -38,7 +38,7 @@ class FnFindInMap : IntrinsicFunction {
         return "FnFindInMap($($this['Fn::FindInMap']))"
     }
 
-    FnBase64([string] $mapName, [object] $topLevelKey, [object] $secondLevelKey) {
+    FnFindInMap([string] $mapName, [object] $topLevelKey, [object] $secondLevelKey) {
         $this['Fn::FindInMap'] = @($mapName, $topLevelKey, $secondLevelKey)
     }
 }
