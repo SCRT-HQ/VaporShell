@@ -1,11 +1,11 @@
 enum DeletionPolicy {
-    DELETE
-    RETAIN
-    SNAPSHOT
+    Delete
+    Retain
+    Snapshot
 }
 
 enum UpdateReplacePolicy {
-    DELETE
-    RETAIN
-    SNAPSHOT
+    Delete
+    Retain
+    Snapshot
 }
