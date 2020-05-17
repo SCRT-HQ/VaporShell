@@ -10,13 +10,28 @@ if (($env:PSModulePath -split ';') -notcontains $buildOutputPath) {
 }
 
 try {
-    <#
-    $modPath = (Get-ChildItem "$PSScriptRoot/../BuildOutput/VaporShell.Common/*/VaporShell.Common.psm1").FullName | Sort-Object FullName | Select-Object -Last 1
-    $scriptBody = [System.IO.File]::ReadAllText($modPath)
-    $script = [ScriptBlock]::Create($scriptBody)
-    . $script
-    #>
-    Import-Module VaporShell.S3 -Verbose
+    Import-Module VaporShell.S3 -Verbose -Force
+
+    $tClean = [VSTemplate]@{
+        Description = "My template"
+        Resources   = @(
+            [S3Bucket]@{
+                LogicalId      = 'MyBucket'
+                DeletionPolicy = 'RETAIN'
+                BucketName     = 'my-test-bucket'
+            }
+            [S3Bucket]@{
+                LogicalId      = 'MyOtherBucket'
+                DeletionPolicy = 'RETAIN'
+                BucketName     = 'BucketName'
+                Tags           = @{
+                    Name        = 'MyOtherBucket'
+                    environment = 'development'
+                    application = 'VaporShell'
+                }
+            }
+        )
+    }
 
     $t = [VSTemplate]@{
         Description = "My template"
@@ -30,11 +45,11 @@ try {
                 LogicalId      = 'MyOtherBucket'
                 DeletionPolicy = 'RETAIN'
                 BucketName     = [FnBase64][FnRef]'BucketName'
-                Tags           = ([PSCustomObject]@{
+                Tags           = @{
                     Name        = 'MyOtherBucket'
                     environment = 'development'
                     application = 'VaporShell'
-                })
+                }
             }
         )
     }
@@ -85,8 +100,7 @@ try {
     $t.AddResource($resource)
 
     $t.ToYaml()
-    $resource.ToJson()
-    $resource.ToYaml()
+    $tClean.ToYaml($true)
     $res2.Properties | Format-List
     $res3.Properties | Format-List
 }

@@ -2,16 +2,18 @@ class VSTemplate : VSObject {
     hidden [string]$_description = $null
     hidden [string] $_awsTemplateFormatVersion = $null
     hidden [hashtable] $_parameters = $null
+    hidden [VSParameter[]] $_parametersOriginal = @()
     hidden [hashtable] $_resources = $null
+    hidden [VSResource[]] $_resourcesOriginal = @()
     hidden [hashtable] $_transform = $null
-    [string] $AWSTemplateFormatVersion
-    [object] $Transform
-    [string] $Description
-    [VSParameter[]] $Parameters
-    [object] $Mappings
-    [VSResource[]] $Resources
-    [object] $Outputs
-    [object] $Rules
+    [string] $AWSTemplateFormatVersion = $null
+    [object] $Transform = $null
+    [string] $Description = $null
+    [VSParameter[]] $Parameters = $null
+    [object] $Mappings = $null
+    [VSResource[]] $Resources = $null
+    [object] $Outputs = $null
+    [object] $Rules = $null
 
     static [string] Help() {
         $help = "This is the Template help."
@@ -34,7 +36,8 @@ class VSTemplate : VSObject {
                     $cleaned[$_.Key] = $_.Value
                 }
             }
-            $this._resources[$parameter.LogicalId] = $cleaned
+            $this._parameters[$parameter.LogicalId] = $cleaned
+            $this._parametersOriginal += $parameter
         }
     }
 
@@ -57,6 +60,7 @@ class VSTemplate : VSObject {
                 }
             }
             $this._resources[$resource.LogicalId] = $cleaned
+            $this._resourcesOriginal += $resource
         }
     }
 
@@ -64,6 +68,14 @@ class VSTemplate : VSObject {
         $resources | ForEach-Object {
             $this.AddResource($_)
         }
+    }
+
+    [VSResource[]] GetResources() {
+        return $this._resourcesOriginal
+    }
+
+    [VSParameter[]] GetParameters() {
+        return $this._parametersOriginal
     }
 
     hidden [void] _addAccessors() {
@@ -80,7 +92,7 @@ class VSTemplate : VSObject {
             $this._description = $value
         }
         $this | Add-Member -Force -MemberType ScriptProperty -Name Parameters -Value {
-            [PSCustomObject]$this._parameters
+            $this._parameters
         } -SecondValue {
             param([VSParameter[]] $value)
             if ($null -eq $this._parameters) {
@@ -89,7 +101,7 @@ class VSTemplate : VSObject {
             $this.AddParameter($value)
         }
         $this | Add-Member -Force -MemberType ScriptProperty -Name Resources -Value {
-            [PSCustomObject]$this._resources
+            $this._resources
         } -SecondValue {
             param([VSResource[]] $value)
             if ($null -eq $this._resources) {

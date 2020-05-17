@@ -1,5 +1,4 @@
 using namespace System.Management.Automation
-
 class ValidateType : ValidateEnumeratedArgumentsAttribute {
     hidden [Type[]]
     $_validTypes
