@@ -3,10 +3,10 @@ Param()
 
 Start-BuildScript -Project VaporShell -Task BuildSubmodules
 
-$buildOutputPath = (Resolve-Path ([System.IO.Path]::Combine($PSScriptRoot,'..',"BuildOutput"))).Path
+$buildOutputPath = (Resolve-Path ([System.IO.Path]::Combine($PSScriptRoot, '..', "BuildOutput"))).Path
 
 if (($env:PSModulePath -split ';') -notcontains $buildOutputPath) {
-    $env:PSModulePath = @($buildOutputPath,$env:PSModulePath) -join [System.IO.Path]::PathSeparator
+    $env:PSModulePath = @($buildOutputPath, $env:PSModulePath) -join [System.IO.Path]::PathSeparator
 }
 
 try {
@@ -18,18 +18,23 @@ try {
     #>
     Import-Module VaporShell.S3 -Verbose
 
-    $t = [Template]@{
+    $t = [VSTemplate]@{
         Description = "My template"
         Resources   = @(
-            [Bucket]@{
+            [S3Bucket]@{
                 LogicalId      = 'MyBucket'
                 DeletionPolicy = 'RETAIN'
-                BucketName = 'my-test-bucket'
+                BucketName     = 'my-test-bucket'
             }
-            [Bucket]@{
+            [S3Bucket]@{
                 LogicalId      = 'MyOtherBucket'
                 DeletionPolicy = 'RETAIN'
-                BucketName = [FnBase64][FnRef]'BucketName'
+                BucketName     = [FnBase64][FnRef]'BucketName'
+                Tags           = ([PSCustomObject]@{
+                    Name        = 'MyOtherBucket'
+                    environment = 'development'
+                    application = 'VaporShell'
+                })
             }
         )
     }
@@ -37,46 +42,45 @@ try {
     $t2Hash = @{
         Description = "My template"
         Resources   = @(
-            [Bucket]@{
+            [S3Bucket]@{
                 LogicalId      = 'MyBucket'
                 DeletionPolicy = 'RETAIN'
-                BucketName = 'my-test-bucket'
+                BucketName     = 'my-test-bucket'
             }
-            [Bucket]@{
+            [S3Bucket]@{
                 LogicalId      = 'MyOtherBucket'
                 DeletionPolicy = 'RETAIN'
-                BucketName = [FnBase64][FnRef]'BucketName'
+                BucketName     = [FnBase64][FnRef]'BucketName'
             }
         )
     }
-    $t2 = [Template]::new($t2Hash)
+    $t2 = [VSTemplate]::new($t2Hash)
 
-    $resource = [Bucket]@{
+    $resource = [S3Bucket]@{
         LogicalId           = 'MyFancyBucket'
         DeletionPolicy      = 'RETAIN'
         UpdateReplacePolicy = [FnRef]'ReplacePolicyParam'
-        BucketName = [FnBase64][FnRef]'BucketName'
+        BucketName          = [FnBase64][FnRef]'BucketName'
     }
 
 
     $res2PropHash = @{
         BucketName = [FnBase64][FnRef]'BucketName'
     }
-    $res2Props = [BucketProperties]::new($res2PropHash)
 
     $res2Hash = @{
         LogicalId           = 'MyBucket'
         DeletionPolicy      = 'RETAIN'
         UpdateReplacePolicy = 'RETAIN'
-        BucketName = [FnBase64][FnRef]'BucketName'
+        BucketName          = [FnBase64][FnRef]'BucketName'
     }
-    $res2 = [Bucket]$res2Hash
+    $res2 = [S3Bucket]$res2Hash
 
-    $res3 = [Bucket]@{
+    $res3 = [S3Bucket]@{
         LogicalId           = 'My3rdBucket'
         DeletionPolicy      = 'RETAIN'
         UpdateReplacePolicy = 'RETAIN'
-        BucketName = [FnBase64][FnRef]'BucketName'
+        BucketName          = [FnBase64][FnRef]'BucketName'
     }
     $t.AddResource($resource)
 
