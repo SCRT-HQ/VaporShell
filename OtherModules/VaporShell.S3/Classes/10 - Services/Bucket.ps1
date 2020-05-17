@@ -1,10 +1,12 @@
-class Bucket : Resource {
+class S3Bucket : VSResource {
     [string]
     $Type = 'AWS::S3::Bucket'
     [object]
     $AccessControl
     [object]
     $BucketName
+    [VSResourceTag[]]
+    $Tags
 
     hidden [void] _addAccessors() {
         $this | Add-Member -Force -MemberType ScriptProperty -Name AccessControl -Value {
@@ -19,9 +21,15 @@ class Bucket : Resource {
             param([ValidateType(([string],[FnRef],[FnBase64]))][object] $value)
             $this.Properties['BucketName'] = $value
         }
+        $this | Add-Member -Force -MemberType ScriptProperty -Name Tags -Value {
+            $this.Properties['Tags']
+        } -SecondValue {
+            param([object] $value)
+            $this.Properties['Tags'] = [VSResourceTag]::TransformTag($value)
+        }
     }
 
-    Bucket() { }
-    Bucket([System.Collections.IDictionary] $props) : base($props) {}
-    Bucket([psobject] $props) : base($props)  {}
+    S3Bucket() { }
+    S3Bucket([System.Collections.IDictionary] $props) : base($props) {}
+    S3Bucket([psobject] $props) : base($props)  {}
 }
