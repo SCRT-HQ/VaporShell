@@ -8,7 +8,7 @@ class BucketProperties : ResourceProperties {
         $this | Add-Member -Force -MemberType ScriptProperty -Name BucketName -Value {
             $this._bucketName
         } -SecondValue {
-            param([ValidateType([string],[FnRef],[FnBase64])][object] $value)
+            param([ValidateType(([string],[FnRef],[FnBase64]))][object] $value)
             $this._bucketName = $value
         }
     }

@@ -1,4 +1,4 @@
-class VSObject {
+class VSObject : object {
     hidden [void] _addAccessors() {}
 
     static [string] Help() {
@@ -36,9 +36,11 @@ class VSObject {
     }
 
     [string] ToJson() {
-        $clean = $this.ToOrderedDictionary()
-        if ($this.PSObject.Properties.Name -contains 'LogicalId') {
-            $clean = @{$this.LogicalId = $clean}
+        $clean = if ($this.PSObject.Properties.Name -contains 'LogicalId') {
+            @{$this.LogicalId = $this.ToOrderedDictionary()}
+        }
+        else {
+            $this.ToOrderedDictionary()
         }
         return $clean | ConvertTo-Json -Depth 50
     }
@@ -124,9 +126,11 @@ class VSHashtable : hashtable {
     }
 
     [string] ToJson() {
-        $clean = $this.ToOrderedDictionary()
-        if ($this.PSObject.Properties.Name -contains 'LogicalId') {
-            $clean = @{$this.LogicalId = $clean}
+        $clean = if ($this['LogicalId']) {
+            @{$this['LogicalId'] = $this.ToOrderedDictionary()}
+        }
+        else {
+            $this.ToOrderedDictionary()
         }
         return $clean | ConvertTo-Json -Depth 50
     }
