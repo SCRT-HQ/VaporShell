@@ -37,7 +37,7 @@ try {
         Resources   = @(
             [S3Bucket]@{
                 LogicalId      = 'MyBucket'
-                DeletionPolicy = 'Retain'
+                DeletionPolicy = [DeletionPolicy]::RETAIN
                 BucketName     = [FnRef]'BucketName1Param'
             }
             [S3Bucket]@{
