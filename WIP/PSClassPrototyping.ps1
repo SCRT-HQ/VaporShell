@@ -3,14 +3,20 @@ Param()
 
 Start-BuildScript -Project VaporShell -Task BuildSubmodules
 
+$buildOutputPath = (Resolve-Path ([System.IO.Path]::Combine($PSScriptRoot,'..',"BuildOutput"))).Path
+
+if (($env:PSModulePath -split ';') -notcontains $buildOutputPath) {
+    $env:PSModulePath = @($buildOutputPath,$env:PSModulePath) -join [System.IO.Path]::PathSeparator
+}
+
 try {
-    <# $modPath = (Get-ChildItem "$PSScriptRoot/../BuildOutput/VaporShell.Common/*/VaporShell.Common.psm1").FullName | Sort-Object FullName | Select-Object -Last 1
+    <#
+    $modPath = (Get-ChildItem "$PSScriptRoot/../BuildOutput/VaporShell.Common/*/VaporShell.Common.psm1").FullName | Sort-Object FullName | Select-Object -Last 1
     $scriptBody = [System.IO.File]::ReadAllText($modPath)
     $script = [ScriptBlock]::Create($scriptBody)
-    #$script = [ScriptBlock]::Create("using module '$modPath'")
-    . $script #>
-    $modPath = (Get-ChildItem "$PSScriptRoot/../BuildOutput/VaporShell.Common/*/VaporShell.Common.psd1").FullName | Sort-Object FullName | Select-Object -Last 1
-    Import-Module $modPath
+    . $script
+    #>
+    Import-Module VaporShell.S3 -Verbose
 
     $t = [Template]@{
         Description = "My template"
@@ -18,16 +24,12 @@ try {
             [Bucket]@{
                 LogicalId      = 'MyBucket'
                 DeletionPolicy = 'RETAIN'
-                Properties     = [BucketProperties]@{
-                    BucketName = 'my-test-bucket'
-                }
+                BucketName = 'my-test-bucket'
             }
             [Bucket]@{
                 LogicalId      = 'MyOtherBucket'
                 DeletionPolicy = 'RETAIN'
-                Properties     = [BucketProperties]@{
-                    BucketName = [FnBase64][FnRef]'BucketName'
-                }
+                BucketName = [FnBase64][FnRef]'BucketName'
             }
         )
     }
@@ -38,16 +40,12 @@ try {
             [Bucket]@{
                 LogicalId      = 'MyBucket'
                 DeletionPolicy = 'RETAIN'
-                Properties     = [BucketProperties]@{
-                    BucketName = 'my-test-bucket'
-                }
+                BucketName = 'my-test-bucket'
             }
             [Bucket]@{
                 LogicalId      = 'MyOtherBucket'
                 DeletionPolicy = 'RETAIN'
-                Properties     = [BucketProperties]@{
-                    BucketName = [FnBase64][FnRef]'BucketName'
-                }
+                BucketName = [FnBase64][FnRef]'BucketName'
             }
         )
     }
@@ -57,9 +55,7 @@ try {
         LogicalId           = 'MyFancyBucket'
         DeletionPolicy      = 'RETAIN'
         UpdateReplacePolicy = [FnRef]'ReplacePolicyParam'
-        Properties          = [BucketProperties]@{
-            BucketName = [FnBase64][FnRef]'BucketName'
-        }
+        BucketName = [FnBase64][FnRef]'BucketName'
     }
 
 
@@ -72,9 +68,7 @@ try {
         LogicalId           = 'MyBucket'
         DeletionPolicy      = 'RETAIN'
         UpdateReplacePolicy = 'RETAIN'
-        Properties          = [BucketProperties]@{
-            BucketName = [FnBase64][FnRef]'BucketName'
-        }
+        BucketName = [FnBase64][FnRef]'BucketName'
     }
     $res2 = [Bucket]$res2Hash
 
@@ -82,9 +76,7 @@ try {
         LogicalId           = 'My3rdBucket'
         DeletionPolicy      = 'RETAIN'
         UpdateReplacePolicy = 'RETAIN'
-        Properties          = @{
-            BucketName = [FnBase64][FnRef]'BucketName'
-        }
+        BucketName = [FnBase64][FnRef]'BucketName'
     }
     $t.AddResource($resource)
 

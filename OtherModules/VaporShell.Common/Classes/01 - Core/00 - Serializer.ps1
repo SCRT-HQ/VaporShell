@@ -1,14 +1,7 @@
 class Serializer {
     static [object] ToResource([object] $resource) {
-        if ($null -ne $resource.Type) {
-            $className = $resource.Type.Split('::')[-1]
-            try {
-                $newObj = New-Object $className -ArgumentList $resource
-            }
-            catch {
-                return $resource
-            }
-            return $newObj
+        if ($null -ne $resource.Type -or ($resource -is [System.Collections.IDictionary] -and $null -ne $resource['Type'])) {
+            return ($resource -as [Type]$resource.Type.Split('::')[-1])
         }
         else {
             return $resource

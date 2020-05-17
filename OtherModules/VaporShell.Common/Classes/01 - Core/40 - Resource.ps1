@@ -8,9 +8,9 @@ class ResourceTag {
     }
 }
 
-class ResourceProperties : VSObject {
+class ResourceProperties : VSHashtable {
     ResourceProperties() : base() {}
-    ResourceProperties([hashtable] $props) : base($props) {}
+    ResourceProperties([System.Collections.IDictionary] $props) : base($props) {}
     ResourceProperties([psobject] $props) : base($props)  {}
 }
 
@@ -21,12 +21,12 @@ class Resource : VSObject {
 
     [string] $LogicalId
     [string] $Type
-    [ResourceProperties] $Properties
+    [ResourceProperties] $Properties = [ResourceProperties]::new()
     [object] $Condition
     [object] $CreationPolicy
     [object] $UpdatePolicy
-    [DeletionPolicy] $DeletionPolicy
-    [UpdateReplacePolicy] $UpdateReplacePolicy
+    [object] $DeletionPolicy
+    [object] $UpdateReplacePolicy
     [string[]] $DependsOn
     [object] $Metadata
 
@@ -41,8 +41,8 @@ class Resource : VSObject {
             $this._logicalId = [Validator]::LogicalId($logicalId)
         }
         $this | Add-Member -Force -MemberType ScriptProperty -Name DeletionPolicy -Value {$this._deletionPolicy} -SecondValue {
-            param([object] $deletionPolicy)
-            if ($deletionPolicy -is [DeletionPolicy]) {
+            param([ValidateType(([string],[FnRef]))][object] $deletionPolicy)
+            if ($deletionPolicy -as [DeletionPolicy]) {
                 $this._deletionPolicy = $deletionPolicy.ToString()
             }
             else {
@@ -50,8 +50,8 @@ class Resource : VSObject {
             }
         }
         $this | Add-Member -Force -MemberType ScriptProperty -Name UpdateReplacePolicy -Value {$this._updateReplacePolicy} -SecondValue {
-            param([object] $updateReplacePolicy)
-            if ($updateReplacePolicy -is [UpdateReplacePolicy]) {
+            param([ValidateType(([string],[FnRef]))][object] $updateReplacePolicy)
+            if ($updateReplacePolicy -as [UpdateReplacePolicy]) {
                 $this._updateReplacePolicy = $updateReplacePolicy.ToString()
             }
             else {
@@ -61,6 +61,6 @@ class Resource : VSObject {
     }
 
     Resource() : base() {}
-    Resource([hashtable] $props) : base($props) {}
+    Resource([System.Collections.IDictionary] $props) : base($props) {}
     Resource([psobject] $props) : base($props)  {}
 }

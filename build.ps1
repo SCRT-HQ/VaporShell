@@ -128,4 +128,4 @@ foreach ($item in $moduleDependencies) {
 }
 
 Add-Heading "Executing Invoke-Build"
-Invoke-Build -ModuleName $ModuleName @PSBoundParameters
+Invoke-Build -ModuleName $ModuleName @PSBoundParameters -File 'build.tasks.ps1'
