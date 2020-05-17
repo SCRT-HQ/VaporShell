@@ -18,14 +18,6 @@ class VSResource : VSLogicalObject {
     [object] $UpdatePolicy
     [TransformDeletionPolicy()] [object] $UpdateReplacePolicy
 
-    [object] FormatDeletionPolicy([object] $policy) {
-        $deletionPolicies = @('Delete','Retain','Snapshot')
-        if ($found = $deletionPolicies | Where-Object {$_ -eq $policy.ToString()}) {
-            return $found
-        }
-        return $policy
-    }
-
     [string] ToString() {
         return $this.LogicalId
     }
@@ -38,8 +30,7 @@ class VSResource : VSLogicalObject {
                 [ValidateType(([string], [FnRef]))] [object]
                 $deletionPolicy
             )
-            $formatted = $this.FormatDeletionPolicy($deletionPolicy)
-            $this._deletionPolicy = $this.FormatDeletionPolicy($deletionPolicy)
+            $this._deletionPolicy = $deletionPolicy
         }
         $this | Add-Member -Force -MemberType ScriptProperty -Name UpdateReplacePolicy -Value {
             $this.FormatDeletionPolicy($this._updateReplacePolicy)
@@ -48,7 +39,7 @@ class VSResource : VSLogicalObject {
                 [ValidateType(([string], [FnRef]))] [object]
                 $updateReplacePolicy
             )
-            $this._updateReplacePolicy = $this.FormatDeletionPolicy($updateReplacePolicy)
+            $this._updateReplacePolicy = $updateReplacePolicy
         }
 
         $this | Add-Member -Force -MemberType ScriptProperty -Name DeletionPolicy -Value {
