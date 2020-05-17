@@ -10,20 +10,40 @@ if (($env:PSModulePath -split ';') -notcontains $buildOutputPath) {
 }
 
 try {
+    #. ([scriptblock]::Create('using module VaporShell.S3'))
     Import-Module VaporShell.S3 -Verbose -Force
 
     $tClean = [VSTemplate]@{
         Description = "My template"
+        Parameters  = @(
+            [VSParameter]@{
+                LogicalId = 'BucketName1Param'
+                Description = 'The name of the first bucket to create'
+                Type = 'String'
+            }
+            [VSParameter]@{
+                LogicalId = 'BucketName2Param'
+                Description = 'The name of the second bucket to create'
+                Type = 'String'
+            }
+            [VSParameter]@{
+                LogicalId = 'Bucket2DeletionPolicy'
+                Description = 'The deletion policy for bucket 2'
+                Type = 'String'
+                Default = 'Delete'
+                AllowedValues = @('Delete','Retain','Snapshot')
+            }
+        )
         Resources   = @(
             [S3Bucket]@{
                 LogicalId      = 'MyBucket'
-                DeletionPolicy = 'RETAIN'
-                BucketName     = 'my-test-bucket'
+                DeletionPolicy = 'Retain'
+                BucketName     = [FnRef]'BucketName1Param'
             }
             [S3Bucket]@{
                 LogicalId      = 'MyOtherBucket'
-                DeletionPolicy = 'RETAIN'
-                BucketName     = 'BucketName'
+                DeletionPolicy = [FnRef]'Bucket2DeletionPolicy'
+                BucketName     = [FnRef]'BucketName2Param'
                 Tags           = @{
                     Name        = 'MyOtherBucket'
                     environment = 'development'
@@ -101,8 +121,8 @@ try {
 
     $t.ToYaml()
     $tClean.ToYaml($true)
-    $res2.Properties | Format-List
-    $res3.Properties | Format-List
+    [PSCustomObject]$res2.Properties | Format-List
+    [PSCustomObject]$res3.Properties | Format-List
 }
 catch {
     $_

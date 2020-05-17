@@ -1,11 +1,8 @@
-class VSHashtable : hashtable {
-    # Anything inheriting from this class will only show the hashtable contents.
-    # Object properties will be stripped when cast to JSON/YAML.
-    # Useful for adding corresponding public properties for intellisense.
+class VSObject : object {
     hidden [void] _addAccessors() {}
 
     static [string] Help() {
-        $help = "This is the base VSHashtable help. The help content for this class still needs to be generated."
+        $help = "This is the base VSObject help. The help content for this class still needs to be generated."
         return $help
     }
 
@@ -15,8 +12,8 @@ class VSHashtable : hashtable {
 
     [System.Collections.Specialized.OrderedDictionary] ToOrderedDictionary([bool] $addAllProperties) {
         $clean = [ordered]@{}
-        $this.GetEnumerator() | ForEach-Object {
-            $key = $_.Key
+        $this.PSObject.Properties | ForEach-Object {
+            $key = $_.Name
             $value = $_.Value
             if (
                 $addAllProperties -or (
@@ -29,7 +26,10 @@ class VSHashtable : hashtable {
                     )
                 )
             ) {
-                $clean[$key] = if ($value -is [System.Collections.IDictionary] -and $value -isnot [VSHashtable]) {
+                $clean[$key] = if ($key -match '$(UpdateReplacePolicy|DeletionPolicy)$' -and $value.ToString() -match '^(Delete|Retain|Snapshot)$') {
+                    (Get-Culture).TextInfo.ToTitleCase($value.ToString().ToLower())
+                }
+                elseif ($value -is [System.Collections.IDictionary] -and $value -isnot [VSHashtable]) {
                     $value
                 }
                 elseif ($value | Get-Member -Name ToOrderedDictionary* -MemberType Method -ErrorAction SilentlyContinue) {
@@ -49,8 +49,8 @@ class VSHashtable : hashtable {
     }
 
     [string] ToJson() {
-        $clean = if ($this['LogicalId']) {
-            @{$this['LogicalId'] = $this.ToOrderedDictionary()}
+        $clean = if ($this.PSObject.Properties.Name -contains 'LogicalId') {
+            @{$this.LogicalId = $this.ToOrderedDictionary()}
         }
         else {
             $this.ToOrderedDictionary()
@@ -58,41 +58,44 @@ class VSHashtable : hashtable {
         return $clean | ConvertTo-Json -Depth 50
     }
 
-    [string[]] ToYaml() {
-        $json = $this.ToJson()
-        if ($null -ne (Get-Command cfn-flip*)) {
-            return $json | cfn-flip
-        }
-        else {
-            Write-Warning "cfn-flip not found in PATH! Returning JSON"
-            return $json
-        }
+    [string] ToYaml() {
+        return $this.ToYaml($false)
     }
 
-    VSHashtable() {
+    [string] ToYaml([bool] $usePowerShellYaml) {
+        if (-not $usePowerShellYaml -and $null -ne (Get-Command cfn-flip* -ErrorAction SilentlyContinue)) {
+            $flipped = ($this.ToJson() | cfn-flip) -join [System.Environment]::NewLine
+        }
+        else {
+            $flipped = ($this.ToOrderedDictionary() | ConvertTo-Yaml) -join [System.Environment]::NewLine
+        }
+        return $flipped
+    }
+
+    VSObject() {
         $this._addAccessors()
     }
 
-    VSHashtable([System.Collections.IDictionary] $props) {
+    VSObject([System.Collections.IDictionary] $props) {
         $this._addAccessors()
         Write-Debug "Contructing $($this.GetType().Name) from input IDictionary"
         $props.GetEnumerator() | ForEach-Object {
             Write-Debug "Checking for property '$($_.Key)' on this object"
             if ($this.PSObject.Properties.Name -contains $_.Key) {
                 Write-Debug "Property found, adding value: $($_.Value)"
-                $this[$_.Key] = $_.Value
+                $this."$($_.Key)" = $_.Value
             }
         }
     }
 
-    VSHashtable([psobject] $props) {
+    VSObject([psobject] $props) {
         $this._addAccessors()
         Write-Debug "Contructing $($this.GetType().Name) from input PSObject"
         $props.PSObject.Properties.Name | ForEach-Object {
             Write-Debug "Checking for property '$($_)' on this object"
             if ($this.PSObject.Properties.Name -contains $_) {
                 Write-Debug "Property found, adding value: $($props."$_")"
-                $this[$_] = $props."$_"
+                $this."$($_)" = $props."$_"
             }
         }
     }
