@@ -15,18 +15,8 @@ catch {
 
 'platyPS','PoshRSJob' | ForEach-Object {
     Write-Host "[$_] Resolving module"
-    try {
-        if ($imported = Get-Module $_) {
-            Write-Host "[$_] Removing imported module"
-            $imported | Remove-Module -ErrorAction SilentlyContinue
-        }
-        Import-Module $_ -ErrorAction Stop
-    }
-    catch {
-        Write-Host "[$_] Installing missing module"
-        Install-Module $_ -Repository PSGallery -Scope CurrentUser -Force
-        Import-Module @item
-    }
+    Install-Module $_ -Repository PSGallery -Scope CurrentUser -ErrorAction SilentlyContinue
+    Import-Module $_
 }
 
 #region purpose: Unload / load module
