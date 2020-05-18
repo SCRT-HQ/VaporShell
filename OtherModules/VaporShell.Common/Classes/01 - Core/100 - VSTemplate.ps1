@@ -70,29 +70,26 @@ class VSTemplate : VSObject {
         }
     }
 
-    [VSResource[]] GetResources() {
-        return $this._resourcesOriginal
-    }
-
-    [VSParameter[]] GetParameters() {
-        return $this._parametersOriginal
-    }
-
     hidden [void] _addAccessors() {
-        $this | Add-Member -Force -MemberType ScriptProperty -Name AWSTemplateFormatVersion -Value {
+        $this | Add-Member -Force -MemberType 'ScriptProperty' -Name 'AWSTemplateFormatVersion' -Value {
             $this._awsTemplateFormatVersion
         } -SecondValue {
             param([string] $value)
             $this._awsTemplateFormatVersion = $value
         }
-        $this | Add-Member -Force -MemberType ScriptProperty -Name Description -Value {
+        $this | Add-Member -Force -MemberType 'ScriptProperty' -Name 'Description' -Value {
             $this._description
         } -SecondValue {
             param([string] $value)
             $this._description = $value
         }
-        $this | Add-Member -Force -MemberType ScriptProperty -Name Parameters -Value {
-            $this._parameters
+        $this | Add-Member -Force -MemberType 'ScriptProperty' -Name 'Parameters' -Value {
+            if ($MyInvocation.Line -match '\.Parameters') {
+                $this._parametersOriginal
+            }
+            else {
+                $this._parameters
+            }
         } -SecondValue {
             param([VSParameter[]] $value)
             if ($null -eq $this._parameters) {
@@ -100,8 +97,13 @@ class VSTemplate : VSObject {
             }
             $this.AddParameter($value)
         }
-        $this | Add-Member -Force -MemberType ScriptProperty -Name Resources -Value {
-            $this._resources
+        $this | Add-Member -Force -MemberType 'ScriptProperty' -Name 'Resources' -Value {
+            if ($MyInvocation.Line -match '\.Resources') {
+                $this._resourcesOriginal
+            }
+            else {
+                $this._resources
+            }
         } -SecondValue {
             param([VSResource[]] $value)
             if ($null -eq $this._resources) {
@@ -109,7 +111,7 @@ class VSTemplate : VSObject {
             }
             $this.AddResource($value)
         }
-        $this | Add-Member -Force -MemberType ScriptProperty -Name Transform -Value {
+        $this | Add-Member -Force -MemberType 'ScriptProperty' -Name 'Transform' -Value {
             [PSCustomObject]$this._transform
         } -SecondValue {
             param([object] $value)

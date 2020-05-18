@@ -17,21 +17,21 @@ try {
         Description = "My template"
         Parameters  = @(
             [VSParameter]@{
-                LogicalId = 'BucketName1Param'
+                LogicalId   = 'BucketName1Param'
                 Description = 'The name of the first bucket to create'
-                Type = 'String'
+                Type        = 'String'
             }
             [VSParameter]@{
-                LogicalId = 'BucketName2Param'
+                LogicalId   = 'BucketName2Param'
                 Description = 'The name of the second bucket to create'
-                Type = 'String'
+                Type        = 'String'
             }
             [VSParameter]@{
-                LogicalId = 'Bucket2DeletionPolicy'
-                Description = 'The deletion policy for bucket 2'
-                Type = 'String'
-                Default = 'Delete'
-                AllowedValues = @('Delete','Retain','Snapshot')
+                LogicalId     = 'Bucket2DeletionPolicy'
+                Description   = 'The deletion policy for bucket 2'
+                Type          = 'String'
+                Default       = 'Delete'
+                AllowedValues = @('Delete', 'Retain', 'Snapshot')
             }
         )
         Resources   = @(
@@ -98,11 +98,6 @@ try {
         BucketName          = [FnBase64][FnRef]'BucketName'
     }
 
-
-    $res2PropHash = @{
-        BucketName = [FnBase64][FnRef]'BucketName'
-    }
-
     $res2Hash = @{
         LogicalId           = 'MyBucket'
         DeletionPolicy      = 'RETAIN'
@@ -119,9 +114,13 @@ try {
     }
     $t.AddResource($resource)
 
+    "`n##################### `$t.ToYaml() #####################"
     $t.ToYaml()
+    "`n##################### `$tClean.ToYaml(`$true) #####################"
     $tClean.ToYaml($true)
+    "`n##################### `$res2.Properties #####################"
     [PSCustomObject]$res2.Properties | Format-List
+    "`n##################### `$res3.Properties #####################"
     [PSCustomObject]$res3.Properties | Format-List
 }
 catch {
