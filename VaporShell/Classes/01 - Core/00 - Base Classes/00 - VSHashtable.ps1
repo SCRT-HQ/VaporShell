@@ -64,15 +64,18 @@ class VSHashtable : hashtable {
         return $clean | ConvertTo-Json -Depth 50
     }
 
-    [string[]] ToYaml() {
-        $json = $this.ToJson()
-        if ($null -ne (Get-Command cfn-flip*)) {
-            return $json | cfn-flip
+    [string] ToYaml() {
+        return $this.ToYaml($false)
+    }
+
+    [string] ToYaml([bool] $usePowerShellYaml) {
+        if (-not $usePowerShellYaml -and $null -ne (Get-Command cfn-flip* -ErrorAction SilentlyContinue)) {
+            $flipped = ($this.ToJson() | cfn-flip) -join [System.Environment]::NewLine
         }
         else {
-            Write-Warning "cfn-flip not found in PATH! Returning JSON"
-            return $json
+            $flipped = ($this.ToOrderedDictionary() | ConvertTo-Yaml) -join [System.Environment]::NewLine
         }
+        return $flipped
     }
 
     VSHashtable() {

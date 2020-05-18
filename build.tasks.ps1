@@ -157,7 +157,7 @@ Task BuildSubmodules CleanSubmodules, {
                     $_.Name -ne 'PseudoParams.txt' -and
                     $_.FullName -notlike "*Development Tools*"
                 } | Sort-Object FullName | ForEach-Object {
-                    Write-BuildLog "Working on: $($_.FullName.Replace("$gciPath\",''))"
+                    Write-BuildLog "Working on: $($_.FullName.Replace("$gciPath$([System.IO.Path]::DirectorySeparatorChar)",''))"
                     $content = Get-Content $_.FullName
                     if ($usingStatements = $content | Where-Object { $_ -match '^\s*using\s+(module|namespace|assembly)\s+\w+.*$' }) {
                         switch ($scope) {
@@ -314,7 +314,7 @@ Task BuildMain Update, {
                 $_.Name -ne 'PseudoParams.txt' -and
                 $_.FullName -notlike "*Development Tools*"
             } | Sort-Object FullName | ForEach-Object {
-                Write-BuildLog "Working on: $($_.FullName.Replace("$gciPath\",''))"
+                Write-BuildLog "Working on: $($_.FullName.Replace("$gciPath$([System.IO.Path]::DirectorySeparatorChar)",''))"
                 $content = Get-Content $_.FullName
                 if ($usingStatements = $content | Where-Object { $_ -match '^\s*using\s+(module|namespace|assembly)\s+\w+.*$' }) {
                     switch ($scope) {
@@ -469,6 +469,67 @@ Task BuildMain Update, {
     Write-BuildLog 'Output version directory contents:'
     Get-ChildItem $TargetVersionDirectory | Format-Table -AutoSize
 }
+
+Task BuildMainClasses Init, {
+    $updatedScriptsToProcess = @()
+    $attributesUsingStatements = @()
+    $classesUsingStatements = @()
+    foreach ($scope in @('Attributes', 'Classes')) {
+        $gciPath = [System.IO.Path]::Combine($SourceModuleDirectory, $scope)
+        if (Test-Path $gciPath) {
+
+            $target = New-Item -Path ([System.IO.Path]::Combine($TargetVersionDirectory, "$scope.ps1")) -ItemType File -Force
+            $updatedScriptsToProcess += "$scope.ps1"
+
+            Write-BuildLog "Copying contents from files in source folder '$($scope)' to $($target.Name)"
+            Get-ChildItem -Path $gciPath -Filter "*.ps1" -Recurse -File | Sort-Object FullName | ForEach-Object {
+                Write-BuildLog "Working on: $($_.FullName.Replace("$gciPath$([System.IO.Path]::DirectorySeparatorChar)",''))"
+                $content = Get-Content $_.FullName
+                if ($usingStatements = $content | Where-Object { $_ -match '^\s*using\s+(module|namespace|assembly)\s+\w+.*$' }) {
+                    switch ($scope) {
+                        Attributes {
+                            $attributesUsingStatements += $usingStatements
+                        }
+                        Classes {
+                            $classesUsingStatements += $usingStatements
+                        }
+                    }
+                }
+                $nonUsingStatements = ($content | Where-Object { $_ -notmatch '^\s*using\s+(module|namespace|assembly)\s+\w+.*$' }) -join "`n"
+                "$nonUsingStatements`n" | Add-Content -Path $target -Encoding UTF8
+            }
+        }
+    }
+    switch ($true) {
+        { $attributesUsingStatements.Count -ge 1 } {
+            Write-BuildLog "Adding using statements to Attributes.ps1"
+            $path = [System.IO.Path]::Combine($TargetVersionDirectory, "Attributes.ps1")
+            $cleanContents = (($attributesUsingStatements | ForEach-Object { $_.Trim() }) | Sort-Object -Unique) -join "`n"
+            if (-not (Test-Path $path)) {
+                New-Item -Path $path -ItemType File
+            }
+            $currentContents = Get-Content $path -Raw
+            $newContents = @($cleanContents, $currentContents)
+            ($newContents -join "`n") | Set-Content $path -Encoding UTF8 -Force
+        }
+        { $classesUsingStatements.Count -ge 1 } {
+            Write-BuildLog "Adding using statements to Classes.ps1"
+            $path = [System.IO.Path]::Combine($TargetVersionDirectory, "Classes.ps1")
+            $cleanContents = (($classesUsingStatements | ForEach-Object { $_.Trim() }) | Sort-Object -Unique) -join "`n"
+            if (-not (Test-Path $path)) {
+                New-Item -Path $path -ItemType File
+            }
+            $currentContents = Get-Content $path -Raw
+            $newContents = @($cleanContents, $currentContents)
+            ($newContents -join "`n") | Set-Content $path -Encoding UTF8 -Force
+        }
+    }
+    if ($updatedScriptsToProcess.Count) {
+        Update-Metadata -Path $TargetManifestPath -PropertyName ScriptsToProcess -Value $updatedScriptsToProcess
+    }
+}
+
+Task BuildClasses BuildMainClasses, BuildSubmodules
 
 # Synopsis: Builds everything
 Task Build  Init, Clean, BuildMain, BuildSubmodules, BuildDotnet

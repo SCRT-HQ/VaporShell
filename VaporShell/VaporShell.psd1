@@ -12,7 +12,7 @@
     RootModule             = 'VaporShell.psm1'
 
     # Version number of this module.
-    ModuleVersion          = '2.12.0'
+    ModuleVersion          = '3.0.0'
 
     # ID used to uniquely identify this module
     GUID                   = 'd526494c-6e59-41ff-ad05-eedbc1473b6a'
@@ -61,13 +61,13 @@ Website: https://vaporshell.io/
     ProcessorArchitecture  = 'None'
 
     # Modules that must be imported into the global environment prior to importing this module
-    RequiredModules        = @()
+    RequiredModules        = @('powershell-yaml')
 
     # Assemblies that must be loaded prior to importing this module
     RequiredAssemblies     = @()
 
     # Script files (.ps1) that are run in the caller's environment prior to importing this module.
-    ScriptsToProcess       = @()
+    ScriptsToProcess       = @('Attributes.ps1','Classes.ps1')
 
     # Type files (.ps1xml) to be loaded when importing this module
     TypesToProcess         = @()

@@ -12,7 +12,7 @@
     RootModule             = 'VaporShell.S3.psm1'
 
     # Version number of this module.
-    ModuleVersion          = '2.12.0'
+    ModuleVersion          = '3.0.0'
 
     # ID used to uniquely identify this module
     GUID                   = 'a1a6b71f-70de-4161-9cf9-aace332e218b'
@@ -61,7 +61,7 @@ Website: https://vaporshell.io/
     ProcessorArchitecture  = 'None'
 
     # Modules that must be imported into the global environment prior to importing this module
-    RequiredModules        = @('VaporShell.Common')
+    RequiredModules        = @(@{ModuleName = 'VaporShell';ModuleVersion = '3.0'})
 
     # Assemblies that must be loaded prior to importing this module
     RequiredAssemblies     = @()

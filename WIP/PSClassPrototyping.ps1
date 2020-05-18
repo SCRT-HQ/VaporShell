@@ -1,7 +1,7 @@
 [CmdletBinding()]
 Param()
 
-Start-BuildScript -Project VaporShell -Task BuildSubmodules
+Start-BuildScript -Project VaporShell -Task BuildClasses
 
 $buildOutputPath = (Resolve-Path ([System.IO.Path]::Combine($PSScriptRoot, '..', "BuildOutput"))).Path
 
@@ -36,7 +36,7 @@ try {
         Resources   = @(
             [S3Bucket]@{
                 LogicalId      = 'MyBucket'
-                DeletionPolicy = [DeletionPolicy]::RETAIN
+                DeletionPolicy = [DeletionPolicy]::Retain
                 BucketName     = [FnRef]'BucketName1Param'
             }
             [S3Bucket]@{
@@ -113,8 +113,8 @@ try {
     }
     $t.AddResource($resource)
 
-    "`n`n##################### `$t.ToYaml() #####################`n"
-    $t.ToYaml()
+    "`n`n##################### `$tClean.ToYaml() #####################`n"
+    $tClean.ToYaml()
     "`n`n##################### `$tClean.ToYaml(`$true) #####################`n"
     $tClean.ToYaml($true)
     "`n##################### `$res2.Properties #####################"
