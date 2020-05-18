@@ -1,23 +1,19 @@
-# New-VSServiceCatalogCloudFormationProduct
+# New-VSMacieCustomDataIdentifier
 
 ## SYNOPSIS
-Adds an AWS::ServiceCatalog::CloudFormationProduct resource to the template.
-Specifies a product.
+Adds an AWS::Macie::CustomDataIdentifier resource to the template.
 
 ## SYNTAX
 
 ```
-New-VSServiceCatalogCloudFormationProduct [-LogicalId] <String> [-ReplaceProvisioningArtifacts <Object>]
- -Owner <Object> [-SupportDescription <Object>] [-Description <Object>] [-Distributor <Object>]
- [-SupportEmail <Object>] [-AcceptLanguage <Object>] [-SupportUrl <Object>] [-Tags <Object>] -Name <Object>
- -ProvisioningArtifactParameters <Object> [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>]
- [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
- [<CommonParameters>]
+New-VSMacieCustomDataIdentifier [-LogicalId] <String> -Name <Object> [-Description <Object>] -Regex <Object>
+ [-MaximumMatchDistance <Object>] [-Keywords <Object>] [-IgnoreWords <Object>] [-DeletionPolicy <String>]
+ [-UpdateReplacePolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
+ [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::ServiceCatalog::CloudFormationProduct resource to the template.
-Specifies a product.
+Adds an AWS::Macie::CustomDataIdentifier resource to the template.
 
 ## PARAMETERS
 
@@ -38,31 +34,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ReplaceProvisioningArtifacts
-+ CreateProduct: https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreateProduct.html in the *AWS Service Catalog API Reference*
-
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-replaceprovisioningartifacts
-PrimitiveType: Boolean
-UpdateType: Mutable
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Owner
-The owner of the product.
-
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-owner
+### -Name
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-customdataidentifier.html#cfn-macie-customdataidentifier-name
+UpdateType: Immutable
 PrimitiveType: String
-UpdateType: Mutable
 
 ```yaml
 Type: Object
@@ -70,25 +45,6 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SupportDescription
-The support information about the product.
-
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-supportdescription
-PrimitiveType: String
-UpdateType: Mutable
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -96,11 +52,9 @@ Accept wildcard characters: False
 ```
 
 ### -Description
-The description of the product.
-
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-description
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-customdataidentifier.html#cfn-macie-customdataidentifier-description
+UpdateType: Immutable
 PrimitiveType: String
-UpdateType: Mutable
 
 ```yaml
 Type: Object
@@ -114,111 +68,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Distributor
-The distributor of the product.
-
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-distributor
+### -Regex
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-customdataidentifier.html#cfn-macie-customdataidentifier-regex
+UpdateType: Immutable
 PrimitiveType: String
-UpdateType: Mutable
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SupportEmail
-The contact email for product support.
-
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-supportemail
-PrimitiveType: String
-UpdateType: Mutable
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AcceptLanguage
-The language code.
-+  en - English default
-+  jp - Japanese
-+  zh - Chinese
-
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-acceptlanguage
-PrimitiveType: String
-UpdateType: Mutable
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SupportUrl
-The contact URL for product support.
-
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-supporturl
-PrimitiveType: String
-UpdateType: Mutable
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Tags
-One or more tags.
-
-Type: List
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-tags
-ItemType: Tag
-UpdateType: Mutable
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Name
-The name of the product.
-
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-name
-PrimitiveType: String
-UpdateType: Mutable
 
 ```yaml
 Type: Object
@@ -232,20 +85,53 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ProvisioningArtifactParameters
-The configuration of the provisioning artifact also known as a version.
-
-Type: List
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-provisioningartifactparameters
-ItemType: ProvisioningArtifactProperties
-UpdateType: Mutable
+### -MaximumMatchDistance
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-customdataidentifier.html#cfn-macie-customdataidentifier-maximummatchdistance
+UpdateType: Immutable
+PrimitiveType: Integer
 
 ```yaml
 Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Keywords
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-customdataidentifier.html#cfn-macie-customdataidentifier-keywords
+UpdateType: Immutable
+Type: List
+PrimitiveItemType: String
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IgnoreWords
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-customdataidentifier.html#cfn-macie-customdataidentifier-ignorewords
+UpdateType: Immutable
+Type: List
+PrimitiveItemType: String
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -396,10 +282,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ServiceCatalog.CloudFormationProduct
+### Vaporshell.Resource.Macie.CustomDataIdentifier
 ## NOTES
 
 ## RELATED LINKS
 
-[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html)
+[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-customdataidentifier.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-customdataidentifier.html)
 

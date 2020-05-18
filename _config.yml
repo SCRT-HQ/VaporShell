@@ -1,6 +1,9 @@
 # Welcome to Jekyll!
 #
 
+exclude:
+  - ci
+
 # Site settings
 title: VaporShell
 description: |
@@ -23,7 +26,7 @@ author:
 google_site_verification: 643aMdQ5fl2YkpOa4sL_M3ROwM_notMk5MrfDkrgmww
 
 social:
-  github: https://github.com/scrthq/VaporShell
+  github: https://github.com/SCRT-HQ/VaporShell
   linkedin-square: https://linkedin.com/in/scrthq
   twitter: https://twitter.com/scrthq
   #reddit: https://www.reddit.com/user/scrthq/

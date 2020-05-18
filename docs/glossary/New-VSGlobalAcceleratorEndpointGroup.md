@@ -1,23 +1,20 @@
-# New-VSServiceCatalogCloudFormationProduct
+# New-VSGlobalAcceleratorEndpointGroup
 
 ## SYNOPSIS
-Adds an AWS::ServiceCatalog::CloudFormationProduct resource to the template.
-Specifies a product.
+Adds an AWS::GlobalAccelerator::EndpointGroup resource to the template.
 
 ## SYNTAX
 
 ```
-New-VSServiceCatalogCloudFormationProduct [-LogicalId] <String> [-ReplaceProvisioningArtifacts <Object>]
- -Owner <Object> [-SupportDescription <Object>] [-Description <Object>] [-Distributor <Object>]
- [-SupportEmail <Object>] [-AcceptLanguage <Object>] [-SupportUrl <Object>] [-Tags <Object>] -Name <Object>
- -ProvisioningArtifactParameters <Object> [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>]
- [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
- [<CommonParameters>]
+New-VSGlobalAcceleratorEndpointGroup [-LogicalId] <String> -ListenerArn <Object> -EndpointGroupRegion <Object>
+ [-EndpointConfigurations <Object>] [-TrafficDialPercentage <Object>] [-HealthCheckPort <Object>]
+ [-HealthCheckProtocol <Object>] [-HealthCheckPath <Object>] [-HealthCheckIntervalSeconds <Object>]
+ [-ThresholdCount <Object>] [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>] [-DependsOn <String[]>]
+ [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::ServiceCatalog::CloudFormationProduct resource to the template.
-Specifies a product.
+Adds an AWS::GlobalAccelerator::EndpointGroup resource to the template.
 
 ## PARAMETERS
 
@@ -38,31 +35,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ReplaceProvisioningArtifacts
-+ CreateProduct: https://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreateProduct.html in the *AWS Service Catalog API Reference*
-
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-replaceprovisioningartifacts
-PrimitiveType: Boolean
-UpdateType: Mutable
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Owner
-The owner of the product.
-
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-owner
+### -ListenerArn
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-endpointgroup.html#cfn-globalaccelerator-endpointgroup-listenerarn
+UpdateType: Immutable
 PrimitiveType: String
-UpdateType: Mutable
 
 ```yaml
 Type: Object
@@ -76,130 +52,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SupportDescription
-The support information about the product.
-
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-supportdescription
+### -EndpointGroupRegion
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-endpointgroup.html#cfn-globalaccelerator-endpointgroup-endpointgroupregion
+UpdateType: Immutable
 PrimitiveType: String
-UpdateType: Mutable
 
 ```yaml
 Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Description
-The description of the product.
-
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-description
-PrimitiveType: String
+### -EndpointConfigurations
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-endpointgroup.html#cfn-globalaccelerator-endpointgroup-endpointconfigurations
 UpdateType: Mutable
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Distributor
-The distributor of the product.
-
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-distributor
-PrimitiveType: String
-UpdateType: Mutable
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SupportEmail
-The contact email for product support.
-
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-supportemail
-PrimitiveType: String
-UpdateType: Mutable
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -AcceptLanguage
-The language code.
-+  en - English default
-+  jp - Japanese
-+  zh - Chinese
-
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-acceptlanguage
-PrimitiveType: String
-UpdateType: Mutable
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SupportUrl
-The contact URL for product support.
-
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-supporturl
-PrimitiveType: String
-UpdateType: Mutable
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Tags
-One or more tags.
-
 Type: List
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-tags
-ItemType: Tag
-UpdateType: Mutable
+ItemType: EndpointConfiguration
 
 ```yaml
 Type: Object
@@ -213,39 +87,102 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name
-The name of the product.
-
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-name
-PrimitiveType: String
+### -TrafficDialPercentage
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-endpointgroup.html#cfn-globalaccelerator-endpointgroup-trafficdialpercentage
 UpdateType: Mutable
+PrimitiveType: Double
 
 ```yaml
 Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ProvisioningArtifactParameters
-The configuration of the provisioning artifact also known as a version.
-
-Type: List
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-provisioningartifactparameters
-ItemType: ProvisioningArtifactProperties
+### -HealthCheckPort
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-endpointgroup.html#cfn-globalaccelerator-endpointgroup-healthcheckport
 UpdateType: Mutable
+PrimitiveType: Integer
 
 ```yaml
 Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -HealthCheckProtocol
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-endpointgroup.html#cfn-globalaccelerator-endpointgroup-healthcheckprotocol
+UpdateType: Mutable
+PrimitiveType: String
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -HealthCheckPath
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-endpointgroup.html#cfn-globalaccelerator-endpointgroup-healthcheckpath
+UpdateType: Mutable
+PrimitiveType: String
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -HealthCheckIntervalSeconds
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-endpointgroup.html#cfn-globalaccelerator-endpointgroup-healthcheckintervalseconds
+UpdateType: Mutable
+PrimitiveType: Integer
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ThresholdCount
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-endpointgroup.html#cfn-globalaccelerator-endpointgroup-thresholdcount
+UpdateType: Mutable
+PrimitiveType: Integer
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -396,10 +333,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Vaporshell.Resource.ServiceCatalog.CloudFormationProduct
+### Vaporshell.Resource.GlobalAccelerator.EndpointGroup
 ## NOTES
 
 ## RELATED LINKS
 
-[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html)
+[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-endpointgroup.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-endpointgroup.html)
 

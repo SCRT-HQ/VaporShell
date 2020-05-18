@@ -8,10 +8,10 @@ A container is similar to a bucket in Amazon S3.
 ## SYNTAX
 
 ```
-New-VSMediaStoreContainer [-LogicalId] <String> [-Policy <Object>] -ContainerName <Object>
- [-CorsPolicy <Object>] [-LifecyclePolicy <Object>] [-AccessLoggingEnabled <Object>] [-DeletionPolicy <String>]
- [-UpdateReplacePolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
- [-Condition <Object>] [<CommonParameters>]
+New-VSMediaStoreContainer [-LogicalId] <String> [-Policy <Object>] [-MetricPolicy <Object>]
+ -ContainerName <Object> [-CorsPolicy <Object>] [-LifecyclePolicy <Object>] [-AccessLoggingEnabled <Object>]
+ [-Tags <Object>] [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>] [-DependsOn <String[]>]
+ [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -48,6 +48,28 @@ If you enter PutContainerPolicy twice, the second command modifies the existing 
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediastore-container.html#cfn-mediastore-container-policy
 PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MetricPolicy
+The DNS endpoint of the container.
+Use the endpoint to identify the specific container when sending requests to the data plane.
+The service assigns this value when the container is created.
+Once the value has been assigned, it does not change.
+
+Type: MetricPolicy
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediastore-container.html#cfn-mediastore-container-metricpolicy
 UpdateType: Mutable
 
 ```yaml
@@ -140,6 +162,29 @@ When you enable access logging on the container, MediaStore changes this value t
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediastore-container.html#cfn-mediastore-container-accessloggingenabled
 PrimitiveType: Boolean
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Tags
+The DNS endpoint of the container.
+Use the endpoint to identify the specific container when sending requests to the data plane.
+The service assigns this value when the container is created.
+Once the value has been assigned, it does not change.
+
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediastore-container.html#cfn-mediastore-container-tags
+ItemType: Tag
 UpdateType: Mutable
 
 ```yaml

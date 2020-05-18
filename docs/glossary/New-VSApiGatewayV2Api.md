@@ -11,12 +11,12 @@ For more information about HTTP APIs, see HTTP APIs: https://docs.aws.amazon.com
 
 ```
 New-VSApiGatewayV2Api [-LogicalId] <String> [-RouteSelectionExpression <Object>] [-BodyS3Location <Object>]
- [-Description <Object>] [-BasePath <Object>] [-FailOnWarnings <Object>] [-DisableSchemaValidation <Object>]
- [-Name <Object>] [-Target <Object>] [-CredentialsArn <Object>] [-CorsConfiguration <Object>]
- [-Version <Object>] [-ProtocolType <Object>] [-RouteKey <Object>] [-Body <Object>] [-Tags <Object>]
- [-ApiKeySelectionExpression <Object>] [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>]
- [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
- [<CommonParameters>]
+ [-Description <Object>] [-BasePath <Object>] [-FailOnWarnings <Object>] [-DisableExecuteApiEndpoint <Object>]
+ [-DisableSchemaValidation <Object>] [-Name <Object>] [-Target <Object>] [-CredentialsArn <Object>]
+ [-CorsConfiguration <Object>] [-Version <Object>] [-ProtocolType <Object>] [-RouteKey <Object>]
+ [-Body <Object>] [-Tags <Object>] [-ApiKeySelectionExpression <Object>] [-DeletionPolicy <String>]
+ [-UpdateReplacePolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
+ [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -135,6 +135,25 @@ Specifies whether to rollback the API creation when a warning is encountered.
 By default, API creation continues if a warning is encountered.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-failonwarnings
+PrimitiveType: Boolean
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DisableExecuteApiEndpoint
++ CreateApi: https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/apis.html#CreateApi in the *Amazon API Gateway Version 2 API Reference*
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-disableexecuteapiendpoint
 PrimitiveType: Boolean
 UpdateType: Mutable
 

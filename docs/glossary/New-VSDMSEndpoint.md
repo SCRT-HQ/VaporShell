@@ -8,12 +8,12 @@ The AWS::DMS::Endpoint resource creates an AWS DMS endpoint.
 
 ```
 New-VSDMSEndpoint [-LogicalId] <String> [-KmsKeyId <Object>] [-KafkaSettings <Object>] [-Port <Object>]
- [-DatabaseName <Object>] [-ElasticsearchSettings <Object>] [-S3Settings <Object>] -EngineName <Object>
- [-DynamoDbSettings <Object>] [-KinesisSettings <Object>] [-Username <Object>] [-SslMode <Object>]
- [-ServerName <Object>] [-ExtraConnectionAttributes <Object>] -EndpointType <Object> [-Tags <Object>]
- [-EndpointIdentifier <Object>] [-Password <Object>] [-CertificateArn <Object>] [-MongoDbSettings <Object>]
- [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
- [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+ [-DatabaseName <Object>] [-NeptuneSettings <Object>] [-ElasticsearchSettings <Object>] [-S3Settings <Object>]
+ -EngineName <Object> [-DynamoDbSettings <Object>] [-KinesisSettings <Object>] [-Username <Object>]
+ [-SslMode <Object>] [-ServerName <Object>] [-ExtraConnectionAttributes <Object>] -EndpointType <Object>
+ [-Tags <Object>] [-EndpointIdentifier <Object>] [-Password <Object>] [-CertificateArn <Object>]
+ [-MongoDbSettings <Object>] [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>] [-DependsOn <String[]>]
+ [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -105,6 +105,25 @@ The name of the endpoint database.
 
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-databasename
 PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -NeptuneSettings
++  AWS CloudFormation Stacks Updates: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html
+
+Type: NeptuneSettings
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-neptunesettings
 UpdateType: Mutable
 
 ```yaml
