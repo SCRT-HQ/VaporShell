@@ -10,9 +10,9 @@ The AWS::DMS::ReplicationTask resource creates an AWS DMS replication task.
 New-VSDMSReplicationTask [-LogicalId] <String> [-ReplicationTaskSettings <Object>] -TableMappings <Object>
  [-CdcStartPosition <Object>] [-ReplicationTaskIdentifier <Object>] [-CdcStopPosition <Object>]
  -SourceEndpointArn <Object> -MigrationType <Object> -TargetEndpointArn <Object>
- -ReplicationInstanceArn <Object> [-Tags <Object>] [-CdcStartTime <Object>] [-DeletionPolicy <String>]
- [-UpdateReplacePolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
- [-Condition <Object>] [<CommonParameters>]
+ -ReplicationInstanceArn <Object> [-Tags <Object>] [-TaskData <Object>] [-CdcStartTime <Object>]
+ [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
+ [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -235,6 +235,25 @@ Type: List
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-tags
 ItemType: Tag
 UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -TaskData
++  AWS CloudFormation Stacks Updates: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-taskdata
+PrimitiveType: String
+UpdateType: Mutable
 
 ```yaml
 Type: Object

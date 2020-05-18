@@ -1,47 +1,26 @@
-function New-VSECSCluster {
+function New-VSMacieSession {
     <#
     .SYNOPSIS
-        Adds an AWS::ECS::Cluster resource to the template. The AWS::ECS::Cluster resource creates an Amazon Elastic Container Service (Amazon ECS cluster.
+        Adds an AWS::Macie::Session resource to the template. 
 
     .DESCRIPTION
-        Adds an AWS::ECS::Cluster resource to the template. The AWS::ECS::Cluster resource creates an Amazon Elastic Container Service (Amazon ECS cluster.
+        Adds an AWS::Macie::Session resource to the template. 
 
     .LINK
-        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-cluster.html
+        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-session.html
 
     .PARAMETER LogicalId
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
-    .PARAMETER Tags
-        The metadata that you apply to the cluster to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.
-The following basic restrictions apply to tags:
-+ Maximum number of tags per resource - 50
-+ For each resource, each tag key must be unique, and each tag key can have only one value.
-+ Maximum key length - 128 Unicode characters in UTF-8
-+ Maximum value length - 256 Unicode characters in UTF-8
-+ If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.
-+ Tag keys and values are case-sensitive.
-+ Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for AWS use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.
-
-        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-cluster.html#cfn-ecs-cluster-tags
+    .PARAMETER Status
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-session.html#cfn-macie-session-status
         UpdateType: Mutable
-        Type: List
-        ItemType: Tag
-
-    .PARAMETER ClusterName
-        A user-generated string that you use to identify your cluster. If you don't specify a name, AWS CloudFormation generates a unique physical ID for the name.
-
-        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-cluster.html#cfn-ecs-cluster-clustername
-        UpdateType: Immutable
         PrimitiveType: String
 
-    .PARAMETER ClusterSettings
-        The setting to use when creating a cluster. This parameter is used to enable CloudWatch Container Insights for a cluster. If this value is specified, it will override the containerInsights value set with PutAccountSetting: https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSetting.html or PutAccountSettingDefault: https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSettingDefault.html.
-
-        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-cluster.html#cfn-ecs-cluster-clustersettings
+    .PARAMETER FindingPublishingFrequency
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-session.html#cfn-macie-session-findingpublishingfrequency
         UpdateType: Mutable
-        Type: List
-        ItemType: ClusterSettings
+        PrimitiveType: String
 
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.
@@ -90,7 +69,7 @@ The following basic restrictions apply to tags:
     .FUNCTIONALITY
         Vaporshell
     #>
-    [OutputType('Vaporshell.Resource.ECS.Cluster')]
+    [OutputType('Vaporshell.Resource.Macie.Session')]
     [cmdletbinding()]
     Param
     (
@@ -105,9 +84,6 @@ The following basic restrictions apply to tags:
             })]
         [System.String]
         $LogicalId,
-        [VaporShell.Core.TransformTag()]
-        [parameter(Mandatory = $false)]
-        $Tags,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
@@ -118,10 +94,10 @@ The following basic restrictions apply to tags:
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $ClusterName,
+        $Status,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.ECS.Cluster.ClusterSettings"
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -129,7 +105,7 @@ The following basic restrictions apply to tags:
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $ClusterSettings,
+        $FindingPublishingFrequency,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
@@ -167,7 +143,7 @@ The following basic restrictions apply to tags:
     Begin {
         $ResourceParams = @{
             LogicalId = $LogicalId
-            Type = "AWS::ECS::Cluster"
+            Type = "AWS::Macie::Session"
         }
         $commonParams = @('Verbose','Debug','ErrorAction','WarningAction','InformationAction','ErrorVariable','WarningVariable','InformationVariable','OutVariable','OutBuffer','PipelineVariable')
     }
@@ -193,18 +169,6 @@ The following basic restrictions apply to tags:
                 Condition {
                     $ResourceParams.Add("Condition",$Condition)
                 }
-                Tags {
-                    if (!($ResourceParams["Properties"])) {
-                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
-                    }
-                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name Tags -Value @($Tags)
-                }
-                ClusterSettings {
-                    if (!($ResourceParams["Properties"])) {
-                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
-                    }
-                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name ClusterSettings -Value @($ClusterSettings)
-                }
                 Default {
                     if (!($ResourceParams["Properties"])) {
                         $ResourceParams.Add("Properties",([PSCustomObject]@{}))
@@ -216,7 +180,7 @@ The following basic restrictions apply to tags:
     }
     End {
         $obj = New-VaporResource @ResourceParams
-        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.ECS.Cluster'
+        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.Macie.Session'
         Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$(@{$obj.LogicalId = $obj.Props} | ConvertTo-Json -Depth 5)`n"
     }
 }

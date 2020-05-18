@@ -12,7 +12,7 @@ You can set up a canary to run continuously or just once.
 ```
 New-VSSyntheticsCanary [-LogicalId] <String> -Name <Object> -Code <Object> -ArtifactS3Location <Object>
  -Schedule <Object> -ExecutionRoleArn <Object> -RuntimeVersion <Object> [-SuccessRetentionPeriod <Object>]
- [-FailureRetentionPeriod <Object>] [-Tags <Object>] [-VPCConfig <Object>] [-RunConfig <Object>]
+ [-FailureRetentionPeriod <Object>] [-Tags <Object>] [-VPCConfig <Object>] -RunConfig <Object>
  -StartCanaryAfterCreation <Object> [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>]
  [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
  [<CommonParameters>]
@@ -281,7 +281,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

@@ -1,43 +1,59 @@
+$docsPath = (Resolve-Path "$($PSScriptRoot)/..").Path
+$basePath = (Resolve-Path "$($docsPath)/..").Path
+
+Push-Location $basePath
+
+if ((Get-PSRepository -Name PSGallery).InstallationPolicy -ne 'Trusted') {
+    Set-PSRepository -Name PSGallery -InstallationPolicy Trusted -Verbose:$false
+}
+try {
+    $null = Get-PackageProvider -Name Nuget -ForceBootstrap -Verbose:$false -ErrorAction Stop
+}
+catch {
+    throw
+}
+
+'platyPS','PoshRSJob' | ForEach-Object {
+    Write-Host "[$_] Resolving module"
+    try {
+        if ($imported = Get-Module $_) {
+            Write-Host "[$_] Removing imported module"
+            $imported | Remove-Module -ErrorAction SilentlyContinue
+        }
+        Import-Module $_ -ErrorAction Stop
+    }
+    catch {
+        Write-Host "[$_] Installing missing module"
+        Install-Module $_ -Repository PSGallery -Scope CurrentUser -Force
+        Import-Module @item
+    }
+}
+
 #region purpose: Unload / load module
-Remove-Module VaporShell -ErrorAction SilentlyContinue -Verbose:$false
-if ($env:OS -like "*Windows*") {
-    Set-Location E:\Git\VaporShell
+if (Get-Module VaporShell*) {
+    Remove-Module VaporShell -ErrorAction SilentlyContinue -Verbose:$false
 }
-else {
-    Set-Location $PSScriptRoot
-    Set-Location ..
-}
+
 Write-Host -ForegroundColor Green "Location set to $($pwd.Path)"
-Write-Host -ForegroundColor Green "Importing VaporShell"
+Write-Host -ForegroundColor Green "Building and importing VaporShell"
 #. .\build.ps1
-Import-Module E:\Git\VaporShell\BuildOutput\VaporShell -Force
-Write-Host -ForegroundColor Green "Importing platyPS"
-Import-Module platyPS, PoshRSJob
+Import-Module "$($basePath)/BuildOutput/VaporShell" -Force
 #endregion#>
 
+Write-Host -ForegroundColor Magenta "Removing existing glossary docs"
+Get-ChildItem "$($docsPath)/docs/glossary" -Exclude "index.md" | Remove-Item -Force
 
-Get-ChildItem "E:\Git\VaporShell.io\docs\glossary" -Exclude "index.md" | Remove-Item -Force -Verbose
-<#
-$staging = Get-ChildItem "E:\Git\VaporShell.io\_ignored\staging_glossary"
-$lastCommandDone = $staging | Where-Object {$_.}
-if ($lastCommandDone) {
-    $staging | Remove-Item -Force -Verbose
-}
-#>
+$vsCommands = (Get-ChildItem "$($basePath)/VaporShell/Public" -Filter '*.ps1' -Recurse).BaseName
 
-$vsCommands = (Get-ChildItem 'E:\Git\VaporShell\VaporShell\Public' -Filter '*.ps1' -Recurse).BaseName
-$i = 0
-
-$vsCommands | Start-RSJob -Name {$_} -ModulesToImport platyPS,'E:\Git\VaporShell\BuildOutput\VaporShell' -ScriptBlock {
-    New-MarkdownHelp -Command "VaporShell\$_" -Force -NoMetadata -OutputFolder "E:\Git\VaporShell.io\docs\glossary" -Verbose
-} | Wait-RSJob | Receive-RSJob | ForEach-Object {
-    $i++
-    "[$i/$($vsCommands.Count)] Completed: $_"
-}
+Write-Host -ForegroundColor Green "Starting runspaces to build the updated docs"
+$vsCommands | Start-RSJob -Name {$_} -ModulesToImport platyPS,"$basePath\BuildOutput\VaporShell" -VariablesToImport docsPath -ScriptBlock {
+    Write-Host "Working on: $($_)"
+    New-MarkdownHelp -Command "VaporShell\$_" -Force -NoMetadata -OutputFolder "$($docsPath)\docs\glossary"
+} | Wait-RSJob | Receive-RSJob
 
 Get-RSJob | Remove-RSJob
 
-$files = Get-ChildItem "E:\Git\VaporShell.io\docs\glossary" -Exclude "index.md"
+$files = Get-ChildItem "$($docsPath)/docs/glossary" -Exclude "index.md"
 
 foreach ($file in $files) {
     Write-Host -ForegroundColor Cyan "Updating $($file.BaseName)"
@@ -60,5 +76,4 @@ foreach ($file in $files) {
     }
 }
 
-Set-Location $PSScriptRoot
-Set-Location ..
+Set-Location $basePath

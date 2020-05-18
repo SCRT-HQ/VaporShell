@@ -94,6 +94,13 @@ Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
         ItemType: Tag
         UpdateType: Immutable
 
+    .PARAMETER TaskData
+        +  AWS CloudFormation Stacks Updates: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-taskdata
+        PrimitiveType: String
+        UpdateType: Mutable
+
     .PARAMETER CdcStartTime
         Indicates the start time for a change data capture CDC operation.
 
@@ -265,6 +272,17 @@ Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
         [VaporShell.Core.TransformTag()]
         [parameter(Mandatory = $false)]
         $Tags,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $TaskData,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.Double","Vaporshell.Function"

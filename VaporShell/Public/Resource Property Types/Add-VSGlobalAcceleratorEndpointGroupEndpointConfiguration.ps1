@@ -1,44 +1,38 @@
-function Add-VSSSMAssociationS3OutputLocation {
+function Add-VSGlobalAcceleratorEndpointGroupEndpointConfiguration {
     <#
     .SYNOPSIS
-        Adds an AWS::SSM::Association.S3OutputLocation resource property to the template. S3OutputLocation is a property of the AWS::SSM::Association: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html resource that specifies an Amazon S3 bucket where you want to store the results of this association request.
+        Adds an AWS::GlobalAccelerator::EndpointGroup.EndpointConfiguration resource property to the template. 
 
     .DESCRIPTION
-        Adds an AWS::SSM::Association.S3OutputLocation resource property to the template.
-S3OutputLocation is a property of the AWS::SSM::Association: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html resource that specifies an Amazon S3 bucket where you want to store the results of this association request.
+        Adds an AWS::GlobalAccelerator::EndpointGroup.EndpointConfiguration resource property to the template.
+
 
     .LINK
-        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-s3outputlocation.html
+        http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-globalaccelerator-endpointgroup-endpointconfiguration.html
 
-    .PARAMETER OutputS3Region
-        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
-
-        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-s3outputlocation.html#cfn-ssm-association-s3outputlocation-outputs3region
+    .PARAMETER EndpointId
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-globalaccelerator-endpointgroup-endpointconfiguration.html#cfn-globalaccelerator-endpointgroup-endpointconfiguration-endpointid
         UpdateType: Mutable
         PrimitiveType: String
 
-    .PARAMETER OutputS3BucketName
-        The name of the S3 bucket.
-
-        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-s3outputlocation.html#cfn-ssm-association-s3outputlocation-outputs3bucketname
+    .PARAMETER Weight
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-globalaccelerator-endpointgroup-endpointconfiguration.html#cfn-globalaccelerator-endpointgroup-endpointconfiguration-weight
         UpdateType: Mutable
-        PrimitiveType: String
+        PrimitiveType: Integer
 
-    .PARAMETER OutputS3KeyPrefix
-        The S3 bucket subfolder.
-
-        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-s3outputlocation.html#cfn-ssm-association-s3outputlocation-outputs3keyprefix
+    .PARAMETER ClientIPPreservationEnabled
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-globalaccelerator-endpointgroup-endpointconfiguration.html#cfn-globalaccelerator-endpointgroup-endpointconfiguration-clientippreservationenabled
         UpdateType: Mutable
-        PrimitiveType: String
+        PrimitiveType: Boolean
 
     .FUNCTIONALITY
         Vaporshell
     #>
-    [OutputType('Vaporshell.Resource.SSM.Association.S3OutputLocation')]
+    [OutputType('Vaporshell.Resource.GlobalAccelerator.EndpointGroup.EndpointConfiguration')]
     [cmdletbinding()]
     Param
     (
-        [parameter(Mandatory = $false)]
+        [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -48,10 +42,10 @@ S3OutputLocation is a property of the AWS::SSM::Association: https://docs.aws.am
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $OutputS3Region,
+        $EndpointId,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                $allowedTypes = "System.Int32","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -59,10 +53,10 @@ S3OutputLocation is a property of the AWS::SSM::Association: https://docs.aws.am
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $OutputS3BucketName,
+        $Weight,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                $allowedTypes = "System.Boolean","Vaporshell.Function"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -70,7 +64,7 @@ S3OutputLocation is a property of the AWS::SSM::Association: https://docs.aws.am
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $OutputS3KeyPrefix
+        $ClientIPPreservationEnabled
     )
     Begin {
         $obj = [PSCustomObject]@{}
@@ -86,7 +80,7 @@ S3OutputLocation is a property of the AWS::SSM::Association: https://docs.aws.am
         }
     }
     End {
-        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.SSM.Association.S3OutputLocation'
+        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.GlobalAccelerator.EndpointGroup.EndpointConfiguration'
         Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
     }
 }
