@@ -1,6 +1,7 @@
 name: Build and Deploy Docs
 on:
-  - tags
+  tags:
+    - '*'
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
