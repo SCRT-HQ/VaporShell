@@ -1,0 +1,29 @@
+--- 
+layout: page 
+title: Contact 
+style: nohead 
+---
+<section>
+    <h4>Contact</h4>
+    <p>Have an issue, suggestion, comment, etc? Send it over!</p>
+    <form method="POST" action="http://formspree.io/nate@VaporShell.io">
+        <div class="row uniform">
+            <div class="4u 12u$(xsmall)">
+                <input type="email" name="email" id="email" value="" placeholder="Email" />
+            </div>
+            <div class="8u$ 12u$(xsmall)">
+                <input type="text" name="_subject" value="" placeholder="Subject" />
+            </div>
+            <div class="12u$">
+                <textarea name="message" id="message" placeholder="Message" rows="6"></textarea>
+            </div>
+            <div class="12u$">
+                <ul class="actions">
+                    <li><input type="submit" value="Send Message" class="special" /></li>
+                    <li><input type="reset" value="Reset" /></li>
+                    <input type="hidden" name="_next" value="{{ "/formsent " | prepend: site.url }}" />
+                </ul>
+            </div>
+        </div>
+    </form>
+</section>

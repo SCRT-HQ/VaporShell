@@ -1,0 +1,92 @@
+# Add-VSElasticBeanstalkApplicationMaxCountRule
+
+## SYNOPSIS
+Adds an AWS::ElasticBeanstalk::Application.MaxCountRule resource property to the template.
+A lifecycle rule that deletes the oldest application version when the maximum count is exceeded.
+
+## SYNTAX
+
+```
+Add-VSElasticBeanstalkApplicationMaxCountRule [[-DeleteSourceFromS3] <Object>] [[-Enabled] <Object>]
+ [[-MaxCount] <Object>] [<CommonParameters>]
+```
+
+## DESCRIPTION
+Adds an AWS::ElasticBeanstalk::Application.MaxCountRule resource property to the template.
+A lifecycle rule that deletes the oldest application version when the maximum count is exceeded.
+
+MaxCountRule is a property of the ApplicationVersionLifecycleConfig: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-applicationversionlifecycleconfig.html property type.
+
+## PARAMETERS
+
+### -DeleteSourceFromS3
+Set to true to delete a version's source bundle from Amazon S3 when Elastic Beanstalk deletes the application version.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxcountrule.html#cfn-elasticbeanstalk-application-maxcountrule-deletesourcefroms3
+PrimitiveType: Boolean
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Enabled
+Specify true to apply the rule, or false to disable it.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxcountrule.html#cfn-elasticbeanstalk-application-maxcountrule-enabled
+PrimitiveType: Boolean
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MaxCount
+Specify the maximum number of application versions to retain.
+
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxcountrule.html#cfn-elasticbeanstalk-application-maxcountrule-maxcount
+PrimitiveType: Integer
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+### Vaporshell.Resource.ElasticBeanstalk.Application.MaxCountRule
+## NOTES
+
+## RELATED LINKS
+
+[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxcountrule.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxcountrule.html)
+
