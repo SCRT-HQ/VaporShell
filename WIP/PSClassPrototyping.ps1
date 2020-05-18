@@ -113,9 +113,9 @@ try {
     }
     $t.AddResource($resource)
 
-    "`n##################### `$t.ToYaml() #####################"
+    "`n`n##################### `$t.ToYaml() #####################`n"
     $t.ToYaml()
-    "`n##################### `$tClean.ToYaml(`$true) #####################"
+    "`n`n##################### `$tClean.ToYaml(`$true) #####################`n"
     $tClean.ToYaml($true)
     "`n##################### `$res2.Properties #####################"
     [PSCustomObject]$res2.Properties | Format-List

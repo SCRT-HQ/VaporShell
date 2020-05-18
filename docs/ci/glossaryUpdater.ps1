@@ -26,7 +26,7 @@ if (Get-Module VaporShell*) {
 
 Write-Host -ForegroundColor Green "Location set to $($pwd.Path)"
 Write-Host -ForegroundColor Green "Building and importing VaporShell"
-. .\build.ps1
+#. .\build.ps1
 Import-Module "$($basePath)/BuildOutput/VaporShell" -Force
 #endregion#>
 
@@ -34,14 +34,27 @@ Write-Host -ForegroundColor Magenta "Removing existing glossary docs"
 Get-ChildItem "$($docsPath)/docs/glossary" -Exclude "index.md" | Remove-Item -Force
 
 $vsCommands = (Get-ChildItem "$($basePath)/VaporShell/Public" -Filter '*.ps1' -Recurse).BaseName
+$i = 0
 
 Write-Host -ForegroundColor Green "Starting runspaces to build the updated docs"
-$vsCommands | Start-RSJob -Name {$_} -Verbose -ModulesToImport platyPS,"$basePath\BuildOutput\VaporShell" -VariablesToImport docsPath -ScriptBlock {
-    Write-Output "Working on: $($_)"
+$vsCommands | Start-RSJob -Name {"VaporShell\$_"} -ModulesToImport platyPS,"$basePath\BuildOutput\VaporShell" -VariablesToImport docsPath -ScriptBlock {
     New-MarkdownHelp -Command "VaporShell\$_" -Force -NoMetadata -OutputFolder "$($docsPath)\docs\glossary"
-} | Receive-RSJob
+} | Receive-RSJob | ForEach-Object {
+    $i++
+    "[$i/$($vsCommands.Count)] Completed: $($_.FullName -replace ([regex]::Escape("$docsPath$([System.IO.Path]::DirectorySeparatorChar)")))"
+}
+Get-RSJob -State Failed,Completed | Where-Object {$_.Name -notmatch 'PSProfile'} | Remove-RSJob
 
-Get-RSJob | Wait-RSJob | Remove-RSJob
+do {
+    $jobs = Get-RSJob | Where-Object {$_.Name -notmatch 'PSProfile'}
+    $jobs | Receive-RSJob | ForEach-Object {
+        $i++
+        "[$i/$($vsCommands.Count)] Completed: $($_.FullName -replace ([regex]::Escape("$docsPath$([System.IO.Path]::DirectorySeparatorChar)")))"
+    }
+    Start-Sleep -Seconds 5
+}
+until ($null -eq ($jobs.State | Where-Object {$_ -notmatch '(Completed|Failed)'}))
+Get-RSJob | Where-Object {$_.Name -notmatch 'PSProfile'} | Remove-RSJob
 
 $files = Get-ChildItem "$($docsPath)/docs/glossary" -Exclude "index.md"
 
