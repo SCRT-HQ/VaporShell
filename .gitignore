@@ -9,6 +9,8 @@ TestResults**.xml
 VaporShell.zip
 ci/https*
 ReleaseZips
+docs/docs/glossary/*
+!docs/docs/glossary/index.md
 
 # User-specific files
 *.suo
