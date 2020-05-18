@@ -10,7 +10,6 @@ if (($env:PSModulePath -split ';') -notcontains $buildOutputPath) {
 }
 
 try {
-    #. ([scriptblock]::Create('using module VaporShell.S3'))
     Import-Module VaporShell.S3 -Verbose -Force
 
     $tClean = [VSTemplate]@{

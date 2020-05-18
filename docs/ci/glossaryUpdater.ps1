@@ -36,12 +36,12 @@ Get-ChildItem "$($docsPath)/docs/glossary" -Exclude "index.md" | Remove-Item -Fo
 $vsCommands = (Get-ChildItem "$($basePath)/VaporShell/Public" -Filter '*.ps1' -Recurse).BaseName
 
 Write-Host -ForegroundColor Green "Starting runspaces to build the updated docs"
-$vsCommands | Start-RSJob -Name {$_} -ModulesToImport platyPS,"$basePath\BuildOutput\VaporShell" -VariablesToImport docsPath -ScriptBlock {
-    Write-Host "Working on: $($_)"
+$vsCommands | Start-RSJob -Name {$_} -Verbose -ModulesToImport platyPS,"$basePath\BuildOutput\VaporShell" -VariablesToImport docsPath -ScriptBlock {
+    Write-Output "Working on: $($_)"
     New-MarkdownHelp -Command "VaporShell\$_" -Force -NoMetadata -OutputFolder "$($docsPath)\docs\glossary"
-} | Wait-RSJob | Receive-RSJob
+} | Receive-RSJob
 
-Get-RSJob | Remove-RSJob
+Get-RSJob | Wait-RSJob | Remove-RSJob
 
 $files = Get-ChildItem "$($docsPath)/docs/glossary" -Exclude "index.md"
 
