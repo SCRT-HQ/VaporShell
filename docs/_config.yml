@@ -1,0 +1,77 @@
+# Welcome to Jekyll!
+#
+
+exclude:
+  - ci
+
+# Site settings
+title: VaporShell
+description: |
+  Define your Cloud
+  with PowerShell
+  on any system
+owner: "SCRT HQ"
+first_published: 2017
+email: nate@scrthq.com
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://vaporshell.io" # the base hostname & protocol for your site
+permalink: /:category/:title
+highlighter: rouge
+google_analytics: UA-101420411-1
+
+author:
+  name: Nate Ferrell
+  twitter: scrthq
+
+google_site_verification: 643aMdQ5fl2YkpOa4sL_M3ROwM_notMk5MrfDkrgmww
+
+social:
+  github: https://github.com/SCRT-HQ/VaporShell
+  linkedin-square: https://linkedin.com/in/scrthq
+  twitter: https://twitter.com/scrthq
+  #reddit: https://www.reddit.com/user/scrthq/
+  #stack-overflow: https://stackoverflow.com/users/5302680/nferrell
+  #soundcloud: https://soundcloud.com/nonfuture
+  gratipay: https://gratipay.com/Vaporshell/
+  paypal: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GU6CJMFGVP6ZS
+  email: mailto:nate@vaporshell.io
+  #flickr:
+  #instagram:
+  #youtube-square:
+  #spotify:
+  #vimeo:
+  #stubleupon:
+  #delicious:
+  #pied-piper:
+  #digg:
+  #deviantart:
+  #angellist:
+  #tumblr-square:
+  #stackexchange:
+  #weibo:
+  #trello:
+  #foursquare:
+  #linux:
+  #bitbucket-square:
+  #vk:
+  #slack:
+  #vine:
+  #weixin:
+  #yelp:
+  #skyatlas:
+  #leanpub:
+  #connectdevelop:
+  #ils:
+  #forumbee:
+  #tripadvisor:
+  #amazon:
+
+# Build settings
+markdown: kramdown
+kramdown:
+ input: GFM
+ auto_ids: true
+ hard_wrap: false
+ syntax_highlighter: rouge
+#sass:
+#  style: compressed

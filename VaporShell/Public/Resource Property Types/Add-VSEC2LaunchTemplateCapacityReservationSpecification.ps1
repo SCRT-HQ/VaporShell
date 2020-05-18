@@ -17,8 +17,8 @@ CapacityReservationSpecification is a property of the  Amazon EC2 LaunchTemplate
 +  open - The instance can run in any open Capacity Reservation that has matching attributes instance type, platform, Availability Zone.
 +  none - The instance avoids running in a Capacity Reservation even if one is available. The instance runs in On-Demand capacity.
 
-        Type: CapacityReservationPreference
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-capacityreservationspecification.html#cfn-ec2-launchtemplate-launchtemplatedata-capacityreservationspecification-capacityreservationpreference
+        PrimitiveType: String
         UpdateType: Mutable
 
     .PARAMETER CapacityReservationTarget
@@ -36,6 +36,15 @@ CapacityReservationSpecification is a property of the  Amazon EC2 LaunchTemplate
     Param
     (
         [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
         $CapacityReservationPreference,
         [parameter(Mandatory = $false)]
         $CapacityReservationTarget

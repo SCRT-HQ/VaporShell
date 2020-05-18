@@ -248,7 +248,7 @@ The state of the canary. For example, RUNNING.
         $Tags,
         [parameter(Mandatory = $false)]
         $VPCConfig,
-        [parameter(Mandatory = $false)]
+        [parameter(Mandatory = $true)]
         $RunConfig,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
