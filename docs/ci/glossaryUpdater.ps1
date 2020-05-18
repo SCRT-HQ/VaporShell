@@ -26,7 +26,7 @@ if (Get-Module VaporShell*) {
 
 Write-Host -ForegroundColor Green "Location set to $($pwd.Path)"
 Write-Host -ForegroundColor Green "Building and importing VaporShell"
-#. .\build.ps1
+. .\build.ps1
 Import-Module "$($basePath)/BuildOutput/VaporShell" -Force
 #endregion#>
 
