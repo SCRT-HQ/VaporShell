@@ -1,8 +1,9 @@
 [CmdletBinding()]
 Param()
 
-Start-BuildScript -Project VaporShell -Task BuildClasses
+Start-BuildScript -Project VaporShell -Task BuildClasses,TestClasses
 
+<#
 $buildOutputPath = (Resolve-Path ([System.IO.Path]::Combine($PSScriptRoot, '..', "BuildOutput"))).Path
 
 if (($env:PSModulePath -split ';') -notcontains $buildOutputPath) {
@@ -12,8 +13,47 @@ if (($env:PSModulePath -split ';') -notcontains $buildOutputPath) {
 try {
     Import-Module VaporShell.S3 -Verbose -Force
 
+    Write-Host -ForegroundColor Green "Module imported, creating templates..."
+
+    $mapTest = [VSTemplate]@{
+        Description = "My template"
+        Mappings    = @(
+            [VSMapping]@{
+                LogicalId = 'AmiMap'
+                Map       = @{
+                    'us-west-2' = @{
+                        AmiId = 'ami-lkjsdflkjsdf'
+                    }
+                    'us-east-1' = @{
+                        AmiId = 'ami-iuosdfoiulsa'
+                    }
+                }
+            }
+        )
+        Resources   = @(
+            [S3Bucket]@{
+                LogicalId      = 'MyBucket'
+                DeletionPolicy = [DeletionPolicy]::Retain
+                BucketName     = 'BucketName1Param'
+            }
+        )
+    }
+
     $tClean = [VSTemplate]@{
         Description = "My template"
+        Mappings    = @(
+            [VSMapping]@{
+                LogicalId = 'AmiMap'
+                Map       = @{
+                    'us-west-2' = @{
+                        AmiId = 'ami-lkjsdflkjsdf'
+                    }
+                    'us-east-1' = @{
+                        AmiId = 'ami-iuosdfoiulsa'
+                    }
+                }
+            }
+        )
         Parameters  = @(
             [VSParameter]@{
                 LogicalId   = 'BucketName1Param'
@@ -125,3 +165,4 @@ try {
 catch {
     $_
 }
+#>

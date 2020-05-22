@@ -1,6 +1,8 @@
 class VSTemplate : VSObject {
     hidden [string]$_description = $null
     hidden [string] $_awsTemplateFormatVersion = $null
+    hidden [hashtable] $_mappings = $null
+    hidden [VSMapping[]] $_mappingsOriginal = @()
     hidden [hashtable] $_parameters = $null
     hidden [VSParameter[]] $_parametersOriginal = @()
     hidden [hashtable] $_resources = $null
@@ -10,7 +12,7 @@ class VSTemplate : VSObject {
     [object] $Transform = $null
     [string] $Description = $null
     [VSParameter[]] $Parameters = $null
-    [object] $Mappings = $null
+    [VSMapping[]] $Mappings = $null
     [VSResource[]] $Resources = $null
     [object] $Outputs = $null
     [object] $Rules = $null
@@ -24,9 +26,25 @@ class VSTemplate : VSObject {
         return $this.ToJson()
     }
 
+    [void] AddMapping([VSMapping] $mapping) {
+        if ($this._mappings.ContainsKey($mapping.LogicalId)) {
+            throw "The Template already contains a Mapping with a LogicalId of '$($mapping.LogicalId)'. LogicalIds must be unique within the Template."
+        }
+        else {
+            $this._mappings[$mapping.LogicalId] = $mapping.Map
+            $this._mappingsOriginal += $mapping
+        }
+    }
+
+    [void] AddMapping([VSMapping[]] $mappings) {
+        $mappings | ForEach-Object {
+            $this.AddMapping($_)
+        }
+    }
+
     [void] AddParameter([VSParameter] $parameter) {
         if ($this._parameters.ContainsKey($parameter.LogicalId)) {
-            throw "The Template already contains a Parameter with a LogicalId of '$($parameter.LogicalId)'. LogicalId must be unique within the Template."
+            throw "The Template already contains a Parameter with a LogicalId of '$($parameter.LogicalId)'. LogicalIds must be unique within the Template."
         }
         else {
             $cleaned = [ordered]@{}
@@ -49,7 +67,7 @@ class VSTemplate : VSObject {
 
     [void] AddResource([VSResource] $resource) {
         if ($this._resources.ContainsKey($resource.LogicalId)) {
-            throw "The Template already contains a Resource with a LogicalId of '$($resource.LogicalId)'. LogicalId must be unique within the Template."
+            throw "The Template already contains a Resource with a LogicalId of '$($resource.LogicalId)'. LogicalIds must be unique within the Template."
         }
         else {
             $cleaned = [ordered]@{}
@@ -82,6 +100,20 @@ class VSTemplate : VSObject {
         } -SecondValue {
             param([string] $value)
             $this._description = $value
+        }
+        $this | Add-Member -Force -MemberType 'ScriptProperty' -Name 'Mappings' -Value {
+            if ($MyInvocation.Line -match '\.Mappings') {
+                $this._mappingsOriginal
+            }
+            else {
+                $this._mappings
+            }
+        } -SecondValue {
+            param([VSMapping[]] $value)
+            if ($null -eq $this._mappings) {
+                $this._mappings = [ordered]@{}
+            }
+            $this.AddMapping($value)
         }
         $this | Add-Member -Force -MemberType 'ScriptProperty' -Name 'Parameters' -Value {
             if ($MyInvocation.Line -match '\.Parameters') {

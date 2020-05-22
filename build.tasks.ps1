@@ -539,7 +539,7 @@ Task Import -If { Test-Path $TargetManifestPath } Init, {
     Import-Module -Name $TargetModuleDirectory -ErrorAction Stop
 }
 
-$pesterScriptBlock = {
+Task PesterBefore {
     if ($module = Get-Module $ModuleName) {
         Write-BuildLog "$ModuleName is currently imported. Removing module and cleaning up any leftover aliases"
         $module | Remove-Module -Force
@@ -553,7 +553,6 @@ $pesterScriptBlock = {
             }
         }
     }
-
     $testModules = @(
         @{
             Name           = 'Pester'
@@ -579,7 +578,10 @@ $pesterScriptBlock = {
             Import-Module @testModule
         }
     }
-    Push-Location
+}
+
+# Synopsis: Run Pester tests only (no Clean/Compile)
+Task Test Init, PesterBefore, {
     Set-Location -PassThru $TargetModuleDirectory
     Get-Module $ModuleName | Remove-Module $ModuleName -ErrorAction SilentlyContinue -Verbose:$false
     Import-Module -Name $TargetModuleDirectory -Force -Verbose:$false
@@ -607,11 +609,37 @@ $pesterScriptBlock = {
     }
 }
 
-# Synopsis: Run Pester tests
-Task Full Init, Build, Import, $pesterScriptBlock
+# Synopsis: Run Pester tests for classes only (no Clean/Compile)
+Task TestClasses Init, PesterBefore, {
+    Set-Location -PassThru $TargetModuleDirectory
+    Get-Module $ModuleName | Remove-Module $ModuleName -ErrorAction SilentlyContinue -Verbose:$false
+    Import-Module -Name $TargetModuleDirectory -Force -Verbose:$false
+    $pesterParams = @{
+        OutputFormat = 'NUnitXml'
+        OutputFile   = Join-Path $TargetDirectory "TestResultsClasses.xml"
+        PassThru     = $true
+        Path         = [System.IO.Path]::Combine($BuildRoot,"Tests","Class Tests")
+    }
+    if ($global:ExcludeTag) {
+        $pesterParams['ExcludeTag'] = $global:ExcludeTag
+        Write-BuildLog "Invoking Pester and excluding tag(s) [$($global:ExcludeTag -join ', ')]..."
+    }
+    else {
+        Write-BuildLog 'Invoking Pester...'
+    }
+    $testResults = Invoke-Pester @pesterParams
+    Write-BuildLog 'Pester invocation complete!'
+    if ($testResults.FailedCount -gt 0) {
+        "`nTop-level results:"
+        $testResults | Format-List
+        "`nFailures only:"
+        $testResults.TestResult | Where-Object { -not $_.Passed } | Format-List
+        Write-BuildError 'One or more Pester tests failed. Build cannot continue!'
+    }
+}
 
-# Synopsis: Run Pester tests only (no Clean/Compile)
-Task Test Init, $pesterScriptBlock
+# Synopsis: Run Pester tests
+Task Full Init, Build, Import, PesterBefore, Test
 
 # Synopsis: Run PSScriptAnalyzer
 Task Analyze Init, {
