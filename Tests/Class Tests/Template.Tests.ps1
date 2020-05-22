@@ -1,6 +1,4 @@
-$projectRoot = Resolve-Path ([System.IO.Path]::Combine($PSScriptRoot,'..','..'))
-
-$buildOutputPath = [System.IO.Path]::Combine($projectRoot.Path, "BuildOutput")
+$buildOutputPath = [System.IO.Path]::Combine($PSScriptRoot,'..','..','BuildOutput')
 
 if (($env:PSModulePath -split ';') -notcontains $buildOutputPath) {
     $env:PSModulePath = @($buildOutputPath, $env:PSModulePath) -join [System.IO.Path]::PathSeparator
@@ -10,7 +8,7 @@ Import-Module VaporShell.S3 -Force -Verbose
 
 Describe "Template tests" {
     Context 'Initialization' {
-        It "Should not fail to create a complex template" {
+        It "Should create template from parameterless constructor" {
             {
                 [VSTemplate]@{
                     Description = "My template"
@@ -64,6 +62,26 @@ Describe "Template tests" {
                         }
                     )
                 }
+            } | Should -Not -Throw
+        }
+        It "Should create template from hashtable" {
+            {
+                $t2Hash = @{
+                    Description = "My template"
+                    Resources   = @(
+                        [S3Bucket]@{
+                            LogicalId      = 'MyBucket'
+                            DeletionPolicy = 'RETAIN'
+                            BucketName     = 'my-test-bucket'
+                        }
+                        [S3Bucket]@{
+                            LogicalId      = 'MyOtherBucket'
+                            DeletionPolicy = 'RETAIN'
+                            BucketName     = [FnBase64][FnRef]'BucketName'
+                        }
+                    )
+                }
+                [VSTemplate]::new($t2Hash)
             } | Should -Not -Throw
         }
     }

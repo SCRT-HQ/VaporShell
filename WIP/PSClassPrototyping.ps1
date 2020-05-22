@@ -1,7 +1,19 @@
 [CmdletBinding()]
-Param()
+Param(
+    [Parameter(Position = 0)]
+    [ValidateSet('BuildClasses','TestClasses')]
+    [string[]]
+    $Task = @('BuildClasses','TestClasses')
+)
 
-Start-BuildScript -Project VaporShell -Task BuildClasses,TestClasses
+if ($Function:prompt.ToString() -notmatch 'VS CLASS DBG') {
+    $env:VSClassDebugLevel = 1
+}
+else {
+    $env:VSClassDebugLevel = ([int]$env:VSClassDebugLevel) + 1
+}
+$command = "function prompt {`"`"[VS CLASS DBG #$env:VSClassDebugLevel] `$(`$PWD.Path)> `"`"};. '$($PSScriptRoot)/../build.ps1' -Task $($Task -join ',')"
+pwsh -NoExit -NoProfile -Command $command
 
 <#
 $buildOutputPath = (Resolve-Path ([System.IO.Path]::Combine($PSScriptRoot, '..', "BuildOutput"))).Path

@@ -43,6 +43,9 @@ Param(
 
 Task . Build, Import
 
+# Synopsis: Run all core tasks
+Task Full Init, Build, Import, PesterBefore, Test, BuildReleaseZips
+
 Task Init {
     Import-Module Configuration
     Get-ChildItem (Join-Path $PSScriptRoot 'ci') -Filter '*.ps1' | Where-Object { $_.BaseName -notmatch "(GitHubReleaseNotes|gist\.githubusercontent\.com.*scrthq)" } | ForEach-Object {
@@ -637,9 +640,6 @@ Task TestClasses Init, PesterBefore, {
         Write-BuildError 'One or more Pester tests failed. Build cannot continue!'
     }
 }
-
-# Synopsis: Run Pester tests
-Task Full Init, Build, Import, PesterBefore, Test
 
 # Synopsis: Run PSScriptAnalyzer
 Task Analyze Init, {
