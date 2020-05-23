@@ -11,8 +11,8 @@ ci/https*
 ReleaseZips
 docs/docs/glossary/*
 !docs/docs/glossary/index.md
-VaporShell/Public/Resource*Types
-VaporShell/Public/Resource*Property*Types
+VaporShell/Public/Resource*Types/*
+VaporShell/Public/Resource*Property*Types/*
 
 # User-specific files
 *.suo
