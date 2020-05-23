@@ -38,7 +38,10 @@ Param(
     $TargetVersionDirectory,
     [Parameter()]
     [Switch]
-    $NoUpdate
+    $NoUpdate,
+    [Parameter()]
+    [Switch]
+    $CoreOnly
 )
 
 Task . Build, Import
@@ -95,6 +98,16 @@ Task Clean Init, {
     remove 'BuildOutput'
 }
 
+Task CleanNonCoreFunctions Init, {
+    $publicPath = [System.IO.Path]::Combine($BuildRoot,"VaporShell","Public")
+    $resTypesPath = [System.IO.Path]::Combine($publicPath,"Resource Types")
+    $resPropsPath = [System.IO.Path]::Combine($publicPath,"Resource Property Types")
+    remove $resTypesPath
+    remove $resPropsPath
+    New-Item $resTypesPath -ItemType Directory -Force
+    New-Item $resPropsPath -ItemType Directory -Force
+}
+
 Task CleanSubmodules Init, {
     Get-ChildItem 'BuildOutput' -Directory | Where-Object {$_.Name -ne $ModuleName} | ForEach-Object {
         remove $_.FullName
@@ -102,7 +115,7 @@ Task CleanSubmodules Init, {
 }
 
 # Synopsis: Updates module functions before compilation
-Task Update -If { -not $NoUpdate } Clean, {
+Task Update -If { -not $NoUpdate -and -not $CoreOnly } Clean, CleanNonCoreFunctions, {
     git submodule update --recursive
     Get-ChildItem (Join-Path $PSScriptRoot 'ci') -Filter '*.ps1' | Where-Object { $_.BaseName -notmatch "(GitHubReleaseNotes|gist\.githubusercontent\.com.*scrthq)" } | ForEach-Object {
         . $_.FullName
@@ -472,6 +485,9 @@ Task BuildMain Update, {
     Write-BuildLog 'Output version directory contents:'
     Get-ChildItem $TargetVersionDirectory | Format-Table -AutoSize
 }
+
+# Synopsis: Builds only the core components and submodules, excluding Resource Types and Resource Property Types
+Task BuildCoreOnly Init, Clean, CleanNonCoreFunctions, {$Script:NoUpdate = $true}, BuildMain, BuildSubmodules, BuildDotnet
 
 Task BuildMainClasses Init, {
     $updatedScriptsToProcess = @()

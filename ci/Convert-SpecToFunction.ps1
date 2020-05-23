@@ -18,19 +18,23 @@ function Convert-SpecToFunction {
     $ShortName = $Name.Replace("AWS::","")
     $BaseTypeName = "Vaporshell.Resource." + ($ShortName -replace "\..*").Replace("::",".")
     $TypeName = "Vaporshell.Resource." + $ShortName.Replace("::",".")
+    $ServiceName = $ShortName.Split('::')[0]
     switch ($ResourceType) {
         Resource {
-            $Dir = "$folder\Resource Types"
+            $Dir = "$folder\Resource Types\$ServiceName"
             $FunctionName = "New-VS" + ($ShortName -replace "\..*").Replace("::","")
             $Synopsis = "Adds an $Name resource to the template. $($HelpDoc.Synopsis)"
             $Description = "Adds an $Name resource to the template. $($HelpDoc.Description)"
         }
         Property {
-            $Dir = "$folder\Resource Property Types"
+            $Dir = "$folder\Resource Property Types\$ServiceName"
             $FunctionName = "Add-VS" + $ShortName.Replace("::","").Replace(".","")
             $Synopsis = "Adds an $Name resource property to the template. $($HelpDoc.Synopsis)"
             $Description = "Adds an $Name resource property to the template.`n$($HelpDoc.Description)"
         }
+    }
+    if (-not (Test-Path $Dir)) {
+        New-Item $Dir -ItemType Directory -Force
     }
     $PS1Path = "$Dir\$FunctionName.ps1"
     $scriptContents = @()

@@ -12,15 +12,13 @@ if ($Function:prompt.ToString() -notmatch 'VS CLASS DBG') {
 else {
     $env:VSClassDebugLevel = ([int]$env:VSClassDebugLevel) + 1
 }
-$command = "function prompt {`"`"[VS CLASS DBG #$env:VSClassDebugLevel] `$(`$PWD.Path)> `"`"};. '$($PSScriptRoot)/../build.ps1' -Task $($Task -join ',')"
+$command = "function prompt {`"`"[VS CLASS DBG #$env:VSClassDebugLevel] `$(`$PWD.Path)> `"`"};. '$($PSScriptRoot)/../build.ps1' -Task $($Task -join ',');Get-ChildItem '$($PSScriptRoot)/../BuildOutput' -Recurse -Include 'Attributes.ps1','Classes.ps1' | ForEach-Object {. `$_.FullName}"
 pwsh -NoExit -NoProfile -Command $command
 
 <#
 $buildOutputPath = (Resolve-Path ([System.IO.Path]::Combine($PSScriptRoot, '..', "BuildOutput"))).Path
 
-if (($env:PSModulePath -split ';') -notcontains $buildOutputPath) {
-    $env:PSModulePath = @($buildOutputPath, $env:PSModulePath) -join [System.IO.Path]::PathSeparator
-}
+if (($env:PSModulePath -split ';') -notcontains $buildOutputPath) {$env:PSModulePath = @($buildOutputPath, $env:PSModulePath) -join [System.IO.Path]::PathSeparator}
 
 try {
     Import-Module VaporShell.S3 -Verbose -Force
