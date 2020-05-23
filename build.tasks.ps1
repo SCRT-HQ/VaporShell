@@ -115,7 +115,7 @@ Task CleanSubmodules Init, {
 }
 
 # Synopsis: Updates module functions before compilation
-Task Update -If { -not $NoUpdate -and -not $CoreOnly } Clean, CleanNonCoreFunctions, {
+Task UpdateFromSpecification -If { -not $NoUpdate -and -not $CoreOnly } Clean, CleanNonCoreFunctions, {
     git submodule update --recursive
     Get-ChildItem (Join-Path $PSScriptRoot 'ci') -Filter '*.ps1' | Where-Object { $_.BaseName -notmatch "(GitHubReleaseNotes|gist\.githubusercontent\.com.*scrthq)" } | ForEach-Object {
         . $_.FullName
@@ -273,7 +273,7 @@ Task BuildDotnet Init, {
 }
 
 # Synopsis: Compiles module from source
-Task BuildMain Update, {
+Task BuildMain UpdateFromSpecification, {
     $functionsToExport = @()
     $aliasesToExport = @()
     Write-BuildLog 'Creating psm1...'

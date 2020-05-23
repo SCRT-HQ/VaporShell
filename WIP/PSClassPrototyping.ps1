@@ -1,7 +1,7 @@
 [CmdletBinding()]
 Param(
     [Parameter(Position = 0)]
-    [ValidateSet('BuildClasses','TestClasses')]
+    [ValidateSet('BuildCoreOnly','BuildClasses','TestClasses')]
     [string[]]
     $Task = @('BuildClasses','TestClasses')
 )
