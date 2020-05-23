@@ -12,7 +12,9 @@ ReleaseZips
 docs/docs/glossary/*
 !docs/docs/glossary/index.md
 VaporShell/Public/Resource*Types/*
+!VaporShell/Public/Resource*Types/README.md
 VaporShell/Public/Resource*Property*Types/*
+!VaporShell/Public/Resource*Property*Types/README.md
 
 # User-specific files
 *.suo
