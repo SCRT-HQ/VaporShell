@@ -9,3 +9,9 @@ enum UpdateReplacePolicy {
     Retain
     Snapshot
 }
+
+enum LoggingLevel {
+    OFF
+    ERROR
+    INFO
+}

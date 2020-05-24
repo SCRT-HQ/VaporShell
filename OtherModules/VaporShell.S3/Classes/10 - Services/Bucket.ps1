@@ -1,12 +1,8 @@
 class S3Bucket : VSResource {
-    [string]
-    $Type = 'AWS::S3::Bucket'
-    [object]
-    $AccessControl
-    [object]
-    $BucketName
-    [VSResourceTag[]]
-    $Tags
+    [string] $Type = 'AWS::S3::Bucket'
+    [object] $AccessControl
+    [object] $BucketName
+    [VSResourceTag[]] $Tags
 
     hidden [void] _addAccessors() {
         $this | Add-Member -Force -MemberType ScriptProperty -Name AccessControl -Value {

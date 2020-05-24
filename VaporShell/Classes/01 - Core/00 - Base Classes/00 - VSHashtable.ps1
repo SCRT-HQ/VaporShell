@@ -65,15 +65,17 @@ class VSHashtable : hashtable {
     }
 
     [string] ToYaml() {
-        return $this.ToYaml($false)
-    }
-
-    [string] ToYaml([bool] $usePowerShellYaml) {
-        if (-not $usePowerShellYaml -and $null -ne (Get-Command cfn-flip* -ErrorAction SilentlyContinue)) {
-            $flipped = ($this.ToJson() | cfn-flip) -join [System.Environment]::NewLine
+        $flipped = if (Get-Command cfn-flip* -ErrorAction SilentlyContinue) {
+            ($this.ToJson() | cfn-flip) -join [System.Environment]::NewLine
         }
         else {
-            $flipped = ($this.ToOrderedDictionary() | ConvertTo-Yaml) -join [System.Environment]::NewLine
+            $clean = if ($this['LogicalId']) {
+                @{$this['LogicalId'] = $this.ToOrderedDictionary()}
+            }
+            else {
+                $this.ToOrderedDictionary()
+            }
+            ($clean | ConvertTo-Yaml) -join [System.Environment]::NewLine
         }
         return $flipped
     }

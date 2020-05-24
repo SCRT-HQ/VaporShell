@@ -55,10 +55,10 @@ Task Init {
         . $_.FullName
     }
     $Script:SourceModuleDirectory = [System.IO.Path]::Combine($BuildRoot, $ModuleName)
-    $Script:SourceAdditionalModuleDirectory = [System.IO.Path]::Combine($BuildRoot, 'OtherModules')
+    $Script:SourceAdditionalModuleDirectory = [System.IO.Path]::Combine($BuildRoot, 'ServiceModules')
     $Script:GalleryVersion = (Get-PSGalleryVersion $ModuleName).Version
     $Script:SourceManifestPath = Join-Path $SourceModuleDirectory "$($ModuleName).psd1"
-    $Script:ManifestVersion = (Import-Metadata -Path $SourceManifestPath).ModuleVersion
+    $Script:ManifestVersion = ((Import-Metadata -Path $SourceManifestPath).ModuleVersion.Split('.')[0..1] + '0') -join '.'
     $Script:NextModuleVersion = Get-NextModuleVersion -GalleryVersion $GalleryVersion -ManifestVersion $ManifestVersion
     $Script:TargetDirectory = [System.IO.Path]::Combine($BuildRoot, 'BuildOutput')
     $Script:TargetModuleDirectory = [System.IO.Path]::Combine($TargetDirectory, $ModuleName)
@@ -99,13 +99,16 @@ Task Clean Init, {
 }
 
 Task CleanNonCoreFunctions Init, {
-    $publicPath = [System.IO.Path]::Combine($BuildRoot,"VaporShell","Public")
-    $resTypesPath = [System.IO.Path]::Combine($publicPath,"Resource Types")
-    $resPropsPath = [System.IO.Path]::Combine($publicPath,"Resource Property Types")
-    remove $resTypesPath
-    remove $resPropsPath
-    New-Item $resTypesPath -ItemType Directory -Force
-    New-Item $resPropsPath -ItemType Directory -Force
+    $serviceModulePath = [System.IO.Path]::Combine($BuildRoot,'ServiceModules')
+    Get-ChildItem $serviceModulePath -Directory | ForEach-Object {
+        $publicPath = [System.IO.Path]::Combine($_.FullName,'Public')
+        $classPath = [System.IO.Path]::Combine($_.FullName,'Classes')
+        $publicPath,$classPath | ForEach-Object {
+            Get-ChildItem $_ -Directory | ForEach-Object {
+                remove $_.FullName
+            }
+        }
+    }
 }
 
 Task CleanSubmodules Init, {
@@ -121,11 +124,11 @@ Task UpdateFromSpecification -If { -not $NoUpdate -and -not $CoreOnly } Clean, C
         . $_.FullName
     }
     Write-BuildLog 'Updating Resource and Property Type functions with current AWS spec sheet...'
-    Update-VSResourceFunctions
+    Update-VSResourceFunctions -ModuleVersion $NextModuleVersion
 }
 
 # Synopsis: Compile the submodules
-Task BuildSubmodules CleanSubmodules, {
+Task BuildSubmodules Init,CleanSubmodules, {
     $submodulesToBuild = Get-ChildItem $SourceAdditionalModuleDirectory -Directory | Select-Object -ExpandProperty BaseName
     foreach ($sub in $SubmodulesToBuild) {
         $subSourceModuleDirectory = [System.IO.Path]::Combine($SourceAdditionalModuleDirectory, $sub)
@@ -144,11 +147,9 @@ Task BuildSubmodules CleanSubmodules, {
         Write-BuildLog "Copying source PSM1 to target folder for submodule: $sub"
         $psm1 = Copy-Item -Path $subSourcePSM1Path -Destination $subTargetVersionDirectory -PassThru -Force
 
-        if ($ManifestVersion -ne $NextModuleVersion) {
-            Write-BuildLog "Bumping source manifest version from '$ManifestVersion' to '$NextModuleVersion' to prevent errors"
-            Update-Metadata -Path $subSourceManifestPath -PropertyName ModuleVersion -Value $NextModuleVersion
-            ([System.IO.File]::ReadAllText($subSourceManifestPath)).Trim() | Set-Content $subSourceManifestPath
-        }
+        Write-BuildLog "Bumping source manifest version from '$ManifestVersion' to '$NextModuleVersion' to prevent errors"
+        Update-Metadata -Path $subSourceManifestPath -PropertyName ModuleVersion -Value $NextModuleVersion
+        ([System.IO.File]::ReadAllText($subSourceManifestPath)).Trim() | Set-Content $subSourceManifestPath
 
         # Copy over manifest
         Write-BuildLog "Copying source manifest to target folder"
@@ -161,38 +162,38 @@ Task BuildSubmodules CleanSubmodules, {
         foreach ($scope in @('Attributes', 'Classes', 'Private', 'Public')) {
             $gciPath = [System.IO.Path]::Combine($subSourceModuleDirectory, $scope)
             if (Test-Path $gciPath) {
-                $target = if ($scope -match '^(Attributes|Classes)$') {
-                    New-Item -Path ([System.IO.Path]::Combine($subTargetVersionDirectory, "$scope.ps1")) -ItemType File -Force
-                    $updatedScriptsToProcess += "$scope.ps1"
-                }
-                else {
-                    $psm1
-                }
-                Write-BuildLog "Copying contents from files in source folder '$($scope)' to $($target.Name)"
-                Get-ChildItem -Path $gciPath -Filter "*.ps1" -Recurse -File | Where-Object {
-                    $_.Name -ne 'PseudoParams.txt' -and
-                    $_.FullName -notlike "*Development Tools*"
-                } | Sort-Object FullName | ForEach-Object {
-                    Write-BuildLog "Working on: $($_.FullName.Replace("$gciPath$([System.IO.Path]::DirectorySeparatorChar)",''))"
-                    $content = Get-Content $_.FullName
-                    if ($usingStatements = $content | Where-Object { $_ -match '^\s*using\s+(module|namespace|assembly)\s+\w+.*$' }) {
-                        switch ($scope) {
-                            Attributes {
-                                $attributesUsingStatements += $usingStatements
-                            }
-                            Classes {
-                                $classesUsingStatements += $usingStatements
-                            }
-                            default {
-                                $psm1UsingStatements += $usingStatements
+                $toProcess = Get-ChildItem -Path $gciPath -Filter "*.ps1" -Recurse -File | Where-Object {$_.FullName -notlike "*Development Tools*"} | Sort-Object FullName
+                if ($toProcess) {
+                    $target = if ($scope -match '^(Attributes|Classes)$') {
+                        New-Item -Path ([System.IO.Path]::Combine($subTargetVersionDirectory, "$scope.ps1")) -ItemType File -Force
+                        $updatedScriptsToProcess += "$scope.ps1"
+                    }
+                    else {
+                        $psm1
+                    }
+                    Write-BuildLog "Copying contents from files in source folder '$($scope)' to $($target.Name)"
+                    $toProcess | ForEach-Object {
+                        Write-BuildLog "Working on: $($_.FullName.Replace("$gciPath$([System.IO.Path]::DirectorySeparatorChar)",''))"
+                        $content = Get-Content $_.FullName
+                        if ($usingStatements = $content | Where-Object { $_ -match '^\s*using\s+(module|namespace|assembly)\s+\w+.*$' }) {
+                            switch ($scope) {
+                                Attributes {
+                                    $attributesUsingStatements += $usingStatements
+                                }
+                                Classes {
+                                    $classesUsingStatements += $usingStatements
+                                }
+                                default {
+                                    $psm1UsingStatements += $usingStatements
+                                }
                             }
                         }
-                    }
-                    $nonUsingStatements = ($content | Where-Object { $_ -notmatch '^\s*using\s+(module|namespace|assembly)\s+\w+.*$' }) -join "`n"
-                    "$nonUsingStatements`n" | Add-Content -Path $target -Encoding UTF8
-                    if ($scope -eq 'Public') {
-                        $functionsToExport += $_.BaseName
-                        "Export-ModuleMember -Function '$($_.BaseName)'`n" | Add-Content -Path $target -Encoding UTF8
+                        $nonUsingStatements = ($content | Where-Object { $_ -notmatch '^\s*using\s+(module|namespace|assembly)\s+\w+.*$' }) -join "`n"
+                        "$nonUsingStatements`n" | Add-Content -Path $target -Encoding UTF8
+                        if ($scope -eq 'Public') {
+                            $functionsToExport += $_.BaseName
+                            "Export-ModuleMember -Function '$($_.BaseName)'`n" | Add-Content -Path $target -Encoding UTF8
+                        }
                     }
                 }
             }
@@ -248,17 +249,16 @@ Task BuildSubmodules CleanSubmodules, {
         if ($functionsToExport.Count) {
             Update-Metadata @params -PropertyName FunctionsToExport -Value ($functionsToExport | Sort-Object)
         }
-        if ($functionsToExport.Count) {
+        if ($aliasesToExport.Count) {
             Update-Metadata @params -PropertyName AliasesToExport -Value ($aliasesToExport | Sort-Object)
         }
 
         Write-BuildLog "Updating target manifest file with exports"
 
-        if ($ManifestVersion -ne $NextModuleVersion) {
-            Write-BuildLog "Reverting bumped source manifest version from '$NextModuleVersion' to '$ManifestVersion'"
-            Update-Metadata -Path $subSourceManifestPath -PropertyName ModuleVersion -Value $ManifestVersion
-            ([System.IO.File]::ReadAllText($subSourceManifestPath)).Trim() | Set-Content $subSourceManifestPath
-        }
+        Write-BuildLog "Reverting bumped source manifest version from '$NextModuleVersion' to '$ManifestVersion'"
+        Update-Metadata -Path $subSourceManifestPath -PropertyName ModuleVersion -Value $ManifestVersion
+        ([System.IO.File]::ReadAllText($subSourceManifestPath)).Trim() | Set-Content $subSourceManifestPath
+
         Write-BuildLog "Created compiled module at [$subTargetVersionDirectory]!"
         Write-BuildLog 'Output version directory contents:'
         Get-ChildItem $subTargetVersionDirectory | Format-Table -AutoSize
@@ -279,21 +279,9 @@ Task BuildMain UpdateFromSpecification, {
     Write-BuildLog 'Creating psm1...'
     $psm1 = New-Item -Path $TargetPSM1Path -ItemType File -Force
 
-    $usingModule = if ($IsCI) {
-        "VaporShell.Common"
-    }
-    else {
-        "../../VaporShell.Common/$($NextModuleVersion)/VaporShell.Common.psm1"
-    }
-
     $psm1Header = @(
-        #"using module $usingModule"
         '[CmdletBinding()]'
-        'Param ('
-        '    # This no longer does anything as of v2.6.0, leaving for backwards compatiblity'
-        '    [parameter(Position=0)]'
-        '    $ForceDotSource = $false'
-        ')'
+        'Param ()'
         '$VaporshellPath = $PSScriptRoot'
         'if ($null -eq ([System.AppDomain]::CurrentDomain.GetAssemblies() | Where-Object {$_.Location -match "VaporShell.Core.dll"})) {'
         '    Add-Type -Path "$VaporshellPath\VaporShell.Core.dll" -ReferencedAssemblies ([PowerShell].Assembly.Location)'
@@ -318,38 +306,38 @@ Task BuildMain UpdateFromSpecification, {
     foreach ($scope in @('Attributes', 'Classes', 'Private', 'Public')) {
         $gciPath = [System.IO.Path]::Combine($SourceModuleDirectory, $scope)
         if (Test-Path $gciPath) {
-            $target = if ($scope -match '^(Attributes|Classes)$') {
-                New-Item -Path ([System.IO.Path]::Combine($TargetVersionDirectory, "$scope.ps1")) -ItemType File -Force
-                $updatedScriptsToProcess += "$scope.ps1"
-            }
-            else {
-                $psm1
-            }
-            Write-BuildLog "Copying contents from files in source folder '$($scope)' to $($target.Name)"
-            Get-ChildItem -Path $gciPath -Filter "*.ps1" -Recurse -File | Where-Object {
-                $_.Name -ne 'PseudoParams.txt' -and
-                $_.FullName -notlike "*Development Tools*"
-            } | Sort-Object FullName | ForEach-Object {
-                Write-BuildLog "Working on: $($_.FullName.Replace("$gciPath$([System.IO.Path]::DirectorySeparatorChar)",''))"
-                $content = Get-Content $_.FullName
-                if ($usingStatements = $content | Where-Object { $_ -match '^\s*using\s+(module|namespace|assembly)\s+\w+.*$' }) {
-                    switch ($scope) {
-                        Attributes {
-                            $attributesUsingStatements += $usingStatements
-                        }
-                        Classes {
-                            $classesUsingStatements += $usingStatements
-                        }
-                        default {
-                            $psm1UsingStatements += $usingStatements
+            $toProcess = Get-ChildItem -Path $gciPath -Filter "*.ps1" -Recurse -File | Where-Object {$_.FullName -notlike "*Development Tools*"} | Sort-Object FullName
+            if ($toProcess) {
+                $target = if ($scope -match '^(Attributes|Classes)$') {
+                    New-Item -Path ([System.IO.Path]::Combine($TargetVersionDirectory, "$scope.ps1")) -ItemType File -Force
+                    $updatedScriptsToProcess += "$scope.ps1"
+                }
+                else {
+                    $psm1
+                }
+                Write-BuildLog "Copying contents from files in source folder '$($scope)' to $($target.Name)"
+                $toProcess | ForEach-Object {
+                    Write-BuildLog "Working on: $($_.FullName.Replace("$gciPath$([System.IO.Path]::DirectorySeparatorChar)",''))"
+                    $content = Get-Content $_.FullName
+                    if ($usingStatements = $content | Where-Object { $_ -match '^\s*using\s+(module|namespace|assembly)\s+\w+.*$' }) {
+                        switch ($scope) {
+                            Attributes {
+                                $attributesUsingStatements += $usingStatements
+                            }
+                            Classes {
+                                $classesUsingStatements += $usingStatements
+                            }
+                            default {
+                                $psm1UsingStatements += $usingStatements
+                            }
                         }
                     }
-                }
-                $nonUsingStatements = ($content | Where-Object { $_ -notmatch '^\s*using\s+(module|namespace|assembly)\s+\w+.*$' }) -join "`n"
-                "$nonUsingStatements`n" | Add-Content -Path $target -Encoding UTF8
-                if ($scope -eq 'Public') {
-                    $functionsToExport += $_.BaseName
-                    "Export-ModuleMember -Function '$($_.BaseName)'`n" | Add-Content -Path $target -Encoding UTF8
+                    $nonUsingStatements = ($content | Where-Object { $_ -notmatch '^\s*using\s+(module|namespace|assembly)\s+\w+.*$' }) -join "`n"
+                    "$nonUsingStatements`n" | Add-Content -Path $target -Encoding UTF8
+                    if ($scope -eq 'Public') {
+                        $functionsToExport += $_.BaseName
+                        "Export-ModuleMember -Function '$($_.BaseName)'`n" | Add-Content -Path $target -Encoding UTF8
+                    }
                 }
             }
         }

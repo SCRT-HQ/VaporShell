@@ -27,6 +27,12 @@
     <img src="https://img.shields.io/powershellgallery/dt/Vaporshell.svg?style=flat&logo=powershell"
       alt="PowerShell Gallery - Install VaporShell" title="PowerShell Gallery - Install VaporShell" />
   </a>&nbsp;&nbsp;&nbsp;
+  <!-- GitHub Releases -->
+  <a href="https://github.com/SCRT-HQ/VaporShell/releases/latest">
+    <img src="https://img.shields.io/github/downloads/SCRT-HQ/VaporShell/total.svg?logo=github&color=blue"
+      alt="GitHub Releases" title="GitHub Releases" />
+  </a>
+  <br /><br />
   <!-- Discord -->
   <a href="https://discord.gg/G66zVG7">
     <img src="https://img.shields.io/discord/235574673155293194.svg?label=Discord&logo=discord"

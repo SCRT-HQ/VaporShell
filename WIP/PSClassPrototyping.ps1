@@ -3,8 +3,10 @@ Param(
     [Parameter(Position = 0)]
     [ValidateSet('BuildCoreOnly','BuildClasses','TestClasses')]
     [string[]]
-    $Task = @('BuildClasses','TestClasses')
+    $Task = @('BuildCoreOnly','TestClasses')
 )
+
+Set-Location "$PSScriptRoot/.."
 
 if ($Function:prompt.ToString() -notmatch 'VS CLASS DBG') {
     $env:VSClassDebugLevel = 1

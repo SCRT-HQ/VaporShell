@@ -31,14 +31,11 @@
 
 Prerequisites
 
-- PowerShell 3+
-    - On Linux or macOS? Grab PowerShell 6 here: https://github.com/powershell/powershell#get-powershell
-- .NET 4.7.2+ OR .netstandard 1.3+
-    - if you have PowerShell 4 or greater, you're covered!
+- PowerShell 5.1+
 
 For further information, please checkout the README on the GitHub page and the module website:
 
-Readme: https://github.com/scrthq/VaporShell/blob/master/README.md
+Readme: https://github.com/SCRT-HQ/VaporShell/blob/master/README.md
 Website: https://vaporshell.io/
 "
 
@@ -108,10 +105,10 @@ Website: https://vaporshell.io/
             Tags       = 'AWS', 'CloudFormation', 'CFN', 'DevOps', 'Automation', 'JSON', 'YAML', 'IaC', 'InfrastructureAsCode', 'PSEdition_Core', 'PSEdition_Desktop', 'Windows', 'Mac', 'Linux'
 
             # A URL to the license for this module.
-            LicenseUri = 'https://github.com/scrthq/VaporShell/blob/master/LICENSE'
+            LicenseUri = 'https://github.com/SCRT-HQ/VaporShell/blob/master/LICENSE'
 
             # A URL to the main website for this project.
-            ProjectUri = 'https://github.com/scrthq/VaporShell'
+            ProjectUri = 'https://github.com/SCRT-HQ/VaporShell'
 
             # A URL to an icon representing this module.
             IconUri    = 'https://spotinst.com/app/themes/spotinst-theme/dist/images/features/elastigroup/intro/icons/cloudformation.svg'

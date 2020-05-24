@@ -22,12 +22,21 @@ class VSResource : VSLogicalObject {
         return $this.LogicalId
     }
 
+    [object] FormatDeletionPolicy([object] $policy) {
+        if ($policy -is [string]) {
+            return (Get-Culture).TextInfo.ToTitleCase($policy.ToString().ToLower())
+        }
+        else {
+            return $policy
+        }
+    }
+
     hidden [void] _addAccessors() {
         $this | Add-Member -Force -MemberType ScriptProperty -Name DeletionPolicy -Value {
             $this.FormatDeletionPolicy($this._deletionPolicy)
         } -SecondValue {
             param(
-                [ValidateType(([string], [FnRef]))] [object]
+                [ValidateType(([string], [IntrinsicFunction], [DeletionPolicy]))] [object]
                 $deletionPolicy
             )
             $this._deletionPolicy = $deletionPolicy
@@ -36,29 +45,10 @@ class VSResource : VSLogicalObject {
             $this.FormatDeletionPolicy($this._updateReplacePolicy)
         } -SecondValue {
             param(
-                [ValidateType(([string], [FnRef]))] [object]
+                [ValidateType(([string], [IntrinsicFunction], [UpdateReplacePolicy]))] [object]
                 $updateReplacePolicy
             )
             $this._updateReplacePolicy = $updateReplacePolicy
-        }
-
-        $this | Add-Member -Force -MemberType ScriptProperty -Name DeletionPolicy -Value {
-            $this.FormatDeletionPolicy($this._deletionPolicy)
-        } -SecondValue {
-            param(
-                [ValidateType(([string], [FnRef]))] [object]
-                $deletionPolicy
-            )
-            $this._deletionPolicy = $this.FormatDeletionPolicy($deletionPolicy)
-        }
-        $this | Add-Member -Force -MemberType ScriptProperty -Name UpdateReplacePolicy -Value {
-            $this.FormatDeletionPolicy($this._updateReplacePolicy)
-        } -SecondValue {
-            param(
-                [ValidateType(([string], [FnRef]))] [object]
-                $updateReplacePolicy
-            )
-            $this._updateReplacePolicy = $this.FormatDeletionPolicy($updateReplacePolicy)
         }
     }
 

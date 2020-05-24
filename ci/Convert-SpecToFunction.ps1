@@ -9,34 +9,41 @@ function Convert-SpecToFunction {
         [String]
         $ResourceType
     )
-    $ModPath = (Resolve-Path "$PSScriptRoot\..\VaporShell").Path
-    $folder = "$($ModPath)\Public"
     $Name = $Resource.Name
+    $ShortName = $Name.Replace("AWS::","")
+    $ServiceName = $ShortName.Split('::')[0]
+    if ($ServiceName -eq 'Serverless') {
+        $ServiceName = 'SAM'
+        $ShortName = $ShortName -replace '^Serverless','SAM'
+    }
+    $serviceModulePath = [System.IO.Path]::Combine($PSScriptRoot,'..','ServiceModules')
+    $moduleName = "VaporShell.$ServiceName"
+    $ModPath = [System.IO.Path]::Combine($serviceModulePath,$moduleName)
+    $folder = [System.IO.Path]::Combine($ModPath,'Public')
     $Link = $Resource.Value.Documentation
     $HelpDoc = New-CFNHelpDoc @PSBoundParameters
     $Properties = $Resource.Value.Properties.PSObject.Properties
-    $ShortName = $Name.Replace("AWS::","")
     $BaseTypeName = "Vaporshell.Resource." + ($ShortName -replace "\..*").Replace("::",".")
     $TypeName = "Vaporshell.Resource." + $ShortName.Replace("::",".")
-    $ServiceName = $ShortName.Split('::')[0]
     switch ($ResourceType) {
         Resource {
-            $Dir = "$folder\Resource Types\$ServiceName"
+            $Dir = [System.IO.Path]::Combine($folder,'Resources')
             $FunctionName = "New-VS" + ($ShortName -replace "\..*").Replace("::","")
             $Synopsis = "Adds an $Name resource to the template. $($HelpDoc.Synopsis)"
             $Description = "Adds an $Name resource to the template. $($HelpDoc.Description)"
         }
         Property {
-            $Dir = "$folder\Resource Property Types\$ServiceName"
+            $Dir = [System.IO.Path]::Combine($folder,'Properties')
             $FunctionName = "Add-VS" + $ShortName.Replace("::","").Replace(".","")
             $Synopsis = "Adds an $Name resource property to the template. $($HelpDoc.Synopsis)"
             $Description = "Adds an $Name resource property to the template.`n$($HelpDoc.Description)"
         }
     }
     if (-not (Test-Path $Dir)) {
-        New-Item $Dir -ItemType Directory -Force
+        $null = New-Item $Dir -ItemType Directory -Force
     }
-    $PS1Path = "$Dir\$FunctionName.ps1"
+    $PS1Path = [System.IO.Path]::Combine($Dir,"$FunctionName.ps1")
+    Write-BuildLog "Generating $ResourceType function: $moduleName\$FunctionName"
     $scriptContents = @()
     $scriptContents += @"
 function $FunctionName {
