@@ -204,11 +204,11 @@ function Convert-SpecToClass {
                     "            `$this.Properties['$ParamName']"
                     '        } -SecondValue {'
                     '            param([ValidateType(([string],[VSJson],[VSYaml],[psobject],[hashtable],[OrderedDictionary],[IDictionary]))][object] $value)'
-                    "            `$this.Properties['$ParamName'] = if (`$value -is [VSJson]) {"
+                    "            `$this.$ParamName = if (`$value -is [VSJson]) {"
                     '                $value'
                     '             }'
                     '             else {'
-                    "                `$this.Properties['$ParamName'] = [VSJson]::new(`$value)"
+                    "                [VSJson]::new(`$value)"
                     '             }'
                     '        }'
                 )
@@ -261,19 +261,25 @@ function Convert-SpecToClass {
                     )
                 }
                 else {
-                    $scriptContents += @"
-        [parameter(Mandatory = $Mandatory)]
-        [ValidateScript( {
-                `$allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
-                if ([string]`$(`$_.PSTypeNames) -match "(`$((`$allowedTypes|ForEach-Object{[RegEx]::Escape(`$_)}) -join '|'))") {
-                    `$true
-                }
-                else {
-                    `$PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: `$(`$allowedTypes -join ", "). The current types of the value are: `$(`$_.PSTypeNames -join ", ")."))
-                }
-            })]
-        `$$ParamName
-"@
+                    $prprtyContents += "    [string] `$$ParamName"
+                    $accessorContents += @(
+                        "        `$this | Add-Member -Force -MemberType ScriptProperty -Name $ParamName -Value {"
+                        '            $this.ZipFile'
+                        '        } -SecondValue {'
+                        '            param('
+                        '                [ValidateType(([string], [IntrinsicFunction], [ConditionFunction]))] [object]'
+                        '                $value'
+                        '            )'
+                        '            $final = if ($value -is [string] -and (Test-Path $value)) {'
+                        '                $resolvedPath = (Resolve-Path $value).Path'
+                        '                [File]::ReadAllText($resolvedPath)'
+                        '            }'
+                        '            else {'
+                        '                $value'
+                        '            }'
+                        '            $this.ZipFile = $final'
+                        '        }'
+                    )
                 }
             }
             else {

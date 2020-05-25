@@ -5,6 +5,7 @@ class VSHashtable : hashtable {
     # Anything inheriting from this class will only show the hashtable contents.
     # Object properties will be stripped when cast to JSON/YAML.
     # Useful for adding corresponding public properties for intellisense.
+    hidden [string[]] $_commonParams = @('Verbose','Debug','ErrorAction','WarningAction','InformationAction','ErrorVariable','WarningVariable','InformationVariable','OutVariable','OutBuffer','PipelineVariable')
     hidden [void] _addAccessors() {}
 
     static [string] Help() {
@@ -89,7 +90,7 @@ class VSHashtable : hashtable {
         Write-Debug "Contructing $($this.GetType().Name) from input IDictionary"
         $props.GetEnumerator() | ForEach-Object {
             Write-Debug "Checking for property '$($_.Key)' on this object"
-            if ($this.PSObject.Properties.Name -contains $_.Key) {
+            if ($this.PSObject.Properties.Name -contains $_.Key -and $_.Key -notin $this._commonParams) {
                 Write-Debug "Property found, adding value: $($_.Value)"
                 $this[$_.Key] = $_.Value
             }
@@ -99,11 +100,11 @@ class VSHashtable : hashtable {
     VSHashtable([psobject] $props) {
         $this._addAccessors()
         Write-Debug "Contructing $($this.GetType().Name) from input PSObject"
-        $props.PSObject.Properties.Name | ForEach-Object {
-            Write-Debug "Checking for property '$($_)' on this object"
-            if ($this.PSObject.Properties.Name -contains $_) {
-                Write-Debug "Property found, adding value: $($props."$_")"
-                $this[$_] = $props."$_"
+        $props.PSObject.Properties | ForEach-Object {
+            Write-Debug "Checking for property '$($_.Name)' on this object"
+            if ($this.PSObject.Properties.Name -contains $_.Name -and $_.Name -notin $this._commonParams) {
+                Write-Debug "Property found, adding value: $($_.Value)"
+                $this[$_.Name] = $_.Value
             }
         }
     }

@@ -86,7 +86,7 @@ function Update-VSResourceFunctions {
             Write-Host -ForegroundColor Yellow "WARNING: Failed to get specs from region: $($_.Key)"
         }
     }
-    foreach ($serviceModule in ($serviceModules | Where-Object {$_ -ne 'Serverless'} | Sort-Object -Unique)) {
+    foreach ($serviceModule in ($serviceModules | Where-Object {$_ -notin @('Serverless','Tag')} | Sort-Object -Unique)) {
         New-VSServiceModule -ModuleName "VaporShell.$serviceModule" -ModuleVersion $ModuleVersion
     }
     foreach ($resource in $final['ResourceTypes'].Values | Sort-Object Name) {
