@@ -27,6 +27,16 @@ The loggingConfiguration parameter is only valid when StateMachineType is set to
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-loggingconfiguration
         UpdateType: Mutable
 
+    .PARAMETER DefinitionSubstitutions
+        Type: DefinitionSubstitutions
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-definitionsubstitutions
+        UpdateType: Mutable
+
+    .PARAMETER DefinitionS3Location
+        Type: S3Location
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-definitions3location
+        UpdateType: Mutable
+
     .PARAMETER StateMachineName
         The name of the state machine.
 A name must *not* contain:
@@ -126,7 +136,7 @@ Tags may only contain Unicode letters, digits, white space, or these symbols: _ 
             })]
         [System.String]
         $LogicalId,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -139,6 +149,10 @@ Tags may only contain Unicode letters, digits, white space, or these symbols: _ 
         $DefinitionString,
         [parameter(Mandatory = $false)]
         $LoggingConfiguration,
+        [parameter(Mandatory = $false)]
+        $DefinitionSubstitutions,
+        [parameter(Mandatory = $false)]
+        $DefinitionS3Location,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"

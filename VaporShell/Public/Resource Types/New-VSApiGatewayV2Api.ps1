@@ -47,13 +47,6 @@ function New-VSApiGatewayV2Api {
         PrimitiveType: Boolean
         UpdateType: Mutable
 
-    .PARAMETER DisableExecuteApiEndpoint
-        + CreateApi: https://docs.aws.amazon.com/apigatewayv2/latest/api-reference/apis.html#CreateApi in the *Amazon API Gateway Version 2 API Reference*
-
-        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-disableexecuteapiendpoint
-        PrimitiveType: Boolean
-        UpdateType: Mutable
-
     .PARAMETER DisableSchemaValidation
         Avoid validating models when creating a deployment. Supported only for WebSocket APIs.
 
@@ -241,17 +234,6 @@ function New-VSApiGatewayV2Api {
                 }
             })]
         $FailOnWarnings,
-        [parameter(Mandatory = $false)]
-        [ValidateScript( {
-                $allowedTypes = "System.Boolean","Vaporshell.Function"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
-        $DisableExecuteApiEndpoint,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.Boolean","Vaporshell.Function"

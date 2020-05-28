@@ -99,7 +99,7 @@ function New-VSMacieFindingsFilter {
             })]
         [System.String]
         $LogicalId,
-        [parameter(Mandatory = $false)]
+        [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -121,7 +121,7 @@ function New-VSMacieFindingsFilter {
                 }
             })]
         $Description,
-        [parameter(Mandatory = $false)]
+        [parameter(Mandatory = $true)]
         $FindingCriteria,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
