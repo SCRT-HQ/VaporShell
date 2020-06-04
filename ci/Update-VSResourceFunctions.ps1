@@ -93,9 +93,11 @@ function Update-VSResourceFunctions {
     foreach ($resource in $final['ResourceTypes'].Values | Sort-Object Name) {
         Write-Verbose "Updating Resource Type [$($resource.Name)]"
         Convert-SpecToFunction -Resource $resource -ResourceType Resource
+        Convert-SpecToClass -Resource $resource -ResourceType Resource
     }
     foreach ($resource in $final['PropertyTypes'].Values | Where-Object {($_.Name.Replace('AWS::','').Split('::') | Select-Object -First 1) -ne 'Tag'} | Sort-Object Name) {
         Write-Verbose "Updating Resource Property [$($resource.Name)]"
         Convert-SpecToFunction -Resource $resource -ResourceType Property
+        Convert-SpecToClass -Resource $resource -ResourceType Property
     }
 }

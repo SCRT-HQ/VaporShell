@@ -28,7 +28,12 @@ function Convert-SpecToClass {
     $basePath = "$($ModPath)\Classes"
     switch ($ResourceType) {
         Property {
-            $Dir = "$basePath\00 - Property Types\$SortedFolder"
+            $Dir = if ($SortedFolder) {
+                "$basePath\00 - Property Types\$SortedFolder"
+            }
+            else {
+                "$basePath\00 - Property Types"
+            }
             $ClassBase = 'VSResourceProperty'
             $ClassName = $ShortName -replace '\W'
             if ($BuildHelp) {
@@ -70,7 +75,6 @@ function Convert-SpecToClass {
     }
 
     foreach ($Prop in $Properties) {
-
         if ($Name -eq "AWS::AutoScaling::AutoScalingGroup" -or $Name -eq "AWS::EC2::Instance" -or $Name -eq "AWS::CloudFormation::WaitCondition") {
             $prprtyContents += "    [CreationPolicy] `$CreationPolicy"
         }
@@ -264,231 +268,55 @@ function Convert-SpecToClass {
                     $prprtyContents += "    [string] `$$ParamName"
                     $accessorContents += @(
                         "        `$this | Add-Member -Force -MemberType ScriptProperty -Name $ParamName -Value {"
-                        '            $this.ZipFile'
+                        "            `$this.$ParamName"
                         '        } -SecondValue {'
                         '            param('
                         '                [ValidateType(([string], [IntrinsicFunction], [ConditionFunction]))] [object]'
                         '                $value'
                         '            )'
-                        '            $final = if ($value -is [string] -and (Test-Path $value)) {'
-                        '                $resolvedPath = (Resolve-Path $value).Path'
-                        '                [File]::ReadAllText($resolvedPath)'
-                        '            }'
-                        '            else {'
-                        '                $value'
-                        '            }'
-                        '            $this.ZipFile = $final'
+                        "            `$this.$ParamName = `$value"
                         '        }'
                     )
                 }
             }
             else {
-                $scriptContents += @"
-        [parameter(Mandatory = $Mandatory)]
-        `$$ParamName
-"@
+                $prprtyContents += "    [object] `$$ParamName"
             }
         }
         if ($ResourceType -ne "Property") {
-            if ($Name -eq "AWS::AutoScaling::AutoScalingGroup" -or $Name -eq "AWS::EC2::Instance" -or $Name -eq "AWS::CloudFormation::WaitCondition") {
-                $scriptContents += @"
-        [parameter(Mandatory = `$false)]
-        [ValidateScript( {
-                `$allowedTypes = "Vaporshell.Resource.CreationPolicy"
-                if ([string]`$(`$_.PSTypeNames) -match "(`$((`$allowedTypes|ForEach-Object{[RegEx]::Escape(`$_)}) -join '|'))") {
-                    `$true
-                }
-                else {
-                    `$PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: `$(`$allowedTypes -join ", "). The current types of the value are: `$(`$_.PSTypeNames -join ", ")."))
-                }
-            })]
-        `$CreationPolicy,
-"@
+            $prprtyContents += '    [VSMetadata] $Metadata'
+            if ($Name -in @("AWS::AutoScaling::AutoScalingGroup","AWS::EC2::Instance","AWS::CloudFormation::WaitCondition")) {
+                $prprtyContents += '    [CreationPolicy] $CreationPolicy'
             }
-            $scriptContents += @"
-        [ValidateSet("Delete","Retain","Snapshot")]
-        [System.String]
-        `$DeletionPolicy,
-        [ValidateSet("Delete","Retain","Snapshot")]
-        [System.String]
-        `$UpdateReplacePolicy,
-        [parameter(Mandatory = `$false)]
-        [System.String[]]
-        `$DependsOn,
-        [parameter(Mandatory = `$false)]
-        [ValidateScript( {
-                `$allowedTypes = "System.Management.Automation.PSCustomObject"
-                if ([string]`$(`$_.PSTypeNames) -match "(`$((`$allowedTypes|ForEach-Object{[RegEx]::Escape(`$_)}) -join '|'))") {
-                    `$true
-                }
-                else {
-                    `$PSCmdlet.ThrowTerminatingError((New-VSError -String "The UpdatePolicy parameter only accepts the following types: `$(`$allowedTypes -join ", "). The current types of the value are: `$(`$_.PSTypeNames -join ", ")."))
-                }
-            })]
-"@
             if ($Name -ne 'AWS::Events::EventBusPolicy') {
-                $scriptContents += @"
-        `$Metadata,
-        [parameter(Mandatory = `$false)]
-        [ValidateScript( {
-                `$allowedTypes = "Vaporshell.Resource.UpdatePolicy"
-                if ([string]`$(`$_.PSTypeNames) -match "(`$((`$allowedTypes|ForEach-Object{[RegEx]::Escape(`$_)}) -join '|'))") {
-                    `$true
-                }
-                else {
-                    `$PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: `$(`$allowedTypes -join ", "). The current types of the value are: `$(`$_.PSTypeNames -join ", ")."))
-                }
-            })]
-        `$UpdatePolicy,
-        [parameter(Mandatory = `$false)]
-        `$Condition
-"@
+                $hiddenContents += '    hidden [object] $_condition'
+                $prprtyContents += '    [UpdatePolicy] $UpdatePolicy'
+                $prprtyContents += '    [string] $Condition'
+                $accessorContents += @(
+                    "        `$this | Add-Member -Force -MemberType ScriptProperty -Name Condition -Value {"
+                    '            $this._condition'
+                    '        } -SecondValue {'
+                    '            param('
+                    '                [ValidateType(([string], [IntrinsicFunction], [ConditionFunction]))] [object]'
+                    '                $value'
+                    '            )'
+                    '            $this._condition = $value'
+                    '        }'
+                )
             }
-            else {
-                $scriptContents += @"
-        `$Metadata
-"@
-            }
-            $scriptContents += @"
+        }
+    }
+    $scriptContents += $hiddenContents
+    $scriptContents += ""
+    $scriptContents += $prprtyContents
+    $scriptContents += ""
+    $scriptContents += $accessorContents
+    $scriptContents += ""
+    $scriptContents += @(
+        "   $ClassName() : base() {}"
+        "   $ClassName([IDictionary] `$props) : base(`$props) {}"
+        "   $ClassName([psobject] `$props) : base(`$props) {}"
+        '}'
     )
-    Begin {
-        `$ResourceParams = @{
-            LogicalId = `$LogicalId
-            Type = "$Name"
-        }
-        `$commonParams = @('Verbose','Debug','ErrorAction','WarningAction','InformationAction','ErrorVariable','WarningVariable','InformationVariable','OutVariable','OutBuffer','PipelineVariable')
-    }
-    Process {
-        foreach (`$key in `$PSBoundParameters.Keys | Where-Object {`$commonParams -notcontains `$_}) {
-            switch (`$key) {
-                LogicalId {}
-"@
-            if ($Name -eq "AWS::AutoScaling::AutoScalingGroup" -or $Name -eq "AWS::EC2::Instance" -or $Name -eq "AWS::CloudFormation::WaitCondition") {
-                $scriptContents += @"
-                CreationPolicy {
-                    `$ResourceParams.Add("CreationPolicy",`$CreationPolicy)
-                }
-"@
-            }
-            $scriptContents += @"
-                DeletionPolicy {
-                    `$ResourceParams.Add("DeletionPolicy",`$DeletionPolicy)
-                }
-                UpdateReplacePolicy {
-                    `$ResourceParams.Add("UpdateReplacePolicy",`$UpdateReplacePolicy)
-                }
-                DependsOn {
-                    `$ResourceParams.Add("DependsOn",`$DependsOn)
-                }
-                Metadata {
-                    `$ResourceParams.Add("Metadata",`$Metadata)
-                }
-                UpdatePolicy {
-                    `$ResourceParams.Add("UpdatePolicy",`$UpdatePolicy)
-                }
-                Condition {
-                    `$ResourceParams.Add("Condition",`$Condition)
-                }
-"@
-            foreach ($Prop in $Properties | Where-Object { $_.Value.Type -eq "List" }) {
-                $scriptContents += @"
-                $($Prop.Name) {
-                    if (!(`$ResourceParams["Properties"])) {
-                        `$ResourceParams.Add("Properties",([PSCustomObject]@{}))
-                    }
-                    `$ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $($Prop.Name) -Value @(`$$($Prop.Name))
-                }
-"@
-            }
-            foreach ($Prop in $Properties | Where-Object { $_.Value.PrimitiveType -eq "Json" }) {
-                $scriptContents += @"
-                $($Prop.Name) {
-                    if ((`$PSBoundParameters[`$key]).PSObject.TypeNames -contains "System.String"){
-                        try {
-                            `$JSONObject = (ConvertFrom-Json -InputObject `$PSBoundParameters[`$key] -ErrorAction Stop)
-                        }
-                        catch {
-                            `$PSCmdlet.ThrowTerminatingError((New-VSError -String "Unable to convert parameter '`$key' string value to PSObject! Please use a JSON string OR provide a Hashtable or PSCustomObject instead!"))
-                        }
-                    }
-                    else {
-                        `$JSONObject = ([PSCustomObject]`$PSBoundParameters[`$key])
-                    }
-                    if (!(`$ResourceParams["Properties"])) {
-                        `$ResourceParams.Add("Properties",([PSCustomObject]@{}))
-                    }
-                    `$ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name `$key -Value `$JSONObject
-                }
-"@
-            }
-            $scriptContents += @"
-                Default {
-                    if (!(`$ResourceParams["Properties"])) {
-                        `$ResourceParams.Add("Properties",([PSCustomObject]@{}))
-                    }
-                    `$ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name `$key -Value `$PSBoundParameters[`$key]
-                }
-            }
-        }
-    }
-    End {
-        `$obj = New-VaporResource @ResourceParams
-        `$obj | Add-ObjectDetail -TypeName '$TypeName'
-        Write-Verbose "Resulting JSON from `$(`$MyInvocation.MyCommand): ``n``n`$(@{`$obj.LogicalId = `$obj.Props} | ConvertTo-Json -Depth 5)``n"
-    }
-}
-"@
-        }
-        else {
-            $scriptContents += @"
-    )
-    Begin {
-        `$obj = [PSCustomObject]@{}
-        `$commonParams = @('Verbose','Debug','ErrorAction','WarningAction','InformationAction','ErrorVariable','WarningVariable','InformationVariable','OutVariable','OutBuffer','PipelineVariable')
-    }
-    Process {
-        foreach (`$key in `$PSBoundParameters.Keys | Where-Object {`$commonParams -notcontains `$_}) {
-            switch (`$key) {
-"@
-            foreach ($Prop in $Properties | Where-Object { $_.Value.PrimitiveType -eq "Json" }) {
-                $scriptContents += @"
-                $($Prop.Name) {
-                    if ((`$PSBoundParameters[`$key]).PSObject.TypeNames -contains "System.String"){
-                        try {
-                            `$JSONObject = (ConvertFrom-Json -InputObject `$PSBoundParameters[`$key] -ErrorAction Stop)
-                        }
-                        catch {
-                            `$PSCmdlet.ThrowTerminatingError((New-VSError -String "Unable to convert parameter '`$key' string value to PSObject! Please use a JSON string OR provide a Hashtable or PSCustomObject instead!"))
-                        }
-                    }
-                    else {
-                        `$JSONObject = ([PSCustomObject]`$PSBoundParameters[`$key])
-                    }
-                    `$obj | Add-Member -MemberType NoteProperty -Name `$key -Value `$JSONObject
-                }
-"@
-            }
-            if ($FunctionName -eq 'Add-VSLambdaFunctionCode') {
-                $scriptContents += @"
-                ZipFilePath {
-                    `$obj | Add-Member -MemberType NoteProperty -Name 'ZipFile' -Value ([System.IO.File]::ReadAllText(`$ZipFilePath))
-                }
-"@
-            }
-            $scriptContents += @"
-                Default {
-                    `$obj | Add-Member -MemberType NoteProperty -Name `$key -Value `$PSBoundParameters.`$key
-                }
-            }
-        }
-    }
-    End {
-        `$obj | Add-ObjectDetail -TypeName '$TypeName'
-        Write-Verbose "Resulting JSON from `$(`$MyInvocation.MyCommand): ``n``n`$(`$obj | ConvertTo-Json -Depth 5)``n"
-    }
-}
-"@
-        }
-        Set-Content -Value $scriptContents -Path $PS1Path -Encoding UTF8 -Force
-    }
+    Set-Content -Value ($scriptContents -join [System.Environment]::NewLine) -Path $PS1Path -Encoding UTF8 -Force
 }
