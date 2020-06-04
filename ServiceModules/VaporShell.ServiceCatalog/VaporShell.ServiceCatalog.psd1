@@ -7,7 +7,7 @@
     ModuleVersion          = '3.0.0'
 
     # ID used to uniquely identify this module
-    GUID                   = 'ade4c2dc-efd6-41bf-ae0a-b0cf6d2d2724'
+    GUID                   = '0393a8b4-fb54-453a-bc53-435d12f7a002'
 
     # Author of this module
     Author                 = 'Nate Ferrell'
@@ -54,7 +54,7 @@ Website: https://vaporshell.io/
 
     # Modules that must be imported into the global environment prior to importing this module
     RequiredModules        = @(@{
-  ModuleVersion = '3.0.0.20200531'
+  ModuleVersion = '3.0.0'
   ModuleName = 'VaporShell'
 })
 

@@ -9,6 +9,7 @@ function New-VSServiceModule {
         $ModuleVersion
     )
     Begin {
+        $cleanModuleVersion = ($ModuleVersion.Split('.')[0..1] + '0') -join '.'
         $serviceModuleTemplate = [System.IO.Path]::Combine($PSScriptRoot,'..','ServiceModuleTemplate')
         $serviceModulePath = [System.IO.Path]::Combine($PSScriptRoot,'..','ServiceModules')
         $modulePath = [System.IO.Path]::Combine($serviceModulePath,$ModuleName)
@@ -35,7 +36,7 @@ function New-VSServiceModule {
         else {
             Write-BuildLog "Service module '$ModuleName' already exists at target path"
         }
-        Update-Metadata -Path $metadataPath -PropertyName ModuleVersion -Value $ModuleVersion
-        Update-Metadata -Path $metadataPath -PropertyName RequiredModules -Value @(@{ModuleName = 'VaporShell';ModuleVersion = $ModuleVersion})
+        Update-Metadata -Path $metadataPath -PropertyName ModuleVersion -Value $cleanModuleVersion
+        Update-Metadata -Path $metadataPath -PropertyName RequiredModules -Value @(@{ModuleName = 'VaporShell';ModuleVersion = $cleanModuleVersion})
     }
 }

@@ -149,6 +149,11 @@ Task BuildSubmodules Init,CleanSubmodules, {
 
         Write-BuildLog "Bumping source manifest version from '$ManifestVersion' to '$NextModuleVersion' to prevent errors"
         Update-Metadata -Path $subSourceManifestPath -PropertyName ModuleVersion -Value $NextModuleVersion
+
+        Write-BuildLog "Setting source manifest RequiredModules to VaporShell@$ManifestVersion"
+        Update-Metadata -Path $subSourceManifestPath -PropertyName RequiredModules -Value @(@{ModuleName = 'VaporShell';ModuleVersion = $ManifestVersion})
+
+        Write-BuildLog "Copying content from source manifest to target manifest"
         ([System.IO.File]::ReadAllText($subSourceManifestPath)).Trim() | Set-Content $subSourceManifestPath
 
         # Copy over manifest

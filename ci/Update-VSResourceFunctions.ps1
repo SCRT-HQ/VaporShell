@@ -49,17 +49,18 @@ function Update-VSResourceFunctions {
     $final = @{
         ResourceTypes = @{}
         PropertyTypes = @{}
+        ServiceModules = @('SAM')
     }
     $serviceModules = @('SAM')
     Write-BuildLog "Getting CloudFormation spec from: us-east-1 (N. Virginia)"
     $URL = 'https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json'
     $specs = Invoke-RestMethod $URL -Verbose:$false
     foreach ($resource in $specs.ResourceTypes.PSObject.Properties) {
-        $serviceModules += $resource.Name.Replace('AWS::','').Split('::') | Select-Object -First 1
+        $final['ServiceModules'] += $resource.Name.Replace('AWS::','').Split('::') | Select-Object -First 1
         $final['ResourceTypes'][$resource.Name] = $resource
     }
     foreach ($resource in $specs.PropertyTypes.PSObject.Properties) {
-        $serviceModules += $resource.Name.Replace('AWS::','').Split('::') | Select-Object -First 1
+        $final['ServiceModules'] += $resource.Name.Replace('AWS::','').Split('::') | Select-Object -First 1
         $final['PropertyTypes'][$resource.Name] = $resource
     }
     # Get the rest and add anything missing from us-east-1 for full coverage
@@ -70,14 +71,14 @@ function Update-VSResourceFunctions {
             if ($newResources = $specs.ResourceTypes.PSObject.Properties | Where-Object { $_.Name -notin $final['ResourceTypes'].Keys }) {
                 Write-Host -ForegroundColor Green "Found $($newResources.Count) new resource types in spec: $($region.Key)`n- $($newResources.Name -join "`n- ")"
                 foreach ($resource in $newResources) {
-                    $serviceModules += $resource.Name.Replace('AWS::','').Split('::') | Select-Object -First 1
+                    $final['ServiceModules'] += $resource.Name.Replace('AWS::','').Split('::') | Select-Object -First 1
                     $final['ResourceTypes'][$resource.Name] = $resource
                 }
             }
             if ($newProps = $specs.PropertyTypes.PSObject.Properties | Where-Object { $_.Name -notin $final['PropertyTypes'].Keys }) {
                 Write-Host -ForegroundColor Magenta "Found $($newProps.Count) new property types in spec: $($region.Key)`n- $($newProps.Name -join "`n- ")"
                 foreach ($resource in $newProps) {
-                    $serviceModules += $resource.Name.Replace('AWS::','').Split('::') | Select-Object -First 1
+                    $final['ServiceModules'] += $resource.Name.Replace('AWS::','').Split('::') | Select-Object -First 1
                     $final['PropertyTypes'][$resource.Name] = $resource
                 }
             }
@@ -86,14 +87,14 @@ function Update-VSResourceFunctions {
             Write-Host -ForegroundColor Yellow "WARNING: Failed to get specs from region: $($_.Key)"
         }
     }
-    foreach ($serviceModule in ($serviceModules | Where-Object {$_ -notin @('Serverless','Tag')} | Sort-Object -Unique)) {
+    foreach ($serviceModule in ($final['ServiceModules'] | Where-Object {$_ -notin @('Serverless','Tag')} | Sort-Object -Unique)) {
         New-VSServiceModule -ModuleName "VaporShell.$serviceModule" -ModuleVersion $ModuleVersion
     }
     foreach ($resource in $final['ResourceTypes'].Values | Sort-Object Name) {
         Write-Verbose "Updating Resource Type [$($resource.Name)]"
         Convert-SpecToFunction -Resource $resource -ResourceType Resource
     }
-    foreach ($resource in $final['PropertyTypes'].Values | Sort-Object Name) {
+    foreach ($resource in $final['PropertyTypes'].Values | Where-Object {($_.Name.Replace('AWS::','').Split('::') | Select-Object -First 1) -ne 'Tag'} | Sort-Object Name) {
         Write-Verbose "Updating Resource Property [$($resource.Name)]"
         Convert-SpecToFunction -Resource $resource -ResourceType Property
     }
