@@ -120,7 +120,7 @@ Install-Module VaporShell -Scope CurrentUser
 
 **[Alternative]** Not on PowerShell 5+, can't install PowerShellGet, or policies blocking installation from remote sources? You're covered as well:
 
-1. Head to the [Releases](https://github.com/scrthq/VaporShell/releases) section in the repo
+1. Head to the [Releases](https://github.com/SCRT-HQ/VaporShell/releases) section in the repo
 2. Download the *VaporShell.zip* file attached to the latest release.
 3. **If on Windows**: Right-click the downloaded zip, select Properties, then unblock the file.
     > _This is to prevent having to unblock each file individually after unzipping._
