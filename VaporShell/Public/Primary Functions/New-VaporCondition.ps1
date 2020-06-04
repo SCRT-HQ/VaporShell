@@ -2,7 +2,7 @@ function New-VaporCondition {
     <#
     .SYNOPSIS
         Adds a Condition object to the template
-    
+
     .DESCRIPTION
         The optional Conditions section includes statements that define when a resource is created or when a property is defined. For example, you can compare whether a value is equal to another value. Based on the result of that condition, you can conditionally create resources. If you have multiple conditions, separate them with commas.
 
@@ -28,20 +28,20 @@ function New-VaporCondition {
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/conditions-section-structure.html
-    
+
     .PARAMETER LogicalId
         An identifier for the current condition. The logical ID must be alphanumeric (a-z, A-Z, 0-9) and unique within the template.
-    
+
     .PARAMETER Condition
         Logical ID of the condition that this resource needs to be true in order to be provisioned.
 
     .EXAMPLE
         $template = Initialize-Vaporshell -Description "Testing Condition addition"
-        $template.AddResource((
+        $template.AddCondition((
             New-VaporCondition -LogicalId "CreateProdResources" -Condition (Add-ConEquals -FirstValue (Add-FnRef -Ref "EnvType") -SecondValue "prod")
         ))
 
-        When the template is exported, this will convert to: 
+        When the template is exported, this will convert to:
             {
                 "AWSTemplateFormatVersion":  "2010-09-09",
                 "Description":  "Testing Condition addition",
