@@ -54,7 +54,7 @@ Website: https://vaporshell.io/
 
     # Modules that must be imported into the global environment prior to importing this module
     RequiredModules        = @(@{
-  ModuleVersion = '3.0.0.20200524'
+  ModuleVersion = '3.0.0.20200531'
   ModuleName = 'VaporShell'
 })
 
