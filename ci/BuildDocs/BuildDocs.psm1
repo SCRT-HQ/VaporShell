@@ -88,7 +88,7 @@ $Footer = @'
 - {{ Keyword Placeholder }}
 - {{ Keyword Placeholder }}
 - {{ Keyword Placeholder }}
-- {{ Keyword Placeholder }}    
+- {{ Keyword Placeholder }}
 `r`n
 '@
 
@@ -148,7 +148,7 @@ Function MethodText {
             $ReturnType = $MyMethod.ReturnType.FullName -replace '^System\.([^.]*)$', '$1'
             $Definition = "{0}{1}{2} {3}({4})" -f $scope, $Access, $ReturnType, $Name, $Params
             $Heading = MethodHeading $MyMethod
-    
+
             $ExecutionContext.InvokeCommand.ExpandString($MethodTemplate)
         }
     }
@@ -171,10 +171,10 @@ Function ClassMethodText {
     process {
         foreach ($MyClass in $Class) {
             $Methods = $MyClass.DeclaredMembers.where( {$_.MemberType -eq 'Method' -and -not $_.IsSpecialname})
-            foreach ($Method in ($Methods | Sort-Object Name ) ) {    
+            foreach ($Method in ($Methods | Sort-Object Name ) ) {
                 $OutText += MethodText $Method
             }
-        }        
+        }
     }
     End {
         $OutText -join "`r`n`r`n"
@@ -224,7 +224,7 @@ Function ConstructorText {
             $ClassName = $MyConstructor.DeclaringType.Name
             $Definition = ConstructorHeading $MyConstructor
             $Heading = ConstructorHeading $MyConstructor
-    
+
             $ExecutionContext.InvokeCommand.ExpandString($ConstructorTemplate)
         }
     }
@@ -253,10 +253,10 @@ Function ClassConstructorText {
                     Constructor = $_
                 }
             } | Sort-Object Count | Select-Object -ExpandProperty Constructor
-            foreach ($Constructor in ($Constructors) ) {    
+            foreach ($Constructor in ($Constructors) ) {
                 $OutText += ConstructorText $Constructor
             }
-        }        
+        }
     }
     End {
         $OutText -join "`r`n`r`n"
@@ -285,7 +285,7 @@ Function PropertyText {
             $Heading = $MyProperty.Name
 
             $ExecutionContext.InvokeCommand.ExpandString($PropertyTemplate )
-        }    
+        }
     }
 }
 
@@ -309,7 +309,7 @@ Function ClassPropertyText {
             foreach ($Property in ($Properties | Sort-Object Name ) ) {
                 $OutText += PropertyText $Property
             }
-        }        
+        }
     }
     End {
         $OutText -join "`r`n`r`n"
@@ -419,7 +419,7 @@ function ConvertFrom-MarkDown {
         [string[]]
         $Path
     )
-    
+
     process {
         foreach ($MyPath in $Path) {
             $Object = [System.Collections.Generic.List[System.Collections.Hashtable]]::new()
@@ -445,14 +445,14 @@ function ConvertFrom-MarkDown {
                     return
                 }
                 if ($SubheadingIndex -ge 0) {
-                    $Object[$Headingindex].Subheadings[$SubheadingIndex].Text += $Line 
+                    $Object[$Headingindex].Subheadings[$SubheadingIndex].Text += $Line
                     return
                 }
                 $Object[$Headingindex].Text += $Line
             }
             $Object
         }
-    }      
+    }
 }
 
 function ConvertTo-MarkDown {
@@ -467,7 +467,7 @@ function ConvertTo-MarkDown {
         [System.Collections.Generic.List[System.Collections.Hashtable]]
         $InputObject
     )
-    
+
     process {
         foreach ($Heading in $InputObject) {
             "# {0}" -f $Heading.Heading
@@ -477,7 +477,7 @@ function ConvertTo-MarkDown {
                 $Subheadings = $Heading.Subheadings | Sort-Object {$_.Heading}
             }
             if ($Heading.Heading -match 'Constructors') {
-                $Subheadings = $Heading.Subheadings | Sort-Object -Property @{ 
+                $Subheadings = $Heading.Subheadings | Sort-Object -Property @{
                     Expression = {
                         if ($_.Heading -match '\(\)') {-1}
                         else {($_.Heading -split ',').count}
@@ -548,7 +548,7 @@ function Update-ClassMarkdown {
         }
         # Remove deleted from HelpDoc
         try {
-            $ClassMethodHeadings = MethodHeading $ClassMethods     
+            $ClassMethodHeadings = MethodHeading $ClassMethods
         }
         catch {
             $ClassMethodHeadings = $null
@@ -581,7 +581,7 @@ function Update-ClassMarkdown {
             )
         }
         # Remove deleted from HelpDoc
-        $ClassConstructorHeadings = ConstructorHeading $ClassConstructors 
+        $ClassConstructorHeadings = ConstructorHeading $ClassConstructors
         $RemoveIndexes = [System.Collections.Generic.List[System.Int32]]::new()
         foreach ($HelpConstructor in $HelpConstructors.Subheadings) {
             if ($HelpConstructor.Heading -in $ClassConstructorHeadings) {continue}
@@ -611,7 +611,7 @@ function Update-EnumMarkdown {
 
         $HelpFields = $HelpObject | Where-Object {$_.Heading -eq 'Fields'}
         $ClassFields = $Enum.GetFields().where( {-not $_.IsSpecialName}).name
-        
+
         # Add missing to HelpDoc
         foreach ($ClassField in $ClassFields) {
             if ($ClassField -in $HelpFields.Subheadings.Heading) {continue}
@@ -624,7 +624,7 @@ function Update-EnumMarkdown {
                 }
             )
         }
-        
+
         # Remove deleted from HelpDoc
         $RemoveIndexes = [System.Collections.Generic.List[System.Int32]]::new()
         foreach ($HelpField in $HelpFields.Subheadings) {
@@ -641,5 +641,4 @@ function Update-EnumMarkdown {
             $HelpObject | ConvertTo-MarkDown | Set-Content -Path $Path
         }
     }
-    
 }

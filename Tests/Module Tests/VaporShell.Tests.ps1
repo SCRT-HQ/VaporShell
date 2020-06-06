@@ -1,5 +1,9 @@
 $PSVersion = $PSVersionTable.PSVersion.Major
 $projectRoot = Resolve-Path "$PSScriptRoot\..\.."
+$BuildOutputPath = [System.IO.Path]::Combine($projectRoot,'BuildOutput')
+if (($env:PSModulePath -split ';') -notcontains $BuildOutputPath) {
+    $env:PSModulePath = @($BuildOutputPath, $env:PSModulePath) -join [System.IO.Path]::PathSeparator
+}
 $ModulePath = Resolve-Path "$projectRoot\BuildOutput\$($env:BHProjectName)"
 $decompiledModulePath = Resolve-Path "$projectRoot\$($env:BHProjectName)"
 
@@ -34,6 +38,20 @@ Describe "Module tests: $($env:BHProjectName)" {
             $errors.Count | Should Be 0
         }
     }
+    Context "Confirm compiled Attributes and Classes scripts are valid" {
+        $scripts = Get-ChildItem $ModulePath -Include Attributes.ps1,Classes.ps1 -Recurse
+        $testCase = $scripts | Foreach-Object {@{file = $_}}
+        It "Script <file> should be valid Powershell" -TestCases $testCase {
+            param($file)
+
+            $file.fullname | Should Exist
+
+            $contents = Get-Content -Path $file.fullname -ErrorAction Stop
+            $errors = $null
+            $null = [System.Management.Automation.PSParser]::Tokenize($contents, [ref]$errors)
+            $errors.Count | Should Be 0
+        }
+    }
     Context "Confirm private functions are not exported on module import" {
         $testCase = Get-ChildItem "$decompiledModulePath\Private" -Recurse -Include *.ps1 | Foreach-Object {@{item = $_.BaseName}}
         It "Should throw when checking for <item> in the module commands" -TestCases $testCase {
@@ -50,15 +68,35 @@ Describe "Module tests: $($env:BHProjectName)" {
     }
 }
 
+Describe "Class tests: $($env:BHProjectName)" {
+    BeforeAll {
+        Import-Module $ModulePath
+    }
+    Context "Confirm classes instantiate with the parameterless constructor" {
+        $types = [System.AppDomain]::CurrentDomain.GetAssemblies() | Where-Object {
+            $_.FullName -match  'PowerShell Class Assembly' -and $_.CustomAttributes -match "$([Regex]::Escape($env:BHProjectName)).*Classes.ps1"
+        } | Select-Object -ExpandProperty DefinedTypes | Where-Object {
+            $_.Name -notmatch '_\<staticHelpers\>$'
+        }
+        $testCase = $types | Foreach-Object {@{type = $_}}
+        It "Class <type> should not throw when instantiated" -TestCases $testCase {
+            param($type)
+            { $type::new() } | Should -Not -Throw
+        }
+    }
+}
+
 Describe "Unit tests" {
     Context 'Strict mode' {
         Set-StrictMode -Version latest
+        Import-Module VaporShell.ApiGateway,VaporShell.EC2
         if ($env:AWS_ACCESS_KEY_ID -and $env:AWS_SECRET_ACCESS_KEY) {
             It 'Should set the credentials correctly on the shared file' {
                 Set-VSCredential -AccessKey $env:AWS_ACCESS_KEY_ID -SecretKey $env:AWS_SECRET_ACCESS_KEY -Region "USWest2" -ProfileName 'pester'
             }
         }
         It 'Should build template as an object then export to JSON' {
+            Import-Module VaporShell.ApiGateway
             $testPath = "$projectRoot\Template.json"
             $templateInit = $null
             $templateInit = Initialize-Vaporshell -Description "Testing template build"

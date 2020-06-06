@@ -1,9 +1,15 @@
-$buildOutputPath = [System.IO.Path]::Combine($PSScriptRoot,'..','..','..','BuildOutput')
+$BuildRoot = (Resolve-Path ([System.IO.Path]::Combine($PSScriptRoot,'..','..','..'))).Path
+$buildOutputPath = [System.IO.Path]::Combine($BuildRoot,'BuildOutput')
 
 if (($env:PSModulePath -split ';') -notcontains $buildOutputPath) {
     $env:PSModulePath = @($buildOutputPath, $env:PSModulePath) -join [System.IO.Path]::PathSeparator
 }
 
+. (Get-ChildItem (Join-Path $BuildRoot 'ci') -Filter 'https*scrthq*.ps1' | Sort-Object LastWriteTime)[-1].FullName
+
+Write-BuildLog "Importing VaporShell"
+Import-Module VaporShell -Force -Verbose:$false
+Write-BuildLog "Importing VaporShell.S3"
 Import-Module VaporShell.S3 -Force -Verbose
 
 Describe "Template tests" {

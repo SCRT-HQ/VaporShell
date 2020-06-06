@@ -13,7 +13,14 @@ class ValidateType : ValidateEnumeratedArgumentsAttribute {
     [Void] ValidateElement(
         [Object]$element
     ) {
-        if ($element.GetType().FullName -notin $this._validTypes.FullName) {
+        $invalidType = $true
+        foreach ($t in $this._validTypes) {
+            if ($element -is $t) {
+                $invalidType = $false
+                break
+            }
+        }
+        if ($invalidType) {
             $errorRecord = [ErrorRecord]::new(
                 [ArgumentException]::new("$($element.GetType().FullName) is not a valid type for this property. Valid types include: $(($this._validTypes.FullName | Sort-Object -Unique) -join ', ')"),
                 'InvalidType',

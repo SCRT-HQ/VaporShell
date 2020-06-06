@@ -3,6 +3,8 @@ class FnBase64 : IntrinsicFunction {
         return "FnBase64($($this['Fn::Base64']))"
     }
 
+    FnBase64() {}
+
     FnBase64([object] $value) {
         $this['Fn::Base64'] = $value
     }

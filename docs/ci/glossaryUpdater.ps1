@@ -26,7 +26,7 @@ if (Get-Module VaporShell*) {
 
 Write-Host -ForegroundColor Green "Location set to $($pwd.Path)"
 Write-Host -ForegroundColor Green "Building and importing VaporShell"
-#. .\build.ps1
+. ./build.ps1
 Import-Module "$($basePath)/BuildOutput/VaporShell" -Force
 #endregion#>
 
@@ -58,7 +58,7 @@ Get-RSJob | Where-Object {$_.Name -notmatch 'PSProfile'} | Remove-RSJob
 
 $files = Get-ChildItem "$($docsPath)/docs/glossary" -Exclude "index.md"
 
-foreach ($file in $files) {
+<# foreach ($file in $files) {
     Write-Host -ForegroundColor Cyan "Updating $($file.BaseName)"
 
     $md = Get-Content $file.FullName
@@ -77,6 +77,6 @@ foreach ($file in $files) {
     else {
         $md | Set-Content $file.FullName -Force
     }
-}
+} #>
 
 Set-Location $basePath

@@ -5,6 +5,7 @@ using namespace System.IO
 using namespace System.Management.Automation
 
 class UserData : VSHashtable {
+
     static [object] Transform([FnJoin] $fnJoin) {
         return $fnJoin
     }
@@ -75,6 +76,7 @@ class UserData : VSHashtable {
         return $final
     }
 
+    UserData() {}
 
     UserData([FnJoin] $fnJoin) {
         $this['Fn::Base64'] = $fnJoin

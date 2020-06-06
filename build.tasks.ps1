@@ -120,9 +120,7 @@ Task CleanSubmodules Init, {
 # Synopsis: Updates module functions before compilation
 Task UpdateFromSpecification -If { -not $NoUpdate -and -not $CoreOnly } Clean, CleanNonCoreFunctions, {
     git submodule update --recursive
-    Get-ChildItem (Join-Path $PSScriptRoot 'ci') -Filter '*.ps1' | Where-Object { $_.BaseName -notmatch "(GitHubReleaseNotes|gist\.githubusercontent\.com.*scrthq)" } | ForEach-Object {
-        . $_.FullName
-    }
+    Import-Module ([System.IO.Path]::Combine($BuildRoot,'ci','VaporShell.CI.Tools')) -Verbose
     Write-BuildLog 'Updating Resource and Property Type functions with current AWS spec sheet...'
     Update-VSResourceFunctions -ModuleVersion $NextModuleVersion
 }
@@ -176,6 +174,9 @@ Task BuildSubmodules Init,CleanSubmodules, {
                     else {
                         $psm1
                     }
+                    if ($scope -match '^(Attributes|Classes)$') {
+                        "[CmdletBinding()]`nParam()`n" | Add-Content -Path $target -Encoding UTF8
+                    }
                     Write-BuildLog "Copying contents from files in source folder '$($scope)' to $($target.Name)"
                     $toProcess | ForEach-Object {
                         Write-BuildLog "Working on: $($_.FullName.Replace("$gciPath$([System.IO.Path]::DirectorySeparatorChar)",''))"
@@ -194,6 +195,9 @@ Task BuildSubmodules Init,CleanSubmodules, {
                             }
                         }
                         $nonUsingStatements = ($content | Where-Object { $_ -notmatch '^\s*using\s+(module|namespace|assembly)\s+\w+.*$' }) -join "`n"
+                        if ($scope -match '^(Attributes|Classes)$') {
+                            "Write-Verbose `"Importing class '$($_.BaseName -replace '^(\d+\s+-\s+){0,1}')'`"" | Add-Content -Path $target -Encoding UTF8
+                        }
                         "$nonUsingStatements`n" | Add-Content -Path $target -Encoding UTF8
                         if ($scope -eq 'Public') {
                             $functionsToExport += $_.BaseName
@@ -320,6 +324,9 @@ Task BuildMain UpdateFromSpecification, {
                 else {
                     $psm1
                 }
+                if ($scope -match '^(Attributes|Classes)$') {
+                    "[CmdletBinding()]`nParam()`n" | Add-Content -Path $target -Encoding UTF8
+                }
                 Write-BuildLog "Copying contents from files in source folder '$($scope)' to $($target.Name)"
                 $toProcess | ForEach-Object {
                     Write-BuildLog "Working on: $($_.FullName.Replace("$gciPath$([System.IO.Path]::DirectorySeparatorChar)",''))"
@@ -338,6 +345,9 @@ Task BuildMain UpdateFromSpecification, {
                         }
                     }
                     $nonUsingStatements = ($content | Where-Object { $_ -notmatch '^\s*using\s+(module|namespace|assembly)\s+\w+.*$' }) -join "`n"
+                    if ($scope -match '^(Attributes|Classes)$') {
+                        "Write-Verbose `"Importing class '$($_.BaseName -replace '^(\d+\s+-\s+){0,1}')'`"" | Add-Content -Path $target -Encoding UTF8
+                    }
                     "$nonUsingStatements`n" | Add-Content -Path $target -Encoding UTF8
                     if ($scope -eq 'Public') {
                         $functionsToExport += $_.BaseName
@@ -508,6 +518,7 @@ Task BuildMainClasses Init, {
                     }
                 }
                 $nonUsingStatements = ($content | Where-Object { $_ -notmatch '^\s*using\s+(module|namespace|assembly)\s+\w+.*$' }) -join "`n"
+                "Write-Verbose `"Importing class '$($_.BaseName -replace '^(\d+\s+-\s+){0,1}')'`"" | Add-Content -Path $target -Encoding UTF8
                 "$nonUsingStatements`n" | Add-Content -Path $target -Encoding UTF8
             }
         }
@@ -706,7 +717,7 @@ Task BuildReleaseZips Init, {
     Write-BuildLog "Creating Release ZIPs..."
     $releaseZipPath = [System.IO.Path]::Combine($BuildRoot, 'ReleaseZips')
     if (-not (Test-Path $releaseZipPath)) {
-        New-Item $releaseZipPath -ItemType Directory -Force
+        $null = New-Item $releaseZipPath -ItemType Directory -Force
     }
     $zipPaths = @(
         @{
@@ -726,7 +737,7 @@ Task BuildReleaseZips Init, {
         }
         Add-Type -Assembly System.IO.Compression.FileSystem
         [System.IO.Compression.ZipFile]::CreateFromDirectory($zip.SourcePath, $zip.ZipPath)
-        Get-Item $zip.ZipPath
+        Write-BuildLog "Zip created: $((Get-Item $zip.ZipPath).Name)"
     }
 }
 

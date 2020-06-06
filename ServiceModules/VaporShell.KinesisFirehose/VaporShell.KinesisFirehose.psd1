@@ -7,7 +7,7 @@
     ModuleVersion          = '3.0.0'
 
     # ID used to uniquely identify this module
-    GUID                   = 'c9f1b4a7-3708-45f5-bd43-efc3adb6eb2f'
+    GUID                   = 'd18608a4-f9cb-45a5-badd-d655bf4f6970'
 
     # Author of this module
     Author                 = 'Nate Ferrell'

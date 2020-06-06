@@ -3,6 +3,8 @@ class FnJoin : IntrinsicFunction {
         return "FnJoin($($this['Fn::Join']))"
     }
 
+    FnJoin() {}
+
     FnJoin([string] $delimiter, [object[]] $listOfValues) {
         $this['Fn::Join'] = @($delimiter, @($listOfValues))
     }

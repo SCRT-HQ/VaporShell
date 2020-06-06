@@ -52,6 +52,8 @@ class VSResourceTag : VSHashtable {
         return $final
     }
 
+    VSResourceTag() {}
+
     VSResourceTag([IDictionary] $inputData) {
         $this.Key = $inputData['Key']
         $this.Value = $inputData['Value']

@@ -40,7 +40,7 @@ $helperUri = @(
     'scrthq'                                    # User
     'a99cc06e75eb31769d01b2adddc6d200'          # Gist ID
     'raw'
-    '21c22f8a6bdff28ddfd1ce5644c1c1fd6a091847'  # Commit SHA
+    '10d6ab6de6aa3f35c94acb7707970fe0ee755aa6'  # Commit SHA
     'AzurePipelineHelpers.ps1'                  # Filename
 ) -join '/'
 $fileUri = $helperUri -replace "[$([RegEx]::Escape("$(([System.IO.Path]::GetInvalidFileNameChars() + [System.IO.Path]::GetInvalidPathChars()) -join '')"))]","_"
@@ -52,7 +52,7 @@ if (Test-Path $localGistPath) {
 }
 else {
     Write-Host -ForegroundColor Cyan "##[section] Cleaning out stale Gist scripts from the CI Path"
-    Get-ChildItem $ciPath -Filter 'https___gist.githubusercontent.com_scrthq*.ps1' | Remove-Item -Force
+    Get-ChildItem $ciPath -Filter 'https*gist.githubusercontent.com_scrthq*.ps1' | Remove-Item -Force
     Write-Host -ForegroundColor Cyan "##[section] Importing Azure Pipelines Helper from Gist: $helperUri"
     $helperContent = Invoke-RestMethod -Uri $helperUri
     $helperContent | Set-Content $localGistPath -Force
