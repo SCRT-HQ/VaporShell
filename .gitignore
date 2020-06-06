@@ -15,8 +15,10 @@ VaporShell/Public/Resource*Types/*
 !VaporShell/Public/Resource*Types/README.md
 VaporShell/Public/Resource*Property*Types/*
 !VaporShell/Public/Resource*Property*Types/README.md
-ServiceModules/*/Public/Resources/
+ServiceModules/*/Classes/*Resource*/
+ServiceModules/*/Classes/*Property*/
 ServiceModules/*/Public/Properties/
+ServiceModules/*/Public/Resources/
 
 # User-specific files
 *.suo

@@ -68,24 +68,6 @@ Describe "Module tests: $($env:BHProjectName)" {
     }
 }
 
-Describe "Class tests: $($env:BHProjectName)" {
-    BeforeAll {
-        Import-Module $ModulePath
-    }
-    Context "Confirm classes instantiate with the parameterless constructor" {
-        $types = [System.AppDomain]::CurrentDomain.GetAssemblies() | Where-Object {
-            $_.FullName -match  'PowerShell Class Assembly' -and $_.CustomAttributes -match "$([Regex]::Escape($env:BHProjectName)).*Classes.ps1"
-        } | Select-Object -ExpandProperty DefinedTypes | Where-Object {
-            $_.Name -notmatch '_\<staticHelpers\>$'
-        }
-        $testCase = $types | Foreach-Object {@{type = $_}}
-        It "Class <type> should not throw when instantiated" -TestCases $testCase {
-            param($type)
-            { $type::new() } | Should -Not -Throw
-        }
-    }
-}
-
 Describe "Unit tests" {
     Context 'Strict mode' {
         Set-StrictMode -Version latest

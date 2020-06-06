@@ -70,21 +70,4 @@ foreach ($serviceModule in $serviceModules) {
             }
         }
     }
-    Describe "Class tests: $($serviceModule.BaseName)" {
-        BeforeAll {
-            Import-Module $ModulePath
-        }
-        Context "Confirm classes instantiate with the parameterless constructor" {
-            $types = [System.AppDomain]::CurrentDomain.GetAssemblies() | Where-Object {
-                $_.FullName -match 'PowerShell Class Assembly' -and $_.CustomAttributes -match "$([Regex]::Escape($serviceModule.BaseName)).*Classes.ps1"
-            } | Select-Object -ExpandProperty DefinedTypes | Where-Object {
-                $_.Name -notmatch '_\<staticHelpers\>$'
-            }
-            $testCase = $types | ForEach-Object { @{type = $_ } }
-            It "Class <type> should not throw when instantiated" -TestCases $testCase {
-                param($type)
-                { $type::new() } | Should -Not -Throw
-            }
-        }
-    }
 }

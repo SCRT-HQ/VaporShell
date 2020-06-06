@@ -692,9 +692,12 @@ $psGalleryConditions = {
 $gitHubConditions = {
     -not [String]::IsNullOrEmpty($env:GitHubPAT) -and
     -not [String]::IsNullOrEmpty($NextModuleVersion) -and
-    $env:BHBuildSystem -eq 'VSTS' -and
-    ($env:BHCommitMessage -match '!deploy' -or $env:BUILD_REASON -eq 'Schedule') -and
-    $env:BHBranchName -eq "master"
+    $env:BHBuildSystem -eq 'VSTS' -and ((
+        ($env:BHCommitMessage -match '!deploy' -or $env:BUILD_REASON -eq 'Schedule') -and
+        $env:BHBranchName -eq "master"
+    ) -or (
+        $env:BHCommitMessage -match '!github' -and $env:BHBranchName -eq "dev"
+    ))
 }
 $tweetConditions = {
     -not [String]::IsNullOrEmpty($env:TwitterAccessSecret) -and
