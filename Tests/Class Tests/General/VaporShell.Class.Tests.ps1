@@ -20,9 +20,10 @@ Describe "Class tests: $($env:BHProjectName)" {
         Import-Module $ModulePath
     }
     Context "Confirm classes instantiate with the parameterless constructor" {
-        $types = [System.AppDomain]::CurrentDomain.GetAssemblies() | Where-Object {
-            $_.FullName -match  'PowerShell Class Assembly' -and $_.CustomAttributes -match "$($env:BHProjectName)(\/\\).*Classes.ps1"
-        } | Select-Object -ExpandProperty DefinedTypes | Where-Object {
+        $assembly = [System.AppDomain]::CurrentDomain.GetAssemblies() | Where-Object {
+            $_.FullName -match  'PowerShell Class Assembly' -and $_.CustomAttributes -match "$($env:BHProjectName)(\/|\\).*Classes.ps1" -and $_.CustomAttributes -notmatch "$($env:BHProjectName)\."
+        } | Sort-Object CustomAttributes -Unique
+        $types = $assembly | Select-Object -ExpandProperty DefinedTypes | Where-Object {
             $_.Name -notmatch '_\<staticHelpers\>$'
         }
         $testCase = $types | Foreach-Object {@{type = $_}}

@@ -19,7 +19,7 @@ foreach ($serviceModule in $serviceModules) {
         }
         Context "Confirm classes instantiate with the parameterless constructor" {
             $types = [System.AppDomain]::CurrentDomain.GetAssemblies() | Where-Object {
-                $_.FullName -match 'PowerShell Class Assembly' -and $_.CustomAttributes -match "$([Regex]::Escape(($serviceModule.BaseName + [System.IO.Path]::DirectorySeparatorChar))).*Classes.ps1"
+                $_.FullName -match 'PowerShell Class Assembly' -and $_.CustomAttributes -match "$($serviceModule.BaseName)(\/|\\).*Classes.ps1"
             } | Select-Object -ExpandProperty DefinedTypes | Where-Object {
                 $_.Name -notmatch '_\<staticHelpers\>$'
             }
