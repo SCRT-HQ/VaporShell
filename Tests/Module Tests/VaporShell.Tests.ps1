@@ -69,9 +69,16 @@ Describe "Module tests: $($env:BHProjectName)" {
 }
 
 Describe "Unit tests" {
+    BeforeAll {
+        $projectRoot = Resolve-Path "$PSScriptRoot\..\.."
+        $BuildOutputPath = [System.IO.Path]::Combine($projectRoot,'BuildOutput')
+        if (($env:PSModulePath -split ';') -notcontains $BuildOutputPath) {
+            $env:PSModulePath = @($BuildOutputPath, $env:PSModulePath) -join [System.IO.Path]::PathSeparator
+        }
+        Import-Module VaporShell,VaporShell.ApiGateway,VaporShell.EC2,VaporShell.S3 -Force
+    }
     Context 'Strict mode' {
         Set-StrictMode -Version latest
-        Import-Module VaporShell.ApiGateway,VaporShell.EC2
         if ($env:AWS_ACCESS_KEY_ID -and $env:AWS_SECRET_ACCESS_KEY) {
             It 'Should set the credentials correctly on the shared file' {
                 Set-VSCredential -AccessKey $env:AWS_ACCESS_KEY_ID -SecretKey $env:AWS_SECRET_ACCESS_KEY -Region "USWest2" -ProfileName 'pester'
@@ -249,9 +256,9 @@ Describe "Unit tests" {
             {Export-Vaporshell -VaporshellTemplate $t} | Should throw "Unable to find any resources on this Vaporshell template. Resources are required in CloudFormation templates at the minimum."
             {$t.AddTransform("Fail")} | Should throw "You must use one of the following object types with this parameter: Vaporshell.Transform.Include"
             {$t.AddTransform((Add-Include -Location "s3://file.yaml"))} | Should Not throw
-            $t.AddResource((New-SAMSimpleTable -LogicalId "Table"))
+            $t.AddResource((New-VSS3Bucket -LogicalId "Bucket" -BucketName 'mybucket'))
             $t.Transform = "asfd"
-            $t.AddResource((New-SAMSimpleTable -LogicalId "Table2"))
+            $t.AddResource((New-VSS3Bucket -LogicalId "Bucket2" -BucketName 'mybucket2'))
             {Export-Vaporshell -VaporshellTemplate $t | Should BeOfType 'String'} | Should Not throw
             {$t.AddResource("Fail")} | Should throw "You must use one of the following object types with this parameter: Vaporshell.Transform, Vaporshell.Resource"
             {$t.AddCondition("Fail")} | Should throw "You must use one of the following object types with this parameter: Vaporshell.Transform, Vaporshell.Condition"
@@ -260,17 +267,15 @@ Describe "Unit tests" {
             {$t.AddMapping("Fail")} | Should throw "You must use one of the following object types with this parameter: Vaporshell.Transform, Vaporshell.Mapping"
             {$t.AddMapping("Fail")} | Should throw "You must use one of the following object types with this parameter: Vaporshell.Transform, Vaporshell.Mapping"
         }
-        if ($env:APPVEYOR) {
-            It 'Should function the same for imported templates' {
-                $path = (Resolve-Path "$projectRoot\Template.yaml").Path
-                $t = Import-Vaporshell -Path $path
-                {$t.RemoveCondition("CreateProdResources","Fn::Transform","CreateTestResources")} | Should Not throw
-                {$t.RemoveMapping("RegionMap","RegionMap2")} | Should Not throw
-                {$t.RemoveParameter("EnvTypeString","EnvType","EnvType2")} | Should Not throw
-                {$t.RemoveMetadata("Instances","Databases")} | Should Not throw
-                {$t.RemoveResource("GatewayDeployment","MyApi","MyInstance","MyInstance2","GatewayDeployment3","MyApi3","MyInstance3")} | Should Not throw
-                {$t.RemoveOutput("BackupLoadBalancerDNSName","PrimaryLoadBalancerDNSName","BackupLoadBalancerDNSName3")} | Should Not throw
-            }
+        It 'Should function the same for imported templates' {
+            $path = (Resolve-Path "$projectRoot\Template.yaml").Path
+            $t = Import-Vaporshell -Path $path
+            {$t.RemoveCondition("CreateProdResources","Fn::Transform","CreateTestResources")} | Should Not throw
+            {$t.RemoveMapping("RegionMap","RegionMap2")} | Should Not throw
+            {$t.RemoveParameter("EnvTypeString","EnvType","EnvType2")} | Should Not throw
+            {$t.RemoveMetadata("Instances","Databases")} | Should Not throw
+            {$t.RemoveResource("GatewayDeployment","MyApi","MyInstance","MyInstance2","GatewayDeployment3","MyApi3","MyInstance3")} | Should Not throw
+            {$t.RemoveOutput("BackupLoadBalancerDNSName","PrimaryLoadBalancerDNSName","BackupLoadBalancerDNSName3")} | Should Not throw
         }
     }
 }
