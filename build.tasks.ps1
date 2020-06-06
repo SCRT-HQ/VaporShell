@@ -580,6 +580,7 @@ Task PesterBefore {
         @{
             Name           = 'Pester'
             MinimumVersion = '4.10.1'
+            MaximumVersion = '4.99.99'
         }
         @{
             Name           = 'Assert'
