@@ -9,8 +9,7 @@ class VSHashtable : hashtable {
     hidden [void] _addAccessors() {}
 
     static [string] Help() {
-        $help = "This is the base VSHashtable help. The help content for this class still needs to be generated."
-        return $help
+        return "Help content has not been created for this class. Please open an issue on the GitHub repository to request help for this class."
     }
 
     [OrderedDictionary] ToOrderedDictionary() {

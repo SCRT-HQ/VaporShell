@@ -67,8 +67,14 @@ function $FunctionName {
     }
 
     foreach ($Prop in $Properties) {
+        $trueParameterName = if ($Prop.Name -in @('Verbose','Debug','ErrorAction','WarningAction','InformationAction','ErrorVariable','WarningVariable','InformationVariable','OutVariable','OutBuffer','PipelineVariable')) {
+            $Prop.Name + 'Property'
+        }
+        else {
+            $Prop.Name
+        }
         $scriptContents += @"
-    .PARAMETER $($Prop.Name)
+    .PARAMETER $($trueParameterName)
 "@
         if ($parameterDescription = $HelpDoc.Parameters | Where-Object {$_.Name -eq $Prop.Name} | Select-Object -ExpandProperty Description) {
             $scriptContents += "        $parameterDescription`n"
@@ -178,16 +184,15 @@ function $FunctionName {
     $PCount = 0
     $Properties | ForEach-Object { $PCount++ }
     $i = 0
+    $commonParams = @('Verbose','Debug','ErrorAction','WarningAction','InformationAction','ErrorVariable','WarningVariable','InformationVariable','OutVariable','OutBuffer','PipelineVariable')
     foreach ($Prop in $Properties) {
         $i++
-        if ($ResourceType -ne "Property") {
-            $ParamName = "$($Prop.Name),"
+        $ParamName = $Prop.Name
+        if ($Prop.Name -in $commonParams) {
+            $ParamName += 'Property'
         }
-        elseif ($i -lt [int]$PCount) {
-            $ParamName = "$($Prop.Name),"
-        }
-        else {
-            $ParamName = "$($Prop.Name)"
+        if ($ResourceType -ne "Property" -or $i -lt [int]$PCount) {
+            $ParamName += ","
         }
         if ($Prop.Value.Required -eq "True") {
             $Mandatory = '$true'

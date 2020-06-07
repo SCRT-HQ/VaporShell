@@ -8,6 +8,7 @@ vaporshell-snippets**
 TestResults**.xml
 VaporShell.zip
 ci/https*
+ci/VaporShell.CI.Tools/Public/CFNResourceDictionary.json
 ReleaseZips
 docs/docs/glossary/*
 !docs/docs/glossary/index.md

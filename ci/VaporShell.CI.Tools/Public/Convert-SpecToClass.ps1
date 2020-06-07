@@ -35,12 +35,13 @@ function Convert-SpecToClass {
     $ModPath = [System.IO.Path]::Combine($PSScriptRoot, '..', '..', '..', 'ServiceModules', $ServiceModuleName)
     $basePath = "$($ModPath)\Classes"
     $noDepsTypes = @('Boolean', 'Double', 'Integer', 'Json', 'Long', 'String', 'Timestamp')
+    $commonParams = @('Verbose','Debug','ErrorAction','WarningAction','InformationAction','ErrorVariable','WarningVariable','InformationVariable','OutVariable','OutBuffer','PipelineVariable')
     switch ($ResourceType) {
         Property {
             $Dir = "$basePath\00 - Property Types"
             $ClassBase = 'VSResourceProperty'
             $ClassName = $ShortName -replace '\W'
-            if ($ClassName -in $DuplicateClassNames) {
+            if ($ClassName -in $DuplicateClassNames -or $ClassName -in $commonParams) {
                 $ClassName = $ClassName + 'Property'
             }
             if ($BuildHelp) {
@@ -76,12 +77,12 @@ function Convert-SpecToClass {
     $helpMethod = switch ($ResourceType) {
         Resource {
             @(
-                '    static [string] GetHelp() {'
-                "        return (Get-Help -Name 'New-VS$ClassName' | Out-String)"
+                '    static [string] Help() {'
+                "        return (Get-Help -Name 'New-VS$($ShortName -replace '\W')' | Out-String)"
                 '    }'
                 ''
-                '    static [string] GetHelp([string] $scope) {'
-                "        `$params = @{Name = 'New-VS$ClassName'}"
+                '    static [string] Help([string] $scope) {'
+                "        `$params = @{Name = 'New-VS$($ShortName -replace '\W')'}"
                 '        switch -Regex ($scope) {'
                 "            '^F(u|ull){0,1}' {"
                 '                $params["Full"] = $true'
@@ -102,12 +103,12 @@ function Convert-SpecToClass {
         }
         Property {
             @(
-                '    static [string] GetHelp() {'
-                "        return (Get-Help -Name 'Add-VS$ClassName' | Out-String)"
+                '    static [string] Help() {'
+                "        return (Get-Help -Name 'Add-VS$($ShortName -replace '\W')' | Out-String)"
                 '    }'
                 ''
-                '    static [string] GetHelp([string] $scope) {'
-                "        `$params = @{Name = 'Add-VS$ClassName'}"
+                '    static [string] Help([string] $scope) {'
+                "        `$params = @{Name = 'Add-VS$($ShortName -replace '\W')'}"
                 '        switch -Regex ($scope) {'
                 "            '^F(u|ull){0,1}' {"
                 '                $params["Full"] = $true'
@@ -130,7 +131,7 @@ function Convert-SpecToClass {
     if ($Resource.Documentation) {
         $helpMethod += @(
             ''
-            '    static [void] OpenCFNDocs() {'
+            '    static [void] Docs() {'
             "        Start-Process '$($Resource.Documentation)'"
             '    }'
         )
@@ -221,10 +222,10 @@ function Convert-SpecToClass {
             }
             else {
                 $singleType = ($ShortName -replace '\..*' -replace '\W') + $Prop.Value.ItemType
-                $ValType = "[$singleType"
-                if ($singleType -in $DuplicateClassNames -and $ResourceType -eq 'Property') {
-                    $ValType += 'Property'
+                if (($singleType -in $DuplicateClassNames -or $singleType -in $commonParams) -and $ResourceType -eq 'Property') {
+                    $singleType += 'Property'
                 }
+                $ValType = "[$singleType"
                 if ($Prop.Value.Type -eq 'List') {
                     $ValType += "[]"
                 }
@@ -243,7 +244,7 @@ function Convert-SpecToClass {
                     "        `$this | Add-Member -Force -MemberType ScriptProperty -Name $ParamName -Value {"
                     "            $getter"
                     '        } -SecondValue {'
-                    "            param([ValidateType(([$($ShortName -replace '\..*' -replace '\W')$($Prop.Value.ItemType)], [IntrinsicFunction], [ConditionFunction]))] [object] `$value)"
+                    "            param([ValidateType(([$singleType], [IntrinsicFunction], [ConditionFunction]))] [object] `$value)"
                     "            $setter"
                     '        }'
                 )

@@ -11,7 +11,6 @@ if (($env:PSModulePath -split ';') -notcontains $BuildOutputPath) {
 $serviceModules = Get-ChildItem $ServiceModulesPath -Directory
 
 foreach ($serviceModule in $serviceModules) {
-    $decompiledModulePath = $serviceModule.FullName
     $ModulePath = Resolve-Path "$BuildOutputPath/$($serviceModule.BaseName)"
     Describe "Class tests: $($serviceModule.BaseName)" {
         BeforeAll {
@@ -19,8 +18,8 @@ foreach ($serviceModule in $serviceModules) {
         }
         Context "Confirm classes instantiate with the parameterless constructor" {
             $types = [System.AppDomain]::CurrentDomain.GetAssemblies() | Where-Object {
-                ($_.FullName -match 'PowerShell Class Assembly' -and $_.CustomAttributes -match "$($serviceModule.BaseName)(\/|\\)\d+\.\d+\.\d+.\d+(\/|\\)Classes\.ps1") -or
-                ($_.FullName -match "$($serviceModule.BaseName).\d+\.\d+\.\d+\.\d+.Classes\.ps1")
+                ($_.FullName -match 'PowerShell Class Assembly' -and $_.CustomAttributes -match "$($serviceModule.BaseName)(\/|\\)\d+\.\d+\.\d+.\d+(\/|\\)Classes\.ps1") -or # PS Core dynamic PS class assembly match
+                ($_.FullName -match "$($serviceModule.BaseName).\d+\.\d+\.\d+\.\d+.Classes\.ps1") # Windows PS dynamic PS class assembly match
             } | Select-Object -ExpandProperty DefinedTypes | Where-Object {
                 $_.Name -notmatch '_\<staticHelpers\>$'
             }
@@ -28,6 +27,20 @@ foreach ($serviceModule in $serviceModules) {
             It "Class <type> should not throw when instantiated" -TestCases $testCase {
                 param($type)
                 { $type::new() } | Should -Not -Throw
+            }
+            It "Class <type> should have a Help() static method" -TestCases $testCase {
+                param($type)
+                { $type::new() | Get-Member -Name 'Help*' -MemberType Method -Static } | Should -Not -BeNullOrEmpty
+                { $type::Help() } | Should -Not -Throw
+            }
+            It "Class <type> should return a Help string with Help()" -TestCases $testCase {
+                param($type)
+                $help = $type::Help()
+                $help | Should -Not -BeNullOrEmpty
+            }
+            It "Class <type> should have a Docs() static method" -TestCases $testCase {
+                param($type)
+                { $type::new() | Get-Member -Name 'Docs*' -MemberType Method -Static } | Should -Not -BeNullOrEmpty
             }
         }
     }
