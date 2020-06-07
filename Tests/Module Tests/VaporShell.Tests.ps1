@@ -252,6 +252,7 @@ Describe "Unit tests" {
             {New-VaporParameter -LogicalId "PW" -NoEcho -Type String -AllowedPattern ".*" -MaxLength 50 -MinLength 1 -MaxValue 50 -MinValue 1 -Default "woooo"} | Should Not throw
         }
         It 'Should throw main commands' {
+            Import-Module VaporShell,VaporShell.S3
             $t = Initialize-Vaporshell
             {Export-Vaporshell -VaporshellTemplate $t} | Should throw "Unable to find any resources on this Vaporshell template. Resources are required in CloudFormation templates at the minimum."
             {$t.AddTransform("Fail")} | Should throw "You must use one of the following object types with this parameter: Vaporshell.Transform.Include"
@@ -267,15 +268,17 @@ Describe "Unit tests" {
             {$t.AddMapping("Fail")} | Should throw "You must use one of the following object types with this parameter: Vaporshell.Transform, Vaporshell.Mapping"
             {$t.AddMapping("Fail")} | Should throw "You must use one of the following object types with this parameter: Vaporshell.Transform, Vaporshell.Mapping"
         }
-        It 'Should function the same for imported templates' {
-            $path = (Resolve-Path "$projectRoot\Template.yaml").Path
-            $t = Import-Vaporshell -Path $path
-            {$t.RemoveCondition("CreateProdResources","Fn::Transform","CreateTestResources")} | Should Not throw
-            {$t.RemoveMapping("RegionMap","RegionMap2")} | Should Not throw
-            {$t.RemoveParameter("EnvTypeString","EnvType","EnvType2")} | Should Not throw
-            {$t.RemoveMetadata("Instances","Databases")} | Should Not throw
-            {$t.RemoveResource("GatewayDeployment","MyApi","MyInstance","MyInstance2","GatewayDeployment3","MyApi3","MyInstance3")} | Should Not throw
-            {$t.RemoveOutput("BackupLoadBalancerDNSName","PrimaryLoadBalancerDNSName","BackupLoadBalancerDNSName3")} | Should Not throw
+        if ($env:APPVEYOR) {
+            It 'Should function the same for imported templates' {
+                $path = (Resolve-Path "$projectRoot\Template.yaml").Path
+                $t = Import-Vaporshell -Path $path
+                {$t.RemoveCondition("CreateProdResources","Fn::Transform","CreateTestResources")} | Should Not throw
+                {$t.RemoveMapping("RegionMap","RegionMap2")} | Should Not throw
+                {$t.RemoveParameter("EnvTypeString","EnvType","EnvType2")} | Should Not throw
+                {$t.RemoveMetadata("Instances","Databases")} | Should Not throw
+                {$t.RemoveResource("GatewayDeployment","MyApi","MyInstance","MyInstance2","GatewayDeployment3","MyApi3","MyInstance3")} | Should Not throw
+                {$t.RemoveOutput("BackupLoadBalancerDNSName","PrimaryLoadBalancerDNSName","BackupLoadBalancerDNSName3")} | Should Not throw
+            }
         }
     }
 }
