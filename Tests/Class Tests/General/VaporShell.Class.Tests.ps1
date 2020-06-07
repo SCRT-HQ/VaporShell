@@ -21,7 +21,8 @@ Describe "Class tests: $($env:BHProjectName)" {
     }
     Context "Confirm classes instantiate with the parameterless constructor" {
         $assembly = [System.AppDomain]::CurrentDomain.GetAssemblies() | Where-Object {
-            $_.FullName -match  'PowerShell Class Assembly' -and $_.CustomAttributes -match "$($env:BHProjectName)(\/|\\).*Classes.ps1" -and $_.CustomAttributes -notmatch "$($env:BHProjectName)\."
+            ($_.FullName -match 'PowerShell Class Assembly' -and $_.CustomAttributes -match "$($env:BHProjectName)(\/|\\)\d+\.\d+\.\d+.\d+(\/|\\)Classes\.ps1") -or
+            ($_.FullName -match "$($env:BHProjectName).\d+\.\d+\.\d+\.\d+.Classes\.ps1")
         } | Sort-Object CustomAttributes -Unique
         $types = $assembly | Select-Object -ExpandProperty DefinedTypes | Where-Object {
             $_.Name -notmatch '_\<staticHelpers\>$'
