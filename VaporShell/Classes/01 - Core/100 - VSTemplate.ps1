@@ -318,7 +318,7 @@ class VSTemplate : VSObject {
             param([object[]] $value)
             if ($null -eq $this._resources) {
                 $this._resources = [ordered]@{}
-            }x
+            }
             $this.AddResource($value)
         }
         $this | Add-Member -Force -MemberType 'ScriptProperty' -Name 'Transform' -Value {
