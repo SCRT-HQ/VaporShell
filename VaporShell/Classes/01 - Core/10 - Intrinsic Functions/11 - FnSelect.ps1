@@ -1,10 +1,10 @@
-class FnJoin : IntrinsicFunction {
+class FnSelect : IntrinsicFunction {
     static [string] Help() {
-        return (Get-Help -Name 'Add-FnJoin' | Out-String)
+        return (Get-Help -Name 'Add-FnSelect' | Out-String)
     }
 
     static [string] Help([string] $scope) {
-        $params = @{Name = 'Add-FnJoin'}
+        $params = @{Name = 'Add-FnSelect'}
         switch -Regex ($scope) {
             '^F(u|ull){0,1}' {
                 $params["Full"] = $true
@@ -27,17 +27,26 @@ class FnJoin : IntrinsicFunction {
     }
 
     [string] ToString() {
-        return "FnJoin($($this['Fn::Join']))"
+        return "FnSelect($($this['Fn::Select']))"
     }
 
-    FnJoin() {}
+    FnSelect() {}
 
-    FnJoin(
-        [string] $delimiter,
-        [object[]] $listOfValues
+    FnSelect(
+        [object] $index,
+        [object[]] $listOfObjects
     ) {
         $validTypes = @([string], [int], [IntrinsicFunction], [ConditionFunction])
-        foreach ($value in $listOfValues) {
+        $isValid = foreach ($type in $validTypes) {
+            if ($index -is $type) {
+                $true
+                break
+            }
+        }
+        if (-not $isValid) {
+            throw [VSError]::InvalidType($index, $validTypes)
+        }
+        foreach ($value in $listOfObjects) {
             $isValid = foreach ($type in $validTypes) {
                 if ($value -is $type) {
                     $true
@@ -48,6 +57,6 @@ class FnJoin : IntrinsicFunction {
                 throw [VSError]::InvalidType($value, $validTypes)
             }
         }
-        $this['Fn::Join'] = @($delimiter, @($listOfValues))
+        $this['Fn::Select'] = @($index, @($listOfObjects))
     }
 }

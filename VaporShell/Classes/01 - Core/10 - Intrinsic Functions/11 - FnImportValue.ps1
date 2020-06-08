@@ -1,12 +1,12 @@
 using namespace System.Management.Automation
 
-class FnBase64 : IntrinsicFunction {
+class FnImportValue : IntrinsicFunction {
     static [string] Help() {
-        return (Get-Help -Name 'Add-FnBase64' | Out-String)
+        return (Get-Help -Name 'Add-FnImportValue' | Out-String)
     }
 
     static [string] Help([string] $scope) {
-        $params = @{Name = 'Add-FnBase64'}
+        $params = @{Name = 'Add-FnImportValue'}
         switch -Regex ($scope) {
             '^F(u|ull){0,1}' {
                 $params["Full"] = $true
@@ -25,26 +25,26 @@ class FnBase64 : IntrinsicFunction {
     }
 
     static [void] Docs() {
-        Start-Process 'http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-base64.html'
+        Start-Process 'http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html'
     }
 
     [string] ToString() {
-        return "FnBase64($($this['Fn::Base64']))"
+        return "FnImportValue($($this['Fn::ImportValue']))"
     }
 
-    FnBase64() {}
+    FnImportValue() {}
 
-    FnBase64([object] $value) {
+    FnImportValue([object] $valueToImport) {
         $validTypes = @([string], [int], [IntrinsicFunction], [ConditionFunction])
         $isValid = foreach ($type in $validTypes) {
-            if ($value -is $type) {
+            if ($valueToImport -is $type) {
                 $true
                 break
             }
         }
         if (-not $isValid) {
-            throw [VSError]::InvalidType($value, $validTypes)
+            throw [VSError]::InvalidType($valueToImport, $validTypes)
         }
-        $this['Fn::Base64'] = $value
+        $this['Fn::ImportValue'] = $valueToImport
     }
 }

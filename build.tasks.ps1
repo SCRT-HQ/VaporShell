@@ -46,6 +46,12 @@ Param(
 
 Task . Build, Import
 
+# Synopsis: Builds only the core components and submodules, excluding Resource Types and Resource Property Types
+Task BuildCoreOnly Init, Clean, CleanNonCoreFunctions, {$Script:NoUpdate = $true}, BuildMain, BuildSubmodules, BuildDotnet
+
+# Synopsis: Used from CI to generate the functions fresh during the Test jobs in the pipeline for better test coverage.
+Task Test Init, Update, TestOnly
+
 # Synopsis: Run all core tasks
 Task Full Init, Build, Import, PesterBefore, Test, BuildReleaseZips
 
@@ -117,13 +123,15 @@ Task CleanSubmodules Init, {
     }
 }
 
-# Synopsis: Updates module functions before compilation
-Task UpdateFromSpecification -If { -not $NoUpdate -and -not $CoreOnly } Clean, CleanNonCoreFunctions, {
+Task Update -If { -not $NoUpdate -and -not $CoreOnly } {
     git submodule update --recursive
     Import-Module ([System.IO.Path]::Combine($BuildRoot,'ci','VaporShell.CI.Tools')) -Verbose
     Write-BuildLog 'Updating Resource and Property Type functions with current AWS spec sheet...'
     Update-VSResourceFunctions -ModuleVersion $NextModuleVersion
 }
+
+# Synopsis: Updates module functions before compilation
+Task UpdateFromSpecification -If { -not $NoUpdate -and -not $CoreOnly } Clean, CleanNonCoreFunctions, Update
 
 # Synopsis: Compile the submodules
 Task BuildSubmodules Init,CleanSubmodules, {
@@ -489,9 +497,6 @@ Task BuildMain UpdateFromSpecification, {
     Get-ChildItem $TargetVersionDirectory | Format-Table -AutoSize
 }
 
-# Synopsis: Builds only the core components and submodules, excluding Resource Types and Resource Property Types
-Task BuildCoreOnly Init, Clean, CleanNonCoreFunctions, {$Script:NoUpdate = $true}, BuildMain, BuildSubmodules, BuildDotnet
-
 Task BuildMainClasses Init, {
     $updatedScriptsToProcess = @()
     $attributesUsingStatements = @()
@@ -605,7 +610,7 @@ Task PesterBefore {
 }
 
 # Synopsis: Run Pester tests only (no Clean/Compile)
-Task Test Init, PesterBefore, {
+Task TestOnly Init, PesterBefore, {
     Set-Location -PassThru $TargetModuleDirectory
     Get-Module $ModuleName | Remove-Module $ModuleName -ErrorAction SilentlyContinue -Verbose:$false
     Import-Module -Name $TargetModuleDirectory -Force -Verbose:$false

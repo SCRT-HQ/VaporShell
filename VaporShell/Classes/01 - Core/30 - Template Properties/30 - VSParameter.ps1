@@ -16,10 +16,6 @@ class VSParameter : VSLogicalObject {
     [nullable[int]] $MinLength = $null
     [nullable[int]] $MinValue = $null
 
-    [string] ToString() {
-        return $this.LogicalId
-    }
-
     VSParameter() : base() {}
     VSParameter([IDictionary] $props) : base($props) {}
     VSParameter([psobject] $props) : base($props) {}

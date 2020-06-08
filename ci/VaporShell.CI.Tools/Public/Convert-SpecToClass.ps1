@@ -137,10 +137,13 @@ function Convert-SpecToClass {
         )
     }
     $prprtyContents = @()
+    $hiddenContents = @()
     if ($ResourceType -eq 'Resource') {
         $prprtyContents += "    [string] `$Type = '$Name'"
+        if ($null -ne $Resource.Attributes) {
+            $hiddenContents += "    hidden [string[]] `$_attributes = @('$($Resource.Attributes.PSObject.Properties.Name -join "','")')"
+        }
     }
-    $hiddenContents = @()
     $methodContents = @()
     $accessorContents = @(
         '    hidden [void] _addAccessors() {'

@@ -23,13 +23,7 @@ class VSYaml : VSHashtable {
             }
         }
         catch {
-            $errorRecord = [ErrorRecord]::new(
-                [ArgumentException]::new("Unable to convert input data from YAML to PSObject! Please use a YAML string OR provide a valid path to a YAML file!"),
-                'InvalidYamlInput',
-                [ErrorCategory]::InvalidArgument,
-                $yamlStringOrFilePath
-            )
-            throw $errorRecord
+            throw [VSError]::InvalidYamlInput($yamlStringOrFilePath)
         }
         return $final
     }

@@ -1,10 +1,10 @@
-class FnJoin : IntrinsicFunction {
+class FnNot : ConditionFunction {
     static [string] Help() {
-        return (Get-Help -Name 'Add-FnJoin' | Out-String)
+        return (Get-Help -Name 'Add-ConNot' | Out-String)
     }
 
     static [string] Help([string] $scope) {
-        $params = @{Name = 'Add-FnJoin'}
+        $params = @{Name = 'Add-ConNot'}
         switch -Regex ($scope) {
             '^F(u|ull){0,1}' {
                 $params["Full"] = $true
@@ -23,31 +23,28 @@ class FnJoin : IntrinsicFunction {
     }
 
     static [void] Docs() {
-        Start-Process 'http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-join.html'
+        Start-Process 'https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-conditions.html#intrinsic-function-reference-conditions-not'
     }
 
     [string] ToString() {
-        return "FnJoin($($this['Fn::Join']))"
+        return "FnNot($($this['Fn::Not']))"
     }
 
-    FnJoin() {}
+    FnNot() {}
 
-    FnJoin(
-        [string] $delimiter,
-        [object[]] $listOfValues
-    ) {
-        $validTypes = @([string], [int], [IntrinsicFunction], [ConditionFunction])
-        foreach ($value in $listOfValues) {
+    FnNot([object[]] $condition) {
+        $validTypes = @([string], [int], [FnFindInMap], [FnRef], [ConditionFunction])
+        foreach ($item in $condition) {
             $isValid = foreach ($type in $validTypes) {
-                if ($value -is $type) {
+                if ($item -is $type) {
                     $true
                     break
                 }
             }
             if (-not $isValid) {
-                throw [VSError]::InvalidType($value, $validTypes)
+                throw [VSError]::InvalidType($item, $validTypes)
             }
         }
-        $this['Fn::Join'] = @($delimiter, @($listOfValues))
+        $this['Fn::Not'] = @($condition)
     }
 }

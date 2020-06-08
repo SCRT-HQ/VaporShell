@@ -23,13 +23,13 @@ class AutoScalingCreationPolicy : VSObject {
                     $minSuccessfulInstancesPercent -lt 0
                 )
             ) {
-                $errorRecord = [ErrorRecord]::new(
-                    [ArgumentException]::new("MinSuccessfulInstancesPercent must be an integer betwee 0-100 or an Intrinsic or Condition Function object!"),
+                $errorRecord = [VSError]::new(
+                    [ArgumentException]::new("MinSuccessfulInstancesPercent must be an integer between 0-100!"),
                     'InvalidMinSuccessfulInstancesPercent',
                     [ErrorCategory]::InvalidArgument,
                     $minSuccessfulInstancesPercent
                 )
-                throw $errorRecord
+                throw [VSError]::InsertError($errorRecord)
             }
             $this._minSuccessfulInstancesPercent = $minSuccessfulInstancesPercent
         }

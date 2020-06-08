@@ -1,12 +1,13 @@
-using namespace System.Management.Automation
+using namespace System
+using namespace System.Collections
 
-class FnBase64 : IntrinsicFunction {
+class FnSplit : IntrinsicFunction {
     static [string] Help() {
-        return (Get-Help -Name 'Add-FnBase64' | Out-String)
+        return (Get-Help -Name 'Add-FnSplit' | Out-String)
     }
 
     static [string] Help([string] $scope) {
-        $params = @{Name = 'Add-FnBase64'}
+        $params = @{Name = 'Add-FnSplit'}
         switch -Regex ($scope) {
             '^F(u|ull){0,1}' {
                 $params["Full"] = $true
@@ -25,26 +26,29 @@ class FnBase64 : IntrinsicFunction {
     }
 
     static [void] Docs() {
-        Start-Process 'http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-base64.html'
+        Start-Process 'http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-split.html'
     }
 
     [string] ToString() {
-        return "FnBase64($($this['Fn::Base64']))"
+        return "FnSplit($($this['Fn::Split']))"
     }
 
-    FnBase64() {}
+    FnSplit() {}
 
-    FnBase64([object] $value) {
+    FnSplit(
+        [string] $delimiter,
+        [object] $sourceString
+    ) {
         $validTypes = @([string], [int], [IntrinsicFunction], [ConditionFunction])
         $isValid = foreach ($type in $validTypes) {
-            if ($value -is $type) {
+            if ($sourceString -is $type) {
                 $true
                 break
             }
         }
         if (-not $isValid) {
-            throw [VSError]::InvalidType($value, $validTypes)
+            throw [VSError]::InvalidType($sourceString, $validTypes)
         }
-        $this['Fn::Base64'] = $value
+        $this['Fn::Split'] = @($delimiter,$sourceString)
     }
 }

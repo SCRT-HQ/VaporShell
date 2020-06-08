@@ -63,6 +63,7 @@ function Get-CFNResourceDictionary {
                     FunctionName  = "New-VS$ClassName"
                     Properties    = $resource.Value.Properties
                     Documentation = $resource.Value.Documentation
+                    Attributes    = $resource.Value.Attributes
                     Value         = $resource.Value
                     Resource      = $resource
                 }
@@ -204,6 +205,7 @@ function Get-CFNResourceDictionary {
                     FunctionName  = "Add-VS$ClassName"
                     Properties    = $propTypes
                     Documentation = $resource.Value.Documentation
+                    Attributes    = $resource.Value.Attributes
                     Value         = $resource.Value
                     Resource      = $resource
                 }
@@ -231,6 +233,7 @@ function Get-CFNResourceDictionary {
                                 FunctionName  = "New-VS$ClassName"
                                 Properties    = $resource.Value.Properties
                                 Documentation = $resource.Value.Documentation
+                                Attributes    = $resource.Value.Attributes
                                 Value         = $resource.Value
                                 Resource      = $resource
                             }
@@ -375,6 +378,7 @@ function Get-CFNResourceDictionary {
                                 FunctionName  = "Add-VS$ClassName"
                                 Properties    = $propTypes
                                 Documentation = $resource.Value.Documentation
+                                Attributes    = $resource.Value.Attributes
                                 Value         = $resource.Value
                                 Resource      = $resource
                             }

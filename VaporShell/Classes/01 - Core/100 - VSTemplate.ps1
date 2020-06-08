@@ -7,15 +7,16 @@ class VSTemplate : VSObject {
     hidden [VSParameter[]] $_parametersOriginal = @()
     hidden [hashtable] $_resources = $null
     hidden [VSResource[]] $_resourcesOriginal = @()
+    hidden [hashtable] $_ouputs = $null
+    hidden [VSOutput[]] $_ouputsOriginal = @()
     hidden [hashtable] $_transform = $null
     [string] $AWSTemplateFormatVersion = $null
-    [object] $Transform = $null
+    [Include] $Transform = $null
     [string] $Description = $null
     [VSParameter[]] $Parameters = $null
     [VSMapping[]] $Mappings = $null
     [VSResource[]] $Resources = $null
-    [object] $Outputs = $null
-    [object] $Rules = $null
+    [VSOutput[]] $Outputs = $null
 
     static [string] Help() {
         $help = "This is the Template help."
@@ -24,6 +25,19 @@ class VSTemplate : VSObject {
 
     [string] ToString() {
         return $this.ToJson()
+    }
+
+    [void] AddTransform([Include] $include) {
+        if ($null -ne $this._transform) {
+            throw "The Template already contains a Transform!"
+        }
+        else {
+            $this._transform = $include.ToOrderedDictionary()
+        }
+    }
+
+    [void] AddSAMTransform() {
+        $this._transform = 'AWS::Serverless-2016-10-31'
     }
 
     [void] AddMapping([VSMapping] $mapping) {
@@ -65,6 +79,29 @@ class VSTemplate : VSObject {
         }
     }
 
+    [void] AddOutput([VSOutput] $output) {
+        if ($this._ouputs.ContainsKey($output.LogicalId)) {
+            throw "The Template already contains an Output with a LogicalId of '$($output.LogicalId)'. LogicalIds must be unique within the Template."
+        }
+        else {
+            $cleaned = [ordered]@{}
+            $safeList = [VSOutput]::new().PSObject.Properties.Name
+            $output.ToOrderedDictionary().GetEnumerator() | ForEach-Object {
+                if ($_.Key -in $safeList) {
+                    $cleaned[$_.Key] = $_.Value
+                }
+            }
+            $this._ouputs[$output.LogicalId] = $cleaned
+            $this._ouputsOriginal += $output
+        }
+    }
+
+    [void] AddOutput([VSOutput[]] $outputs) {
+        $outputs | ForEach-Object {
+            $this.AddOutput($_)
+        }
+    }
+
     [void] AddResource([VSResource] $resource) {
         if ($this._resources.ContainsKey($resource.LogicalId)) {
             throw "The Template already contains a Resource with a LogicalId of '$($resource.LogicalId)'. LogicalIds must be unique within the Template."
@@ -89,6 +126,17 @@ class VSTemplate : VSObject {
     }
 
     hidden [void] _addAccessors() {
+        $this | Add-Member -Force -MemberType 'ScriptProperty' -Name 'Transform' -Value {
+            $this._transform
+        } -SecondValue {
+            param([object] $value)
+            if ($value.ToString() -match 'Serverless') {
+                $this.AddSAMTransform()
+            }
+            else {
+                $this.AddTransform($value)
+            }
+        }
         $this | Add-Member -Force -MemberType 'ScriptProperty' -Name 'AWSTemplateFormatVersion' -Value {
             $this._awsTemplateFormatVersion
         } -SecondValue {

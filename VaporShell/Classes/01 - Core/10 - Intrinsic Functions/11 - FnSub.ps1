@@ -1,10 +1,13 @@
-class FnGetAtt : IntrinsicFunction {
+using namespace System
+using namespace System.Collections
+
+class FnSub : IntrinsicFunction {
     static [string] Help() {
-        return (Get-Help -Name 'Add-FnGetAtt' | Out-String)
+        return (Get-Help -Name 'Add-FnSub' | Out-String)
     }
 
     static [string] Help([string] $scope) {
-        $params = @{Name = 'Add-FnGetAtt'}
+        $params = @{Name = 'Add-FnSub'}
         switch -Regex ($scope) {
             '^F(u|ull){0,1}' {
                 $params["Full"] = $true
@@ -23,16 +26,25 @@ class FnGetAtt : IntrinsicFunction {
     }
 
     static [void] Docs() {
-        Start-Process 'http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html'
+        Start-Process 'http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-sub.html'
     }
 
     [string] ToString() {
-        return "FnGetAtt($($this['Fn::GetAtt']))"
+        return "FnSub($($this['Fn::Sub']))"
     }
 
-    FnGetAtt() {}
+    FnSub() {}
 
-    FnGetAtt([string] $logicalNameOfResource, [string] $attributeName) {
-        $this['Fn::GetAtt'] = @($logicalNameOfResource,$attributeName)
+    FnSub(
+        [string] $string
+    ) {
+        $this['Fn::Sub'] = $String
+    }
+
+    FnSub(
+        [string] $string,
+        [IDictionary] $mapping
+    ) {
+        $this['Fn::Sub'] = @($String,$Mapping)
     }
 }

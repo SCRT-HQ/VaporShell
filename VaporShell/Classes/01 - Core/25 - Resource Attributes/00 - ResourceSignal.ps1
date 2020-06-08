@@ -33,13 +33,13 @@ class ResourceSignal : VSObject {
                     $null = [XmlConvert]::ToTimeSpan($timeOut)
                 }
                 catch {
-                    $errorRecord = [ErrorRecord]::new(
+                    $errorRecord = [VSError]::new(
                         [ArgumentException]::new("Timeout must be a valid ISO8601 duration string or an Intrinsic or Condition Function object!"),
                         'InvalidTimeout',
                         [ErrorCategory]::InvalidArgument,
                         $timeout
                     )
-                    throw $errorRecord
+                    throw [VSError]::InsertError($errorRecord)
                 }
             }
             $this._timeout = $timeout

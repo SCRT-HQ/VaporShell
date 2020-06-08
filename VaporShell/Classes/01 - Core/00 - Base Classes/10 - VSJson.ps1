@@ -17,13 +17,7 @@ class VSJson : VSHashtable {
             $final = (ConvertFrom-Json -InputObject $newData -ErrorAction Stop)
         }
         catch {
-            $errorRecord = [ErrorRecord]::new(
-                [ArgumentException]::new("Unable to convert input data from JSON to PSObject! Please use a JSON string OR provide a valid path to a JSON file!"),
-                'InvalidJsonInput',
-                [ErrorCategory]::InvalidArgument,
-                $jsonStringOrFilePath
-            )
-            throw $errorRecord
+            throw [VSError]::InvalidJsonInput($jsonStringOrFilePath)
         }
         return $final
     }

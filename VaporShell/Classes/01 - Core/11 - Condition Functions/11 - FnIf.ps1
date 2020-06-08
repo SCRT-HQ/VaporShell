@@ -1,12 +1,10 @@
-using namespace System.Management.Automation
-
-class FnFindInMap : IntrinsicFunction {
+class FnIf : ConditionFunction {
     static [string] Help() {
-        return (Get-Help -Name 'Add-FnFindInMap' | Out-String)
+        return (Get-Help -Name 'Add-ConIf' | Out-String)
     }
 
     static [string] Help([string] $scope) {
-        $params = @{Name = 'Add-FnFindInMap'}
+        $params = @{Name = 'Add-ConIf'}
         switch -Regex ($scope) {
             '^F(u|ull){0,1}' {
                 $params["Full"] = $true
@@ -25,39 +23,39 @@ class FnFindInMap : IntrinsicFunction {
     }
 
     static [void] Docs() {
-        Start-Process 'http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-findinmap.html'
+        Start-Process 'https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-conditions.html#intrinsic-function-reference-conditions-if'
     }
 
     [string] ToString() {
-        return "FnFindInMap($($this['Fn::FindInMap']))"
+        return "FnIf($($this['Fn::If']))"
     }
 
-    FnFindInMap() {}
+    FnIf() {}
 
-    FnFindInMap(
-        [string] $mapName,
-        [object] $topLevelKey,
-        [object] $secondLevelKey
+    FnIf(
+        [string] $conditionName,
+        [object] $valueIfTrue,
+        [object] $valueIfFalse
     ) {
-        $validTypes = @([string], [int], [IntrinsicFunction], [ConditionFunction])
+        $validTypes = @([string], [int], [FnBase64], [FnFindInMap], [FnGetAtt], [FnGetAZs], [FnIf], [FnJoin], [FnSelect], [FnSub] [FnRef], [ConditionFunction])
         $isValid = foreach ($type in $validTypes) {
-            if ($topLevelKey -is $type) {
+            if ($valueIfTrue -is $type) {
                 $true
                 break
             }
         }
         if (-not $isValid) {
-            throw [VSError]::InvalidType($topLevelKey, $validTypes)
+            throw [VSError]::InvalidType($valueIfTrue, $validTypes)
         }
         $isValid = foreach ($type in $validTypes) {
-            if ($secondLevelKey -is $type) {
+            if ($valueIfFalse -is $type) {
                 $true
                 break
             }
         }
         if (-not $isValid) {
-            throw [VSError]::InvalidType($secondLevelKey, $validTypes)
+            throw [VSError]::InvalidType($valueIfFalse, $validTypes)
         }
-        $this['Fn::FindInMap'] = @($mapName, $topLevelKey, $secondLevelKey)
+        $this['Fn::If'] = @($conditionName,$valueIfTrue,$valueIfFalse)
     }
 }
