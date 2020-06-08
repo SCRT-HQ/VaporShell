@@ -83,7 +83,7 @@ class VSObject : object {
         Write-Debug "Contructing $($this.GetType().Name) from input IDictionary"
         $props.GetEnumerator() | ForEach-Object {
             Write-Debug "Checking for property '$($_.Key)' on this object"
-            if ($this.PSObject.Properties.Name -contains $_.Key -and $_.Key -notin $this._commonParams) {
+            if ($_.Key -eq 'Fn::Transform' -or ($this.PSObject.Properties.Name -contains $_.Key -and $_.Key -notin $this._commonParams)) {
                 Write-Debug "Property found, adding value: $($_.Value)"
                 $this."$($_.Key)" = $_.Value
             }
@@ -95,7 +95,7 @@ class VSObject : object {
         Write-Debug "Contructing $($this.GetType().Name) from input PSObject"
         $props.PSObject.Properties | ForEach-Object {
             Write-Debug "Checking for property '$($_.Name)' on this object"
-            if ($this.PSObject.Properties.Name -contains $_.Name -and $_.Name -notin $this._commonParams) {
+            if ($_.Name -eq 'Fn::Transform' -or ($this.PSObject.Properties.Name -contains $_.Name -and $_.Name -notin $this._commonParams)) {
                 Write-Debug "Property found, adding value: $($_.Value)"
                 $this."$($_.Name)" = $_.Value
             }

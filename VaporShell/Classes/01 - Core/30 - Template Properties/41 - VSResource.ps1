@@ -39,7 +39,7 @@ class VSResource : VSLogicalObject {
             else {
                 "There are $($this._attributes.Count) attributes available for this resource! Please specify the attribute you would like to use for [FnGetAtt] instead."
             }
-            $errorRecord = [ErrorRecord]::new(
+            $errorRecord = [VSError]::new(
                 [ArgumentException]::new($message),
                 'InvalidAttribute',
                 [ErrorCategory]::InvalidArgument,
@@ -58,7 +58,7 @@ class VSResource : VSLogicalObject {
             else {
                 "$attributeName is not a valid attribute for this resource to return via [FnGetAtt]. Valid attributes include: $(($this._attributes | Sort-Object -Unique) -join ', ')"
             }
-            $errorRecord = [ErrorRecord]::new(
+            $errorRecord = [VSError]::new(
                 [ArgumentException]::new($message),
                 'InvalidAttribute',
                 [ErrorCategory]::InvalidArgument,

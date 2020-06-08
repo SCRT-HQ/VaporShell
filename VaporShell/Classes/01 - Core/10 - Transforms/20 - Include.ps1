@@ -16,12 +16,12 @@ class Include : FnTransform {
     }
 
     hidden [void] _addAccessors() {
-        $this | Add-Member -Force -MemberType ScriptProperty -Name LogicalId -Value {
+        $this | Add-Member -Force -MemberType ScriptProperty -Name 'LogicalId' -Value {
             'Fn::Transform'
         } -SecondValue {
             Write-Warning "This is a readonly property!"
         }
-        $this | Add-Member -Force -MemberType ScriptProperty -Name Name -Value {
+        $this | Add-Member -Force -MemberType ScriptProperty -Name 'Name' -Value {
             'AWS::Include'
         } -SecondValue {
             Write-Warning "This is a readonly property!"
@@ -41,7 +41,7 @@ class Include : FnTransform {
             $inputData
         }
         else {
-            $errorRecord = [ErrorRecord]::new(
+            $errorRecord = [VSError]::new(
                 [ArgumentException]::new("Invalid input! Please either pass an IDictionary or PSObject containing a Parameters or Location property or just the S3 location as a string value."),
                 'InvalidInput',
                 [ErrorCategory]::InvalidArgument,
@@ -51,7 +51,7 @@ class Include : FnTransform {
         }
         if ($props.PSObject.Properties.Name -contains 'Parameters') {
             if ($props.Parameters.Location -notmatch '^s3:\/\/.*') {
-                $errorRecord = [ErrorRecord]::new(
+                $errorRecord = [VSError]::new(
                     [ArgumentException]::new("$($props.Parameters.Location) is not a valid s3 path! Location must match pattern '^s3:\/\/.*'"),
                     'InvalidLocation',
                     [ErrorCategory]::InvalidArgument,
@@ -68,7 +68,7 @@ class Include : FnTransform {
                 $this.Parameters['Location'] = $props.Location
             }
             else {
-                $errorRecord = [ErrorRecord]::new(
+                $errorRecord = [VSError]::new(
                     [ArgumentException]::new("$($props.Location) is not a valid s3 path! Location must match pattern '^s3:\/\/.*'"),
                     'InvalidLocation',
                     [ErrorCategory]::InvalidArgument,
@@ -78,7 +78,7 @@ class Include : FnTransform {
             }
         }
         else {
-            $errorRecord = [ErrorRecord]::new(
+            $errorRecord = [VSError]::new(
                 [ArgumentException]::new("Invalid input! Please either pass an IDictionary or PSObject containing a Parameters or Location property or just the S3 location as a string value."),
                 'InvalidInput',
                 [ErrorCategory]::InvalidArgument,

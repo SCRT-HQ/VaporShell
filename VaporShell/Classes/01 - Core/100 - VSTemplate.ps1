@@ -1,22 +1,31 @@
+using namespace System
+using namespace System.Collections
+using namespace System.Collections.Generic
+using namespace System.Management.Automation
+
 class VSTemplate : VSObject {
     hidden [string]$_description = $null
     hidden [string] $_awsTemplateFormatVersion = $null
     hidden [hashtable] $_mappings = $null
-    hidden [VSMapping[]] $_mappingsOriginal = @()
+    hidden [object[]] $_mappingsOriginal = @()
     hidden [hashtable] $_parameters = $null
-    hidden [VSParameter[]] $_parametersOriginal = @()
+    hidden [object[]] $_parametersOriginal = @()
     hidden [hashtable] $_resources = $null
-    hidden [VSResource[]] $_resourcesOriginal = @()
-    hidden [hashtable] $_ouputs = $null
-    hidden [VSOutput[]] $_ouputsOriginal = @()
-    hidden [hashtable] $_transform = $null
+    hidden [object[]] $_resourcesOriginal = @()
+    hidden [hashtable] $_outputs = $null
+    hidden [object[]] $_outputsOriginal = @()
+    hidden [object[]] $_transform = @()
+    hidden [hashtable] $_conditions = $null
+    hidden [object[]] $_conditionsOriginal = @()
+
     [string] $AWSTemplateFormatVersion = $null
-    [Include] $Transform = $null
     [string] $Description = $null
-    [VSParameter[]] $Parameters = $null
+    [VSCondition[]] $Conditions = $null
     [VSMapping[]] $Mappings = $null
-    [VSResource[]] $Resources = $null
     [VSOutput[]] $Outputs = $null
+    [VSParameter[]] $Parameters = $null
+    [VSResource[]] $Resources = $null
+    [FnTransform[]] $Transform = $null
 
     static [string] Help() {
         $help = "This is the Template help."
@@ -27,38 +36,104 @@ class VSTemplate : VSObject {
         return $this.ToJson()
     }
 
-    [void] AddTransform([Include] $include) {
-        if ($null -ne $this._transform) {
-            throw "The Template already contains a Transform!"
+    [void] AddCondition([object] $condition) {
+        if ($condition -is [VSCondition] -and $this._conditions.ContainsKey($condition.LogicalId)) {
+            throw [VSError]::DuplicateLogicalId($condition,'Condition')
+        }
+        elseif ($condition -is [VSCondition]) {
+            $this._conditions[$condition.LogicalId] = $condition.Condition
+        }
+        elseif ($condition -is [FnTransform]) {
+            if ($this._conditions.ContainsKey($condition.LogicalId)) {
+                $this._conditions[$condition.LogicalId] += $condition.ToOrderedDictionary()
+            }
+            else {
+                $this._conditions[$condition.LogicalId] = $condition.ToOrderedDictionary()
+            }
+        }
+        elseif ($cast = $condition -as [FnTransform]) {
+            if ($this._conditions.ContainsKey($condition.LogicalId)) {
+                $this._conditions[$condition.LogicalId] += $cast.ToOrderedDictionary()
+            }
+            else {
+                $this._conditions[$condition.LogicalId] = $cast.ToOrderedDictionary()
+            }
         }
         else {
-            $this._transform = $include.ToOrderedDictionary()
+            throw [VSError]::InvalidType($condition,@([VSCondition],[FnTransform]))
+        }
+        $this._conditionsOriginal += $condition
+    }
+
+    [void] AddCondition([object[]] $conditions) {
+        $conditions | ForEach-Object {
+            $this.AddCondition($_)
+        }
+    }
+
+    [void] AddTransform([object] $transform) {
+        if ($transform -is [string]) {
+            $this._transform += $transform
+        }
+        elseif ($transform -is [FnTransform]) {
+            $this._transform += $transform.ToOrderedDictionary()
+        }
+        elseif ($cast = $transform -as [FnTransform]) {
+            $this._transform += $cast.ToOrderedDictionary()
+        }
+        else {
+            throw [VSError]::InvalidType($transform,@([string],[FnTransform]))
+        }
+    }
+
+    [void] AddTransform([object[]] $transforms) {
+        $transforms | ForEach-Object {
+            $this.AddTransform($_)
         }
     }
 
     [void] AddSAMTransform() {
-        $this._transform = 'AWS::Serverless-2016-10-31'
+        $this.AddTransform('AWS::Serverless-2016-10-31')
     }
 
-    [void] AddMapping([VSMapping] $mapping) {
-        if ($this._mappings.ContainsKey($mapping.LogicalId)) {
-            throw "The Template already contains a Mapping with a LogicalId of '$($mapping.LogicalId)'. LogicalIds must be unique within the Template."
+    [void] AddMapping([object] $mapping) {
+        if ($mapping -is [VSMapping] -and $this._mappings.ContainsKey($mapping.LogicalId)) {
+            throw [VSError]::DuplicateLogicalId($mapping,'Mapping')
+        }
+        elseif ($mapping -is [VSMapping]) {
+            $this._mappings[$mapping.LogicalId] = $mapping.Map
+        }
+        elseif ($mapping -is [FnTransform]) {
+            if ($this._mappings.ContainsKey($mapping.LogicalId)) {
+                $this._mappings[$mapping.LogicalId] += $mapping.ToOrderedDictionary()
+            }
+            else {
+                $this._mappings[$mapping.LogicalId] = $mapping.ToOrderedDictionary()
+            }
+        }
+        elseif ($cast = $mapping -as [FnTransform]) {
+            if ($this._mappings.ContainsKey($mapping.LogicalId)) {
+                $this._mappings[$mapping.LogicalId] += $cast.ToOrderedDictionary()
+            }
+            else {
+                $this._mappings[$mapping.LogicalId] = $cast.ToOrderedDictionary()
+            }
         }
         else {
-            $this._mappings[$mapping.LogicalId] = $mapping.Map
-            $this._mappingsOriginal += $mapping
+            throw [VSError]::InvalidType($mapping,@([VSMapping],[FnTransform]))
         }
+        $this._mappingsOriginal += $mapping
     }
 
-    [void] AddMapping([VSMapping[]] $mappings) {
+    [void] AddMapping([object[]] $mappings) {
         $mappings | ForEach-Object {
             $this.AddMapping($_)
         }
     }
 
-    [void] AddParameter([VSParameter] $parameter) {
+    [void] AddParameter([object] $parameter) {
         if ($this._parameters.ContainsKey($parameter.LogicalId)) {
-            throw "The Template already contains a Parameter with a LogicalId of '$($parameter.LogicalId)'. LogicalIds must be unique within the Template."
+            throw [VSError]::DuplicateLogicalId($parameter,'Parameter')
         }
         else {
             $cleaned = [ordered]@{}
@@ -73,17 +148,17 @@ class VSTemplate : VSObject {
         }
     }
 
-    [void] AddParameter([VSParameter[]] $parameters) {
+    [void] AddParameter([object[]] $parameters) {
         $parameters | ForEach-Object {
             $this.AddParameter($_)
         }
     }
 
-    [void] AddOutput([VSOutput] $output) {
-        if ($this._ouputs.ContainsKey($output.LogicalId)) {
-            throw "The Template already contains an Output with a LogicalId of '$($output.LogicalId)'. LogicalIds must be unique within the Template."
+    [void] AddOutput([object] $output) {
+        if ($output -is [VSOutput] -and $this._outputs.ContainsKey($output.LogicalId)) {
+            throw [VSError]::DuplicateLogicalId($output,'Output')
         }
-        else {
+        elseif ($output -is [VSOutput]) {
             $cleaned = [ordered]@{}
             $safeList = [VSOutput]::new().PSObject.Properties.Name
             $output.ToOrderedDictionary().GetEnumerator() | ForEach-Object {
@@ -91,52 +166,79 @@ class VSTemplate : VSObject {
                     $cleaned[$_.Key] = $_.Value
                 }
             }
-            $this._ouputs[$output.LogicalId] = $cleaned
-            $this._ouputsOriginal += $output
+            $this._outputs[$output.LogicalId] = $cleaned
         }
+        elseif ($output -is [FnTransform]) {
+            if ($this._outputs.ContainsKey($output.LogicalId)) {
+                $this._outputs[$output.LogicalId] += $output.ToOrderedDictionary()
+            }
+            else {
+                $this._outputs[$output.LogicalId] = $output.ToOrderedDictionary()
+            }
+        }
+        elseif ($cast = $output -as [FnTransform]) {
+            if ($this._outputs.ContainsKey($output.LogicalId)) {
+                $this._outputs[$output.LogicalId] += $cast.ToOrderedDictionary()
+            }
+            else {
+                $this._outputs[$output.LogicalId] = $cast.ToOrderedDictionary()
+            }
+        }
+        else {
+            throw [VSError]::InvalidType($output,@([VSOutput],[FnTransform]))
+        }
+        $this._outputsOriginal += $output
     }
 
-    [void] AddOutput([VSOutput[]] $outputs) {
+    [void] AddOutput([object[]] $outputs) {
         $outputs | ForEach-Object {
             $this.AddOutput($_)
         }
     }
 
-    [void] AddResource([VSResource] $resource) {
-        if ($this._resources.ContainsKey($resource.LogicalId)) {
-            throw "The Template already contains a Resource with a LogicalId of '$($resource.LogicalId)'. LogicalIds must be unique within the Template."
+    [void] AddResource([object] $resource) {
+        if ($resource -is [VSResource] -and $resource.LogicalId -ne 'Fn::Transform' -and $this._resources.ContainsKey($resource.LogicalId)) {
+            throw [VSError]::DuplicateLogicalId($resource,'Resource')
         }
-        else {
+        elseif ($resource -is [VSResource]) {
             $cleaned = [ordered]@{}
             $safeList = [VSResource]::new().PSObject.Properties.Name
             $resource.ToOrderedDictionary().GetEnumerator() | ForEach-Object {
-                if ($_.Key -in $safeList) {
+                if ($resource.LogicalId -eq 'Fn::Transform' -or $_.Key -in $safeList) {
                     $cleaned[$_.Key] = $_.Value
                 }
             }
             $this._resources[$resource.LogicalId] = $cleaned
-            $this._resourcesOriginal += $resource
         }
+        elseif ($resource -is [FnTransform]) {
+            if ($this._resources.ContainsKey($resource.LogicalId)) {
+                $this._resources[$resource.LogicalId] += $resource.ToOrderedDictionary()
+            }
+            else {
+                $this._resources[$resource.LogicalId] = $resource.ToOrderedDictionary()
+            }
+        }
+        elseif ($cast = $resource -as [FnTransform]) {
+            if ($this._resources.ContainsKey($resource.LogicalId)) {
+                $this._resources[$resource.LogicalId] += $cast.ToOrderedDictionary()
+            }
+            else {
+                $this._resources[$resource.LogicalId] = $cast.ToOrderedDictionary()
+            }
+        }
+        else {
+            throw [VSError]::InvalidType($resource,@([VSResource],[FnTransform]))
+        }
+        $this._resourcesOriginal += $resource
     }
 
-    [void] AddResource([VSResource[]] $resources) {
+    [void] AddResource([object[]] $resources) {
         $resources | ForEach-Object {
             $this.AddResource($_)
         }
     }
 
     hidden [void] _addAccessors() {
-        $this | Add-Member -Force -MemberType 'ScriptProperty' -Name 'Transform' -Value {
-            $this._transform
-        } -SecondValue {
-            param([object] $value)
-            if ($value.ToString() -match 'Serverless') {
-                $this.AddSAMTransform()
-            }
-            else {
-                $this.AddTransform($value)
-            }
-        }
         $this | Add-Member -Force -MemberType 'ScriptProperty' -Name 'AWSTemplateFormatVersion' -Value {
             $this._awsTemplateFormatVersion
         } -SecondValue {
@@ -149,6 +251,20 @@ class VSTemplate : VSObject {
             param([string] $value)
             $this._description = $value
         }
+        $this | Add-Member -Force -MemberType 'ScriptProperty' -Name 'Conditions' -Value {
+            if ($MyInvocation.Line -match '\.Conditions') {
+                $this._conditionsOriginal
+            }
+            else {
+                $this._conditions
+            }
+        } -SecondValue {
+            param([object[]] $value)
+            if ($null -eq $this._conditions) {
+                $this._conditions = [ordered]@{}
+            }
+            $this.AddCondition($value)
+        }
         $this | Add-Member -Force -MemberType 'ScriptProperty' -Name 'Mappings' -Value {
             if ($MyInvocation.Line -match '\.Mappings') {
                 $this._mappingsOriginal
@@ -157,11 +273,25 @@ class VSTemplate : VSObject {
                 $this._mappings
             }
         } -SecondValue {
-            param([VSMapping[]] $value)
+            param([object[]] $value)
             if ($null -eq $this._mappings) {
                 $this._mappings = [ordered]@{}
             }
             $this.AddMapping($value)
+        }
+        $this | Add-Member -Force -MemberType 'ScriptProperty' -Name 'Outputs' -Value {
+            if ($MyInvocation.Line -match '\.Outputs') {
+                $this._outputsOriginal
+            }
+            else {
+                $this._outputs
+            }
+        } -SecondValue {
+            param([object[]] $value)
+            if ($null -eq $this._outputs) {
+                $this._outputs = [ordered]@{}
+            }
+            $this.AddOutput($value)
         }
         $this | Add-Member -Force -MemberType 'ScriptProperty' -Name 'Parameters' -Value {
             if ($MyInvocation.Line -match '\.Parameters') {
@@ -171,7 +301,7 @@ class VSTemplate : VSObject {
                 $this._parameters
             }
         } -SecondValue {
-            param([VSParameter[]] $value)
+            param([object[]] $value)
             if ($null -eq $this._parameters) {
                 $this._parameters = [ordered]@{}
             }
@@ -185,24 +315,26 @@ class VSTemplate : VSObject {
                 $this._resources
             }
         } -SecondValue {
-            param([VSResource[]] $value)
+            param([object[]] $value)
             if ($null -eq $this._resources) {
                 $this._resources = [ordered]@{}
-            }
+            }x
             $this.AddResource($value)
         }
         $this | Add-Member -Force -MemberType 'ScriptProperty' -Name 'Transform' -Value {
-            [PSCustomObject]$this._transform
+            $this._transform
         } -SecondValue {
             param([object] $value)
-            if ($null -eq $this._transform) {
-                $this._transform = [ordered]@{}
+            if ($value.ToString() -match 'Serverless') {
+                $this.AddSAMTransform()
             }
-            $this._transform = $value
+            else {
+                $this.AddTransform($value)
+            }
         }
     }
 
     VSTemplate() : base() {}
-    VSTemplate([System.Collections.IDictionary] $props) : base($props) {}
+    VSTemplate([IDictionary] $props) : base($props) {}
     VSTemplate([psobject] $props) : base($props)  {}
 }

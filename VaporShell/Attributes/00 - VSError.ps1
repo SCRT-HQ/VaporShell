@@ -41,6 +41,16 @@ class VSError : ErrorRecord {
         return [VSError]::InsertError($record)
     }
 
+    static [VSError] DuplicateLogicalId([string] $inputObject, [string] $section) {
+        $record = [VSError]::new(
+            [ArgumentException]::new("The Template already contains a $section with a LogicalId of '$($inputObject.LogicalId)'. LogicalIds must be unique within the Template."),
+            'DuplicateLogicalId',
+            [ErrorCategory]::InvalidArgument,
+            $inputObject
+        )
+        return [VSError]::InsertError($record)
+    }
+
     static [VSError] InvalidJsonInput([string] $jsonStringOrFilePath) {
         $record = [VSError]::new(
             [ArgumentException]::new("Unable to convert input data from JSON to PSObject! Please use a JSON string OR provide a valid path to a JSON file!"),
@@ -62,6 +72,14 @@ class VSError : ErrorRecord {
     }
 
     VSError() {}
+
+    VSError([ErrorRecord] $errorRecord) {
+        foreach ($prop in $errorRecord.PSObject.Properties.Name) {
+            if ($null -ne $errorRecord.$prop) {
+                $this.$prop = $errorRecord.$prop
+            }
+        }
+    }
 
     VSError([Exception] $exception, [string] $errorId, [ErrorCategory] $errorCategory, [object] $targetObject) : base($exception, $errorId, $errorCategory, $targetObject) {}
 }

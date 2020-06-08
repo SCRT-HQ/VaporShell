@@ -9,6 +9,15 @@ class VSOutput : VSLogicalObject {
     [string] $Value
     [Export] $Export
 
+    hidden [void] _addAccessors() {
+        $this | Add-Member -Force -MemberType 'ScriptProperty' -Name 'Value' -Value {
+            $this._value
+        } -SecondValue {
+            param([ValidateType([string], [int], [bool], [IntrinsicFunction], [ConditionFunction])] [object] $value)
+            $this._value = $value
+        }
+    }
+
     VSOutput() : base() {}
     VSOutput([IDictionary] $props) : base($props) {}
     VSOutput([psobject] $props) : base($props) {}
