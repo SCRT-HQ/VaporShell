@@ -20,9 +20,6 @@ function New-VaporMetadata {
 
         You can use any of these 3 types for this parameter; "System.Collections.Hashtable","System.Management.Automation.PSCustomObject","Vaporshell.Metadata.Data"
 
-    .PARAMETER NoEcho
-        Whether to mask the parameter value whenever anyone makes a call that describes the stack. If you set the value to true, the parameter value is masked with asterisks (*****).
-
     .EXAMPLE
         $template = Initialize-Vaporshell -Description "Testing Metadata addition"
         $template.AddMetadata(
