@@ -1,6 +1,7 @@
 using namespace System
 using namespace System.Collections
 using namespace System.Collections.Generic
+using namespace System.Collections.Specialized
 using namespace System.Management.Automation
 
 class VSTemplate : VSObject {
@@ -9,16 +10,16 @@ class VSTemplate : VSObject {
 
     hidden [string]$_description = $null
     hidden [string] $_awsTemplateFormatVersion = $null
-    hidden [hashtable] $_mappings = $null
+    hidden [OrderedDictionary] $_mappings = $null
     hidden [object[]] $_mappingsOriginal = @()
-    hidden [hashtable] $_parameters = $null
+    hidden [OrderedDictionary] $_parameters = $null
     hidden [object[]] $_parametersOriginal = @()
-    hidden [hashtable] $_resources = $null
+    hidden [OrderedDictionary] $_resources = $null
     hidden [object[]] $_resourcesOriginal = @()
-    hidden [hashtable] $_outputs = $null
+    hidden [OrderedDictionary] $_outputs = $null
     hidden [object[]] $_outputsOriginal = @()
     hidden [object[]] $_transform = @()
-    hidden [hashtable] $_conditions = $null
+    hidden [OrderedDictionary] $_conditions = $null
     hidden [object[]] $_conditionsOriginal = @()
 
     [string] $AWSTemplateFormatVersion = $null
@@ -40,14 +41,14 @@ class VSTemplate : VSObject {
     }
 
     [void] AddCondition([object] $condition) {
-        if ($condition -is [VSCondition] -and $this._conditions.ContainsKey($condition.LogicalId)) {
+        if ($condition -is [VSCondition] -and $this._conditions.Contains($condition.LogicalId)) {
             throw [VSError]::DuplicateLogicalId($condition,'Condition')
         }
         elseif ($condition -is [VSCondition]) {
             $this._conditions[$condition.LogicalId] = $condition.Condition
         }
         elseif ($condition -is [FnTransform]) {
-            if ($this._conditions.ContainsKey($condition.LogicalId)) {
+            if ($this._conditions.Contains($condition.LogicalId)) {
                 $this._conditions[$condition.LogicalId] += $condition.ToOrderedDictionary()
             }
             else {
@@ -55,7 +56,7 @@ class VSTemplate : VSObject {
             }
         }
         elseif ($cast = $condition -as [FnTransform]) {
-            if ($this._conditions.ContainsKey($condition.LogicalId)) {
+            if ($this._conditions.Contains($condition.LogicalId)) {
                 $this._conditions[$condition.LogicalId] += $cast.ToOrderedDictionary()
             }
             else {
@@ -100,14 +101,14 @@ class VSTemplate : VSObject {
     }
 
     [void] AddMapping([object] $mapping) {
-        if ($mapping -is [VSMapping] -and $this._mappings.ContainsKey($mapping.LogicalId)) {
+        if ($mapping -is [VSMapping] -and $this._mappings.Contains($mapping.LogicalId)) {
             throw [VSError]::DuplicateLogicalId($mapping,'Mapping')
         }
         elseif ($mapping -is [VSMapping]) {
             $this._mappings[$mapping.LogicalId] = $mapping.Map
         }
         elseif ($mapping -is [FnTransform]) {
-            if ($this._mappings.ContainsKey($mapping.LogicalId)) {
+            if ($this._mappings.Contains($mapping.LogicalId)) {
                 $this._mappings[$mapping.LogicalId] += $mapping.ToOrderedDictionary()
             }
             else {
@@ -115,7 +116,7 @@ class VSTemplate : VSObject {
             }
         }
         elseif ($cast = $mapping -as [FnTransform]) {
-            if ($this._mappings.ContainsKey($mapping.LogicalId)) {
+            if ($this._mappings.Contains($mapping.LogicalId)) {
                 $this._mappings[$mapping.LogicalId] += $cast.ToOrderedDictionary()
             }
             else {
@@ -135,7 +136,7 @@ class VSTemplate : VSObject {
     }
 
     [void] AddParameter([object] $parameter) {
-        if ($this._parameters.ContainsKey($parameter.LogicalId)) {
+        if ($this._parameters.Contains($parameter.LogicalId)) {
             throw [VSError]::DuplicateLogicalId($parameter,'Parameter')
         }
         else {
@@ -158,7 +159,7 @@ class VSTemplate : VSObject {
     }
 
     [void] AddOutput([object] $output) {
-        if ($output -is [VSOutput] -and $this._outputs.ContainsKey($output.LogicalId)) {
+        if ($output -is [VSOutput] -and $this._outputs.Contains($output.LogicalId)) {
             throw [VSError]::DuplicateLogicalId($output,'Output')
         }
         elseif ($output -is [VSOutput]) {
@@ -172,7 +173,7 @@ class VSTemplate : VSObject {
             $this._outputs[$output.LogicalId] = $cleaned
         }
         elseif ($output -is [FnTransform]) {
-            if ($this._outputs.ContainsKey($output.LogicalId)) {
+            if ($this._outputs.Contains($output.LogicalId)) {
                 $this._outputs[$output.LogicalId] += $output.ToOrderedDictionary()
             }
             else {
@@ -180,7 +181,7 @@ class VSTemplate : VSObject {
             }
         }
         elseif ($cast = $output -as [FnTransform]) {
-            if ($this._outputs.ContainsKey($output.LogicalId)) {
+            if ($this._outputs.Contains($output.LogicalId)) {
                 $this._outputs[$output.LogicalId] += $cast.ToOrderedDictionary()
             }
             else {
@@ -200,7 +201,7 @@ class VSTemplate : VSObject {
     }
 
     [void] AddResource([object] $resource) {
-        if ($resource -is [VSResource] -and $resource.LogicalId -ne 'Fn::Transform' -and $this._resources.ContainsKey($resource.LogicalId)) {
+        if ($resource -is [VSResource] -and $resource.LogicalId -ne 'Fn::Transform' -and $this._resources.Contains($resource.LogicalId)) {
             throw [VSError]::DuplicateLogicalId($resource,'Resource')
         }
         elseif ($resource -is [VSResource]) {
@@ -214,7 +215,7 @@ class VSTemplate : VSObject {
             $this._resources[$resource.LogicalId] = $cleaned
         }
         elseif ($resource -is [FnTransform]) {
-            if ($this._resources.ContainsKey($resource.LogicalId)) {
+            if ($this._resources.Contains($resource.LogicalId)) {
                 $this._resources[$resource.LogicalId] += $resource.ToOrderedDictionary()
             }
             else {
@@ -222,7 +223,7 @@ class VSTemplate : VSObject {
             }
         }
         elseif ($cast = $resource -as [FnTransform]) {
-            if ($this._resources.ContainsKey($resource.LogicalId)) {
+            if ($this._resources.Contains($resource.LogicalId)) {
                 $this._resources[$resource.LogicalId] += $cast.ToOrderedDictionary()
             }
             else {
