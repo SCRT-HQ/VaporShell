@@ -2,8 +2,6 @@ using namespace System
 using namespace System.Collections
 using namespace System.Collections.Specialized
 class VSHashtable : OrderedDictionary {
-    hidden [string] $_vsFunctionName = $null
-    hidden [string] $_awsDocumentation = $null
     # Anything inheriting from this class will only show the hashtable contents.
     # Object properties will be stripped when cast to JSON/YAML.
     # Useful for adding corresponding public properties for intellisense.
@@ -11,14 +9,11 @@ class VSHashtable : OrderedDictionary {
     hidden [void] _addAccessors() {}
 
     [object] Help() {
-        if ($null -eq $this._vsFunctionName) {
-            return "Help content has not been created for this class. Please open an issue on the GitHub repository to request help for this class."
-        }
-        return (Get-Help $this._vsFunctionName)
+        return $this.Help($null)
     }
 
     [object] Help([string] $scope) {
-        if ($null -eq $this._vsFunctionName) {
+        if ([string]::IsNullOrEmpty($this._vsFunctionName)) {
             return "Help content has not been created for this class. Please open an issue on the GitHub repository to request help for this class."
         }
         $params = @{Name = $this._vsFunctionName}
@@ -40,8 +35,8 @@ class VSHashtable : OrderedDictionary {
     }
 
     [string] Docs() {
-        if ($null -eq $this._awsDocumentation) {
-            return "Documentation link not found! Please open an issue on the GitHub repository to request help for this class."
+        if ([string]::IsNullOrEmpty($this._awsDocumentation)) {
+            return "AWS Documentation link not found for this class!"
         }
         Start-Process $this._awsDocumentation
         return "Opening documentation link: $($this._awsDocumentation)"

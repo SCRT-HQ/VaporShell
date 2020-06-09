@@ -27,7 +27,10 @@ Describe "Class tests: $($env:BHProjectName)" {
             $_.Name -notmatch '_\<staticHelpers\>$'
         }
         $testCase = $types | Foreach-Object {@{type = $_}}
-        $nonEnumTestCases = $testCase | Where-Object {$_['type'].FullName -notin (Get-ChildItem "$projectRoot/$modName/Classes/00 - Enums").BaseName}
+        $helpDocsTestCases = $testCase | Where-Object {
+            $_['type'].FullName -notin ((Get-ChildItem "$projectRoot/$modName/Classes/00 - Enums").BaseName -replace '^\d+ - ') -and
+            $_['type'].FullName -notin ((Get-ChildItem "$projectRoot/$modName/Classes/01 - Base Classes").BaseName -replace '^\d+ - ')
+        }
         It "Class <type> should not throw when instantiated" -TestCases $testCase {
             param($type)
             { $type::new() } | Should -Not -Throw
@@ -36,7 +39,7 @@ Describe "Class tests: $($env:BHProjectName)" {
             param($type)
             { $type::new() | Get-Member -MemberType Method -Name 'Help' } | Should -Not -BeNullOrEmpty
         }
-        It "Class <type> should return Help content with Help()" -TestCases $nonEnumTestCases {
+        It "Class <type> should return Help content with Help()" -TestCases $helpDocsTestCases {
             param($type)
             { $type::new().Help() } | Should -Not -Throw
             $response = $type::new().Help()
@@ -46,7 +49,7 @@ Describe "Class tests: $($env:BHProjectName)" {
             param($type)
             { $type::new() | Get-Member -MemberType Method -Name 'Docs' } | Should -Not -BeNullOrEmpty
         }
-        It "Class <type> should return a string with Docs()" -TestCases $nonEnumTestCases {
+        It "Class <type> should return a string with Docs()" -TestCases $helpDocsTestCases {
             param($type)
             Mock Start-Process -MockWith { }
             { $type::new().Docs() } | Should -Not -Throw

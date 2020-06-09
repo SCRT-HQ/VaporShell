@@ -1,19 +1,14 @@
 class VSObject : object {
-    hidden [string] $_vsFunctionName = $null
-    hidden [string] $_awsDocumentation = $null
     hidden [string[]] $_commonParams = @('Verbose','Debug','ErrorAction','WarningAction','InformationAction','ErrorVariable','WarningVariable','InformationVariable','OutVariable','OutBuffer','PipelineVariable')
 
     hidden [void] _addAccessors() {}
 
     [object] Help() {
-        if ($null -eq $this._vsFunctionName) {
-            return "Help content has not been created for this class. Please open an issue on the GitHub repository to request help for this class."
-        }
-        return (Get-Help $this._vsFunctionName)
+        return $this.Help($null)
     }
 
     [object] Help([string] $scope) {
-        if ($null -eq $this._vsFunctionName) {
+        if ([string]::IsNullOrEmpty($this._vsFunctionName)) {
             return "Help content has not been created for this class. Please open an issue on the GitHub repository to request help for this class."
         }
         $params = @{Name = $this._vsFunctionName}
@@ -35,8 +30,8 @@ class VSObject : object {
     }
 
     [string] Docs() {
-        if ($null -eq $this._awsDocumentation) {
-            return "Documentation link not found! Please open an issue on the GitHub repository to request help for this class."
+        if ([string]::IsNullOrEmpty($this._awsDocumentation)) {
+            return "AWS Documentation link not found for this class!"
         }
         Start-Process $this._awsDocumentation
         return "Opening documentation link: $($this._awsDocumentation)"
