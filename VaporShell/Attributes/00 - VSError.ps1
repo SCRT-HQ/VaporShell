@@ -41,6 +41,16 @@ class VSError : ErrorRecord {
         return [VSError]::InsertError($record)
     }
 
+    static [VSError] MissingLogicalId([object] $inputObject, [string] $section) {
+        $record = [VSError]::new(
+            [ArgumentException]::new("This $($inputObject.GetType()) is missing a LogicalId! Unable to add to $section"),
+            'MissingLogicalId',
+            [ErrorCategory]::InvalidArgument,
+            $inputObject
+        )
+        return [VSError]::InsertError($record)
+    }
+
     static [VSError] DuplicateLogicalId([string] $inputObject, [string] $section) {
         $record = [VSError]::new(
             [ArgumentException]::new("The Template already contains a $section with a LogicalId of '$($inputObject.LogicalId)'. LogicalIds must be unique within the Template."),

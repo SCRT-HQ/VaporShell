@@ -11,4 +11,8 @@ class FnRef : IntrinsicFunction {
     FnRef([string] $ref) {
         $this['Ref'] = $ref
     }
+
+    FnRef([VSAWS] $pseudoParam) {
+        $this['Ref'] = "AWS::$pseudoParam"
+    }
 }

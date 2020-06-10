@@ -37,10 +37,10 @@ class VSResource : VSLogicalObject {
     [FnGetAtt] GetAtt() {
         if ($this._attributes.Count -ne 1) {
             $message = if ($this._attributes.Count -eq 0) {
-                "There are 0 attributes available for this resource! Please use [FnRef] instead."
+                "There are 0 attributes available for this resource! Please use <FnRef> instead."
             }
             else {
-                "There are $($this._attributes.Count) attributes available for this resource! Please specify the attribute you would like to use for [FnGetAtt] instead. Valid attributes for a $($this.GetType().FullName) resource: [ $($this._attributes -join ', ') ]"
+                "There are $($this._attributes.Count) attributes available for this resource! Please specify the attribute you would like to use for <FnGetAtt> instead. Valid attributes for a $($this.GetType().FullName) resource: $($this._attributes -join ', ')"
             }
             $errorRecord = [VSError]::new(
                 [ArgumentException]::new($message),
@@ -56,10 +56,10 @@ class VSResource : VSLogicalObject {
     [FnGetAtt] GetAtt([string] $attributeName) {
         if ($attributeName -notin $this._attributes) {
             $message = if ($this._attributes.Count -eq 0) {
-                "There are 0 attributes available for this resource! Please use [FnRef] instead."
+                "There are 0 attributes available for this resource! Please use <FnRef> instead."
             }
             else {
-                "$attributeName is not a valid attribute for this resource to return via [FnGetAtt].  Valid attributes for a $($this.GetType().FullName) resource: [ $($this._attributes -join ', ') ]"
+                "$attributeName is not a valid attribute for this resource to return via <FnGetAtt>.  Valid attributes for a $($this.GetType().FullName) resource: $($this._attributes -join ', ')"
             }
             $errorRecord = [VSError]::new(
                 [ArgumentException]::new($message),

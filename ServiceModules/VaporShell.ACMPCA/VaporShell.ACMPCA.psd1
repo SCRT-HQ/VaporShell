@@ -54,8 +54,8 @@ Website: https://vaporshell.io/
 
     # Modules that must be imported into the global environment prior to importing this module
     RequiredModules        = @(@{
-  ModuleVersion = '3.0.0'
   ModuleName = 'VaporShell'
+  ModuleVersion = '3.0.0'
 })
 
     # Assemblies that must be loaded prior to importing this module
@@ -128,6 +128,26 @@ Website: https://vaporshell.io/
     # DefaultCommandPrefix = ''
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

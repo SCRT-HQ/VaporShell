@@ -64,7 +64,7 @@ function Convert-SpecToClass {
         $null = New-Item $Dir -ItemType Directory -Force
     }
     $PS1Path = "$Dir\$('{0:0000}' -f $Number) - $ClassName.ps1"
-    Write-BuildLog "Generating $ResourceType class: $ServiceModuleName\$ClassName"
+    Write-BuildLog "[$ServiceModuleName] Generating $ResourceType class: $ClassName"
     $scriptContents = @(
         'using namespace System'
         'using namespace System.Collections'

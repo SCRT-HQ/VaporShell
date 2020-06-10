@@ -49,7 +49,12 @@ class VSHashtable : OrderedDictionary {
     [OrderedDictionary] ToOrderedDictionary([bool] $addAllProperties) {
         $clean = [ordered]@{}
         $this.GetEnumerator() | ForEach-Object {
-            $key = $_.Key
+            $key = if ($_.Name) {
+                $_.Name
+            }
+            else {
+                $_.Key
+            }
             $value = $_.Value
             if (
                 $addAllProperties -or (

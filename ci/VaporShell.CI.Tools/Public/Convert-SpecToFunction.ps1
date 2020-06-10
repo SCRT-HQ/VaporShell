@@ -44,7 +44,7 @@ function Convert-SpecToFunction {
         $null = New-Item $Dir -ItemType Directory -Force
     }
     $PS1Path = [System.IO.Path]::Combine($Dir,"$FunctionName.ps1")
-    Write-BuildLog "Generating $ResourceType function: $moduleName\$FunctionName"
+    Write-BuildLog "[$moduleName] Generating $ResourceType function: $FunctionName"
     $scriptContents = @()
     $scriptContents += @"
 function $FunctionName {

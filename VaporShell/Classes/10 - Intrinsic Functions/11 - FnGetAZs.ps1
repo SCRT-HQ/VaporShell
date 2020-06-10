@@ -8,7 +8,9 @@ class FnGetAZs : IntrinsicFunction {
         return "FnGetAZs($($this['Fn::GetAZs']))"
     }
 
-    FnGetAZs() {}
+    FnGetAZs() {
+        $this['Fn::GetAZs'] = ''
+    }
 
     FnGetAZs([object] $region) {
         $validTypes = @([string], [int], [IntrinsicFunction], [ConditionFunction])

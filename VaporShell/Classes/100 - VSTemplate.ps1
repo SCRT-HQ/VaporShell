@@ -10,16 +10,16 @@ class VSTemplate : VSObject {
 
     hidden [string]$_description = $null
     hidden [string] $_awsTemplateFormatVersion = $null
-    hidden [OrderedDictionary] $_mappings = $null
+    hidden [OrderedDictionary] $_mappings = [ordered]@{}
     hidden [object[]] $_mappingsOriginal = @()
-    hidden [OrderedDictionary] $_parameters = $null
+    hidden [OrderedDictionary] $_parameters = [ordered]@{}
     hidden [object[]] $_parametersOriginal = @()
-    hidden [OrderedDictionary] $_resources = $null
+    hidden [OrderedDictionary] $_resources = [ordered]@{}
     hidden [object[]] $_resourcesOriginal = @()
-    hidden [OrderedDictionary] $_outputs = $null
+    hidden [OrderedDictionary] $_outputs = [ordered]@{}
     hidden [object[]] $_outputsOriginal = @()
     hidden [object[]] $_transform = @()
-    hidden [OrderedDictionary] $_conditions = $null
+    hidden [OrderedDictionary] $_conditions = [ordered]@{}
     hidden [object[]] $_conditionsOriginal = @()
 
     [string] $AWSTemplateFormatVersion = $null
@@ -38,41 +38,6 @@ class VSTemplate : VSObject {
 
     [string] ToString() {
         return $this.ToJson()
-    }
-
-    [void] AddCondition([object] $condition) {
-        if ($condition -is [VSCondition] -and $this._conditions.Contains($condition.LogicalId)) {
-            throw [VSError]::DuplicateLogicalId($condition,'Condition')
-        }
-        elseif ($condition -is [VSCondition]) {
-            $this._conditions[$condition.LogicalId] = $condition.Condition
-        }
-        elseif ($condition -is [FnTransform]) {
-            if ($this._conditions.Contains($condition.LogicalId)) {
-                $this._conditions[$condition.LogicalId] += $condition.ToOrderedDictionary()
-            }
-            else {
-                $this._conditions[$condition.LogicalId] = $condition.ToOrderedDictionary()
-            }
-        }
-        elseif ($cast = $condition -as [FnTransform]) {
-            if ($this._conditions.Contains($condition.LogicalId)) {
-                $this._conditions[$condition.LogicalId] += $cast.ToOrderedDictionary()
-            }
-            else {
-                $this._conditions[$condition.LogicalId] = $cast.ToOrderedDictionary()
-            }
-        }
-        else {
-            throw [VSError]::InvalidType($condition,@([VSCondition],[FnTransform]))
-        }
-        $this._conditionsOriginal += $condition
-    }
-
-    [void] AddCondition([object[]] $conditions) {
-        $conditions | ForEach-Object {
-            $this.AddCondition($_)
-        }
     }
 
     [void] AddTransform([object] $transform) {
@@ -100,144 +65,194 @@ class VSTemplate : VSObject {
         $this.AddTransform('AWS::Serverless-2016-10-31')
     }
 
-    [void] AddMapping([object] $mapping) {
-        if ($mapping -is [VSMapping] -and $this._mappings.Contains($mapping.LogicalId)) {
-            throw [VSError]::DuplicateLogicalId($mapping,'Mapping')
+    [void] AddCondition([object] $item) {
+        if ($null -eq $item.LogicalId) {
+            throw [VSError]::MissingLogicalId($item,'Condition')
         }
-        elseif ($mapping -is [VSMapping]) {
-            $this._mappings[$mapping.LogicalId] = $mapping.Map
+        elseif ($item -is [VSCondition] -and $this._conditions.Contains($item.LogicalId)) {
+            throw [VSError]::DuplicateLogicalId($item,'Condition')
         }
-        elseif ($mapping -is [FnTransform]) {
-            if ($this._mappings.Contains($mapping.LogicalId)) {
-                $this._mappings[$mapping.LogicalId] += $mapping.ToOrderedDictionary()
+        elseif ($item -is [VSCondition]) {
+            $this._conditions[$item.LogicalId] = $item.Condition
+        }
+        elseif ($item -is [FnTransform]) {
+            if ($this._conditions.Contains($item.LogicalId)) {
+                $this._conditions[$item.LogicalId] += $item.ToOrderedDictionary()
             }
             else {
-                $this._mappings[$mapping.LogicalId] = $mapping.ToOrderedDictionary()
+                $this._conditions[$item.LogicalId] = $item.ToOrderedDictionary()
             }
         }
-        elseif ($cast = $mapping -as [FnTransform]) {
-            if ($this._mappings.Contains($mapping.LogicalId)) {
-                $this._mappings[$mapping.LogicalId] += $cast.ToOrderedDictionary()
+        elseif ($cast = $item -as [FnTransform]) {
+            if ($this._conditions.Contains($item.LogicalId)) {
+                $this._conditions[$item.LogicalId] += $cast.ToOrderedDictionary()
             }
             else {
-                $this._mappings[$mapping.LogicalId] = $cast.ToOrderedDictionary()
+                $this._conditions[$item.LogicalId] = $cast.ToOrderedDictionary()
             }
         }
         else {
-            throw [VSError]::InvalidType($mapping,@([VSMapping],[FnTransform]))
+            throw [VSError]::InvalidType($item,@([VSCondition],[FnTransform]))
         }
-        $this._mappingsOriginal += $mapping
+        $this._conditionsOriginal += $item
     }
 
-    [void] AddMapping([object[]] $mappings) {
-        $mappings | ForEach-Object {
+    [void] AddCondition([object[]] $items) {
+        $items | ForEach-Object {
+            $this.AddCondition($_)
+        }
+    }
+
+    [void] AddMapping([object] $item) {
+        if ($null -eq $item.LogicalId) {
+            throw [VSError]::MissingLogicalId($item,'Mapping')
+        }
+        elseif ($item -is [VSMapping] -and $this._mappings.Contains($item.LogicalId)) {
+            throw [VSError]::DuplicateLogicalId($item,'Mapping')
+        }
+        elseif ($item -is [VSMapping]) {
+            $this._mappings[$item.LogicalId] = $item.Map
+        }
+        elseif ($item -is [FnTransform]) {
+            if ($this._mappings.Contains($item.LogicalId)) {
+                $this._mappings[$item.LogicalId] += $item.ToOrderedDictionary()
+            }
+            else {
+                $this._mappings[$item.LogicalId] = $item.ToOrderedDictionary()
+            }
+        }
+        elseif ($cast = $item -as [FnTransform]) {
+            if ($this._mappings.Contains($item.LogicalId)) {
+                $this._mappings[$item.LogicalId] += $cast.ToOrderedDictionary()
+            }
+            else {
+                $this._mappings[$item.LogicalId] = $cast.ToOrderedDictionary()
+            }
+        }
+        else {
+            throw [VSError]::InvalidType($item,@([VSMapping],[FnTransform]))
+        }
+        $this._mappingsOriginal += $item
+    }
+
+    [void] AddMapping([object[]] $items) {
+        $items | ForEach-Object {
             $this.AddMapping($_)
         }
     }
 
-    [void] AddParameter([object] $parameter) {
-        if ($this._parameters.Contains($parameter.LogicalId)) {
-            throw [VSError]::DuplicateLogicalId($parameter,'Parameter')
+    [void] AddOutput([object] $item) {
+        if ($null -eq $item.LogicalId) {
+            throw [VSError]::MissingLogicalId($item,'Output')
         }
-        else {
-            $cleaned = [ordered]@{}
-            $safeList = [VSParameter]::new().PSObject.Properties.Name
-            $parameter.ToOrderedDictionary().GetEnumerator() | ForEach-Object {
-                if ($_.Key -in $safeList) {
-                    $cleaned[$_.Key] = $_.Value
-                }
-            }
-            $this._parameters[$parameter.LogicalId] = $cleaned
-            $this._parametersOriginal += $parameter
+        elseif ($item -is [VSOutput] -and $this._outputs.Contains($item.LogicalId)) {
+            throw [VSError]::DuplicateLogicalId($item,'Output')
         }
-    }
-
-    [void] AddParameter([object[]] $parameters) {
-        $parameters | ForEach-Object {
-            $this.AddParameter($_)
-        }
-    }
-
-    [void] AddOutput([object] $output) {
-        if ($output -is [VSOutput] -and $this._outputs.Contains($output.LogicalId)) {
-            throw [VSError]::DuplicateLogicalId($output,'Output')
-        }
-        elseif ($output -is [VSOutput]) {
+        elseif ($item -is [VSOutput]) {
             $cleaned = [ordered]@{}
             $safeList = [VSOutput]::new().PSObject.Properties.Name
-            $output.ToOrderedDictionary().GetEnumerator() | ForEach-Object {
+            $item.ToOrderedDictionary().GetEnumerator() | ForEach-Object {
                 if ($_.Key -in $safeList) {
                     $cleaned[$_.Key] = $_.Value
                 }
             }
-            $this._outputs[$output.LogicalId] = $cleaned
+            $this._outputs[$item.LogicalId] = $cleaned
         }
-        elseif ($output -is [FnTransform]) {
-            if ($this._outputs.Contains($output.LogicalId)) {
-                $this._outputs[$output.LogicalId] += $output.ToOrderedDictionary()
+        elseif ($item -is [FnTransform]) {
+            if ($this._outputs.Contains($item.LogicalId)) {
+                $this._outputs[$item.LogicalId] += $item.ToOrderedDictionary()
             }
             else {
-                $this._outputs[$output.LogicalId] = $output.ToOrderedDictionary()
+                $this._outputs[$item.LogicalId] = $item.ToOrderedDictionary()
             }
         }
-        elseif ($cast = $output -as [FnTransform]) {
-            if ($this._outputs.Contains($output.LogicalId)) {
-                $this._outputs[$output.LogicalId] += $cast.ToOrderedDictionary()
+        elseif ($cast = $item -as [FnTransform]) {
+            if ($this._outputs.Contains($item.LogicalId)) {
+                $this._outputs[$item.LogicalId] += $cast.ToOrderedDictionary()
             }
             else {
-                $this._outputs[$output.LogicalId] = $cast.ToOrderedDictionary()
+                $this._outputs[$item.LogicalId] = $cast.ToOrderedDictionary()
             }
         }
         else {
-            throw [VSError]::InvalidType($output,@([VSOutput],[FnTransform]))
+            throw [VSError]::InvalidType($item,@([VSOutput],[FnTransform]))
         }
-        $this._outputsOriginal += $output
+        $this._outputsOriginal += $item
     }
 
-    [void] AddOutput([object[]] $outputs) {
-        $outputs | ForEach-Object {
+    [void] AddOutput([object[]] $items) {
+        $items | ForEach-Object {
             $this.AddOutput($_)
         }
     }
 
-    [void] AddResource([object] $resource) {
-        if ($resource -is [VSResource] -and $resource.LogicalId -ne 'Fn::Transform' -and $this._resources.Contains($resource.LogicalId)) {
-            throw [VSError]::DuplicateLogicalId($resource,'Resource')
+    [void] AddParameter([object] $item) {
+        if ($null -eq $item.LogicalId) {
+            throw [VSError]::MissingLogicalId($item,'Parameter')
         }
-        elseif ($resource -is [VSResource]) {
+        elseif ($this._parameters.Contains($item.LogicalId)) {
+            throw [VSError]::DuplicateLogicalId($item,'Parameter')
+        }
+        else {
             $cleaned = [ordered]@{}
-            $safeList = [VSResource]::new().PSObject.Properties.Name
-            $resource.ToOrderedDictionary().GetEnumerator() | ForEach-Object {
-                if ($resource.LogicalId -eq 'Fn::Transform' -or $_.Key -in $safeList) {
+            $safeList = [VSParameter]::new().PSObject.Properties.Name
+            $item.ToOrderedDictionary().GetEnumerator() | ForEach-Object {
+                if ($_.Key -in $safeList) {
                     $cleaned[$_.Key] = $_.Value
                 }
             }
-            $this._resources[$resource.LogicalId] = $cleaned
+            $this._parameters[$item.LogicalId] = $cleaned
+            $this._parametersOriginal += $item
         }
-        elseif ($resource -is [FnTransform]) {
-            if ($this._resources.Contains($resource.LogicalId)) {
-                $this._resources[$resource.LogicalId] += $resource.ToOrderedDictionary()
+    }
+
+    [void] AddParameter([object[]] $items) {
+        $items | ForEach-Object {
+            $this.AddParameter($_)
+        }
+    }
+
+    [void] AddResource([object] $item) {
+        if ($null -eq $item.LogicalId) {
+            throw [VSError]::MissingLogicalId($item,'Resource')
+        }
+        elseif ($item -is [VSResource] -and $this._resources.Contains($item.LogicalId)) {
+            throw [VSError]::DuplicateLogicalId($item,'Resource')
+        }
+        elseif ($item -is [VSResource]) {
+            $cleaned = [ordered]@{}
+            $safeList = [VSResource]::new().PSObject.Properties.Name
+            $item.ToOrderedDictionary().GetEnumerator() | ForEach-Object {
+                if ($item.LogicalId -eq 'Fn::Transform' -or $_.Key -in $safeList) {
+                    $cleaned[$_.Key] = $_.Value
+                }
+            }
+            $this._resources[$item.LogicalId] = $cleaned
+        }
+        elseif ($item -is [FnTransform]) {
+            if ($this._resources.Contains($item.LogicalId)) {
+                $this._resources[$item.LogicalId] += $item.ToOrderedDictionary()
             }
             else {
-                $this._resources[$resource.LogicalId] = $resource.ToOrderedDictionary()
+                $this._resources[$item.LogicalId] = $item.ToOrderedDictionary()
             }
         }
-        elseif ($cast = $resource -as [FnTransform]) {
-            if ($this._resources.Contains($resource.LogicalId)) {
-                $this._resources[$resource.LogicalId] += $cast.ToOrderedDictionary()
+        elseif ($cast = $item -as [FnTransform]) {
+            if ($this._resources.Contains($item.LogicalId)) {
+                $this._resources[$item.LogicalId] += $cast.ToOrderedDictionary()
             }
             else {
-                $this._resources[$resource.LogicalId] = $cast.ToOrderedDictionary()
+                $this._resources[$item.LogicalId] = $cast.ToOrderedDictionary()
             }
         }
         else {
-            throw [VSError]::InvalidType($resource,@([VSResource],[FnTransform]))
+            throw [VSError]::InvalidType($item,@([VSResource],[FnTransform]))
         }
-        $this._resourcesOriginal += $resource
+        $this._resourcesOriginal += $item
     }
 
-    [void] AddResource([object[]] $resources) {
-        $resources | ForEach-Object {
+    [void] AddResource([object[]] $items) {
+        $items | ForEach-Object {
             $this.AddResource($_)
         }
     }

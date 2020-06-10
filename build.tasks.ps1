@@ -1,4 +1,3 @@
-
 Param(
     [Parameter(Mandatory, Position = 0)]
     [String]
@@ -44,19 +43,27 @@ Param(
     $CoreOnly
 )
 
+# Synopsis: Default task
 Task . Build, Import
+
+# Synopsis: Builds everything
+Task Build  Init, Clean, BuildMain, BuildSubmodules, BuildDotnet
+
+# Synopsis: Cleans and builds just the classes
+Task BuildClasses BuildMainClasses, BuildSubmodules
 
 # Synopsis: Builds only the core components and submodules, excluding Resource Types and Resource Property Types
 Task BuildCoreOnly Init, Clean, {$Script:NoUpdate = $true}, BuildMain, BuildSubmodules, BuildDotnet
+
+# Synopsis: Run Pester tests for classes only (no Clean/Compile)
+Task TestClasses Init, { $script:TestPath = [System.IO.Path]::Combine($BuildRoot,"Tests","Class Tests") }, Test
 
 # Synopsis: Run all core tasks
 Task Full Init, Build, Import, PesterBefore, Test, BuildReleaseZips
 
 Task Init {
     Import-Module Configuration
-    Get-ChildItem (Join-Path $PSScriptRoot 'ci') -Filter '*.ps1' | Where-Object { $_.BaseName -notmatch "(GitHubReleaseNotes|gist\.githubusercontent\.com.*scrthq)" } | ForEach-Object {
-        . $_.FullName
-    }
+    Import-Module $([System.IO.Path]::Combine($BuildRoot,'ci','VaporShell.CI.Tools')) -Force
     $Script:SourceModuleDirectory = [System.IO.Path]::Combine($BuildRoot, $ModuleName)
     $Script:GalleryVersion = (Get-PSGalleryVersion $ModuleName).Version
     $Script:SourceManifestPath = Join-Path $SourceModuleDirectory "$($ModuleName).psd1"
@@ -124,7 +131,7 @@ Task CleanSubmodules Init, {
     }
 }
 
-Task Update -If { -not $NoUpdate -and -not $CoreOnly } {
+Task Update -If { -not $NoUpdate -and -not $CoreOnly } Init, {
     git submodule update --recursive
     Import-Module ([System.IO.Path]::Combine($BuildRoot,'ci','VaporShell.CI.Tools')) -Verbose
     Write-BuildLog 'Updating Resource and Property Type functions with current AWS spec sheet...'
@@ -148,23 +155,23 @@ Task BuildSubmodules Init,CleanSubmodules, {
         $functionsToExport = @()
         $aliasesToExport = @()
         if (-not (Test-Path $subTargetVersionDirectory)) {
-            Write-BuildLog "Creating target folder for module: $sub..."
+            Write-BuildLog "[$sub] Creating target folder for module"
             New-Item -Path $subTargetVersionDirectory -ItemType Directory -Force
         }
-        Write-BuildLog "Copying source PSM1 to target folder for submodule: $sub"
+        Write-BuildLog "[$sub] Copying source PSM1 to target folder for module"
         $psm1 = Copy-Item -Path $subSourcePSM1Path -Destination $subTargetVersionDirectory -PassThru -Force
 
-        Write-BuildLog "Bumping source manifest version from '$ManifestVersion' to '$NextModuleVersion' to prevent errors"
+        Write-BuildLog "[$sub] Bumping source manifest version from '$ManifestVersion' to '$NextModuleVersion' to prevent errors"
         Update-Metadata -Path $subSourceManifestPath -PropertyName ModuleVersion -Value $NextModuleVersion
 
-        Write-BuildLog "Setting source manifest RequiredModules to VaporShell@$ManifestVersion"
-        Update-Metadata -Path $subSourceManifestPath -PropertyName RequiredModules -Value @(@{ModuleName = 'VaporShell';ModuleVersion = $ManifestVersion})
+        Write-BuildLog "[$sub] Setting source manifest RequiredModules to VaporShell@$ManifestVersion"
+        Update-Metadata -Path $subSourceManifestPath -PropertyName RequiredModules -Value @([ordered]@{ModuleName = 'VaporShell';ModuleVersion = $ManifestVersion})
 
-        Write-BuildLog "Copying content from source manifest to target manifest"
+        Write-BuildLog "[$sub] Copying content from source manifest to target manifest"
         ([System.IO.File]::ReadAllText($subSourceManifestPath)).Trim() | Set-Content $subSourceManifestPath
 
         # Copy over manifest
-        Write-BuildLog "Copying source manifest to target folder"
+        Write-BuildLog "[$sub] Copying source manifest to target folder"
         Copy-Item -Path $subSourceManifestPath -Destination $subTargetVersionDirectory
 
         $updatedScriptsToProcess = @()
@@ -177,8 +184,8 @@ Task BuildSubmodules Init,CleanSubmodules, {
                 $toProcess = Get-ChildItem -Path $gciPath -Filter "*.ps1" -Recurse -File | Where-Object {$_.FullName -notlike "*Development Tools*"} | Sort-Object FullName
                 if ($toProcess) {
                     $target = if ($scope -match '^(Attributes|Classes)$') {
-                        New-Item -Path ([System.IO.Path]::Combine($subTargetVersionDirectory, "$scope.ps1")) -ItemType File -Force
-                        $updatedScriptsToProcess += "$scope.ps1"
+                        New-Item -Path ([System.IO.Path]::Combine($subTargetVersionDirectory, "$sub.$scope.ps1")) -ItemType File -Force
+                        $updatedScriptsToProcess += "$sub.$scope.ps1"
                     }
                     else {
                         $psm1
@@ -186,9 +193,9 @@ Task BuildSubmodules Init,CleanSubmodules, {
                     if ($scope -match '^(Attributes|Classes)$') {
                         "[CmdletBinding()]`nParam()`n" | Add-Content -Path $target -Encoding UTF8
                     }
-                    Write-BuildLog "Copying contents from files in source folder '$($scope)' to $($target.Name)"
+                    Write-BuildLog "[$sub] Copying contents from files in source folder '$($scope)' to $($target.Name)"
                     $toProcess | ForEach-Object {
-                        Write-BuildLog "Working on: $($_.FullName.Replace("$gciPath$([System.IO.Path]::DirectorySeparatorChar)",''))"
+                        Write-BuildLog "[$sub] Working on: $($_.FullName.Replace("$gciPath$([System.IO.Path]::DirectorySeparatorChar)",''))"
                         $content = Get-Content $_.FullName
                         if ($usingStatements = $content | Where-Object { $_ -match '^\s*using\s+(module|namespace|assembly)\s+\w+.*$' }) {
                             switch ($scope) {
@@ -229,22 +236,19 @@ Task BuildSubmodules Init,CleanSubmodules, {
                 ($newContents -join "`n") | Set-Content $path -Encoding UTF8 -Force
             }
             { $attributesUsingStatements.Count -ge 1 } {
-                Write-BuildLog "Adding using statements to Attributes.ps1"
-                $path = [System.IO.Path]::Combine($subTargetVersionDirectory, "Attributes.ps1")
+                Write-BuildLog "[$sub] Adding using statements to $($sub).Attributes.ps1"
+                $path = [System.IO.Path]::Combine($subTargetVersionDirectory, "$($sub).Attributes.ps1")
                 $cleanContents = (($attributesUsingStatements | ForEach-Object { $_.Trim() }) | Sort-Object -Unique) -join "`n"
-                if (-not (Test-Path $path)) {
-                    New-Item -Path $path -ItemType File
-                }
                 $currentContents = Get-Content $path -Raw
                 $newContents = @($cleanContents, $currentContents)
                 ($newContents -join "`n") | Set-Content $path -Encoding UTF8 -Force
             }
             { $classesUsingStatements.Count -ge 1 } {
-                Write-BuildLog "Adding using statements to Classes.ps1"
-                $path = [System.IO.Path]::Combine($subTargetVersionDirectory, "Classes.ps1")
+                Write-BuildLog "[$sub] Adding using statements to $($sub).Classes.ps1"
+                $path = [System.IO.Path]::Combine($subTargetVersionDirectory, "$($sub).Classes.ps1")
                 $cleanContents = (($classesUsingStatements | ForEach-Object { $_.Trim() }) | Sort-Object -Unique) -join "`n"
                 if (-not (Test-Path $path)) {
-                    New-Item -Path $path -ItemType File
+                    $null = New-Item -Path $path -ItemType File
                 }
                 $currentContents = Get-Content $path -Raw
                 $newContents = @($cleanContents, $currentContents)
@@ -256,7 +260,7 @@ Task BuildSubmodules Init,CleanSubmodules, {
         }
 
         Get-ChildItem -Path $subSourceModuleDirectory -Directory | Where-Object { $_.BaseName -notin @('Attributes','Classes', 'Private', 'Public') } | ForEach-Object {
-            Write-BuildLog "Copying source folder to target: $($_.BaseName)"
+            Write-BuildLog "[$sub] Copying source folder to target: $($_.BaseName)"
             Copy-Item $_.FullName -Destination $subTargetVersionDirectory -Container -Recurse
         }
 
@@ -271,14 +275,14 @@ Task BuildSubmodules Init,CleanSubmodules, {
             Update-Metadata @params -PropertyName AliasesToExport -Value ($aliasesToExport | Sort-Object)
         }
 
-        Write-BuildLog "Updating target manifest file with exports"
+        Write-BuildLog "[$sub] Updating target manifest file with exports"
 
-        Write-BuildLog "Reverting bumped source manifest version from '$NextModuleVersion' to '$ManifestVersion'"
+        Write-BuildLog "[$sub] Reverting bumped source manifest version from '$NextModuleVersion' to '$ManifestVersion'"
         Update-Metadata -Path $subSourceManifestPath -PropertyName ModuleVersion -Value $ManifestVersion
         ([System.IO.File]::ReadAllText($subSourceManifestPath)).Trim() | Set-Content $subSourceManifestPath
 
-        Write-BuildLog "Created compiled module at [$subTargetVersionDirectory]!"
-        Write-BuildLog 'Output version directory contents:'
+        Write-BuildLog "[$sub] Created compiled module at [$subTargetVersionDirectory]!"
+        Write-BuildLog "[$sub] Output version directory contents:"
         Get-ChildItem $subTargetVersionDirectory | Format-Table -AutoSize
     }
 }
@@ -314,7 +318,7 @@ Task BuildMain UpdateFromSpecification, {
     }
 
     # Copy over manifest
-    Write-BuildLog "Copying source manifest to target folder"
+    Write-BuildLog "[$ModuleName] Copying source manifest to target folder"
     Copy-Item -Path $SourceManifestPath -Destination $TargetVersionDirectory
 
     $updatedScriptsToProcess = @()
@@ -327,8 +331,8 @@ Task BuildMain UpdateFromSpecification, {
             $toProcess = Get-ChildItem -Path $gciPath -Filter "*.ps1" -Recurse -File | Where-Object {$_.FullName -notlike "*Development Tools*"} | Sort-Object FullName
             if ($toProcess) {
                 $target = if ($scope -match '^(Attributes|Classes)$') {
-                    New-Item -Path ([System.IO.Path]::Combine($TargetVersionDirectory, "$scope.ps1")) -ItemType File -Force
-                    $updatedScriptsToProcess += "$scope.ps1"
+                    New-Item -Path ([System.IO.Path]::Combine($TargetVersionDirectory, "$($ModuleName).$scope.ps1")) -ItemType File -Force
+                    $updatedScriptsToProcess += "$($ModuleName).$scope.ps1"
                 }
                 else {
                     $psm1
@@ -336,9 +340,9 @@ Task BuildMain UpdateFromSpecification, {
                 if ($scope -match '^(Attributes|Classes)$') {
                     "[CmdletBinding()]`nParam()`n" | Add-Content -Path $target -Encoding UTF8
                 }
-                Write-BuildLog "Copying contents from files in source folder '$($scope)' to $($target.Name)"
+                Write-BuildLog "[$ModuleName] Copying contents from files in source folder '$($scope)' to $($target.Name)"
                 $toProcess | ForEach-Object {
-                    Write-BuildLog "Working on: $($_.FullName.Replace("$gciPath$([System.IO.Path]::DirectorySeparatorChar)",''))"
+                    Write-BuildLog "[$ModuleName] [$ModuleName] Working on: $($_.FullName.Replace("$gciPath$([System.IO.Path]::DirectorySeparatorChar)",''))"
                     $content = Get-Content $_.FullName
                     if ($usingStatements = $content | Where-Object { $_ -match '^\s*using\s+(module|namespace|assembly)\s+\w+.*$' }) {
                         switch ($scope) {
@@ -368,7 +372,7 @@ Task BuildMain UpdateFromSpecification, {
     }
     switch ($true) {
         { $psm1UsingStatements.Count -ge 1 } {
-            Write-BuildLog "Adding using statements to PSM1"
+            Write-BuildLog "[$ModuleName] Adding using statements to PSM1"
             $path = $psm1.FullName
             $cleanContents = (($psm1UsingStatements | ForEach-Object { $_.Trim() }) | Sort-Object -Unique) -join "`n"
             if (-not (Test-Path $path)) {
@@ -379,8 +383,8 @@ Task BuildMain UpdateFromSpecification, {
             ($newContents -join "`n") | Set-Content $path -Encoding UTF8 -Force
         }
         { $attributesUsingStatements.Count -ge 1 } {
-            Write-BuildLog "Adding using statements to Attributes.ps1"
-            $path = [System.IO.Path]::Combine($TargetVersionDirectory, "Attributes.ps1")
+            Write-BuildLog "[$ModuleName] Adding using statements to $($ModuleName).Attributes.ps1"
+            $path = [System.IO.Path]::Combine($TargetVersionDirectory, "$($ModuleName).Attributes.ps1")
             $cleanContents = (($attributesUsingStatements | ForEach-Object { $_.Trim() }) | Sort-Object -Unique) -join "`n"
             if (-not (Test-Path $path)) {
                 New-Item -Path $path -ItemType File
@@ -390,8 +394,8 @@ Task BuildMain UpdateFromSpecification, {
             ($newContents -join "`n") | Set-Content $path -Encoding UTF8 -Force
         }
         { $classesUsingStatements.Count -ge 1 } {
-            Write-BuildLog "Adding using statements to Classes.ps1"
-            $path = [System.IO.Path]::Combine($TargetVersionDirectory, "Classes.ps1")
+            Write-BuildLog "[$ModuleName] Adding using statements to $($ModuleName).Classes.ps1"
+            $path = [System.IO.Path]::Combine($TargetVersionDirectory, "$($ModuleName).Classes.ps1")
             $cleanContents = (($classesUsingStatements | ForEach-Object { $_.Trim() }) | Sort-Object -Unique) -join "`n"
             if (-not (Test-Path $path)) {
                 New-Item -Path $path -ItemType File
@@ -406,12 +410,12 @@ Task BuildMain UpdateFromSpecification, {
     }
 
     Get-ChildItem -Path $SourceModuleDirectory -Directory | Where-Object { $_.BaseName -notin @('Attributes','Classes', 'Private', 'Public') } | ForEach-Object {
-        Write-BuildLog "Copying source folder to target: $($_.BaseName)"
+        Write-BuildLog "[$ModuleName] Copying source folder to target: $($_.BaseName)"
         Copy-Item $_.FullName -Destination $TargetVersionDirectory -Container -Recurse
     }
 
     Write-BuildLog 'Copying latest AWSSDK assembly dependencies to output path'
-    Save-Module 'AWS.Tools.CloudFormation', 'AWS.Tools.S3' -Path $PSScriptRoot -Repository PSGallery -Force
+    Save-Module 'AWS.Tools.CloudFormation', 'AWS.Tools.S3' -Path $BuildRoot -Repository PSGallery -Force
     Get-Item 'AWS.Tools.*' | ForEach-Object {
         Get-ChildItem $_.FullName -Recurse -Filter 'AWSSDK.*.dll' | Copy-Item -Destination $TargetVersionDirectory -Recurse -ErrorAction SilentlyContinue
         Remove-Item $_.FullName -Recurse -Force
@@ -485,15 +489,15 @@ Task BuildMain UpdateFromSpecification, {
         AliasesToExport   = ($aliasesToExport | Sort-Object)
     }
 
-    Write-BuildLog "Updating target manifest file with exports"
+    Write-BuildLog "[$ModuleName] Updating target manifest file with exports"
     Update-ModuleManifest @params
 
     if ($ManifestVersion -ne $NextModuleVersion) {
-        Write-BuildLog "Reverting bumped source manifest version from '$NextModuleVersion' to '$ManifestVersion'"
+        Write-BuildLog "[$ModuleName] Reverting bumped source manifest version from '$NextModuleVersion' to '$ManifestVersion'"
         Update-Metadata -Path $SourceManifestPath -PropertyName ModuleVersion -Value $ManifestVersion
         ([System.IO.File]::ReadAllText($SourceManifestPath)).Trim() | Set-Content $SourceManifestPath
     }
-    Write-BuildLog "Created compiled module at [$TargetVersionDirectory]!"
+    Write-BuildLog "[$ModuleName] Created compiled module at [$TargetVersionDirectory]!"
     Write-BuildLog 'Output version directory contents:'
     Get-ChildItem $TargetVersionDirectory | Format-Table -AutoSize
 }
@@ -506,12 +510,12 @@ Task BuildMainClasses Init, {
         $gciPath = [System.IO.Path]::Combine($SourceModuleDirectory, $scope)
         if (Test-Path $gciPath) {
 
-            $target = New-Item -Path ([System.IO.Path]::Combine($TargetVersionDirectory, "$scope.ps1")) -ItemType File -Force
-            $updatedScriptsToProcess += "$scope.ps1"
+            $target = New-Item -Path ([System.IO.Path]::Combine($TargetVersionDirectory, "$($ModuleName).$scope.ps1")) -ItemType File -Force
+            $updatedScriptsToProcess += "$($ModuleName).$scope.ps1"
 
-            Write-BuildLog "Copying contents from files in source folder '$($scope)' to $($target.Name)"
+            Write-BuildLog "[$ModuleName] Copying contents from files in source folder '$($scope)' to $($target.Name)"
             Get-ChildItem -Path $gciPath -Filter "*.ps1" -Recurse -File | Sort-Object FullName | ForEach-Object {
-                Write-BuildLog "Working on: $($_.FullName.Replace("$gciPath$([System.IO.Path]::DirectorySeparatorChar)",''))"
+                Write-BuildLog "[$ModuleName] Working on: $($_.FullName.Replace("$gciPath$([System.IO.Path]::DirectorySeparatorChar)",''))"
                 $content = Get-Content $_.FullName
                 if ($usingStatements = $content | Where-Object { $_ -match '^\s*using\s+(module|namespace|assembly)\s+\w+.*$' }) {
                     switch ($scope) {
@@ -531,8 +535,8 @@ Task BuildMainClasses Init, {
     }
     switch ($true) {
         { $attributesUsingStatements.Count -ge 1 } {
-            Write-BuildLog "Adding using statements to Attributes.ps1"
-            $path = [System.IO.Path]::Combine($TargetVersionDirectory, "Attributes.ps1")
+            Write-BuildLog "[$ModuleName] Adding using statements to $($ModuleName).Attributes.ps1"
+            $path = [System.IO.Path]::Combine($TargetVersionDirectory, "$($ModuleName).Attributes.ps1")
             $cleanContents = (($attributesUsingStatements | ForEach-Object { $_.Trim() }) | Sort-Object -Unique) -join "`n"
             if (-not (Test-Path $path)) {
                 New-Item -Path $path -ItemType File
@@ -542,8 +546,8 @@ Task BuildMainClasses Init, {
             ($newContents -join "`n") | Set-Content $path -Encoding UTF8 -Force
         }
         { $classesUsingStatements.Count -ge 1 } {
-            Write-BuildLog "Adding using statements to Classes.ps1"
-            $path = [System.IO.Path]::Combine($TargetVersionDirectory, "Classes.ps1")
+            Write-BuildLog "[$ModuleName] Adding using statements to $($ModuleName).Classes.ps1"
+            $path = [System.IO.Path]::Combine($TargetVersionDirectory, "$($ModuleName).Classes.ps1")
             $cleanContents = (($classesUsingStatements | ForEach-Object { $_.Trim() }) | Sort-Object -Unique) -join "`n"
             if (-not (Test-Path $path)) {
                 New-Item -Path $path -ItemType File
@@ -557,11 +561,6 @@ Task BuildMainClasses Init, {
         Update-Metadata -Path $TargetManifestPath -PropertyName ScriptsToProcess -Value $updatedScriptsToProcess
     }
 }
-
-Task BuildClasses BuildMainClasses, BuildSubmodules
-
-# Synopsis: Builds everything
-Task Build  Init, Clean, BuildMain, BuildSubmodules, BuildDotnet
 
 # Synopsis: Imports the newly compiled module
 Task Import -If { Test-Path $TargetManifestPath } Init, {
@@ -645,12 +644,9 @@ Task Test Init, PesterBefore, {
     }
 }
 
-# Synopsis: Run Pester tests for classes only (no Clean/Compile)
-Task TestClasses Init, { $script:TestPath = [System.IO.Path]::Combine($BuildRoot,"Tests","Class Tests") }, Test
-
 # Synopsis: Run PSScriptAnalyzer
 Task Analyze Init, {
-    $analysis = Invoke-ScriptAnalyzer -Path "$PSScriptRoot\$($env:BHProjectName)" -Recurse -Verbose:$false
+    $analysis = Invoke-ScriptAnalyzer -Path "$BuildRoot\$($env:BHProjectName)" -Recurse -Verbose:$false
     $errors = $analysis | Where-Object { $_.Severity -eq 'Error' }
     $warnings = $analysis | Where-Object { $_.Severity -eq 'Warning' }
 
