@@ -31,8 +31,15 @@ function Update-VSResourceFunctions {
             foreach ($resource in $serviceModule.Group) {
                 # NEED: Build dependency tree to output classes in the correct order
                 Write-Verbose "[$($serviceModule.Name)] Updating $($resource.ResourceType) Type [$($resource.Name)]"
-                Convert-SpecToFunction -Resource $resource -ResourceType $resource.ResourceType
-                Convert-SpecToClass -Resource $resource -ResourceType $resource.ResourceType -Number $i -DuplicateClassNames $duplicateClassNames
+                $resourceParams = @{
+                    Resource = $resource
+                    ResourceType = $resource.ResourceType
+                }
+                if ($doc = New-CFNHelpDoc @resourceParams) {
+                    $resourceParams['HelpDoc'] = $doc
+                }
+                Convert-SpecToFunction @resourceParams
+                Convert-SpecToClass @resourceParams -Number $i -DuplicateClassNames $duplicateClassNames
                 $i++
             }
         }

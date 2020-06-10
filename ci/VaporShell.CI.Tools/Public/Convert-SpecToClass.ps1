@@ -15,13 +15,10 @@ function Convert-SpecToClass {
         [string[]]
         $DuplicateClassNames = @(),
         [parameter()]
-        [switch]
-        $BuildHelp
+        [object]
+        $HelpDoc
     )
     $bareResource = $Resource.Resource
-    if ($BuildHelp) {
-        $HelpDoc = New-CFNHelpDoc -Resource $bareResource -ResourceType $ResourceType
-    }
     $Name = $bareResource.Name
     $Link = $bareResource.Value.Documentation
     $Properties = $bareResource.Value.Properties.PSObject.Properties
@@ -45,7 +42,7 @@ function Convert-SpecToClass {
             if ($ClassName -in $DuplicateClassNames -or $ClassName -in $commonParams) {
                 $ClassName = $ClassName + 'Property'
             }
-            if ($BuildHelp) {
+            if ($HelpDoc) {
                 $Synopsis = "Adds an '$Name' resource property to a '$($ShortName -replace '\..*' -replace '\W')' resource. $($HelpDoc.Synopsis)"
                 $Description = "Adds an '$Name' resource property to a '$($ShortName -replace '\..*' -replace '\W')' resource.`n$($HelpDoc.Description)"
             }
@@ -54,7 +51,7 @@ function Convert-SpecToClass {
             $Dir = "$basePath\10 - Resource Types"
             $ClassBase = 'VSResource'
             $ClassName = $ShortName -replace '\..*' -replace '\W'
-            if ($BuildHelp) {
+            if ($HelpDoc) {
                 $Synopsis = "Adds an $Name resource to the template. $($HelpDoc.Synopsis)"
                 $Description = "Adds an $Name resource to the template. $($HelpDoc.Description)"
             }
