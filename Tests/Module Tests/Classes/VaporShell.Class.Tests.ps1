@@ -25,7 +25,7 @@ Describe "Class tests: $($env:BHProjectName)" {
         } | Sort-Object CustomAttributes -Unique
         $types = $assembly | Select-Object -ExpandProperty DefinedTypes | Where-Object {
             $_.Name -notmatch '_\<staticHelpers\>$'
-        }
+        } | Sort-Object FullName
         $testCase = $types | Foreach-Object {@{type = $_}}
         $helpDocsTestCases = $testCase | Where-Object {
             $_['type'].FullName -notin ((Get-ChildItem "$projectRoot/$modName/Classes/00 - Enums").BaseName -replace '^\d+ - ') -and

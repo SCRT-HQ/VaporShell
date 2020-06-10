@@ -22,7 +22,7 @@ foreach ($serviceModule in $serviceModules) {
                 ($_.FullName -match "$($serviceModule.BaseName)\.Classes\.ps1") # Windows PS dynamic PS class assembly match
             } | Select-Object -ExpandProperty DefinedTypes | Where-Object {
                 $_.Name -notmatch '_\<staticHelpers\>$'
-            }
+            } | Sort-Object FullName
             $testCase = $types | ForEach-Object { @{type = $_ } }
             It "[$($serviceModule.BaseName)] Class <type> should not throw when instantiated" -TestCases $testCase {
                 param($type)

@@ -39,7 +39,7 @@ Describe "Module tests: $($env:BHProjectName)" {
         }
     }
     Context "Confirm compiled Attributes and Classes scripts are valid" {
-        $scripts = Get-ChildItem $ModulePath -Include Attributes.ps1,Classes.ps1 -Recurse
+        $scripts = Get-ChildItem $ModulePath -Include *.Attributes.ps1, *.Classes.ps1 -Recurse
         $testCase = $scripts | Foreach-Object {@{file = $_}}
         It "Script <file> should be valid Powershell" -TestCases $testCase {
             param($file)

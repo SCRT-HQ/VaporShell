@@ -33,7 +33,7 @@ foreach ($serviceModule in $serviceModules) {
             }
         }
         Context "Confirm compiled Attributes and Classes scripts are valid" {
-            $scripts = Get-ChildItem $ModulePath -Include Attributes.ps1, Classes.ps1 -Recurse
+            $scripts = Get-ChildItem $ModulePath -Include *.Attributes.ps1, *.Classes.ps1 -Recurse
             $testCase = $scripts | ForEach-Object { @{file = $_ } }
             It "Script <file> should be valid Powershell" -TestCases $testCase {
                 param($file)
