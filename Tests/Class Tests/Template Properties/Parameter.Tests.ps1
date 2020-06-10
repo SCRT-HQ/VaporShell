@@ -6,7 +6,7 @@ if (($env:PSModulePath -split ';') -notcontains $buildOutputPath) {
 
 Import-Module VaporShell -Verbose:$false
 
-Describe "Parameter tests" {
+Describe "Parameter tests" -Tag 'Class','VSParameter' {
     Context 'Initialization' {
         It "Should create a correctly formed Parameter" {
             {

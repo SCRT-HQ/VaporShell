@@ -12,7 +12,7 @@ Import-Module VaporShell -Force -Verbose:$false
 Write-BuildLog "Importing VaporShell.S3"
 Import-Module VaporShell.S3 -Force -Verbose
 
-Describe "Template tests" {
+Describe "Template tests" -Tag 'Class','VSTemplate','S3Bucket' {
     Context 'Initialization' {
         It "Should create template from parameterless constructor" {
             {

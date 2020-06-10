@@ -14,14 +14,14 @@ if ($ENV:BHBranchName -eq "dev" -or $env:BHCommitMessage -match "!verbose" -or $
 }
 $modName = $env:BHProjectName
 
-Describe "Class tests: $($env:BHProjectName)" {
+Describe "Class tests: $($env:BHProjectName)" -Tag 'ModuleClass','VaporShellClass' {
     BeforeAll {
         Import-Module $ModulePath
     }
     Context "Confirm classes instantiate correctly" {
         $assembly = [System.AppDomain]::CurrentDomain.GetAssemblies() | Where-Object {
-            ($_.FullName -match 'PowerShell Class Assembly' -and $_.CustomAttributes -match "$($modName)(\/|\\)\d+\.\d+\.\d+.\d+(\/|\\)Classes\.ps1") -or # PS Core dynamic PS class assembly match
-            ($_.FullName -match "$($modName).\d+\.\d+\.\d+\.\d+.Classes\.ps1") # Windows PS dynamic PS class assembly match
+            ($_.FullName -match 'PowerShell Class Assembly' -and $_.CustomAttributes -match "$($modName)\.Classes\.ps1") -or # PS Core dynamic PS class assembly match
+            ($_.FullName -match "$($modName)\.Classes\.ps1") # Windows PS dynamic PS class assembly match
         } | Sort-Object CustomAttributes -Unique
         $types = $assembly | Select-Object -ExpandProperty DefinedTypes | Where-Object {
             $_.Name -notmatch '_\<staticHelpers\>$'

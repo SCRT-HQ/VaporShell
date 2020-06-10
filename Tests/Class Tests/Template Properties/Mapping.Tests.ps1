@@ -6,7 +6,7 @@ if (($env:PSModulePath -split ';') -notcontains $buildOutputPath) {
 
 Import-Module VaporShell -Verbose:$false
 
-Describe "Mapping tests" {
+Describe "Mapping tests" -Tag 'Class','VSMapping' {
     Context 'Initialization' {
         It "Should create a correctly formed Mapping" {
             {

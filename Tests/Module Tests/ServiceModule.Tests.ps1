@@ -14,7 +14,7 @@ foreach ($serviceModule in $serviceModules) {
     $decompiledModulePath = $serviceModule.FullName
     $ModulePath = Resolve-Path "$BuildOutputPath/$($serviceModule.BaseName)"
 
-    Describe "Module tests: $($serviceModule.BaseName)" {
+    Describe "Module tests: $($serviceModule.BaseName)" -Tag 'Module',"$($serviceModule.BaseName)Module" {
         BeforeAll {
             Import-Module $ModulePath
         }

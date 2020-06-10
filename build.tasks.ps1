@@ -40,7 +40,10 @@ Param(
     $NoUpdate,
     [Parameter()]
     [Switch]
-    $CoreOnly
+    $CoreOnly,
+    [parameter()]
+    [string[]]
+    $Tag
 )
 
 # Synopsis: Default task
@@ -626,19 +629,20 @@ Task Test Init, PesterBefore, {
         PassThru     = $true
         Path         = $pesterPath
     }
+    Write-BuildLog 'Invoking Pester...'
     if ($global:ExcludeTag) {
         $pesterParams['ExcludeTag'] = $global:ExcludeTag
-        Write-BuildLog "Invoking Pester and excluding tag(s) [$($global:ExcludeTag -join ', ')]..."
+        Write-BuildLog "[PESTER] Excluding tag(s) [$($global:ExcludeTag -join ', ')]..."
     }
-    else {
-        Write-BuildLog 'Invoking Pester...'
+    if ($Script:Tag) {
+        $pesterParams['Tag'] = $Script:Tag
+        Write-BuildLog "[PESTER] Including tag(s) [$($Script:Tag -join ', ')]..."
     }
+    Write-BuildLog 'Invoking Pester...'
     $testResults = Invoke-Pester @pesterParams
     Write-BuildLog 'Pester invocation complete!'
     if ($testResults.FailedCount -gt 0) {
-        "`nTop-level results:"
-        $testResults | Format-List
-        "`nFailures only:"
+        "`n~~~~~~~~~ FAILURES ~~~~~~~~~"
         $testResults.TestResult | Where-Object { -not $_.Passed } | Format-List
         Write-BuildError 'One or more Pester tests failed. Build cannot continue!'
     }

@@ -21,6 +21,9 @@ Param(
     [ValidateSet('Init','Clean','Build','BuildCoreOnly','BuildClasses','BuildMainClasses','BuildSubmodules','BuildDotnet','BuildReleaseZips','Test','TestClasses','Analyze','Deploy','Full','Import')]
     [string[]]
     $Task,
+    [parameter()]
+    [string[]]
+    $Tag,
     [Parameter()]
     [object]
     $File,
