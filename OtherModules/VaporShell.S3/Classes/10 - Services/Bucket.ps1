@@ -2,7 +2,7 @@ class S3Bucket : VSResource {
     [string] $Type = 'AWS::S3::Bucket'
     [object] $AccessControl
     [object] $BucketName
-    [VSResourceTag[]] $Tags
+    [VSTag[]] $Tags
 
     hidden [void] _addAccessors() {
         $this | Add-Member -Force -MemberType ScriptProperty -Name AccessControl -Value {
@@ -21,7 +21,7 @@ class S3Bucket : VSResource {
             $this.Properties['Tags']
         } -SecondValue {
             param([object] $value)
-            $this.Properties['Tags'] = [VSResourceTag]::TransformTag($value)
+            $this.Properties['Tags'] = [VSTag]::TransformTag($value)
         }
     }
 

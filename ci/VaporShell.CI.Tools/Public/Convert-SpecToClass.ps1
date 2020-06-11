@@ -124,15 +124,18 @@ function Convert-SpecToClass {
                 }
             }
             $ValType = "[$propType"
+            $setterType = 'object'
             if ($Prop.Value.Type -eq 'List') {
                 $valueString = '@($value)'
                 $ValType += "[]"
+                $setterType += '[]'
             }
             else {
                 $valueString = '$value'
             }
             $ValType += "]"
             $prprtyContents += "    $ValType `$$ParamName"
+            $setterParams = "param([ValidateType(([$propType], [string], [IntrinsicFunction], [ConditionFunction]))] [$setterType] `$value)"
             if ($ResourceType -eq 'Resource') {
                 $getter = "`$this.Properties['$ParamName']"
                 $setter = "`$this.Properties['$ParamName'] = $valueString"
@@ -146,22 +149,22 @@ function Convert-SpecToClass {
                 "        `$this | Add-Member -Force -MemberType ScriptProperty -Name $ParamName -Value {"
                 "            $getter"
                 '        } -SecondValue {'
-                '            param([ValidateType(([string], [IntrinsicFunction], [ConditionFunction]))] [object] $value)'
+                "            $setterParams"
                 "            $setter"
                 '        }'
             )
         }
         elseif ($Prop.Value.ItemType) {
             if ($Prop.Value.ItemType -eq "Tag" -or ($ParamName -eq 'Tags' -and $Prop.Value.ItemType -eq 'Json' -and $Prop.Value.Type -eq 'List')) {
-                $prprtyContents += "    [VSResourceTag[]] `$$ParamName"
+                $prprtyContents += "    [VSTag[]] `$$ParamName"
                 if ($ResourceType -eq 'Resource') {
                     $getter = "`$this.Properties['$ParamName']"
-                    $setter = "`$this.Properties['$ParamName'] = [VSResourceTag]::TransformTag(`$value)"
+                    $setter = "`$this.Properties['$ParamName'] = [VSTag]::TransformTag(`$value)"
                 }
                 else {
                     $hiddenContents += "    hidden [object] `$$_paramName"
                     $getter = "`$this.$_paramName"
-                    $setter = "`$this.$_paramName = [VSResourceTag]::TransformTag(`$value)"
+                    $setter = "`$this.$_paramName = [VSTag]::TransformTag(`$value)"
                 }
                 $accessorContents += @(
                     "        `$this | Add-Member -Force -MemberType ScriptProperty -Name $ParamName -Value {"
@@ -178,11 +181,14 @@ function Convert-SpecToClass {
                     $singleType += 'Property'
                 }
                 $ValType = "[$singleType"
+                $setterType = 'object'
                 if ($Prop.Value.Type -eq 'List') {
                     $ValType += "[]"
+                    $setterType += "[]"
                 }
                 $ValType += "]"
                 $prprtyContents += "    $ValType `$$ParamName"
+                $setterParams = "param([ValidateType(([$singleType], [IntrinsicFunction], [ConditionFunction]))] [$setterType] `$value)"
                 if ($ResourceType -eq 'Resource') {
                     $getter = "`$this.Properties['$ParamName']"
                     $setter = "`$this.Properties['$ParamName'] = `$value"
@@ -196,7 +202,7 @@ function Convert-SpecToClass {
                     "        `$this | Add-Member -Force -MemberType ScriptProperty -Name $ParamName -Value {"
                     "            $getter"
                     '        } -SecondValue {'
-                    "            param([ValidateType(([$singleType], [IntrinsicFunction], [ConditionFunction]))] [object] `$value)"
+                    "            $setterParams"
                     "            $setter"
                     '        }'
                 )
@@ -227,15 +233,18 @@ function Convert-SpecToClass {
         }
         elseif ($Prop.Value.PrimitiveType -eq "Integer" -or $Prop.Value.PrimitiveType -eq "Number") {
             $ValType = '[int'
+            $setterType = 'object'
             if ($Prop.Value.Type -eq 'List') {
                 $valueString = '@($value)'
                 $ValType += "[]"
+                $setterType += "[]"
             }
             else {
                 $valueString = '$value'
             }
             $ValType += "]"
             $prprtyContents += "    $ValType `$$ParamName"
+            $setterParams = "param([ValidateType(([int], [IntrinsicFunction], [ConditionFunction]))] [$setterType] `$value)"
             if ($ResourceType -eq 'Resource') {
                 $getter = "`$this.Properties['$ParamName']"
                 $setter = "`$this.Properties['$ParamName'] = $valueString"
@@ -249,22 +258,25 @@ function Convert-SpecToClass {
                 "        `$this | Add-Member -Force -MemberType ScriptProperty -Name $ParamName -Value {"
                 "            $getter"
                 '        } -SecondValue {'
-                '            param([ValidateType(([int],[IntrinsicFunction],[ConditionFunction]))] [object] $value)'
+                "            $setterParams"
                 "            $setter"
                 '        }'
             )
         }
         elseif ($Prop.Value.PrimitiveType -eq "Double") {
             $ValType = '[double'
+            $setterType = 'object'
             if ($Prop.Value.Type -eq 'List') {
                 $valueString = '@($value)'
                 $ValType += "[]"
+                $setterType += "[]"
             }
             else {
                 $valueString = '$value'
             }
             $ValType += "]"
             $prprtyContents += "    $ValType `$$ParamName"
+            $setterParams = "param([ValidateType(([double], [IntrinsicFunction], [ConditionFunction]))] [$setterType] `$value)"
             if ($ResourceType -eq 'Resource') {
                 $getter = "`$this.Properties['$ParamName']"
                 $setter = "`$this.Properties['$ParamName'] = $valueString"
@@ -278,7 +290,7 @@ function Convert-SpecToClass {
                 "        `$this | Add-Member -Force -MemberType ScriptProperty -Name $ParamName -Value {"
                 "            $getter"
                 '        } -SecondValue {'
-                '            param([ValidateType(([double], [IntrinsicFunction], [ConditionFunction]))] [object] $value)'
+                "            $setterParams"
                 "            $setter"
                 '        }'
             )
@@ -286,6 +298,7 @@ function Convert-SpecToClass {
         elseif ($Prop.Value.PrimitiveType -eq "Boolean") {
             $ValType = '[bool]'
             $prprtyContents += "    $ValType `$$ParamName"
+            $setterParams = "param([ValidateType(([bool], [IntrinsicFunction], [ConditionFunction]))] [object] `$value)"
             if ($ResourceType -eq 'Resource') {
                 $getter = "`$this.Properties['$ParamName']"
                 $setter = "`$this.Properties['$ParamName'] = `$value"
@@ -299,7 +312,7 @@ function Convert-SpecToClass {
                 "        `$this | Add-Member -Force -MemberType ScriptProperty -Name $ParamName -Value {"
                 "            $getter"
                 '        } -SecondValue {'
-                '            param([ValidateType(([bool], [IntrinsicFunction], [ConditionFunction]))] [object] $value)'
+                "            $setterParams"
                 "            $setter"
                 '        }'
             )
@@ -370,15 +383,18 @@ function Convert-SpecToClass {
             }
             else {
                 $ValType = '[string'
+                $setterType = 'object'
                 if ($Prop.Value.Type -eq 'List') {
                     $valueString = '@($value)'
                     $ValType += "[]"
+                    $setterType += "[]"
                 }
                 else {
                     $valueString = '$value'
                 }
                 $ValType += "]"
                 $prprtyContents += "    $ValType `$$ParamName"
+                $setterParams = "param([ValidateType(([string], [IntrinsicFunction], [ConditionFunction]))] [$setterType] `$value)"
                 if ($ResourceType -eq 'Resource') {
                     $getter = "`$this.Properties['$ParamName']"
                     $setter = "`$this.Properties['$ParamName'] = $valueString"
@@ -392,7 +408,7 @@ function Convert-SpecToClass {
                     "        `$this | Add-Member -Force -MemberType ScriptProperty -Name $ParamName -Value {"
                     "            $getter"
                     '        } -SecondValue {'
-                    '            param([ValidateType(([string], [IntrinsicFunction], [ConditionFunction]))] [object] $value)'
+                    "            $setterParams"
                     "            $setter"
                     '        }'
                 )
@@ -401,21 +417,21 @@ function Convert-SpecToClass {
         else {
             $propType = if ($prop.Value.ItemType) {
                 if (($prop.Value.ItemType -eq 'Tag' -or $prop.Value.ItemType -eq 'Json') -and $prop.Value.Type -eq 'List') {
-                    'VSResourceTag'
+                    'VSTag'
                 }
                 else {
-                    $ShortName -replace '\..*', $prop.Value.ItemType -replace '\W'
+                    (($ShortName -replace '\..*') + $prop.Value.ItemType) -replace '\W'
                 }
             }
             elseif ($prop.Value.Type) {
                 if (($prop.Value.Type -eq 'Tag' -or $prop.Value.Type -eq 'Json') -and $prop.Value.Type -eq 'List') {
-                    'VSResourceTag'
+                    'VSTag'
                 }
                 elseif ($prop.Value.Type -in $noDepsTypes) {
                     $prop.Value.Type
                 }
                 else {
-                    $ShortName -replace '\..*', $prop.Value.Type -replace '\W'
+                    (($ShortName -replace '\..*') + $prop.Value.Type) -replace '\W'
                 }
             }
             elseif ($prop.Value.PrimitiveType) {
@@ -451,15 +467,18 @@ function Convert-SpecToClass {
                 }
             }
             $ValType = "[$propType"
+            $setterType = 'object'
             if ($Prop.Value.Type -eq 'List') {
                 $valueString = '@($value)'
                 $ValType += "[]"
+                $setterType += '[]'
             }
             else {
                 $valueString = '$value'
             }
             $ValType += "]"
             $prprtyContents += "    $ValType `$$ParamName"
+            $setterParams = "param([ValidateType(([$propType], [string], [IntrinsicFunction], [ConditionFunction]))] [$setterType] `$value)"
             if ($ResourceType -eq 'Resource') {
                 $getter = "`$this.Properties['$ParamName']"
                 $setter = "`$this.Properties['$ParamName'] = $valueString"
@@ -473,7 +492,7 @@ function Convert-SpecToClass {
                 "        `$this | Add-Member -Force -MemberType ScriptProperty -Name $ParamName -Value {"
                 "            $getter"
                 '        } -SecondValue {'
-                '            param([ValidateType(([string], [IntrinsicFunction], [ConditionFunction]))] [object] $value)'
+                "            $setterParams"
                 "            $setter"
                 '        }'
             )

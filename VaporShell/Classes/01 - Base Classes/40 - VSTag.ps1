@@ -2,18 +2,18 @@ using namespace System
 using namespace System.Collections
 using namespace System.Collections.Generic
 
-class VSResourceTag : VSHashtable {
+class VSTag : VSHashtable {
     hidden [string] $_vsFunctionName = 'Add-VSTag'
     hidden [string] $_awsDocumentation = 'http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html'
 
     [string] $Key
     [object] $Value
 
-    static [VSResourceTag[]] TransformTag([IDictionary] $inputData) {
-        $final = [List[VSResourceTag]]::new()
+    static [VSTag[]] TransformTag([IDictionary] $inputData) {
+        $final = [List[VSTag]]::new()
         if ($inputData['Key'] -and $inputData['Value']) {
             $final.Add(
-                [VSResourceTag]@{
+                [VSTag]@{
                     Key   = $inputData['Key']
                     Value = $inputData['Value']
                 }
@@ -22,7 +22,7 @@ class VSResourceTag : VSHashtable {
         else {
             $inputData.GetEnumerator() | ForEach-Object {
                 $final.Add(
-                    [VSResourceTag]@{
+                    [VSTag]@{
                         Key   = $_.Key
                         Value = $_.Value
                     }
@@ -32,11 +32,11 @@ class VSResourceTag : VSHashtable {
         return $final
     }
 
-    static [VSResourceTag[]] TransformTag([PSObject] $inputData) {
-        $final = [List[VSResourceTag]]::new()
+    static [VSTag[]] TransformTag([PSObject] $inputData) {
+        $final = [List[VSTag]]::new()
         if ($inputData.PSObject.Properties.Name -contains 'Key' -and $inputData.PSObject.Properties.Name -contains 'Value') {
             $final.Add(
-                [VSResourceTag]@{
+                [VSTag]@{
                     Key   = $inputData.Key
                     Value = $inputData.Value
                 }
@@ -45,7 +45,7 @@ class VSResourceTag : VSHashtable {
         else {
             $inputData.PSObject.Properties | ForEach-Object {
                 $final.Add(
-                    [VSResourceTag]@{
+                    [VSTag]@{
                         Key   = $_.Name
                         Value = $_.Value
                     }
@@ -55,14 +55,14 @@ class VSResourceTag : VSHashtable {
         return $final
     }
 
-    VSResourceTag() {}
+    VSTag() {}
 
-    VSResourceTag([IDictionary] $inputData) {
+    VSTag([IDictionary] $inputData) {
         $this.Key = $inputData['Key']
         $this.Value = $inputData['Value']
     }
 
-    VSResourceTag([object] $key, [object] $value) {
+    VSTag([object] $key, [object] $value) {
         $this.Key = $key.ToString()
         $this.Value = $value
     }

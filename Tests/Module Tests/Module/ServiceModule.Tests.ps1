@@ -1,4 +1,5 @@
-$projectRoot = Resolve-Path "$PSScriptRoot/../.."
+
+$projectRoot = Resolve-Path "$PSScriptRoot/../../.."
 $Verbose = @{}
 if ($ENV:BHBranchName -eq "dev" -or $env:BHCommitMessage -match "!verbose" -or $ENV:TRAVIS_COMMIT_MESSAGE -match "!verbose" -or $ENV:TRAVIS_BRANCH -eq "dev" ) {
     $Verbose.add("Verbose", $True)

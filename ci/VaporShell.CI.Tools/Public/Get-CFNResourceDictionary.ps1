@@ -81,7 +81,7 @@ function Get-CFNResourceDictionary {
                     foreach ($prop in $resource.Value.Properties.PSObject.Properties) {
                         $propType = if ($prop.Value.ItemType) {
                             if ($prop.Value.ItemType -eq 'Tag' -and $prop.Value.Type -eq 'List') {
-                                'VSResourceTag'
+                                'VSTag'
                             }
                             else {
                                 $ShortName -replace '\..*', $prop.Value.ItemType -replace '\W'
@@ -89,7 +89,7 @@ function Get-CFNResourceDictionary {
                         }
                         elseif ($prop.Value.Type) {
                             if ($prop.Value.ItemType -eq 'Tag' -and $prop.Value.Type -eq 'List') {
-                                'VSResourceTag'
+                                'VSTag'
                             }
                             elseif ($prop.Value.Type -in $noDepsTypes) {
                                 $prop.Value.Type
@@ -141,7 +141,7 @@ function Get-CFNResourceDictionary {
                 else {
                     $propType = if ($resource.Value.ItemType) {
                         if ($resource.Value.ItemType -eq 'Tag' -and $resource.Value.Type -eq 'List') {
-                            'VSResourceTag'
+                            'VSTag'
                         }
                         else {
                             $ShortName -replace '\..*', $resource.Value.ItemType -replace '\W'
@@ -149,7 +149,7 @@ function Get-CFNResourceDictionary {
                     }
                     elseif ($resource.Value.Type) {
                         if ($resource.Value.ItemType -eq 'Tag' -and $resource.Value.Type -eq 'List') {
-                            'VSResourceTag'
+                            'VSTag'
                         }
                         elseif ($resource.Value.Type -in $noDepsTypes) {
                             $resource.Value.Type
@@ -254,7 +254,7 @@ function Get-CFNResourceDictionary {
                                 foreach ($prop in $resource.Value.Properties.PSObject.Properties) {
                                     $propType = if ($prop.Value.ItemType) {
                                         if ($prop.Value.ItemType -eq 'Tag' -and $prop.Value.Type -eq 'List') {
-                                            'VSResourceTag'
+                                            'VSTag'
                                         }
                                         else {
                                             $ShortName -replace '\..*', $prop.Value.ItemType -replace '\W'
@@ -262,7 +262,7 @@ function Get-CFNResourceDictionary {
                                     }
                                     elseif ($prop.Value.Type) {
                                         if ($prop.Value.ItemType -eq 'Tag' -and $prop.Value.Type -eq 'List') {
-                                            'VSResourceTag'
+                                            'VSTag'
                                         }
                                         elseif ($prop.Value.Type -in $noDepsTypes) {
                                             $prop.Value.Type
@@ -314,7 +314,7 @@ function Get-CFNResourceDictionary {
                             else {
                                 $propType = if ($resource.Value.ItemType) {
                                     if ($resource.Value.ItemType -eq 'Tag' -and $resource.Value.Type -eq 'List') {
-                                        'VSResourceTag'
+                                        'VSTag'
                                     }
                                     else {
                                         $ShortName -replace '\..*', $resource.Value.ItemType -replace '\W'
@@ -322,7 +322,7 @@ function Get-CFNResourceDictionary {
                                 }
                                 elseif ($resource.Value.Type) {
                                     if ($resource.Value.ItemType -eq 'Tag' -and $resource.Value.Type -eq 'List') {
-                                        'VSResourceTag'
+                                        'VSTag'
                                     }
                                     elseif ($resource.Value.Type -in $noDepsTypes) {
                                         $resource.Value.Type

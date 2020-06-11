@@ -1,5 +1,5 @@
 $PSVersion = $PSVersionTable.PSVersion.Major
-$projectRoot = Resolve-Path "$PSScriptRoot\..\.."
+$projectRoot = Resolve-Path "$PSScriptRoot/../../.."
 $BuildOutputPath = [System.IO.Path]::Combine($projectRoot,'BuildOutput')
 if (($env:PSModulePath -split ';') -notcontains $BuildOutputPath) {
     $env:PSModulePath = @($BuildOutputPath, $env:PSModulePath) -join [System.IO.Path]::PathSeparator
@@ -16,7 +16,7 @@ if ($ENV:BHBranchName -eq "dev" -or $env:BHCommitMessage -match "!verbose" -or $
 }
 
 $moduleRoot = Split-Path (Resolve-Path "$ModulePath\*\*.psd1")
-$udFile = (Resolve-Path "$PSScriptRoot\..\Assets\UserData.sh").Path
+$udFile = (Resolve-Path "$PSScriptRoot\..\..\Assets\UserData.sh").Path
 
 Write-Verbose "Importing $($env:BHProjectName) module at [$ModulePath]"
 Import-Module $ModulePath -Force -Verbose:$false

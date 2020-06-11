@@ -12,7 +12,7 @@ $serviceModules = Get-ChildItem $ServiceModulesPath -Directory
 
 foreach ($serviceModule in $serviceModules) {
     $ModulePath = Resolve-Path "$BuildOutputPath/$($serviceModule.BaseName)"
-    Describe "[$($serviceModule.BaseName)] Class tests" -Tag 'ModuleClass',"$($serviceModule.BaseName)ModuleClass" {
+    Describe "[$($serviceModule.BaseName)] Class tests" -Tag 'ModuleClass',"$($serviceModule.BaseName)ModuleClass",$serviceModule.BaseName {
         BeforeAll {
             Import-Module $ModulePath -Force
         }

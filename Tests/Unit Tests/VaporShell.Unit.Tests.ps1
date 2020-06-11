@@ -73,12 +73,12 @@ Describe "Unit tests" -Tag 'Unit','VaporShellUnit' {
 
             Export-Vaporshell -VaporshellTemplate $templateInit -Path $testPath -Force
 
-            {$templateInit.RemoveCondition("CreateProdResources")} | Should Not throw
-            {$templateInit.RemoveMapping("RegionMap")} | Should Not throw
-            {$templateInit.RemoveParameter("EnvTypeString")} | Should Not throw
-            {$templateInit.RemoveMetadata("Instances")} | Should Not throw
-            {$templateInit.RemoveResource("GatewayDeployment")} | Should Not throw
-            {$templateInit.RemoveOutput("BackupLoadBalancerDNSName")} | Should Not throw
+            {$templateInit.RemoveCondition("CreateProdResources")} | Should -Not -Throw
+            {$templateInit.RemoveMapping("RegionMap")} | Should -Not -Throw
+            {$templateInit.RemoveParameter("EnvTypeString")} | Should -Not -Throw
+            {$templateInit.RemoveMetadata("Instances")} | Should -Not -Throw
+            {$templateInit.RemoveResource("GatewayDeployment")} | Should -Not -Throw
+            {$templateInit.RemoveOutput("BackupLoadBalancerDNSName")} | Should -Not -Throw
         }
         It 'Should export import existing CloudFormation template as Vaporshell.Template' {
             $testPath = "$projectRoot\Template.json"
@@ -150,88 +150,88 @@ Describe "Unit tests" -Tag 'Unit','VaporShellUnit' {
         It 'Should show the correct types on each object' {
             $testPath = "$projectRoot\Template.json"
             $template = Import-Vaporshell -Path $testPath
-            $template.Conditions | Should BeOfType 'System.Management.Automation.PSCustomObject'
-            $template.Description | Should BeOfType 'System.String'
-            $template.Mappings | Should BeOfType 'System.Management.Automation.PSCustomObject'
-            $template.Metadata | Should BeOfType 'System.Management.Automation.PSCustomObject'
-            $template.Outputs | Should BeOfType 'System.Management.Automation.PSCustomObject'
-            $template.Resources | Should BeOfType 'System.Management.Automation.PSCustomObject'
+            $template.Conditions | Should -BeOfType 'System.Management.Automation.PSCustomObject'
+            $template.Description | Should -BeOfType 'System.String'
+            $template.Mappings | Should -BeOfType 'System.Management.Automation.PSCustomObject'
+            $template.Metadata | Should -BeOfType 'System.Management.Automation.PSCustomObject'
+            $template.Outputs | Should -BeOfType 'System.Management.Automation.PSCustomObject'
+            $template.Resources | Should -BeOfType 'System.Management.Automation.PSCustomObject'
         }
         if ($env:APPVEYOR) {
             It 'Should export the template to YAML using cfn-flip and validate using the AWS SDK from Export-Vaporshell' {
                 $testPath = "$projectRoot\Template.yaml"
                 $template = Import-Vaporshell -Path "$projectRoot\Template.json"
                 $valid = Export-Vaporshell -VaporshellTemplate $template -As YAML -Path $testPath -ValidateTemplate -Force
-                $valid | Should BeOfType 'Amazon.CloudFormation.Model.ValidateTemplateResponse'
+                $valid | Should -BeOfType 'Amazon.CloudFormation.Model.ValidateTemplateResponse'
             }
         }
         It 'Should run remaining condition functions' {
             $x = Add-ConAnd -Conditions (Add-ConIf -ConditionName "CreateTestResources" -ValueIfTrue "test" -ValueIfFalse "$_AWSNoValue"),(Add-ConNot -Condition (Add-FnImportValue -ValueToImport "VPCName")),(Add-ConEquals -FirstValue (Add-FnRef "Environment") -SecondValue "prod"),(Add-ConOr -Conditions (Add-ConIf -ConditionName "CreateTestResources" -ValueIfTrue "test" -ValueIfFalse "$_AWSNoValue"),(Add-ConNot -Condition (Add-FnSplit -Delimiter "," -SourceString "test,string,goodness")))
-            $x.PSTypeNames[0] | Should Be 'Vaporshell.Condition.And'
+            $x.PSTypeNames[0] | Should -Be 'ConAnd'
         }
         It 'Should throw intrinsic functions' {
-            {Add-FnJoin -ListOfValues 1} | Should throw
-            {Add-FnBase64 -ValueToEncode 1} | Should throw
-            {Add-FnGetAtt -LogicalNameOfResource "Vapor" -AttributeName 1} | Should throw
-            {Add-FnFindInMap -MapName 0 -TopLevelKey "First" -SecondLevelKey "Second"} | Should throw
-            {Add-FnFindInMap -MapName "Map" -TopLevelKey 1 -SecondLevelKey "Second"} | Should throw
-            {Add-FnFindInMap -MapName "Map" -TopLevelKey "First" -SecondLevelKey 2} | Should throw
-            {Add-FnSplit -Delimiter "," -SourceString 1} | Should throw
-            {Add-FnImportValue -ValueToImport 1} | Should throw
-            {Add-FnSub -String "www.`${Domain}" -Mapping @{Domain = (Add-FnRef -Ref "RootDomainName")}} | Should Not throw
-            {Add-FnSub -String "/opt/aws/bin/cfn-init -v --stack ${AWS::StackName} --resource LaunchConfig --configsets wordpress_install --region ${AWS::Region}"} | Should Not throw
-            {Add-FnGetAZs} | Should Not throw
-            {Add-FnGetAZs -Region $_AWSRegion} | Should Not throw
-            {Add-FnGetAZs -Region 1} | Should throw
-            {Add-FnSelect -Index 1 -ListOfObjects (Add-FnSplit -Delimiter "," -SourceString "one,two,three")} | Should Not throw
-            {Add-FnSelect -Index (@{}) -ListOfObjects (Add-FnSplit -Delimiter "," -SourceString "one,two,three")} | Should throw
-            {Add-FnSelect -Index 1 -ListOfObjects 1} | Should throw
+            {Add-FnJoin -ListOfValues 1} | Should -Throw
+            {Add-FnBase64 -ValueToEncode 1} | Should -Throw
+            {Add-FnGetAtt -LogicalNameOfResource "Vapor" -AttributeName 1} | Should -Throw
+            {Add-FnFindInMap -MapName 0 -TopLevelKey "First" -SecondLevelKey "Second"} | Should -Throw
+            {Add-FnFindInMap -MapName "Map" -TopLevelKey 1 -SecondLevelKey "Second"} | Should -Throw
+            {Add-FnFindInMap -MapName "Map" -TopLevelKey "First" -SecondLevelKey 2} | Should -Throw
+            {Add-FnSplit -Delimiter "," -SourceString 1} | Should -Throw
+            {Add-FnImportValue -ValueToImport 1} | Should -Throw
+            {Add-FnSub -String "www.`${Domain}" -Mapping @{Domain = (Add-FnRef -Ref "RootDomainName")}} | Should -Not -Throw
+            {Add-FnSub -String "/opt/aws/bin/cfn-init -v --stack ${AWS::StackName} --resource LaunchConfig --configsets wordpress_install --region ${AWS::Region}"} | Should -Not -Throw
+            {Add-FnGetAZs} | Should -Not -Throw
+            {Add-FnGetAZs -Region $_AWSRegion} | Should -Not -Throw
+            {Add-FnGetAZs -Region 1} | Should -Throw
+            {Add-FnSelect -Index 1 -ListOfObjects (Add-FnSplit -Delimiter "," -SourceString "one,two,three")} | Should -Not -Throw
+            {Add-FnSelect -Index (@{}) -ListOfObjects (Add-FnSplit -Delimiter "," -SourceString "one,two,three")} | Should -Throw
+            {Add-FnSelect -Index 1 -ListOfObjects 1} | Should -Throw
         }
         It 'Should throw primary functions' {
-            {New-VaporResource -LogicalId "!@#$%*&"} | Should throw "The LogicalID must be alphanumeric (a-z, A-Z, 0-9) and unique within the template."
-            {New-VaporResource -LogicalId "Tests" -Properties 1} | Should throw "This parameter only accepts the following types: System.Management.Automation.PSCustomObject, Vaporshell.Resource.Properties, System.Collections.Hashtable. The current types of the value are: System.Int32, System.ValueType, System.Object."
-            {New-VaporResource -LogicalId "Tests" -Properties ([PSCustomObject]@{Name = "Test"}) -Type "AWS::EC2::Instance" -CreationPolicy 1} | Should throw "This parameter only accepts the following types: Vaporshell.Resource.CreationPolicy. The current types of the value are: System.Int32, System.ValueType, System.Object."
-            {New-VaporResource -LogicalId "Tests" -Properties ([PSCustomObject]@{Name = "Test"}) -Type "AWS::EC2::Instance" -UpdatePolicy 1} | Should throw "This parameter only accepts the following types: Vaporshell.Resource.UpdatePolicy. The current types of the value are: System.Int32, System.ValueType, System.Object."
-            {New-VaporResource -LogicalId "Tests" -Properties ([PSCustomObject]@{Name = "Test"}) -Type "AWS::EC2::Instance" -Metadata 1} | Should throw "This parameter only accepts the following types: System.Management.Automation.PSCustomObject. The current types of the value are: System.Int32, System.ValueType, System.Object."
-            {New-VaporMetadata -LogicalId "!@#$%*&"} | Should throw
-            {New-VaporMetadata -LogicalId "Test" -Metadata 1} | Should throw
-            {New-VaporMapping -LogicalId "!@#$%*&"} | Should throw
-            {New-VaporMapping -LogicalId "Test" -Map 1} | Should throw
-            {New-VaporCondition -LogicalId "!@#$%*&"} | Should throw
-            {New-VaporCondition -LogicalId "Test" -Condition 1} | Should throw
-            {New-VaporOutput -LogicalId "!@#$%*&"} | Should throw
-            {New-VaporOutput -LogicalId "Test" -Value "String" -Export "Export"} | Should Not throw
-            {New-VaporParameter -LogicalId "!@#$%*&"} | Should throw
-            {New-VaporParameter -LogicalId "PW" -Description "$(1..5000)"} | Should throw "The description length needs to be less than 4000 characters long."
-            {New-VaporParameter -LogicalId "PW" -NoEcho -Type String -AllowedPattern ".*" -MaxLength 50 -MinLength 1 -MaxValue 50 -MinValue 1 -Default "woooo"} | Should Not throw
+            {New-VaporResource -LogicalId "!@#$%*&"} | Should -Throw "The LogicalID must be alphanumeric (a-z, A-Z, 0-9) and unique within the template."
+            {New-VaporResource -LogicalId "Tests" -Properties 1} | Should -Throw "This parameter only accepts the following types: System.Management.Automation.PSCustomObject, Vaporshell.Resource.Properties, System.Collections.Hashtable. The current types of the value are: System.Int32, System.ValueType, System.Object."
+            {New-VaporResource -LogicalId "Tests" -Properties ([PSCustomObject]@{Name = "Test"}) -Type "AWS::EC2::Instance" -CreationPolicy 1} | Should -Throw "This parameter only accepts the following types: Vaporshell.Resource.CreationPolicy. The current types of the value are: System.Int32, System.ValueType, System.Object."
+            {New-VaporResource -LogicalId "Tests" -Properties ([PSCustomObject]@{Name = "Test"}) -Type "AWS::EC2::Instance" -UpdatePolicy 1} | Should -Throw "This parameter only accepts the following types: Vaporshell.Resource.UpdatePolicy. The current types of the value are: System.Int32, System.ValueType, System.Object."
+            {New-VaporResource -LogicalId "Tests" -Properties ([PSCustomObject]@{Name = "Test"}) -Type "AWS::EC2::Instance" -Metadata 1} | Should -Throw "This parameter only accepts the following types: System.Management.Automation.PSCustomObject. The current types of the value are: System.Int32, System.ValueType, System.Object."
+            {New-VaporMetadata -LogicalId "!@#$%*&"} | Should -Throw
+            {New-VaporMetadata -LogicalId "Test" -Metadata 1} | Should -Throw
+            {New-VaporMapping -LogicalId "!@#$%*&"} | Should -Throw
+            {New-VaporMapping -LogicalId "Test" -Map 1} | Should -Throw
+            {New-VaporCondition -LogicalId "!@#$%*&"} | Should -Throw
+            {New-VaporCondition -LogicalId "Test" -Condition 1} | Should -Throw
+            {New-VaporOutput -LogicalId "!@#$%*&"} | Should -Throw
+            {New-VaporOutput -LogicalId "Test" -Value "String" -Export "Export"} | Should -Not -Throw
+            {New-VaporParameter -LogicalId "!@#$%*&"} | Should -Throw
+            {New-VaporParameter -LogicalId "PW" -Description "$(1..5000)"} | Should -Throw "The description length needs to be less than 4000 characters long."
+            {New-VaporParameter -LogicalId "PW" -NoEcho -Type String -AllowedPattern ".*" -MaxLength 50 -MinLength 1 -MaxValue 50 -MinValue 1 -Default "woooo"} | Should -Not -Throw
         }
         It 'Should throw main commands' {
             Import-Module VaporShell,VaporShell.S3
             $t = Initialize-Vaporshell
-            {Export-Vaporshell -VaporshellTemplate $t} | Should throw "Unable to find any resources on this Vaporshell template. Resources are required in CloudFormation templates at the minimum."
-            {$t.AddTransform("Fail")} | Should throw "You must use one of the following object types with this parameter: Vaporshell.Transform.Include"
-            {$t.AddTransform((Add-Include -Location "s3://file.yaml"))} | Should Not throw
+            {Export-Vaporshell -VaporshellTemplate $t} | Should -Throw "Unable to find any resources on this Vaporshell template. Resources are required in CloudFormation templates at the minimum."
+            {$t.AddTransform("Fail")} | Should -Throw "You must use one of the following object types with this parameter: Vaporshell.Transform.Include"
+            {$t.AddTransform((Add-Include -Location "s3://file.yaml"))} | Should -Not -Throw
             $t.AddResource((New-VSS3Bucket -LogicalId "Bucket" -BucketName 'mybucket'))
             $t.Transform = "asfd"
             $t.AddResource((New-VSS3Bucket -LogicalId "Bucket2" -BucketName 'mybucket2'))
-            {Export-Vaporshell -VaporshellTemplate $t | Should BeOfType 'String'} | Should Not throw
-            {$t.AddResource("Fail")} | Should throw "You must use one of the following object types with this parameter: Vaporshell.Transform, Vaporshell.Resource"
-            {$t.AddCondition("Fail")} | Should throw "You must use one of the following object types with this parameter: Vaporshell.Transform, Vaporshell.Condition"
-            {$t.AddParameter("Fail")} | Should throw "You must use one of the following object types with this parameter: Vaporshell.Parameter"
-            {$t.AddMetadata("Fail")} | Should throw "You must use one of the following object types with this parameter: Vaporshell.Transform, Vaporshell.Metadata"
-            {$t.AddMapping("Fail")} | Should throw "You must use one of the following object types with this parameter: Vaporshell.Transform, Vaporshell.Mapping"
-            {$t.AddMapping("Fail")} | Should throw "You must use one of the following object types with this parameter: Vaporshell.Transform, Vaporshell.Mapping"
+            {Export-Vaporshell -VaporshellTemplate $t | Should -BeOfType 'String'} | Should -Not -Throw
+            {$t.AddResource("Fail")} | Should -Throw "You must use one of the following object types with this parameter: Vaporshell.Transform, Vaporshell.Resource"
+            {$t.AddCondition("Fail")} | Should -Throw "You must use one of the following object types with this parameter: Vaporshell.Transform, Vaporshell.Condition"
+            {$t.AddParameter("Fail")} | Should -Throw "You must use one of the following object types with this parameter: Vaporshell.Parameter"
+            {$t.AddMetadata("Fail")} | Should -Throw "You must use one of the following object types with this parameter: Vaporshell.Transform, Vaporshell.Metadata"
+            {$t.AddMapping("Fail")} | Should -Throw "You must use one of the following object types with this parameter: Vaporshell.Transform, Vaporshell.Mapping"
+            {$t.AddMapping("Fail")} | Should -Throw "You must use one of the following object types with this parameter: Vaporshell.Transform, Vaporshell.Mapping"
         }
         if ($env:APPVEYOR) {
             It 'Should function the same for imported templates' {
                 $path = (Resolve-Path "$projectRoot\Template.yaml").Path
                 $t = Import-Vaporshell -Path $path
-                {$t.RemoveCondition("CreateProdResources","Fn::Transform","CreateTestResources")} | Should Not throw
-                {$t.RemoveMapping("RegionMap","RegionMap2")} | Should Not throw
-                {$t.RemoveParameter("EnvTypeString","EnvType","EnvType2")} | Should Not throw
-                {$t.RemoveMetadata("Instances","Databases")} | Should Not throw
-                {$t.RemoveResource("GatewayDeployment","MyApi","MyInstance","MyInstance2","GatewayDeployment3","MyApi3","MyInstance3")} | Should Not throw
-                {$t.RemoveOutput("BackupLoadBalancerDNSName","PrimaryLoadBalancerDNSName","BackupLoadBalancerDNSName3")} | Should Not throw
+                {$t.RemoveCondition("CreateProdResources","Fn::Transform","CreateTestResources")} | Should -Not -Throw
+                {$t.RemoveMapping("RegionMap","RegionMap2")} | Should -Not -Throw
+                {$t.RemoveParameter("EnvTypeString","EnvType","EnvType2")} | Should -Not -Throw
+                {$t.RemoveMetadata("Instances","Databases")} | Should -Not -Throw
+                {$t.RemoveResource("GatewayDeployment","MyApi","MyInstance","MyInstance2","GatewayDeployment3","MyApi3","MyInstance3")} | Should -Not -Throw
+                {$t.RemoveOutput("BackupLoadBalancerDNSName","PrimaryLoadBalancerDNSName","BackupLoadBalancerDNSName3")} | Should -Not -Throw
             }
         }
     }

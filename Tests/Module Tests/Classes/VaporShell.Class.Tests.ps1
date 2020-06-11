@@ -14,7 +14,7 @@ if ($ENV:BHBranchName -eq "dev" -or $env:BHCommitMessage -match "!verbose" -or $
 }
 $modName = $env:BHProjectName
 
-Describe "Class tests: $($env:BHProjectName)" -Tag 'ModuleClass','VaporShellClass' {
+Describe "Class tests: $($env:BHProjectName)" -Tag 'ModuleClass','VaporShellClass','VaporShell' {
     BeforeAll {
         Import-Module $ModulePath
     }

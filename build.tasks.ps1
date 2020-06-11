@@ -468,6 +468,7 @@ Task BuildMain UpdateFromSpecification, {
         '$DSLModulePath = (Resolve-Path "$PSScriptRoot\VaporShell.DSL.psm1").Path'
         'Import-Module $DSLModulePath -DisableNameChecking -Force -Scope Global'
         ''
+        '$global:VSError = [System.Collections.Generic.List[VSError]]::new()'
         'Export-ModuleMember -Variable $vars -Alias $aliases'
     ) -join "`n"
     $hashDefinitions | Add-Content -Path $psm1 -Encoding UTF8
@@ -566,8 +567,16 @@ Task BuildMainClasses Init, {
 }
 
 # Synopsis: Imports the newly compiled module
-Task Import -If { Test-Path $TargetManifestPath } Init, {
-    Import-Module -Name $TargetModuleDirectory -ErrorAction Stop
+Task Import Init, {
+    If (Test-Path $TargetManifestPath) {
+        Get-ChildItem $TargetDirectory -Filter 'VaporShell*' | ForEach-Object {
+            Write-BuildLog "Importing $($_.BaseName)"
+            Import-Module -Name $_.FullName -ErrorAction Stop
+        }
+    }
+    else {
+        Write-BuildWarning "TargetManifestPath not found! Path attempted: $TargetManifestPath"
+    }
 }
 
 Task PesterBefore {

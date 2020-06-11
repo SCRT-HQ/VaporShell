@@ -11,7 +11,6 @@ class VSResource : VSLogicalObject {
     hidden [object] $_deletionPolicy
     hidden [object] $_updateReplacePolicy
 
-    [object] $Condition
     [CreationPolicy] $CreationPolicy
     [string[]] $DependsOn
     [TransformDeletionPolicy()] [object] $DeletionPolicy
@@ -23,7 +22,7 @@ class VSResource : VSLogicalObject {
 
     static [object] FormatDeletionPolicy([object] $policy) {
         if ($policy -is [string]) {
-            return (Get-Culture).TextInfo.ToTitleCase($policy.ToString().ToLower())
+                return (Get-Culture).TextInfo.ToTitleCase($policy.ToString().ToLower())
         }
         else {
             return $policy
