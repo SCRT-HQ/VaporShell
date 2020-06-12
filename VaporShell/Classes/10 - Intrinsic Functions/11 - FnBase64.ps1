@@ -8,7 +8,7 @@ class FnBase64 : IntrinsicFunction {
         return "FnBase64($($this['Fn::Base64']))"
     }
 
-    FnBase64() {}
+    FnBase64() : base() {}
 
     FnBase64([object] $value) {
         $validTypes = @([string], [int], [IntrinsicFunction], [ConditionFunction])

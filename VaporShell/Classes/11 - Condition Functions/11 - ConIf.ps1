@@ -13,25 +13,15 @@ class ConIf : ConditionFunction {
         [object] $valueIfTrue,
         [object] $valueIfFalse
     ) {
-        $validTypes = @([string], [int], [ConditionRef], [FnBase64], [FnFindInMap], [FnGetAtt], [FnGetAZs], [ConIf], [FnJoin], [FnSelect], [FnSub] [FnRef], [ConditionFunction])
-        $isValid = foreach ($type in $validTypes) {
-            if ($valueIfTrue -is $type) {
-                $true
-                break
+        $final = @($conditionName)
+        foreach ($item in @($valueIfTrue,$valueIfFalse)) {
+            if ($item | Get-Member -Name ToOrderedDictionary* -MemberType Method -ErrorAction SilentlyContinue) {
+                $final += $item.ToOrderedDictionary()
+            }
+            else {
+                $final += $item
             }
         }
-        if (-not $isValid) {
-            throw [VSError]::InvalidType($valueIfTrue, $validTypes)
-        }
-        $isValid = foreach ($type in $validTypes) {
-            if ($valueIfFalse -is $type) {
-                $true
-                break
-            }
-        }
-        if (-not $isValid) {
-            throw [VSError]::InvalidType($valueIfFalse, $validTypes)
-        }
-        $this['Fn::If'] = @($conditionName,$valueIfTrue,$valueIfFalse)
+        $this['Fn::If'] = $final
     }
 }

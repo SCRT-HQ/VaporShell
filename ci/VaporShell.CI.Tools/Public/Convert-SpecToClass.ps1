@@ -156,7 +156,7 @@ function Convert-SpecToClass {
         }
         elseif ($Prop.Value.ItemType) {
             if ($Prop.Value.ItemType -eq "Tag" -or ($ParamName -eq 'Tags' -and $Prop.Value.ItemType -eq 'Json' -and $Prop.Value.Type -eq 'List')) {
-                $prprtyContents += "    [VSTag[]] `$$ParamName"
+                $prprtyContents += "    [TransformTag()] [VSTag[]] `$$ParamName"
                 if ($ResourceType -eq 'Resource') {
                     $getter = "`$this.Properties['$ParamName']"
                     $setter = "`$this.Properties['$ParamName'] = [VSTag]::TransformTag(`$value)"
@@ -170,7 +170,7 @@ function Convert-SpecToClass {
                     "        `$this | Add-Member -Force -MemberType ScriptProperty -Name $ParamName -Value {"
                     "            $getter"
                     '        } -SecondValue {'
-                    '            param([object] $value)'
+                    '            param([TransformTag()] [ValidateType(([IDictionary],[psobject]))] [object] $value)'
                     "            $setter"
                     '        }'
                 )
@@ -209,21 +209,21 @@ function Convert-SpecToClass {
             }
         }
         elseif ($Prop.Name -eq "UserData") {
-            $prprtyContents += "    [UserData] `$$ParamName"
+            $prprtyContents += "    [TransformUserData()] [UserData] `$$ParamName"
             if ($ResourceType -eq 'Resource') {
                 $getter = "`$this.Properties['$ParamName']"
-                $setter = "`$this.Properties['$ParamName'] = [FnBase64]([UserData]::Transform(`$value))"
+                $setter = "`$this.Properties['$ParamName'] = `$value"
             }
             else {
                 $hiddenContents += "    hidden [object] `$$_paramName"
                 $getter = "`$this.$_paramName"
-                $setter = "`$this.$_paramName = [FnBase64]([UserData]::Transform(`$value))"
+                $setter = "`$this.$_paramName = `$value"
             }
             $accessorContents += @(
                 '        $this | Add-Member -Force -MemberType ScriptProperty -Name UserData -Value {'
                 "            $getter"
                 '        } -SecondValue {'
-                '            param([ValidateType(([string],[UserData],[FnBase64],[FnJoin]))] [object] $value)'
+                '            param([TransformUserData()] [ValidateType(([string], [int], [IDictionary], [psobject], [UserData], [FnBase64], [FnJoin], [ConditionFunction]))] [object] $value)'
                 "            $setter"
                 '        }'
             )

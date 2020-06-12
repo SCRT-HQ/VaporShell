@@ -111,6 +111,10 @@ Task Clean Init, {
     remove 'BuildOutput'
 }
 
+Task CleanCore Init, {
+    remove 'BuildOutput/VaporShell'
+}
+
 Task CleanNonCoreFunctions Init, {
     if (Test-Path $script:SourceAdditionalModuleDirectory) {
         Get-ChildItem $script:SourceAdditionalModuleDirectory -Directory | ForEach-Object {

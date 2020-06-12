@@ -15,7 +15,7 @@ class ValidateType : ValidateEnumeratedArgumentsAttribute {
     ) {
         $invalidType = $true
         foreach ($t in $this._validTypes) {
-            if ($element -is $t) {
+            if ($element -is $t -or $element.GetType().FullName -in $this._validTypes.FullName) {
                 $invalidType = $false
                 break
             }

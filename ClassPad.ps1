@@ -31,167 +31,134 @@ try {
     Write-Host -ForegroundColor Green "Module imported, creating templates..."
 
     $stack = [VSTemplate]@{
+        Parameters = @(
+            [VSParameter]@{
+                LogicalId = 'MinSize'
+                Type = 'Number'
+            }
+            [VSParameter]@{
+                LogicalId = 'MaxSize'
+                Type = 'Number'
+            }
+            [VSParameter]@{
+                LogicalId = 'DesiredSize'
+                Type = 'Number'
+            }
+            [VSParameter]@{
+                LogicalId = 'ImageId'
+                Type = 'AWS::EC2::Image::Id'
+            }
+            [VSParameter]@{
+                LogicalId = 'InstanceType'
+                Type = 'String'
+            }
+            [VSParameter]@{
+                LogicalId = 'KeyName'
+                Type = 'String'
+            }
+            [VSParameter]@{
+                LogicalId = 'SSLCertificateArn'
+                Type = 'String'
+            }
+            [VSParameter]@{
+                LogicalId = 'PrivateSubnets'
+                Type = 'List<AWS::EC2::Subnet::Id>'
+            }
+            [VSParameter]@{
+                LogicalId = 'PublicSubnets'
+                Type = 'List<AWS::EC2::Subnet::Id>'
+            }
+            [VSParameter]@{
+                LogicalId = 'ASGSecurityGroups'
+                Type = 'List<AWS::EC2::SecurityGroup::Id>'
+            }
+            [VSParameter]@{
+                LogicalId = 'BastionSecurityGroups'
+                Type = 'List<AWS::EC2::SecurityGroup::Id>'
+            }
+            [VSParameter]@{
+                LogicalId = 'LoadBalancerSecurityGroups'
+                Type = 'List<AWS::EC2::SecurityGroup::Id>'
+            }
+        )
+        Conditions = @(
+            [VSCondition]@{
+                LogicalId = 'HasSSL'
+                Condition = [ConNot]::new([ConEquals]([FnRef]'SSLCertificateArn',''))
+            }
+            [VSCondition]@{
+                LogicalId = 'HasSSHKey'
+                Condition = [ConNot]::new([ConEquals]([FnRef]'KeyName',''))
+            }
+        )
         Resources = @(
-            [AutoScalingAutoScalingGroup]@{
-                AvailabilityZones = [FnGetAzs][FnRef][VSAWS]::Region
-                AutoScalingGroupName = 'MyASG'
-                CreationPolicy = [CreationPolicy]@{
-                    ResourceSignal = [ResourceSignal]@{
-                        Count = 1
-                        Timeout = 'PT1H'
+            [ElasticLoadBalancingLoadBalancer]@{
+                LogicalId = 'LoadBalancer'
+                Subnets = [FnRef]'PublicSubnets'
+                SecurityGroups = [FnRef]'LoadBalancerSecurityGroups'
+                Listeners = @(
+                    [ElasticLoadBalancingLoadBalancerListeners]@{
+                        LoadBalancerPort = '80'
+                        InstancePort = '80'
+                        Protocol = 'HTTP'
                     }
-                    AutoScalingCreationPolicy = [AutoScalingCreationPolicy]@{
-                        MinSuccessfulInstancesPercent = 100
-                    }
+                    [ConIf]::new(
+                        'HasSSL',
+                        [ElasticLoadBalancingLoadBalancerListeners]@{
+                            LoadBalancerPort = '443'
+                            InstancePort = '443'
+                            Protocol = 'HTTPS'
+                            SSLCertificateId = [FnRef]'SSLCertificateArn'
+                        },
+                        [FnRef][VSAWS]::NoValue
+                    )
+                )
+                HealthCheck = [ElasticLoadBalancingLoadBalancerHealthCheck]@{
+                    Target = 'HTTP:80/'
+                    HealthyThreshold = '3'
+                    UnhealthyThreshold = '5'
+                    Interval = '30'
+                    Timeout = '5'
                 }
             }
-        )
-    }
-
-    $mapTest = [VSTemplate]@{
-        Description = "My template"
-        Mappings    = @(
-            [VSMapping]@{
-                LogicalId = 'AmiMap'
-                Map       = @{
-                    'us-west-2' = @{
-                        AmiId = 'ami-lkjsdflkjsdf'
+            [AutoScalingLaunchConfiguration]@{
+                LogicalId = 'WebServerLaunchConfig'
+                KeyName = [ConIf]::new(
+                    'HasSSHKey',
+                    [FnRef]'KeyName',
+                    [FnRef][VSAWS]::NoValue
+                )
+                ImageId = [FnRef]'ImageId'
+                UserData = (
+                    '#!/bin/bash',
+                    'yum install -y nginx',
+                    'service nginx start'
+                )
+                SecurityGroups = [FnRef]'ASGSecurityGroups'
+                InstanceType = [FnRef]'InstanceType'
+            }
+            [EC2Instance]@{
+                LogicalId = 'Bastion'
+                Condition = 'HasSSHKey'
+                ImageId = [FnRef]'ImageId'
+                InstanceType = 't2.micro'
+                NetworkInterfaces = @(
+                    [EC2InstanceNetworkInterface]@{
+                        AssociatePublicIpAddress = $true
+                        DeviceIndex = '0'
+                        GroupSet = [FnRef]'BastionSecurityGroups'
+                        SubnetId = [FnSelect]::new(0, [FnRef]'PublicSubnets')
                     }
-                    'us-east-1' = @{
-                        AmiId = 'ami-iuosdfoiulsa'
-                    }
-                }
-            }
-        )
-        Resources   = @(
-            [S3Bucket]@{
-                LogicalId      = 'MyBucket'
-                DeletionPolicy = [DeletionPolicy]::Retain
-                BucketName     = 'BucketName1Param'
+                )
             }
         )
     }
 
-    $tClean = [VSTemplate]@{
-        Description = "My template"
-        Mappings    = @(
-            [VSMapping]@{
-                LogicalId = 'AmiMap'
-                Map       = @{
-                    'us-west-2' = @{
-                        AmiId = 'ami-lkjsdflkjsdf'
-                    }
-                    'us-east-1' = @{
-                        AmiId = 'ami-iuosdfoiulsa'
-                    }
-                }
-            }
-        )
-        Parameters  = @(
-            [VSParameter]@{
-                LogicalId   = 'BucketName1Param'
-                Description = 'The name of the first bucket to create'
-                Type        = 'String'
-            }
-            [VSParameter]@{
-                LogicalId   = 'BucketName2Param'
-                Description = 'The name of the second bucket to create'
-                Type        = 'String'
-            }
-            [VSParameter]@{
-                LogicalId     = 'Bucket2DeletionPolicy'
-                Description   = 'The deletion policy for bucket 2'
-                Type          = 'String'
-                Default       = 'Delete'
-                AllowedValues = @('Delete', 'Retain', 'Snapshot')
-            }
-        )
-        Resources   = @(
-            [S3Bucket]@{
-                LogicalId      = 'MyBucket'
-                DeletionPolicy = [DeletionPolicy]::Retain
-                BucketName     = [FnRef]'BucketName1Param'
-            }
-            [S3Bucket]@{
-                LogicalId      = 'MyOtherBucket'
-                DeletionPolicy = [FnRef]'Bucket2DeletionPolicy'
-                BucketName     = [FnRef]'BucketName2Param'
-                Tags           = @{
-                    Name        = 'MyOtherBucket'
-                    environment = 'development'
-                    application = 'VaporShell'
-                }
-            }
-        )
-    }
+    "`n`n~~~~~~~~~~~~~~~~~~~~~ `$stack.ToJson() ~~~~~~~~~~~~~~~~~~~~~`n"
+    $stack.ToJson()
 
-    $t = [VSTemplate]@{
-        Description = "My template"
-        Resources   = @(
-            [S3Bucket]@{
-                LogicalId      = 'MyBucket'
-                DeletionPolicy = 'RETAIN'
-                BucketName     = 'my-test-bucket'
-            }
-            [S3Bucket]@{
-                LogicalId      = 'MyOtherBucket'
-                DeletionPolicy = 'RETAIN'
-                BucketName     = [FnBase64][FnRef]'BucketName'
-                Tags           = @{
-                    Name        = 'MyOtherBucket'
-                    environment = 'development'
-                    application = 'VaporShell'
-                }
-            }
-        )
-    }
-
-    $t2Hash = @{
-        Description = "My template"
-        Resources   = @(
-            [S3Bucket]@{
-                LogicalId      = 'MyBucket'
-                DeletionPolicy = 'RETAIN'
-                BucketName     = 'my-test-bucket'
-            }
-            [S3Bucket]@{
-                LogicalId      = 'MyOtherBucket'
-                DeletionPolicy = 'RETAIN'
-                BucketName     = [FnBase64][FnRef]'BucketName'
-            }
-        )
-    }
-    $t2 = [VSTemplate]::new($t2Hash)
-
-    $resource = [S3Bucket]@{
-        LogicalId           = 'MyFancyBucket'
-        DeletionPolicy      = 'RETAIN'
-        UpdateReplacePolicy = [FnRef]'ReplacePolicyParam'
-        BucketName          = [FnBase64][FnRef]'BucketName'
-    }
-
-    $res2Hash = @{
-        LogicalId           = 'MyBucket'
-        DeletionPolicy      = 'RETAIN'
-        UpdateReplacePolicy = 'RETAIN'
-        BucketName          = [FnBase64][FnRef]'BucketName'
-    }
-    $res2 = [S3Bucket]$res2Hash
-
-    $res3 = [S3Bucket]@{
-        LogicalId           = 'My3rdBucket'
-        DeletionPolicy      = 'RETAIN'
-        UpdateReplacePolicy = 'RETAIN'
-        BucketName          = [FnBase64][FnRef]'BucketName'
-    }
-    $t.AddResource($resource)
-
-    "`n`n~~~~~~~~~~~~~~~~~~~~~ `$tClean.ToYaml() ~~~~~~~~~~~~~~~~~~~~~`n"
-    $tClean.ToYaml()
-    "`n~~~~~~~~~~~~~~~~~~~~~ $res2.Properties ~~~~~~~~~~~~~~~~~~~~~"
-    [PSCustomObject]$res2.Properties | Format-List
-    "`n~~~~~~~~~~~~~~~~~~~~~ $res3.Properties ~~~~~~~~~~~~~~~~~~~~~"
-    [PSCustomObject]$res3.Properties | Format-List
+    "`n`n~~~~~~~~~~~~~~~~~~~~~ `$stack.ToYaml() ~~~~~~~~~~~~~~~~~~~~~`n"
+    $stack.ToYaml()
 }
 catch {
     $_

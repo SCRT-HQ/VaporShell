@@ -9,8 +9,3 @@ yum update -y aws-cfn-bootstrap
     --stack Stack1 \
     --resource WebServerGroup \
     --region us-west-1
-
-
-
-
-

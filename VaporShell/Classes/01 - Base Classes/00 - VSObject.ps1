@@ -49,8 +49,11 @@ class VSObject : object {
             if (
                 $addAllProperties -or (
                     $key -notmatch '^(_|LogicalId$)' -and (
+                        $key -match '::' -or
                         $null -ne $value -or
-                        $key -match '::'
+                        (
+                            $value.Count -ne 0
+                        )
                     ) -and (
                         ($value -is [string] -and -not [string]::IsNullOrEmpty($value)) -or
                         $value -isnot [string]
@@ -80,13 +83,17 @@ class VSObject : object {
     }
 
     [string] ToJson() {
+        return $this.ToJson($false)
+    }
+
+    [string] ToJson([bool] $compress) {
         $clean = if ($this.PSObject.Properties.Name -contains 'LogicalId') {
             @{$this.LogicalId = $this.ToOrderedDictionary()}
         }
         else {
             $this.ToOrderedDictionary()
         }
-        return $clean | ConvertTo-Json -Depth 50
+        return $clean | ConvertTo-Json -Depth 50 -Compress:$compress
     }
 
     [string] ToYaml() {
