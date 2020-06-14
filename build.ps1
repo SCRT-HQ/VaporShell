@@ -18,7 +18,7 @@ Param(
     $NoUpdate,
     #region: Invoke-Build parameters
     [Parameter()]
-    [ValidateSet('Init','Clean','Build','BuildCoreOnly','BuildClasses','BuildMainClasses','BuildSubmodules','BuildDotnet','BuildReleaseZips','Test','TestClasses','Analyze','Deploy','Full','Import')]
+    [ValidateSet('Init','Clean','Build','BuildCore','BuildClasses','BuildCoreClasses','BuildSubmodules','BuildDotnet','BuildReleaseZips','Test','TestClasses','Analyze','Deploy','Full','Import')]
     [string[]]
     $Task,
     [parameter()]

@@ -41,6 +41,16 @@ class VSError : ErrorRecord {
         return [VSError]::InsertError($record)
     }
 
+    static [VSError] InvalidArgument([object] $inputObject, [string] $message) {
+        $record = [VSError]::new(
+            [ArgumentException]::new($message),
+            'InvalidArgument',
+            [ErrorCategory]::InvalidArgument,
+            $inputObject
+        )
+        return [VSError]::InsertError($record)
+    }
+
     static [VSError] MissingLogicalId([object] $inputObject, [string] $section) {
         $record = [VSError]::new(
             [ArgumentException]::new("This $($inputObject.GetType()) is missing a LogicalId! Unable to add to $section"),

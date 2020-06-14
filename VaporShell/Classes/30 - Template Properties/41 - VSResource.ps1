@@ -11,6 +11,7 @@ class VSResource : VSLogicalObject {
     hidden [object] $_deletionPolicy
     hidden [object] $_updateReplacePolicy
 
+    [string] $Condition
     [CreationPolicy] $CreationPolicy
     [string[]] $DependsOn
     [TransformDeletionPolicy()] [object] $DeletionPolicy

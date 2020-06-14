@@ -92,6 +92,8 @@ class UserData : FnBase64 {
     }
 
     UserData() : base() {}
+    UserData([IDictionary] $props) : base($props) {}
+    UserData([psobject] $props) : base($props) {}
 
     UserData([FnJoin] $fnJoin) {
         Write-Debug "Creating UserData from [FnJoin]"
@@ -108,6 +110,10 @@ class UserData : FnBase64 {
     UserData([bool] $useJoin, [string] $userDataStringOrFilepath) {
         Write-Debug "Creating UserData from [string] with UseJoin=$useJoin"
         $this['Fn::Base64'] = [UserData]::Transform($useJoin,$userDataStringOrFilepath)
+    }
+    UserData([object] $object) {
+        Write-Debug "Creating UserData from [object]"
+        $this['Fn::Base64'] = [FnJoin]::new([Environment]::NewLine,$object)
     }
     UserData([object[]] $objects) {
         Write-Debug "Creating UserData from [object[]]"

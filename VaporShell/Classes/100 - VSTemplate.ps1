@@ -10,16 +10,16 @@ class VSTemplate : VSObject {
 
     hidden [string]$_description = $null
     hidden [string] $_awsTemplateFormatVersion = $null
-    hidden [OrderedDictionary] $_mappings = [ordered]@{}
+    hidden [OrderedDictionary] $_mappings = $null
     hidden [object[]] $_mappingsOriginal = @()
-    hidden [OrderedDictionary] $_parameters = [ordered]@{}
+    hidden [OrderedDictionary] $_parameters = $null
     hidden [object[]] $_parametersOriginal = @()
-    hidden [OrderedDictionary] $_resources = [ordered]@{}
+    hidden [OrderedDictionary] $_resources = $null
     hidden [object[]] $_resourcesOriginal = @()
-    hidden [OrderedDictionary] $_outputs = [ordered]@{}
+    hidden [OrderedDictionary] $_outputs = $null
     hidden [object[]] $_outputsOriginal = @()
     hidden [object[]] $_transform = @()
-    hidden [OrderedDictionary] $_conditions = [ordered]@{}
+    hidden [OrderedDictionary] $_conditions = $null
     hidden [object[]] $_conditionsOriginal = @()
 
     [string] $AWSTemplateFormatVersion = $null

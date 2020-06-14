@@ -1,6 +1,9 @@
 using namespace System
 using namespace System.Collections
+using namespace System.Collections.Generic
 using namespace System.Collections.Specialized
+using namespace System.Management.Automation
+
 class VSHashtable : OrderedDictionary {
     # Anything inheriting from this class will only show the hashtable contents.
     # Object properties will be stripped when cast to JSON/YAML.
@@ -31,6 +34,7 @@ class VSHashtable : OrderedDictionary {
                 $params["Online"] = $true
             }
         }
+        Write-Debug "Running Get-Help @$($params | ConvertTo-Json -Compress)"
         return (Get-Help @params)
     }
 
@@ -62,7 +66,9 @@ class VSHashtable : OrderedDictionary {
                         $key -match '::' -or
                         $null -ne $value -or
                         (
-                            $value.Count -ne 0
+                            $key -in @('Conditions','Mappings','Outputs','Parameters') -and
+                            $value.Count -ne 0 -and
+                            $this -is [VSTemplate]
                         )
                     ) -and (
                         ($value -is [string] -and -not [string]::IsNullOrEmpty($value)) -or
@@ -87,6 +93,11 @@ class VSHashtable : OrderedDictionary {
                 else {
                     $value
                 }
+                Write-Debug "Key matched: $key"
+                Write-Debug "Value matched: $($clean[$key])"
+            }
+            else {
+                Write-Debug "Key excluded: $key"
             }
         }
         return $clean

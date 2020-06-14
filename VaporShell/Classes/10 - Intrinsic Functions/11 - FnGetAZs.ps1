@@ -3,26 +3,8 @@ using namespace System.Management.Automation
 class FnGetAZs : IntrinsicFunction {
     hidden [string] $_vsFunctionName = 'Add-FnGetAZs'
     hidden [string] $_awsDocumentation = 'http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getavailabilityzones.html'
+    hidden [string] $_topLevelKey = 'Fn::GetAZs'
 
-    [string] ToString() {
-        return "FnGetAZs($($this['Fn::GetAZs']))"
-    }
-
-    FnGetAZs() {
-        $this['Fn::GetAZs'] = ''
-    }
-
-    FnGetAZs([object] $region) {
-        $validTypes = @([string], [int], [IntrinsicFunction], [ConditionFunction])
-        $isValid = foreach ($type in $validTypes) {
-            if ($region -is $type) {
-                $true
-                break
-            }
-        }
-        if (-not $isValid) {
-            throw [VSError]::InvalidType($region, $validTypes)
-        }
-        $this['Fn::GetAZs'] = $region
-    }
+    FnGetAZs() { $this[$this._topLevelKey] = '' }
+    FnGetAZs([object] $value) : base($value) {}
 }
