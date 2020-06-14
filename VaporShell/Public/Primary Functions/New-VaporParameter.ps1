@@ -2,7 +2,7 @@ function New-VaporParameter {
     <#
     .SYNOPSIS
         Adds a Parameter object to the template
-    
+
     .DESCRIPTION
         You can use the optional Parameters section to pass values into your template when you create a stack. With parameters, you can create templates that are customized each time you create a stack. Each parameter must contain a value when you create a stack. You can specify a default value to make the parameter optional so that you don't need to pass in a value when creating a stack. AWS CloudFormation will use the default value. For more information about creating stacks, see Working with Stacks.
 
@@ -17,10 +17,10 @@ function New-VaporParameter {
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html
-    
+
     .PARAMETER LogicalId
         An identifier for the current condition. The logical ID must be alphanumeric (a-z, A-Z, 0-9) and unique within the template.
-    
+
     .PARAMETER Type
         The Properties type for the parameter (PropertiesType).
 
@@ -113,37 +113,37 @@ function New-VaporParameter {
 
                 Group and Sort Parameters in the AWS CloudFormation Console
 
-                When you use the AWS CloudFormation console to create or update a stack, the console alphabetically lists input parameters by their logical ID. To override the default ordering, you can use the AWS::CloudFormation::Interface metaProperties key. By grouping and ordering parameters, you make it easier for users to specify parameter values. For example, you could group all VPC-related parameters so that they aren't scattered throughout an alphabetical list.
+                When you use the AWS CloudFormation console to create or update a stack, the console alphabetically lists input parameters by their logical ID. To override the default ordering, you can use the AWS::CloudFormation::interface metaProperties key. By grouping and ordering parameters, you make it easier for users to specify parameter values. For example, you could group all VPC-related parameters so that they aren't scattered throughout an alphabetical list.
 
                 In the metaProperties key, you can specify the groups to create, the parameters to include in each group, and the order in which the console shows each parameter within its group. You can also define friendly parameter names so that the console shows descriptive names instead of logical IDs. All parameters that you reference in the metaProperties key must be declared in the Parameters section of the template.
-    
+
     .PARAMETER Default
         A value of the appropriate type for the template to use if no value is specified when a stack is created. If you define constraints for the parameter, you must specify a value that adheres to those constraints.
-    
+
     .PARAMETER NoEcho
         Whether to mask the parameter value whenever anyone makes a call that describes the stack. If you set the value to true, the parameter value is masked with asterisks (*****).
-    
+
     .PARAMETER AllowedPattern
         A regular expression that represents the patterns you want to allow for String types.
-    
+
     .PARAMETER AllowedValues
         An array containing the list of values allowed for the parameter.
-    
+
     .PARAMETER ConstraintDescription
         A string that explains the constraint when the constraint is violated.
-    
+
     .PARAMETER Description
         A string of up to 4000 characters that describes the parameter.
-    
+
     .PARAMETER MaxLength
         An integer value that determines the largest number of characters you want to allow for String types.
-    
+
     .PARAMETER MaxValue
         A numeric value that determines the largest numeric value you want to allow for Number types.
-    
+
     .PARAMETER MinLength
         An integer value that determines the smallest number of characters you want to allow for String types.
-    
+
     .PARAMETER MinValue
         A numeric value that determines the smallest numeric value you want to allow for Number types.
 
@@ -154,7 +154,7 @@ function New-VaporParameter {
             (New-VaporParameter -LogicalId "DBPwd" -NoEcho -Description "The Propertiesbase admin account password" -Type "String" -MinLength 1 -MaxLength 41 -AllowedPattern "^[a-zA-Z0-9]*$")
         )
 
-        When the template is exported, this will convert to: 
+        When the template is exported, this will convert to:
             {
                 "AWSTemplateFormatVersion":  "2010-09-09",
                 "Description":  "Testing Mapping addition",
@@ -182,109 +182,49 @@ function New-VaporParameter {
     .FUNCTIONALITY
         Vaporshell
     #>
-    [OutputType('Vaporshell.Parameter')]
+    [OutputType([VSParameter])]
     [cmdletbinding()]
     Param
     (
-        [parameter(Mandatory = $true,Position = 0)]
-        [ValidateScript( {
-                if ($_ -match "^[a-zA-Z0-9]*$") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String 'The LogicalID must be alphanumeric (a-z, A-Z, 0-9) and unique within the template.'))
-                }
-            })]
-        [System.String]
+        [parameter(Mandatory,Position = 0)]
+        [string]
         $LogicalId,
-        [parameter(Mandatory = $true,Position = 1)]
+        [parameter(Mandatory,Position = 1)]
         [ValidateSet("String","Number","List<Number>","CommaDelimitedList","AWS::EC2::AvailabilityZone::Name","AWS::EC2::Image::Id","AWS::EC2::Instance::Id","AWS::EC2::KeyPair::KeyName","AWS::EC2::SecurityGroup::GroupName","AWS::EC2::SecurityGroup::Id","AWS::EC2::Subnet::Id","AWS::EC2::Volume::Id","AWS::EC2::VPC::Id","AWS::Route53::HostedZone::Id","List<AWS::EC2::AvailabilityZone::Name>","List<AWS::EC2::Image::Id>","List<AWS::EC2::Instance::Id>","List<AWS::EC2::SecurityGroup::GroupName>","List<AWS::EC2::SecurityGroup::Id>","List<AWS::EC2::Subnet::Id>","List<AWS::EC2::Volume::Id>","List<AWS::EC2::VPC::Id>","List<AWS::Route53::HostedZone::Id>")]
-        [System.String]
+        [string]
         $Type,
-        [parameter(Mandatory = $false,Position = 2)]
-        [System.String]
+        [parameter(Position = 2)]
+        [string]
         $Default,
-        [parameter(Mandatory = $false,Position = 3)]
+        [parameter(Position = 3)]
         [Switch]
         $NoEcho,
-        [parameter(Mandatory = $false,Position = 4)]
-        [System.String]
+        [parameter(Position = 4)]
+        [string]
         $AllowedPattern,
-        [parameter(Mandatory = $false,Position = 5)]
-        [System.String[]]
+        [parameter(Position = 5)]
+        [string[]]
         $AllowedValues,
-        [parameter(Mandatory = $false,Position = 6)]
-        [System.String]
+        [parameter(Position = 6)]
+        [string]
         $ConstraintDescription,
-        [parameter(Mandatory = $false,Position = 7)]
-        [ValidateScript( {
-                if ($_.Length -le 4000) {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "The description length needs to be less than 4000 characters long."))
-                }
-            })]
-        [System.String]
+        [parameter(Position = 7)]
+        [string]
         $Description,
-        [parameter(Mandatory = $false,Position = 8)]
-        [Int]
+        [parameter(Position = 8)]
+        [int]
         $MaxLength,
-        [parameter(Mandatory = $false,Position = 9)]
-        [Int]
+        [parameter(Position = 9)]
+        [int]
         $MaxValue,
-        [parameter(Mandatory = $false,Position = 10)]
-        [Int]
+        [parameter(Position = 10)]
+        [int]
         $MinLength,
-        [parameter(Mandatory = $false,Position = 11)]
-        [Int]
+        [parameter(Position = 11)]
+        [int]
         $MinValue
     )
-    Begin {
-        $Properties = [PSCustomObject][Ordered]@{
-            "Type" = $Type
-        }
-    }
-    Process {
-        switch ($PSBoundParameters.Keys) {
-            'Default' {
-                $Properties | Add-Member -MemberType NoteProperty -Name Default -Value $Default
-            }
-            'NoEcho' {
-                $Properties | Add-Member -MemberType NoteProperty -Name NoEcho -Value ([string]$NoEcho).ToLower()
-            }
-            'AllowedPattern' {
-                $Properties | Add-Member -MemberType NoteProperty -Name AllowedPattern -Value $AllowedPattern
-            }
-            'AllowedValues' {
-                $Properties | Add-Member -MemberType NoteProperty -Name AllowedValues -Value @($AllowedValues)
-            }
-            'ConstraintDescription' {
-                $Properties | Add-Member -MemberType NoteProperty -Name ConstraintDescription -Value $ConstraintDescription
-            }
-            'Description' {
-                $Properties | Add-Member -MemberType NoteProperty -Name Description -Value $Description
-            }
-            'MaxLength' {
-                $Properties | Add-Member -MemberType NoteProperty -Name MaxLength -Value $MaxLength
-            }
-            'MaxValue' {
-                $Properties | Add-Member -MemberType NoteProperty -Name MaxValue -Value $MaxValue
-            }
-            'MinLength' {
-                $Properties | Add-Member -MemberType NoteProperty -Name MinLength -Value $MinLength
-            }
-            'MinValue' {
-                $Properties | Add-Member -MemberType NoteProperty -Name MinValue -Value $MinValue
-            }
-        }
-    }
-    End {
-        $obj = [PSCustomObject][Ordered]@{
-            "LogicalId" = $LogicalId
-            "Props" = $Properties
-        }
-        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Parameter'
-        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$(@{$obj.LogicalId = $obj.Props} | ConvertTo-Json -Depth 5 -Compress)`n"
-    }
+    $obj = [VSParameter]::new($PSBoundParameters)
+    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj.ToJson($true))`n"
+    $obj
 }

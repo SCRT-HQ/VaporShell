@@ -44,9 +44,12 @@ class UserData : FnBase64 {
     }
 
     static [object] Transform([bool] $persist, [bool] $useJoin, [IDictionary] $replaceDict, [string] $userDataStringOrFilepath) {
-        $newData = if (Test-Path $userDataStringOrFilepath) {
+        $final = @()
+        $startTag = $null
+        $endTag = $null
+        $tag = $null
+        if (Test-Path $userDataStringOrFilepath) {
             Write-Debug "Extracting script from file path: $userDataStringOrFilepath"
-            $values = ""
             $item = Get-Item $userDataStringOrFilepath
             $tag = switch -RegEx ($item.Extension) {
                 '^\.ps1$' {
@@ -59,35 +62,38 @@ class UserData : FnBase64 {
                     $null
                 }
             }
-            $fileContents = [File]::ReadAllText($item.FullName)
-            if ($tag -and $fileContents -notlike "<$($tag)>*") {
+            $fileContents = [File]::ReadAllLines($item.FullName)
+            if ($tag -and ($fileContents -join [Environment]::NewLine) -notlike "<$($tag)>*") {
                 if ($fileContents[0] -notlike "<$($tag)>`n*") {
                     Write-Debug "Adding missing script tags: <$tag>"
-                    $values += "<$($tag)>`n"
+                    $final += "<$($tag)>"
                 }
             }
-            $values += $fileContents
-            if ($tag -and $fileContents -notlike "*</$($tag)>*") {
-                $values += "`n</$($tag)>"
+            $final += $fileContents
+            if ($tag -and ($fileContents -join [Environment]::NewLine) -notlike "*</$($tag)>*") {
+                $final += "</$($tag)>"
             }
-            if ($persist -and $fileContents -notlike "*<persist>true</persist>*") {
+            if ($persist -and ($fileContents -join [Environment]::NewLine) -notlike "*<persist>true</persist>*") {
                 Write-Debug "Adding missing script tags: <persist>"
-                $values += "`n<persist>true</persist>"
+                $final += "`n<persist>true</persist>"
             }
-            $values
         }
         else {
-            $userDataStringOrFilepath
+            $final += $userDataStringOrFilepath
         }
         $replaceDict.GetEnumerator() | ForEach-Object {
             Write-Verbose "Replacing '$($_.Key)' with '$($_.Value)'"
-            $newData = $newData.Replace($_.Key,$_.Value)
+            $final = $final.Replace($_.Key,$_.Value)
+        }
+        if ($null -ne $tag -and ($final -join [Environment]::NewLine) -notmatch "\<$tag\>") {
+            $final.Insert(0,"<$($tag)>") | Out-Null
+            $final += "</$($tag)>"
         }
         if ($useJoin) {
-            return [FnJoin]::new([Environment]::NewLine,($newData -split [Environment]::NewLine))
+            return [FnJoin]::new([Environment]::NewLine,$final)
         }
         else {
-            return $newData
+            return ($final -join [Environment]::NewLine)
         }
     }
 
@@ -111,13 +117,42 @@ class UserData : FnBase64 {
         Write-Debug "Creating UserData from [string] with UseJoin=$useJoin"
         $this['Fn::Base64'] = [UserData]::Transform($useJoin,$userDataStringOrFilepath)
     }
-    UserData([object] $object) {
+<#     UserData([object] $object) {
         Write-Debug "Creating UserData from [object]"
         $this['Fn::Base64'] = [FnJoin]::new([Environment]::NewLine,$object)
-    }
+    } #>
     UserData([object[]] $objects) {
         Write-Debug "Creating UserData from [object[]]"
-        $this['Fn::Base64'] = [FnJoin]::new([Environment]::NewLine,$objects)
+        $final = @()
+        $tag = $null
+        foreach ($o in $objects) {
+            if ($o -is [string] -and (Test-Path $o)) {
+                Write-Debug "Extracting script from file path: $o"
+                $item = Get-Item $o
+                $tag = switch -RegEx ($item.Extension) {
+                    '^\.ps1$' {
+                        "powershell"
+                    }
+                    '^\.(bat|cmd)$' {
+                        "script"
+                    }
+                    default {
+                        $null
+                    }
+                }
+                [File]::ReadAllLines($item.FullName) | ForEach-Object {
+                    $final += $_
+                }
+            }
+            else {
+                $final += $o
+            }
+        }
+        if ($null -ne $tag -and ($final -join [Environment]::NewLine) -notmatch "\<$tag\>") {
+            $final.Insert(0,"<$($tag)>") | Out-Null
+            $final += "</$($tag)>"
+        }
+        $this['Fn::Base64'] = [FnJoin]::new([Environment]::NewLine,$final)
     }
     UserData([bool] $useJoin, [object[]] $objects) {
         Write-Debug "Creating UserData from [object[]] with UseJoin=$useJoin"

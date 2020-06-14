@@ -1,5 +1,8 @@
 <!-- TOC -->
 
+* [3.0.0 - 2020-07-01](#300---2020-07-01)
+  * [**Breaking Changes**](#breaking-changes)
+  * [**New Features**](#new-features)
 * [2.12.1 - 2020-05-05](#2121---2020-05-05)
 * [2.12.0 - 2020-05-03](#2120---2020-05-03)
 * [2.11.1 - 2020-03-09](#2111---2020-03-09)
@@ -55,6 +58,18 @@
 * [0.7.02](#0702)
 
 <!-- /TOC -->
+
+## 3.0.0 - 2020-07-01
+
+### **Breaking Changes**
+
+* All non-core functions have been broken out into service-specific modules, e.g. `VaporShell.S3` or `VaporShell.SAM`.
+* All of VaporShell is now fully supported by PowerShell classes, so objects output by the functions will be different. If you are making changes to objects by updating properties on a variable, you may want to review your scripts and test with 3.0.0 to confirm that there are not changes needed to the script logic.
+* `Add-CreationPolicy`'s parameters have been reduced to `AutoScalingCreationPolicy` and `ResourceSignal` with specific types expected.
+
+### **New Features**
+
+* Since all of VaporShell is now fully supported by PowerShell classes, you can work entirely with classes instead of functions by importing the service module(s) you will be using. Classes and functions will all be loaded into the session on module import, no need to include a `using` statement.
 
 ## 2.12.1 - 2020-05-05
 

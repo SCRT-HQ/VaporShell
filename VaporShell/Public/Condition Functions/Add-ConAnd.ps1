@@ -26,10 +26,9 @@ function Add-ConAnd {
     .FUNCTIONALITY
         Vaporshell
     #>
-    [OutputType('Vaporshell.Condition.And')]
+    [OutputType([ConAnd])]
     [cmdletbinding()]
-    Param
-    (
+    Param(
         [parameter(Mandatory = $true,Position = 0)]
         [ValidateCount(2,10)]
         [object[]]

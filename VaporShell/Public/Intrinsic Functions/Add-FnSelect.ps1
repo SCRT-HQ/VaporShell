@@ -2,7 +2,7 @@ function Add-FnSelect {
     <#
     .SYNOPSIS
         Adds the intrinsic function "Fn::Select" to a resource property
-    
+
     .DESCRIPTION
         The intrinsic function Fn::Select returns a single object from a list of objects by index.
 
@@ -13,7 +13,7 @@ function Add-FnSelect {
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-select.html
-    
+
     .PARAMETER Index
         The index of the object to retrieve. This must be a value from zero to N-1, where N represents the number of elements in the array.
 
@@ -39,44 +39,17 @@ function Add-FnSelect {
     .FUNCTIONALITY
         Vaporshell
     #>
-    [OutputType('Vaporshell.Function.Select')]
+    [OutputType([FnSelect])]
     [cmdletbinding()]
-    Param
-    (
-        [parameter(Mandatory = $false,Position = 0)]
-        [ValidateScript({
-            $allowedTypes = "Vaporshell.Function.FindInMap","Vaporshell.Function.Ref","System.Int32","System.String"
-            if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                $true
-            }
-            else {
-                $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-            }
-        })]
-        $Index,
-        [parameter(Mandatory = $true,Position = 1)]
-        [ValidateScript({
-            $allowedTypes = "Vaporshell.Condition.If","Vaporshell.Function.FindInMap","Vaporshell.Function.GetAtt","Vaporshell.Function.GetAZs","Vaporshell.Function.Split","Vaporshell.Function.Ref","System.String"
-            if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                $true
-            }
-            else {
-                $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-            }
-        })]
+    Param(
+        [parameter(Position = 0)]
+        [object]
+        $Index = 0,
+        [parameter(Mandatory,Position = 1)]
+        [object[]]
         $ListOfObjects
     )
-    $objCount = Get-TrueCount $ListOfObjects
-    if ($objCount -eq 1) {
-        $obj = [PSCustomObject][Ordered]@{
-            "Fn::Select" = @($Index,$ListOfObjects)
-        }
-    }
-    else {
-        $obj = [PSCustomObject][Ordered]@{
-            "Fn::Select" = @([string]$Index,@($ListOfObjects))
-        }
-    }
-    $obj | Add-ObjectDetail -TypeName 'Vaporshell.Function','Vaporshell.Function.Select'
-    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj | ConvertTo-Json -Depth 5 -Compress)`n"
+    $obj = [FnSelect]::new($Index,$ListOfObjects)
+    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj.ToJson($true))`n"
+    $obj
 }

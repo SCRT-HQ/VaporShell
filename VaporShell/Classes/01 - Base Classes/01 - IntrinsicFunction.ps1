@@ -28,7 +28,7 @@ class IntrinsicFunction : VSHashtable {
             throw [VSError]::InvalidType($value, $this._validTypes)
         }
         if ($value -is [IDictionary] -and $value -isnot [IntrinsicFunction] -and $value -isnot [ConditionFunction]) {
-            if (-not $value.Contains($this._topLevelKey)) {
+            if ($value.Contains($this._topLevelKey)) {
                 Write-Debug "Contructing $($this.GetType().Name) from input IDictionary"
                 $this[$this._topLevelKey] = $value[$this._topLevelKey]
             }

@@ -11,7 +11,7 @@ class VSParameter : VSLogicalObject {
     [string[]] $AllowedValues
     [string] $ConstraintDescription
     [string] $Default
-    [string] $Description
+    [ValidateLength(0,4000)] [string] $Description
     [nullable[int]] $MaxLength = $null
     [nullable[int]] $MaxValue = $null
     [nullable[int]] $MinLength = $null

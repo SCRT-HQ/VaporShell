@@ -2,7 +2,7 @@ function New-VaporMapping {
     <#
     .SYNOPSIS
         Adds a Mapping object to the template
-    
+
     .DESCRIPTION
         The optional Mappings section matches a key to a corresponding set of named values. For example, if you want to set values based on a region, you can create a mapping that uses the region name as a key and contains the values you want to specify for each specific region. You use the Fn::FindInMap intrinsic function to retrieve values in a map.
 
@@ -10,10 +10,10 @@ function New-VaporMapping {
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/mappings-section-structure.html
-    
+
     .PARAMETER LogicalId
         An identifier for the current condition. The logical ID must be alphanumeric (a-z, A-Z, 0-9) and unique within the template.
-    
+
     .PARAMETER Map
         A 2 level collection of key/value pairs. If you would like your collection to remain ordered the same as called, use an ordered PSCustomObject, otherwise a hashtable is fine.
 
@@ -46,7 +46,7 @@ function New-VaporMapping {
             })
         ))
 
-        When the template is exported, this will convert to: 
+        When the template is exported, this will convert to:
             {
                 "AWSTemplateFormatVersion":  "2010-09-09",
                 "Description":  "Testing Mapping addition",
@@ -79,40 +79,17 @@ function New-VaporMapping {
     .FUNCTIONALITY
         Vaporshell
     #>
-    [OutputType('Vaporshell.Mapping')]
+    [OutputType([VSMapping])]
     [cmdletbinding()]
-    Param
-    (
-        [parameter(Mandatory = $true,Position = 0)]
-        [ValidateScript( {
-                if ($_ -match "^[a-zA-Z0-9]*$") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String 'The LogicalID must be alphanumeric (a-z, A-Z, 0-9) and unique within the template.'))
-                }
-            })]
-        [System.String]
+    Param(
+        [parameter(Mandatory,Position = 0)]
+        [string]
         $LogicalId,
-        [parameter(Mandatory = $true,Position = 1)]
-        [ValidateScript( {
-                $allowedTypes = "System.Collections.Hashtable","System.Management.Automation.PSCustomObject","Vaporshell.Mapping.Map"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
+        [parameter(Mandatory,Position = 1)]
+        [System.Collections.IDictionary]
         $Map
     )
-    if ($Map -is [System.Collections.Hashtable]) {
-        $Map = [PSCustomObject]$Map
-    }
-    $obj = [PSCustomObject][Ordered]@{
-        "LogicalId" = $LogicalId
-        "Props" = $Map
-    }
-    $obj | Add-ObjectDetail -TypeName 'Vaporshell.Mapping'
-    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$(@{$obj.LogicalId = $obj.Props} | ConvertTo-Json -Depth 5 -Compress)`n"
+    $obj = [VSMapping]::new($PSBoundParameters)
+    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj.ToJson($true))`n"
+    $obj
 }

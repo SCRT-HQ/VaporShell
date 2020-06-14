@@ -212,18 +212,18 @@ function Convert-SpecToClass {
             $prprtyContents += "    [TransformUserData()] [UserData] `$$ParamName"
             if ($ResourceType -eq 'Resource') {
                 $getter = "`$this.Properties['$ParamName']"
-                $setter = "`$this.Properties['$ParamName'] = `$value"
+                $setter = "`$this.Properties['$ParamName'] = `$value -as [UserData]"
             }
             else {
                 $hiddenContents += "    hidden [object] `$$_paramName"
                 $getter = "`$this.$_paramName"
-                $setter = "`$this.$_paramName = `$value"
+                $setter = "`$this.$_paramName = `$value -as [UserData]"
             }
             $accessorContents += @(
                 '        $this | Add-Member -Force -MemberType ScriptProperty -Name UserData -Value {'
                 "            $getter"
                 '        } -SecondValue {'
-                '            param([TransformUserData()] [ValidateType(([string], [int], [IDictionary], [psobject], [UserData], [FnBase64], [FnJoin], [ConditionFunction]))] [object] $value)'
+                '            param([TransformUserData()] [object] $value)'
                 "            $setter"
                 '        }'
             )

@@ -2,13 +2,13 @@ function Add-FnRef {
     <#
     .SYNOPSIS
         Adds the intrinsic function "Ref" to a resource property
-    
+
     .DESCRIPTION
         The intrinsic function Ref returns the value of the specified parameter or resource.
 
             * When you specify a parameter's logical name, it returns the value of the parameter.
             * When you specify a resource's logical name, it returns a value that you can typically use to refer to that resource, such as a physical ID.
-            
+
         When you are declaring a resource in a template and you need to specify another template resource by name, you can use the Ref to refer to that other resource. In general, Ref returns the name of the resource. For example, a reference to an AWS::AutoScaling::AutoScalingGroup returns the name of that Auto Scaling group resource.
 
         For some resources, an identifier is returned that has another significant meaning in the context of the resource. An AWS::EC2::EIP resource, for instance, returns the IP address, and an AWS::EC2::Instance returns the instance ID.
@@ -18,7 +18,7 @@ function Add-FnRef {
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html
-    
+
     .PARAMETER Ref
         The logical name of the resource or parameter you want to reference.
 
@@ -35,17 +35,14 @@ function Add-FnRef {
     .FUNCTIONALITY
         Vaporshell
     #>
-    [OutputType('Vaporshell.Function.Ref')]
+    [OutputType([FnRef])]
     [cmdletbinding()]
-    Param
-    (
-        [parameter(Mandatory = $true,Position = 0)]
-        [System.String]
+    Param(
+        [parameter(Mandatory,Position = 0)]
+        [string]
         $Ref
     )
-    $obj = [PSCustomObject][Ordered]@{
-        Ref = $Ref
-    }
-    $obj | Add-ObjectDetail -TypeName 'Vaporshell.Function','Vaporshell.Function.Ref'
-    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj | ConvertTo-Json -Depth 5 -Compress)`n"
+    $obj = [FnRef]::new($Ref)
+    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj.ToJson($true))`n"
+    $obj
 }

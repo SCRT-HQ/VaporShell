@@ -10,7 +10,7 @@ class TransformUserData : ArgumentTransformationAttribute {
     hidden [object] TransformData([object] $inputData) {
         Write-Debug "Transforming UserData"
         if (
-            $inputData.GetType().FullName -in @('UserData','FnBase64','FnJoin') -or
+            $inputData.GetType().FullName -match ('^(UserData|Fn(Base64|Join)|Con(Ref|And|Equals|If|Not|Or))$') -or
             $inputData.GetType() -in @([IDictionary],[psobject])
         ) {
             return $inputData
@@ -22,11 +22,12 @@ class TransformUserData : ArgumentTransformationAttribute {
             else {
                 @($inputData)
             }
-            $result = foreach ($item in $list) {
+            $final = @()
+            $tag = $null
+            foreach ($item in $list) {
                 if ($item -is [string] -and (Test-Path $item)) {
-                    $values = ""
-                    $item = Get-Item $item
-                    $tag = switch -RegEx ($item.Extension) {
+                    $obj = Get-Item $item
+                    $tag = switch -RegEx ($obj.Extension) {
                         '^\.ps1$' {
                             "powershell"
                         }
@@ -37,27 +38,23 @@ class TransformUserData : ArgumentTransformationAttribute {
                             $null
                         }
                     }
-                    $fileContents = [File]::ReadAllText($item.FullName)
-                    if ($tag -and $fileContents -notlike "<$($tag)>*") {
-                        if ($fileContents[0] -notlike "<$($tag)>`n*") {
-                            $values += "<$($tag)>`n"
-                        }
+                    [File]::ReadAllLines($obj.FullName) | ForEach-Object {
+                        $final += $_
                     }
-                    $values += $fileContents
-                    if ($tag -and $fileContents -notlike "*</$($tag)>*") {
-                        $values += "`n</$($tag)>"
-                    }
-                    $values
                 }
                 else {
-                    $item
+                    $final += $item
                 }
+            }
+            if ($null -ne $tag -and ($final -join [Environment]::NewLine) -notmatch "<$tag>") {
+                $final.Insert(0,"<$($tag)>") | Out-Null
+                $final += "</$($tag)>"
             }
             return @{
                 'Fn::Base64' = @{
                     'Fn::Join' = @(
                         [Environment]::NewLine,
-                        @($result)
+                        @($final)
                     )
                 }
             }

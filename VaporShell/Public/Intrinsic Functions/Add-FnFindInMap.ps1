@@ -2,13 +2,13 @@ function Add-FnFindInMap {
     <#
     .SYNOPSIS
         Adds the intrinsic function "Fn::FindInMap" to a resource property
-    
+
     .DESCRIPTION
         The intrinsic function Fn::FindInMap returns the value corresponding to keys in a two-level map that is declared in the Mappings section.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-findinmap.html
-    
+
     .PARAMETER MapName
         The logical name of a mapping declared in the Mappings section that contains the keys and values. The value can be another function.
 
@@ -33,45 +33,18 @@ function Add-FnFindInMap {
     #>
     [OutputType('Vaporshell.Function.FindInMap')]
     [cmdletbinding()]
-    Param
-    (
-        [parameter(Mandatory = $true,Position = 0)]
-        [ValidateScript({
-            $allowedTypes = "Vaporshell.Function.FindInMap","Vaporshell.Function.Ref","System.String"
-            if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                $true
-            }
-            else {
-                $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-            }
-        })]
+    Param(
+        [parameter(Mandatory,Position = 0)]
+        [string]
         $MapName,
-        [parameter(Mandatory = $true,Position = 1)]
-        [ValidateScript({
-            $allowedTypes = "Vaporshell.Function.FindInMap","Vaporshell.Function.Ref","System.String"
-            if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                $true
-            }
-            else {
-                throw "The TopLevelKey parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
-            }
-        })]
+        [parameter(Mandatory,Position = 1)]
+        [object]
         $TopLevelKey,
-        [parameter(Mandatory = $true,Position = 2)]
-        [ValidateScript({
-            $allowedTypes = "Vaporshell.Function.FindInMap","Vaporshell.Function.Ref","System.String"
-            if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                $true
-            }
-            else {
-                throw "The SecondLevelKey parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."
-            }
-        })]
+        [parameter(Mandatory,Position = 2)]
+        [object]
         $SecondLevelKey
     )
-    $obj = [PSCustomObject][Ordered]@{
-        "Fn::FindInMap" = @($MapName,$TopLevelKey,$SecondLevelKey)
-    }
-    $obj | Add-ObjectDetail -TypeName 'Vaporshell.Function','Vaporshell.Function.FindInMap'
-    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj | ConvertTo-Json -Depth 5 -Compress)`n"
+    $obj = [FnFindInMap]::new($MapName,$TopLevelKey,$SecondLevelKey)
+    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj.ToJson($true))`n"
+    $obj
 }

@@ -41,29 +41,17 @@ function Add-FnJoin {
     .FUNCTIONALITY
         Vaporshell
     #>
-    [OutputType('Vaporshell.Function.Join')]
+    [OutputType([FnJoin])]
     [cmdletbinding()]
-    Param
-    (
-        [parameter(Mandatory = $false,Position = 0)]
+    Param(
+        [parameter(Position = 0)]
         [System.String]
         $Delimiter = $null,
-        [parameter(Mandatory = $true,Position = 1)]
-        [ValidateScript({
-            $allowedTypes = "Vaporshell.Condition.If","Vaporshell.Function.Base64","Vaporshell.Function.FindInMap","Vaporshell.Function.GetAtt","Vaporshell.Function.GetAZs","Vaporshell.Function.ImportValue","Vaporshell.Function.Join","Vaporshell.Function.Select","Vaporshell.Function.Split","Vaporshell.Function.Sub","Vaporshell.Function.Ref","System.String"
-            if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                $true
-            }
-            else {
-                $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-            }
-        })]
+        [parameter(Mandatory,Position = 1)]
         [object[]]
         $ListOfValues
     )
-    $obj = [PSCustomObject][Ordered]@{
-        "Fn::Join" = @($Delimiter,@($ListOfValues))
-    }
-    $obj | Add-ObjectDetail -TypeName 'Vaporshell.Function','Vaporshell.Function.Join'
-    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj | ConvertTo-Json -Depth 5 -Compress)`n"
+    $obj = [FnJoin]::new($Delimiter,@($ListOfValues))
+    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj.ToJson($true))`n"
+    $obj
 }

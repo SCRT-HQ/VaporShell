@@ -14,12 +14,12 @@ class VSResource : VSLogicalObject {
     [string] $Condition
     [CreationPolicy] $CreationPolicy
     [string[]] $DependsOn
-    [TransformDeletionPolicy()] [object] $DeletionPolicy
+    [TransformDeletionPolicy()] [DeletionPolicy] $DeletionPolicy
     [IDictionary] $Metadata
     [VSHashtable] $Properties = [VSHashtable]::new()
     [string] $Type
     [UpdatePolicy] $UpdatePolicy
-    [TransformDeletionPolicy()] [object] $UpdateReplacePolicy
+    [TransformDeletionPolicy()] [UpdateReplacePolicy] $UpdateReplacePolicy
 
     static [object] FormatDeletionPolicy([object] $policy) {
         if ($policy -is [string]) {

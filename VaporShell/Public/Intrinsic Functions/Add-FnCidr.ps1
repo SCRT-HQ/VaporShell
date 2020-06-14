@@ -31,47 +31,20 @@ function Add-FnCidr {
     .FUNCTIONALITY
         Vaporshell
     #>
-    [OutputType('Vaporshell.Function.Cidr')]
+    [OutputType([FnCidr])]
     [cmdletbinding()]
-    Param
-    (
-        [parameter(Mandatory = $true,Position = 0)]
-        [ValidateScript({
-            $allowedTypes = "Vaporshell.Function.Select","Vaporshell.Function.Ref","System.String"
-            if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                $true
-            }
-            else {
-                $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-            }
-        })]
+    Param(
+        [parameter(Mandatory,Position = 0)]
+        [object]
         $IpBlock,
-        [parameter(Mandatory = $true,Position = 1)]
-        [ValidateScript({
-            $allowedTypes = "Vaporshell.Function.Select","Vaporshell.Function.Ref","System.String","System.Int32"
-            if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                $true
-            }
-            else {
-                $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-            }
-        })]
+        [parameter(Mandatory,Position = 1)]
+        [object]
         $Count,
-        [parameter(Mandatory = $true,Position = 2)]
-        [ValidateScript({
-            $allowedTypes = "Vaporshell.Function.FindInMap","Vaporshell.Function.Ref","System.String"
-            if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                $true
-            }
-            else {
-                $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-            }
-        })]
+        [parameter(Mandatory,Position = 2)]
+        [object]
         $CidrBits
     )
-    $obj = [PSCustomObject][Ordered]@{
-        "Fn::Cidr" = @($IpBlock,$Count,$CidrBits)
-    }
-    $obj | Add-ObjectDetail -TypeName 'Vaporshell.Function','Vaporshell.Function.Cidr'
-    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj | ConvertTo-Json -Depth 5 -Compress)`n"
+    $obj = [FnCidr]::new($IpBlock,$Count,$CidrBits)
+    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj.ToJson($true))`n"
+    $obj
 }

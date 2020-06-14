@@ -44,38 +44,18 @@ function New-VaporMetadata {
     .FUNCTIONALITY
         Vaporshell
     #>
-    [OutputType('Vaporshell.Metadata')]
+    [OutputType([VSMetadata])]
     [cmdletbinding()]
-    Param
-    (
-        [parameter(Mandatory = $true,Position = 0)]
-        [ValidateScript( {
-                if ($_ -match "^[a-zA-Z0-9:]*$") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String 'The LogicalID must contain only alphanumeric characters or colons (a-z, A-Z, 0-9, :, ::) and unique within the template.'))
-                }
-            })]
-        [System.String]
+    Param(
+        [parameter(Mandatory,Position = 0)]
+        [string]
         [Alias('Key')]
         $LogicalId,
-        [parameter(Mandatory = $true,Position = 1)]
-        [ValidateScript( {
-                $allowedTypes = "System.Collections.Hashtable","System.Management.Automation.PSCustomObject","Vaporshell.Metadata.Data"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
+        [parameter(Mandatory,Position = 1)]
+        [object]
         $Metadata
     )
-    $obj = [PSCustomObject][Ordered]@{
-        "LogicalId" = $LogicalId
-        "Props" = $Metadata
-    }
-    $obj | Add-ObjectDetail -TypeName 'Vaporshell.Metadata'
-    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$(@{$obj.LogicalId = $obj.Props} | ConvertTo-Json -Depth 5 -Compress)`n"
+    $obj = [VSMetadata]::new($PSBoundParameters)
+    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj.ToJson($true))`n"
+    $obj
 }

@@ -16,9 +16,10 @@ if (($env:PSModulePath -split ';') -notcontains $buildOutputPath) {
 try {
     $modules = @(
         'VaporShell'
-        'VaporShell.ElasticLoadBalancing'
-        'VaporShell.EC2'
         'VaporShell.AutoScaling'
+        'VaporShell.EC2'
+        'VaporShell.ElasticLoadBalancing'
+        'VaporShell.S3'
     )
     Write-Host -ForegroundColor Green "Importing modules..."
     Import-Module $modules -Force
@@ -125,13 +126,24 @@ try {
                     [FnRef]::NoValue
                 )
                 ImageId = [FnRef]'ImageId'
-                UserData = (
-                    '#!/bin/bash',
-                    'yum install -y nginx',
-                    'service nginx start'
-                )
+                UserData = './Tests/Assets/UserData.sh'
                 SecurityGroups = [FnRef]'ASGSecurityGroups'
                 InstanceType = [FnRef]'InstanceType'
+            }
+            [AutoScalingAutoScalingGroup]@{
+                LogicalId = 'WebServerGroup'
+                UpdatePolicy = [UpdatePolicy]@{
+                    AutoScalingRollingUpdate = [AutoScalingRollingUpdate]@{
+                        MinInstancesInService = 1
+                        PauseTime = 'PT1M'
+                    }
+                }
+                LaunchConfigurationName = [FnRef]'WebServerLaunchConfig'
+                MinSize = [FnRef]'MinSize'
+                MaxSize = [FnRef]'MaxSize'
+                DesiredCapacity = [FnRef]'DesiredSize'
+                LoadBalancerNames = @([FnRef]'LoadBalancer')
+                VPCZoneIdentifier = [FnRef]'PrivateSubnets'
             }
             [EC2Instance]@{
                 LogicalId = 'Bastion'
@@ -146,6 +158,20 @@ try {
                         SubnetId = [FnSelect]::new(0, [FnRef]'PublicSubnets')
                     }
                 )
+            }
+        )
+        Outputs = @(
+            [VSOutput]@{
+                LogicalId = 'ELB'
+                Description = 'LoadBalancer DNS Name'
+                Value = [FnGetAtt]::new('LoadBalancer','DNSName')
+                Export = [Export]'elb-dns-name'
+            }
+            [VSOutput]@{
+                LogicalId = 'Bastion'
+                Description = 'Bastion instance IP'
+                Value = [FnGetAtt]::new('Bastion','PublicIp')
+                Condition = [ConRef]'HasSSHKey'
             }
         )
     }

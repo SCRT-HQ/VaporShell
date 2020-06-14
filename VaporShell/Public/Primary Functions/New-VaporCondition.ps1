@@ -2,7 +2,7 @@ function New-VaporCondition {
     <#
     .SYNOPSIS
         Adds a Condition object to the template
-    
+
     .DESCRIPTION
         The optional Conditions section includes statements that define when a resource is created or when a property is defined. For example, you can compare whether a value is equal to another value. Based on the result of that condition, you can conditionally create resources. If you have multiple conditions, separate them with commas.
 
@@ -28,10 +28,10 @@ function New-VaporCondition {
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/conditions-section-structure.html
-    
+
     .PARAMETER LogicalId
         An identifier for the current condition. The logical ID must be alphanumeric (a-z, A-Z, 0-9) and unique within the template.
-    
+
     .PARAMETER Condition
         Logical ID of the condition that this resource needs to be true in order to be provisioned.
 
@@ -41,7 +41,7 @@ function New-VaporCondition {
             New-VaporCondition -LogicalId "CreateProdResources" -Condition (Add-ConEquals -FirstValue (Add-FnRef -Ref "EnvType") -SecondValue "prod")
         ))
 
-        When the template is exported, this will convert to: 
+        When the template is exported, this will convert to:
             {
                 "AWSTemplateFormatVersion":  "2010-09-09",
                 "Description":  "Testing Condition addition",
@@ -68,37 +68,17 @@ function New-VaporCondition {
     .FUNCTIONALITY
         Vaporshell
     #>
-    [OutputType('Vaporshell.Condition')]
+    [OutputType([VSCondition])]
     [cmdletbinding()]
-    Param
-    (
-        [parameter(Mandatory = $true,Position = 0)]
-        [ValidateScript( {
-                if ($_ -match "^[a-zA-Z0-9]*$") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String 'The LogicalID must be alphanumeric (a-z, A-Z, 0-9) and unique within the template.'))
-                }
-            })]
-        [System.String]
+    Param(
+        [parameter(Mandatory,Position = 0)]
+        [string]
         $LogicalId,
-        [parameter(Mandatory = $true,Position = 1)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Condition.And","Vaporshell.Condition.Equals","Vaporshell.Condition.If","Vaporshell.Condition.Not","Vaporshell.Condition.Or"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
+        [parameter(Mandatory,Position = 1)]
+        [ConditionFunction]
         $Condition
     )
-    $obj = [PSCustomObject][Ordered]@{
-        "LogicalId" = $LogicalId
-        "Props" = $Condition
-    }
-    $obj | Add-ObjectDetail -TypeName 'Vaporshell.Condition'
-    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$(@{$obj.LogicalId = $obj.Props} | ConvertTo-Json -Depth 5 -Compress)`n"
+    $obj = [VSCondition]::new($PSBoundParameters)
+    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj.ToJson($true))`n"
+    $obj
 }

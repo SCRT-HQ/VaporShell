@@ -2,13 +2,13 @@ function Add-ConIf {
     <#
     .SYNOPSIS
         Adds the condition function "Fn::If" to a resource property
-    
+
     .DESCRIPTION
         Returns one value if the specified condition evaluates to true and another value if the specified condition evaluates to false. Currently, AWS CloudFormation supports the Fn::If intrinsic function in the metadata attribute, update policy attribute, and property values in the Resources section and Outputs sections of a template. You can use the AWS::NoValue pseudo parameter as a return value to remove the corresponding property.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-conditions.html#intrinsic-function-reference-conditions-if
-    
+
     .PARAMETER ConditionName
         A reference to a condition in the Conditions section. Use the condition's name to reference it.
 
@@ -37,39 +37,20 @@ function Add-ConIf {
     .FUNCTIONALITY
         Vaporshell
     #>
-    [OutputType('Vaporshell.Condition.If')]
+    [OutputType([ConIf])]
     [cmdletbinding()]
-    Param
-    (
-        [parameter(Mandatory = $true,Position = 0)]
-        [System.String]
+    Param(
+        [parameter(Mandatory,Position = 0)]
+        [string]
         $ConditionName,
-        [parameter(Mandatory = $true,Position = 1)]
-        [ValidateScript({
-            $allowedTypes = "Vaporshell.Condition.If","Vaporshell.Function.Base64","Vaporshell.Function.FindInMap","Vaporshell.Function.GetAtt","Vaporshell.Function.GetAZs","Vaporshell.Function.Join","Vaporshell.Function.Select","Vaporshell.Function.Ref","System.String"
-            if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                $true
-            }
-            else {
-                $PSCmdlet.ThrowTerminatingError((New-VSError -String "The ValueToImport parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-            }
-        })]
+        [parameter(Mandatory,Position = 1)]
+        [object]
         $ValueIfTrue,
-        [parameter(Mandatory = $true,Position = 2)]
-        [ValidateScript({
-            $allowedTypes = "Vaporshell.Condition.If","Vaporshell.Function.Base64","Vaporshell.Function.FindInMap","Vaporshell.Function.GetAtt","Vaporshell.Function.GetAZs","Vaporshell.Function.Join","Vaporshell.Function.Select","Vaporshell.Function.Ref","System.String"
-            if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                $true
-            }
-            else {
-                $PSCmdlet.ThrowTerminatingError((New-VSError -String "The ValueToImport parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-            }
-        })]
+        [parameter(Mandatory,Position = 2)]
+        [object]
         $ValueIfFalse
     )
-    $obj = [PSCustomObject][Ordered]@{
-        "Fn::If" = @($ConditionName,$ValueIfTrue,$ValueIfFalse)
-    }
-    $obj | Add-ObjectDetail -TypeName 'Vaporshell.Condition','Vaporshell.Condition.If'
-    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj | ConvertTo-Json -Depth 5 -Compress)`n"
+    $obj = [ConIf]::new($ConditionName,$ValueIfTrue,$ValueIfFalse)
+    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj.ToJson($true))`n"
+    $obj
 }

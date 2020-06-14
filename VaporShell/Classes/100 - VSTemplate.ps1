@@ -24,12 +24,12 @@ class VSTemplate : VSObject {
 
     [string] $AWSTemplateFormatVersion = $null
     [string] $Description = $null
+    [FnTransform[]] $Transform = $null
+    [VSParameter[]] $Parameters = $null
     [VSCondition[]] $Conditions = $null
     [VSMapping[]] $Mappings = $null
-    [VSOutput[]] $Outputs = $null
-    [VSParameter[]] $Parameters = $null
     [VSResource[]] $Resources = $null
-    [FnTransform[]] $Transform = $null
+    [VSOutput[]] $Outputs = $null
 
     static [string] Help() {
         $help = "This is the Template help."
@@ -270,6 +270,31 @@ class VSTemplate : VSObject {
             param([string] $value)
             $this._description = $value
         }
+        $this | Add-Member -Force -MemberType 'ScriptProperty' -Name 'Transform' -Value {
+            $this._transform
+        } -SecondValue {
+            param([object] $value)
+            if ($value.ToString() -match 'Serverless') {
+                $this.AddSAMTransform()
+            }
+            else {
+                $this.AddTransform($value)
+            }
+        }
+        $this | Add-Member -Force -MemberType 'ScriptProperty' -Name 'Parameters' -Value {
+            if ($MyInvocation.Line -match '\.Parameters') {
+                $this._parametersOriginal
+            }
+            else {
+                $this._parameters
+            }
+        } -SecondValue {
+            param([object[]] $value)
+            if ($null -eq $this._parameters) {
+                $this._parameters = [ordered]@{}
+            }
+            $this.AddParameter($value)
+        }
         $this | Add-Member -Force -MemberType 'ScriptProperty' -Name 'Conditions' -Value {
             if ($MyInvocation.Line -match '\.Conditions') {
                 $this._conditionsOriginal
@@ -298,34 +323,6 @@ class VSTemplate : VSObject {
             }
             $this.AddMapping($value)
         }
-        $this | Add-Member -Force -MemberType 'ScriptProperty' -Name 'Outputs' -Value {
-            if ($MyInvocation.Line -match '\.Outputs') {
-                $this._outputsOriginal
-            }
-            else {
-                $this._outputs
-            }
-        } -SecondValue {
-            param([object[]] $value)
-            if ($null -eq $this._outputs) {
-                $this._outputs = [ordered]@{}
-            }
-            $this.AddOutput($value)
-        }
-        $this | Add-Member -Force -MemberType 'ScriptProperty' -Name 'Parameters' -Value {
-            if ($MyInvocation.Line -match '\.Parameters') {
-                $this._parametersOriginal
-            }
-            else {
-                $this._parameters
-            }
-        } -SecondValue {
-            param([object[]] $value)
-            if ($null -eq $this._parameters) {
-                $this._parameters = [ordered]@{}
-            }
-            $this.AddParameter($value)
-        }
         $this | Add-Member -Force -MemberType 'ScriptProperty' -Name 'Resources' -Value {
             if ($MyInvocation.Line -match '\.Resources') {
                 $this._resourcesOriginal
@@ -340,16 +337,19 @@ class VSTemplate : VSObject {
             }
             $this.AddResource($value)
         }
-        $this | Add-Member -Force -MemberType 'ScriptProperty' -Name 'Transform' -Value {
-            $this._transform
-        } -SecondValue {
-            param([object] $value)
-            if ($value.ToString() -match 'Serverless') {
-                $this.AddSAMTransform()
+        $this | Add-Member -Force -MemberType 'ScriptProperty' -Name 'Outputs' -Value {
+            if ($MyInvocation.Line -match '\.Outputs') {
+                $this._outputsOriginal
             }
             else {
-                $this.AddTransform($value)
+                $this._outputs
             }
+        } -SecondValue {
+            param([object[]] $value)
+            if ($null -eq $this._outputs) {
+                $this._outputs = [ordered]@{}
+            }
+            $this.AddOutput($value)
         }
     }
 

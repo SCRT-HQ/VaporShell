@@ -38,23 +38,20 @@ function Add-FnTransform {
     .FUNCTIONALITY
         Vaporshell
     #>
-    [OutputType('Vaporshell.Function.Transform')]
+    [OutputType([FnTransform])]
     [cmdletbinding()]
-    Param
-    (
-        [parameter(Mandatory = $true,Position = 0)]
+    Param(
+        [parameter(Mandatory,Position = 0)]
         [String]
         $Name,
-        [parameter(Mandatory = $true,Position = 1)]
-        [Hashtable]
+        [parameter(Mandatory,Position = 1)]
+        [System.Collections.IDictionary]
         $Parameters
     )
-    $obj = [PSCustomObject][Ordered]@{
-        "Fn::Transform" = @{
-            Name = $Name
-            Parameters = $Parameters
-        }
+    $obj = [FnTransform]@{
+        Name = $Name
+        Parameters = $Parameters
     }
-    $obj | Add-ObjectDetail -TypeName 'Vaporshell.Function','Vaporshell.Function.Transform'
-    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj | ConvertTo-Json -Depth 5 -Compress)`n"
+    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj.ToJson($true))`n"
+    $obj
 }

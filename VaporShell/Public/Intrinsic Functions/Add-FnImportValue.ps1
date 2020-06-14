@@ -2,7 +2,7 @@ function Add-FnImportValue {
     <#
     .SYNOPSIS
         Adds the intrinsic function "Fn::ImportValue" to a resource property
-    
+
     .DESCRIPTION
         The intrinsic function Fn::ImportValue returns the value of an output exported by another stack. You typically use this function to create cross-stack references.
 
@@ -17,7 +17,7 @@ function Add-FnImportValue {
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html
-    
+
     .PARAMETER ValueToImport
         The stack output value that you want to import.
 
@@ -40,25 +40,14 @@ function Add-FnImportValue {
     .FUNCTIONALITY
         Vaporshell
     #>
-    [OutputType('Vaporshell.Function.ImportValue')]
+    [OutputType([FnImportValue])]
     [cmdletbinding()]
-    Param
-    (
-        [parameter(Mandatory = $true,Position = 0)]
-        [ValidateScript({
-            $allowedTypes = "Vaporshell.Condition.If","Vaporshell.Function.Base64","Vaporshell.Function.FindInMap","Vaporshell.Function.Join","Vaporshell.Function.Select","Vaporshell.Function.Split","Vaporshell.Function.Sub","Vaporshell.Function.Ref","System.String"
-            if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                $true
-            }
-            else {
-                $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-            }
-        })]
+    Param(
+        [parameter(Mandatory,Position = 0)]
+        [object]
         $ValueToImport
     )
-    $obj = [PSCustomObject][Ordered]@{
-        "Fn::ImportValue" = $ValueToImport
-    }
-    $obj | Add-ObjectDetail -TypeName 'Vaporshell.Function','Vaporshell.Function.ImportValue'
-    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj | ConvertTo-Json -Depth 5 -Compress)`n"
+    $obj = [FnImportValue]::new($ValueToImport)
+    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj.ToJson($true))`n"
+    $obj
 }

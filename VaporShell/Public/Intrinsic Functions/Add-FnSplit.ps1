@@ -2,7 +2,7 @@ function Add-FnSplit {
     <#
     .SYNOPSIS
         Adds the intrinsic function "Fn::Split" to a resource property
-    
+
     .DESCRIPTION
         To split a string into a list of string values so that you can select an element from the resulting string list, use the Fn::Split intrinsic function. Specify the location of splits with a delimiter, such as , (a comma). After you split a string, use the Fn::Select function to pick a specific element.
 
@@ -10,7 +10,7 @@ function Add-FnSplit {
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-split.html
-    
+
     .PARAMETER Delimiter
         A string value that determines where the source string is divided.
 
@@ -38,28 +38,17 @@ function Add-FnSplit {
     .FUNCTIONALITY
         Vaporshell
     #>
-    [OutputType('Vaporshell.Function.Split')]
+    [OutputType([FnSplit])]
     [cmdletbinding()]
-    Param
-    (
-        [parameter(Mandatory = $true,Position = 0)]
-        [System.String]
+    Param(
+        [parameter(Mandatory,Position = 0)]
+        [string]
         $Delimiter,
-        [parameter(Mandatory = $true,Position = 1)]
-        [ValidateScript({
-            $allowedTypes = "Vaporshell.Condition.If","Vaporshell.Function.Base64","Vaporshell.Function.FindInMap","Vaporshell.Function.GetAtt","Vaporshell.Function.GetAZs","Vaporshell.Function.Join","Vaporshell.Function.Select","Vaporshell.Function.Ref","System.String"
-            if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                $true
-            }
-            else {
-                $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-            }
-        })]
+        [parameter(Mandatory,Position = 1)]
+        [object]
         $SourceString
     )
-    $obj = [PSCustomObject][Ordered]@{
-        "Fn::Split" = @($Delimiter,$SourceString)
-    }
-    $obj | Add-ObjectDetail -TypeName 'Vaporshell.Function','Vaporshell.Function.Split'
-    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj | ConvertTo-Json -Depth 5 -Compress)`n"
+    $obj = [FnSplit]::new($Delimiter,$SourceString)
+    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj.ToJson($true))`n"
+    $obj
 }

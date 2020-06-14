@@ -9,6 +9,7 @@ class VSOutput : VSLogicalObject {
 
     hidden [object] $_value
 
+    [string] $Condition
     [string] $Description
     [string] $Value
     [Export] $Export
@@ -17,7 +18,7 @@ class VSOutput : VSLogicalObject {
         $this | Add-Member -Force -MemberType 'ScriptProperty' -Name 'Value' -Value {
             $this._value
         } -SecondValue {
-            param([ValidateType([string], [int], [bool], [IntrinsicFunction], [ConditionFunction])] [object] $value)
+            param([ValidateType(([string], [int], [bool], [IntrinsicFunction], [ConditionFunction]))] [object] $value)
             $this._value = $value
         }
     }

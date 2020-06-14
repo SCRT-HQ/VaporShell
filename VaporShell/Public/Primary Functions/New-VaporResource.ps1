@@ -95,113 +95,42 @@ function New-VaporResource {
     .FUNCTIONALITY
         Vaporshell
     #>
-    [OutputType('Vaporshell.Resource')]
+    [OutputType([VSResource])]
     [cmdletbinding()]
     Param
     (
         [parameter(Mandatory = $true,Position = 0)]
-        [ValidateScript( {
-                if ($_ -match "^[a-zA-Z0-9]*$") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String 'The LogicalId must be alphanumeric (a-z, A-Z, 0-9) and unique within the template.'))
-                }
-            })]
-        [System.String]
+        [string]
         $LogicalId,
         [parameter(Mandatory = $true,Position = 1)]
-        [System.String]
+        [string]
         $Type,
-        [parameter(Mandatory = $false,Position = 2)]
-        [ValidateScript( {
-                $allowedTypes = "System.Management.Automation.PSCustomObject","Vaporshell.Resource.Properties","System.Collections.Hashtable"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
+        [parameter(Position = 2)]
+        [VSHashtable]
         $Properties,
-        [parameter(Mandatory = $false,Position = 3)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.CreationPolicy"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
+        [parameter(Position = 3)]
+        [CreationPolicy]
         $CreationPolicy,
-        [parameter(Mandatory = $false,Position = 4)]
-        [ValidateSet("Delete","Retain","Snapshot")]
-        [System.String]
+        [parameter(Position = 4)]
+        [DeletionPolicy]
         $DeletionPolicy,
-        [parameter(Mandatory = $false)]
-        [ValidateSet("Delete","Retain","Snapshot")]
-        [System.String]
+        [parameter()]
+        [UpdateReplacePolicy]
         $UpdateReplacePolicy,
-        [parameter(Mandatory = $false,Position = 5)]
-        [System.String[]]
+        [parameter(Position = 5)]
+        [string[]]
         $DependsOn,
-        [parameter(Mandatory = $false,Position = 6)]
-        [ValidateScript( {
-                $allowedTypes = "System.Management.Automation.PSCustomObject"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
+        [parameter(Position = 6)]
+        [System.Collections.IDictionary]
         $Metadata,
-        [parameter(Mandatory = $false,Position = 7)]
-        [ValidateScript( {
-                $allowedTypes = "Vaporshell.Resource.UpdatePolicy"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
+        [parameter(Position = 7)]
+        [UpdatePolicy]
         $UpdatePolicy,
-        [parameter(Mandatory = $false,Position = 8)]
+        [parameter(Position = 8)]
+        [object]
         $Condition
     )
-    $obj = [PSCustomObject][Ordered]@{
-        "LogicalId" = $LogicalId
-        "Props" = [PSCustomObject][Ordered]@{
-            "Type" = $Type
-        }
-    }
-    if ($Condition) {
-        $obj.Props | Add-Member -MemberType NoteProperty -Name "Condition" -Value $Condition -Force
-    }
-    if ($Properties) {
-        $obj.Props | Add-Member -MemberType NoteProperty -Name "Properties" -Value ([PSCustomObject]$Properties) -Force
-    }
-    if ($CreationPolicy) {
-        $obj.Props | Add-Member -MemberType NoteProperty -Name "CreationPolicy" -Value $CreationPolicy
-    }
-    if ($DeletionPolicy) {
-        $obj.Props | Add-Member -MemberType NoteProperty -Name "DeletionPolicy" -Value $DeletionPolicy
-    }
-    if ($UpdateReplacePolicy) {
-        $obj.Props | Add-Member -MemberType NoteProperty -Name "UpdateReplacePolicy" -Value $UpdateReplacePolicy
-    }
-    if ($DependsOn) {
-        $obj.Props | Add-Member -MemberType NoteProperty -Name "DependsOn" -Value $DependsOn
-    }
-    if ($Metadata) {
-        $obj.Props | Add-Member -MemberType NoteProperty -Name "Metadata" -Value $Metadata
-    }
-    if ($UpdatePolicy) {
-        $obj.Props | Add-Member -MemberType NoteProperty -Name "UpdatePolicy" -Value $UpdatePolicy
-    }
-    $obj | Add-Member -MemberType ScriptMethod -Name ToString -Value {$this.LogicalId} -Force
-    $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource'
-    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$(@{$obj.LogicalId = $obj.Props} | ConvertTo-Json -Depth 5)`n"
+    $obj = [VSResource]::new($PSBoundParameters)
+    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj.ToJson($true))`n"
+    $obj
 }

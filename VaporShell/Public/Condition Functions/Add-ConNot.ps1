@@ -2,13 +2,13 @@ function Add-ConNot {
     <#
     .SYNOPSIS
         Adds the condition function "Fn::Not" to a resource property
-    
+
     .DESCRIPTION
         Returns true for a condition that evaluates to false or returns false for a condition that evaluates to true. Fn::Not acts as a NOT operator.
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-conditions.html#intrinsic-function-reference-conditions-not
-    
+
     .PARAMETER Condition
         A condition such as Fn::Equals that evaluates to true or false.
 
@@ -26,25 +26,14 @@ function Add-ConNot {
     .FUNCTIONALITY
         Vaporshell
     #>
-    [OutputType('Vaporshell.Condition.Not')]
+    [OutputType([ConNot])]
     [cmdletbinding()]
-    Param
-    (
-        [parameter(Mandatory = $true,Position = 0)]
-        [ValidateScript({
-            $allowedTypes = "Vaporshell.Function","Vaporshell.Condition"
-            if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                $true
-            }
-            else {
-                $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-            }
-        })]
-        $Condition
+    Param(
+        [parameter(Mandatory,Position = 0)]
+        [object[]]
+        $Conditions
     )
-    $obj = [PSCustomObject][Ordered]@{
-        "Fn::Not" = @($Condition)
-    }
-    $obj | Add-ObjectDetail -TypeName 'Vaporshell.Condition','Vaporshell.Condition.Not'
-    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj | ConvertTo-Json -Depth 5 -Compress)`n" 
-} 
+    $obj = [ConNot]::new($Conditions)
+    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj.ToJson($true))`n"
+    $obj
+}

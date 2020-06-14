@@ -56,13 +56,16 @@ Task Build  Init, Update, BuildCore, BuildSubmodules, BuildDotnet
 Task BuildClasses BuildCoreClasses, BuildSubmodules
 
 # Synopsis: Builds only the core components and submodules, excluding Resource Types and Resource Property Types
-Task BuildCore Init, CleanCore, {$Script:NoUpdate = $true}, BuildCoreOnly, BuildDotnet
+Task BuildCore Init, BuildCoreOnly, BuildDotnet, ImportCore
+
+# Synopsis: Autogenerates the service-specific modules and imports them once done to confirm validity.
+Task BuildNonCore Init, BuildSubmodules, ImportSubmodules
 
 # Synopsis: Run Pester tests for classes only (no Clean/Compile)
 Task TestClasses Init, { $script:TestPath = [System.IO.Path]::Combine($BuildRoot,"Tests","Class Tests") }, Test
 
 # Synopsis: Run all core tasks
-Task Full Init, Build, Import, PesterBefore, Test, BuildReleaseZips
+Task Full Init, Build, Import, Test, BuildReleaseZips
 
 # Synopsis: Cleans only compiled core module
 Task CleanCore Init, {
@@ -445,12 +448,23 @@ Task BuildCoreOnly CleanCore, {
     Write-BuildLog 'Creating Alias hash'
     $aliasHash = @("@{")
     Get-ChildItem "$SourceModuleDirectory\Public\Intrinsic Functions" | ForEach-Object {
-        $name = ($_.BaseName).Replace('Add-', '')
+        $name = $_.BaseName -replace '^Add-'
+        $aliasesToExport += $name
+        $aliasHash += "    '$name' = '$($_.BaseName.Trim())'"
+        $name = $_.BaseName -replace '^Add-Fn','!'
         $aliasesToExport += $name
         $aliasHash += "    '$name' = '$($_.BaseName.Trim())'"
     }
     Get-ChildItem "$SourceModuleDirectory\Public\Condition Functions" | ForEach-Object {
-        $name = ($_.BaseName).Replace('Add-', '')
+        $name = $_.BaseName -replace '^Add-'
+        $aliasesToExport += $name
+        $aliasHash += "    '$name' = '$($_.BaseName.Trim())'"
+        $name = if ($_.BaseName -eq 'Add-ConRef') {
+            '!Condition'
+        }
+        else {
+            $_.BaseName -replace '^Add-Con', '!'
+        }
         $aliasesToExport += $name
         $aliasHash += "    '$name' = '$($_.BaseName.Trim())'"
     }
@@ -461,7 +475,7 @@ Task BuildCoreOnly CleanCore, {
         '$aliases = @()'
         "`$aliasHash = $($aliasHash -join "`n")"
         'foreach ($key in $aliasHash.Keys) {'
-        '    New-Alias -Name `$key -Value $aliasHash[$key] -Force'
+        '    New-Alias -Name $key -Value $aliasHash[$key] -Force'
         '    $aliases += $key'
         '}'
         ''
@@ -573,18 +587,23 @@ Task BuildCoreClasses Init, {
     }
 }
 
-# Synopsis: Imports the newly compiled module
-Task Import Init, {
-    If (Test-Path $TargetManifestPath) {
-        Get-ChildItem $TargetDirectory -Filter 'VaporShell*' | ForEach-Object {
-            Write-BuildLog "Importing $($_.BaseName)"
-            Import-Module -Name $_.FullName -ErrorAction Stop
-        }
-    }
-    else {
-        Write-BuildWarning "TargetManifestPath not found! Path attempted: $TargetManifestPath"
+Task ImportCore -If {Test-Path $TargetManifestPath} Init, {
+    Write-BuildLog "Testing import of VaporShell"
+    Import-Module "$BuildRoot/BuildOutput/VaporShell" -ErrorAction Stop -Force
+}
+
+Task ImportSubmodules -If {Test-Path "$BuildRoot/BuildOutput/VaporShell.Workspaces"} Init, {
+    $mods = Get-ChildItem $TargetDirectory -Filter 'VaporShell*'
+    $i = 0
+    $mods | ForEach-Object {
+        $i++
+        Write-BuildLog "[$i/$($mods.Count)] Testing import of $($_.BaseName)"
+        Import-Module $_.FullName -ErrorAction Stop -Force
     }
 }
+
+# Synopsis: Imports the newly compiled module
+Task Import Init, ImportCore, ImportSubmodules
 
 Task PesterBefore {
     if ($module = Get-Module $ModuleName) {
