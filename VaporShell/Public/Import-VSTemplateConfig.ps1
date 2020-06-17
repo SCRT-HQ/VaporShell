@@ -21,13 +21,12 @@ function Import-VSTemplateConfig {
         Vaporshell
     #>
     [cmdletbinding()]
-    Param
-    (
-        [parameter(Mandatory = $true, Position = 0)]
+    Param(
+        [parameter(Mandatory, Position = 0)]
         [ValidateScript({Test-Path $_})]
         [String]
         $Path,
-        [parameter(Mandatory = $true, Position = 1)]
+        [parameter(Mandatory, Position = 1)]
         [String]
         $Key
     )

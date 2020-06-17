@@ -2,26 +2,26 @@ function Export-Vaporshell {
     <#
     .SYNOPSIS
         Exports the template object to JSON file.
-    
+
     .DESCRIPTION
         Exports the template object to JSON file.
 
         Requires the Vaporshell input object to be type 'Vaporshell.Template'
-    
+
     .PARAMETER VaporshellTemplate
         The input template object
-    
+
     .PARAMETER As
         Specify JSON or YAML for your preferred output. Defaults to JSON.
 
         **Important**: In order to use YAML, you must have cfn-flip installed: https://github.com/awslabs/aws-cfn-template-flip
-    
+
     .PARAMETER Path
         Path to save the resulting JSON file.
-    
+
     .PARAMETER ValidateTemplate
         Validates the template using the AWS .NET SDK
-    
+
     .PARAMETER Force
         Forces an overwrite if the Path already exists
 
@@ -39,66 +39,55 @@ function Export-Vaporshell {
         Vaporshell
     #>
     [cmdletbinding()]
-    Param
-    (
-        [parameter(Mandatory = $true,Position = 0,ValueFromPipeline = $true)]
-        [ValidateScript( {
-                if ($_.Resources) {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "Unable to find any resources on this Vaporshell template. Resources are required in CloudFormation templates at the minimum."))
-                }
-            })]
-        [PSTypeName('Vaporshell.Template')]
+    Param(
+        [parameter(Mandatory,Position = 0,ValueFromPipeline)]
+        [VSTemplate]
         $VaporshellTemplate,
-        [parameter(Mandatory = $false,Position = 1)]
+        [parameter(Position = 1)]
         [ValidateSet("JSON","YAML")]
-        [System.String]
+        [string]
         $As = "JSON",
-        [parameter(Mandatory = $false,Position = 2)]
-        [System.String]
+        [parameter(Position = 2)]
+        [string]
         $Path,
-        [parameter(Mandatory = $false)]
-        [Switch]
+        [parameter()]
+        [switch]
         $ValidateTemplate,
-        [parameter(Mandatory = $false)]
-        [Switch]
+        [parameter()]
+        [switch]
         $Force
     )
     Begin {
-        $ForcePref = @{}
-        if ($Force) {
-            $ForcePref.add("Force",$True)
+        if (-not $PSBoundParameters.ContainsKey('As')) {
+            $As = if (-not $PSBoundParameters.ContainsKey('Path')) {
+                'JSON'
+            }
+            else {
+                switch -RegEx ($Path) {
+                    '\.(yml|yaml)$' {
+                        'YAML'
+                    }
+                    default {
+                        'JSON'
+                    }
+                }
+            }
         }
     }
     Process {
-        Write-Verbose "Converting template object to JSON"
-        $JSON = ConvertTo-Json -Depth 100 -InputObject $VaporshellTemplate -Verbose:$false | Format-Json
+        Write-Verbose "Converting template object to $As"
+        $final = $VaporshellTemplate.Export($true, $As)
     }
     End {
-        if ($As -eq "YAML") {
-            if (Get-Command cfn-flip -ErrorAction SilentlyContinue) {
-                Write-Verbose "Converting JSON to YAML with cfn-flip"
-                $Final = $JSON | cfn-flip
-            }
-            else {
-                Write-Warning "cfn-flip not found in PATH! Skipping conversion to YAML to prevent failure."
-                $Final = $JSON
-            }
-        }
-        else {
-            $Final = $JSON
-        }
         if ($ValidateTemplate) {
-            Get-TemplateValidation -TemplateBody ($Final -join "`n")
+            Get-TemplateValidation -TemplateBody ($Final -join [System.Environment]::NewLine)
         }
         if ($Path) {
-            Write-Verbose "Exporting template to: $Path"
-            $Final | Set-Content -Path $Path @ForcePref -Verbose:$false
+            Write-Verbose "Exporting $As template to: $Path"
+            $VaporshellTemplate.Export($Path, $As, $Force)
         }
         else {
-            return ($Final -join "`n")
+            return ($Final -join [System.Environment]::NewLine)
         }
     }
 }

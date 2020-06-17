@@ -16,10 +16,9 @@ class TransformTag : ArgumentTransformationAttribute {
 
     hidden [IEnumerable[IDictionary]] TransformHashtable([IDictionary] $inputData) {
         $final = [List[IDictionary]]::new()
-        if ($inputData['key'] -and $inputData['value']) {
+        if (($inputData['key'] -or $inputData.Key) -and ($inputData['value'] -or $inputData.Value)) {
             $final.Add($inputData)
-        }
-        else {
+        } else {
             $inputData.GetEnumerator() | ForEach-Object {
                 $final.Add(@{
                     Key = $_.Key

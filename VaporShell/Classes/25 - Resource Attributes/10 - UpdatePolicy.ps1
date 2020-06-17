@@ -11,8 +11,8 @@ class UpdatePolicy : VSObject {
     [AutoScalingRollingUpdate] $AutoScalingRollingUpdate
     [AutoScalingScheduledAction] $AutoScalingScheduledAction
     [CodeDeployLambdaAliasUpdate] $CodeDeployLambdaAliasUpdate
-    [bool] $EnableVersionUpgrade
-    [bool] $UseOnlineResharding
+    [nullable[bool]] $EnableVersionUpgrade = $null
+    [nullable[bool]] $UseOnlineResharding = $null
 
     UpdatePolicy() : base() {}
     UpdatePolicy([IDictionary] $props) : base($props) {}

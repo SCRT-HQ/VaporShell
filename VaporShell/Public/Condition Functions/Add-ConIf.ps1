@@ -51,6 +51,6 @@ function Add-ConIf {
         $ValueIfFalse
     )
     $obj = [ConIf]::new($ConditionName,$ValueIfTrue,$ValueIfFalse)
-    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj.ToJson($true))`n"
+    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n$($obj.ToJson() | Format-Json)"
     $obj
 }

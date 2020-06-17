@@ -187,6 +187,7 @@ function New-VaporParameter {
     Param
     (
         [parameter(Mandatory,Position = 0)]
+        [ValidateLogicalId()]
         [string]
         $LogicalId,
         [parameter(Mandatory,Position = 1)]
@@ -225,6 +226,6 @@ function New-VaporParameter {
         $MinValue
     )
     $obj = [VSParameter]::new($PSBoundParameters)
-    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj.ToJson($true))`n"
+    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n$($obj.ToJson() | Format-Json)"
     $obj
 }

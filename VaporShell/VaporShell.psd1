@@ -76,7 +76,7 @@ Website: https://vaporshell.io/
     FormatsToProcess       = @()
 
     # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
-    # NestedModules          = @('VaporShell.DSL.psm1')
+    # NestedModules          = @('')
 
     # Functions to export from this module
     FunctionsToExport      = '*'

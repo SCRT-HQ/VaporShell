@@ -61,7 +61,7 @@ class VSError : ErrorRecord {
         return [VSError]::InsertError($record)
     }
 
-    static [VSError] DuplicateLogicalId([string] $inputObject, [string] $section) {
+    static [VSError] DuplicateLogicalId([object] $inputObject, [string] $section) {
         $record = [VSError]::new(
             [ArgumentException]::new("The Template already contains a $section with a LogicalId of '$($inputObject.LogicalId)'. LogicalIds must be unique within the Template."),
             'DuplicateLogicalId',

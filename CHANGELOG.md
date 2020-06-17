@@ -66,10 +66,34 @@
 * All non-core functions have been broken out into service-specific modules, e.g. `VaporShell.S3` or `VaporShell.SAM`.
 * All of VaporShell is now fully supported by PowerShell classes, so objects output by the functions will be different. If you are making changes to objects by updating properties on a variable, you may want to review your scripts and test with 3.0.0 to confirm that there are not changes needed to the script logic.
 * `Add-CreationPolicy`'s parameters have been reduced to `AutoScalingCreationPolicy` and `ResourceSignal` with specific types expected.
+* Deprecated `VaporShell.DSL` nested module in favor of classes due to the overall benefits of classes, e.g. intellisense in editors, not using a hacky way to execute the scriptblock as a hashtable, etc.
+* Primary Class constructors and the core `Add*()` methods on the VSTemplate object accept a single parameter value. If you are passing multiple items to one of these methods, you'll need to wrap all of the items in parentheses to treat them as a single array of items instead, e.g...
+
+```powershell
+$template = Initialize-Vaporshell
+
+$template.AddCondition(
+    (New-VaporCondition -LogicalId "CreateProdResources" -Condition (Add-ConEquals -FirstValue (Add-FnRef -Ref "EnvTypeString") -SecondValue "prod")),
+    (Add-Include -Location "s3://MyAmazonS3BucketName/single_wait_condition.yaml")
+)
+
+# ERROR >> MethodException: Cannot find an overload for "AddCondition" and the argument count: "2".
+
+$template.AddCondition(( # << note the extra (
+    (New-VaporCondition -LogicalId "CreateProdResources" -Condition (Add-ConEquals -FirstValue (Add-FnRef -Ref "EnvTypeString") -SecondValue "prod")),
+    (Add-Include -Location "s3://MyAmazonS3BucketName/single_wait_condition.yaml")
+)) # << note the extra )
+
+# Works!
+```
 
 ### **New Features**
 
 * Since all of VaporShell is now fully supported by PowerShell classes, you can work entirely with classes instead of functions by importing the service module(s) you will be using. Classes and functions will all be loaded into the session on module import, no need to include a `using` statement.
+* All Intrinsic and Condition functions have new aliases mimicking the YML shorthand syntax, e.g. `!Ref` is aliased to `Add-FnRef`, `!Join` is aliased to `Add-FnJoin`, `!And` is aliased to `Add-ConAnd`, etc.
+  * Some additional convenience shorthand aliases have been included as well:
+    * `!Condition` = `Add-ConRef` (new function when needing to Ref a Condition)
+    * `!Include` = `Add-Include` (usage: `!Include 's3://mybucket/my-external-template.yml'`)
 
 ## 2.12.1 - 2020-05-05
 

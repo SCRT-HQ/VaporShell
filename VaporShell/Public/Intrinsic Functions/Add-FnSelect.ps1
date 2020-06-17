@@ -50,6 +50,6 @@ function Add-FnSelect {
         $ListOfObjects
     )
     $obj = [FnSelect]::new($Index,$ListOfObjects)
-    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj.ToJson($true))`n"
+    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n$($obj.ToJson() | Format-Json)"
     $obj
 }

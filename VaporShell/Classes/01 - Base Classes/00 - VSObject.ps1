@@ -55,21 +55,20 @@ class VSObject : object {
             if (
                 $addAllProperties -or (
                     $key -notmatch '^(_|LogicalId$)' -and (
+                        $value -is [enum] -or
                         $key -match '::' -or
-                        $null -ne $value -or
-                        (
-                            $key -in @('Conditions','Mappings','Outputs','Parameters') -and
-                            $value.Count -ne 0 -and
-                            $this -is [VSTemplate]
-                        )
+                        $null -ne $value
                     ) -and (
-                        ($value -is [string] -and -not [string]::IsNullOrEmpty($value)) -or
-                        $value -isnot [string]
+                        $value -isnot [string] -or
+                        -not [string]::IsNullOrEmpty($value)
                     )
                 )
             ) {
                 $clean[$key] = if ($key -match '$(UpdateReplacePolicy|DeletionPolicy)$' -and $value.ToString() -match '^(Delete|Retain|Snapshot)$') {
                     (Get-Culture).TextInfo.ToTitleCase($value.ToString().ToLower())
+                }
+                elseif ($value -is [enum]) {
+                    $value.ToString()
                 }
                 elseif ($value -is [System.Collections.IDictionary] -and $value -isnot [VSHashtable]) {
                     $value
@@ -110,7 +109,11 @@ class VSObject : object {
     }
 
     [string] ToYaml() {
-        $flipped = if (Get-Command cfn-flip* -ErrorAction SilentlyContinue) {
+        return $this.ToYaml($false)
+    }
+
+    [string] ToYaml([bool] $usePowerShellYaml) {
+        $flipped = if (-not $usePowerShellYaml -and $null -ne (Get-Command cfn-flip* -ErrorAction SilentlyContinue)) {
             ($this.ToJson() | cfn-flip) -join [System.Environment]::NewLine
         }
         else {
@@ -129,26 +132,38 @@ class VSObject : object {
         $this._addAccessors()
     }
 
-    VSObject([System.Collections.IDictionary] $props) {
+    VSObject([IDictionary] $props) {
         $this._addAccessors()
-        Write-Debug "Contructing $($this.GetType().Name) from input IDictionary"
+        Write-Debug "[$($this.GetType())] Contructing from input IDictionary"
         $props.GetEnumerator() | ForEach-Object {
-            Write-Debug "Checking for property '$($_.Key)' on this object"
+            Write-Debug "[$($this.GetType())] [$($_.Key)]  Checking for property"
             if ($_.Key -eq 'Fn::Transform' -or ($this.PSObject.Properties.Name -contains $_.Key -and $_.Key -notin $this._commonParams)) {
-                Write-Debug "Property found, adding value: $($_.Value)"
-                $this."$($_.Key)" = $_.Value
+                Write-Debug "[$($this.GetType())] [$($_.Key)] Property found, adding value: $($_.Value)"
+                $val = if ($_.Value -is [enum]) {
+                    $_.Value.ToString()
+                }
+                else {
+                    $_.Value
+                }
+                $this."$($_.Key)" = $val
             }
         }
     }
 
     VSObject([psobject] $props) {
         $this._addAccessors()
-        Write-Debug "Contructing $($this.GetType().Name) from input PSObject"
+        Write-Debug "Contructing $($this.GetType()) from input PSObject"
         $props.PSObject.Properties | ForEach-Object {
-            Write-Debug "Checking for property '$($_.Name)' on this object"
+            Write-Debug "[$($this.GetType())] [$($_.Name)] Checking for property"
             if ($_.Name -eq 'Fn::Transform' -or ($this.PSObject.Properties.Name -contains $_.Name -and $_.Name -notin $this._commonParams)) {
-                Write-Debug "Property found, adding value: $($_.Value)"
-                $this."$($_.Name)" = $_.Value
+                Write-Debug "[$($this.GetType())] [$($_.Name)] Property found, adding value: $($_.Value)"
+                $val = if ($_.Value -is [enum]) {
+                    $_.Value.ToString()
+                }
+                else {
+                    $_.Value
+                }
+                $this."$($_.Name)" = $val
             }
         }
     }

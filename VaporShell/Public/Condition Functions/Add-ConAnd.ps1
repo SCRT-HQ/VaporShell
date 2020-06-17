@@ -35,6 +35,6 @@ function Add-ConAnd {
         $Conditions
     )
     $obj = [ConAnd]::new($Conditions)
-    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj.ToJson($true))`n"
+    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n$($obj.ToJson() | Format-Json)"
     $obj
 }

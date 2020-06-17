@@ -93,17 +93,73 @@ function Add-CreationPolicy {
         Vaporshell
     #>
     [OutputType([CreationPolicy])]
-    [cmdletbinding()]
-    Param
-    (
+    [CmdletBinding(DefaultParameterSetName="CountTimeout")]
+    Param(
         [parameter(Position = 0)]
+        [parameter(ParameterSetName="AutoScalingCreationPolicy")]
+        [parameter(ParameterSetName="ResourceSignal")]
+        [parameter(ParameterSetName="CountTimeout")]
         [AutoScalingCreationPolicy]
         $AutoScalingCreationPolicy,
-        [parameter(Position = 1)]
+        [parameter()]
+        [parameter(ParameterSetName="MinSuccessfulInstancesPercent")]
+        [parameter(ParameterSetName="ResourceSignal")]
+        [parameter(ParameterSetName="CountTimeout")]
+        [ValidateRange(0,100)]
+        [object]
+        $MinSuccessfulInstancesPercent,
+        [parameter(Position = 2)]
+        [parameter(ParameterSetName="AutoScalingCreationPolicy")]
+        [parameter(ParameterSetName="MinSuccessfulInstancesPercent")]
+        [parameter(ParameterSetName="ResourceSignal")]
         [ResourceSignal]
-        $ResourceSignal
+        $ResourceSignal,
+        [parameter(Position = 3)]
+        [parameter(ParameterSetName="AutoScalingCreationPolicy")]
+        [parameter(ParameterSetName="MinSuccessfulInstancesPercent")]
+        [parameter(ParameterSetName="CountTimeout")]
+        [object]
+        $Count,
+        [parameter(Position = 4)]
+        [parameter(ParameterSetName="AutoScalingCreationPolicy")]
+        [parameter(ParameterSetName="MinSuccessfulInstancesPercent")]
+        [parameter(ParameterSetName="CountTimeout")]
+        [object]
+        $Timeout
     )
-    $obj = [CreationPolicy]::new($PSBoundParameters)
-    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj.ToJson($true))`n"
-    $obj
+    Begin {
+        if (!($PSBoundParameters.Keys.Count)) {
+            $PSCmdlet.ThrowTerminatingError((New-VSError -String "No parameters passed! Please specify at least one parameter, otherwise exclude this call of $($MyInvocation.MyCommand)."))
+        }
+        $obj = [CreationPolicy]::new()
+        $ASCP = [AutoScalingCreationPolicy]::new()
+        $RS = [ResourceSignal]::new()
+    }
+    Process {
+        switch ($PSBoundParameters.Keys) {
+            'AutoScalingCreationPolicy' {
+                $obj.AutoScalingCreationPolicy = $AutoScalingCreationPolicy
+            }
+            'MinSuccessfulInstancesPercent' {
+                $ASCP.MinSuccessfulInstancesPercent = $MinSuccessfulInstancesPercent
+                $obj.AutoScalingCreationPolicy = $ASCP
+            }
+            'ResourceSignal' {
+                $obj.ResourceSignal = $ResourceSignal
+            }
+            'Count' {
+                $RS.Count = $Count
+            }
+            'Timeout' {
+                $RS.Timeout = $Timeout
+            }
+        }
+        if ($RS.Timeout -or $RS.Count) {
+            $obj.ResourceSignal = $RS
+        }
+    }
+    End {
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n$($obj.ToJson() | Format-Json)`n"
+        $obj
+    }
 }

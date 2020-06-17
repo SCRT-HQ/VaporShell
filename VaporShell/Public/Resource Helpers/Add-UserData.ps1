@@ -23,20 +23,11 @@ function Add-UserData {
     .FUNCTIONALITY
         Vaporshell
     #>
-    [OutputType('Vaporshell.Resource.UserData')]
+    [OutputType([UserData])]
     [cmdletbinding(DefaultParameterSetName="String")]
-    Param
-    (
+    Param(
         [parameter(Mandatory = $true,Position = 0,ParameterSetName="String")]
-        [ValidateScript( {
-                $allowedTypes = "System.String","Vaporshell.Function"
-                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
-                    $true
-                }
-                else {
-                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
-                }
-            })]
+        [object]
         $String,
         [parameter(Mandatory = $true,Position = 0,ParameterSetName="File")]
         [ValidateScript( {
@@ -47,11 +38,11 @@ function Add-UserData {
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "You must specify a valid file path -- unable to find the path $_"))
                 }
             })]
-        [System.String]
+        [string]
         $File,
         [parameter(Mandatory = $false)]
-        [hashtable]
-        $Replace,
+        [System.Collections.IDictionary]
+        $Replace = @{},
         [parameter(Mandatory = $false)]
         [switch]
         $Persist,
@@ -59,63 +50,22 @@ function Add-UserData {
         [switch]
         $UseJoin
     )
-    Begin {
-        $Values = ""
-    }
     Process {
-        switch ($PSBoundParameters.Keys) {
+        $joined = switch ($PSBoundParameters.Keys) {
             'String' {
-                $Values += $String
+                if ($String -is [string]) {
+                    [UserData]::Transform($Persist,$UseJoin,$Replace,$String)
+                }
+                else {
+                    [UserData]::Transform($String)
+                }
             }
             'File' {
-                $item = Get-Item $File
-                switch ($item.Extension) {
-                    '.ps1' {
-                        $Windows = $true
-                        $tag = "powershell"
-                    }
-                    '.bat' {
-                        $Windows = $true
-                        $tag = "script"
-                    }
-                    '.cmd' {
-                        $Windows = $true
-                        $tag = "script"
-                    }
-                    Default {
-                        $Windows = $false
-                    }
-                }
-                $fileContents = ([System.IO.File]::ReadAllLines($item.FullName) | Where-Object {$_}) -join "`n"
-                if ($Windows -and $fileContents -notlike "<$($tag)>*") {
-                    if ($fileContents[0] -notlike "<$($tag)>`n*") {
-                        $Values += "<$($tag)>`n"
-                    }
-                }
-                $Values += $fileContents
-                if ($Windows -and $fileContents -notlike "*</$($tag)>*") {
-                    $Values += "`n</$($tag)>"
-                }
-                if ($Persist -and $fileContents -notlike "*<persist>true</persist>*") {
-                    $Values += "`n<persist>true</persist>"
-                }
+                [UserData]::Transform($Persist,$UseJoin,$Replace,$File)
             }
         }
-    }
-    End {
-        if ($PSBoundParameters.Keys -contains 'Replace') {
-            foreach ($key in $PSBoundParameters['Replace'].Keys) {
-                Write-Verbose "Replacing [$key] with [$($PSBoundParameters['Replace'][$key])]"
-                $Values = $Values.Replace($key,$PSBoundParameters['Replace'][$key])
-            }
-        }
-        if ($UseJoin) {
-            $obj = Add-FnBase64 -ValueToEncode (Add-FnJoin "`n" ($Values -split "`n") -Verbose:$false) -Verbose:$false
-        }
-        else {
-            $obj = Add-FnBase64 -ValueToEncode $Values -Verbose:$false
-        }
-        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.UserData'
-        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n$($obj | ConvertTo-Json -Depth 5)`n"
+        $obj = [UserData]::new($joined)
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n$($obj.ToJson() | Format-Json)"
+        $obj
     }
 }

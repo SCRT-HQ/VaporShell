@@ -1,0 +1,123 @@
+AWSTemplateFormatVersion: '2010-09-09'
+# Example template to demonstrate the use of conditionals
+# It depends on subnets and securitygroups being available for deployment.
+# One quick way to test is to use the values of your default VPC, as then you'll
+# only need to update the default securitygroup.
+# The provided parameter files, parameters-basic.json and parameters-full.json,
+# show an example. In addition, you can read a blog post about this at
+# https://ig.nore.me/2018/02/conditionals-in-cloudformation/
+Parameters:
+  MinSize:
+    Type: Number
+    Description: The minimum size of the ASG
+    Default: 1
+  MaxSize:
+    Type: Number
+    Description: The maximum size of the ASG
+    Default: 10
+  DesiredSize:
+    Type: Number
+    Description: The minimum size of the ASG
+    Default: 1
+  ImageId:
+    Type: "AWS::EC2::Image::Id"
+    Description: The AMI used for the ASG instances
+  InstanceType:
+    Type: String
+    Description: The Instance Type used for the ASG instances
+    Default: t2.small
+  KeyName:
+    Type: String
+    Description: The name of the SSH key to be used (Optional)
+  SSLCertificateArn:
+    Type: String
+    Description: The ARN of the SSL certificate (Optional)
+  PrivateSubnets:
+    Type: "List<AWS::EC2::Subnet::Id>"
+    Description: The private subnet IDs
+  PublicSubnets:
+    Type: "List<AWS::EC2::Subnet::Id>"
+    Description: The public subnet IDs
+  ASGSecurityGroups:
+    Type: "List<AWS::EC2::SecurityGroup::Id>"
+    Description: The securitygroup IDs for the ASG
+  BastionSecurityGroups:
+    Type: "List<AWS::EC2::SecurityGroup::Id>"
+    Description: The securitygroup IDs for the ASG
+  LoadBalancerSecurityGroups:
+    Type: "List<AWS::EC2::SecurityGroup::Id>"
+    Description: The securitygroup IDs for the loadbalancer
+
+Conditions:
+# Set conditions for both SSL and the SSH Key
+  HasSSL: !Not [ !Equals [ !Ref SSLCertificateArn, "" ]]
+  HasSSHKey: !Not [ !Equals [ !Ref KeyName, "" ]]
+
+Resources:
+  LoadBalancer:
+    Type: AWS::ElasticLoadBalancing::LoadBalancer
+    Properties:
+      Subnets: !Ref PublicSubnets
+      SecurityGroups: !Ref LoadBalancerSecurityGroups
+      Listeners:
+      # By default only listen on port 80, but when an SSL key is provided also on port 443
+        - LoadBalancerPort: '80'
+          InstancePort: '80'
+          Protocol: HTTP
+        - !If [HasSSL, { LoadBalancerPort: '443', InstancePort: '80', Protocol: HTTPS, SSLCertificateId: !Ref SSLCertificateArn }, !Ref "AWS::NoValue" ]
+      HealthCheck:
+        Target: HTTP:80/
+        HealthyThreshold: '3'
+        UnhealthyThreshold: '5'
+        Interval: '30'
+        Timeout: '5'
+  WebServerLaunchConfig:
+    Type: "AWS::AutoScaling::LaunchConfiguration"
+    Properties:
+      # Only provide a keyname when we have one
+      KeyName: !If [HasSSHKey, !Ref KeyName, !Ref "AWS::NoValue"]
+      ImageId: !Ref ImageId
+      UserData:
+        Fn::Base64:
+          !Sub |
+            #!/bin/bash
+            yum install -y nginx
+            service nginx start
+      SecurityGroups: !Ref ASGSecurityGroups
+      InstanceType: !Ref InstanceType
+  WebServerGroup:
+    Type: "AWS::AutoScaling::AutoScalingGroup"
+    UpdatePolicy:
+      AutoScalingRollingUpdate:
+        MinInstancesInService: 1
+        PauseTime: PT1M
+    Properties:
+      LaunchConfigurationName: !Ref WebServerLaunchConfig
+      MinSize: !Ref MinSize
+      MaxSize: !Ref MaxSize
+      DesiredCapacity: !Ref DesiredSize
+      LoadBalancerNames: [!Ref "LoadBalancer"]
+      VPCZoneIdentifier: !Ref PrivateSubnets
+  Bastion:
+  # The Bastion is optional, and will only be created if an SSH key is provided
+    Type: "AWS::EC2::Instance"
+    Condition: HasSSHKey
+    Properties:
+      ImageId: !Ref ImageId
+      KeyName: !Ref KeyName
+      InstanceType: t2.micro
+      NetworkInterfaces:
+        - AssociatePublicIpAddress: "true"
+          DeviceIndex: "0"
+          GroupSet: !Ref BastionSecurityGroups
+          SubnetId: !Select [ 0, !Ref PublicSubnets ]
+
+Outputs:
+  ELB:
+    Description: LoadBalancer DNS Name
+    Value: !GetAtt [LoadBalancer, DNSName]
+  Bastion:
+  # Only set the Bastion output when it exists
+    Description: Bastion instance IP
+    Value: !GetAtt [Bastion, PublicIp]
+    Condition: HasSSHKey

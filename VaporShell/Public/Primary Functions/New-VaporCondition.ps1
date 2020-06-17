@@ -72,6 +72,7 @@ function New-VaporCondition {
     [cmdletbinding()]
     Param(
         [parameter(Mandatory,Position = 0)]
+        [ValidateLogicalId()]
         [string]
         $LogicalId,
         [parameter(Mandatory,Position = 1)]
@@ -79,6 +80,6 @@ function New-VaporCondition {
         $Condition
     )
     $obj = [VSCondition]::new($PSBoundParameters)
-    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj.ToJson($true))`n"
+    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n$($obj.ToJson() | Format-Json)"
     $obj
 }

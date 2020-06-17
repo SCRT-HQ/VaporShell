@@ -32,6 +32,6 @@ function Add-ConRef {
         $Condition
     )
     $obj = [ConRef]::new($Condition)
-    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj.ToJson($true))`n"
+    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n$($obj.ToJson() | Format-Json)"
     $obj
 }

@@ -9,47 +9,57 @@ class VSTag : VSHashtable {
     [string] $Key
     [object] $Value
 
-    static [VSTag[]] TransformTag([IDictionary] $inputData) {
+    static [VSTag[]] TransformTag([object] $inputData) {
         $final = [List[VSTag]]::new()
-        if ($inputData['Key'] -and $inputData['Value']) {
-            $final.Add(
-                [VSTag]@{
-                    Key   = $inputData['Key']
-                    Value = $inputData['Value']
-                }
-            )
+        $list = if ($inputData -is [array]) {
+            $inputData
         }
         else {
-            $inputData.GetEnumerator() | ForEach-Object {
-                $final.Add(
-                    [VSTag]@{
-                        Key   = $_.Key
-                        Value = $_.Value
-                    }
-                )
+            @($inputData)
+        }
+        foreach ($item in $list) {
+            if ($item -is [VSTag]) {
+                $final.Add($item)
             }
-        }
-        return $final
-    }
-
-    static [VSTag[]] TransformTag([PSObject] $inputData) {
-        $final = [List[VSTag]]::new()
-        if ($inputData.PSObject.Properties.Name -contains 'Key' -and $inputData.PSObject.Properties.Name -contains 'Value') {
-            $final.Add(
-                [VSTag]@{
-                    Key   = $inputData.Key
-                    Value = $inputData.Value
+            elseif ($item -is [IDictionary]) {
+                if ($item['Key'] -and $item['Value']) {
+                    $final.Add(
+                        [VSTag]@{
+                            Key   = $item['Key']
+                            Value = $item['Value']
+                        }
+                    )
                 }
-            )
-        }
-        else {
-            $inputData.PSObject.Properties | ForEach-Object {
-                $final.Add(
-                    [VSTag]@{
-                        Key   = $_.Name
-                        Value = $_.Value
+                else {
+                    $item.GetEnumerator() | ForEach-Object {
+                        $final.Add(
+                            [VSTag]@{
+                                Key   = $_.Key
+                                Value = $_.Value
+                            }
+                        )
                     }
-                )
+                }
+            }
+            elseif ($item -is [psobject]) {
+                if ($item.PSObject.Properties.Name -contains 'Key' -and $item.PSObject.Properties.Name -contains 'Value') {
+                    $final.Add(
+                        [VSTag]@{
+                            Key   = $item.Key
+                            Value = $item.Value
+                        }
+                    )
+                }
+                else {
+                    $item.PSObject.Properties | ForEach-Object {
+                        $final.Add(
+                            [VSTag]@{
+                                Key   = $_.Name
+                                Value = $_.Value
+                            }
+                        )
+                    }
+                }
             }
         }
         return $final
@@ -58,8 +68,13 @@ class VSTag : VSHashtable {
     VSTag() {}
 
     VSTag([IDictionary] $inputData) {
-        $this.Key = $inputData['Key']
-        $this.Value = $inputData['Value']
+        $this.Key = $inputData.Key
+        $this.Value = $inputData.Value
+    }
+
+    VSTag([psobject] $inputData) {
+        $this.Key = $inputData.Key
+        $this.Value = $inputData.Value
     }
 
     VSTag([object] $key, [object] $value) {

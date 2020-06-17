@@ -18,35 +18,50 @@ class AutoScalingRollingUpdate : VSObject {
     [int] $MinSuccessfulInstancesPercent
     [string] $PauseTime
     [AutoScalingProcess[]] $SuspendProcesses
-    [bool] $WaitOnResourceSignals
+    [nullable[bool]] $WaitOnResourceSignals = $null
 
     hidden [void] _addAccessors() {
         $this | Add-Member -Force -MemberType ScriptProperty -Name MaxBatchSize -Value {
             $this._maxBatchSize
         } -SecondValue {
-            param(
-                [ValidateType(([int], [IntrinsicFunction], [ConditionFunction]))] [object]
-                $value
-            )
-            $this._maxBatchSize = $value
+            param([object] $value)
+            if ($null -ne ($value -as [int])) {
+                $this._maxBatchSize = $value -as [int]
+            }
+            elseif ($value -is [IntrinsicFunction] -or $value -is [ConditionFunction]) {
+                $this._maxBatchSize = $value
+            }
+            else {
+                throw [VSError]::InvalidArgument($value,"$($this.GetType()) - Invalid value for property MaxBatchSize")
+            }
         }
         $this | Add-Member -Force -MemberType ScriptProperty -Name MinInstancesInService -Value {
             $this._minInstancesInService
         } -SecondValue {
-            param(
-                [ValidateType(([int], [IntrinsicFunction], [ConditionFunction]))] [object]
-                $value
-            )
-            $this._minInstancesInService = $value
+            param([object] $value)
+            if ($null -ne ($value -as [int])) {
+                $this._minInstancesInService = $value -as [int]
+            }
+            elseif ($value -is [IntrinsicFunction] -or $value -is [ConditionFunction]) {
+                $this._minInstancesInService = $value
+            }
+            else {
+                throw [VSError]::InvalidArgument($value,"$($this.GetType()) - Invalid value for property MinInstancesInService")
+            }
         }
         $this | Add-Member -Force -MemberType ScriptProperty -Name MinSuccessfulInstancesPercent -Value {
             $this._minSuccessfulInstancesPercent
         } -SecondValue {
-            param(
-                [ValidateType(([int], [IntrinsicFunction], [ConditionFunction]))] [object]
-                $value
-            )
-            $this._minSuccessfulInstancesPercent = $value
+            param([object] $value)
+            if ($null -ne ($value -as [int])) {
+                $this._minSuccessfulInstancesPercent = $value -as [int]
+            }
+            elseif ($value -is [IntrinsicFunction] -or $value -is [ConditionFunction]) {
+                $this._minSuccessfulInstancesPercent = $value
+            }
+            else {
+                throw [VSError]::InvalidArgument($value,"$($this.GetType()) - Invalid value for property MinSuccessfulInstancesPercent")
+            }
         }
         $this | Add-Member -Force -MemberType ScriptProperty -Name PauseTime -Value {
             $this._pauseTime

@@ -7,7 +7,7 @@ class AutoScalingScheduledAction : VSObject {
     hidden [string] $_vsFunctionName = 'Add-UpdatePolicy'
     hidden [string] $_awsDocumentation = 'https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatepolicy.html#cfn-attributes-updatepolicy-scheduledactions'
 
-    [bool] $IgnoreUnmodifiedGroupSizeProperties
+    [nullable[bool]] $IgnoreUnmodifiedGroupSizeProperties = $null
 
     AutoScalingScheduledAction() : base() {}
     AutoScalingScheduledAction([bool] $ignoreUnmodifiedGroupSizeProperties) {

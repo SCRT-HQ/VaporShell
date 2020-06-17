@@ -2,7 +2,7 @@ function Add-Include {
     <#
     .SYNOPSIS
         Adds the transform function "AWS::Include" to a Vaporshell template
-    
+
     .DESCRIPTION
         You can use the AWS::Include transform to work with template snippets that are stored separately from the main AWS CloudFormation template. When you specify Name: 'AWS::Include' and the Location parameter, the Transform key is a placeholder where snippets are injected. AWS CloudFormation inserts those snippets into your main template when Creating a Change Set or Updating Stacks Using Change Sets.
 
@@ -10,7 +10,7 @@ function Add-Include {
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html
-    
+
     .PARAMETER Location
         The location is an Amazon S3 URI, with a specific file name in an S3 bucket. For example, s3://MyBucketName/MyFile.yaml.
 
@@ -40,24 +40,15 @@ function Add-Include {
     .FUNCTIONALITY
         Vaporshell
     #>
-    [OutputType('Vaporshell.Transform.Include')]
+    [OutputType([Include])]
     [cmdletbinding()]
-    Param
-    (
-        [parameter(Mandatory = $true,Position = 0)]
+    Param(
+        [parameter(Mandatory,Position = 0)]
         [ValidatePattern("^s3:\/\/.*")]
-        [System.String]
+        [string]
         $Location
     )
-    $obj = [PSCustomObject][Ordered]@{
-        "LogicalId" = "Fn::Transform"
-        "Props" = [PSCustomObject][Ordered]@{
-            "Name" = "AWS::Include"
-            "Parameters" = [PSCustomObject][Ordered]@{
-                "Location" = $Location
-            }
-        }
-    }
-    $obj | Add-ObjectDetail -TypeName 'Vaporshell.Transform','Vaporshell.Transform.Include'
+    $obj = [Include]::new($Location)
     Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$(@{$obj.LogicalId = $obj.Props} | ConvertTo-Json -Depth 5 -Compress)`n"
+    $obj
 }

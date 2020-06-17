@@ -1,0 +1,93 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Simple example stack
+Parameters:
+  EnvType:
+    Type: AWS::EC2::VPC::Id
+    Description: VpcId of your existing Virtual Private Cloud (VPC)
+    ConstraintDescription: must be the VPC Id of an existing Virtual Private Cloud.
+    Default: '-'
+  EnvType2:
+    Type: AWS::EC2::VPC::Id
+    Description: VpcId of your existing Virtual Private Cloud (VPC)2
+    ConstraintDescription: must be the VPC Id of an existing Virtual Private Cloud.2
+Metadata:
+  Instances:
+    Description: Information about the instances
+Conditions:
+  CreateProdResources: !Equals
+    - !Ref 'EnvType'
+    - prod
+  Fn::Transform:
+    Name: AWS::Include
+    Parameters:
+      Location: s3://MyAmazonS3BucketName/single_wait_condition.yaml
+  CreateProdResources2: !Equals
+    - !Ref 'EnvType2'
+    - prod
+  CreateBothProdResources: !And
+    - !Ref 'CreateProdResources'
+    - !Ref 'CreateProdResources2'
+Mappings:
+  RegionMap:
+    us-east-1:
+      '32': ami-6411e20d
+      '64': ami-7a11e213
+    us-west-1:
+      '32': ami-c9c7978c
+      '64': ami-cfc7978a
+Resources:
+  GatewayDeployment:
+    Type: AWS::ApiGateway::Deployment
+    Properties:
+      Description: My deployment
+      RestApiId: !Ref 'MyApi'
+      StageDescription:
+        MethodSettings:
+          LoggingLevel: ERROR
+        CacheClusterEnabled: true
+        CacheDataEncrypted: false
+  MyApi:
+    Type: AWS::ApiGateway::RestApi
+    Properties:
+      Description: My REST API
+  MyInstance:
+    Type: AWS::EC2::Instance
+    Condition: CreateProdResources
+    Properties:
+      AvailabilityZone: us-east-1a
+      ImageId: !FindInMap
+        - RegionMap
+        - us-west-1
+        - '32'
+      Tags:
+        - Key: Name
+          Value: MyInstance
+        - Key: Environment
+          Value: Production
+    CreationPolicy:
+      AutoScalingCreationPolicy:
+        MinSuccessfulInstancesPercent: '100'
+      ResourceSignal:
+        Count: '1'
+        Timeout: PT5M
+    DeletionPolicy: Delete
+    DependsOn:
+      - GatewayDeployment
+    Metadata:
+      CommonName: WebServer1
+    UpdatePolicy:
+      AutoScalingReplacingUpdate:
+        WillReplace: 'true'
+      AutoScalingScheduledAction:
+        IgnoreUnmodifiedGroupSizeProperties: 'true'
+      AutoScalingRollingUpdate:
+        MaxBatchSize: '2'
+        MinInstancesInService: '2'
+        MinSuccessfulInstancesPercent: '100'
+        PauseTime: PT30S
+        WaitOnResourceSignals: 'true'
+Outputs:
+  BackupLoadBalancerDNSName:
+    Description: The DNSName of the backup load balancer
+    Value: !GetAtt 'BackupLoadBalancer.DNSName'
+    Condition: CreateProdResources

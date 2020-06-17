@@ -7,7 +7,7 @@ class AutoScalingReplacingUpdate : VSObject {
     hidden [string] $_vsFunctionName = 'Add-UpdatePolicy'
     hidden [string] $_awsDocumentation = 'https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatepolicy.html#cfn-attributes-updatepolicy-replacingupdate'
 
-    [bool] $WillReplace
+    [nullable[bool]] $WillReplace = $null
 
     AutoScalingReplacingUpdate() : base() {}
     AutoScalingReplacingUpdate([bool] $willReplace) {

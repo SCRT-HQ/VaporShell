@@ -17,14 +17,14 @@ class AutoScalingCreationPolicy : VSObject {
             $this._minSuccessfulInstancesPercent
         } -SecondValue {
             param(
-                [ValidateType(([int], [IntrinsicFunction], [ConditionFunction]))] [object]
+                [object]
                 $minSuccessfulInstancesPercent
             )
             if (
-                $minSuccessfulInstancesPercent -is [int] -and
+                $minSuccessfulInstancesPercent -as [int] -and
                 (
-                    $minSuccessfulInstancesPercent -gt 100 -or
-                    $minSuccessfulInstancesPercent -lt 0
+                    ($minSuccessfulInstancesPercent -as [int]) -gt 100 -or
+                    ($minSuccessfulInstancesPercent -as [int]) -lt 0
                 )
             ) {
                 $errorRecord = [VSError]::new(
@@ -35,7 +35,15 @@ class AutoScalingCreationPolicy : VSObject {
                 )
                 throw [VSError]::InsertError($errorRecord)
             }
-            $this._minSuccessfulInstancesPercent = $minSuccessfulInstancesPercent
+            if ($cast = $minSuccessfulInstancesPercent -as [int]) {
+                $this._minSuccessfulInstancesPercent = $cast
+            }
+            elseif ($value -is [IntrinsicFunction] -or $value -is [ConditionFunction]) {
+                $this._minSuccessfulInstancesPercent = $minSuccessfulInstancesPercent
+            }
+            else {
+                throw [VSError]::InvalidArgument($minSuccessfulInstancesPercent,"$($this.GetType()) - Invalid value for property MinSuccessfulInstancesPercent")
+            }
         }
     }
 

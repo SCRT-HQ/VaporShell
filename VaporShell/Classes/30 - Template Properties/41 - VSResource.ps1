@@ -15,7 +15,7 @@ class VSResource : VSLogicalObject {
     [CreationPolicy] $CreationPolicy
     [string[]] $DependsOn
     [TransformDeletionPolicy()] [DeletionPolicy] $DeletionPolicy
-    [IDictionary] $Metadata
+    [VSJson] $Metadata
     [VSHashtable] $Properties = [VSHashtable]::new()
     [string] $Type
     [UpdatePolicy] $UpdatePolicy
@@ -72,7 +72,7 @@ class VSResource : VSLogicalObject {
         return [FnGetAtt]::new($this.LogicalId, $attributeName)
     }
 
-    hidden [void] _addAccessors() {
+    hidden [void] _addBaseAccessors() {
         $this | Add-Member -Force -MemberType ScriptProperty -Name DeletionPolicy -Value {
             $this::FormatDeletionPolicy($this._deletionPolicy)
         } -SecondValue {

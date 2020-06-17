@@ -48,6 +48,6 @@ function Add-FnImportValue {
         $ValueToImport
     )
     $obj = [FnImportValue]::new($ValueToImport)
-    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj.ToJson($true))`n"
+    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n$($obj.ToJson() | Format-Json)"
     $obj
 }

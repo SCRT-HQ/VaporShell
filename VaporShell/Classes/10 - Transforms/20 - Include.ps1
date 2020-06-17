@@ -7,27 +7,16 @@ class Include : FnTransform {
     hidden [string] $_vsFunctionName = 'Add-Include'
     hidden [string] $_awsDocumentation = 'https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html'
 
-    [string] $Name = 'AWS::Include'
-    [IDictionary] $Parameters = @{Location = ""}
-
     [string] ToString() {
         return "Include($($this.Parameters['Location']))"
     }
 
-    hidden [void] _addAccessors() {
-        $this | Add-Member -Force -MemberType ScriptProperty -Name 'LogicalId' -Value {
-            'Fn::Transform'
-        } -SecondValue {
-            Write-Warning "This is a readonly property!"
-        }
-        $this | Add-Member -Force -MemberType ScriptProperty -Name 'Name' -Value {
-            'AWS::Include'
-        } -SecondValue {
-            Write-Warning "This is a readonly property!"
-        }
-    }
-
     hidden [void] SetLocation([object] $inputData) {
+        $this['LogicalId'] = 'Fn::Transform'
+        $this['Name'] = 'AWS::Include'
+        if ($null -eq $this['Parameters']) {
+            $this['Parameters'] = [ordered]@{Location = ''}
+        }
         $props = if ($inputData -is [string]) {
             [pscustomobject]@{
                 Location = $inputData
@@ -59,12 +48,12 @@ class Include : FnTransform {
                 throw [VSError]::InsertError($errorRecord)
             }
             else {
-                $this.Parameters['Location'] = $props.Parameters.Location
+                $this['Parameters']['Location'] = $props.Parameters.Location
             }
         }
         elseif ($props.PSObject.Properties.Name -contains 'Location') {
             if ($props.Location -match '^s3:\/\/.*') {
-                $this.Parameters['Location'] = $props.Location
+                $this['Parameters']['Location'] = $props.Location
             }
             else {
                 $errorRecord = [VSError]::new(

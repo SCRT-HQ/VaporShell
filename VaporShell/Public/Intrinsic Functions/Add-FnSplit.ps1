@@ -49,6 +49,6 @@ function Add-FnSplit {
         $SourceString
     )
     $obj = [FnSplit]::new($Delimiter,$SourceString)
-    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj.ToJson($true))`n"
+    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n$($obj.ToJson() | Format-Json)"
     $obj
 }

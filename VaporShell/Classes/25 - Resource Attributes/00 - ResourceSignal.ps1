@@ -18,35 +18,37 @@ class ResourceSignal : VSObject {
         $this | Add-Member -Force -MemberType ScriptProperty -Name Count -Value {
             $this._count
         } -SecondValue {
-            param(
-                [ValidateType(([int], [IntrinsicFunction], [ConditionFunction]))] [object]
-                $count
-            )
-            $this._count = $count
+            param([object] $count)
+            if ($cast = $count -as [int]) {
+                $this._count = $cast
+            }
+            elseif ($count -is [IntrinsicFunction] -or $count -is [ConditionFunction]) {
+                $this._count = $count
+            }
+            else {
+                throw [VSError]::InvalidArgument($count,"Count must be an integer or a Condition or Intrinsic function.")
+            }
         }
         $this | Add-Member -Force -MemberType ScriptProperty -Name Timeout -Value {
             $this._timeout
         } -SecondValue {
-            param(
-                [ValidateType(([string], [IntrinsicFunction], [ConditionFunction]))] [object]
-                $timeout
-            )
+            param([object] $timeout)
             if ($timeout -is [string]) {
                 try {
                     # Check if it's a valid ISO8601 duration string
                     $null = [XmlConvert]::ToTimeSpan($timeOut)
+                    $this._timeout = $timeout
                 }
                 catch {
-                    $errorRecord = [VSError]::new(
-                        [ArgumentException]::new("Timeout must be a valid ISO8601 duration string or an Intrinsic or Condition Function object!"),
-                        'InvalidTimeout',
-                        [ErrorCategory]::InvalidArgument,
-                        $timeout
-                    )
-                    throw [VSError]::InsertError($errorRecord)
+                    throw [VSError]::InvalidArgument($timeout,"Timeout must be a valid ISO8601 duration string or an Intrinsic or Condition Function object!")
                 }
             }
-            $this._timeout = $timeout
+            elseif ($count -is [IntrinsicFunction] -or $count -is [ConditionFunction]) {
+                $this._timeout = $timeout
+            }
+            else {
+                throw [VSError]::InvalidArgument($timeout,"Timeout must be a valid ISO8601 duration string or an Intrinsic or Condition Function object!")
+            }
         }
     }
 

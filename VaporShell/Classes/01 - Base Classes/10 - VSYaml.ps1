@@ -4,7 +4,7 @@ using namespace System.Collections.Generic
 using namespace System.IO
 using namespace System.Management.Automation
 
-class VSYaml : VSHashtable {
+class VSYaml : VSJson {
     static [VSYaml] Transform([string] $yamlStringOrFilePath) {
         $newData = if (Test-Path $yamlStringOrFilePath) {
             $resolvedPath = (Resolve-Path $yamlStringOrFilePath).Path

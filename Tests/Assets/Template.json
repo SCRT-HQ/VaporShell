@@ -1,0 +1,161 @@
+{
+  "Description": "Testing template build",
+  "Parameters": {
+    "EnvTypeString": {
+      "AllowedValues": [
+        "test",
+        "prod"
+      ],
+      "Default": "test",
+      "Description": "Environment type",
+      "Type": "String"
+    }
+  },
+  "Conditions": {
+    "CreateProdResources": {
+      "Fn::Equals": [
+        {
+          "Ref": "EnvTypeString"
+        },
+        "prod"
+      ]
+    },
+    "Fn::Transform": {
+      "Name": "AWS::Include",
+      "Parameters": {
+        "Location": "s3://MyAmazonS3BucketName/single_wait_condition.yaml"
+      }
+    }
+  },
+  "Metadata": {
+    "Instances": {
+      "Description": "Information about the instances"
+    }
+  },
+  "Mappings": {
+    "RegionMap": {
+      "us-east-1": {
+        "32": "ami-6411e20d",
+        "64": "ami-7a11e213"
+      },
+      "us-west-1": {
+        "32": "ami-c9c7978c",
+        "64": "ami-cfc7978a"
+      }
+    }
+  },
+  "Resources": {
+    "GatewayDeployment": {
+      "Type": "AWS::ApiGateway::Deployment",
+      "Properties": {
+        "Description": "My deployment",
+        "RestApiId": {
+          "Ref": "MyApi"
+        },
+        "StageDescription": {
+          "CacheClusterEnabled": true,
+          "CacheDataEncrypted": false,
+          "MethodSettings": {
+            "LoggingLevel": "ERROR"
+          }
+        }
+      }
+    },
+    "MyApi": {
+      "Type": "AWS::ApiGateway::RestApi",
+      "Properties": {
+        "Description": "My REST API"
+      }
+    },
+    "MyInstance": {
+      "DeletionPolicy": "Delete",
+      "Condition": "CreateProdResources",
+      "Type": "AWS::EC2::Instance",
+      "Metadata": {
+        "CommonName": "WebServer1"
+      },
+      "CreationPolicy": {
+        "AutoScalingCreationPolicy": {
+          "MinSuccessfulInstancesPercent": 100
+        },
+        "ResourceSignal": {
+          "Count": 1,
+          "Timeout": "PT5M"
+        }
+      },
+      "UpdatePolicy": {
+        "AutoScalingReplacingUpdate": {
+          "WillReplace": true
+        },
+        "AutoScalingRollingUpdate": {
+          "MaxBatchSize": 2,
+          "MinInstancesInService": 2,
+          "MinSuccessfulInstancesPercent": 100,
+          "PauseTime": "PT30S",
+          "WaitOnResourceSignals": true
+        },
+        "AutoScalingScheduledAction": {
+          "IgnoreUnmodifiedGroupSizeProperties": true
+        }
+      },
+      "DependsOn": "GatewayDeployment",
+      "Properties": {
+        "AvailabilityZone": "us-east-1a",
+        "ImageId": {
+          "Fn::FindInMap": [
+            "RegionMap",
+            "us-west-1",
+            "32"
+          ]
+        },
+        "Tags": [
+          {
+            "Key": "Capacity",
+            "Value": 4
+          },
+          {
+            "Key": "Count",
+            "Value": 2
+          },
+          {
+            "Key": "IsReadOnly",
+            "Value": false
+          },
+          {
+            "Key": "IsFixedSize",
+            "Value": false
+          },
+          {
+            "Key": "SyncRoot",
+            "Value": [
+              {
+                "Key": "Name",
+                "Value": "MyInstance"
+              },
+              {
+                "Key": "Environment",
+                "Value": "Production"
+              }
+            ]
+          },
+          {
+            "Key": "IsSynchronized",
+            "Value": false
+          }
+        ]
+      }
+    }
+  },
+  "Outputs": {
+    "BackupLoadBalancerDNSName": {
+      "Value": {
+        "Fn::GetAtt": [
+          "BackupLoadBalancer",
+          "DNSName"
+        ]
+      },
+      "Condition": "CreateProdResources",
+      "Description": "The DNSName of the backup load balancer"
+    }
+  }
+}

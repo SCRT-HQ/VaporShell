@@ -97,12 +97,12 @@ function New-VaporResource {
     #>
     [OutputType([VSResource])]
     [cmdletbinding()]
-    Param
-    (
-        [parameter(Mandatory = $true,Position = 0)]
+    Param(
+        [parameter(Mandatory,Position = 0)]
+        [ValidateLogicalId()]
         [string]
         $LogicalId,
-        [parameter(Mandatory = $true,Position = 1)]
+        [parameter(Mandatory,Position = 1)]
         [string]
         $Type,
         [parameter(Position = 2)]
@@ -131,6 +131,6 @@ function New-VaporResource {
         $Condition
     )
     $obj = [VSResource]::new($PSBoundParameters)
-    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj.ToJson($true))`n"
+    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n$($obj.ToJson() | Format-Json)"
     $obj
 }

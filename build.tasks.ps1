@@ -301,7 +301,8 @@ Task BuildSubmodules Init, CleanSubmodules, {
 }
 
 # Synopsis: Compile the dotnet dll
-Task BuildDotnet Init, {
+Task BuildDotnet -If {$false} Init, {
+    # This is commented out for now, possible deprecation due to conversion to PS classes
     Write-BuildLog 'Compiling VaporShell.Core.dll'
     dotnet build .\VaporShell.Core\
     Get-Item ".\VaporShell.Core\obj\Debug\netstandard2.0\VaporShell.Core.dll" | Copy-Item -Destination $TargetVersionDirectory -Recurse -ErrorAction SilentlyContinue -Force
@@ -318,9 +319,9 @@ Task BuildCoreOnly CleanCore, {
         '[CmdletBinding()]'
         'Param ()'
         '$VaporshellPath = $PSScriptRoot'
-        'if ($null -eq ([System.AppDomain]::CurrentDomain.GetAssemblies() | Where-Object {$_.Location -match "VaporShell.Core.dll"})) {'
-        '    Add-Type -Path "$VaporshellPath\VaporShell.Core.dll" -ReferencedAssemblies ([PowerShell].Assembly.Location)'
-        '}'
+        #'if ($null -eq ([System.AppDomain]::CurrentDomain.GetAssemblies() | Where-Object {$_.Location #-match "VaporShell.Core.dll"})) {'
+        #'    Add-Type -Path "$VaporshellPath\VaporShell.Core.dll" -ReferencedAssemblies ([PowerShell].#Assembly.Location)'
+        #'}'
     ) -join "`n"
     $psm1Header | Add-Content -Path $psm1 -Encoding UTF8
 
@@ -434,8 +435,8 @@ Task BuildCoreOnly CleanCore, {
         Remove-Item $_.FullName -Recurse -Force
     }
 
-    Write-BuildLog 'Copying DSL module'
-    Copy-Item -Path "$SourceModuleDirectory\VaporShell.DSL.psm1" -Destination "$TargetVersionDirectory" -Recurse -ErrorAction SilentlyContinue
+    #Write-BuildLog 'Copying DSL module'
+    #Copy-Item -Path "$SourceModuleDirectory\VaporShell.DSL.psm1" -Destination "$TargetVersionDirectory" -Recurse -ErrorAction SilentlyContinue
 
     Write-BuildLog 'Creating Variable hash'
     $varHash = @("@{")
@@ -468,29 +469,33 @@ Task BuildCoreOnly CleanCore, {
         $aliasesToExport += $name
         $aliasHash += "    '$name' = '$($_.BaseName.Trim())'"
     }
+    $name = '!Include'
+    $aliasesToExport += $name
+    $aliasHash += "    '$name' = 'Add-Include'"
     $aliasHash += "}"
 
     Write-BuildLog 'Setting remainder of PSM1 contents'
     $hashDefinitions = @(
         '$aliases = @()'
         "`$aliasHash = $($aliasHash -join "`n")"
-        'foreach ($key in $aliasHash.Keys) {'
-        '    New-Alias -Name $key -Value $aliasHash[$key] -Force'
-        '    $aliases += $key'
+        '$aliasHash.GetEnumerator() | ForEach-Object {'
+        '    New-Alias -Name $_.Key -Value $_.Value -Force'
+        '    $aliases += $_.Key'
         '}'
         ''
         '$vars = @()'
         "`$varHash = $($varHash -join "`n")"
-        'foreach ($key in $varHash.Keys) {'
-        '    New-Variable -Name $key -Value $varHash[$key]'
-        '    $vars += $key'
+        '$varHash.GetEnumerator() | ForEach-Object {'
+        '    New-Variable -Name $_.Key -Value $_.Value -Force'
+        '    $vars += $_.Key'
         '}'
         ''
-        '$DSLModulePath = (Resolve-Path "$PSScriptRoot\VaporShell.DSL.psm1").Path'
-        'Import-Module $DSLModulePath -DisableNameChecking -Force -Scope Global'
+        #'$DSLModulePath = (Resolve-Path "$PSScriptRoot\VaporShell.DSL.psm1").Path'
+        #'Import-Module $DSLModulePath -DisableNameChecking -Force -Scope Global'
+        #''
+        'Export-ModuleMember -Variable $vars -Alias $aliases'
         ''
         '$global:VSError = [System.Collections.Generic.List[VSError]]::new()'
-        'Export-ModuleMember -Variable $vars -Alias $aliases'
     ) -join "`n"
     $hashDefinitions | Add-Content -Path $psm1 -Encoding UTF8
 

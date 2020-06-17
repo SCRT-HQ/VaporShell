@@ -48,6 +48,7 @@ function New-VaporMetadata {
     [cmdletbinding()]
     Param(
         [parameter(Mandatory,Position = 0)]
+        [ValidateLogicalId()]
         [string]
         [Alias('Key')]
         $LogicalId,
@@ -56,6 +57,6 @@ function New-VaporMetadata {
         $Metadata
     )
     $obj = [VSMetadata]::new($PSBoundParameters)
-    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj.ToJson($true))`n"
+    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n$($obj.ToJson() | Format-Json)"
     $obj
 }

@@ -5,7 +5,7 @@ class ValidateLogicalId : ValidateArgumentsAttribute {
     [Void] ValidateLogicalIdString(
         [object] $logicalId
     ) {
-        if ($logicalId.ToString() -notmatch '^(\w+|AWS::CloudFormation::.*)$') {
+        if ($logicalId.ToString() -notmatch '^(\w+|AWS::CloudFormation::.*|Fn::Transform)$') {
             throw [VSError]::InvalidLogicalId($logicalId)
         }
     }

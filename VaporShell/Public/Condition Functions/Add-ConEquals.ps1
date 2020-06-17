@@ -45,6 +45,6 @@ function Add-ConEquals {
         $SecondValue
     )
     $obj = [ConEquals]::new($FirstValue,$SecondValue)
-    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj.ToJson($true))`n"
+    Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n$($obj.ToJson() | Format-Json)"
     $obj
 }

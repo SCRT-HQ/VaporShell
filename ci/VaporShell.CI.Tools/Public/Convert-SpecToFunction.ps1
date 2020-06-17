@@ -93,7 +93,7 @@ function $FunctionName {
     .PARAMETER CreationPolicy
         Use the CreationPolicy attribute when you want to wait on resource configuration actions before stack creation proceeds. For example, if you install and configure software applications on an EC2 instance, you might want those applications to be running before proceeding. In such cases, you can add a CreationPolicy attribute to the instance, and then send a success signal to the instance after the applications are installed and configured.
 
-        You must use the "Add-CreationPolicy" function here.`n
+        You must use the "Add-CreationPolicy" function or the [CreationPolicy] class here.`n
 "@
     }
 
@@ -133,13 +133,13 @@ function $FunctionName {
     .PARAMETER Metadata
         The Metadata attribute enables you to associate structured data with a resource. By adding a Metadata attribute to a resource, you can add data in JSON or YAML to the resource declaration. In addition, you can use intrinsic functions (such as GetAtt and Ref), parameters, and pseudo parameters within the Metadata attribute to add those interpreted values.
 
-        You must use a PSCustomObject containing key/value pairs here. This will be returned when describing the resource using AWS CLI.
+        This will be returned when describing the resource using AWS CLI.
 
 
     .PARAMETER UpdatePolicy
         Use the UpdatePolicy attribute to specify how AWS CloudFormation handles updates to the AWS::AutoScaling::AutoScalingGroup resource. AWS CloudFormation invokes one of three update policies depending on the type of change you make or whether a scheduled action is associated with the Auto Scaling group.
 
-        You must use the "Add-UpdatePolicy" function here.
+        You must use the "Add-UpdatePolicy" function or the [UpdatePolicy] class here.
 "@
 
         if ($Name -ne 'AWS::Events::EventBusPolicy') {
@@ -153,7 +153,7 @@ function $FunctionName {
     .FUNCTIONALITY
         Vaporshell
     #>
-    [OutputType('$TypeName')]
+    [OutputType([$($FunctionName -replace '^(New|Add)-VS')])]
     [cmdletbinding()]
 "@
     if ($passProps = $Properties.Name | Where-Object { $_ -like "*Password*" -or $_ -like "*Credential*" }) {
@@ -165,21 +165,13 @@ function $FunctionName {
         }
     }
     $scriptContents += @"
-    Param
-    (
+    Param(
 "@
     if ($ResourceType -ne "Property") {
         $scriptContents += @"
         [parameter(Mandatory = `$true,Position = 0)]
-        [ValidateScript( {
-                if (`$_ -match "^[a-zA-Z0-9]*$") {
-                    `$true
-                }
-                else {
-                    `$PSCmdlet.ThrowTerminatingError((New-VSError -String 'The LogicalID must be alphanumeric (a-z, A-Z, 0-9) and unique within the template.'))
-                }
-            })]
-        [System.String]
+        [ValidateLogicalId()]
+        [string]
         `$LogicalId,
 "@
     }
@@ -205,7 +197,8 @@ function $FunctionName {
         if ($Prop.Value.ItemType) {
             if ($Prop.Value.ItemType -eq "Tag") {
                 $scriptContents += @"
-        [VaporShell.Core.TransformTag()]
+        [TransformTag()]
+        [object]
         [parameter(Mandatory = $Mandatory)]
         `$$ParamName
 "@
@@ -214,15 +207,7 @@ function $FunctionName {
                 $ValTypeName = "$($BaseTypeName).$($Prop.Value.ItemType)"
                 $scriptContents += @"
         [parameter(Mandatory = $Mandatory)]
-        [ValidateScript( {
-                `$allowedTypes = "$ValTypeName"
-                if ([string]`$(`$_.PSTypeNames) -match "(`$((`$allowedTypes|ForEach-Object{[RegEx]::Escape(`$_)}) -join '|'))") {
-                    `$true
-                }
-                else {
-                    `$PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: `$(`$allowedTypes -join ", "). The current types of the value are: `$(`$_.PSTypeNames -join ", ")."))
-                }
-            })]
+        [object]
         `$$ParamName
 "@
             }
@@ -230,82 +215,50 @@ function $FunctionName {
         elseif ($Prop.Name -eq "UserData") {
             $scriptContents += @"
         [parameter(Mandatory = $Mandatory)]
-        [ValidateScript( {
-                `$allowedTypes = "Vaporshell.Function.Base64","Vaporshell.Resource.UserData"
-                if ([string]`$(`$_.PSTypeNames) -match "(`$((`$allowedTypes|ForEach-Object{[RegEx]::Escape(`$_)}) -join '|'))") {
-                    `$true
-                }
-                else {
-                    `$PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: `$(`$allowedTypes -join ", "). The current types of the value are: `$(`$_.PSTypeNames -join ", ")."))
-                }
-            })]
+        [TransformUserData()]
+        [UserData]
+        `$$ParamName
+"@
+        }
+        elseif ($Prop.Name -eq "LoggingLevel") {
+            $scriptContents += @"
+        [parameter(Mandatory = $Mandatory)]
+        [LoggingLevel]
         `$$ParamName
 "@
         }
         elseif ($Prop.Value.Type -eq "Map") {
             $scriptContents += @"
         [parameter(Mandatory = $Mandatory)]
-        [System.Collections.Hashtable]
+        [IDictionary]
         `$$ParamName
 "@
         }
         elseif ($Prop.Value.PrimitiveType -eq "Integer" -or $Prop.Value.PrimitiveType -eq "Number") {
             $scriptContents += @"
         [parameter(Mandatory = $Mandatory)]
-        [ValidateScript( {
-                `$allowedTypes = "System.Int32","Vaporshell.Function"
-                if ([string]`$(`$_.PSTypeNames) -match "(`$((`$allowedTypes|ForEach-Object{[RegEx]::Escape(`$_)}) -join '|'))") {
-                    `$true
-                }
-                else {
-                    `$PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: `$(`$allowedTypes -join ", "). The current types of the value are: `$(`$_.PSTypeNames -join ", ")."))
-                }
-            })]
+        [object]
         `$$ParamName
 "@
         }
         elseif ($Prop.Value.PrimitiveType -eq "Double") {
             $scriptContents += @"
         [parameter(Mandatory = $Mandatory)]
-        [ValidateScript( {
-                `$allowedTypes = "System.Double","Vaporshell.Function"
-                if ([string]`$(`$_.PSTypeNames) -match "(`$((`$allowedTypes|ForEach-Object{[RegEx]::Escape(`$_)}) -join '|'))") {
-                    `$true
-                }
-                else {
-                    `$PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: `$(`$allowedTypes -join ", "). The current types of the value are: `$(`$_.PSTypeNames -join ", ")."))
-                }
-            })]
+        [object]
         `$$ParamName
 "@
         }
         elseif ($Prop.Value.PrimitiveType -eq "Boolean") {
             $scriptContents += @"
         [parameter(Mandatory = $Mandatory)]
-        [ValidateScript( {
-                `$allowedTypes = "System.Boolean","Vaporshell.Function"
-                if ([string]`$(`$_.PSTypeNames) -match "(`$((`$allowedTypes|ForEach-Object{[RegEx]::Escape(`$_)}) -join '|'))") {
-                    `$true
-                }
-                else {
-                    `$PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: `$(`$allowedTypes -join ", "). The current types of the value are: `$(`$_.PSTypeNames -join ", ")."))
-                }
-            })]
+        [object]
         `$$ParamName
 "@
         }
         elseif ($Prop.Value.PrimitiveType -eq "Json") {
             $scriptContents += @"
         [parameter(Mandatory = $Mandatory)]
-        [ValidateScript( {
-                `$allowedTypes = "System.String","System.Collections.Hashtable","System.Management.Automation.PSCustomObject"
-                if ([string]`$(`$_.PSTypeNames) -match "(`$((`$allowedTypes|ForEach-Object{[RegEx]::Escape(`$_)}) -join '|'))") {
-                    `$true
-                }
-                else {
-                    `$PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: `$(`$allowedTypes -join ", "). The current types of the value are: `$(`$_.PSTypeNames -join ", ")."))
-                }
-            })]
+        [VSJson]
         `$$ParamName
 "@
         }
@@ -313,40 +266,21 @@ function $FunctionName {
             if ($ParamName -eq "LoggingLevel") {
                 $scriptContents += @"
         [parameter(Mandatory = $Mandatory)]
-        [ValidateSet("OFF","ERROR","INFO")]
+        [LoggingLevel]
         `$$ParamName
 "@
             }
             elseif ($FunctionName -eq 'Add-VSLambdaFunctionCode' -and $ParamName -eq 'ZipFile') {
                 $scriptContents += @"
         [parameter(Mandatory = $Mandatory)]
-        [ValidateScript( {
-                `$allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
-                if ([string]`$(`$_.PSTypeNames) -match "(`$((`$allowedTypes|ForEach-Object{[RegEx]::Escape(`$_)}) -join '|'))") {
-                    `$true
-                }
-                else {
-                    `$PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: `$(`$allowedTypes -join ", "). The current types of the value are: `$(`$_.PSTypeNames -join ", ")."))
-                }
-            })]
-        `$$ParamName,
-        [parameter(Mandatory = `$false)]
-        [ValidateScript({Test-Path `$_})]
-        `$ZipFilePath
+        [object]
+        `$$ParamName
 "@
             }
             else {
                 $scriptContents += @"
         [parameter(Mandatory = $Mandatory)]
-        [ValidateScript( {
-                `$allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
-                if ([string]`$(`$_.PSTypeNames) -match "(`$((`$allowedTypes|ForEach-Object{[RegEx]::Escape(`$_)}) -join '|'))") {
-                    `$true
-                }
-                else {
-                    `$PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: `$(`$allowedTypes -join ", "). The current types of the value are: `$(`$_.PSTypeNames -join ", ")."))
-                }
-            })]
+        [object]
         `$$ParamName
 "@
             }
@@ -362,54 +296,29 @@ function $FunctionName {
         if ($Name -eq "AWS::AutoScaling::AutoScalingGroup" -or $Name -eq "AWS::EC2::Instance" -or $Name -eq "AWS::CloudFormation::WaitCondition") {
             $scriptContents += @"
         [parameter(Mandatory = `$false)]
-        [ValidateScript( {
-                `$allowedTypes = "Vaporshell.Resource.CreationPolicy"
-                if ([string]`$(`$_.PSTypeNames) -match "(`$((`$allowedTypes|ForEach-Object{[RegEx]::Escape(`$_)}) -join '|'))") {
-                    `$true
-                }
-                else {
-                    `$PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: `$(`$allowedTypes -join ", "). The current types of the value are: `$(`$_.PSTypeNames -join ", ")."))
-                }
-            })]
+        [CreationPolicy]
         `$CreationPolicy,
 "@
         }
         $scriptContents += @"
-        [ValidateSet("Delete","Retain","Snapshot")]
-        [System.String]
+        [DeletionPolicy]
         `$DeletionPolicy,
-        [ValidateSet("Delete","Retain","Snapshot")]
-        [System.String]
+        [UpdateReplacePolicy]
         `$UpdateReplacePolicy,
         [parameter(Mandatory = `$false)]
-        [System.String[]]
+        [string[]]
         `$DependsOn,
         [parameter(Mandatory = `$false)]
-        [ValidateScript( {
-                `$allowedTypes = "System.Management.Automation.PSCustomObject"
-                if ([string]`$(`$_.PSTypeNames) -match "(`$((`$allowedTypes|ForEach-Object{[RegEx]::Escape(`$_)}) -join '|'))") {
-                    `$true
-                }
-                else {
-                    `$PSCmdlet.ThrowTerminatingError((New-VSError -String "The UpdatePolicy parameter only accepts the following types: `$(`$allowedTypes -join ", "). The current types of the value are: `$(`$_.PSTypeNames -join ", ")."))
-                }
-            })]
+        [VSJson]
 "@
         if ($Name -ne 'AWS::Events::EventBusPolicy') {
             $scriptContents += @"
         `$Metadata,
         [parameter(Mandatory = `$false)]
-        [ValidateScript( {
-                `$allowedTypes = "Vaporshell.Resource.UpdatePolicy"
-                if ([string]`$(`$_.PSTypeNames) -match "(`$((`$allowedTypes|ForEach-Object{[RegEx]::Escape(`$_)}) -join '|'))") {
-                    `$true
-                }
-                else {
-                    `$PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: `$(`$allowedTypes -join ", "). The current types of the value are: `$(`$_.PSTypeNames -join ", ")."))
-                }
-            })]
+        [UpdatePolicy]
         `$UpdatePolicy,
         [parameter(Mandatory = `$false)]
+        [string]
         `$Condition
 "@
         }
@@ -420,143 +329,35 @@ function $FunctionName {
         }
         $scriptContents += @"
     )
-    Begin {
-        `$ResourceParams = @{
-            LogicalId = `$LogicalId
-            Type = "$Name"
-        }
-        `$commonParams = @('Verbose','Debug','ErrorAction','WarningAction','InformationAction','ErrorVariable','WarningVariable','InformationVariable','OutVariable','OutBuffer','PipelineVariable')
-    }
     Process {
-        foreach (`$key in `$PSBoundParameters.Keys | Where-Object {`$commonParams -notcontains `$_}) {
-            switch (`$key) {
-                LogicalId {}
-"@
-        if ($Name -eq "AWS::AutoScaling::AutoScalingGroup" -or $Name -eq "AWS::EC2::Instance" -or $Name -eq "AWS::CloudFormation::WaitCondition") {
-            $scriptContents += @"
-                CreationPolicy {
-                    `$ResourceParams.Add("CreationPolicy",`$CreationPolicy)
-                }
-"@
-        }
-        $scriptContents += @"
-                DeletionPolicy {
-                    `$ResourceParams.Add("DeletionPolicy",`$DeletionPolicy)
-                }
-                UpdateReplacePolicy {
-                    `$ResourceParams.Add("UpdateReplacePolicy",`$UpdateReplacePolicy)
-                }
-                DependsOn {
-                    `$ResourceParams.Add("DependsOn",`$DependsOn)
-                }
-                Metadata {
-                    `$ResourceParams.Add("Metadata",`$Metadata)
-                }
-                UpdatePolicy {
-                    `$ResourceParams.Add("UpdatePolicy",`$UpdatePolicy)
-                }
-                Condition {
-                    `$ResourceParams.Add("Condition",`$Condition)
-                }
-"@
-        foreach ($Prop in $Properties | Where-Object { $_.Value.Type -eq "List" }) {
-            $scriptContents += @"
-                $($Prop.Name) {
-                    if (!(`$ResourceParams["Properties"])) {
-                        `$ResourceParams.Add("Properties",([PSCustomObject]@{}))
-                    }
-                    `$ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name $($Prop.Name) -Value @(`$$($Prop.Name))
-                }
-"@
-        }
-        foreach ($Prop in $Properties | Where-Object { $_.Value.PrimitiveType -eq "Json" }) {
-            $scriptContents += @"
-                $($Prop.Name) {
-                    if ((`$PSBoundParameters[`$key]).PSObject.TypeNames -contains "System.String"){
-                        try {
-                            `$JSONObject = (ConvertFrom-Json -InputObject `$PSBoundParameters[`$key] -ErrorAction Stop)
-                        }
-                        catch {
-                            `$PSCmdlet.ThrowTerminatingError((New-VSError -String "Unable to convert parameter '`$key' string value to PSObject! Please use a JSON string OR provide a Hashtable or PSCustomObject instead!"))
-                        }
-                    }
-                    else {
-                        `$JSONObject = ([PSCustomObject]`$PSBoundParameters[`$key])
-                    }
-                    if (!(`$ResourceParams["Properties"])) {
-                        `$ResourceParams.Add("Properties",([PSCustomObject]@{}))
-                    }
-                    `$ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name `$key -Value `$JSONObject
-                }
-"@
-        }
-        $scriptContents += @"
-                Default {
-                    if (!(`$ResourceParams["Properties"])) {
-                        `$ResourceParams.Add("Properties",([PSCustomObject]@{}))
-                    }
-                    `$ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name `$key -Value `$PSBoundParameters[`$key]
-                }
-            }
-        }
-    }
-    End {
-        `$obj = New-VaporResource @ResourceParams
-        `$obj | Add-ObjectDetail -TypeName '$TypeName'
-        Write-Verbose "Resulting JSON from `$(`$MyInvocation.MyCommand): ``n``n`$(@{`$obj.LogicalId = `$obj.Props} | ConvertTo-Json -Depth 5)``n"
-    }
-}
+        `$obj = [$($FunctionName -replace '^(New|Add)-VS')]::new(`$PSBoundParameters)
 "@
     }
     else {
         $scriptContents += @"
     )
-    Begin {
-        `$obj = [PSCustomObject]@{}
-        `$commonParams = @('Verbose','Debug','ErrorAction','WarningAction','InformationAction','ErrorVariable','WarningVariable','InformationVariable','OutVariable','OutBuffer','PipelineVariable')
-    }
     Process {
-        foreach (`$key in `$PSBoundParameters.Keys | Where-Object {`$commonParams -notcontains `$_}) {
-            switch (`$key) {
 "@
-        foreach ($Prop in $Properties | Where-Object { $_.Value.PrimitiveType -eq "Json" }) {
-            $scriptContents += @"
-                $($Prop.Name) {
-                    if ((`$PSBoundParameters[`$key]).PSObject.TypeNames -contains "System.String"){
-                        try {
-                            `$JSONObject = (ConvertFrom-Json -InputObject `$PSBoundParameters[`$key] -ErrorAction Stop)
-                        }
-                        catch {
-                            `$PSCmdlet.ThrowTerminatingError((New-VSError -String "Unable to convert parameter '`$key' string value to PSObject! Please use a JSON string OR provide a Hashtable or PSCustomObject instead!"))
-                        }
-                    }
-                    else {
-                        `$JSONObject = ([PSCustomObject]`$PSBoundParameters[`$key])
-                    }
-                    `$obj | Add-Member -MemberType NoteProperty -Name `$key -Value `$JSONObject
-                }
-"@
-        }
         if ($FunctionName -eq 'Add-VSLambdaFunctionCode') {
             $scriptContents += @"
-                ZipFilePath {
-                    `$obj | Add-Member -MemberType NoteProperty -Name 'ZipFile' -Value ([System.IO.File]::ReadAllText(`$ZipFilePath))
-                }
+        `$params = `$PSBoundParameters
+        `$params['ZipFile'] = [System.IO.File]::ReadAllText(`$ZipFilePath)
+        `$params.Remove('ZipFile') | Out-Null
+        `$obj = [$($FunctionName -replace '^(New|Add)-VS')]::new(`$params)
 "@
         }
-        $scriptContents += @"
-                Default {
-                    `$obj | Add-Member -MemberType NoteProperty -Name `$key -Value `$PSBoundParameters.`$key
-                }
-            }
+        else {
+            $scriptContents += @"
+        `$obj = [$($FunctionName -replace '^(New|Add)-VS')]::new(`$PSBoundParameters)
+"@
         }
     }
-    End {
-        `$obj | Add-ObjectDetail -TypeName '$TypeName'
-        Write-Verbose "Resulting JSON from `$(`$MyInvocation.MyCommand): ``n``n`$(`$obj | ConvertTo-Json -Depth 5)``n"
+    $scriptContents += @"
+        Write-Debug "`$(`$MyInvocation.MyCommand) PSBoundParameters:``n`$(`$PSBoundParameters | ConvertTo-Json -Depth 20 | Format-Json)"
+        Write-Verbose "Resulting object from `$(`$MyInvocation.MyCommand): ``n`$(`$obj.ToJson() | Format-Json)"
+        `$obj
     }
 }
 "@
-    }
     Set-Content -Value $scriptContents -Path $PS1Path -Encoding UTF8 -Force
 }

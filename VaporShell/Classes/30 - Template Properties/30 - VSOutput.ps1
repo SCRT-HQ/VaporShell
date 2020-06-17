@@ -8,6 +8,7 @@ class VSOutput : VSLogicalObject {
     hidden [string] $_awsDocumentation = 'https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/outputs-section-structure.html'
 
     hidden [object] $_value
+    hidden [object] $_condition
 
     [string] $Condition
     [string] $Description
@@ -18,8 +19,19 @@ class VSOutput : VSLogicalObject {
         $this | Add-Member -Force -MemberType 'ScriptProperty' -Name 'Value' -Value {
             $this._value
         } -SecondValue {
-            param([ValidateType(([string], [int], [bool], [IntrinsicFunction], [ConditionFunction]))] [object] $value)
+            param([ValidateType(([string], [int], [bool], [hashtable], [psobject], [IntrinsicFunction], [ConditionFunction]))] [object] $value)
             $this._value = $value
+        }
+        $this | Add-Member -Force -MemberType 'ScriptProperty' -Name 'Condition' -Value {
+            $this._condition
+        } -SecondValue {
+            param([ValidateType(([string], [hashtable], [psobject], [ConRef]))] [object] $value)
+            $this._condition = if ($value -is [ConRef]) {
+                $value.Condition
+            }
+            else {
+                $value
+            }
         }
     }
 

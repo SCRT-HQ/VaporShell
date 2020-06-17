@@ -2,7 +2,7 @@ function Add-UpdatePolicy {
     <#
     .SYNOPSIS
         Adds an UpdatePolicy property to a resoure on the template
-    
+
     .DESCRIPTION
         Use the UpdatePolicy attribute to specify how AWS CloudFormation handles updates to the AWS::AutoScaling::AutoScalingGroup resource. AWS CloudFormation invokes one of three update policies depending on the type of change you make or whether a scheduled action is associated with the Auto Scaling group.
 
@@ -15,7 +15,7 @@ function Add-UpdatePolicy {
 
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatepolicy.html
-    
+
     .PARAMETER AutoScalingReplacingUpdate
         To specify how AWS CloudFormation handles replacement updates for an Auto Scaling group, use the AutoScalingReplacingUpdate policy. This policy enables you to specify whether AWS CloudFormation replaces an Auto Scaling group with a new one or replaces only the instances in the Auto Scaling group.
 
@@ -23,14 +23,14 @@ function Add-UpdatePolicy {
                 Before attempting an update, ensure that you have sufficient Amazon EC2 capacity for both your old and new Auto Scaling groups.
 
         Parameter accepts a PSCustomObject. Use this if you are customizing the AutoScalingReplacingUpdate properties outside of WillReplace.
-    
+
     .PARAMETER WillReplace
         Specifies whether an Auto Scaling group and the instances it contains are replaced during an update. During replacement, AWS CloudFormation retains the old group until it finishes creating the new one. If the update fails, AWS CloudFormation can roll back to the old Auto Scaling group and delete the new Auto Scaling group.
 
         While AWS CloudFormation creates the new group, it doesn't detach or attach any instances. After successfully creating the new Auto Scaling group, AWS CloudFormation deletes the old Auto Scaling group during the cleanup process.
 
         When you set the WillReplace parameter, remember to specify a matching CreationPolicy. If the minimum number of instances (specified by the WillReplace property) don't signal success within the Timeout period (specified in the CreationPolicy policy), the replacement update fails and AWS CloudFormation rolls back to the old Auto Scaling group.
-    
+
     .PARAMETER AutoScalingRollingUpdate
         To specify how AWS CloudFormation handles rolling updates for an Auto Scaling group, use the AutoScalingRollingUpdate policy. Rolling updates enable you to specify whether AWS CloudFormation updates instances that are in an Auto Scaling group in batches or all at once.
 
@@ -38,20 +38,20 @@ function Add-UpdatePolicy {
                 During a rolling update, some Auto Scaling processes might make changes to the Auto Scaling group before AWS CloudFormation completes the rolling update. These changes might cause the rolling update to fail. To prevent Auto Scaling from running processes during a rolling update, use the SuspendProcesses property.
 
         Parameter accepts a PSCustomObject. Use this if you are customizing the AutoScalingRollingUpdate properties outside of MaxBatchSize, MinInstancesInService, WillReplace, PauseTime, SuspendProcesses, and/or WaitOnAutoScalingRollingUpdates.
-    
+
     .PARAMETER MaxBatchSize
         Specifies the maximum number of instances that AWS CloudFormation updates.
-    
+
     .PARAMETER MinInstancesInService
         Specifies the minimum number of instances that must be in service within the Auto Scaling group while AWS CloudFormation updates old instances.
-    
+
     .PARAMETER WillReplace
         Specifies the percentage of instances in an Auto Scaling rolling update that must signal success for an update to succeed. You can specify a value from 0 to 100. AWS CloudFormation rounds to the nearest tenth of a percent. For example, if you update five instances with a minimum successful percentage of 50, three instances must signal success.
 
         If an instance doesn't send a signal within the time specified in the PauseTime property, AWS CloudFormation assumes that the instance wasn't updated.
 
         If you specify this property, you must also enable the WaitOnAutoScalingRollingUpdates and PauseTime properties.
-    
+
     .PARAMETER PauseTime
         The amount of time that AWS CloudFormation pauses after making a change to a batch of instances to give those instances time to start software applications. For example, you might need to specify PauseTime when scaling up the number of instances in an Auto Scaling group.
 
@@ -60,15 +60,15 @@ function Add-UpdatePolicy {
         Specify PauseTime in the ISO8601 duration format (in the format PT#H#M#S, where each # is the number of hours, minutes, and seconds, respectively). The maximum PauseTime is one hour (PT1H).
 
         Default: PT0S (zero seconds). If the WaitOnAutoScalingRollingUpdates property is set to true, the default is PT5M.
-    
+
     .PARAMETER SuspendProcesses
-        Specifies the Auto Scaling processes to suspend during a stack update. Suspending processes prevents Auto Scaling from interfering with a stack update. For example, you can suspend alarming so that Auto Scaling doesn't execute scaling policies associated with an alarm. For valid values, see the `ScalingProcesses.member.N parameter` for the SuspendProcesses action in the Auto Scaling API Reference.
-    
+        Specifies the Auto Scaling processes to suspend during a stack update. Suspending processes prevents Auto Scaling from objecterfering with a stack update. For example, you can suspend alarming so that Auto Scaling doesn't execute scaling policies associated with an alarm. For valid values, see the `ScalingProcesses.member.N parameter` for the SuspendProcesses action in the Auto Scaling API Reference.
+
     .PARAMETER WaitOnAutoScalingRollingUpdates
-        Specifies whether the Auto Scaling group waits on signals from new instances during an update. Use this property to ensure that instances have completed installing and configuring applications before the Auto Scaling group update proceeds. AWS CloudFormation suspends the update of an Auto Scaling group after new EC2 instances are launched into the group. AWS CloudFormation must receive a signal from each new instance within the specified PauseTime before continuing the update. To signal the Auto Scaling group, use the cfn-signal helper script or SignalResource API.
+        Specifies whether the Auto Scaling group waits on signals from new instances during an update. Use this property to ensure that instances have completed installing and configuring applications before the Auto Scaling group update proceeds. AWS CloudFormation suspends the update of an Auto Scaling group after new EC2 instances are launched objecto the group. AWS CloudFormation must receive a signal from each new instance within the specified PauseTime before continuing the update. To signal the Auto Scaling group, use the cfn-signal helper script or SignalResource API.
 
         To have instances wait for an Elastic Load Balancing health check before they signal success, add a health-check verification by using the cfn-init helper script. For an example, see the `verify_instance_health` command in the Auto Scaling rolling updates sample template.
-    
+
     .PARAMETER AutoScalingScheduledAction
         To specify how AWS CloudFormation handles updates for the MinSize, MaxSize, and DesiredCapacity properties when the AWS::AutoScaling::AutoScalingGroup resource has an associated scheduled action, use the AutoScalingScheduledAction policy.
 
@@ -95,7 +95,7 @@ function Add-UpdatePolicy {
             )
         )
 
-        When the template is exported, this will convert to: 
+        When the template is exported, this will convert to:
 ```json
 {
     "AWSTemplateFormatVersion": "2010-09-09",
@@ -135,156 +135,224 @@ function Add-UpdatePolicy {
     }
 }
 ```
-
-
     .FUNCTIONALITY
         Vaporshell
     #>
-    [OutputType('Vaporshell.Resource.UpdatePolicy')]
+    [OutputType([UpdatePolicy])]
     [cmdletbinding(DefaultParameterSetName="AutoScalingRollingUpdateDetails")]
-    Param
-    (
-        [parameter(Mandatory = $false,Position = 0)]
+    Param(
         [parameter(ParameterSetName="AutoScalingReplacingUpdate")]
         [parameter(ParameterSetName="AutoScalingRollingUpdate")]
         [parameter(ParameterSetName="AutoScalingRollingUpdateDetails")]
         [parameter(ParameterSetName="AutoScalingScheduledAction")]
         [parameter(ParameterSetName="AutoScalingScheduledActionDetails")]
-        [System.Management.Automation.PSCustomObject]
+        [AutoScalingReplacingUpdate]
         $AutoScalingReplacingUpdate,
-        [parameter(Mandatory = $false,Position = 1)]
         [parameter(ParameterSetName="AutoScalingReplacingUpdateDetails")]
         [parameter(ParameterSetName="AutoScalingRollingUpdate")]
         [parameter(ParameterSetName="AutoScalingRollingUpdateDetails")]
         [parameter(ParameterSetName="AutoScalingScheduledAction")]
-        [System.Boolean]
+        [object]
         $WillReplace,
-        [parameter(Mandatory = $false,Position = 2)]
         [parameter(ParameterSetName="AutoScalingReplacingUpdate")]
         [parameter(ParameterSetName="AutoScalingReplacingUpdateDetails")]
         [parameter(ParameterSetName="AutoScalingRollingUpdate")]
         [parameter(ParameterSetName="AutoScalingScheduledAction")]
-        [System.Management.Automation.PSCustomObject]
+        [AutoScalingRollingUpdate]
         $AutoScalingRollingUpdate,
-        [parameter(Mandatory = $false,Position = 3)]
         [parameter(ParameterSetName="AutoScalingReplacingUpdate")]
         [parameter(ParameterSetName="AutoScalingReplacingUpdateDetails")]
         [parameter(ParameterSetName="AutoScalingRollingUpdateDetails")]
         [parameter(ParameterSetName="AutoScalingScheduledAction")]
         [parameter(ParameterSetName="AutoScalingScheduledActionDetails")]
-        [Int]
+        [object]
         $MaxBatchSize,
-        [parameter(Mandatory = $false,Position = 4)]
         [parameter(ParameterSetName="AutoScalingReplacingUpdate")]
         [parameter(ParameterSetName="AutoScalingReplacingUpdateDetails")]
         [parameter(ParameterSetName="AutoScalingRollingUpdateDetails")]
         [parameter(ParameterSetName="AutoScalingScheduledAction")]
         [parameter(ParameterSetName="AutoScalingScheduledActionDetails")]
-        [Int]
+        [object]
         $MinInstancesInService,
-        [parameter(Mandatory = $false,Position = 5)]
         [parameter(ParameterSetName="AutoScalingReplacingUpdate")]
         [parameter(ParameterSetName="AutoScalingReplacingUpdateDetails")]
         [parameter(ParameterSetName="AutoScalingRollingUpdateDetails")]
         [parameter(ParameterSetName="AutoScalingScheduledAction")]
         [parameter(ParameterSetName="AutoScalingScheduledActionDetails")]
-        [Int]
+        [parameter(ParameterSetName="CodeDeployLambdaAliasUpdate")]
+        [parameter(ParameterSetName="CodeDeployLambdaAliasUpdateDetails")]
+        [object]
         $MinSuccessfulInstancesPercent,
-        [parameter(Mandatory = $false,Position = 6)]
         [parameter(ParameterSetName="AutoScalingReplacingUpdate")]
         [parameter(ParameterSetName="AutoScalingReplacingUpdateDetails")]
         [parameter(ParameterSetName="AutoScalingRollingUpdateDetails")]
         [parameter(ParameterSetName="AutoScalingScheduledAction")]
         [parameter(ParameterSetName="AutoScalingScheduledActionDetails")]
-        [ValidatePattern("^P(?!$)(\d+Y)?(\d+M)?(\d+W)?(\d+D)?(T(?=\d+[HMS])(\d+H)?(\d+M)?(\d+S)?)?$")]
-        [System.String]
+        [parameter(ParameterSetName="CodeDeployLambdaAliasUpdate")]
+        [parameter(ParameterSetName="CodeDeployLambdaAliasUpdateDetails")]
+        [object]
         $PauseTime,
-        [parameter(Mandatory = $false,Position = 7)]
         [parameter(ParameterSetName="AutoScalingReplacingUpdate")]
         [parameter(ParameterSetName="AutoScalingReplacingUpdateDetails")]
         [parameter(ParameterSetName="AutoScalingRollingUpdateDetails")]
         [parameter(ParameterSetName="AutoScalingScheduledAction")]
         [parameter(ParameterSetName="AutoScalingScheduledActionDetails")]
-        [System.String[]]
+        [parameter(ParameterSetName="CodeDeployLambdaAliasUpdate")]
+        [parameter(ParameterSetName="CodeDeployLambdaAliasUpdateDetails")]
+        [AutoScalingProcess[]]
         $SuspendProcesses,
-        [parameter(Mandatory = $false,Position = 8)]
         [parameter(ParameterSetName="AutoScalingReplacingUpdate")]
         [parameter(ParameterSetName="AutoScalingReplacingUpdateDetails")]
         [parameter(ParameterSetName="AutoScalingRollingUpdateDetails")]
         [parameter(ParameterSetName="AutoScalingScheduledAction")]
         [parameter(ParameterSetName="AutoScalingScheduledActionDetails")]
-        [System.Boolean]
+        [parameter(ParameterSetName="CodeDeployLambdaAliasUpdate")]
+        [parameter(ParameterSetName="CodeDeployLambdaAliasUpdateDetails")]
+        [object]
         $WaitOnResourceSignals,
-        [parameter(Mandatory = $false,Position = 9)]
         [parameter(ParameterSetName="AutoScalingReplacingUpdate")]
         [parameter(ParameterSetName="AutoScalingReplacingUpdateDetails")]
         [parameter(ParameterSetName="AutoScalingRollingUpdate")]
         [parameter(ParameterSetName="AutoScalingRollingUpdateDetails")]
         [parameter(ParameterSetName="AutoScalingScheduledAction")]
-        [System.Management.Automation.PSCustomObject]
+        [parameter(ParameterSetName="CodeDeployLambdaAliasUpdate")]
+        [parameter(ParameterSetName="CodeDeployLambdaAliasUpdateDetails")]
+        [AutoScalingScheduledAction]
         $AutoScalingScheduledAction,
-        [parameter(Mandatory = $false,Position = 10)]
         [parameter(ParameterSetName="AutoScalingReplacingUpdate")]
         [parameter(ParameterSetName="AutoScalingReplacingUpdateDetails")]
         [parameter(ParameterSetName="AutoScalingRollingUpdate")]
         [parameter(ParameterSetName="AutoScalingRollingUpdateDetails")]
         [parameter(ParameterSetName="AutoScalingScheduledActionDetails")]
-        [System.Boolean]
-        $IgnoreUnmodifiedGroupSizeProperties
+        [parameter(ParameterSetName="CodeDeployLambdaAliasUpdate")]
+        [parameter(ParameterSetName="CodeDeployLambdaAliasUpdateDetails")]
+        [object]
+        $IgnoreUnmodifiedGroupSizeProperties,
+        [parameter(ParameterSetName="AutoScalingReplacingUpdate")]
+        [parameter(ParameterSetName="AutoScalingReplacingUpdateDetails")]
+        [parameter(ParameterSetName="AutoScalingRollingUpdate")]
+        [parameter(ParameterSetName="AutoScalingRollingUpdateDetails")]
+        [parameter(ParameterSetName="AutoScalingScheduledAction")]
+        [parameter(ParameterSetName="AutoScalingScheduledActionDetails")]
+        [parameter(ParameterSetName="CodeDeployLambdaAliasUpdate")]
+        [CodeDeployLambdaAliasUpdate]
+        $CodeDeployLambdaAliasUpdate,
+        [parameter(ParameterSetName="AutoScalingReplacingUpdate")]
+        [parameter(ParameterSetName="AutoScalingReplacingUpdateDetails")]
+        [parameter(ParameterSetName="AutoScalingRollingUpdate")]
+        [parameter(ParameterSetName="AutoScalingRollingUpdateDetails")]
+        [parameter(ParameterSetName="AutoScalingScheduledAction")]
+        [parameter(ParameterSetName="AutoScalingScheduledActionDetails")]
+        [parameter(ParameterSetName="CodeDeployLambdaAliasUpdateDetails")]
+        [object]
+        $AfterAllowTrafficHook,
+        [parameter(ParameterSetName="AutoScalingReplacingUpdate")]
+        [parameter(ParameterSetName="AutoScalingReplacingUpdateDetails")]
+        [parameter(ParameterSetName="AutoScalingRollingUpdate")]
+        [parameter(ParameterSetName="AutoScalingRollingUpdateDetails")]
+        [parameter(ParameterSetName="AutoScalingScheduledAction")]
+        [parameter(ParameterSetName="AutoScalingScheduledActionDetails")]
+        [parameter(ParameterSetName="CodeDeployLambdaAliasUpdateDetails")]
+        [object]
+        $ApplicationName,
+        [parameter(ParameterSetName="AutoScalingReplacingUpdate")]
+        [parameter(ParameterSetName="AutoScalingReplacingUpdateDetails")]
+        [parameter(ParameterSetName="AutoScalingRollingUpdate")]
+        [parameter(ParameterSetName="AutoScalingRollingUpdateDetails")]
+        [parameter(ParameterSetName="AutoScalingScheduledAction")]
+        [parameter(ParameterSetName="AutoScalingScheduledActionDetails")]
+        [parameter(ParameterSetName="CodeDeployLambdaAliasUpdateDetails")]
+        [object]
+        $BeforeAllowTrafficHook,
+        [parameter(ParameterSetName="AutoScalingReplacingUpdate")]
+        [parameter(ParameterSetName="AutoScalingReplacingUpdateDetails")]
+        [parameter(ParameterSetName="AutoScalingRollingUpdate")]
+        [parameter(ParameterSetName="AutoScalingRollingUpdateDetails")]
+        [parameter(ParameterSetName="AutoScalingScheduledAction")]
+        [parameter(ParameterSetName="AutoScalingScheduledActionDetails")]
+        [parameter(ParameterSetName="CodeDeployLambdaAliasUpdateDetails")]
+        [object]
+        $DeploymentGroupName
     )
     Begin {
         if (!($PSBoundParameters.Keys.Count)) {
-            $PSCmdlet.ThrowTerminatingError((New-VSError -String "No parameters passed! Please specify at least one parameter, otherwise exclude this call of $($MyInvocation.MyCommand)."))
+            $PSCmdlet.ThrowTerminatingError((New-VSError -object "No parameters passed! Please specify at least one parameter, otherwise exclude this call of $($MyInvocation.MyCommand)."))
         }
-        $obj = [PSCustomObject]@{}
-        $ASRepU = [PSCustomObject]@{}
-        $ASRolU = [PSCustomObject]@{}
-        $ASSA = [PSCustomObject]@{}
+        $obj = [UpdatePolicy]::new()
+        $ASRepU = [AutoScalingReplacingUpdate]::new()
+        $ASRolU = [AutoScalingRollingUpdate]::new()
+        $ASSA = [AutoScalingScheduledAction]::new()
+        $ASSA = [AutoScalingScheduledAction]::new()
+        $CDLA = [CodeDeployLambdaAliasUpdate]::new()
     }
     Process {
         switch ($PSBoundParameters.Keys) {
             'AutoScalingReplacingUpdate' {
-                $obj | Add-Member -MemberType NoteProperty -Name AutoScalingReplacingUpdate -Value $AutoScalingReplacingUpdate
+                $obj.AutoScalingReplacingUpdate = $AutoScalingReplacingUpdate
             }
             'WillReplace' {
-                $ASRepU | Add-Member -MemberType NoteProperty -Name WillReplace -Value ([string]$WillReplace).ToLower()
-                $obj | Add-Member -MemberType NoteProperty -Name AutoScalingReplacingUpdate -Value $ASRepU
+                $ASRepU.WillReplace = $WillReplace
+                $obj.AutoScalingReplacingUpdate = $ASRepU
             }
             'AutoScalingRollingUpdate' {
-                $obj | Add-Member -MemberType NoteProperty -Name AutoScalingRollingUpdate -Value $AutoScalingRollingUpdate
+                $obj.AutoScalingRollingUpdate = $AutoScalingRollingUpdate
             }
             'MaxBatchSize' {
-                $ASRolU | Add-Member -MemberType NoteProperty -Name MaxBatchSize -Value ($MaxBatchSize).ToString()
+                $ASRolU.MaxBatchSize = $MaxBatchSize
             }
             'MinInstancesInService' {
-                $ASRolU | Add-Member -MemberType NoteProperty -Name MinInstancesInService -Value ($MinInstancesInService).ToString()
+                $ASRolU.MinInstancesInService = $MinInstancesInService
             }
             'MinSuccessfulInstancesPercent' {
-                $ASRolU | Add-Member -MemberType NoteProperty -Name MinSuccessfulInstancesPercent -Value ($MinSuccessfulInstancesPercent).ToString()
+                $ASRolU.MinSuccessfulInstancesPercent = $MinSuccessfulInstancesPercent
             }
             'PauseTime' {
-                $ASRolU | Add-Member -MemberType NoteProperty -Name PauseTime -Value $PauseTime
+                $ASRolU.PauseTime = $PauseTime
             }
             'SuspendProcesses' {
-                $ASRolU | Add-Member -MemberType NoteProperty -Name SuspendProcesses -Value $SuspendProcesses
+                $ASRolU.SuspendProcesses = $SuspendProcesses
             }
             'WaitOnResourceSignals' {
-                $ASRolU | Add-Member -MemberType NoteProperty -Name WaitOnResourceSignals -Value ([string]$WaitOnResourceSignals).ToLower()
+                $ASRolU.WaitOnResourceSignals = $WaitOnResourceSignals
             }
             'AutoScalingScheduledAction' {
-                $obj | Add-Member -MemberType NoteProperty -Name AutoScalingScheduledAction -Value $AutoScalingScheduledAction
+                $obj.AutoScalingScheduledAction = $AutoScalingScheduledAction
             }
             'IgnoreUnmodifiedGroupSizeProperties' {
-                $ASSA | Add-Member -MemberType NoteProperty -Name IgnoreUnmodifiedGroupSizeProperties -Value ([string]$IgnoreUnmodifiedGroupSizeProperties).ToLower()
-                $obj | Add-Member -MemberType NoteProperty -Name AutoScalingScheduledAction -Value $ASSA
+                $ASSA.IgnoreUnmodifiedGroupSizeProperties = $IgnoreUnmodifiedGroupSizeProperties
+                $obj.AutoScalingScheduledAction = $ASSA
+            }
+            'CodeDeployLambdaAliasUpdate' {
+                $obj.CodeDeployLambdaAliasUpdate = $CodeDeployLambdaAliasUpdate
+            }
+            'AfterAllowTrafficHook' {
+                $CDLA.AfterAllowTrafficHook = $AfterAllowTrafficHook
+            }
+            'ApplicationName' {
+                $CDLA.ApplicationName = $ApplicationName
+            }
+            'BeforeAllowTrafficHook' {
+                $CDLA.BeforeAllowTrafficHook = $BeforeAllowTrafficHook
+            }
+            'DeploymentGroupName' {
+                $CDLA.DeploymentGroupName = $DeploymentGroupName
             }
         }
-        if ($ASRolU.MaxBatchSize -or $ASRolU.MinInstancesInService -or $ASRolU.MinSuccessfulInstancesPercent -or $ASRolU.PauseTime -or $ASRolU.SuspendProcesses -or $ASRolU.WaitOnResourceSignals) {
-            $obj | Add-Member -MemberType NoteProperty -Name AutoScalingRollingUpdate -Value $ASRolU
+        foreach ($prop in @('MaxBatchSize','MinInstancesInService','MinSuccessfulInstancesPercent','PauseTime','SuspendProcesses','WaitOnResourceSignals')) {
+            if ($prop -in $PSBoundParameters.Keys) {
+                $obj.AutoScalingRollingUpdate = $ASRolU
+                break
+            }
+        }
+        foreach ($prop in @('AfterAllowTrafficHook','ApplicationName','BeforeAllowTrafficHook','DeploymentGroupName')) {
+            if ($prop -in $PSBoundParameters.Keys) {
+                $obj.CodeDeployLambdaAliasUpdate = $CDLA
+                break
+            }
         }
     }
     End {
-        $obj | Add-ObjectDetail -TypeName 'Vaporshell.Resource.UpdatePolicy'
-        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n`n`t$($obj | ConvertTo-Json -Depth 5)`n"
+        Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n$($obj.ToJson() | Format-Json)"
+        $obj
     }
 }
