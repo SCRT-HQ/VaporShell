@@ -47,7 +47,7 @@ Param(
 )
 
 # Synopsis: Default task
-Task . Build, Import
+Task . Build, Import, PackageBuildOutputAsArtifact
 
 # Synopsis: Builds everything
 Task Build  Init, Update, BuildCore, BuildSubmodules, BuildDotnet
@@ -65,7 +65,7 @@ Task BuildNonCore Init, BuildSubmodules, ImportSubmodules
 Task TestClasses Init, { $script:TestPath = [System.IO.Path]::Combine($BuildRoot,"Tests","Class Tests") }, Test
 
 # Synopsis: Run all core tasks
-Task Full Init, Build, Import, Test, BuildReleaseZips
+Task Full Init, Build, Import, PackageBuildOutputAsArtifact, Test, BuildReleaseZips
 
 # Synopsis: Cleans only compiled core module
 Task CleanCore Init, {
@@ -653,7 +653,7 @@ Task PesterBefore {
 }
 
 # Synopsis: Run Pester tests only (no Clean/Compile)
-Task Test Init, PesterBefore, {
+Task Test Init, PesterBefore, UnpackageBuildOutput, {
     Set-Location -PassThru $TargetModuleDirectory
     Get-Module $ModuleName | Remove-Module $ModuleName -ErrorAction SilentlyContinue -Verbose:$false
     Import-Module -Name $TargetModuleDirectory -Force -Verbose:$false
@@ -750,6 +750,23 @@ Task PublishToPSGallery -If $psGalleryConditions {
     Write-BuildLog "Deployment successful!"
 }
 
+Task PackageBuildOutputAsArtifact -If {Test-Path $TargetManifestPath} Init, {
+    $zipPath = "$BuildRoot/BuildOutputCompressed.zip"
+    if (-not (Test-Path $zipPath)) {
+        $null = New-Item $zipPath -ItemType Directory -Force
+    }
+    Compress-Archive -Path (Get-ChildItem "$BuildRoot/BuildOutput" -Directory).FullName -DestinationPath $zipPath -Verbose
+    Write-BuildLog "Zip created: $zipPath"
+    Write-BuildLog "Moving zip to BuildOutput path to push up as an artifact"
+    Move-Item -Path $zipPath -Destination "$BuildRoot/BuildOutput" -Force
+}
+
+Task UnpackageBuildOutput -If {Test-Path "$BuildRoot/BuildOutput/BuildOutputCompressed.zip"} Init, {
+    $zipPath = "$BuildRoot/BuildOutput/BuildOutputCompressed.zip"
+    Expand-Archive -Path $zipPath -DestinationPath "$BuildRoot/BuildOutput" -Force -Verbose
+    Write-BuildLog "Zip expanded: $zipPath"
+}
+
 Task BuildReleaseZips Init, {
     Write-BuildLog "Creating Release ZIPs..."
     $releaseZipPath = [System.IO.Path]::Combine($BuildRoot, 'ReleaseZips')
@@ -768,14 +785,16 @@ Task BuildReleaseZips Init, {
             SourcePath = [System.IO.Path]::Combine($TargetDirectory, $_.BaseName)
         }
     }
+    Add-Type -Assembly System.IO.Compression.FileSystem
     foreach ($zip in $zipPaths) {
         if (Test-Path $zip.ZipPath) {
             Remove-Item $zip.ZipPath -Force
         }
-        Add-Type -Assembly System.IO.Compression.FileSystem
         [System.IO.Compression.ZipFile]::CreateFromDirectory($zip.SourcePath, $zip.ZipPath)
         Write-BuildLog "Zip created: $((Get-Item $zip.ZipPath).Name)"
     }
+    Compress-Archive -Path (Get-ChildItem ./BuildOutput/ -Directory | Where-Object {$_.BaseName -match '^VaporShell'}).FullName -DestinationPath "./ReleaseZips/FULL_VaporShell.zip" -Verbose
+    Write-BuildLog "Zip created: ./ReleaseZips/FULL_VaporShell.zip"
 }
 
 Task PublishToGitHub -If $gitHubConditions BuildReleaseZips, {

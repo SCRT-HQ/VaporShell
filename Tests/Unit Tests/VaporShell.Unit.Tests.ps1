@@ -212,12 +212,12 @@ Describe "Unit tests" -Tag 'Unit','VaporShellUnit','VaporShell' {
             It 'Should function the same for imported templates' {
                 $path = (Resolve-Path "$projectRoot\Template.yaml").Path
                 $t = Import-Vaporshell -Path $path
-                {$t.RemoveCondition("CreateProdResources","Fn::Transform","CreateTestResources")} | Should -Not -Throw
-                {$t.RemoveMapping("RegionMap","RegionMap2")} | Should -Not -Throw
-                {$t.RemoveParameter("EnvTypeString","EnvType","EnvType2")} | Should -Not -Throw
-                {$t.RemoveMetadata("Instances","Databases")} | Should -Not -Throw
-                {$t.RemoveResource("GatewayDeployment","MyApi","MyInstance","MyInstance2","GatewayDeployment3","MyApi3","MyInstance3")} | Should -Not -Throw
-                {$t.RemoveOutput("BackupLoadBalancerDNSName","PrimaryLoadBalancerDNSName","BackupLoadBalancerDNSName3")} | Should -Not -Throw
+                {$t.RemoveCondition(("CreateProdResources","Fn::Transform","CreateTestResources"))} | Should -Not -Throw
+                {$t.RemoveMapping(("RegionMap","RegionMap2"))} | Should -Not -Throw
+                {$t.RemoveParameter(("EnvTypeString","EnvType","EnvType2"))} | Should -Not -Throw
+                {$t.RemoveMetadata(("Instances","Databases"))} | Should -Not -Throw
+                {$t.RemoveResource(("GatewayDeployment","MyApi","MyInstance","MyInstance2","GatewayDeployment3","MyApi3","MyInstance3"))} | Should -Not -Throw
+                {$t.RemoveOutput(("BackupLoadBalancerDNSName","PrimaryLoadBalancerDNSName","BackupLoadBalancerDNSName3"))} | Should -Not -Throw
             }
         }
     }
