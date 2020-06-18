@@ -23,13 +23,16 @@
     AliasesToExport        = '*'
     FileList               = @()
     PrivateData            = @{
-        PSData = @{
-            Tags       = 'AWS', 'CloudFormation', 'CFN', 'DevOps', 'Automation', 'JSON', 'YAML', 'IaC', 'InfrastructureAsCode', 'PSEdition_Core', 'PSEdition_Desktop', 'Windows', 'Mac', 'Linux'
-            LicenseUri = 'https://github.com/SCRT-HQ/VaporShell/blob/master/LICENSE'
-            ProjectUri = 'https://github.com/SCRT-HQ/VaporShell'
-            IconUri    = 'https://spotinst.com/app/themes/spotinst-theme/dist/images/features/elastigroup/intro/icons/cloudformation.svg'
-        } # End of PSData hashtable
-    } # End of PrivateData hashtable
+  PSData = @{
+    LicenseUri = 'https://github.com/SCRT-HQ/VaporShell/blob/master/LICENSE'
+    Prelease = 'alpha'
+    IconUri = 'https://spotinst.com/app/themes/spotinst-theme/dist/images/features/elastigroup/intro/icons/cloudformation.svg'
+    ProjectUri = 'https://github.com/SCRT-HQ/VaporShell'
+    Tags = @('AWS','CloudFormation','CFN','DevOps','Automation','JSON','YAML','IaC','InfrastructureAsCode','PSEdition_Core','PSEdition_Desktop','Windows','Mac','Linux')
+  }
+} # End of PrivateData hashtable
 }
+
+
 
 

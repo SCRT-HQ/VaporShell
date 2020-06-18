@@ -103,7 +103,7 @@ Website: https://vaporshell.io/
     PrivateData            = @{
 
         PSData = @{
-
+            Prerelease = 'alpha'
             # Tags applied to this module. These help with module discovery in online galleries.
             Tags       = 'AWS', 'CloudFormation', 'CFN', 'DevOps', 'Automation', 'JSON', 'YAML', 'IaC', 'InfrastructureAsCode', 'PSEdition_Core', 'PSEdition_Desktop', 'Windows', 'Mac', 'Linux'
 
