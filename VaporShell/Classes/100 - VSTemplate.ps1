@@ -105,7 +105,7 @@ class VSTemplate : VSObject {
     }
 
     [void] Remove([string] $logicalId, [string] $section) {
-        $validSections = @('Parameters', 'Conditions', 'Metadata', 'Mappings', 'Resources', 'Outputs')
+        $validSections = @('Parameters', 'Conditions', 'Metadata', 'Mappings', 'Resources', 'Outputs','Globals')
         if ($this.PSObject.Properties.Name -notcontains $section) {
             $message = "The section $section was not found on $($this.GetType()). Valid sections: $($validSections -join ', ')"
             throw [VSError]::InvalidArgument($logicalId, $message)
@@ -437,6 +437,8 @@ class VSTemplate : VSObject {
         }
     }
 
+    hidden [void] _addExtraAccessors() {}
+
     hidden [void] _addAccessors() {
         $this | Add-Member -Force -MemberType 'ScriptProperty' -Name 'AWSTemplateFormatVersion' -Value {
             $this._awsTemplateFormatVersion
@@ -545,6 +547,7 @@ class VSTemplate : VSObject {
             }
             $this.AddOutput($value)
         }
+        $this._addExtraAccessors()
     }
 
     VSTemplate() : base() {}
@@ -573,7 +576,7 @@ class VSTemplate : VSObject {
         foreach ($section in $baseObj.PSObject.Properties) {
             Write-Debug "Importing section: $($section.Name)"
             switch -Regex ($section.Name) {
-                '(Outputs|Parameters|Resources|Metadata|Mappings|Conditions)' {
+                '(Outputs|Parameters|Resources|Metadata|Mappings|Conditions|Globals)' {
                     $this."$($section.Name)" = @()
                     $sectionContents = $baseObj."$($section.Name)"
                     $list = if ($sectionContents -is [IDictionary]) {
