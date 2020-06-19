@@ -47,7 +47,7 @@ Param(
 )
 
 # Synopsis: Default task
-Task . Init, Clean, Build, Import, PackageBuildOutputAsArtifact, BuildReleaseZips
+Task . Init, Clean, Build, Import, PackageBuildOutputAsArtifact, BuildReleaseZips, CleanBuildOutput
 
 # Synopsis: Builds everything
 Task Build  Init, Update, BuildCore, BuildSubmodules, BuildDotnet
@@ -762,11 +762,12 @@ Task PackageBuildOutputAsArtifact -If {Test-Path $TargetManifestPath} Init, {
     }
     Compress-Archive -Path "$BuildRoot/BuildOutput" -DestinationPath $zipPath -Force
     Write-BuildLog "Zip created: $zipPath"
-    if ($IsCI -or (Test-Path Env:\TF_BUILD)) {
-        Write-BuildLog "Cleaning out BuildOutput folder"
-        Get-ChildItem "$BuildRoot/BuildOutput" | Where-Object {$_.Name -ne 'BuildOutputCompressed.zip'} | ForEach-Object {
-            remove $_.FullName
-        }
+}
+
+Task CleanBuildOutput -If {$IsCI -or (Test-Path Env:\TF_BUILD)} Init, {
+    Write-BuildLog "Cleaning out BuildOutput folder"
+    Get-ChildItem "$BuildRoot/BuildOutput" | Where-Object {$_.Name -notin @('BuildOutputCompressed.zip','ReleaseZips')} | ForEach-Object {
+        remove $_.FullName
     }
 }
 
