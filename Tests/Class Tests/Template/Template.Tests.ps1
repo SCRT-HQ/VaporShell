@@ -5,14 +5,10 @@ if (($env:PSModulePath -split ';') -notcontains $buildOutputPath) {
     $env:PSModulePath = @($buildOutputPath, $env:PSModulePath) -join [System.IO.Path]::PathSeparator
 }
 
-. (Get-ChildItem (Join-Path $BuildRoot 'ci') -Filter 'https*scrthq*.ps1' | Sort-Object LastWriteTime)[-1].FullName
+Import-Module VaporShell,
+            VaporShell.S3
 
-Write-BuildLog "Importing VaporShell"
-Import-Module VaporShell -Force -Verbose:$false
-Write-BuildLog "Importing VaporShell.S3"
-Import-Module VaporShell.S3 -Force -Verbose
-
-Describe "Template tests" -Tag 'Class','VSTemplate','S3Bucket' {
+Describe "Template tests" -Tag 'Class','VSTemplate','S3Bucket','VaporShell','ClassUnit' {
     Context 'Initialization' {
         It "Should create template from parameterless constructor" {
             {

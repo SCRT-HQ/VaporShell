@@ -47,7 +47,7 @@ Param(
 )
 
 # Synopsis: Default task
-Task . Init, Clean, Build, Import, PackageBuildOutputAsArtifact
+Task . Init, Clean, Build, Import, PackageBuildOutputAsArtifact, BuildReleaseZips
 
 # Synopsis: Builds everything
 Task Build  Init, Update, BuildCore, BuildSubmodules, BuildDotnet
@@ -65,7 +65,7 @@ Task BuildNonCore Init, BuildSubmodules, ImportSubmodules
 Task TestClasses Init, { $script:TestPath = [System.IO.Path]::Combine($BuildRoot,"Tests","Class Tests") }, Test
 
 # Synopsis: Run all core tasks
-Task Full Init, Build, Import, PackageBuildOutputAsArtifact, Test, BuildReleaseZips
+Task Full ., Test
 
 # Synopsis: Cleans only compiled core module
 Task CleanCore Init, {
@@ -779,7 +779,7 @@ Task UnpackageBuildOutput -If {Test-Path "$BuildRoot/BuildOutput/BuildOutputComp
 
 Task BuildReleaseZips Init, {
     Write-BuildLog "Creating Release ZIPs..."
-    $releaseZipPath = [System.IO.Path]::Combine($BuildRoot, 'ReleaseZips')
+    $releaseZipPath = [System.IO.Path]::Combine($BuildRoot,'BuildOutput','ReleaseZips')
     if (-not (Test-Path $releaseZipPath)) {
         $null = New-Item $releaseZipPath -ItemType Directory -Force
     }
@@ -803,8 +803,9 @@ Task BuildReleaseZips Init, {
         [System.IO.Compression.ZipFile]::CreateFromDirectory($zip.SourcePath, $zip.ZipPath)
         Write-BuildLog "Zip created: $((Get-Item $zip.ZipPath).Name)"
     }
-    Compress-Archive -Path (Get-ChildItem ./BuildOutput/ -Directory | Where-Object {$_.BaseName -match '^VaporShell'}).FullName -DestinationPath "./ReleaseZips/FULL_VaporShell.zip" -Verbose
-    Write-BuildLog "Zip created: ./ReleaseZips/FULL_VaporShell.zip"
+    $fullZipPath = [System.IO.Path]::Combine($releaseZipPath, "FULL_VaporShell.zip")
+    Compress-Archive -Path (Get-ChildItem ./BuildOutput/ -Directory | Where-Object {$_.BaseName -match '^VaporShell'}).FullName -DestinationPath $fullZipPath -Verbose -Force
+    Write-BuildLog "FULL Zip created: $fullZipPath"
 }
 
 Task PublishToGitHub -If $gitHubConditions BuildReleaseZips, {
@@ -814,7 +815,7 @@ Task PublishToGitHub -If $gitHubConditions BuildReleaseZips, {
 
     $ReleaseNotes = . .\ci\GitHubReleaseNotes.ps1 -ModuleName $ModuleName -ModuleVersion $NextModuleVersion
 
-    $zipPath = Get-ChildItem ([System.IO.Path]::Combine($BuildRoot, 'ReleaseZips')) -Filter '*.zip' | Select-Object -ExpandProperty FullName
+    $zipPath = Get-ChildItem ([System.IO.Path]::Combine($BuildRoot,'BuildOutput','ReleaseZips')) -Filter '*.zip' | Select-Object -ExpandProperty FullName
 
     $gitHubParams = @{
         VersionNumber    = $NextModuleVersion.ToString()

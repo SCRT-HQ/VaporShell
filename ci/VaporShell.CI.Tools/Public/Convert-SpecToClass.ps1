@@ -139,7 +139,7 @@ function Convert-SpecToClass {
             $ValType += "]"
             $prprtyContents += "    $ValType `$$ParamName"
             $setterParams = if ($propType -eq 'string') {
-                "param([ValidateType(([$propType], [IntrinsicFunction], [ConditionFunction]))] [$setterType] `$value)"
+                "param([ValidateType(([$propType], [int], [IntrinsicFunction], [ConditionFunction]))] [$setterType] `$value)"
             }
             else {
                 "param([ValidateType(([$propType], [string], [IntrinsicFunction], [ConditionFunction]))] [$setterType] `$value)"
@@ -147,15 +147,15 @@ function Convert-SpecToClass {
             }
             if ($ResourceType -eq 'Resource') {
                 $getter = "`$this.Properties['$ParamName']"
-                if ($propType -in @('int','string')) {
+                if ($propType -eq 'int') {
                     $setter = @(
-                        "`$this.Properties['$ParamName'] = if (`$cast = $valueString -as [$propType]) {"
+                        "`$this.Properties['$ParamName'] = if (`$cast = $valueString -as [int]) {"
                         '    $cast'
                         '}'
-                        'else {'
+                        'else{'
                         "    $valueString"
                         '}'
-                    ) -join "`n$(' ' * 8)"
+                    ) -join "`n$(' ' * 12)"
                 }
                 else {
                     $setter = "`$this.Properties['$ParamName'] = $valueString"
@@ -164,15 +164,15 @@ function Convert-SpecToClass {
             else {
                 $hiddenContents += "    hidden [object] `$$_paramName"
                 $getter = "`$this.$_paramName"
-                if ($propType -in @('int','string')) {
+                if ($propType -in @('int')) {
                     $setter = @(
-                        "`$this.$_paramName = if (`$cast = $valueString -as [$propType]) {"
+                        "`$this.$_paramName = if (`$cast = $valueString -as [int]) {"
                         '    $cast'
                         '}'
                         'else {'
                         "    $valueString"
                         '}'
-                    ) -join "`n$(' ' * 8)"
+                    ) -join "`n$(' ' * 12)"
                 }
                 else {
                     $setter = "`$this.$_paramName = $valueString"
@@ -205,7 +205,7 @@ function Convert-SpecToClass {
                     #    'else {'
                     #    '    [VSTag]::new($value)'
                     #    '}'
-                    #) -join "`n$(' ' * 8)"
+                    #) -join "`n$(' ' * 12)"
                 }
                 else {
                     $hiddenContents += "    hidden [object] `$$_paramName"
@@ -300,7 +300,7 @@ function Convert-SpecToClass {
                     'else {'
                     "    $valueString"
                     '}'
-                ) -join "`n$(' ' * 8)"
+                ) -join "`n$(' ' * 12)"
             }
             else {
                 $hiddenContents += "    hidden [object] `$$_paramName"
@@ -312,7 +312,7 @@ function Convert-SpecToClass {
                     'else {'
                     "    $valueString"
                     '}'
-                ) -join "`n$(' ' * 8)"
+                ) -join "`n$(' ' * 12)"
             }
             $accessorContents += @(
                 "        `$this | Add-Member -Force -MemberType ScriptProperty -Name $ParamName -Value {"
@@ -454,15 +454,29 @@ function Convert-SpecToClass {
                 }
                 $ValType += "]"
                 $prprtyContents += "    $ValType `$$ParamName"
-                $setterParams = "param([ValidateType(([string], [IntrinsicFunction], [ConditionFunction]))] [$setterType] `$value)"
+                $setterParams = "param([ValidateType(([string], [int], [IntrinsicFunction], [ConditionFunction]))] [$setterType] `$value)"
                 if ($ResourceType -eq 'Resource') {
                     $getter = "`$this.Properties['$ParamName']"
-                    $setter = "`$this.Properties['$ParamName'] = $valueString"
+                    $setter = @(
+                        "`$this.Properties['$ParamName'] = if (`$value -is [int]) {"
+                        '    $value.ToString()'
+                        '}'
+                        'else {'
+                        "    $valueString"
+                        '}'
+                    ) -join "`n$(' ' * 12)"
                 }
                 else {
                     $hiddenContents += "    hidden [object] `$$_paramName"
                     $getter = "`$this.$_paramName"
-                    $setter = "`$this.$_paramName = $valueString"
+                    $setter = @(
+                        "`$this.$_paramName = if (`$value -is [int]) {"
+                        '    $value.ToString()'
+                        '}'
+                        'else {'
+                        "    $valueString"
+                        '}'
+                    ) -join "`n$(' ' * 12)"
                 }
                 $accessorContents += @(
                     "        `$this | Add-Member -Force -MemberType ScriptProperty -Name $ParamName -Value {"
@@ -547,15 +561,15 @@ function Convert-SpecToClass {
             if ($ResourceType -eq 'Resource') {
                 $getter = "`$this.Properties['$ParamName']"
                 $setter = "`$this.Properties['$ParamName'] = $valueString"
-                if ($propType -in @('int','string')) {
+                if ($propType -in @('int')) {
                     $setter = @(
-                        "`$this.Properties['$ParamName'] = if (`$cast = $valueString -as [$propType]) {"
+                        "`$this.Properties['$ParamName'] = if (`$cast = $valueString -as [int]) {"
                         '    $cast'
                         '}'
                         'else {'
                         "    $valueString"
                         '}'
-                    ) -join "`n$(' ' * 8)"
+                    ) -join "`n$(' ' * 12)"
                 }
                 else {
                     $setter = "`$this.Properties['$ParamName'] = $valueString"
@@ -564,15 +578,15 @@ function Convert-SpecToClass {
             else {
                 $hiddenContents += "    hidden [object] `$$_paramName"
                 $getter = "`$this.$_paramName"
-                if ($propType -in @('int','string')) {
+                if ($propType -in @('int')) {
                     $setter = @(
-                        "`$this.$_paramName = if (`$cast = $valueString -as [$propType]) {"
+                        "`$this.$_paramName = if (`$cast = $valueString -as [int]) {"
                         '    $cast'
                         '}'
                         'else {'
                         "    $valueString"
                         '}'
-                    ) -join "`n$(' ' * 8)"
+                    ) -join "`n$(' ' * 12)"
                 }
                 else {
                     $setter = "`$this.$_paramName = $valueString"
