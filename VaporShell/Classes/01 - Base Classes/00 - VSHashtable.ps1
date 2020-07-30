@@ -8,18 +8,26 @@ class VSHashtable : OrderedDictionary {
     # Anything inheriting from this class will only show the hashtable contents.
     # Object properties will be stripped when cast to JSON/YAML.
     # Useful for adding corresponding public properties for intellisense.
+    static hidden [string] $_vsFunctionName = ''
+    static hidden [string] $_awsDocumentation = ''
     hidden [string[]] $_commonParams = @('Verbose','Debug','ErrorAction','WarningAction','InformationAction','ErrorVariable','WarningVariable','InformationVariable','OutVariable','OutBuffer','PipelineVariable')
     hidden [void] _addAccessors() {}
 
-    [object] Help() {
-        return $this.Help($null)
+    static [object] Help() {
+        $functionName = [VSHashtable]::_vsFunctionName
+        return ([VSHashtable]::HelpCore($null,$functionName))
     }
 
-    [object] Help([string] $scope) {
-        if ([string]::IsNullOrEmpty($this._vsFunctionName)) {
+    static [object] Help([string] $scope) {
+        $functionName = [VSHashtable]::_vsFunctionName
+        return ([VSHashtable]::HelpCore($scope,$functionName))
+    }
+
+    hidden static [object] HelpCore([string] $scope, [string] $functionName) {
+        if ([string]::IsNullOrEmpty($functionName)) {
             return "Help content has not been created for this class. Please open an issue on the GitHub repository to request help for this class."
         }
-        $params = @{Name = $this._vsFunctionName}
+        $params = @{Name = $functionName}
         switch -Regex ($scope) {
             '^F(u|ull){0,1}' {
                 $params["Full"] = $true
@@ -38,12 +46,12 @@ class VSHashtable : OrderedDictionary {
         return (Get-Help @params)
     }
 
-    [string] Docs() {
-        if ([string]::IsNullOrEmpty($this._awsDocumentation)) {
+    hidden static [string] DocsCore([string] $uri) {
+        if ([string]::IsNullOrEmpty($uri)) {
             return "AWS Documentation link not found for this class!"
         }
-        Start-Process $this._awsDocumentation
-        return "Opening documentation link: $($this._awsDocumentation)"
+        Start-Process $uri
+        return "Opening documentation link: $uri"
     }
 
     [OrderedDictionary] ToOrderedDictionary() {

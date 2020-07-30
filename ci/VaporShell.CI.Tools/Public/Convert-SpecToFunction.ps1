@@ -301,8 +301,10 @@ function $FunctionName {
 "@
         }
         $scriptContents += @"
+        [parameter()]
         [DeletionPolicy]
         `$DeletionPolicy,
+        [parameter()]
         [UpdateReplacePolicy]
         `$UpdateReplacePolicy,
         [parameter(Mandatory = `$false)]
