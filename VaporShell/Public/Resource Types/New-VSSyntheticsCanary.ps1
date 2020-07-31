@@ -248,11 +248,11 @@ The state of the canary. For example, RUNNING.
         $Tags,
         [parameter(Mandatory = $false)]
         $VPCConfig,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         $RunConfig,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.Boolean","Vaporshell.Function"
+                $allowedTypes = "System.Boolean","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

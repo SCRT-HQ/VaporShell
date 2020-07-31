@@ -40,6 +40,13 @@ function New-VSLambdaFunction {
         Type: Environment
         UpdateType: Mutable
 
+    .PARAMETER FileSystemConfigs
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-filesystemconfigs
+        DuplicatesAllowed: False
+        ItemType: FileSystemConfig
+        Type: List
+        UpdateType: Mutable
+
     .PARAMETER FunctionName
         The name of the Lambda function, up to 64 characters in length. If you don't specify a name, AWS CloudFormation generates one.
 If you specify a name, you cannot perform updates that require replacement of this resource. You can perform updates that require no or some interruption. If you must replace the resource, specify a new name.
@@ -210,6 +217,17 @@ If you specify a name, you cannot perform updates that require replacement of th
         $Environment,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
+                $allowedTypes = "Vaporshell.Resource.Lambda.Function.FileSystemConfig"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $FileSystemConfigs,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
@@ -367,6 +385,12 @@ If you specify a name, you cannot perform updates that require replacement of th
                 }
                 Condition {
                     $ResourceParams.Add("Condition",$Condition)
+                }
+                FileSystemConfigs {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name FileSystemConfigs -Value @($FileSystemConfigs)
                 }
                 Layers {
                     if (!($ResourceParams["Properties"])) {

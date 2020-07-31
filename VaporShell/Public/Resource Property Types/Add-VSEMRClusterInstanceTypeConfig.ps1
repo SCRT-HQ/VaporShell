@@ -78,7 +78,7 @@ InstanceTypeConfig is a sub-property of InstanceFleetConfig. InstanceTypeConfig 
         $BidPrice,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.Double","Vaporshell.Function"
+                $allowedTypes = "System.Double","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

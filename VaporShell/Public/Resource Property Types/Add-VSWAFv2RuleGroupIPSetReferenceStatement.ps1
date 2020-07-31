@@ -23,6 +23,13 @@ Each IP set rule statement references an IP set. You create and maintain the set
         UpdateType: Mutable
         PrimitiveType: String
 
+    .PARAMETER IPSetForwardedIPConfig
+        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-ipsetreferencestatement.html#cfn-wafv2-rulegroup-ipsetreferencestatement-ipsetforwardedipconfig
+        UpdateType: Mutable
+        Type: IPSetForwardedIPConfiguration
+
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -40,7 +47,9 @@ Each IP set rule statement references an IP set. You create and maintain the set
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $Arn
+        $Arn,
+        [parameter(Mandatory = $false)]
+        $IPSetForwardedIPConfig
     )
     Begin {
         $obj = [PSCustomObject]@{}

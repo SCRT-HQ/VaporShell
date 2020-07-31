@@ -24,6 +24,13 @@ Describes the authentication method to be used by a Client VPN endpoint. Client 
         PrimitiveType: String
         UpdateType: Mutable
 
+    .PARAMETER FederatedAuthentication
+        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
+        Type: FederatedAuthenticationRequest
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-clientauthenticationrequest.html#cfn-ec2-clientvpnendpoint-clientauthenticationrequest-federatedauthentication
+        UpdateType: Mutable
+
     .PARAMETER ActiveDirectory
         Information about the Active Directory to be used, if applicable. You must provide this information if **Type** is directory-service-authentication.
 
@@ -51,6 +58,8 @@ Describes the authentication method to be used by a Client VPN endpoint. Client 
                 }
             })]
         $Type,
+        [parameter(Mandatory = $false)]
+        $FederatedAuthentication,
         [parameter(Mandatory = $false)]
         $ActiveDirectory
     )

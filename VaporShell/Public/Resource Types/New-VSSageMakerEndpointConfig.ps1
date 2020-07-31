@@ -12,6 +12,11 @@ function New-VSSageMakerEndpointConfig {
     .PARAMETER LogicalId
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
+    .PARAMETER DataCaptureConfig
+        Type: DataCaptureConfig
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-datacaptureconfig
+        UpdateType: Immutable
+
     .PARAMETER ProductionVariants
         A list of ProductionVariant objects, one for each model that you want to host at this endpoint.
 
@@ -113,6 +118,8 @@ For more information, see Resource Tag: https://docs.aws.amazon.com/AWSCloudForm
             })]
         [System.String]
         $LogicalId,
+        [parameter(Mandatory = $false)]
+        $DataCaptureConfig,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.SageMaker.EndpointConfig.ProductionVariant"

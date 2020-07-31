@@ -44,7 +44,7 @@ The traffic-shifting: https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffi
         $FunctionVersion,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.Double","Vaporshell.Function"
+                $allowedTypes = "System.Double","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

@@ -101,7 +101,7 @@ TaskParameters has been deprecated. To specify parameters to pass to a task when
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-tasktype
         PrimitiveType: String
-        UpdateType: Mutable
+        UpdateType: Immutable
 
     .PARAMETER LoggingInfo
         Information about an Amazon S3 bucket to write task-level logs to.

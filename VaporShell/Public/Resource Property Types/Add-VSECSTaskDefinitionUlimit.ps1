@@ -14,22 +14,22 @@ The Ulimit property specifies the ulimit settings to pass to the container.
         The hard limit for the ulimit type.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-ulimit.html#cfn-ecs-taskdefinition-containerdefinition-ulimit-hardlimit
-        PrimitiveType: Integer
         UpdateType: Immutable
+        PrimitiveType: Integer
 
     .PARAMETER Name
         The type of the ulimit.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-ulimit.html#cfn-ecs-taskdefinition-containerdefinition-ulimit-name
-        PrimitiveType: String
         UpdateType: Immutable
+        PrimitiveType: String
 
     .PARAMETER SoftLimit
         The soft limit for the ulimit type.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-ulimit.html#cfn-ecs-taskdefinition-containerdefinition-ulimit-softlimit
-        PrimitiveType: Integer
         UpdateType: Immutable
+        PrimitiveType: Integer
 
     .FUNCTIONALITY
         Vaporshell

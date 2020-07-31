@@ -14,17 +14,17 @@ The ProcessingConfiguration property configures data processing for an Amazon Ki
         Indicates whether data processing is enabled true or disabled false.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-processingconfiguration.html#cfn-kinesisfirehose-deliverystream-processingconfiguration-enabled
-        PrimitiveType: Boolean
         UpdateType: Mutable
+        PrimitiveType: Boolean
 
     .PARAMETER Processors
         The data processors.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-processingconfiguration.html#cfn-kinesisfirehose-deliverystream-processingconfiguration-processors
-        DuplicatesAllowed: False
-        ItemType: Processor
-        Type: List
         UpdateType: Mutable
+        Type: List
+        ItemType: Processor
+        DuplicatesAllowed: False
 
     .FUNCTIONALITY
         Vaporshell
@@ -35,7 +35,7 @@ The ProcessingConfiguration property configures data processing for an Amazon Ki
     (
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.Boolean","Vaporshell.Function"
+                $allowedTypes = "System.Boolean","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

@@ -40,7 +40,7 @@ For Windows file systems:
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-storagecapacity
         PrimitiveType: Integer
-        UpdateType: Immutable
+        UpdateType: Mutable
 
     .PARAMETER FileSystemType
         The type of Amazon FSx file system, either LUSTRE or WINDOWS.

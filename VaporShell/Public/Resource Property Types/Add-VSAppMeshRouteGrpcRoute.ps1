@@ -17,6 +17,13 @@ An object that represents a gRPC route type.
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroute.html#cfn-appmesh-route-grpcroute-action
         UpdateType: Mutable
 
+    .PARAMETER Timeout
+        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
+        Type: GrpcTimeout
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroute.html#cfn-appmesh-route-grpcroute-timeout
+        UpdateType: Mutable
+
     .PARAMETER RetryPolicy
         An object that represents a retry policy.
 
@@ -40,6 +47,8 @@ An object that represents a gRPC route type.
     (
         [parameter(Mandatory = $true)]
         $Action,
+        [parameter(Mandatory = $false)]
+        $Timeout,
         [parameter(Mandatory = $false)]
         $RetryPolicy,
         [parameter(Mandatory = $true)]

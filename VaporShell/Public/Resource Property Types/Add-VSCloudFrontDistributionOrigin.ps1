@@ -16,12 +16,26 @@ If you use CloudFormation to create a CloudFront distribution and an S3 bucket o
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html
 
+    .PARAMETER ConnectionTimeout
+        +  Origin: https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Origin.html in the *Amazon CloudFront API Reference*
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-connectiontimeout
+        PrimitiveType: Integer
+        UpdateType: Mutable
+
     .PARAMETER OriginCustomHeaders
         A complex type that contains names and values for the custom headers that you want.
 
         Type: List
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-origincustomheaders
         ItemType: OriginCustomHeader
+        UpdateType: Mutable
+
+    .PARAMETER ConnectionAttempts
+        +  Origin: https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_Origin.html in the *Amazon CloudFront API Reference*
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-connectionattempts
+        PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER DomainName
@@ -86,6 +100,17 @@ When you specify the value of TargetOriginId for the default cache behavior or f
     (
         [parameter(Mandatory = $false)]
         [ValidateScript( {
+                $allowedTypes = "System.Int32","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $ConnectionTimeout,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.CloudFront.Distribution.OriginCustomHeader"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
@@ -95,6 +120,17 @@ When you specify the value of TargetOriginId for the default cache behavior or f
                 }
             })]
         $OriginCustomHeaders,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.Int32","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $ConnectionAttempts,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"

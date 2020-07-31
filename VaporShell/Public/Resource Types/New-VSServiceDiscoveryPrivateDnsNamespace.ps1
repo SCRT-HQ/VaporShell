@@ -26,6 +26,14 @@ function New-VSServiceDiscoveryPrivateDnsNamespace {
         PrimitiveType: String
         UpdateType: Immutable
 
+    .PARAMETER Tags
+        +  CreatePrivateDnsNamespace: https://docs.aws.amazon.com/cloud-map/latest/api/API_CreatePrivateDnsNamespace.html in the *AWS Cloud Map API Reference*
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-privatednsnamespace.html#cfn-servicediscovery-privatednsnamespace-tags
+        ItemType: Tag
+        UpdateType: Immutable
+
     .PARAMETER Name
         The name that you want to assign to this namespace. When you create a private DNS namespace, AWS Cloud Map automatically creates an Amazon Route 53 private hosted zone that has the same name as the namespace.
 
@@ -117,6 +125,9 @@ function New-VSServiceDiscoveryPrivateDnsNamespace {
                 }
             })]
         $Vpc,
+        [VaporShell.Core.TransformTag()]
+        [parameter(Mandatory = $false)]
+        $Tags,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
@@ -190,6 +201,12 @@ function New-VSServiceDiscoveryPrivateDnsNamespace {
                 }
                 Condition {
                     $ResourceParams.Add("Condition",$Condition)
+                }
+                Tags {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name Tags -Value @($Tags)
                 }
                 Default {
                     if (!($ResourceParams["Properties"])) {

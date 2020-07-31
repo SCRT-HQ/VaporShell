@@ -74,6 +74,12 @@ function New-VSImageBuilderComponent {
         UpdateType: Immutable
         PrimitiveType: String
 
+    .PARAMETER SupportedOsVersions
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-component.html#cfn-imagebuilder-component-supportedosversions
+        UpdateType: Immutable
+        Type: List
+        PrimitiveItemType: String
+
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.
 
@@ -227,6 +233,8 @@ function New-VSImageBuilderComponent {
                 }
             })]
         $Uri,
+        [parameter(Mandatory = $false)]
+        $SupportedOsVersions,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,
@@ -289,6 +297,12 @@ function New-VSImageBuilderComponent {
                 }
                 Condition {
                     $ResourceParams.Add("Condition",$Condition)
+                }
+                SupportedOsVersions {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name SupportedOsVersions -Value @($SupportedOsVersions)
                 }
                 Default {
                     if (!($ResourceParams["Properties"])) {

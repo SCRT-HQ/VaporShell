@@ -33,6 +33,11 @@ The Targets property of the AWS::Events::Rule: https://docs.aws.amazon.com/AWSCl
         Type: EcsParameters
         UpdateType: Mutable
 
+    .PARAMETER HttpParameters
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-httpparameters
+        Type: HttpParameters
+        UpdateType: Mutable
+
     .PARAMETER Id
         A name for the target. Use a string that will help you identify the target. Each target associated with a rule must have an Id unique for that rule.
 The Id can include alphanumeric characters, periods ., hyphens -, and underscores _.
@@ -114,6 +119,8 @@ If you specify an SQS FIFO queue as a target, the queue must have content-based 
         $BatchParameters,
         [parameter(Mandatory = $false)]
         $EcsParameters,
+        [parameter(Mandatory = $false)]
+        $HttpParameters,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"

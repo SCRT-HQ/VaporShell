@@ -19,26 +19,23 @@ For more information about using the awsfirelens log driver, see Custom Log Rout
 If you have a custom driver that is not listed, you can fork the Amazon ECS container agent project that is available on GitHub: https://github.com/aws/amazon-ecs-agent and customize it to work with that driver. We encourage you to submit pull requests for changes that you would like to have included. However, we do not currently provide support for running modified copies of this software.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-logconfiguration.html#cfn-ecs-taskdefinition-containerdefinition-logconfiguration-logdriver
-        PrimitiveType: String
         UpdateType: Immutable
+        PrimitiveType: String
 
     .PARAMETER Options
         The configuration options to send to the log driver. This parameter requires version 1.19 of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on your container instance, log in to your container instance and run the following command: sudo docker version --format '{{.Server.APIVersion}}'
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-logconfiguration.html#cfn-ecs-taskdefinition-containerdefinition-logconfiguration-options
-        DuplicatesAllowed: False
-        PrimitiveItemType: String
-        Type: Map
         UpdateType: Immutable
+        Type: Options
 
     .PARAMETER SecretOptions
         The secrets to pass to the log configuration. For more information, see Specifying Sensitive Data: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html in the *Amazon Elastic Container Service Developer Guide*.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-logconfiguration.html#cfn-ecs-taskdefinition-logconfiguration-secretoptions
-        DuplicatesAllowed: False
-        ItemType: Secret
-        Type: List
         UpdateType: Immutable
+        Type: List
+        ItemType: Secret
 
     .FUNCTIONALITY
         Vaporshell
@@ -59,7 +56,6 @@ If you have a custom driver that is not listed, you can fork the Amazon ECS cont
             })]
         $LogDriver,
         [parameter(Mandatory = $false)]
-        [System.Collections.Hashtable]
         $Options,
         [parameter(Mandatory = $false)]
         [ValidateScript( {

@@ -16,12 +16,26 @@ One user can create a maximum of 100,000 topics.
     .PARAMETER LogicalId
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
+    .PARAMETER ContentBasedDeduplication
+        +  Using an AWS CloudFormation Template to Create a Topic that Sends Messages to Amazon SQS Queues: https://docs.aws.amazon.com/sns/latest/dg/SendMessageToSQS.cloudformation.html in the *Amazon Simple Notification Service Developer Guide*
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html#cfn-sns-topic-contentbaseddeduplication
+        PrimitiveType: Boolean
+        UpdateType: Mutable
+
     .PARAMETER DisplayName
         The display name to use for an Amazon SNS topic with SMS subscriptions.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html#cfn-sns-topic-displayname
         PrimitiveType: String
         UpdateType: Mutable
+
+    .PARAMETER FifoTopic
+        +  Using an AWS CloudFormation Template to Create a Topic that Sends Messages to Amazon SQS Queues: https://docs.aws.amazon.com/sns/latest/dg/SendMessageToSQS.cloudformation.html in the *Amazon Simple Notification Service Developer Guide*
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html#cfn-sns-topic-fifotopic
+        PrimitiveType: Boolean
+        UpdateType: Immutable
 
     .PARAMETER KmsMasterKeyId
         The ID of an AWS-managed customer master key CMK for Amazon SNS or a custom CMK. For more information, see Key Terms: https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms. For more examples, see  KeyId: https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters  in the *AWS Key Management Service API Reference*.
@@ -123,6 +137,17 @@ If you specify a name, you can't perform updates that require replacement of thi
         $LogicalId,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
+                $allowedTypes = "System.Boolean","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $ContentBasedDeduplication,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
@@ -132,6 +157,17 @@ If you specify a name, you can't perform updates that require replacement of thi
                 }
             })]
         $DisplayName,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.Boolean","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $FifoTopic,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"

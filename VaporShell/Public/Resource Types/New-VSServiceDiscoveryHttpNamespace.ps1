@@ -21,6 +21,14 @@ For the current limit on the number of namespaces that you can create using the 
         PrimitiveType: String
         UpdateType: Immutable
 
+    .PARAMETER Tags
+        +  CreateHttpNamespace: https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateHttpNamespace.html in the *AWS Cloud Map API Reference*
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-httpnamespace.html#cfn-servicediscovery-httpnamespace-tags
+        ItemType: Tag
+        UpdateType: Immutable
+
     .PARAMETER Name
         The name that you want to assign to this namespace.
 
@@ -101,6 +109,9 @@ For the current limit on the number of namespaces that you can create using the 
                 }
             })]
         $Description,
+        [VaporShell.Core.TransformTag()]
+        [parameter(Mandatory = $false)]
+        $Tags,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
@@ -174,6 +185,12 @@ For the current limit on the number of namespaces that you can create using the 
                 }
                 Condition {
                     $ResourceParams.Add("Condition",$Condition)
+                }
+                Tags {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name Tags -Value @($Tags)
                 }
                 Default {
                     if (!($ResourceParams["Properties"])) {

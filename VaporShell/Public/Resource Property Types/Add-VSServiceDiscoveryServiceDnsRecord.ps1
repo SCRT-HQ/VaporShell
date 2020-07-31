@@ -75,7 +75,7 @@ Alias records don't include a TTL because Route 53 uses the TTL for the AWS reso
         $Type,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.Double","Vaporshell.Function"
+                $allowedTypes = "System.Double","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

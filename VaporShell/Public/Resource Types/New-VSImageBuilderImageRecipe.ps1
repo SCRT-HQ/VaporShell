@@ -56,6 +56,13 @@ function New-VSImageBuilderImageRecipe {
         UpdateType: Immutable
         PrimitiveType: String
 
+    .PARAMETER WorkingDirectory
+        Returns the Amazon Resource Name ARN of the image recipe. For example, arn:aws:imagebuilder:us-east-1:123456789012:image-recipe/mybasicrecipe/2019.12.03.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagerecipe.html#cfn-imagebuilder-imagerecipe-workingdirectory
+        UpdateType: Immutable
+        PrimitiveType: String
+
     .PARAMETER Tags
         The tags of the image recipe.
 
@@ -192,6 +199,17 @@ function New-VSImageBuilderImageRecipe {
                 }
             })]
         $ParentImage,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $WorkingDirectory,
         [parameter(Mandatory = $false)]
         [System.Collections.Hashtable]
         $Tags,

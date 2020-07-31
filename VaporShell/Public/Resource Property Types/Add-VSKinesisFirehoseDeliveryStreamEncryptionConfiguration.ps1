@@ -14,15 +14,15 @@ The EncryptionConfiguration property type specifies the encryption settings that
         The AWS Key Management Service AWS KMS encryption key that Amazon S3 uses to encrypt your data.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-encryptionconfiguration.html#cfn-kinesisfirehose-deliverystream-encryptionconfiguration-kmsencryptionconfig
-        Type: KMSEncryptionConfig
         UpdateType: Mutable
+        Type: KMSEncryptionConfig
 
     .PARAMETER NoEncryptionConfig
         Disables encryption. For valid values, see the NoEncryptionConfig content for the EncryptionConfiguration: https://docs.aws.amazon.com/firehose/latest/APIReference/API_EncryptionConfiguration.html data type in the *Amazon Kinesis Data Firehose API Reference*.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-encryptionconfiguration.html#cfn-kinesisfirehose-deliverystream-encryptionconfiguration-noencryptionconfig
-        PrimitiveType: String
         UpdateType: Mutable
+        PrimitiveType: String
 
     .FUNCTIONALITY
         Vaporshell

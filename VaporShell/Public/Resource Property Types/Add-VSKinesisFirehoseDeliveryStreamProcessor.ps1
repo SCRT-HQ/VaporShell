@@ -14,17 +14,17 @@ The Processor property specifies a data processor for an Amazon Kinesis Data Fir
         The processor parameters.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-processor.html#cfn-kinesisfirehose-deliverystream-processor-parameters
-        DuplicatesAllowed: False
-        ItemType: ProcessorParameter
-        Type: List
         UpdateType: Mutable
+        Type: List
+        ItemType: ProcessorParameter
+        DuplicatesAllowed: False
 
     .PARAMETER Type
         The type of processor. Valid values: Lambda.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-processor.html#cfn-kinesisfirehose-deliverystream-processor-type
-        PrimitiveType: String
         UpdateType: Mutable
+        PrimitiveType: String
 
     .FUNCTIONALITY
         Vaporshell
@@ -33,7 +33,7 @@ The Processor property specifies a data processor for an Amazon Kinesis Data Fir
     [cmdletbinding()]
     Param
     (
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.KinesisFirehose.DeliveryStream.ProcessorParameter"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {

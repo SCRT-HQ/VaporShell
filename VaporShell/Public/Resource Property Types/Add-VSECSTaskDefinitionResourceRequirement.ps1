@@ -14,8 +14,8 @@ The ResourceRequirement property specifies the type and amount of a resource to 
         The type of resource to assign to a container. The supported values are GPU or InferenceAccelerator.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-resourcerequirement.html#cfn-ecs-taskdefinition-resourcerequirement-type
-        PrimitiveType: String
         UpdateType: Immutable
+        PrimitiveType: String
 
     .PARAMETER Value
         The value for the specified resource type.
@@ -23,8 +23,8 @@ If the GPU type is used, the value is the number of physical GPUs the Amazon ECS
 If the InferenceAccelerator type is used, the value should match the DeviceName for an InferenceAccelerator: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-inferenceaccelerator.html specified in a task definition.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-resourcerequirement.html#cfn-ecs-taskdefinition-resourcerequirement-value
-        PrimitiveType: String
         UpdateType: Immutable
+        PrimitiveType: String
 
     .FUNCTIONALITY
         Vaporshell

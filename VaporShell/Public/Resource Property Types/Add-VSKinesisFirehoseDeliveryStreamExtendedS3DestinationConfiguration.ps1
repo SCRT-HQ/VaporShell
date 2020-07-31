@@ -14,85 +14,85 @@ The ExtendedS3DestinationConfiguration property type configures an Amazon S3 des
         The Amazon Resource Name ARN of the Amazon S3 bucket. For constraints, see ExtendedS3DestinationConfiguration: https://docs.aws.amazon.com/firehose/latest/APIReference/API_ExtendedS3DestinationConfiguration.html in the *Amazon Kinesis Data Firehose API Reference*.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-bucketarn
-        PrimitiveType: String
         UpdateType: Mutable
+        PrimitiveType: String
 
     .PARAMETER BufferingHints
         The buffering option.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-bufferinghints
-        Type: BufferingHints
         UpdateType: Mutable
+        Type: BufferingHints
 
     .PARAMETER CloudWatchLoggingOptions
         The Amazon CloudWatch logging options for your delivery stream.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-cloudwatchloggingoptions
-        Type: CloudWatchLoggingOptions
         UpdateType: Mutable
+        Type: CloudWatchLoggingOptions
 
     .PARAMETER CompressionFormat
         The compression format. If no value is specified, the default is UNCOMPRESSED.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-compressionformat
-        PrimitiveType: String
         UpdateType: Mutable
+        PrimitiveType: String
 
     .PARAMETER DataFormatConversionConfiguration
         The serializer, deserializer, and schema for converting data from the JSON format to the Parquet or ORC format before writing it to Amazon S3.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-dataformatconversionconfiguration
-        Type: DataFormatConversionConfiguration
         UpdateType: Mutable
+        Type: DataFormatConversionConfiguration
 
     .PARAMETER EncryptionConfiguration
         The encryption configuration for the Kinesis Data Firehose delivery stream. The default value is NoEncryption.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-encryptionconfiguration
-        Type: EncryptionConfiguration
         UpdateType: Mutable
+        Type: EncryptionConfiguration
 
     .PARAMETER ErrorOutputPrefix
         A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing them to S3. This prefix appears immediately following the bucket name. For information about how to specify this prefix, see Custom Prefixes for Amazon S3 Objects: https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-erroroutputprefix
-        PrimitiveType: String
         UpdateType: Mutable
+        PrimitiveType: String
 
     .PARAMETER Prefix
         The YYYY/MM/DD/HH time format prefix is automatically used for delivered Amazon S3 files. For more information, see ExtendedS3DestinationConfiguration: https://docs.aws.amazon.com/firehose/latest/APIReference/API_ExtendedS3DestinationConfiguration.html in the *Amazon Kinesis Data Firehose API Reference*.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-prefix
-        PrimitiveType: String
         UpdateType: Mutable
+        PrimitiveType: String
 
     .PARAMETER ProcessingConfiguration
         The data processing configuration for the Kinesis Data Firehose delivery stream.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-processingconfiguration
-        Type: ProcessingConfiguration
         UpdateType: Mutable
+        Type: ProcessingConfiguration
 
     .PARAMETER RoleARN
         The Amazon Resource Name ARN of the AWS credentials. For constraints, see ExtendedS3DestinationConfiguration: https://docs.aws.amazon.com/firehose/latest/APIReference/API_ExtendedS3DestinationConfiguration.html in the *Amazon Kinesis Data Firehose API Reference*.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-rolearn
-        PrimitiveType: String
         UpdateType: Mutable
+        PrimitiveType: String
 
     .PARAMETER S3BackupConfiguration
         The configuration for backup in Amazon S3.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-s3backupconfiguration
-        Type: S3DestinationConfiguration
         UpdateType: Mutable
+        Type: S3DestinationConfiguration
 
     .PARAMETER S3BackupMode
         The Amazon S3 backup mode.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-s3backupmode
-        PrimitiveType: String
         UpdateType: Mutable
+        PrimitiveType: String
 
     .FUNCTIONALITY
         Vaporshell
@@ -112,11 +112,11 @@ The ExtendedS3DestinationConfiguration property type configures an Amazon S3 des
                 }
             })]
         $BucketARN,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         $BufferingHints,
         [parameter(Mandatory = $false)]
         $CloudWatchLoggingOptions,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {

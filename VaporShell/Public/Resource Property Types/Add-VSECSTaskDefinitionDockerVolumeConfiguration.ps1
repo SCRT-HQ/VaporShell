@@ -15,40 +15,38 @@ The DockerVolumeConfiguration property specifies a Docker volume configuration a
 This field is only used if the scope is shared.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-dockervolumeconfiguration.html#cfn-ecs-taskdefinition-dockervolumeconfiguration-autoprovision
-        PrimitiveType: Boolean
         UpdateType: Immutable
+        PrimitiveType: Boolean
 
     .PARAMETER Driver
         The Docker volume driver to use. The driver value must match the driver name provided by Docker because it is used for task placement. If the driver was installed using the Docker plugin CLI, use docker plugin ls to retrieve the driver name from your container instance. If the driver was installed using another method, use Docker plugin discovery to retrieve the driver name. For more information, see Docker plugin discovery: https://docs.docker.com/engine/extend/plugin_api/#plugin-discovery. This parameter maps to Driver in the Create a volume: https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate section of the Docker Remote API: https://docs.docker.com/engine/api/v1.35/ and the xxdriver option to docker volume create: https://docs.docker.com/engine/reference/commandline/volume_create/.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-dockervolumeconfiguration.html#cfn-ecs-taskdefinition-dockervolumeconfiguration-driver
-        PrimitiveType: String
         UpdateType: Immutable
+        PrimitiveType: String
 
     .PARAMETER DriverOpts
         A map of Docker driver-specific options passed through. This parameter maps to DriverOpts in the Create a volume: https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate section of the Docker Remote API: https://docs.docker.com/engine/api/v1.35/ and the xxopt option to docker volume create: https://docs.docker.com/engine/reference/commandline/volume_create/.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-dockervolumeconfiguration.html#cfn-ecs-taskdefinition-dockervolumeconfiguration-driveropts
-        DuplicatesAllowed: False
-        PrimitiveItemType: String
-        Type: Map
         UpdateType: Immutable
+        Type: Map
+        PrimitiveItemType: String
 
     .PARAMETER Labels
         Custom metadata to add to your Docker volume. This parameter maps to Labels in the Create a volume: https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate section of the Docker Remote API: https://docs.docker.com/engine/api/v1.35/ and the xxlabel option to docker volume create: https://docs.docker.com/engine/reference/commandline/volume_create/.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-dockervolumeconfiguration.html#cfn-ecs-taskdefinition-dockervolumeconfiguration-labels
-        DuplicatesAllowed: False
-        PrimitiveItemType: String
-        Type: Map
         UpdateType: Immutable
+        Type: Map
+        PrimitiveItemType: String
 
     .PARAMETER Scope
         The scope for the Docker volume that determines its lifecycle. Docker volumes that are scoped to a task are automatically provisioned when the task starts and destroyed when the task stops. Docker volumes that are scoped as shared persist after the task stops.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-dockervolumeconfiguration.html#cfn-ecs-taskdefinition-dockervolumeconfiguration-scope
-        PrimitiveType: String
         UpdateType: Immutable
+        PrimitiveType: String
 
     .FUNCTIONALITY
         Vaporshell
@@ -59,7 +57,7 @@ This field is only used if the scope is shared.
     (
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.Boolean","Vaporshell.Function"
+                $allowedTypes = "System.Boolean","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

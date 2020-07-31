@@ -31,6 +31,13 @@ Rules statement.
         UpdateType: Mutable
         Type: StatementThree
 
+    .PARAMETER ForwardedIPConfig
+        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ratebasedstatementtwo.html#cfn-wafv2-webacl-ratebasedstatementtwo-forwardedipconfig
+        UpdateType: Mutable
+        Type: ForwardedIPConfiguration
+
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -61,7 +68,9 @@ Rules statement.
             })]
         $AggregateKeyType,
         [parameter(Mandatory = $false)]
-        $ScopeDownStatement
+        $ScopeDownStatement,
+        [parameter(Mandatory = $false)]
+        $ForwardedIPConfig
     )
     Begin {
         $obj = [PSCustomObject]@{}

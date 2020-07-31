@@ -21,8 +21,8 @@ If you are using containers in a task with the bridge network mode and you speci
 You cannot expose the same container port for multiple protocols. An error will be returned if this is attempted.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-portmappings.html#cfn-ecs-taskdefinition-containerdefinition-portmappings-containerport
-        PrimitiveType: Integer
         UpdateType: Immutable
+        PrimitiveType: Integer
 
     .PARAMETER HostPort
         The port number on the container instance to reserve for your container.
@@ -33,15 +33,15 @@ The default ephemeral port range from 49153 through 65535 is always used for Doc
 The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the Amazon ECS container agent ports 51678-51680. Any host port that was previously specified in a running task is also reserved while the task is running after a task stops, the host port is released. The current reserved ports are displayed in the remainingResources of DescribeContainerInstances: https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeContainerInstances.html output. A container instance can have up to 100 reserved ports at a time, including the default reserved ports. Automatically assigned ports don't count toward the 100 reserved ports limit.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-portmappings.html#cfn-ecs-taskdefinition-containerdefinition-portmappings-readonly
-        PrimitiveType: Integer
         UpdateType: Immutable
+        PrimitiveType: Integer
 
     .PARAMETER Protocol
         The protocol used for the port mapping. Valid values are tcp and udp. The default is tcp.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-portmappings.html#cfn-ecs-taskdefinition-containerdefinition-portmappings-sourcevolume
-        PrimitiveType: String
         UpdateType: Immutable
+        PrimitiveType: String
 
     .FUNCTIONALITY
         Vaporshell

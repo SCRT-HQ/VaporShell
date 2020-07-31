@@ -17,6 +17,13 @@ An object that represents an HTTP or HTTP/2 route type.
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproute.html#cfn-appmesh-route-httproute-action
         UpdateType: Mutable
 
+    .PARAMETER Timeout
+        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
+        Type: HttpTimeout
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproute.html#cfn-appmesh-route-httproute-timeout
+        UpdateType: Mutable
+
     .PARAMETER RetryPolicy
         An object that represents a retry policy.
 
@@ -40,6 +47,8 @@ An object that represents an HTTP or HTTP/2 route type.
     (
         [parameter(Mandatory = $true)]
         $Action,
+        [parameter(Mandatory = $false)]
+        $Timeout,
         [parameter(Mandatory = $false)]
         $RetryPolicy,
         [parameter(Mandatory = $true)]

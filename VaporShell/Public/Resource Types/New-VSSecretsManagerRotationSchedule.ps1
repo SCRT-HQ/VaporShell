@@ -23,6 +23,13 @@ When you configure rotation for a secret, AWS CloudFormation automatically rotat
         PrimitiveType: String
         UpdateType: Immutable
 
+    .PARAMETER HostedRotationLambda
+        +  Rotating Your AWS Secrets Manager Secrets: https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html in the AWS Secrets Manager User Guide
+
+        Type: HostedRotationLambda
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-rotationschedule.html#cfn-secretsmanager-rotationschedule-hostedrotationlambda
+        UpdateType: Mutable
+
     .PARAMETER RotationLambdaARN
         Specifies the ARN of the Lambda function that can rotate the secret. If you don't specify this parameter, then the secret must already have the ARN of a Lambda function configured. To reference a Lambda function also created in this template, use the Ref: https://docs.aws.amazon.com/git statusAWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html function with the function's logical ID.
 
@@ -110,6 +117,8 @@ When you configure rotation for a secret, AWS CloudFormation automatically rotat
                 }
             })]
         $SecretId,
+        [parameter(Mandatory = $false)]
+        $HostedRotationLambda,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"

@@ -39,6 +39,20 @@ If you specify the AccessControlTranslation property, the Account property is re
         Type: EncryptionConfiguration
         UpdateType: Mutable
 
+    .PARAMETER Metrics
+        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules-destination.html#cfn-s3-bucket-replicationdestination-metrics
+        Type: Metrics
+        UpdateType: Mutable
+
+    .PARAMETER ReplicationTime
+        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules-destination.html#cfn-s3-bucket-replicationdestination-replicationtime
+        Type: ReplicationTime
+        UpdateType: Mutable
+
     .PARAMETER StorageClass
         The storage class to use when replicating objects, such as S3 Standard or reduced redundancy. By default, Amazon S3 uses the storage class of the source object to create the object replica.
 For valid values, see the StorageClass element of the PUT Bucket replication: https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html action in the *Amazon Simple Storage Service API Reference*.
@@ -80,6 +94,10 @@ For valid values, see the StorageClass element of the PUT Bucket replication: ht
         $Bucket,
         [parameter(Mandatory = $false)]
         $EncryptionConfiguration,
+        [parameter(Mandatory = $false)]
+        $Metrics,
+        [parameter(Mandatory = $false)]
+        $ReplicationTime,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"

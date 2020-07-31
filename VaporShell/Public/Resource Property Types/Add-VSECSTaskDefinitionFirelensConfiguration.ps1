@@ -10,6 +10,13 @@ The FireLens configuration for the container. This is used to specify and config
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-firelensconfiguration.html
 
+    .PARAMETER Type
+        The log router to use. The valid values are fluentd or fluentbit.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-firelensconfiguration.html#cfn-ecs-taskdefinition-firelensconfiguration-type
+        UpdateType: Immutable
+        PrimitiveType: String
+
     .PARAMETER Options
         The options to use when configuring the log router. This field is optional and can be used to add additional metadata, such as the task, task definition, cluster, and container instance details to the log event.
 If specified, valid option keys are:
@@ -18,17 +25,8 @@ If specified, valid option keys are:
 + config-file-value, which is either an S3 ARN or a file path
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-firelensconfiguration.html#cfn-ecs-taskdefinition-firelensconfiguration-options
-        DuplicatesAllowed: False
-        PrimitiveItemType: String
-        Type: Map
         UpdateType: Immutable
-
-    .PARAMETER Type
-        The log router to use. The valid values are fluentd or fluentbit.
-
-        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-firelensconfiguration.html#cfn-ecs-taskdefinition-firelensconfiguration-type
-        PrimitiveType: String
-        UpdateType: Immutable
+        Type: Options
 
     .FUNCTIONALITY
         Vaporshell
@@ -38,9 +36,6 @@ If specified, valid option keys are:
     Param
     (
         [parameter(Mandatory = $false)]
-        [System.Collections.Hashtable]
-        $Options,
-        [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -50,7 +45,9 @@ If specified, valid option keys are:
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $Type
+        $Type,
+        [parameter(Mandatory = $false)]
+        $Options
     )
     Begin {
         $obj = [PSCustomObject]@{}

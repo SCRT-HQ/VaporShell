@@ -85,6 +85,14 @@ function New-VSImageBuilderInfrastructureConfiguration {
         UpdateType: Mutable
         PrimitiveType: String
 
+    .PARAMETER ResourceTags
+        Returns the Amazon Resource Name ARN of the infrastructure configuration. The following pattern is applied: ^arn:aws^:]*:imagebuilder:^:]+:?:d{12}|aws:?:image-recipe|infrastructure-configuration|distribution-configuration|component|image|image-pipeline/a-z0-9-_]+?:/?:?:x|d+.?:x|d+.?:x|d+?:/d+??$.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-infrastructureconfiguration.html#cfn-imagebuilder-infrastructureconfiguration-resourcetags
+        UpdateType: Mutable
+        Type: Map
+        PrimitiveItemType: String
+
     .PARAMETER Tags
         The tags of the infrastructure configuration.
 
@@ -216,7 +224,7 @@ function New-VSImageBuilderInfrastructureConfiguration {
         $KeyPair,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.Boolean","Vaporshell.Function"
+                $allowedTypes = "System.Boolean","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -247,6 +255,9 @@ function New-VSImageBuilderInfrastructureConfiguration {
                 }
             })]
         $SnsTopicArn,
+        [parameter(Mandatory = $false)]
+        [System.Collections.Hashtable]
+        $ResourceTags,
         [parameter(Mandatory = $false)]
         [System.Collections.Hashtable]
         $Tags,

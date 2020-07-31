@@ -60,6 +60,13 @@ This information is for the AWS CodeBuild console's use only. Your code should n
         PrimitiveType: Integer
         UpdateType: Mutable
 
+    .PARAMETER BuildStatusConfig
+        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
+        Type: BuildStatusConfig
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-buildstatusconfig
+        UpdateType: Mutable
+
     .PARAMETER GitSubmodulesConfig
         Information about the Git submodules configuration for the build project.
 
@@ -109,7 +116,7 @@ If you specify CODEPIPELINE for the Type property, don't specify this property. 
         $Type,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.Boolean","Vaporshell.Function"
+                $allowedTypes = "System.Boolean","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -154,10 +161,12 @@ If you specify CODEPIPELINE for the Type property, don't specify this property. 
             })]
         $GitCloneDepth,
         [parameter(Mandatory = $false)]
+        $BuildStatusConfig,
+        [parameter(Mandatory = $false)]
         $GitSubmodulesConfig,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
-                $allowedTypes = "System.Boolean","Vaporshell.Function"
+                $allowedTypes = "System.Boolean","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }

@@ -12,6 +12,15 @@ function New-VSElasticLoadBalancingV2Listener {
     .PARAMETER LogicalId
         The logical ID must be alphanumeric (A-Za-z0-9) and unique within the template. Use the logical name to reference the resource in other parts of the template. For example, if you want to map an Amazon Elastic Block Store volume to an Amazon EC2 instance, you reference the logical IDs to associate the block stores with the instance.
 
+    .PARAMETER AlpnPolicy
+        +  Listeners: https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-listeners.html in the *User Guide for Network Load Balancers*
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-alpnpolicy
+        DuplicatesAllowed: False
+        PrimitiveItemType: String
+        Type: List
+        UpdateType: Mutable
+
     .PARAMETER Certificates
         The default SSL server certificate for a secure listener. You must provide exactly one certificate if the listener protocol is HTTPS or TLS.
 To create a certificate list for a secure listener, use AWS::ElasticLoadBalancingV2::ListenerCertificate: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenercertificate.html.
@@ -132,6 +141,8 @@ For more information, see Security Policies: https://docs.aws.amazon.com/elastic
             })]
         [System.String]
         $LogicalId,
+        [parameter(Mandatory = $false)]
+        $AlpnPolicy,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.ElasticLoadBalancingV2.Listener.Certificate"
@@ -260,6 +271,12 @@ For more information, see Security Policies: https://docs.aws.amazon.com/elastic
                 }
                 Condition {
                     $ResourceParams.Add("Condition",$Condition)
+                }
+                AlpnPolicy {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name AlpnPolicy -Value @($AlpnPolicy)
                 }
                 Certificates {
                     if (!($ResourceParams["Properties"])) {

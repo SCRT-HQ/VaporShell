@@ -91,7 +91,7 @@ Update requires: Some interruptions: https://docs.aws.amazon.com/AWSCloudFormati
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-ssespecification
         Type: SSESpecification
-        UpdateType: Conditional
+        UpdateType: Mutable
 
     .PARAMETER StreamSpecification
         The settings for the DynamoDB table stream, which capture changes to items stored in the table.

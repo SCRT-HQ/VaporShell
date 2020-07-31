@@ -22,6 +22,13 @@ A rule statement used to identify web requests based on country of origin.
         Type: List
         PrimitiveItemType: String
 
+    .PARAMETER ForwardedIPConfig
+        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-geomatchstatement.html#cfn-wafv2-webacl-geomatchstatement-forwardedipconfig
+        UpdateType: Mutable
+        Type: ForwardedIPConfiguration
+
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -30,7 +37,9 @@ A rule statement used to identify web requests based on country of origin.
     Param
     (
         [parameter(Mandatory = $false)]
-        $CountryCodes
+        $CountryCodes,
+        [parameter(Mandatory = $false)]
+        $ForwardedIPConfig
     )
     Begin {
         $obj = [PSCustomObject]@{}

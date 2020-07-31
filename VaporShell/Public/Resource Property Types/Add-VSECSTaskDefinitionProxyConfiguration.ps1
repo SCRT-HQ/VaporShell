@@ -18,8 +18,8 @@ For tasks using the Fargate launch type, the task or service requires platform v
         The name of the container that will serve as the App Mesh proxy.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-proxyconfiguration.html#cfn-ecs-taskdefinition-proxyconfiguration-containername
-        PrimitiveType: String
         UpdateType: Immutable
+        PrimitiveType: String
 
     .PARAMETER ProxyConfigurationProperties
         The set of network configuration parameters to provide the Container Network Interface CNI plugin, specified as key-value pairs.
@@ -32,17 +32,17 @@ For tasks using the Fargate launch type, the task or service requires platform v
 +  EgressIgnoredIPs - Required The egress traffic going to the specified IP addresses is ignored and not redirected to the ProxyEgressPort. It can be an empty list.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-proxyconfiguration.html#cfn-ecs-taskdefinition-proxyconfiguration-proxyconfigurationproperties
-        DuplicatesAllowed: False
-        ItemType: KeyValuePair
-        Type: List
         UpdateType: Immutable
+        Type: List
+        ItemType: KeyValuePair
+        DuplicatesAllowed: False
 
     .PARAMETER Type
         The proxy type. The only supported value is APPMESH.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-proxyconfiguration.html#cfn-ecs-taskdefinition-proxyconfiguration-type
-        PrimitiveType: String
         UpdateType: Immutable
+        PrimitiveType: String
 
     .FUNCTIONALITY
         Vaporshell

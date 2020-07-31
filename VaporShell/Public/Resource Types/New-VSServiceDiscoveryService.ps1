@@ -64,6 +64,14 @@ For information about the charges for health checks, see Amazon Route 53 Pricing
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-healthcheckconfig
         UpdateType: Mutable
 
+    .PARAMETER Tags
+        +  CreateService: https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html in the *AWS Cloud Map API Reference*
+
+        Type: List
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-tags
+        ItemType: Tag
+        UpdateType: Immutable
+
     .PARAMETER Name
         The name of the service.
 
@@ -161,6 +169,9 @@ For information about the charges for health checks, see Amazon Route 53 Pricing
         $NamespaceId,
         [parameter(Mandatory = $false)]
         $HealthCheckConfig,
+        [VaporShell.Core.TransformTag()]
+        [parameter(Mandatory = $false)]
+        $Tags,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
@@ -234,6 +245,12 @@ For information about the charges for health checks, see Amazon Route 53 Pricing
                 }
                 Condition {
                     $ResourceParams.Add("Condition",$Condition)
+                }
+                Tags {
+                    if (!($ResourceParams["Properties"])) {
+                        $ResourceParams.Add("Properties",([PSCustomObject]@{}))
+                    }
+                    $ResourceParams["Properties"] | Add-Member -MemberType NoteProperty -Name Tags -Value @($Tags)
                 }
                 Default {
                     if (!($ResourceParams["Properties"])) {

@@ -16,6 +16,13 @@ For tasks using the Fargate launch type, this parameter requires that the task o
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdependency.html
 
+    .PARAMETER ContainerName
+        The name of a container.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdependency.html#cfn-ecs-taskdefinition-containerdependency-containername
+        UpdateType: Immutable
+        PrimitiveType: String
+
     .PARAMETER Condition
         The dependency condition of the container. The following are the available conditions and their behavior:
 +  START - This condition emulates the behavior of links and volumes today. It validates that a dependent container is started before permitting other containers to start.
@@ -24,15 +31,8 @@ For tasks using the Fargate launch type, this parameter requires that the task o
 +  HEALTHY - This condition validates that the dependent container passes its Docker health check before permitting other containers to start. This requires that the dependent container has health checks configured. This condition is confirmed only at task startup.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdependency.html#cfn-ecs-taskdefinition-containerdependency-condition
-        PrimitiveType: String
         UpdateType: Immutable
-
-    .PARAMETER ContainerName
-        The name of a container.
-
-        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdependency.html#cfn-ecs-taskdefinition-containerdependency-containername
         PrimitiveType: String
-        UpdateType: Immutable
 
     .FUNCTIONALITY
         Vaporshell
@@ -41,7 +41,7 @@ For tasks using the Fargate launch type, this parameter requires that the task o
     [cmdletbinding()]
     Param
     (
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -51,8 +51,8 @@ For tasks using the Fargate launch type, this parameter requires that the task o
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $Condition,
-        [parameter(Mandatory = $true)]
+        $ContainerName,
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -62,7 +62,7 @@ For tasks using the Fargate launch type, this parameter requires that the task o
                     $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
                 }
             })]
-        $ContainerName
+        $Condition
     )
     Begin {
         $obj = [PSCustomObject]@{}

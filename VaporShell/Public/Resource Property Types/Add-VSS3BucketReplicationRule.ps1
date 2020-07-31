@@ -10,11 +10,25 @@ Specifies which Amazon S3 objects to replicate and where to store the replicas.
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules.html
 
+    .PARAMETER DeleteMarkerReplication
+        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules.html#cfn-s3-bucket-replicationrule-deletemarkerreplication
+        Type: DeleteMarkerReplication
+        UpdateType: Mutable
+
     .PARAMETER Destination
         A container for information about the replication destination and its configurations including enabling the S3 Replication Time Control S3 RTC.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules.html#cfn-s3-bucket-replicationconfiguration-rules-destination
         Type: ReplicationDestination
+        UpdateType: Mutable
+
+    .PARAMETER Filter
+        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules.html#cfn-s3-bucket-replicationrule-filter
+        Type: ReplicationRuleFilter
         UpdateType: Mutable
 
     .PARAMETER Id
@@ -29,6 +43,13 @@ Specifies which Amazon S3 objects to replicate and where to store the replicas.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules.html#cfn-s3-bucket-replicationconfiguration-rules-prefix
         PrimitiveType: String
+        UpdateType: Mutable
+
+    .PARAMETER Priority
+        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules.html#cfn-s3-bucket-replicationrule-priority
+        PrimitiveType: Integer
         UpdateType: Mutable
 
     .PARAMETER SourceSelectionCriteria
@@ -52,8 +73,12 @@ Specifies which Amazon S3 objects to replicate and where to store the replicas.
     [cmdletbinding()]
     Param
     (
+        [parameter(Mandatory = $false)]
+        $DeleteMarkerReplication,
         [parameter(Mandatory = $true)]
         $Destination,
+        [parameter(Mandatory = $false)]
+        $Filter,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
@@ -65,7 +90,7 @@ Specifies which Amazon S3 objects to replicate and where to store the replicas.
                 }
             })]
         $Id,
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
@@ -76,6 +101,17 @@ Specifies which Amazon S3 objects to replicate and where to store the replicas.
                 }
             })]
         $Prefix,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.Int32","Vaporshell.Function"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $Priority,
         [parameter(Mandatory = $false)]
         $SourceSelectionCriteria,
         [parameter(Mandatory = $true)]

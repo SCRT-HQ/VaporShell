@@ -74,6 +74,11 @@ Tags may only contain Unicode letters, digits, white space, or these symbols: _ 
         PrimitiveType: String
         UpdateType: Immutable
 
+    .PARAMETER TracingConfiguration
+        Type: TracingConfiguration
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-tracingconfiguration
+        UpdateType: Mutable
+
     .PARAMETER DeletionPolicy
         With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted. You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy attribute, AWS CloudFormation deletes the resource by default.
 
@@ -197,6 +202,8 @@ Tags may only contain Unicode letters, digits, white space, or these symbols: _ 
                 }
             })]
         $StateMachineType,
+        [parameter(Mandatory = $false)]
+        $TracingConfiguration,
         [ValidateSet("Delete","Retain","Snapshot")]
         [System.String]
         $DeletionPolicy,

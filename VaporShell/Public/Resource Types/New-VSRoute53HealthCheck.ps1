@@ -33,7 +33,7 @@ You can associate health checks with failover records in a private hosted zone. 
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-healthcheck.html#cfn-route53-healthcheck-healthcheckconfig
         Type: HealthCheckConfig
-        UpdateType: Mutable
+        UpdateType: Conditional
 
     .PARAMETER HealthCheckTags
         The HealthCheckTags property describes key-value pairs that are associated with an AWS::Route53::HealthCheck resource.

@@ -160,6 +160,13 @@ You must specify one of the following properties: LaunchConfigurationName, Launc
         Type: MixedInstancesPolicy
         UpdateType: Mutable
 
+    .PARAMETER NewInstancesProtectedFromScaleIn
+        + Suspending and Resuming Scaling Processes: https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html in the *Amazon EC2 Auto Scaling User Guide*
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-newinstancesprotectedfromscalein
+        PrimitiveType: Boolean
+        UpdateType: Mutable
+
     .PARAMETER NotificationConfigurations
         Configures an Auto Scaling group to send notifications when specified events take place.
 
@@ -431,6 +438,17 @@ When you update VPCZoneIdentifier, this retains the same Auto Scaling group and 
         $MinSize,
         [parameter(Mandatory = $false)]
         $MixedInstancesPolicy,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.Boolean","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $NewInstancesProtectedFromScaleIn,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "Vaporshell.Resource.AutoScaling.AutoScalingGroup.NotificationConfiguration"

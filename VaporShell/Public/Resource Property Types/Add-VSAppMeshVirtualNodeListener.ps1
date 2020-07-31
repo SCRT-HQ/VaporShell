@@ -10,6 +10,13 @@ An object that represents a listener for a virtual node.
     .LINK
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listener.html
 
+    .PARAMETER Timeout
+        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
+        Type: ListenerTimeout
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listener.html#cfn-appmesh-virtualnode-listener-timeout
+        UpdateType: Mutable
+
     .PARAMETER HealthCheck
         The health check information for the listener.
 
@@ -38,6 +45,8 @@ An object that represents a listener for a virtual node.
     [cmdletbinding()]
     Param
     (
+        [parameter(Mandatory = $false)]
+        $Timeout,
         [parameter(Mandatory = $false)]
         $HealthCheck,
         [parameter(Mandatory = $false)]

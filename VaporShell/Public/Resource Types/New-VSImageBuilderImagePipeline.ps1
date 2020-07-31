@@ -68,6 +68,13 @@ function New-VSImageBuilderImagePipeline {
         UpdateType: Mutable
         PrimitiveType: String
 
+    .PARAMETER EnhancedImageMetadataEnabled
+        Returns the Amazon Resource Name ARN of the image pipeline. For example, arn:aws:imagebuilder:us-west-2:123456789012:image-pipeline/mywindows2016pipeline.
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagepipeline.html#cfn-imagebuilder-imagepipeline-enhancedimagemetadataenabled
+        UpdateType: Mutable
+        PrimitiveType: Boolean
+
     .PARAMETER Tags
         The tags of this image pipeline.
 
@@ -208,6 +215,17 @@ function New-VSImageBuilderImagePipeline {
                 }
             })]
         $InfrastructureConfigurationArn,
+        [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.Boolean","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $EnhancedImageMetadataEnabled,
         [parameter(Mandatory = $false)]
         [System.Collections.Hashtable]
         $Tags,

@@ -35,6 +35,13 @@ You can optionally nest another statement inside the rate-based statement, to na
         UpdateType: Mutable
         Type: StatementTwo
 
+    .PARAMETER ForwardedIPConfig
+        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ratebasedstatementone.html#cfn-wafv2-webacl-ratebasedstatementone-forwardedipconfig
+        UpdateType: Mutable
+        Type: ForwardedIPConfiguration
+
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -65,7 +72,9 @@ You can optionally nest another statement inside the rate-based statement, to na
             })]
         $AggregateKeyType,
         [parameter(Mandatory = $false)]
-        $ScopeDownStatement
+        $ScopeDownStatement,
+        [parameter(Mandatory = $false)]
+        $ForwardedIPConfig
     )
     Begin {
         $obj = [PSCustomObject]@{}

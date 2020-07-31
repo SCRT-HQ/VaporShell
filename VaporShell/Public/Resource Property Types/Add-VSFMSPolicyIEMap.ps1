@@ -20,6 +20,14 @@ The key to the map is ACCOUNT. For example, a valid IEMap would be {â€œACCOUNTâ€
         Type: List
         PrimitiveItemType: String
 
+    .PARAMETER ORGUNIT
+        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fms-policy-iemap.html#cfn-fms-policy-iemap-orgunit
+        UpdateType: Mutable
+        Type: List
+        PrimitiveItemType: String
+
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -28,7 +36,9 @@ The key to the map is ACCOUNT. For example, a valid IEMap would be {â€œACCOUNTâ€
     Param
     (
         [parameter(Mandatory = $false)]
-        $ACCOUNT
+        $ACCOUNT,
+        [parameter(Mandatory = $false)]
+        $ORGUNIT
     )
     Begin {
         $obj = [PSCustomObject]@{}

@@ -28,11 +28,21 @@ function New-VSElasticsearchDomain {
         Type: Map
         UpdateType: Mutable
 
+    .PARAMETER AdvancedSecurityOptions
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-advancedsecurityoptions
+        Type: AdvancedSecurityOptionsInput
+        UpdateType: Immutable
+
     .PARAMETER CognitoOptions
         Configures Amazon ES to use Amazon Cognito authentication for Kibana.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-cognitooptions
         Type: CognitoOptions
+        UpdateType: Mutable
+
+    .PARAMETER DomainEndpointOptions
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-domainendpointoptions
+        Type: DomainEndpointOptions
         UpdateType: Mutable
 
     .PARAMETER DomainName
@@ -188,7 +198,11 @@ If you set the UpgradeElasticsearchVersion: https://docs.aws.amazon.com/AWSCloud
         [System.Collections.Hashtable]
         $AdvancedOptions,
         [parameter(Mandatory = $false)]
+        $AdvancedSecurityOptions,
+        [parameter(Mandatory = $false)]
         $CognitoOptions,
+        [parameter(Mandatory = $false)]
+        $DomainEndpointOptions,
         [parameter(Mandatory = $false)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"

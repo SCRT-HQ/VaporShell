@@ -17,6 +17,13 @@ An object that represents a TCP route type.
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcproute.html#cfn-appmesh-route-tcproute-action
         UpdateType: Mutable
 
+    .PARAMETER Timeout
+        *Update requires*: No interruption: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt
+
+        Type: TcpTimeout
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcproute.html#cfn-appmesh-route-tcproute-timeout
+        UpdateType: Mutable
+
     .FUNCTIONALITY
         Vaporshell
     #>
@@ -25,7 +32,9 @@ An object that represents a TCP route type.
     Param
     (
         [parameter(Mandatory = $true)]
-        $Action
+        $Action,
+        [parameter(Mandatory = $false)]
+        $Timeout
     )
     Begin {
         $obj = [PSCustomObject]@{}

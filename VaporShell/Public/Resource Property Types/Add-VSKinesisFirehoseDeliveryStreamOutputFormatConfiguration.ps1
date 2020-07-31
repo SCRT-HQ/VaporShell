@@ -14,8 +14,8 @@ Specifies the serializer that you want Kinesis Data Firehose to use to convert t
         Specifies which serializer to use. You can choose either the ORC SerDe or the Parquet SerDe. If both are non-null, the server rejects the request.
 
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-outputformatconfiguration.html#cfn-kinesisfirehose-deliverystream-outputformatconfiguration-serializer
-        Type: Serializer
         UpdateType: Mutable
+        Type: Serializer
 
     .FUNCTIONALITY
         Vaporshell
@@ -24,7 +24,7 @@ Specifies the serializer that you want Kinesis Data Firehose to use to convert t
     [cmdletbinding()]
     Param
     (
-        [parameter(Mandatory = $true)]
+        [parameter(Mandatory = $false)]
         $Serializer
     )
     Begin {

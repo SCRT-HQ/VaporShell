@@ -71,12 +71,22 @@ This permission is required to attach the ENI to the broker instance.
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-configuration
         UpdateType: Mutable
 
+    .PARAMETER AuthenticationStrategy
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-authenticationstrategy
+        PrimitiveType: String
+        UpdateType: Immutable
+
     .PARAMETER MaintenanceWindowStartTime
         The scheduled time period relative to UTC during which Amazon MQ begins to apply pending updates or patches to the broker..
 
         Type: MaintenanceWindow
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-maintenancewindowstarttime
         UpdateType: Immutable
+
+    .PARAMETER LdapMetadata
+        Type: LdapMetadata
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-ldapmetadata
+        UpdateType: Mutable
 
     .PARAMETER HostInstanceType
         The broker's instance type.
@@ -121,6 +131,11 @@ This permission is required to attach the ENI to the broker instance.
         Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-brokername
         PrimitiveType: String
         UpdateType: Immutable
+
+    .PARAMETER LdapServerMetadata
+        Type: LdapServerMetadata
+        Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-ldapservermetadata
+        UpdateType: Mutable
 
     .PARAMETER DeploymentMode
         The deployment mode of the broker. Available values:
@@ -249,7 +264,20 @@ This permission is required to attach the ENI to the broker instance.
         [parameter(Mandatory = $false)]
         $Configuration,
         [parameter(Mandatory = $false)]
+        [ValidateScript( {
+                $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
+                if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
+                    $true
+                }
+                else {
+                    $PSCmdlet.ThrowTerminatingError((New-VSError -String "This parameter only accepts the following types: $($allowedTypes -join ", "). The current types of the value are: $($_.PSTypeNames -join ", ")."))
+                }
+            })]
+        $AuthenticationStrategy,
+        [parameter(Mandatory = $false)]
         $MaintenanceWindowStartTime,
+        [parameter(Mandatory = $false)]
+        $LdapMetadata,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
@@ -263,7 +291,7 @@ This permission is required to attach the ENI to the broker instance.
         $HostInstanceType,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.Boolean","Vaporshell.Function"
+                $allowedTypes = "System.Boolean","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
@@ -298,6 +326,8 @@ This permission is required to attach the ENI to the broker instance.
                 }
             })]
         $BrokerName,
+        [parameter(Mandatory = $false)]
+        $LdapServerMetadata,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
                 $allowedTypes = "System.String","Vaporshell.Function","Vaporshell.Condition"
@@ -322,7 +352,7 @@ This permission is required to attach the ENI to the broker instance.
         $EngineType,
         [parameter(Mandatory = $true)]
         [ValidateScript( {
-                $allowedTypes = "System.Boolean","Vaporshell.Function"
+                $allowedTypes = "System.Boolean","Vaporshell.Function","Vaporshell.Condition"
                 if ([string]$($_.PSTypeNames) -match "($(($allowedTypes|ForEach-Object{[RegEx]::Escape($_)}) -join '|'))") {
                     $true
                 }
