@@ -360,14 +360,14 @@ $psGalleryConditions = {
     -not [String]::IsNullOrEmpty($NextModuleVersion) -and
     $env:BHBuildSystem -eq 'VSTS' -and
     ($env:BHCommitMessage -match '!deploy' -or $env:BUILD_REASON -eq 'Schedule') -and
-    $env:BHBranchName -eq "master"
+    $env:BHBranchName -match "^(master|main)$"
 }
 $gitHubConditions = {
     -not [String]::IsNullOrEmpty($env:GitHubPAT) -and
     -not [String]::IsNullOrEmpty($NextModuleVersion) -and
     $env:BHBuildSystem -eq 'VSTS' -and
     ($env:BHCommitMessage -match '!deploy' -or $env:BUILD_REASON -eq 'Schedule') -and
-    $env:BHBranchName -eq "master"
+    $env:BHBranchName -match "^(master|main)$"
 }
 $tweetConditions = {
     -not [String]::IsNullOrEmpty($env:TwitterAccessSecret) -and
@@ -377,7 +377,7 @@ $tweetConditions = {
     -not [String]::IsNullOrEmpty($NextModuleVersion) -and
     $env:BHBuildSystem -eq 'VSTS' -and
     ($env:BHCommitMessage -match '!deploy' -or $env:BUILD_REASON -eq 'Schedule') -and
-    $env:BHBranchName -eq "master"
+    $env:BHBranchName -match "^(master|main)$"
 }
 
 task PublishToPSGallery -If $psGalleryConditions {
