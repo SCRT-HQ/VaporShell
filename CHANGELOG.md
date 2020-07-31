@@ -1,5 +1,6 @@
 <!-- TOC -->
 
+* [2.13.0 - 2020-07-30](#2130---2020-07-30)
 * [2.12.2 - 2020-06-04](#2122---2020-06-04)
 * [2.12.1 - 2020-05-05](#2121---2020-05-05)
 * [2.12.0 - 2020-05-03](#2120---2020-05-03)
@@ -56,6 +57,16 @@
 * [0.7.02](#0702)
 
 <!-- /TOC -->
+
+## 2.13.0 - 2020-07-30
+
+* [Issue #81](https://github.com/SCRT-HQ/VaporShell/issues/81)
+    * Fixed: `Add-ConIf` parameter error message
+    * Fixed: `Add-ConIf` now allows boolean values
+* [Issue #82](https://github.com/SCRT-HQ/VaporShell/issues/82)
+    * Fixed: Condition Functions are now supported on any parameter that already accepts Intrinsic Functions
+* Miscellaneous
+    * Updated PseudoParameter list to current spec.
 
 ## 2.12.2 - 2020-06-04
 
