@@ -1,19 +1,19 @@
-# New-VSRDSDBProxyTargetGroup
+# New-VSApiGatewayV2VpcLink
 
 ## SYNOPSIS
-Adds an AWS::RDS::DBProxyTargetGroup resource to the template.
+Adds an AWS::ApiGatewayV2::VpcLink resource to the template.
 
 ## SYNTAX
 
 ```
-New-VSRDSDBProxyTargetGroup [-LogicalId] <String> -DBProxyName <Object> -TargetGroupName <Object>
- [-ConnectionPoolConfigurationInfo <Object>] [-DBInstanceIdentifiers <Object>] [-DBClusterIdentifiers <Object>]
- [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
- [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+New-VSApiGatewayV2VpcLink [-LogicalId] <String> -SubnetIds <Object> [-SecurityGroupIds <Object>]
+ [-Tags <Object>] -Name <Object> [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>]
+ [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::RDS::DBProxyTargetGroup resource to the template.
+Adds an AWS::ApiGatewayV2::VpcLink resource to the template.
 
 ## PARAMETERS
 
@@ -34,10 +34,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DBProxyName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html#cfn-rds-dbproxytargetgroup-dbproxyname
+### -SubnetIds
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-vpclink.html#cfn-apigatewayv2-vpclink-subnetids
 UpdateType: Immutable
-PrimitiveType: String
 
 ```yaml
 Type: Object
@@ -51,10 +52,45 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -TargetGroupName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html#cfn-rds-dbproxytargetgroup-targetgroupname
+### -SecurityGroupIds
+PrimitiveItemType: String
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-vpclink.html#cfn-apigatewayv2-vpclink-securitygroupids
 UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Tags
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-vpclink.html#cfn-apigatewayv2-vpclink-tags
+PrimitiveType: Json
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-vpclink.html#cfn-apigatewayv2-vpclink-name
 PrimitiveType: String
+UpdateType: Mutable
 
 ```yaml
 Type: Object
@@ -62,59 +98,6 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ConnectionPoolConfigurationInfo
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html#cfn-rds-dbproxytargetgroup-connectionpoolconfigurationinfo
-UpdateType: Mutable
-Type: ConnectionPoolConfigurationInfoFormat
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DBInstanceIdentifiers
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html#cfn-rds-dbproxytargetgroup-dbinstanceidentifiers
-UpdateType: Mutable
-Type: List
-PrimitiveItemType: String
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DBClusterIdentifiers
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html#cfn-rds-dbproxytargetgroup-dbclusteridentifiers
-UpdateType: Mutable
-Type: List
-PrimitiveItemType: String
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -265,10 +248,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Vaporshell.Resource.RDS.DBProxyTargetGroup
+### Vaporshell.Resource.ApiGatewayV2.VpcLink
 ## NOTES
 
 ## RELATED LINKS
 
-[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html)
+[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-vpclink.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-vpclink.html)
 

@@ -1,19 +1,19 @@
-# New-VSRDSDBProxyTargetGroup
+# New-VSEC2PrefixList
 
 ## SYNOPSIS
-Adds an AWS::RDS::DBProxyTargetGroup resource to the template.
+Adds an AWS::EC2::PrefixList resource to the template.
 
 ## SYNTAX
 
 ```
-New-VSRDSDBProxyTargetGroup [-LogicalId] <String> -DBProxyName <Object> -TargetGroupName <Object>
- [-ConnectionPoolConfigurationInfo <Object>] [-DBInstanceIdentifiers <Object>] [-DBClusterIdentifiers <Object>]
- [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
- [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+New-VSEC2PrefixList [-LogicalId] <String> -PrefixListName <Object> -AddressFamily <Object> -MaxEntries <Object>
+ [-Tags <Object>] [-Entries <Object>] [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>]
+ [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::RDS::DBProxyTargetGroup resource to the template.
+Adds an AWS::EC2::PrefixList resource to the template.
 
 ## PARAMETERS
 
@@ -34,9 +34,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DBProxyName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html#cfn-rds-dbproxytargetgroup-dbproxyname
-UpdateType: Immutable
+### -PrefixListName
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-prefixlist.html#cfn-ec2-prefixlist-prefixlistname
+UpdateType: Mutable
 PrimitiveType: String
 
 ```yaml
@@ -51,9 +51,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -TargetGroupName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html#cfn-rds-dbproxytargetgroup-targetgroupname
-UpdateType: Immutable
+### -AddressFamily
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-prefixlist.html#cfn-ec2-prefixlist-addressfamily
+UpdateType: Mutable
 PrimitiveType: String
 
 ```yaml
@@ -68,10 +68,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ConnectionPoolConfigurationInfo
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html#cfn-rds-dbproxytargetgroup-connectionpoolconfigurationinfo
+### -MaxEntries
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-prefixlist.html#cfn-ec2-prefixlist-maxentries
 UpdateType: Mutable
-Type: ConnectionPoolConfigurationInfoFormat
+PrimitiveType: Integer
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Tags
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-prefixlist.html#cfn-ec2-prefixlist-tags
+UpdateType: Mutable
+Type: List
+ItemType: Tag
 
 ```yaml
 Type: Object
@@ -85,29 +103,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DBInstanceIdentifiers
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html#cfn-rds-dbproxytargetgroup-dbinstanceidentifiers
+### -Entries
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-prefixlist.html#cfn-ec2-prefixlist-entries
 UpdateType: Mutable
 Type: List
-PrimitiveItemType: String
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DBClusterIdentifiers
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html#cfn-rds-dbproxytargetgroup-dbclusteridentifiers
-UpdateType: Mutable
-Type: List
-PrimitiveItemType: String
+ItemType: Entry
 
 ```yaml
 Type: Object
@@ -265,10 +265,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Vaporshell.Resource.RDS.DBProxyTargetGroup
+### Vaporshell.Resource.EC2.PrefixList
 ## NOTES
 
 ## RELATED LINKS
 
-[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html)
+[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-prefixlist.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-prefixlist.html)
 

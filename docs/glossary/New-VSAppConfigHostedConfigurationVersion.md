@@ -1,19 +1,19 @@
-# New-VSRDSDBProxyTargetGroup
+# New-VSAppConfigHostedConfigurationVersion
 
 ## SYNOPSIS
-Adds an AWS::RDS::DBProxyTargetGroup resource to the template.
+Adds an AWS::AppConfig::HostedConfigurationVersion resource to the template.
 
 ## SYNTAX
 
 ```
-New-VSRDSDBProxyTargetGroup [-LogicalId] <String> -DBProxyName <Object> -TargetGroupName <Object>
- [-ConnectionPoolConfigurationInfo <Object>] [-DBInstanceIdentifiers <Object>] [-DBClusterIdentifiers <Object>]
- [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
- [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+New-VSAppConfigHostedConfigurationVersion [-LogicalId] <String> -ConfigurationProfileId <Object>
+ [-Description <Object>] -ContentType <Object> [-LatestVersionNumber <Object>] -Content <Object>
+ -ApplicationId <Object> [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>] [-DependsOn <String[]>]
+ [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::RDS::DBProxyTargetGroup resource to the template.
+Adds an AWS::AppConfig::HostedConfigurationVersion resource to the template.
 
 ## PARAMETERS
 
@@ -34,10 +34,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DBProxyName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html#cfn-rds-dbproxytargetgroup-dbproxyname
-UpdateType: Immutable
+### -ConfigurationProfileId
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-hostedconfigurationversion.html#cfn-appconfig-hostedconfigurationversion-configurationprofileid
 PrimitiveType: String
+UpdateType: Immutable
 
 ```yaml
 Type: Object
@@ -51,10 +51,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -TargetGroupName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html#cfn-rds-dbproxytargetgroup-targetgroupname
-UpdateType: Immutable
+### -Description
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-hostedconfigurationversion.html#cfn-appconfig-hostedconfigurationversion-description
 PrimitiveType: String
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ContentType
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-hostedconfigurationversion.html#cfn-appconfig-hostedconfigurationversion-contenttype
+PrimitiveType: String
+UpdateType: Immutable
 
 ```yaml
 Type: Object
@@ -68,10 +85,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ConnectionPoolConfigurationInfo
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html#cfn-rds-dbproxytargetgroup-connectionpoolconfigurationinfo
-UpdateType: Mutable
-Type: ConnectionPoolConfigurationInfoFormat
+### -LatestVersionNumber
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-hostedconfigurationversion.html#cfn-appconfig-hostedconfigurationversion-latestversionnumber
+PrimitiveType: Double
+UpdateType: Immutable
 
 ```yaml
 Type: Object
@@ -85,36 +102,34 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DBInstanceIdentifiers
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html#cfn-rds-dbproxytargetgroup-dbinstanceidentifiers
-UpdateType: Mutable
-Type: List
-PrimitiveItemType: String
+### -Content
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-hostedconfigurationversion.html#cfn-appconfig-hostedconfigurationversion-content
+PrimitiveType: String
+UpdateType: Immutable
 
 ```yaml
 Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DBClusterIdentifiers
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html#cfn-rds-dbproxytargetgroup-dbclusteridentifiers
-UpdateType: Mutable
-Type: List
-PrimitiveItemType: String
+### -ApplicationId
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-hostedconfigurationversion.html#cfn-appconfig-hostedconfigurationversion-applicationid
+PrimitiveType: String
+UpdateType: Immutable
 
 ```yaml
 Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -265,10 +280,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Vaporshell.Resource.RDS.DBProxyTargetGroup
+### Vaporshell.Resource.AppConfig.HostedConfigurationVersion
 ## NOTES
 
 ## RELATED LINKS
 
-[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html)
+[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-hostedconfigurationversion.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-hostedconfigurationversion.html)
 

@@ -1,19 +1,19 @@
-# New-VSRDSDBProxyTargetGroup
+# New-VSAthenaDataCatalog
 
 ## SYNOPSIS
-Adds an AWS::RDS::DBProxyTargetGroup resource to the template.
+Adds an AWS::Athena::DataCatalog resource to the template.
 
 ## SYNTAX
 
 ```
-New-VSRDSDBProxyTargetGroup [-LogicalId] <String> -DBProxyName <Object> -TargetGroupName <Object>
- [-ConnectionPoolConfigurationInfo <Object>] [-DBInstanceIdentifiers <Object>] [-DBClusterIdentifiers <Object>]
- [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
- [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+New-VSAthenaDataCatalog [-LogicalId] <String> -Name <Object> [-Description <Object>] [-Parameters <Hashtable>]
+ [-Tags <Object>] -Type <Object> [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>]
+ [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::RDS::DBProxyTargetGroup resource to the template.
+Adds an AWS::Athena::DataCatalog resource to the template.
 
 ## PARAMETERS
 
@@ -34,9 +34,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DBProxyName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html#cfn-rds-dbproxytargetgroup-dbproxyname
-UpdateType: Immutable
+### -Name
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-datacatalog.html#cfn-athena-datacatalog-name
+UpdateType: Mutable
 PrimitiveType: String
 
 ```yaml
@@ -51,9 +51,61 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -TargetGroupName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html#cfn-rds-dbproxytargetgroup-targetgroupname
-UpdateType: Immutable
+### -Description
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-datacatalog.html#cfn-athena-datacatalog-description
+UpdateType: Mutable
+PrimitiveType: String
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Parameters
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-datacatalog.html#cfn-athena-datacatalog-parameters
+UpdateType: Mutable
+Type: Map
+PrimitiveItemType: String
+
+```yaml
+Type: Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Tags
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-datacatalog.html#cfn-athena-datacatalog-tags
+UpdateType: Mutable
+Type: Tags
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Type
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-datacatalog.html#cfn-athena-datacatalog-type
+UpdateType: Mutable
 PrimitiveType: String
 
 ```yaml
@@ -62,59 +114,6 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ConnectionPoolConfigurationInfo
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html#cfn-rds-dbproxytargetgroup-connectionpoolconfigurationinfo
-UpdateType: Mutable
-Type: ConnectionPoolConfigurationInfoFormat
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DBInstanceIdentifiers
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html#cfn-rds-dbproxytargetgroup-dbinstanceidentifiers
-UpdateType: Mutable
-Type: List
-PrimitiveItemType: String
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DBClusterIdentifiers
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html#cfn-rds-dbproxytargetgroup-dbclusteridentifiers
-UpdateType: Mutable
-Type: List
-PrimitiveItemType: String
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -265,10 +264,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Vaporshell.Resource.RDS.DBProxyTargetGroup
+### Vaporshell.Resource.Athena.DataCatalog
 ## NOTES
 
 ## RELATED LINKS
 
-[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html)
+[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-datacatalog.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-datacatalog.html)
 

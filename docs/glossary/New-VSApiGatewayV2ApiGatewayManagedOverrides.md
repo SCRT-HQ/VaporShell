@@ -1,19 +1,19 @@
-# New-VSRDSDBProxyTargetGroup
+# New-VSApiGatewayV2ApiGatewayManagedOverrides
 
 ## SYNOPSIS
-Adds an AWS::RDS::DBProxyTargetGroup resource to the template.
+Adds an AWS::ApiGatewayV2::ApiGatewayManagedOverrides resource to the template.
 
 ## SYNTAX
 
 ```
-New-VSRDSDBProxyTargetGroup [-LogicalId] <String> -DBProxyName <Object> -TargetGroupName <Object>
- [-ConnectionPoolConfigurationInfo <Object>] [-DBInstanceIdentifiers <Object>] [-DBClusterIdentifiers <Object>]
- [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
- [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+New-VSApiGatewayV2ApiGatewayManagedOverrides [-LogicalId] <String> [-Integration <Object>] [-Stage <Object>]
+ -ApiId <Object> [-Route <Object>] [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>]
+ [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::RDS::DBProxyTargetGroup resource to the template.
+Adds an AWS::ApiGatewayV2::ApiGatewayManagedOverrides resource to the template.
 
 ## PARAMETERS
 
@@ -34,44 +34,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DBProxyName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html#cfn-rds-dbproxytargetgroup-dbproxyname
-UpdateType: Immutable
-PrimitiveType: String
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -TargetGroupName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html#cfn-rds-dbproxytargetgroup-targetgroupname
-UpdateType: Immutable
-PrimitiveType: String
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ConnectionPoolConfigurationInfo
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html#cfn-rds-dbproxytargetgroup-connectionpoolconfigurationinfo
+### -Integration
+Type: IntegrationOverrides
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-apigatewaymanagedoverrides.html#cfn-apigatewayv2-apigatewaymanagedoverrides-integration
 UpdateType: Mutable
-Type: ConnectionPoolConfigurationInfoFormat
 
 ```yaml
 Type: Object
@@ -85,11 +51,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DBInstanceIdentifiers
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html#cfn-rds-dbproxytargetgroup-dbinstanceidentifiers
+### -Stage
+Type: StageOverrides
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-apigatewaymanagedoverrides.html#cfn-apigatewayv2-apigatewaymanagedoverrides-stage
 UpdateType: Mutable
-Type: List
-PrimitiveItemType: String
 
 ```yaml
 Type: Object
@@ -103,11 +68,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DBClusterIdentifiers
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html#cfn-rds-dbproxytargetgroup-dbclusteridentifiers
+### -ApiId
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-apigatewaymanagedoverrides.html#cfn-apigatewayv2-apigatewaymanagedoverrides-apiid
+PrimitiveType: String
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Route
+Type: RouteOverrides
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-apigatewaymanagedoverrides.html#cfn-apigatewayv2-apigatewaymanagedoverrides-route
 UpdateType: Mutable
-Type: List
-PrimitiveItemType: String
 
 ```yaml
 Type: Object
@@ -265,10 +246,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Vaporshell.Resource.RDS.DBProxyTargetGroup
+### Vaporshell.Resource.ApiGatewayV2.ApiGatewayManagedOverrides
 ## NOTES
 
 ## RELATED LINKS
 
-[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html)
+[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-apigatewaymanagedoverrides.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-apigatewaymanagedoverrides.html)
 
