@@ -14,7 +14,7 @@ trigger:
     - refs/heads/*
 
 schedules:
-  - cron: "0 12 * * 4"
+  - cron: "0 16 * * 4"
     displayName: Weekly build on Thursday
     always: true
     branches:
