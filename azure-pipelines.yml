@@ -19,7 +19,7 @@ schedules:
     always: true
     branches:
       include:
-        - master
+        - main
 
 stages:
 - template: BuildTestDeployModule/azure-pipelines.yml@templates
