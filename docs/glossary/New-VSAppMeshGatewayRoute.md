@@ -1,19 +1,19 @@
-# New-VSIoTProvisioningTemplate
+# New-VSAppMeshGatewayRoute
 
 ## SYNOPSIS
-Adds an AWS::IoT::ProvisioningTemplate resource to the template.
+Adds an AWS::AppMesh::GatewayRoute resource to the template.
 
 ## SYNTAX
 
 ```
-New-VSIoTProvisioningTemplate [-LogicalId] <String> [-TemplateName <Object>] [-Description <Object>]
- [-Enabled <Object>] -ProvisioningRoleArn <Object> -TemplateBody <Object> [-PreProvisioningHook <Object>]
- [-Tags <Object>] [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>] [-DependsOn <String[]>]
- [-Metadata <Object>] [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
+New-VSAppMeshGatewayRoute [-LogicalId] <String> -MeshName <Object> -VirtualGatewayName <Object>
+ [-MeshOwner <Object>] -GatewayRouteName <Object> -Spec <Object> [-Tags <Object>] [-DeletionPolicy <String>]
+ [-UpdateReplacePolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
+ [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::IoT::ProvisioningTemplate resource to the template.
+Adds an AWS::AppMesh::GatewayRoute resource to the template.
 
 ## PARAMETERS
 
@@ -34,61 +34,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -TemplateName
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-provisioningtemplate.html#cfn-iot-provisioningtemplate-templatename
+### -MeshName
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-gatewayroute.html#cfn-appmesh-gatewayroute-meshname
+PrimitiveType: String
 UpdateType: Immutable
-PrimitiveType: String
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Description
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-provisioningtemplate.html#cfn-iot-provisioningtemplate-description
-UpdateType: Mutable
-PrimitiveType: String
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Enabled
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-provisioningtemplate.html#cfn-iot-provisioningtemplate-enabled
-UpdateType: Mutable
-PrimitiveType: Boolean
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ProvisioningRoleArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-provisioningtemplate.html#cfn-iot-provisioningtemplate-provisioningrolearn
-UpdateType: Mutable
-PrimitiveType: String
 
 ```yaml
 Type: Object
@@ -102,10 +51,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -TemplateBody
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-provisioningtemplate.html#cfn-iot-provisioningtemplate-templatebody
-UpdateType: Mutable
+### -VirtualGatewayName
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-gatewayroute.html#cfn-appmesh-gatewayroute-virtualgatewayname
 PrimitiveType: String
+UpdateType: Immutable
 
 ```yaml
 Type: Object
@@ -119,10 +68,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PreProvisioningHook
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-provisioningtemplate.html#cfn-iot-provisioningtemplate-preprovisioninghook
-UpdateType: Mutable
-Type: ProvisioningHook
+### -MeshOwner
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-gatewayroute.html#cfn-appmesh-gatewayroute-meshowner
+PrimitiveType: String
+UpdateType: Immutable
 
 ```yaml
 Type: Object
@@ -130,6 +79,40 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -GatewayRouteName
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-gatewayroute.html#cfn-appmesh-gatewayroute-gatewayroutename
+PrimitiveType: String
+UpdateType: Immutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Spec
+Type: GatewayRouteSpec
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-gatewayroute.html#cfn-appmesh-gatewayroute-spec
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -137,9 +120,10 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-provisioningtemplate.html#cfn-iot-provisioningtemplate-tags
+Type: List
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-gatewayroute.html#cfn-appmesh-gatewayroute-tags
+ItemType: Tag
 UpdateType: Mutable
-Type: Tags
 
 ```yaml
 Type: Object
@@ -297,10 +281,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Vaporshell.Resource.IoT.ProvisioningTemplate
+### Vaporshell.Resource.AppMesh.GatewayRoute
 ## NOTES
 
 ## RELATED LINKS
 
-[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-provisioningtemplate.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-provisioningtemplate.html)
+[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-gatewayroute.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-gatewayroute.html)
 
