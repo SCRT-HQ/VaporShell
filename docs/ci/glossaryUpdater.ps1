@@ -13,10 +13,15 @@ catch {
     throw
 }
 
-'platyPS','PoshRSJob' | ForEach-Object {
+'PoshRSJob' | ForEach-Object {
     Write-Host "[$_] Resolving module"
-    Install-Module $_ -Repository PSGallery -Scope CurrentUser -ErrorAction SilentlyContinue
-    Import-Module $_
+    try {
+        Import-Module $_ -ErrorAction Stop
+    }
+    catch {
+        Install-Module $_ -Repository PSGallery -Scope CurrentUser
+        Import-Module $_
+    }
 }
 
 #region purpose: Unload / load module
@@ -27,56 +32,61 @@ if (Get-Module VaporShell*) {
 Write-Host -ForegroundColor Green "Location set to $($pwd.Path)"
 Write-Host -ForegroundColor Green "Building and importing VaporShell"
 . ./build.ps1
-Import-Module "$($basePath)/BuildOutput/VaporShell" -Force
+$buildOutput = Join-Path $basePath 'BuildOutput'
 #endregion#>
 
-Write-Host -ForegroundColor Magenta "Removing existing glossary docs"
-Get-ChildItem "$($docsPath)/docs/glossary" -Exclude "index.md" | Remove-Item -Force
+$modules = Get-ChildItem $buildOutput -Filter 'VaporShell*' -Directory | Select-Object -ExpandProperty Name
 
-$vsCommands = (Get-ChildItem "$($basePath)/VaporShell/Public" -Filter '*.ps1' -Recurse).BaseName
-$i = 0
+Write-Host -ForegroundColor Magenta "Removing existing glossary docs"
+Get-ChildItem "$($docsPath)/docs/glossary" -Exclude "index.md" | Remove-Item -Force -Recurse
+
+Write-Host -ForegroundColor Green "Importing New-MDFunctionHelp"
+. (Join-Path $PSScriptRoot 'New-MDFunctionHelp.ps1')
 
 Write-Host -ForegroundColor Green "Starting runspaces to build the updated docs"
-$vsCommands | Start-RSJob -Name {"VaporShell\$_"} -ModulesToImport platyPS,"$basePath\BuildOutput\VaporShell" -VariablesToImport docsPath -ScriptBlock {
-    New-MarkdownHelp -Command "VaporShell\$_" -Force -NoMetadata -OutputFolder "$($docsPath)\docs\glossary"
-} | Receive-RSJob | ForEach-Object {
-    $i++
-    "[$i/$($vsCommands.Count)] Completed: $($_.FullName -replace ([regex]::Escape("$docsPath$([System.IO.Path]::DirectorySeparatorChar)")))"
-}
+$modules | Start-RSJob -Name {$_} -FunctionsToImport 'New-MDFunctionHelp' -VariablesToImport 'buildOutput','docsPath' -ScriptBlock {
+    $module = $_
+    if ($env:PSModulePath -notmatch ([Regex]::Escape($buildOutput))) {
+        $env:PSModulePath = ($buildOutput,$env:PSModulePath) -join [System.IO.Path]::PathSeparator
+    }
+    Import-Module (Join-Path $buildOutput 'VaporShell') -Force
+    if ($module -ne 'VaporShell') {
+        Import-Module (Join-Path $buildOutput $module) -Force
+    }
+    $commands = Get-Command -Module $module
+    foreach ($command in $commands) {
+        $targetPath = [System.IO.Path]::Combine($docsPath,'docs','glossary',$module)
+        if (-not (Test-Path $targetPath)) {
+            $null = New-Item $targetPath -ItemType Directory -Force
+        }
+        Get-Help "$($command.Namespace)\$($command.Name)" -Full |
+            New-MDFunctionHelp |
+            Set-Content "$($targetPath)/$($command.Name).md" -Encoding utf8 -Force
+        "Created: $($targetPath)/$($command.Name).md"
+    }
+} | Receive-RSJob
 Get-RSJob -State Failed,Completed | Where-Object {$_.Name -notmatch 'PSProfile'} | Remove-RSJob
 
+$completed = @()
+$failed = @()
 do {
     $jobs = Get-RSJob | Where-Object {$_.Name -notmatch 'PSProfile'}
-    $jobs | Receive-RSJob | ForEach-Object {
-        $i++
-        "[$i/$($vsCommands.Count)] Completed: $($_.FullName -replace ([regex]::Escape("$docsPath$([System.IO.Path]::DirectorySeparatorChar)")))"
+    $jobs | Where-Object {$_.State -match '(Completed|Failed)'} | ForEach-Object {
+        switch ($_.State) {
+            Completed {
+                Write-Host -ForegroundColor Green "$($_.State): $($_.Name)"
+                $completed += $_
+            }
+            default {
+                Write-Host -ForegroundColor Yellow "$($_.State): $($_.Name)"
+                $failed += $_
+            }
+        }
+        $_ | Receive-RSJob
     }
-    Start-Sleep -Seconds 5
+    Start-Sleep -Seconds 1
 }
 until ($null -eq ($jobs.State | Where-Object {$_ -notmatch '(Completed|Failed)'}))
 Get-RSJob | Where-Object {$_.Name -notmatch 'PSProfile'} | Remove-RSJob
-
-$files = Get-ChildItem "$($docsPath)/docs/glossary" -Exclude "index.md"
-
-<# foreach ($file in $files) {
-    Write-Host -ForegroundColor Cyan "Updating $($file.BaseName)"
-
-    $md = Get-Content $file.FullName
-    if ($md -match [RegEx]::Escape('PS C:\> {{ Add example code here }}')) {
-        $updated = [System.Collections.Generic.List[string]]::new()
-        $exStart = [array]::IndexOf($md,'## EXAMPLES')
-        $parStart = [array]::IndexOf($md,'## PARAMETERS')
-        $md[0..($exStart-1)] | ForEach-Object {
-            $updated.Add($_)
-        }
-        $md[$parStart..($md.Count-1)] | ForEach-Object {
-            $updated.Add($_)
-        }
-        $updated | Set-Content $file.FullName -Force
-    }
-    else {
-        $md | Set-Content $file.FullName -Force
-    }
-} #>
 
 Set-Location $basePath
