@@ -6,7 +6,7 @@ Adds an AWS::StepFunctions::StateMachine.TracingConfiguration resource property 
 ## SYNTAX
 
 ```
-Add-VSStepFunctionsStateMachineTracingConfiguration [[-Enabled] <Object>] [<CommonParameters>]
+Add-VSStepFunctionsStateMachineTracingConfiguration [-Enabled] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -16,15 +16,15 @@ Adds an AWS::StepFunctions::StateMachine.TracingConfiguration resource property 
 
 ### -Enabled
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachine-tracingconfiguration.html#cfn-stepfunctions-statemachine-tracingconfiguration-enabled
-UpdateType: Mutable
 PrimitiveType: Boolean
+UpdateType: Mutable
 
 ```yaml
 Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: 1
 Default value: None
 Accept pipeline input: False

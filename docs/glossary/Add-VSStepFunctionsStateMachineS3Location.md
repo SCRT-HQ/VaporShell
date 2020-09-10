@@ -6,7 +6,7 @@ Adds an AWS::StepFunctions::StateMachine.S3Location resource property to the tem
 ## SYNTAX
 
 ```
-Add-VSStepFunctionsStateMachineS3Location [-Bucket] <Object> [-Key] <Object> [[-Version] <Object>]
+Add-VSStepFunctionsStateMachineS3Location [-Bucket] <Object> [[-Version] <Object>] [-Key] <Object>
  [<CommonParameters>]
 ```
 
@@ -17,8 +17,8 @@ Adds an AWS::StepFunctions::StateMachine.S3Location resource property to the tem
 
 ### -Bucket
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachine-s3location.html#cfn-stepfunctions-statemachine-s3location-bucket
-UpdateType: Mutable
 PrimitiveType: String
+UpdateType: Mutable
 
 ```yaml
 Type: Object
@@ -32,27 +32,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Key
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachine-s3location.html#cfn-stepfunctions-statemachine-s3location-key
-UpdateType: Mutable
-PrimitiveType: String
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: 2
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Version
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachine-s3location.html#cfn-stepfunctions-statemachine-s3location-version
-UpdateType: Mutable
 PrimitiveType: String
+UpdateType: Mutable
 
 ```yaml
 Type: Object
@@ -60,6 +43,23 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Key
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachine-s3location.html#cfn-stepfunctions-statemachine-s3location-key
+PrimitiveType: String
+UpdateType: Mutable
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: True
 Position: 3
 Default value: None
 Accept pipeline input: False
