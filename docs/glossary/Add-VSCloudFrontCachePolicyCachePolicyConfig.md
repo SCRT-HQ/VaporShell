@@ -6,9 +6,8 @@ Adds an AWS::CloudFront::CachePolicy.CachePolicyConfig resource property to the 
 ## SYNTAX
 
 ```
-Add-VSCloudFrontCachePolicyCachePolicyConfig [[-Comment] <Object>] [[-DefaultTTL] <Object>]
- [[-MaxTTL] <Object>] [-MinTTL] <Object> [-Name] <Object>
- [[-ParametersInCacheKeyAndForwardedToOrigin] <Object>] [<CommonParameters>]
+Add-VSCloudFrontCachePolicyCachePolicyConfig [[-Comment] <Object>] [-DefaultTTL] <Object> [-MaxTTL] <Object>
+ [-MinTTL] <Object> [-Name] <Object> [-ParametersInCacheKeyAndForwardedToOrigin] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -43,7 +42,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: 2
 Default value: None
 Accept pipeline input: False
@@ -60,7 +59,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: 3
 Default value: None
 Accept pipeline input: False
@@ -111,7 +110,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: False
+Required: True
 Position: 6
 Default value: None
 Accept pipeline input: False
