@@ -1,19 +1,18 @@
-# New-VSKendraFaq
+# New-VSWorkSpacesConnectionAlias
 
 ## SYNOPSIS
-Adds an AWS::Kendra::Faq resource to the template.
+Adds an AWS::WorkSpaces::ConnectionAlias resource to the template.
 
 ## SYNTAX
 
 ```
-New-VSKendraFaq [-LogicalId] <String> -IndexId <Object> -Name <Object> [-Description <Object>]
- [-FileFormat <Object>] -S3Path <Object> -RoleArn <Object> [-Tags <Object>] [-DeletionPolicy <String>]
- [-UpdateReplacePolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>] [-UpdatePolicy <Object>]
- [-Condition <Object>] [<CommonParameters>]
+New-VSWorkSpacesConnectionAlias [-LogicalId] <String> -ConnectionString <Object> [-Tags <Object>]
+ [-DeletionPolicy <String>] [-UpdateReplacePolicy <String>] [-DependsOn <String[]>] [-Metadata <Object>]
+ [-UpdatePolicy <Object>] [-Condition <Object>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Adds an AWS::Kendra::Faq resource to the template.
+Adds an AWS::WorkSpaces::ConnectionAlias resource to the template.
 
 ## PARAMETERS
 
@@ -34,93 +33,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -IndexId
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-faq.html#cfn-kendra-faq-indexid
-UpdateType: Immutable
-PrimitiveType: String
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Name
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-faq.html#cfn-kendra-faq-name
-UpdateType: Immutable
-PrimitiveType: String
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Description
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-faq.html#cfn-kendra-faq-description
-UpdateType: Immutable
-PrimitiveType: String
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -FileFormat
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-faq.html#cfn-kendra-faq-fileformat
-UpdateType: Immutable
-PrimitiveType: String
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -S3Path
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-faq.html#cfn-kendra-faq-s3path
-UpdateType: Immutable
-Type: S3Path
-
-```yaml
-Type: Object
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -RoleArn
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-faq.html#cfn-kendra-faq-rolearn
+### -ConnectionString
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-connectionalias.html#cfn-workspaces-connectionalias-connectionstring
 UpdateType: Immutable
 PrimitiveType: String
 
@@ -137,9 +51,11 @@ Accept wildcard characters: False
 ```
 
 ### -Tags
-Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-faq.html#cfn-kendra-faq-tags
-UpdateType: Mutable
-Type: TagList
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-connectionalias.html#cfn-workspaces-connectionalias-tags
+UpdateType: Immutable
+Type: List
+ItemType: Tag
+DuplicatesAllowed: True
 
 ```yaml
 Type: Object
@@ -297,10 +213,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Vaporshell.Resource.Kendra.Faq
+### Vaporshell.Resource.WorkSpaces.ConnectionAlias
 ## NOTES
 
 ## RELATED LINKS
 
-[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-faq.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-faq.html)
+[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-connectionalias.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-connectionalias.html)
 

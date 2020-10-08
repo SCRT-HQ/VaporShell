@@ -7,8 +7,8 @@ Adds an AWS::CloudFront::CachePolicy.ParametersInCacheKeyAndForwardedToOrigin re
 
 ```
 Add-VSCloudFrontCachePolicyParametersInCacheKeyAndForwardedToOrigin [-CookiesConfig] <Object>
- [-EnableAcceptEncodingGzip] <Object> [-HeadersConfig] <Object> [-QueryStringsConfig] <Object>
- [<CommonParameters>]
+ [[-EnableAcceptEncodingBrotli] <Object>] [-EnableAcceptEncodingGzip] <Object> [-HeadersConfig] <Object>
+ [-QueryStringsConfig] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -33,6 +33,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -EnableAcceptEncodingBrotli
+Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachepolicy-parametersincachekeyandforwardedtoorigin.html#cfn-cloudfront-cachepolicy-parametersincachekeyandforwardedtoorigin-enableacceptencodingbrotli
+UpdateType: Mutable
+PrimitiveType: Boolean
+
+```yaml
+Type: Object
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -EnableAcceptEncodingGzip
 Documentation: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachepolicy-parametersincachekeyandforwardedtoorigin.html#cfn-cloudfront-cachepolicy-parametersincachekeyandforwardedtoorigin-enableacceptencodinggzip
 UpdateType: Mutable
@@ -44,7 +61,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 2
+Position: 3
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -61,7 +78,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 3
+Position: 4
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -78,7 +95,7 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: 4
+Position: 5
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
