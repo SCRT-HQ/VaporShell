@@ -2,7 +2,7 @@ Import-Module Nameit, Vaporshell
 $BuildRoot = $PSScriptRoot
 
 # Assume this was created in a different step
-$S3Destination = 'Foobar'
+$BucketName = 'Foobar'
 $BucketRegion = 'eu-west-1'
 $ExportPath =  Join-Path $BuildRoot 'cloudformation'
 New-Item -Path $ExportPath -ItemType Directory -Force | Out-Null
@@ -32,10 +32,12 @@ foreach ($AWSProfileName in $AWSProfilesList)
         $SplatArgs = @{
             LogicalId     = 'ssmesourcedatasync'
             SyncName      = $StackName
-            S3Destination = $S3Destination
-            Bucketregion  = $BucketRegion
+            S3Destination = @{
+                BucketRegion = $BucketRegion
+                BucketName   = $BucketName
+                SyncFormat   = 'JsonSerDe'
+            }
             SyncType      = 'SyncToDestination'
-
         }
         $template.AddResource(
             (New-VSSSMResourceDataSync @SplatArgs)
