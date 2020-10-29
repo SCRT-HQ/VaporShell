@@ -6,7 +6,7 @@ Adds an AWS::S3::Bucket.Metrics resource property to the template.
 ## SYNTAX
 
 ```
-Add-VSS3BucketMetrics [-EventThreshold] <Object> [-Status] <Object> [<CommonParameters>]
+Add-VSS3BucketMetrics [[-EventThreshold] <Object>] [-Status] <Object> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -24,7 +24,7 @@ Type: Object
 Parameter Sets: (All)
 Aliases:
 
-Required: True
+Required: False
 Position: 1
 Default value: None
 Accept pipeline input: False
