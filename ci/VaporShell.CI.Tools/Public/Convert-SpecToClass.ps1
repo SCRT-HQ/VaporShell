@@ -282,7 +282,7 @@ function Convert-SpecToClass {
         elseif ($Prop.Value.Type -eq "Map") {
             $prprtyContents += "    [IDictionary] `$Map"
         }
-        elseif ($Prop.Value.PrimitiveType -eq "Integer" -or $Prop.Value.PrimitiveType -eq "Number") {
+        elseif ($Prop.Value.PrimitiveType -in @("Integer","Number") -or $Prop.Value.PrimitiveItemType -in @("Integer","Number")) {
             $ValType = '[int'
             $setterType = 'object'
             if ($Prop.Value.Type -eq 'List') {
@@ -328,7 +328,7 @@ function Convert-SpecToClass {
                 '        }'
             )
         }
-        elseif ($Prop.Value.PrimitiveType -eq "Double") {
+        elseif ($Prop.Value.PrimitiveType -eq 'Double' -or $Prop.Value.PrimitiveItemType -eq 'Double') {
             $ValType = '[double'
             $setterType = 'object'
             if ($Prop.Value.Type -eq 'List') {
