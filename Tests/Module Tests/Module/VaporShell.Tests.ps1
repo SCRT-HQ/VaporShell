@@ -56,7 +56,7 @@ Describe "Module tests: $($env:BHProjectName)" -Tag 'Module','VaporShellModule' 
         $testCase = Get-ChildItem "$decompiledModulePath\Private" -Recurse -Include *.ps1 | Foreach-Object {@{item = $_.BaseName}}
         It "Should throw when checking for <item> in the module commands" -TestCases $testCase {
             param($item)
-            {Get-Command -Name $item -Module $env:BHProjectName -ErrorAction Stop} | Should -Throw "The term '$item' is not recognized as the name of a cmdlet, function, script file, or operable program."
+            {Get-Command -Name $item -Module $env:BHProjectName -ErrorAction Stop} | Should -Throw
         }
     }
     Context "Confirm there are no duplicate function names in private and public folders" {

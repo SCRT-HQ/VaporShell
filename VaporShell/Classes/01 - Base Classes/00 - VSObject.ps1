@@ -5,6 +5,11 @@ using namespace System.Collections.Specialized
 using namespace System.Management.Automation
 
 class VSObject : object {
+    # Anything inheriting from this class will only show the hashtable contents.
+    # Object properties will be stripped when cast to JSON/YAML.
+    # Useful for adding corresponding public properties for intellisense.
+    static hidden [string] $_vsFunctionName = ''
+    static hidden [string] $_awsDocumentation = ''
     hidden [string[]] $_commonParams = @('Verbose','Debug','ErrorAction','WarningAction','InformationAction','ErrorVariable','WarningVariable','InformationVariable','OutVariable','OutBuffer','PipelineVariable')
 
     hidden [void] _addAccessors() {}
