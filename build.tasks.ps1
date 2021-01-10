@@ -736,7 +736,7 @@ $psGalleryConditions = {
     -not [String]::IsNullOrEmpty($NextModuleVersion) -and
     $env:BHBuildSystem -eq 'VSTS' -and
     ($env:BHCommitMessage -match '!deploy' -or $env:BUILD_REASON -eq 'Schedule') -and
-    $env:BHBranchName -in @('master','main','beta')
+    $env:BHBranchName -in @('master','main','beta','rc','alpha')
 }
 $gitHubConditions = {
     -not [String]::IsNullOrEmpty($env:GitHubPAT) -and
