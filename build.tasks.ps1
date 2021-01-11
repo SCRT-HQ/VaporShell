@@ -911,4 +911,4 @@ Task PublishToTwitter -If $tweetConditions {
     Write-BuildLog "Tweet successful!"
 }
 
-Task Deploy Init, PublishToPSGallery, PublishToTwitter, PublishToGitHub
+Task Deploy Init, UnpackageBuildOutput, PublishToPSGallery, PublishToTwitter, PublishToGitHub
