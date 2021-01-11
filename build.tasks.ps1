@@ -792,14 +792,20 @@ Task PublishToPSGallery -If $psGalleryConditions {
     if ( $env:PSModulePath.split($pathSeperator) -notcontains $Script:TargetDirectory ) {
         $env:PSModulePath = ($Script:TargetDirectory + $pathSeperator + $origModulePath)
     }
-    Import-Module (Join-Path -Path $TargetVersionDirectory -ChildPath "VaporShell.psd1")
-    Publish-Module -Path $TargetVersionDirectory -NuGetApiKey $env:NugetApiKey -Repository PSGallery
+    Import-Module (Join-Path -Path $TargetVersionDirectory -ChildPath "VaporShell.psd1") -Force
+    $pars = @{
+        Path = $TargetVersionDirectory
+        NuGetApiKey = $env:NugetApiKey
+        Repository = 'PSGallery'
+        Verbose = $true
+    }
+    Publish-Module @pars
     Get-ChildItem $SourceAdditionalModuleDirectory -Directory | ForEach-Object {
         Write-BuildLog "Publishing $($_.BaseName) version [$($NextModuleVersion)] to PSGallery"
         $subDirectory = [System.IO.Path]::Combine($TargetDirectory, $_.BaseName)
         $subVersionDirectory = Split-Path (Get-ChildItem $subDirectory -Recurse -Filter "$($_.BaseName).psd1")
         Write-BuildLog "Module found at: $subVersionDirectory"
-        Import-Module (Join-Path -Path $subVersionDirectory -ChildPath "$($_.BaseName).psd1")
+        Import-Module (Join-Path -Path $subVersionDirectory -ChildPath "$($_.BaseName).psd1") -Force
         $pars = @{
             Path = $subVersionDirectory
             NuGetApiKey = $env:NugetApiKey
