@@ -1,17 +1,16 @@
 @{
     RootModule             = 'VaporShell.ResourceGroups.psm1'
     ModuleVersion          = '3.0.0'
-    GUID                   = 'a803c36a-920f-4505-ba0c-55b85c808754'
+    GUID                   = '10d7c52f-2fc5-4baa-87d8-01574a40b0de'
     Author                 = 'Nate Ferrell'
     CompanyName            = 'SCRT HQ'
     Copyright              = '(c) SCRT HQ 2020 . All rights reserved.'
-    Description            = 'Service-specific module for AWS CloudFormation for service: ResourceGroups'
+    Description            = "Service-specific module for AWS CloudFormation for service:"
     PowerShellVersion      = '5.1'
     DotNetFrameworkVersion = '4.7.2'
     ProcessorArchitecture  = 'None'
     RequiredModules        = @(@{
   ModuleName = 'VaporShell'
-  ModuleVersion = '3.0.0'
 })
     RequiredAssemblies     = @()
     ScriptsToProcess       = @()
@@ -23,65 +22,15 @@
     AliasesToExport        = '*'
     FileList               = @()
     PrivateData            = @{
-  PSData = @{
-    LicenseUri = 'https://github.com/SCRT-HQ/VaporShell/blob/master/LICENSE'
-    Prelease = 'alpha'
-    IconUri = 'https://spotinst.com/app/themes/spotinst-theme/dist/images/features/elastigroup/intro/icons/cloudformation.svg'
-    ProjectUri = 'https://github.com/SCRT-HQ/VaporShell'
-    Tags = @('AWS','CloudFormation','CFN','DevOps','Automation','JSON','YAML','IaC','InfrastructureAsCode','PSEdition_Core','PSEdition_Desktop','Windows','Mac','Linux')
-  }
-} # End of PrivateData hashtable
+        PSData = @{
+            Tags       = 'AWS', 'CloudFormation', 'CFN', 'DevOps', 'Automation', 'JSON', 'YAML', 'IaC', 'InfrastructureAsCode', 'PSEdition_Core', 'PSEdition_Desktop', 'Windows', 'Mac', 'Linux'
+            LicenseUri = 'https://github.com/SCRT-HQ/VaporShell/blob/master/LICENSE'
+            ProjectUri = 'https://github.com/SCRT-HQ/VaporShell'
+            IconUri    = 'https://spotinst.com/app/themes/spotinst-theme/dist/images/features/elastigroup/intro/icons/cloudformation.svg'
+        }
+
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

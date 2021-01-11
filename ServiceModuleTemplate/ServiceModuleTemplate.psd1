@@ -9,7 +9,7 @@
     PowerShellVersion      = '5.1'
     DotNetFrameworkVersion = '4.7.2'
     ProcessorArchitecture  = 'None'
-    RequiredModules        = @(@{ModuleName = 'VaporShell';ModuleVersion = '3.0'})
+    RequiredModules        = @(@{ModuleName = 'VaporShell'})
     RequiredAssemblies     = @()
     ScriptsToProcess       = @()
     TypesToProcess         = @()

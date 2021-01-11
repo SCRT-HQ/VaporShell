@@ -1,7 +1,7 @@
 @{
     RootModule             = 'VaporShell.GreengrassV2.psm1'
     ModuleVersion          = '3.0.0'
-    GUID                   = 'a8ced212-8119-46ac-aa73-1957454b6935'
+    GUID                   = 'a8126e19-cb6b-4a2d-b351-e346ecb9e5b5'
     Author                 = 'Nate Ferrell'
     CompanyName            = 'SCRT HQ'
     Copyright              = '(c) SCRT HQ 2020 . All rights reserved.'
@@ -11,7 +11,6 @@
     ProcessorArchitecture  = 'None'
     RequiredModules        = @(@{
   ModuleName = 'VaporShell'
-  ModuleVersion = '3.0.0'
 })
     RequiredAssemblies     = @()
     ScriptsToProcess       = @()
@@ -32,28 +31,6 @@
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

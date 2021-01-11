@@ -1,7 +1,7 @@
 @{
     RootModule             = 'VaporShell.AppFlow.psm1'
     ModuleVersion          = '3.0.0'
-    GUID                   = '6f47c09c-ac57-4000-823d-eddf48f81dcf'
+    GUID                   = '977368d5-95db-4405-92ce-268c5cd11a37'
     Author                 = 'Nate Ferrell'
     CompanyName            = 'SCRT HQ'
     Copyright              = '(c) SCRT HQ 2020 . All rights reserved.'
@@ -11,7 +11,6 @@
     ProcessorArchitecture  = 'None'
     RequiredModules        = @(@{
   ModuleName = 'VaporShell'
-  ModuleVersion = '3.0.0'
 })
     RequiredAssemblies     = @()
     ScriptsToProcess       = @()
@@ -32,28 +31,6 @@
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

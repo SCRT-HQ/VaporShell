@@ -1,7 +1,7 @@
 @{
     RootModule             = 'VaporShell.DataBrew.psm1'
     ModuleVersion          = '3.0.0'
-    GUID                   = '8b0f88c8-8bf9-45e2-ab40-e403db2ff157'
+    GUID                   = 'd3155502-973c-4764-9ff9-3a6a52335a20'
     Author                 = 'Nate Ferrell'
     CompanyName            = 'SCRT HQ'
     Copyright              = '(c) SCRT HQ 2020 . All rights reserved.'
@@ -11,7 +11,6 @@
     ProcessorArchitecture  = 'None'
     RequiredModules        = @(@{
   ModuleName = 'VaporShell'
-  ModuleVersion = '3.0.0'
 })
     RequiredAssemblies     = @()
     ScriptsToProcess       = @()
@@ -32,28 +31,6 @@
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

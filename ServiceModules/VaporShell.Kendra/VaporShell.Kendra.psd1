@@ -1,7 +1,7 @@
 @{
     RootModule             = 'VaporShell.Kendra.psm1'
     ModuleVersion          = '3.0.0'
-    GUID                   = '34666822-a6e3-4a6e-b31b-974791f707a5'
+    GUID                   = '75e2194c-2d2a-4fc3-9f15-ef5eabbfe78a'
     Author                 = 'Nate Ferrell'
     CompanyName            = 'SCRT HQ'
     Copyright              = '(c) SCRT HQ 2020 . All rights reserved.'
@@ -11,7 +11,6 @@
     ProcessorArchitecture  = 'None'
     RequiredModules        = @(@{
   ModuleName = 'VaporShell'
-  ModuleVersion = '3.0.0'
 })
     RequiredAssemblies     = @()
     ScriptsToProcess       = @()
@@ -32,28 +31,6 @@
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

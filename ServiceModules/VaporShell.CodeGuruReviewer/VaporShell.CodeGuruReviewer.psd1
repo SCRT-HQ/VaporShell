@@ -1,7 +1,7 @@
 @{
     RootModule             = 'VaporShell.CodeGuruReviewer.psm1'
     ModuleVersion          = '3.0.0'
-    GUID                   = 'd0ecc63c-8b3f-47fc-aae2-169fd8890058'
+    GUID                   = '987c1567-330a-4605-a03c-e4ddc0b953dc'
     Author                 = 'Nate Ferrell'
     CompanyName            = 'SCRT HQ'
     Copyright              = '(c) SCRT HQ 2020 . All rights reserved.'
@@ -11,7 +11,6 @@
     ProcessorArchitecture  = 'None'
     RequiredModules        = @(@{
   ModuleName = 'VaporShell'
-  ModuleVersion = '3.0.0'
 })
     RequiredAssemblies     = @()
     ScriptsToProcess       = @()
@@ -32,28 +31,6 @@
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

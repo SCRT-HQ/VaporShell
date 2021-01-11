@@ -1,7 +1,7 @@
 @{
     RootModule             = 'VaporShell.DataSync.psm1'
     ModuleVersion          = '3.0.0'
-    GUID                   = '2da953b0-a301-4bde-b899-0b75c642b325'
+    GUID                   = 'd6059121-4850-41fe-a81b-30c2a1781767'
     Author                 = 'Nate Ferrell'
     CompanyName            = 'SCRT HQ'
     Copyright              = '(c) SCRT HQ 2020 . All rights reserved.'
@@ -11,7 +11,6 @@
     ProcessorArchitecture  = 'None'
     RequiredModules        = @(@{
   ModuleName = 'VaporShell'
-  ModuleVersion = '3.0.0'
 })
     RequiredAssemblies     = @()
     ScriptsToProcess       = @()
@@ -32,16 +31,6 @@
 
     }
 }
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -1,7 +1,7 @@
 @{
     RootModule             = 'VaporShell.Timestream.psm1'
     ModuleVersion          = '3.0.0'
-    GUID                   = '8b60103a-dc10-4aef-91ec-862fdfff5fac'
+    GUID                   = '0a61d83f-82ff-4f76-84a2-bbe962d5e6d2'
     Author                 = 'Nate Ferrell'
     CompanyName            = 'SCRT HQ'
     Copyright              = '(c) SCRT HQ 2020 . All rights reserved.'
@@ -11,7 +11,6 @@
     ProcessorArchitecture  = 'None'
     RequiredModules        = @(@{
   ModuleName = 'VaporShell'
-  ModuleVersion = '3.0.0'
 })
     RequiredAssemblies     = @()
     ScriptsToProcess       = @()
@@ -32,28 +31,6 @@
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

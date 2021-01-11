@@ -1,7 +1,7 @@
 @{
     RootModule             = 'VaporShell.DevOpsGuru.psm1'
     ModuleVersion          = '3.0.0'
-    GUID                   = 'debf10f0-d384-4df3-9e69-9788a8d1468f'
+    GUID                   = '65df62e3-7b9a-4797-bbc0-c23e2e98c4bd'
     Author                 = 'Nate Ferrell'
     CompanyName            = 'SCRT HQ'
     Copyright              = '(c) SCRT HQ 2020 . All rights reserved.'
@@ -11,7 +11,6 @@
     ProcessorArchitecture  = 'None'
     RequiredModules        = @(@{
   ModuleName = 'VaporShell'
-  ModuleVersion = '3.0.0'
 })
     RequiredAssemblies     = @()
     ScriptsToProcess       = @()
@@ -32,28 +31,6 @@
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

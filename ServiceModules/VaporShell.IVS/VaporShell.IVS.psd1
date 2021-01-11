@@ -1,7 +1,7 @@
 @{
     RootModule             = 'VaporShell.IVS.psm1'
     ModuleVersion          = '3.0.0'
-    GUID                   = 'c0e4ebe2-4af9-4cba-a333-623a24ee4252'
+    GUID                   = '78d290ab-b220-49f0-88e1-5c34518015ad'
     Author                 = 'Nate Ferrell'
     CompanyName            = 'SCRT HQ'
     Copyright              = '(c) SCRT HQ 2020 . All rights reserved.'
@@ -11,7 +11,6 @@
     ProcessorArchitecture  = 'None'
     RequiredModules        = @(@{
   ModuleName = 'VaporShell'
-  ModuleVersion = '3.0.0'
 })
     RequiredAssemblies     = @()
     ScriptsToProcess       = @()
@@ -32,28 +31,6 @@
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

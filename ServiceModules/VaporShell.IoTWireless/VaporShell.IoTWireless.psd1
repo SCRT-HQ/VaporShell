@@ -1,7 +1,7 @@
 @{
     RootModule             = 'VaporShell.IoTWireless.psm1'
     ModuleVersion          = '3.0.0'
-    GUID                   = 'f3f806b8-7c68-4c98-8151-da8b492cbd3a'
+    GUID                   = 'f2221839-874d-4254-8723-cb9baee7dd36'
     Author                 = 'Nate Ferrell'
     CompanyName            = 'SCRT HQ'
     Copyright              = '(c) SCRT HQ 2020 . All rights reserved.'
@@ -11,7 +11,6 @@
     ProcessorArchitecture  = 'None'
     RequiredModules        = @(@{
   ModuleName = 'VaporShell'
-  ModuleVersion = '3.0.0'
 })
     RequiredAssemblies     = @()
     ScriptsToProcess       = @()
@@ -32,28 +31,6 @@
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -198,7 +198,8 @@ Task BuildSubmodules Init, CleanSubmodules, {
         $sourceMetadata = Import-Metadata -Path $subSourceManifestPath
         if ($sourceMetadata.RequiredModules.GetEnumerator().Where({$_.ModuleName -eq 'VaporShell'}).ModuleVersion -ne $ManifestVersion) {
             Write-BuildLog "[$sub] Setting source manifest RequiredModules to VaporShell@$ManifestVersion"
-            Update-Metadata -Path $subSourceManifestPath -PropertyName RequiredModules -Value @([ordered]@{ModuleName = 'VaporShell';ModuleVersion = $ManifestVersion})
+            Update-Metadata -Path $subSourceManifestPath -PropertyName RequiredModules -Value @('VaporShell')
+            #Update-Metadata -Path $subSourceManifestPath -PropertyName RequiredModules -Value @([ordered]@{ModuleName = 'VaporShell';ModuleVersion = $ManifestVersion})
         }
 
         Write-BuildLog "[$sub] Copying content from source manifest to target manifest"

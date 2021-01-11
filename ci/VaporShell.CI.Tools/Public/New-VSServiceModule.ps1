@@ -36,7 +36,7 @@ function New-VSServiceModule {
             Update-Metadata -Path $metadataPath -PropertyName GUID -Value $guid
         }
         Update-Metadata -Path $metadataPath -PropertyName ModuleVersion -Value $cleanModuleVersion
-        Update-Metadata -Path $metadataPath -PropertyName RequiredModules -Value @(@{ModuleName = 'VaporShell';ModuleVersion = $cleanModuleVersion})
+        Update-Metadata -Path $metadataPath -PropertyName RequiredModules -Value @(@{ModuleName = 'VaporShell'})
         if (-not (Test-Path $autoGenPath)) {
             $null = New-Item -ItemType Directory $autoGenPath -Force
         }

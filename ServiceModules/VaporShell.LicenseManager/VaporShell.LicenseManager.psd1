@@ -1,7 +1,7 @@
 @{
     RootModule             = 'VaporShell.LicenseManager.psm1'
     ModuleVersion          = '3.0.0'
-    GUID                   = 'd8aafae5-7156-4468-a4a0-525e045a66ca'
+    GUID                   = 'b7e08cdc-e4b9-4e84-aab9-f8f69a6149b6'
     Author                 = 'Nate Ferrell'
     CompanyName            = 'SCRT HQ'
     Copyright              = '(c) SCRT HQ 2020 . All rights reserved.'
@@ -11,7 +11,6 @@
     ProcessorArchitecture  = 'None'
     RequiredModules        = @(@{
   ModuleName = 'VaporShell'
-  ModuleVersion = '3.0.0'
 })
     RequiredAssemblies     = @()
     ScriptsToProcess       = @()
@@ -32,28 +31,6 @@
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

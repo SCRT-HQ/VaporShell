@@ -1,7 +1,7 @@
 @{
     RootModule             = 'VaporShell.MWAA.psm1'
     ModuleVersion          = '3.0.0'
-    GUID                   = 'ca80cdd5-8c2b-4d4a-bf84-c01f3b6a7f43'
+    GUID                   = '3ebed30d-09a8-4dc0-b073-f31f669205b6'
     Author                 = 'Nate Ferrell'
     CompanyName            = 'SCRT HQ'
     Copyright              = '(c) SCRT HQ 2020 . All rights reserved.'
@@ -11,7 +11,6 @@
     ProcessorArchitecture  = 'None'
     RequiredModules        = @(@{
   ModuleName = 'VaporShell'
-  ModuleVersion = '3.0.0'
 })
     RequiredAssemblies     = @()
     ScriptsToProcess       = @()
@@ -32,28 +31,6 @@
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

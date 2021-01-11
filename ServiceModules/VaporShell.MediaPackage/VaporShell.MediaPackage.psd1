@@ -1,7 +1,7 @@
 @{
     RootModule             = 'VaporShell.MediaPackage.psm1'
     ModuleVersion          = '3.0.0'
-    GUID                   = 'a1986be7-f02f-40b7-bc2d-8203b2595a7c'
+    GUID                   = 'b01361b6-4005-4c8f-985a-924378ed0e8b'
     Author                 = 'Nate Ferrell'
     CompanyName            = 'SCRT HQ'
     Copyright              = '(c) SCRT HQ 2020 . All rights reserved.'
@@ -11,7 +11,6 @@
     ProcessorArchitecture  = 'None'
     RequiredModules        = @(@{
   ModuleName = 'VaporShell'
-  ModuleVersion = '3.0.0'
 })
     RequiredAssemblies     = @()
     ScriptsToProcess       = @()
@@ -32,28 +31,6 @@
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

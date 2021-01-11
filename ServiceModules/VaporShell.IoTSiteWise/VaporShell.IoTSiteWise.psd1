@@ -1,7 +1,7 @@
 @{
     RootModule             = 'VaporShell.IoTSiteWise.psm1'
     ModuleVersion          = '3.0.0'
-    GUID                   = '79bff74f-01c3-4456-888e-1670b670c59a'
+    GUID                   = '8d3ee851-cfa1-49b0-a261-0aff8c8f9569'
     Author                 = 'Nate Ferrell'
     CompanyName            = 'SCRT HQ'
     Copyright              = '(c) SCRT HQ 2020 . All rights reserved.'
@@ -11,7 +11,6 @@
     ProcessorArchitecture  = 'None'
     RequiredModules        = @(@{
   ModuleName = 'VaporShell'
-  ModuleVersion = '3.0.0'
 })
     RequiredAssemblies     = @()
     ScriptsToProcess       = @()
@@ -32,28 +31,6 @@
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

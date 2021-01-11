@@ -1,7 +1,7 @@
 @{
     RootModule             = 'VaporShell.CodeArtifact.psm1'
     ModuleVersion          = '3.0.0'
-    GUID                   = 'e951f8cb-b6e6-468b-91a5-02aada5095aa'
+    GUID                   = 'c23e0211-862f-4936-8a52-de7d1fc13b4d'
     Author                 = 'Nate Ferrell'
     CompanyName            = 'SCRT HQ'
     Copyright              = '(c) SCRT HQ 2020 . All rights reserved.'
@@ -11,7 +11,6 @@
     ProcessorArchitecture  = 'None'
     RequiredModules        = @(@{
   ModuleName = 'VaporShell'
-  ModuleVersion = '3.0.0'
 })
     RequiredAssemblies     = @()
     ScriptsToProcess       = @()
@@ -32,28 +31,6 @@
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

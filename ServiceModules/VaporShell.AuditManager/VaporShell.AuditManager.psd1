@@ -1,7 +1,7 @@
 @{
     RootModule             = 'VaporShell.AuditManager.psm1'
     ModuleVersion          = '3.0.0'
-    GUID                   = 'e92a5bfc-3fb2-47d8-903f-4270d6805a20'
+    GUID                   = 'd30e44b7-1981-49e7-9f5b-32ad190192c6'
     Author                 = 'Nate Ferrell'
     CompanyName            = 'SCRT HQ'
     Copyright              = '(c) SCRT HQ 2020 . All rights reserved.'
@@ -11,7 +11,6 @@
     ProcessorArchitecture  = 'None'
     RequiredModules        = @(@{
   ModuleName = 'VaporShell'
-  ModuleVersion = '3.0.0'
 })
     RequiredAssemblies     = @()
     ScriptsToProcess       = @()
@@ -32,28 +31,6 @@
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

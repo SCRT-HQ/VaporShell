@@ -1,7 +1,7 @@
 @{
     RootModule             = 'VaporShell.NetworkFirewall.psm1'
     ModuleVersion          = '3.0.0'
-    GUID                   = '0e30f5a9-ce21-4d53-9a77-328c220f396a'
+    GUID                   = '7536c8a6-68dd-44ee-9f16-89b2d5322011'
     Author                 = 'Nate Ferrell'
     CompanyName            = 'SCRT HQ'
     Copyright              = '(c) SCRT HQ 2020 . All rights reserved.'
@@ -11,7 +11,6 @@
     ProcessorArchitecture  = 'None'
     RequiredModules        = @(@{
   ModuleName = 'VaporShell'
-  ModuleVersion = '3.0.0'
 })
     RequiredAssemblies     = @()
     ScriptsToProcess       = @()
@@ -32,28 +31,6 @@
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
