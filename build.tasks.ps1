@@ -13,6 +13,9 @@ Param(
     $ManifestVersion,
     [Parameter()]
     [String]
+    $PrereleaseString,
+    [Parameter()]
+    [String]
     $SourceModuleDirectory,
     [Parameter()]
     [String]
@@ -89,8 +92,16 @@ Task Init {
     $Script:SourceManifestPath = Join-Path $SourceModuleDirectory "$($ModuleName).psd1"
     $Script:ManifestVersion = ((Import-Metadata -Path $SourceManifestPath).ModuleVersion.Split('.')[0..1] + '0') -join '.'
     $Script:NextModuleVersion = Get-NextModuleVersion -GalleryVersion $GalleryVersion -ManifestVersion $ManifestVersion
-    if ($env:BHBranchName -notin @('master','main')) {
-        $Script:NextModuleVersion
+    $Script:PrereleaseString = switch -RegEx ($env:BHBranchName) {
+        '^(master|main)$' {
+            $null
+        }
+        '^(beta|rc|nightly|alpha)$' {
+            "-$($env:BHBranchName)".ToLower()
+        }
+        default {
+            '-local'
+        }
     }
     $Script:TargetDirectory = [System.IO.Path]::Combine($BuildRoot, 'BuildOutput')
     $Script:TargetModuleDirectory = [System.IO.Path]::Combine($TargetDirectory, $ModuleName)
@@ -106,7 +117,7 @@ Task Init {
         "Project                : $ModuleName"
         "Manifest Version       : $ManifestVersion"
         "Gallery Version        : $GalleryVersion"
-        "Next Module Version    : $NextModuleVersion"
+        "Next Module Version    : $NextModuleVersion$($PrereleaseString)"
         "Engine                 : PowerShell $($PSVersionTable.PSVersion.ToString())"
         "Host OS                : $(if($PSVersionTable.PSVersion.Major -le 5 -or $IsWindows){"Windows"}elseif($IsLinux){"Linux"}elseif($IsMacOS){"macOS"}else{"[UNKNOWN]"})"
         "PWD                    : $PWD"
@@ -280,10 +291,15 @@ Task BuildSubmodules Init, CleanSubmodules, {
             Update-Metadata -Path $subTargetManifestPath -PropertyName ScriptsToProcess -Value $updatedScriptsToProcess
         }
 
-        if ($env:BHBranchName -notin @('master','main')) {
-            Write-BuildLog "[$sub] Setting Prerelease string to '-beta' for branch '$env:BHBranchName'"
-            $currentMetadata = Import-Metadata -Path $subTargetManifestPath
-            $currentMetadata['PrivateData']['PSData']['Prerelease'] = '-beta'
+        $currentMetadata = Import-Metadata -Path $subTargetManifestPath
+        if ($null -ne $Script:PrereleaseString) {
+            Write-BuildLog "[$sub] Setting Prerelease string to '$($Script:PrereleaseString)' for branch '$env:BHBranchName'"
+            $currentMetadata['PrivateData']['PSData']['Prerelease'] = $Script:PrereleaseString
+            $currentMetadata | Export-Metadata -Path $subTargetManifestPath
+        }
+        elseif ($currentMetadata['PrivateData']['PSData'].ContainsKey('Prerelease')) {
+            Write-BuildLog "[$sub] Removing Prerelease string from module manifest for branch '$env:BHBranchName'"
+            $currentMetadata['PrivateData']['PSData'].Remove('Prerelease')
             $currentMetadata | Export-Metadata -Path $subTargetManifestPath
         }
 
@@ -438,10 +454,15 @@ Task BuildCoreOnly CleanCore, {
         Update-Metadata -Path $TargetManifestPath -PropertyName ScriptsToProcess -Value $updatedScriptsToProcess
     }
 
-    if ($env:BHBranchName -notin @('master','main')) {
-        Write-BuildLog "[$ModuleName] Setting Prerelease string to '-beta' for branch '$env:BHBranchName'"
-        $currentMetadata = Import-Metadata -Path $TargetManifestPath
-        $currentMetadata['PrivateData']['PSData']['Prerelease'] = '-beta'
+    $currentMetadata = Import-Metadata -Path $TargetManifestPath
+    if ($null -ne $Script:PrereleaseString) {
+        Write-BuildLog "[$ModuleName] Setting Prerelease string to '$($Script:PrereleaseString)' for branch '$env:BHBranchName'"
+        $currentMetadata['PrivateData']['PSData']['Prerelease'] = $Script:PrereleaseString
+        $currentMetadata | Export-Metadata -Path $TargetManifestPath
+    }
+    elseif ($currentMetadata['PrivateData']['PSData'].ContainsKey('Prerelease')) {
+        Write-BuildLog "[$ModuleName] Removing Prerelease string from module manifest for branch '$env:BHBranchName'"
+        $currentMetadata['PrivateData']['PSData'].Remove('Prerelease')
         $currentMetadata | Export-Metadata -Path $TargetManifestPath
     }
 
@@ -735,8 +756,10 @@ $psGalleryConditions = {
     -not [String]::IsNullOrEmpty($env:NugetApiKey) -and
     -not [String]::IsNullOrEmpty($NextModuleVersion) -and
     $env:BHBuildSystem -eq 'VSTS' -and
-    ($env:BHCommitMessage -match '!deploy' -or $env:BUILD_REASON -eq 'Schedule') -and
-    $env:BHBranchName -in @('master','main','beta','rc','alpha')
+    (
+        (($env:BHCommitMessage -match '!deploy' -or $env:BUILD_REASON -eq 'Schedule') -and $env:BHBranchName -in @('master','main')) -or
+        $env:BHBranchName -match '^(beta|rc|nightly|alpha)$'
+    )
 }
 $gitHubConditions = {
     -not [String]::IsNullOrEmpty($env:GitHubPAT) -and
