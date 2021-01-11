@@ -806,9 +806,11 @@ Task PublishToPSGallery -If $psGalleryConditions {
             Repository = 'PSGallery'
             Verbose = $true
         }
+        <#
         if ($env:BHBranchName -notin @('master','main')){
             $pars['AllowPrerelease'] = $true
         }
+        #>
         Publish-Module @pars
     }
     Write-BuildLog "Deployment successful!"
