@@ -90,15 +90,18 @@ Task Init {
     $Script:SourceModuleDirectory = [System.IO.Path]::Combine($BuildRoot, $ModuleName)
     $Script:GalleryVersion = (Get-PSGalleryVersion $ModuleName).Version
     $Script:SourceManifestPath = Join-Path $SourceModuleDirectory "$($ModuleName).psd1"
-    $Script:PrereleaseString = switch -RegEx ($env:BHBranchName) {
+    switch -RegEx ($env:BHBranchName) {
         '^(master|main)$' {
-            $null
+            $Script:PrereleaseString = $null
+            $summaryNextVersionSuffix = $null
         }
         '^(beta|rc|nightly|alpha)$' {
-            "$($env:BHBranchName)".ToLower() + (Get-Date).ToString('yyyyMMdd')
+            $Script:PrereleaseString = "$($env:BHBranchName)".ToLower() + (Get-Date).ToString('yyyyMMdd')
+            $summaryNextVersionSuffix = "-" + $Script:PrereleaseString
         }
         default {
-            'local' + (Get-Date).ToString('yyyyMMdd')
+            $Script:PrereleaseString = 'local' + (Get-Date).ToString('yyyyMMdd')
+            $summaryNextVersionSuffix = "-" + $Script:PrereleaseString
         }
     }
     $Script:ManifestVersion = ((Import-Metadata -Path $SourceManifestPath).ModuleVersion.Split('.')[0..1] + '0') -join '.'
@@ -117,7 +120,7 @@ Task Init {
         "Project                : $ModuleName"
         "Manifest Version       : $ManifestVersion"
         "Gallery Version        : $GalleryVersion"
-        "Next Module Version    : $NextModuleVersion$($PrereleaseString)"
+        "Next Module Version    : $NextModuleVersion$($summaryNextVersionSuffix)"
         "Engine                 : PowerShell $($PSVersionTable.PSVersion.ToString())"
         "Host OS                : $(if($PSVersionTable.PSVersion.Major -le 5 -or $IsWindows){"Windows"}elseif($IsLinux){"Linux"}elseif($IsMacOS){"macOS"}else{"[UNKNOWN]"})"
         "PWD                    : $PWD"

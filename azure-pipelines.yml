@@ -24,3 +24,5 @@ schedules:
 
 stages:
 - template: BuildTestDeployModule/azure-pipelines.yml@templates
+  parameters:
+    BuildReleasePoolName: Win10
