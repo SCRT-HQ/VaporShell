@@ -807,16 +807,16 @@ Task PublishToPSGallery -If $psGalleryConditions {
         Write-BuildLog "Module found at: $subVersionDirectory"
         Import-Module (Join-Path -Path $subVersionDirectory -ChildPath "$($_.BaseName).psd1") -Force
         $pars = @{
-            Path = $subVersionDirectory
+            Name = $_.BaseName
             NuGetApiKey = $env:NugetApiKey
             Repository = 'PSGallery'
             Verbose = $true
         }
-        <#
+
         if ($env:BHBranchName -notin @('master','main')){
             $pars['AllowPrerelease'] = $true
         }
-        #>
+
         Publish-Module @pars
     }
     Write-BuildLog "Deployment successful!"
