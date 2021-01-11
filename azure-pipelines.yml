@@ -25,4 +25,4 @@ schedules:
 stages:
 - template: BuildTestDeployModule/azure-pipelines.yml@templates
   parameters:
-    BuildReleasePoolName: Win10
+    BuildReleasePoolName: 'Hosted VS2017'

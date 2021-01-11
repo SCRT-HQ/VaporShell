@@ -96,11 +96,11 @@ Task Init {
             $summaryNextVersionSuffix = $null
         }
         '^(beta|rc|nightly|alpha)$' {
-            $Script:PrereleaseString = "$($env:BHBranchName)".ToLower() + (Get-Date).ToString('yyyyMMdd')
+            $Script:PrereleaseString = "$($env:BHBranchName)".ToLower() + (Get-Date).ToString('yyyyMMddHHmm')
             $summaryNextVersionSuffix = "-" + $Script:PrereleaseString
         }
         default {
-            $Script:PrereleaseString = 'local' + (Get-Date).ToString('yyyyMMdd')
+            $Script:PrereleaseString = 'local' + (Get-Date).ToString('yyyyMMddHHmm')
             $summaryNextVersionSuffix = "-" + $Script:PrereleaseString
         }
     }
@@ -798,9 +798,6 @@ Task PublishToPSGallery -If $psGalleryConditions {
             NuGetApiKey = $env:NugetApiKey
             Repository = 'PSGallery'
             Verbose = $true
-        }
-        if ($env:BHBranchName -notin @('master','main')) {
-            $pars['WhatIf'] = $true
         }
         Publish-Module -Path $subVersionDirectory -NuGetApiKey $env:NugetApiKey -Repository PSGallery @pars
     }
