@@ -10,8 +10,8 @@
     DotNetFrameworkVersion = '4.7.2'
     ProcessorArchitecture  = 'None'
     RequiredModules        = @(@{
-  ModuleVersion = '3.0.0'
   ModuleName = 'VaporShell'
+  ModuleVersion = '3.0.0'
 })
     RequiredAssemblies     = @()
     ScriptsToProcess       = @()
@@ -32,6 +32,10 @@
 
     }
 }
+
+
+
+
 
 
 
