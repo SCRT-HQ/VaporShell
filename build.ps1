@@ -43,7 +43,7 @@ $helperUri = @(
     'scrthq'                                    # User
     'a99cc06e75eb31769d01b2adddc6d200'          # Gist ID
     'raw'
-    '10d6ab6de6aa3f35c94acb7707970fe0ee755aa6'  # Commit SHA
+    '5b93b4f40de1dace7221ca38132978513b1a68eb'  # Commit SHA
     'AzurePipelineHelpers.ps1'                  # Filename
 ) -join '/'
 $fileUri = $helperUri -replace "[$([RegEx]::Escape("$(([System.IO.Path]::GetInvalidFileNameChars() + [System.IO.Path]::GetInvalidPathChars()) -join '')"))]","_"
