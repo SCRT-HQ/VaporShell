@@ -787,19 +787,21 @@ $tweetConditions = {
 
 Task PublishToPSGallery -If $psGalleryConditions {
     Write-BuildLog "Publishing VaporShell version [$($NextModuleVersion)] to PSGallery"
+    Import-Module $TargetVersionDirectory
     Publish-Module -Path $TargetVersionDirectory -NuGetApiKey $env:NugetApiKey -Repository PSGallery
     Get-ChildItem $SourceAdditionalModuleDirectory -Directory | ForEach-Object {
         Write-BuildLog "Publishing $($_.BaseName) version [$($NextModuleVersion)] to PSGallery"
         $subDirectory = [System.IO.Path]::Combine($TargetDirectory, $_.BaseName)
         $subVersionDirectory = Split-Path (Get-ChildItem $subDirectory -Recurse -Filter "$($_.BaseName).psd1")
         Write-BuildLog "Module found at: $subVersionDirectory"
+        Import-Module $subVersionDirectory
         $pars = @{
             Path = $subVersionDirectory
             NuGetApiKey = $env:NugetApiKey
             Repository = 'PSGallery'
             Verbose = $true
         }
-        Publish-Module -Path $subVersionDirectory -NuGetApiKey $env:NugetApiKey -Repository PSGallery @pars
+        Publish-Module @pars
     }
     Write-BuildLog "Deployment successful!"
 }
