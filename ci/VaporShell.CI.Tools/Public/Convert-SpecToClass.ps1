@@ -384,17 +384,35 @@ function Convert-SpecToClass {
         }
         elseif ($Prop.Value.PrimitiveType -eq "Json") {
             $prprtyContents += "    [VSJson] `$$ParamName"
+            $setterParams = 'param([ValidateType(([string], [VSJson], [VSYaml], [psobject], [IDictionary]))][object] $value)'
+            <# if ($ResourceType -eq 'Resource') {
+                $getter = "`$this.Properties['$ParamName']"
+            }
+            else {
+                $getter = "`$this.$ParamName"
             $accessorContents += @(
                 "        `$this | Add-Member -Force -MemberType ScriptProperty -Name $ParamName -Value {"
-                "            `$this.Properties['$ParamName']"
+                "            $getter"
                 '        } -SecondValue {'
-                '            param([ValidateType(([string], [VSJson], [VSYaml], [psobject], [IDictionary]))][object] $value)'
-                "            `$this.Properties['$ParamName'] = if (`$value -is [VSJson]) {"
-                '                $value'
-                '            }'
-                '            else {'
-                "                [VSJson]::new(`$value)"
-                '            }'
+                "            $setterParams"
+                "            $getter = [VSJson]`$value"
+                '        }'
+            ) #>
+            if ($ResourceType -eq 'Resource') {
+                $getter = "`$this.Properties['$ParamName']"
+                $setter = "`$this.Properties['$ParamName'] = [VSJson]::Transform(`$value)"
+            }
+            else {
+                $hiddenContents += "    hidden [VSJson] `$$_paramName"
+                $getter = "`$this.$_paramName"
+                $setter = "`$this.$_paramName = [VSJson]::Transform(`$value)"
+            }
+            $accessorContents += @(
+                "        `$this | Add-Member -Force -MemberType ScriptProperty -Name $ParamName -Value {"
+                "            $getter"
+                '        } -SecondValue {'
+                "            $setterParams"
+                "            $setter"
                 '        }'
             )
         }

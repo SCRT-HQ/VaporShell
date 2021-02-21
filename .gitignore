@@ -21,6 +21,7 @@ ServiceModules/*/Classes/*Resource*/
 ServiceModules/*/Classes/*Property*/
 ServiceModules/*/Public/Properties/
 ServiceModules/*/Public/Resources/
+installed.modules
 
 # User-specific files
 *.suo

@@ -69,7 +69,7 @@ if ((Get-PSRepository -Name PSGallery).InstallationPolicy -ne 'Trusted') {
     Set-PSRepository -Name PSGallery -InstallationPolicy Trusted -Verbose:$false
 }
 Add-Heading "Setting `$PSDefaultParameterValues for *-Module functions"
-$PSDefaultParameterValues = @{
+$Global:PSDefaultParameterValues = @{
     '*-Module:Verbose'                  = $false
     '*-Module:Force'                    = $true
     'Import-Module:ErrorAction'         = 'Stop'
@@ -125,7 +125,7 @@ foreach ($item in $moduleDependencies) {
     }
     catch {
         Write-BuildLog "[$($item['Name'])] Installing missing module"
-        Install-Module @item
+        Install-Module @item -Scope CurrentUser
         Import-Module @item
     }
 }
