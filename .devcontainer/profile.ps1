@@ -1,4 +1,4 @@
-. /tmp/library-scripts/bootstrap.ps1
+#. /tmp/library-scripts/bootstrap.ps1
 
 Import-Module PSProfile
 Switch-Prompt SCRTHQ
@@ -11,7 +11,9 @@ if ($null -ne (Get-Module PSReadline)) {
         ContinuationPrompt            = ''
         ShowToolTips                  = $true
         HistorySearchCaseSensitive    = $false
+        HistorySavePath               = '/workspaces/VaporShell/.devcontainer/IgnoredCommandHistory.txt'
         PredictionSource              = 'History'
+
     }
     Set-PSReadLineOption @setPSReadLineOptionSplat
     Set-PSReadLineKeyHandler -Chord Tab -Function MenuComplete

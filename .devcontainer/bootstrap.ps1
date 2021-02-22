@@ -1,4 +1,4 @@
-if (-not (Test-Path '.devcontainer/installed.modules')) {
+if ($null -eq (Get-Module 'PSProfile*' -ListAvailable)) {
     Get-PackageProvider NuGet -ForceBootstrap -Verbose
     Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
 
@@ -34,7 +34,6 @@ if (-not (Test-Path '.devcontainer/installed.modules')) {
         }
     )
     foreach ($module in $Dependencies) {
-        Install-Module @module -Repository PSGallery -Verbose
+        Install-Module @module -Repository PSGallery -Scope AllUsers -Verbose
     }
-    New-Item '.devcontainer/installed.modules' -ItemType File -Force
 }

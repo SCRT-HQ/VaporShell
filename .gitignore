@@ -22,6 +22,7 @@ ServiceModules/*/Classes/*Property*/
 ServiceModules/*/Public/Properties/
 ServiceModules/*/Public/Resources/
 installed.modules
+IgnoredCommandHistory.txt
 
 # User-specific files
 *.suo
