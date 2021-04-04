@@ -26,3 +26,4 @@ stages:
 - template: BuildTestDeployModule/azure-pipelines.yml@templates
   parameters:
     BuildReleasePoolName: 'Hosted VS2017'
+    TestBeta: 'Yes'
