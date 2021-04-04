@@ -48,35 +48,38 @@ using namespace System.Management.Automation
 
 <#  #>
 class VSJson : VSHashtable {
-    static [VSJson] Transform([string] $stringOrFilepath) {
-        $decoded = if ($stringOrFilepath.Trim() -match '^%\d\w') {
+    static [Specialized.OrderedDictionary] TransformToDict([string] $stringOrFilepath) {
+        $dictionary = [ordered]@{}
+        if (Test-Path $stringOrFilepath) {
+            $stringOrFilepath = [File]::ReadAllText($stringOrFilepath)
+        }
+        if ($stringOrFilepath.Trim() -match '^%\d\w') {
             Write-Debug "String appears to be URL encoded, decoding with System.Web.HttpUtility::UrlDecode"
             Add-Type -AssemblyName System.Web
-            [System.Web.HttpUtility]::UrlDecode($stringOrFilepath)
+            $stringOrFilepath = [System.Web.HttpUtility]::UrlDecode($stringOrFilepath)
         }
-        else {
-            $stringOrFilepath
-        }
-        $newData = if (Test-Path $decoded) {
-            $resolvedPath = (Resolve-Path $decoded).Path
-            [File]::ReadAllText($resolvedPath)
-        }
-        else {
-            $decoded
-        }
-        Write-Debug "New data: $newData"
         try {
-            $final = (ConvertFrom-Json -InputObject $newData -ErrorAction Stop)
+            $final = (ConvertFrom-Json -InputObject $stringOrFilepath -ErrorAction Stop)
+            $final.PSObject.Properties | ForEach-Object {
+                Write-Debug "Adding key '$($_.Name)' with value '$($_.Value)' to VSJson"
+                $dictionary[$_.Name] = $_.Value
+            }
         }
         catch {
-            throw [VSError]::InvalidJsonInput($decoded)
+            throw [VSError]::InvalidJsonInput($stringOrFilepath)
         }
-        $dict = [ordered]@{}
-        $final.PSObject.Properties | ForEach-Object {
-            $dict[$_.Name] = $_.Value
+        Write-Debug "Resulting dict: $($dictionary | ConvertTo-Json -Depth 10))"
+        return $dictionary
+    }
+
+
+    static [VSJson] Transform([string] $stringOrFilepath) {
+        $vsJson = [VSJson]::new()
+        $dictionary = [VSJson]::TransformToDict($stringOrFilepath)
+        $dictionary.GetEnumerator() | ForEach-Object {
+            $vsJson[$_.Key] = $_.Value
         }
-        Write-Debug "Resulting dict as parsed JSON: $($dict | ConvertTo-Json -Depth 20)"
-        return [VSJson]$dict
+        return $vsJson
     }
 
     static [VSJson] Transform([VSJson] $vsJson) {
@@ -85,29 +88,30 @@ class VSJson : VSHashtable {
 
     VSJson() : base() {}
     VSJson([IDictionary] $dictionary) {
-        if ($dictionary -is [VSJson]) {
-            $this = $dictionary
-        }
-        else {
-            $this = [ordered]@{}
-            $dictionary.GetEnumerator() | ForEach-Object {
-                Write-Debug "Adding key '$($_.Key)' with value '$($_.Value)' to $this"
-                $this[$_.Key] = $_.Value
-            }
+        $dictionary.GetEnumerator() | ForEach-Object {
+            Write-Debug "Adding key '$($_.Key)' with value '$($_.Value)' to $this"
+            $this[$_.Key] = $_.Value
         }
     }
     VSJson([psobject] $psObject) {
-        $this = [ordered]@{}
         $psObject.PSObject.Properties | ForEach-Object {
             Write-Debug "Adding property '$($_.Name)' with value '$($_.Value)' to $this"
             $this[$_.Name] = $_.Value
         }
     }
     VSJson([string] $stringOrFilepath) {
-        $this = $this::Transform($stringOrFilepath)
+        $dictionary = [VSJson]::TransformToDict($stringOrFilepath)
+        $dictionary.GetEnumerator() | ForEach-Object {
+            Write-Debug "Adding key '$($_.Key)' with value '$($_.Value)' to $this"
+            $this[$_.Key] = $_.Value
+        }
     }
     VSJson([string[]] $strings) {
         $newString = $strings -join [Environment]::NewLine
-        $this = $this::Transform($newString)
+        $dictionary = [VSJson]::TransformToDict($newString)
+        $dictionary.GetEnumerator() | ForEach-Object {
+            Write-Debug "Adding key '$($_.Key)' with value '$($_.Value)' to $this"
+            $this[$_.Key] = $_.Value
+        }
     }
 } #>

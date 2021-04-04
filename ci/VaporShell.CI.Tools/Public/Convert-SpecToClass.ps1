@@ -401,11 +401,13 @@ function Convert-SpecToClass {
             if ($ResourceType -eq 'Resource') {
                 $getter = "`$this.Properties['$ParamName']"
                 $setter = "`$this.Properties['$ParamName'] = [VSJson]::Transform(`$value)"
+                $dbgMessage = "`$this.Properties['$ParamName']"
             }
             else {
                 $hiddenContents += "    hidden [VSJson] `$$_paramName"
                 $getter = "`$this.$_paramName"
                 $setter = "`$this.$_paramName = [VSJson]::Transform(`$value)"
+                $dbgMessage = "`$this.$_paramName"
             }
             $accessorContents += @(
                 "        `$this | Add-Member -Force -MemberType ScriptProperty -Name $ParamName -Value {"
@@ -413,6 +415,7 @@ function Convert-SpecToClass {
                 '        } -SecondValue {'
                 "            $setterParams"
                 "            $setter"
+                "            Write-Debug $dbgMessage"
                 '        }'
             )
         }
