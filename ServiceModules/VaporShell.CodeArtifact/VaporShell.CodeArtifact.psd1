@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.CodeArtifact.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = 'c23e0211-862f-4936-8a52-de7d1fc13b4d'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

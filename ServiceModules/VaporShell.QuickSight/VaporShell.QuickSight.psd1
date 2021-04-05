@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.QuickSight.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = 'e0f3f777-1668-4855-a45e-82dbaefd0140'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

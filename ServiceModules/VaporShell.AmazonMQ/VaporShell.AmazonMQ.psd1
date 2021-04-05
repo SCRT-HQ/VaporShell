@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.AmazonMQ.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = 'b723ef55-f65f-40f6-9b3f-dc628d8a5aee'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

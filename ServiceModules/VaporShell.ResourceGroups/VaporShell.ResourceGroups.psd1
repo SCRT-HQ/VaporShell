@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.ResourceGroups.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '10d7c52f-2fc5-4baa-87d8-01574a40b0de'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

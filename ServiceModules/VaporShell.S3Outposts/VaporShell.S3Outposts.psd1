@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.S3Outposts.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '60bd80c2-8cdc-4896-a533-0aff2c3134ca'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

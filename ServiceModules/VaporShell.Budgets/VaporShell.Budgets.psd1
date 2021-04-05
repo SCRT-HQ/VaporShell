@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.Budgets.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '99d20480-3a1e-4712-b457-eecaf3b9096f'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

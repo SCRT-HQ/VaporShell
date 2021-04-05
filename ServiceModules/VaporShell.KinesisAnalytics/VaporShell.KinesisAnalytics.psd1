@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.KinesisAnalytics.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '6b9ca3b5-ff75-49c2-ba25-64d917377f5c'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

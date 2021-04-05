@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.ElasticLoadBalancing.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '354a792d-1e3a-4c65-bf34-a7ec1c7a0cc7'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

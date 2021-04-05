@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.AuditManager.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = 'd30e44b7-1981-49e7-9f5b-32ad190192c6'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

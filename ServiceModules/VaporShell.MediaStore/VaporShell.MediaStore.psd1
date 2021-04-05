@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.MediaStore.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = 'ae62aa77-d253-4e8c-bad5-9d0a3171dd9c'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

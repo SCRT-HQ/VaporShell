@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.IoT1Click.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = 'dabe9d82-817a-41a7-a2c6-bf544c706e41'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

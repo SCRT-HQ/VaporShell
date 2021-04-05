@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.DataBrew.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = 'd3155502-973c-4764-9ff9-3a6a52335a20'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

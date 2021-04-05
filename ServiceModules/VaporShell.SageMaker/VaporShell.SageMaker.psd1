@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.SageMaker.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '9d534c86-02c7-4025-b477-2ff089be9754'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

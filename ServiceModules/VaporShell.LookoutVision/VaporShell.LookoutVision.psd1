@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.LookoutVision.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = 'a65cb67f-1686-446c-8522-b830dd0cd015'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

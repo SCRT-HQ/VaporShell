@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.CodeStar.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '02d8ae08-3bbd-450f-92f0-d6c7b7f87c09'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

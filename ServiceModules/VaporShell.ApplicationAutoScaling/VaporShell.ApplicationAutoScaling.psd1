@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.ApplicationAutoScaling.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '414afa48-9b11-491b-bf8a-460b12668a37'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

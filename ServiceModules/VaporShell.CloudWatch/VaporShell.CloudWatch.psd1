@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.CloudWatch.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '9f176a8e-ffd9-4721-8171-d73f5d9b1227'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

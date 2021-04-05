@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.SNS.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '63128a28-0bb0-4a90-be92-4eacecc9224e'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

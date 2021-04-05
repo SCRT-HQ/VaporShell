@@ -3,89 +3,45 @@ using namespace System.Collections
 using namespace System.Collections.Generic
 using namespace System.IO
 using namespace System.Management.Automation
+using namespace System.Web
 
-<# class VSYaml : VSJson {
-    static [VSYaml] Transform([string] $yamlStringOrFilePath) {
-        $newData = if (Test-Path $yamlStringOrFilePath) {
-            $resolvedPath = (Resolve-Path $yamlStringOrFilePath).Path
-            [File]::ReadAllText($resolvedPath)
-        }
-        else {
-            $yamlStringOrFilePath
-        }
-        try {
-            $final = if (Get-Command cfn-flip* -ErrorAction SilentlyContinue) {
-                $json = $newData | cfn-flip | Out-String
-                ConvertFrom-Json -InputObject $json -ErrorAction Stop
-            }
-            else {
-                ConvertFrom-Yaml -Yaml $newData -ErrorAction Stop
-            }
-        }
-        catch {
-            throw [VSError]::InvalidYamlInput($yamlStringOrFilePath)
-        }
-        $dict = [ordered]@{}
-        $final.PSObject.Properties | ForEach-Object {
-            $dict[$_.Name] = $_.Value
-        }
-        return [VSYaml]::new($dict)
-    }
-
-    VSYaml() : base() {}
-    VSYaml([IDictionary] $dictionary) {
-        $dictionary.GetEnumerator() | ForEach-Object {
-            $this[$_.Key] = $_.Value
-        }
-    }
-    VSYaml([psobject] $psObject) {
-        $psObject.PSObject.Properties | ForEach-Object {
-            $this[$_.Name] = $_.Value
-        }
-    }
-    VSYaml([string] $yamlStringOrFilePath) {
-        $this = $this::Transform($yamlStringOrFilePath)
-    }
-    VSYaml([string[]] $yamlStrings) {
-        $newString = $yamlStrings -join [Environment]::NewLine
-        $this = $this::Transform($newString)
-    }
-}
-
-<#  #>
 class VSYaml : VSJson {
-    static [VSYaml] Transform([string] $stringOrFilepath) {
-        $newData = if (Test-Path $stringOrFilepath) {
-            $resolvedPath = (Resolve-Path $stringOrFilepath).Path
-            [File]::ReadAllText($resolvedPath)
+    static [Specialized.OrderedDictionary] TransformToDict([string] $stringOrFilepath) {
+        $dictionary = [ordered]@{}
+        if (Test-Path $stringOrFilepath) {
+            $stringOrFilepath = [File]::ReadAllText($stringOrFilepath)
         }
-        elseif ($stringOrFilepath -match '^(?:[^%]|%[0-9A-Fa-f]{2})+$') {
-            Write-Debug "YAML string appears to be URL encoded, decoding with System.Web.HttpUtility::UrlDecode"
-            Add-Type -AssemblyName System.Web
-            [System.Web.HttpUtility]::UrlDecode($stringOrFilepath)
+        if ($stringOrFilepath.Trim() -match '^%\d\w') {
+            Write-Debug "String appears to be URL encoded, decoding with System.Web.HttpUtility::UrlDecode"
+            $stringOrFilepath = [HttpUtility]::UrlDecode($stringOrFilepath)
         }
-        else {
-            $stringOrFilepath
-        }
-        Write-Debug "New data: $newData"
         try {
             $final = if (Get-Command cfn-flip* -ErrorAction SilentlyContinue) {
-                $json = $newData | cfn-flip | Out-String
+                $json = $stringOrFilepath | cfn-flip | Out-String
                 ConvertFrom-Json -InputObject $json -ErrorAction Stop
             }
             else {
-                ConvertFrom-Yaml -Yaml $newData -ErrorAction Stop
+                ConvertFrom-Yaml -Yaml $stringOrFilepath -ErrorAction Stop
             }
         }
         catch {
             throw [VSError]::InvalidYamlInput($stringOrFilepath)
         }
-        $dict = [ordered]@{}
         $final.PSObject.Properties | ForEach-Object {
-            $dict[$_.Name] = $_.Value
+            Write-Debug "Adding key '$($_.Name)' with value '$($_.Value)' to VSYaml"
+            $dictionary[$_.Name] = $_.Value
         }
-        Write-Debug "Resulting dict as parsed JSON: $($dict | ConvertTo-Json -Depth 20)"
-        return [VSYaml]$dict
+        Write-Debug "Resulting dict: $($dictionary | ConvertTo-Json -Depth 10))"
+        return $dictionary
+    }
+
+    static [VSYaml] Transform([string] $stringOrFilepath) {
+        $vsYaml = [VSYaml]::new()
+        $dictionary = [VSYaml]::TransformToDict($stringOrFilepath)
+        $dictionary.GetEnumerator() | ForEach-Object {
+            $vsYaml[$_.Key] = $_.Value
+        }
+        return $vsYaml
     }
 
     static [VSYaml] Transform([VSYaml] $vsYaml) {

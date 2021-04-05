@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.CloudTrail.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '39c857d2-44f2-405a-81b4-ba1f11779221'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

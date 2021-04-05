@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.CodeGuruReviewer.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '987c1567-330a-4605-a03c-e4ddc0b953dc'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

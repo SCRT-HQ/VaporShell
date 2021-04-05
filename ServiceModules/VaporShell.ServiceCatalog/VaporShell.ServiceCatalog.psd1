@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.ServiceCatalog.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '2715ac26-1473-4e22-a3dc-0a32d63ca6b5'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

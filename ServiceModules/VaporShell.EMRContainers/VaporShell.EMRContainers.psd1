@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.EMRContainers.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '5a3b0ed9-863c-438c-a903-f4788049b393'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

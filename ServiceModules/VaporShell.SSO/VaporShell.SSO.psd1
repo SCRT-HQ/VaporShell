@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.SSO.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = 'a7e34a53-b59c-4230-9a2d-e2e772185ca2'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

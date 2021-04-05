@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.KinesisFirehose.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '9e679d73-8e5e-43f4-a06f-5b0cc6b3af40'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.CertificateManager.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '9e1d7d58-4cea-4b68-af48-fa8083edd031'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.SecurityHub.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '9e2f7778-0b13-4189-a070-a35566e3d86e'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

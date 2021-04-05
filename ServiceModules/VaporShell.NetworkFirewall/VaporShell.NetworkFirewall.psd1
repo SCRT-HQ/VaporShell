@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.NetworkFirewall.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '7536c8a6-68dd-44ee-9f16-89b2d5322011'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

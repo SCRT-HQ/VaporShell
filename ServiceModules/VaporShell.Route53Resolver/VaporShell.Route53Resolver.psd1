@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.Route53Resolver.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = 'b669a97a-ca43-416a-a3e5-c3004cc4e157'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

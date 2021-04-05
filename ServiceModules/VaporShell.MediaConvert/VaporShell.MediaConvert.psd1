@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.MediaConvert.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '0e20e185-cd63-46ac-af34-033ed761ec5f'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

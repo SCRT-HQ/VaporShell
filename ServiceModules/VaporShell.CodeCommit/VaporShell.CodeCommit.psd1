@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.CodeCommit.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '7b50bebe-74a9-41a3-9717-6be75575c71a'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

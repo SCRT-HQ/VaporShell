@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.Synthetics.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = 'a3d9d81d-737b-4d97-b213-dc9e11ade1ab'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.IoTAnalytics.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '11a20036-cb13-4523-b2d8-74609195c994'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

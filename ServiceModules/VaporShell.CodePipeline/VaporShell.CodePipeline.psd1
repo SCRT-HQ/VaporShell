@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.CodePipeline.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '15838563-ed87-44dd-8038-cf75349ca117'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.Signer.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '27b13d9c-dfcd-4fd3-a6d1-900b2e816a92'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.ImageBuilder.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '61709a3d-6655-4bd3-9c6e-99adb7e18071'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

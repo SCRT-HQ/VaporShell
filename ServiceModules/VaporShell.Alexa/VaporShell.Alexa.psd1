@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.Alexa.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '50ab0c56-4aa2-4807-b98b-921a7c3ccad0'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

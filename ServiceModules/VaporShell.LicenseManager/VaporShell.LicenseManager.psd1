@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.LicenseManager.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = 'b7e08cdc-e4b9-4e84-aab9-f8f69a6149b6'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

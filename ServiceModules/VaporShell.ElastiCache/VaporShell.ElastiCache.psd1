@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.ElastiCache.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '8992ce10-5152-467d-8989-33796b45c940'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

@@ -29,7 +29,6 @@ class VSJson : VSHashtable {
         return $dictionary
     }
 
-
     static [VSJson] Transform([string] $stringOrFilepath) {
         $vsJson = [VSJson]::new()
         $dictionary = [VSJson]::TransformToDict($stringOrFilepath)

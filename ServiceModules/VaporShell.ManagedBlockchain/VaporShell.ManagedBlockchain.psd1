@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.ManagedBlockchain.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '1021c79d-31ad-48ab-bb1c-6c52c09b6c17'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

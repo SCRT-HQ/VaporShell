@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.MediaConnect.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '8fda75d8-0127-4dde-ad6d-51831b790539'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

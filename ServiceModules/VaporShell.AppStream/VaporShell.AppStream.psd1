@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.AppStream.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '9d477360-ffdc-4dad-a1af-33922eaaeab8'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

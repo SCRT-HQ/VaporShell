@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.SDB.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '34427ee6-670d-43c4-86fd-2bb8fe322ec2'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

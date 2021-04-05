@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.DocDB.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '79c8a21f-3701-4f43-a850-f0cd05296203'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

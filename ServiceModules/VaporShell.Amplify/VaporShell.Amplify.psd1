@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.Amplify.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '3176d4b2-b559-43b1-9e53-5b9bfe9a5959'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

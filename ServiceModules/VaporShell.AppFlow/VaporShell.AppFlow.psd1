@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.AppFlow.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '977368d5-95db-4405-92ce-268c5cd11a37'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

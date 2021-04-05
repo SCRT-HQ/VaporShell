@@ -1,4 +1,4 @@
-@{
+﻿@{
     RootModule             = 'VaporShell.IoTSiteWise.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '8d3ee851-cfa1-49b0-a261-0aff8c8f9569'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 
