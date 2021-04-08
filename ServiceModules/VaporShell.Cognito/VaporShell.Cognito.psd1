@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.Cognito.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '3301a0e7-9076-4c27-a892-6b5044f4068f'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.GameLift.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '5b64b766-446b-4f59-b4c6-e2bb17da0eea'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.MWAA.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '3ebed30d-09a8-4dc0-b073-f31f669205b6'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

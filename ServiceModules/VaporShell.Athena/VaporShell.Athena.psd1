@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.Athena.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '14d9b827-204c-4bcf-96b9-6e04c64ec683'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

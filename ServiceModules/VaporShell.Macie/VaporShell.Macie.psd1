@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.Macie.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '36231b3c-ccf4-4c07-97a2-ee2a0061d310'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

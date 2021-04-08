@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.Backup.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = 'e636157c-50dc-4699-b18c-3c6abd89ab92'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

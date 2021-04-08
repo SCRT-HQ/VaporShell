@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.NetworkManager.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '6e42d2d3-ec16-49e6-98b9-47fa11d9058b'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

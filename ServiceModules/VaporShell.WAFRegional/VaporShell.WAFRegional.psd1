@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.WAFRegional.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = 'af37edd1-de44-4ae9-aca2-c12d18ff7521'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

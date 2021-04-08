@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.DataSync.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = 'd6059121-4850-41fe-a81b-30c2a1781767'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

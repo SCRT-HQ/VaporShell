@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.RoboMaker.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '18b17eef-6ba2-4ba1-b873-7018ea477338'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

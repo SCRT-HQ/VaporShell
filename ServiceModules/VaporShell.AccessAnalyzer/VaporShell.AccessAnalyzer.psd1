@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.AccessAnalyzer.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '6af544dd-bfd3-401b-96b4-5afcb79bc8a1'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.DataPipeline.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '8cd683db-7163-4edb-acad-6f96489538e5'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

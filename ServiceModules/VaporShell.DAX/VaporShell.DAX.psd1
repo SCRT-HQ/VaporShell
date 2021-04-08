@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.DAX.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '18bfed0e-5a09-4b3e-a42d-eb27db62dba3'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

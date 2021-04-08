@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.Redshift.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '08c4abda-8cb5-410b-94eb-fb886ddec581'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

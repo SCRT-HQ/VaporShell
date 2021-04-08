@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.Greengrass.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = 'f4d588b0-9b51-4b59-ae5a-c216e96e1aae'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

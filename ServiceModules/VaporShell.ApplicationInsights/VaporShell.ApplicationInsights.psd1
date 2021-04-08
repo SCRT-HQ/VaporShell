@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.ApplicationInsights.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '1f449f71-aa7d-4faa-aef7-77dd8462f64d'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

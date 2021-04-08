@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.Elasticsearch.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '7ee29fa1-9664-410f-8e50-7ff84adbd9d3'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

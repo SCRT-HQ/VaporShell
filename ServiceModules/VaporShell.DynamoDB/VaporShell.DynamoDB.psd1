@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.DynamoDB.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '1211a55d-6e82-403b-85aa-df89a9f175d9'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

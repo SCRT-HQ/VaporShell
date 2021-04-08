@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.IoTThingsGraph.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = 'cdc73735-cd40-46a7-a30d-577040b8081e'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

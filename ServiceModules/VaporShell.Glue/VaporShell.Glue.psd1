@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.Glue.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = 'e7cd27c9-db59-4ccb-b34c-219923084caa'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

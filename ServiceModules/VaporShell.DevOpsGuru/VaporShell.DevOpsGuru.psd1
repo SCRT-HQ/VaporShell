@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.DevOpsGuru.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '65df62e3-7b9a-4797-bbc0-c23e2e98c4bd'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

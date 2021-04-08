@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.GuardDuty.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = 'c41c4772-0e15-46ff-8ba2-e97ce9d68962'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

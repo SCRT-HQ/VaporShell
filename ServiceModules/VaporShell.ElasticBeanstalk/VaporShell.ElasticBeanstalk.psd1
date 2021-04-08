@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.ElasticBeanstalk.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = 'c101fcc3-9a2d-4d79-9a73-579dbecfc85c'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

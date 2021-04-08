@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.StepFunctions.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = 'a83f3c75-ba72-47c7-8676-f3724d17ba96'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

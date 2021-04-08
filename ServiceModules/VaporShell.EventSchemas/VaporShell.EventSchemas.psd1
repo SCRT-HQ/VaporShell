@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.EventSchemas.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '7bda8e16-161a-46a8-91fd-7b0f6a7272ca'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

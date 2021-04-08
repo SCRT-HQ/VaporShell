@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.Kendra.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '75e2194c-2d2a-4fc3-9f15-ef5eabbfe78a'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

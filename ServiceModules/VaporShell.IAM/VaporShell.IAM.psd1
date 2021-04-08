@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.IAM.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '979c7554-08e8-4024-9722-35d44a3e4eee'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

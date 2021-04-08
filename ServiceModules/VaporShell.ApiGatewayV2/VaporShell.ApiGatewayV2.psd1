@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.ApiGatewayV2.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = 'ebf1c2e0-e423-45f5-9d3e-54fe6e67af21'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.MediaLive.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '60492652-db93-4638-b220-448afee6aad0'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

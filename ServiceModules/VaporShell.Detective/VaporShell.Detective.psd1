@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.Detective.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '12a8aa11-beab-4d8a-8922-25be60b60fc0'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

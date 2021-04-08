@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.Timestream.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '0a61d83f-82ff-4f76-84a2-bbe962d5e6d2'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

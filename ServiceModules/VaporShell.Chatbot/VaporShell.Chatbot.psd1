@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.Chatbot.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '6efb50a2-55de-403c-9dcb-7db26cecb337'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

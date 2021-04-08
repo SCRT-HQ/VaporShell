@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.EKS.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '585a0a68-c136-4e81-b79f-3142248c5ee1'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

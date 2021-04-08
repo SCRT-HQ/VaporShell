@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.Transfer.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '94b1f87d-0ba4-418d-95a3-04c8cf478404'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

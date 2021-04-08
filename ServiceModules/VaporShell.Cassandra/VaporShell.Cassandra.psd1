@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.Cassandra.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '6b8e0806-2375-4396-b148-390cae4ef572'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.LakeFormation.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '1a702ac4-7b11-427c-b661-c43ed4034bf0'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

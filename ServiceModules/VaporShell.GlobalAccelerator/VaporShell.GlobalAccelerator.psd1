@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.GlobalAccelerator.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '27a32b43-2a9d-41c8-9a45-3482b89f2ec5'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.PinpointEmail.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '4a00e941-6828-45bc-b326-2b5741d672a2'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

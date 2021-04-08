@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.QLDB.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = 'dc4d448c-070b-45c5-9bd3-0ec2d2c5bae5'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

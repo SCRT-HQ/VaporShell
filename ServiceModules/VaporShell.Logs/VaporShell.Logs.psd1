@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.Logs.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '58b6e7c9-287a-47a3-8a65-250e076a01d6'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

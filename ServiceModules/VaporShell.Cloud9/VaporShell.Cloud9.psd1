@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.Cloud9.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = 'e110632f-34a3-445b-b867-ce24545841b6'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

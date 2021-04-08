@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.SecretsManager.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '5c902585-652f-4c25-840d-1dbb5ff2fe36'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 

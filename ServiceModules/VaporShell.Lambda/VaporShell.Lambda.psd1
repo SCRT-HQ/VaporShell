@@ -1,4 +1,4 @@
-﻿@{
+@{
     RootModule             = 'VaporShell.Lambda.psm1'
     ModuleVersion          = '3.0.0'
     GUID                   = '39cd2a67-a7a7-42ba-b839-0e36527ff13d'
@@ -31,6 +31,8 @@
 
     }
 }
+
+
 
 
 
