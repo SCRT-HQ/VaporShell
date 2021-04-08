@@ -382,7 +382,7 @@ Task BuildCoreOnly CleanCore, {
         $vsModuleEnum += "    $($vsMod -replace '^VaporShell\.')"
     }
     $vsModuleEnum += '}'
-    $vsModuleEnum -join ([Environment]::NewLine) | Set-Content ([System.IO.Path]::Combine($BuildRoot, 'VaporShell', 'Classes', '00 - Enums', 'Meta.ps1')) -Force
+    $vsModuleEnum -join ([Environment]::NewLine) | Set-Content ([System.IO.Path]::Combine($BuildRoot, 'VaporShell', 'Classes', '00 - Enums', 'VaporShellModule.ps1')) -Force
     foreach ($scope in @('Attributes', 'Classes', 'Private', 'Public')) {
         $gciPath = [System.IO.Path]::Combine($SourceModuleDirectory, $scope)
         if (Test-Path $gciPath) {
