@@ -57,15 +57,41 @@ function Install-VaporShellModule {
             $params.Remove('All') | Out-Null
             $params['Name'] = [enum]::GetValues([VaporShellModule])
         }
-        if ($alreadyInstalled = $params['Name'] | Where-Object {$_ -in $installed.Name}) {
-            Write-Verbose "The following modules are already installed and will be updated instead:`n- $($notInstalled -join "`n- ")"
+        $names = $params['Name'] | ForEach-Object {
+            if ($_ -ne 'VaporShell') {
+                "VaporShell.$_"
+            }
+            else {
+                $_
+            }
+        }
+        if ($alreadyInstalled = $names | Where-Object {$_ -in $installed.Name}) {
+            Write-Verbose "The following modules are already installed and will be updated instead:`n- $($alreadyInstalled -join "`n- ")"
             $updateParams = $params
             $updateParams['Name'] = $alreadyInstalled
-            Update-Module @updateParams
 
-            $params['Name'] = $params['Name'] | Where-Object {$_ -notin $installed.Name}
+            if (($updateParams.Keys -join '-') -match 'Version|Prerelease') {
+                $updateParams.Remove('Name') | Out-Null
+                foreach ($mod in $alreadyInstalled) {
+                    Update-Module -Name $mod @updateParams
+                }
+            }
+            else {
+                Update-Module @updateParams
+            }
+
+            $params['Name'] = $names | Where-Object {$_ -notin $installed.Name}
         }
         Write-Verbose "Installing modules:`n- $($params['Name'] -join "`n- ")"
-        Install-Module @params
+        if (($params.Keys -join '-') -match 'Version|Prerelease') {
+            $list = $params['Name']
+            $params.Remove('Name') | Out-Null
+            foreach ($mod in $list) {
+                Install-Module -Name $mod @params
+            }
+        }
+        else {
+            Install-Module @params
+        }
     }
 }
