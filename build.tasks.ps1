@@ -846,18 +846,22 @@ Task PublishToPSGallery -If $psGalleryConditions {
     }
     Publish-Module @pars
     Import-Module PoshRSJob
-    Get-ChildItem $SourceAdditionalModuleDirectory -Directory | Sort-Object Name | Start-RSJob -Name {$_.Name} - -ScriptBlock {
-        Write-BuildLog "Publishing $($_.BaseName) version [$($Using:NextModuleVersion)] to PSGallery"
-        $subDirectory = [System.IO.Path]::Combine($Using:TargetDirectory, $_.BaseName)
-        $subVersionDirectory = Split-Path (Get-ChildItem $subDirectory -Recurse -Filter "$($_.BaseName).psd1")
-        Write-BuildLog "Module found at: $subVersionDirectory"
-        Import-Module (Join-Path -Path $subVersionDirectory -ChildPath "$($_.BaseName).psd1") -Force
-        if ($null -eq $newPars) {
-            $newPars = $Using:pars
-        }
-        $newPars['Path'] = $subVersionDirectory
-        Publish-Module @newPars
-    } | Wait-RSJob | Receive-RSJob
+    Get-ChildItem $SourceAdditionalModuleDirectory -Directory |
+        Sort-Object Name |
+        Start-RSJob -Name {$_.Name} -ModulesToImport 'VaporShell' -VariablesToImport @('pars','NextModuleVersion','TargetDirectory') -ScriptBlock {
+            Write-BuildLog "Publishing $($_.BaseName) version [$($Using:NextModuleVersion)] to PSGallery"
+            $subDirectory = [System.IO.Path]::Combine($Using:TargetDirectory, $_.BaseName)
+            $subVersionDirectory = Split-Path (Get-ChildItem $subDirectory -Recurse -Filter "$($_.BaseName).psd1")
+            Write-BuildLog "Module found at: $subVersionDirectory"
+            Import-Module (Join-Path -Path $subVersionDirectory -ChildPath "$($_.BaseName).psd1") -Force
+            if ($null -eq $newPars) {
+                $newPars = $Using:pars
+            }
+            $newPars['Path'] = $subVersionDirectory
+            Publish-Module @newPars
+        } |
+        Wait-RSJob |
+        Receive-RSJob
     Write-BuildLog "Deployment successful!"
 }
 
@@ -936,6 +940,7 @@ Task PublishToGitHub -If $gitHubConditions BuildReleaseZips, {
     if ($null -ne $zipPath) {
         $gitHubParams['ArtifactPath'] = $zipPath
     }
+
     Publish-GitHubRelease @gitHubParams
     Write-BuildLog "Release creation successful!"
 }
