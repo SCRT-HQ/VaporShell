@@ -33,16 +33,10 @@ parameters:
   - name: IncludeDocker
     type: boolean
     default: true
-  - name: TestBeta
-    default: 'No'
-    type: string
-    values:
-      - 'Yes'
-      - 'No'
 
 stages:
 - template: BuildTestDeployModule/azure-pipelines.yml@templates
   parameters:
     BuildReleasePoolName: '${{ parameters.BuildReleasePoolName }}'
-    TestBeta: ${{ parameters.TestBeta }}
+    TestBeta: 'Yes'
     IncludeDocker: ${{ parameters.IncludeDocker }}
