@@ -27,3 +27,4 @@ stages:
   parameters:
     BuildReleasePoolName: 'Hosted VS2017'
     TestBeta: 'Yes'
+    IncludeDocker: true
