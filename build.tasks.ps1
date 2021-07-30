@@ -720,6 +720,29 @@ Task PesterBefore {
     }
 }
 
+Task BeforeDeploy {
+    $deps = @(
+        @{
+            Name           = 'PoshRSJob'
+        }
+    )
+    foreach ($mod in $deps) {
+        Write-BuildLog "[$($mod.Name)] Resolving"
+        try {
+            if ($imported = Get-Module $($mod.Name)) {
+                Write-BuildLog "[$($mod.Name)] Removing imported module"
+                $imported | Remove-Module
+            }
+            Import-Module @mod
+        }
+        catch {
+            Write-BuildLog "[$($mod.Name)] Installing missing module"
+            Install-Module @mod
+            Import-Module @mod
+        }
+    }
+}
+
 # Synopsis: Run Pester tests only (no Clean/Compile)
 Task Test Init, PesterBefore, UnpackageBuildOutput, {
     Set-Location -PassThru $TargetModuleDirectory
@@ -822,20 +845,19 @@ Task PublishToPSGallery -If $psGalleryConditions {
         Verbose = $true
     }
     Publish-Module @pars
-    Get-ChildItem $SourceAdditionalModuleDirectory -Directory | ForEach-Object {
-        Write-BuildLog "Publishing $($_.BaseName) version [$($NextModuleVersion)] to PSGallery"
-        $subDirectory = [System.IO.Path]::Combine($TargetDirectory, $_.BaseName)
+    Import-Module PoshRSJob
+    Get-ChildItem $SourceAdditionalModuleDirectory -Directory | Sort-Object Name | Start-RSJob -Name {$_.Name} - -ScriptBlock {
+        Write-BuildLog "Publishing $($_.BaseName) version [$($Using:NextModuleVersion)] to PSGallery"
+        $subDirectory = [System.IO.Path]::Combine($Using:TargetDirectory, $_.BaseName)
         $subVersionDirectory = Split-Path (Get-ChildItem $subDirectory -Recurse -Filter "$($_.BaseName).psd1")
         Write-BuildLog "Module found at: $subVersionDirectory"
         Import-Module (Join-Path -Path $subVersionDirectory -ChildPath "$($_.BaseName).psd1") -Force
-        $pars = @{
-            Path = $subVersionDirectory
-            NuGetApiKey = $env:NugetApiKey
-            Repository = 'PSGallery'
-            Verbose = $true
+        if ($null -eq $newPars) {
+            $newPars = $Using:pars
         }
-        Publish-Module @pars
-    }
+        $newPars['Path'] = $subVersionDirectory
+        Publish-Module @newPars
+    } | Wait-RSJob | Receive-RSJob
     Write-BuildLog "Deployment successful!"
 }
 
@@ -946,4 +968,4 @@ Task PublishToTwitter -If $tweetConditions {
     Write-BuildLog "Tweet successful!"
 }
 
-Task Deploy Init, UnpackageBuildOutput, PublishToPSGallery, PublishToTwitter, PublishToGitHub
+Task Deploy Init, BeforeDeploy, UnpackageBuildOutput, PublishToPSGallery, PublishToTwitter, PublishToGitHub

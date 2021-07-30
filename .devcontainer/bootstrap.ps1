@@ -21,6 +21,9 @@ if ($null -eq (Get-Module 'PSProfile*' -ListAvailable)) {
             Name = 'PSProfile'
         }
         @{
+            Name = 'PoshRSJob'
+        }
+        @{
             Name = 'AWS.Tools.CloudFormation'
         }
         @{
