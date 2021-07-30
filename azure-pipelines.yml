@@ -14,10 +14,10 @@ trigger:
     - refs/heads/*
   paths:
     exclude:
-      - '.devcontainer'
-      - '.vscode'
-      - '.github'
-      - Deprecated
+      - '.devcontainer/*'
+      - '.vscode/*'
+      - '.github/*'
+      - 'Deprecated/*'
       - '*.md'
       - 'LICENSE'
       - '*.code-workspace'
