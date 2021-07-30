@@ -514,6 +514,36 @@ function Convert-SpecToClass {
                 )
             }
         }
+        elseif ($Prop.Value.PrimitiveItemType -eq 'Map') {
+            $ValType = '[IDictionary'
+            $setterType = 'object'
+            if ($Prop.Value.Type -eq 'List') {
+                $valueString = '@($value)'
+                $ValType += "[]"
+                $setterType += "[]"
+            }
+            else {
+                $valueString = '$value'
+            }
+            $ValType += "]"
+            $prprtyContents += "    $ValType `$$ParamName"
+            $setterParams = "param([ValidateType(([IDictionary], [psobject], [IntrinsicFunction], [ConditionFunction]))] [$setterType] `$value)"
+            if ($ResourceType -eq 'Resource') {
+                $getter = "`$this.Properties['$ParamName']"
+            }
+            else {
+                $hiddenContents += "    hidden [object] `$$_paramName"
+                $getter = "`$this.$_paramName"
+            }
+            $accessorContents += @(
+                "        `$this | Add-Member -Force -MemberType ScriptProperty -Name $ParamName -Value {"
+                "            $getter"
+                '        } -SecondValue {'
+                "            $setterParams"
+                "            $getter = $valueString"
+                '        }'
+            )
+        }
         else {
             $propType = if ($prop.Value.ItemType) {
                 if (($prop.Value.Type -eq 'Tag' -and $prop.Value.ItemType -eq 'Json') -or (($prop.Value.ItemType -eq 'Tag' -or $prop.Value.ItemType -eq 'Json') -and $prop.Value.Type -eq 'List')) {
