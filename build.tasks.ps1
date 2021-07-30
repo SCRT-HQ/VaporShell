@@ -849,10 +849,10 @@ Task PublishToPSGallery -If $psGalleryConditions {
     Get-ChildItem $SourceAdditionalModuleDirectory -Directory |
         Sort-Object Name |
         Start-RSJob -Name {$_.Name} -ModulesToImport 'VaporShell' -VariablesToImport @('pars','NextModuleVersion','TargetDirectory') -ScriptBlock {
-            Write-BuildLog "Publishing $($_.BaseName) version [$($Using:NextModuleVersion)] to PSGallery"
+            Write-Host "Publishing $($_.BaseName) version [$($Using:NextModuleVersion)] to PSGallery"
             $subDirectory = [System.IO.Path]::Combine($Using:TargetDirectory, $_.BaseName)
             $subVersionDirectory = Split-Path (Get-ChildItem $subDirectory -Recurse -Filter "$($_.BaseName).psd1")
-            Write-BuildLog "Module found at: $subVersionDirectory"
+            Write-Host "Module found at: $subVersionDirectory"
             Import-Module (Join-Path -Path $subVersionDirectory -ChildPath "$($_.BaseName).psd1") -Force
             if ($null -eq $newPars) {
                 $newPars = $Using:pars
