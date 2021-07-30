@@ -3,7 +3,6 @@ using namespace System.Collections
 using namespace System.Collections.Generic
 using namespace System.IO
 using namespace System.Management.Automation
-using namespace System.Web
 
 class VSYaml : VSJson {
     static [Specialized.OrderedDictionary] TransformToDict([string] $stringOrFilepath) {
@@ -12,8 +11,8 @@ class VSYaml : VSJson {
             $stringOrFilepath = [File]::ReadAllText($stringOrFilepath)
         }
         if ($stringOrFilepath.Trim() -match '^%\d\w') {
-            Write-Debug "String appears to be URL encoded, decoding with System.Web.HttpUtility::UrlDecode"
-            $stringOrFilepath = [HttpUtility]::UrlDecode($stringOrFilepath)
+            Write-Debug "String appears to be URL encoded, decoding with System.Net.WebUtility::UrlDecode"
+            $stringOrFilepath = [System.Net.WebUtility]::UrlDecode($stringOrFilepath)
         }
         try {
             $final = if (Get-Command cfn-flip* -ErrorAction SilentlyContinue) {

@@ -1,8 +1,8 @@
-function Install-VaporShellModule {
+function Install-VaporShellServiceModule {
     [CmdletBinding(DefaultParameterSetName = 'Name', SupportsShouldProcess, ConfirmImpact = 'Low')]
     Param(
         [parameter(Mandatory,ValueFromPipeline,ValueFromPipelineByPropertyName,Position = 0,ParameterSetName = 'Name')]
-        [VaporShellModule[]]
+        [VaporShellServiceModule[]]
         $Name,
         [parameter(ParameterSetName = 'All')]
         [switch]
@@ -57,15 +57,15 @@ function Install-VaporShellModule {
             $params.Remove('All') | Out-Null
             $params['Name'] = [enum]::GetValues([VaporShellModule])
         }
-        $names = $params['Name'] | ForEach-Object {
-            if ($_ -ne 'VaporShell') {
+        $params['Name'] = $params['Name'] | ForEach-Object {
+            if ($_ -notmatch '^VaporShell') {
                 "VaporShell.$_"
             }
             else {
                 $_
             }
         }
-        if ($alreadyInstalled = $names | Where-Object {$_ -in $installed.Name}) {
+        if ($alreadyInstalled = $params['Name'] | Where-Object {$_ -in $installed.Name}) {
             Write-Verbose "The following modules are already installed and will be updated instead:`n- $($alreadyInstalled -join "`n- ")"
             $updateParams = $params
             $updateParams['Name'] = $alreadyInstalled

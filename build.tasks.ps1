@@ -53,7 +53,7 @@ Param(
 Task . Init, Clean, Build, Import, PackageBuildOutputAsArtifact, BuildReleaseZips, CleanBuildOutput
 
 # Synopsis: Builds everything
-Task Build  Init, Update, BuildCore, BuildSubmodules, BuildDotnet
+Task Build  Init, Update, BuildCore, BuildSubmodules, GenerateVaporShellServiceModuleEnum, BuildDotnet
 
 # Synopsis: Cleans and builds just the classes
 Task BuildClasses BuildCoreClasses, BuildSubmodules
@@ -398,6 +398,16 @@ Task BuildCoreOnly CleanCore, {
                 if ($scope -match '^(Attributes|Classes)$') {
                     "[CmdletBinding()]`nParam()`n" | Add-Content -Path $target -Encoding UTF8
                 }
+                if ($scope -eq 'Classes') {
+                    @(
+                        ''
+                        "Write-Verbose `"Importing class 'VaporShellServiceModule'`""
+                        'enum VaporShellServiceModule {'
+                        '    ###VS_MODULE_ENUM###'
+                        '}'
+                        ''
+                     ) -join "`n" | Add-Content -Path $target -Encoding UTF8
+                }
                 Write-BuildLog "[$ModuleName] Copying contents from files in source folder '$($scope)' to $($target.Name)"
                 $toProcess | ForEach-Object {
                     Write-BuildLog "[$ModuleName] [$ModuleName] Working on: $($_.FullName.Replace("$gciPath$([System.IO.Path]::DirectorySeparatorChar)",''))"
@@ -485,7 +495,7 @@ Task BuildCoreOnly CleanCore, {
     }
 
     Write-BuildLog 'Copying latest AWSSDK assembly dependencies to output path'
-    Save-Module 'AWS.Tools.CloudFormation', 'AWS.Tools.S3' -Path $BuildRoot -Repository PSGallery -Force
+    Save-Module 'AWS.Tools.CloudFormation', 'AWS.Tools.S3' -Path $BuildRoot -Repository PSGallery -Force -WarningAction SilentlyContinue
     Get-Item 'AWS.Tools.*' | ForEach-Object {
         Get-ChildItem $_.FullName -Recurse -Filter 'AWSSDK.*.dll' | Copy-Item -Destination $TargetVersionDirectory -Recurse -ErrorAction SilentlyContinue
         Remove-Item $_.FullName -Recurse -Force
@@ -586,6 +596,15 @@ Task BuildCoreOnly CleanCore, {
     Write-BuildLog "[$ModuleName] Created compiled module at [$TargetVersionDirectory]!"
     Write-BuildLog 'Output version directory contents:'
     Get-ChildItem $TargetVersionDirectory | Format-Table -AutoSize
+}
+
+Task GenerateVaporShellServiceModuleEnum Init, {
+    $vsClassPath =  [System.IO.Path]::Combine($Script:TargetVersionDirectory,'VaporShell.Classes.ps1')
+    If (Test-Path $vsClassPath) {
+        $moduleList = ((Get-ChildItem "$BuildRoot/BuildOutput" -Directory -Filter 'VaporShell.*' | Where-Object {$_.BaseName -ne 'VaporShell'}).BaseName -replace 'VaporShell\.', '') -join ",`n    "
+        $orig = Get-Content $vsClassPath -Raw
+        ($orig -replace '###VS_MODULE_ENUM###', $moduleList) | Set-Content $vsClassPath -Force -Verbose
+    }
 }
 
 Task BuildCoreClasses Init, {

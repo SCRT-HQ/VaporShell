@@ -1,5 +1,30 @@
 #. /tmp/library-scripts/bootstrap.ps1
 
+function Get-ScrtHqDevContainerHelp {
+    [CmdletBinding()]
+    Param()
+    Process {
+        Write-Host -ForegroundColor Cyan 'Welcome to your Secret Headquarters!'; `
+        Write-Host "`nThis is a containerized development environment containing tools to "; `
+        Write-Host "build and test the module with build shortcuts powered by PSProfile."; `
+        Write-Host -ForegroundColor Magenta "`nHow to use this environment:`n"; `
+        Write-Host '* To build the module, run ' -NoNewLine; `
+        Write-Host -ForegroundColor Green 'Start-BuildScript' -NoNewLine; `
+        Write-Host ' or ' -NoNewline; `
+        Write-Host -ForegroundColor Green 'bld' -NoNewline; `
+        Write-Host ' (alias).'; `
+        Write-Host '* To test the module, append ' -NoNewLine; `
+        Write-Host -ForegroundColor Green '-Task Test' -NoNewLine; `
+        Write-Host ' to the command, e.g. ' -NoNewLine; `
+        Write-Host -ForegroundColor Green "bld -Task Test`n"; `
+        Write-Host 'To repeat this information, run ' -NoNewLine; `
+        Write-Host -ForegroundColor Yellow 'Get-ScrtHqDevContainerHelp'; `
+        Write-Host '';
+    }
+}
+
+Get-ScrtHqDevContainerHelp
+
 Import-Module PSProfile
 Switch-Prompt SCRTHQ
 

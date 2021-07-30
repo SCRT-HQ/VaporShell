@@ -3,7 +3,7 @@ using namespace System.Collections
 using namespace System.Collections.Generic
 using namespace System.IO
 using namespace System.Management.Automation
-using namespace System.Web
+using namespace System.Net
 
 class VSJson : VSHashtable {
     static [Specialized.OrderedDictionary] TransformToDict([string] $stringOrFilepath) {
@@ -12,8 +12,8 @@ class VSJson : VSHashtable {
             $stringOrFilepath = [File]::ReadAllText($stringOrFilepath)
         }
         if ($stringOrFilepath.Trim() -match '^%\d\w') {
-            Write-Debug "String appears to be URL encoded, decoding with System.Web.HttpUtility::UrlDecode"
-            $stringOrFilepath = [HttpUtility]::UrlDecode($stringOrFilepath)
+            Write-Debug "String appears to be URL encoded, decoding with System.Net.WebUtility::UrlDecode"
+            $stringOrFilepath = [WebUtility]::UrlDecode($stringOrFilepath)
         }
         try {
             $final = (ConvertFrom-Json -InputObject $stringOrFilepath -ErrorAction Stop)
