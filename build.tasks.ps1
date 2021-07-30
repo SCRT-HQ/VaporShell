@@ -398,15 +398,6 @@ Task BuildCoreOnly CleanCore, {
                 if ($scope -match '^(Attributes|Classes)$') {
                     "[CmdletBinding()]`nParam()`n" | Add-Content -Path $target -Encoding UTF8
                 }
-                if ($scope -eq 'Classes') {
-                    @(
-                        "Write-Verbose `"Importing class 'VaporShellServiceModule'`""
-                        'enum VaporShellServiceModule {'
-                        '    ###VS_MODULE_ENUM###'
-                        '}'
-                        ''
-                     ) -join "`n" | Add-Content -Path $target -Encoding UTF8
-                }
                 Write-BuildLog "[$ModuleName] Copying contents from files in source folder '$($scope)' to $($target.Name)"
                 $toProcess | ForEach-Object {
                     Write-BuildLog "[$ModuleName] [$ModuleName] Working on: $($_.FullName.Replace("$gciPath$([System.IO.Path]::DirectorySeparatorChar)",''))"
