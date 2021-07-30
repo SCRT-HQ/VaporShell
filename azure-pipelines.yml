@@ -43,6 +43,6 @@ parameters:
 stages:
 - template: BuildTestDeployModule/azure-pipelines.yml@templates
   parameters:
-    BuildReleasePoolName: '{{ parameters.BuildReleasePoolName }}'
+    BuildReleasePoolName: '${{ parameters.BuildReleasePoolName }}'
     TestBeta: ${{ parameters.TestBeta }}
     IncludeDocker: ${{ parameters.IncludeDocker }}
