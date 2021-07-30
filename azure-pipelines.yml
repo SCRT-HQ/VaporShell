@@ -6,7 +6,9 @@ resources:
       endpoint: Github
 
 variables:
-- group: deployment-vars
+  - name: ModuleName
+    value: VaporShell
+  - group: deployment-vars
 
 trigger:
   branches:
@@ -32,7 +34,7 @@ schedules:
     always: true
     branches:
       include:
-        - master
+        - main
         - beta
 
 parameters:
@@ -48,8 +50,9 @@ parameters:
     default: true
 
 stages:
-- template: BuildTestDeployModule/azure-pipelines.yml@templates
-  parameters:
-    BuildReleasePoolName: '${{ parameters.BuildReleasePoolName }}'
-    TestBeta: 'Yes'
-    IncludeDocker: ${{ parameters.IncludeDocker }}
+  - template: BuildTestDeployModule/azure-pipelines.yml@templates
+    parameters:
+      ModuleName: VaporShell
+      BuildReleasePoolName: '${{ parameters.BuildReleasePoolName }}'
+      TestBeta: 'Yes'
+      IncludeDocker: ${{ parameters.IncludeDocker }}
