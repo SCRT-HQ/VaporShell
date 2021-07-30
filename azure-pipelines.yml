@@ -12,6 +12,19 @@ trigger:
   branches:
     include:
     - refs/heads/*
+  paths:
+    exclude:
+      - '.devcontainer'
+      - '.vscode'
+      - '.github'
+      - Deprecated
+      - '*.md'
+      - 'LICENSE'
+      - '*.code-workspace'
+      - '.git*'
+      - ClassPad.ps1
+      - Install-VaporShell.ps1
+      - _config.yml
 
 schedules:
   - cron: "0 19 * * 3"

@@ -26,7 +26,6 @@ function Get-ScrtHqDevContainerHelp {
 Get-ScrtHqDevContainerHelp
 
 Import-Module PSProfile
-# Switch-Prompt SCRTHQ
 
 if ($null -ne (Get-Module PSReadline)) {
     $setPSReadLineOptionSplat = @{
