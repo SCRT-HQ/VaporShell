@@ -400,7 +400,6 @@ Task BuildCoreOnly CleanCore, {
                 }
                 if ($scope -eq 'Classes') {
                     @(
-                        ''
                         "Write-Verbose `"Importing class 'VaporShellServiceModule'`""
                         'enum VaporShellServiceModule {'
                         '    ###VS_MODULE_ENUM###'
@@ -601,7 +600,7 @@ Task BuildCoreOnly CleanCore, {
 Task GenerateVaporShellServiceModuleEnum Init, {
     $vsClassPath =  [System.IO.Path]::Combine($Script:TargetVersionDirectory,'VaporShell.Classes.ps1')
     If (Test-Path $vsClassPath) {
-        $moduleList = ((Get-ChildItem "$BuildRoot/BuildOutput" -Directory -Filter 'VaporShell.*' | Where-Object {$_.BaseName -ne 'VaporShell'}).BaseName -replace 'VaporShell\.', '') -join ",`n    "
+        $moduleList = ((Get-ChildItem "$BuildRoot/BuildOutput" -Directory -Filter 'VaporShell.*' | Where-Object {$_.BaseName -ne 'VaporShell'}).BaseName -replace 'VaporShell\.', '') -join "`n    "
         $orig = Get-Content $vsClassPath -Raw
         ($orig -replace '###VS_MODULE_ENUM###', $moduleList) | Set-Content $vsClassPath -Force -Verbose
     }
