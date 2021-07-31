@@ -1,8 +1,8 @@
-function Update-VaporShellModule {
+function Update-VaporShellServiceModule {
     [CmdletBinding(DefaultParameterSetName = 'Name', SupportsShouldProcess, ConfirmImpact = 'Low')]
     Param(
         [parameter(Mandatory,ValueFromPipeline,ValueFromPipelineByPropertyName,Position = 0,ParameterSetName = 'Name')]
-        [VaporShellModule[]]
+        [VaporShellServiceModule[]]
         $Name,
         [parameter(ParameterSetName = 'All')]
         [switch]
@@ -43,10 +43,10 @@ function Update-VaporShellModule {
         $params = $PSBoundParameters
         if ($PSCmdlet.ParameterSetName -eq 'All') {
             $params.Remove('All') | Out-Null
-            $params['Name'] = [enum]::GetValues([VaporShellModule])
+            $params['Name'] = [enum]::GetValues([VaporShellServiceModule])
         }
         $names = $params['Name'] | ForEach-Object {
-            if ($_ -ne 'VaporShell') {
+            if ($_ -notmatch '^VaporShell') {
                 "VaporShell.$_"
             }
             else {

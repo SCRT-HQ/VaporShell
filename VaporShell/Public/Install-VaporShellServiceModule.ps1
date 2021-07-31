@@ -55,7 +55,7 @@ function Install-VaporShellServiceModule {
         $params = $PSBoundParameters
         if ($PSCmdlet.ParameterSetName -eq 'All') {
             $params.Remove('All') | Out-Null
-            $params['Name'] = [enum]::GetValues([VaporShellModule])
+            $params['Name'] = [enum]::GetValues([VaporShellServiceModule])
         }
         $params['Name'] = $params['Name'] | ForEach-Object {
             if ($_ -notmatch '^VaporShell') {
