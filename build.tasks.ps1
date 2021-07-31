@@ -850,10 +850,10 @@ Task PublishToPSGallery -If $psGalleryConditions {
         Sort-Object Name |
         Start-RSJob -Verbose -Name {$_.Name} -ModulesToImport (Join-Path -Path $TargetVersionDirectory -ChildPath "VaporShell.psd1") -ArgumentList @($SourceAdditionalModuleDirectory,$NextModuleVersion,$TargetDirectory,$env:NugetApiKey) -ScriptBlock {
             Param($SourceAdditionalModuleDirectory,$NextModuleVersion,$TargetDirectory,$NugetApiKey)
-            "Publishing $($_.BaseName) version [$($NextModuleVersion)] to PSGallery"
+            "[$((Get-Date).ToString('HH:mm:ss'))] Publishing $($_.BaseName) version [$($NextModuleVersion)] to PSGallery"
             $subDirectory = [System.IO.Path]::Combine($TargetDirectory, $_.BaseName)
             $subVersionDirectory = Split-Path (Get-ChildItem $subDirectory -Recurse -Filter "$($_.BaseName).psd1")
-            "Module found at: $subVersionDirectory"
+            "[$((Get-Date).ToString('HH:mm:ss'))] Module found at: $subVersionDirectory"
             Import-Module (Join-Path -Path $subVersionDirectory -ChildPath "$($_.BaseName).psd1") -Force
             $pars = @{
                 Path = $subVersionDirectory
@@ -862,6 +862,7 @@ Task PublishToPSGallery -If $psGalleryConditions {
                 Verbose = $true
             }
             Publish-Module @pars 4>&1
+            "[$((Get-Date).ToString('HH:mm:ss'))] Published $($_.BaseName) successfully!"
         } |
         Wait-RSJob -Verbose |
         Receive-RSJob -Verbose | ForEach-Object {$_}
