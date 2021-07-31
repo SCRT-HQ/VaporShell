@@ -848,7 +848,7 @@ Task PublishToPSGallery -If $psGalleryConditions {
     Import-Module PoshRSJob
     Get-ChildItem $SourceAdditionalModuleDirectory -Directory |
         Sort-Object Name |
-        Start-RSJob -Verbose -Name {$_.Name} -ModulesToImport (Join-Path -Path $TargetVersionDirectory -ChildPath "VaporShell.psd1") -ArgumentList @($SourceAdditionalModuleDirectory,$NextModuleVersion,$TargetDirectory,$env:NugetApiKey) -ScriptBlock {
+        Start-RSJob -Name {$_.Name} -ModulesToImport (Join-Path -Path $TargetVersionDirectory -ChildPath "VaporShell.psd1") -ArgumentList @($SourceAdditionalModuleDirectory,$NextModuleVersion,$TargetDirectory,$env:NugetApiKey) -ScriptBlock {
             Param($SourceAdditionalModuleDirectory,$NextModuleVersion,$TargetDirectory,$NugetApiKey)
             "[$((Get-Date).ToString('HH:mm:ss'))] Publishing $($_.BaseName) version [$($NextModuleVersion)] to PSGallery"
             $subDirectory = [System.IO.Path]::Combine($TargetDirectory, $_.BaseName)

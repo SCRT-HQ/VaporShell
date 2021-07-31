@@ -30,12 +30,17 @@ trigger:
 
 schedules:
   - cron: "0 19 * * 3"
-    displayName: Weekly build on Wednesdays
+    displayName: Weekly BETA build on Wednesdays
+    always: true
+    branches:
+      include:
+        - beta
+  - cron: "0 20 * * 3"
+    displayName: Weekly PRD build on Wednesdays
     always: true
     branches:
       include:
         - main
-        - beta
 
 parameters:
   - name: BuildReleasePoolName
