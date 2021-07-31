@@ -27,6 +27,8 @@ Get-ScrtHqDevContainerHelp
 
 Import-Module PSProfile
 
+Add-PSProfileCommandAlias -Alias code -Command Open-Code -Force -Save
+
 # $GitPromptSettings.DefaultPromptBeforeSuffix.ForegroundColor = 0x808080
 # $GitPromptSettings.DefaultPromptSuffix.ForegroundColor = 0x808080
 # $GitPromptSettings.DefaultPromptPath.ForegroundColor = 0xFFA500
@@ -63,6 +65,7 @@ function global:prompt {
     else {
         $GitPromptSettings.DefaultPromptBeforeSuffix.ForegroundColor = 'White'
     }
+    $GitPromptSettings.DefaultPromptBeforeSuffix.Text += '<###'
 
     $GitPromptSettings.DefaultPromptBeforeSuffix.ForegroundColor = 0x808080
     $GitPromptSettings.DefaultPromptSuffix.ForegroundColor = 0x808080
