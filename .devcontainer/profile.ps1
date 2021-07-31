@@ -81,8 +81,6 @@ if ($null -ne (Get-Module PSReadline)) {
     $setPSReadLineOptionSplat = @{
         HistorySearchCursorMovesToEnd = $true
         HistoryNoDuplicates           = $true
-        PromptText                    = '>> ', '!! '
-        ContinuationPrompt            = ''
         ShowToolTips                  = $true
         HistorySearchCaseSensitive    = $false
         HistorySavePath               = '/workspaces/VaporShell/.devcontainer/IgnoredCommandHistory.txt'
