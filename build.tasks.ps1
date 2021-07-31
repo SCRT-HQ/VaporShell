@@ -848,17 +848,20 @@ Task PublishToPSGallery -If $psGalleryConditions {
     Import-Module PoshRSJob
     Get-ChildItem $SourceAdditionalModuleDirectory -Directory |
         Sort-Object Name |
-        Start-RSJob -Name {$_.Name} -ModulesToImport 'VaporShell' -VariablesToImport @('pars','NextModuleVersion','TargetDirectory') -ScriptBlock {
-            Write-Host "Publishing $($_.BaseName) version [$($Using:NextModuleVersion)] to PSGallery"
-            $subDirectory = [System.IO.Path]::Combine($Using:TargetDirectory, $_.BaseName)
+        Start-RSJob -Name {$_.Name} -ModulesToImport (Join-Path -Path $TargetVersionDirectory -ChildPath "VaporShell.psd1") -ArgumentList @($SourceAdditionalModuleDirectory,$NextModuleVersion,$TargetDirectory,$env:NugetApiKey) -ScriptBlock {
+            Param($SourceAdditionalModuleDirectory,$NextModuleVersion,$TargetDirectory,$NugetApiKey)
+            Write-Host "Publishing $($_.BaseName) version [$($NextModuleVersion)] to PSGallery"
+            $subDirectory = [System.IO.Path]::Combine($TargetDirectory, $_.BaseName)
             $subVersionDirectory = Split-Path (Get-ChildItem $subDirectory -Recurse -Filter "$($_.BaseName).psd1")
             Write-Host "Module found at: $subVersionDirectory"
             Import-Module (Join-Path -Path $subVersionDirectory -ChildPath "$($_.BaseName).psd1") -Force
-            if ($null -eq $newPars) {
-                $newPars = $Using:pars
+            $pars = @{
+                Path = $subVersionDirectory
+                NuGetApiKey = $NugetApiKey
+                Repository = 'PSGallery'
+                Verbose = $true
             }
-            $newPars['Path'] = $subVersionDirectory
-            Publish-Module @newPars
+            Publish-Module @pars
         } |
         Wait-RSJob |
         Receive-RSJob
