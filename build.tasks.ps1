@@ -864,7 +864,7 @@ Task PublishToPSGallery -If $psGalleryConditions {
             Publish-Module @pars 4>&1
         } |
         Wait-RSJob -Verbose |
-        Receive-RSJob -Verbose
+        Receive-RSJob -Verbose | ForEach-Object {$_}
     Write-BuildLog "Deployment successful!"
 }
 
