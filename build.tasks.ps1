@@ -96,7 +96,7 @@ Task Init {
             $summaryNextVersionSuffix = $null
         }
         '^(beta|rc|nightly|alpha)$' {
-            $Script:PrereleaseString = "$($env:BHBranchName)".ToLower() + (Get-Date).ToString('yyyyMMddHHmm')
+            $Script:PrereleaseString = "$($env:BHBranchName)".ToLower() + "$env:"
             $summaryNextVersionSuffix = "-" + $Script:PrereleaseString
         }
         default {
@@ -848,12 +848,12 @@ Task PublishToPSGallery -If $psGalleryConditions {
     Import-Module PoshRSJob
     Get-ChildItem $SourceAdditionalModuleDirectory -Directory |
         Sort-Object Name |
-        Start-RSJob -Name {$_.Name} -ModulesToImport (Join-Path -Path $TargetVersionDirectory -ChildPath "VaporShell.psd1") -ArgumentList @($SourceAdditionalModuleDirectory,$NextModuleVersion,$TargetDirectory,$env:NugetApiKey) -ScriptBlock {
+        Start-RSJob -Verbose -Name {$_.Name} -ModulesToImport (Join-Path -Path $TargetVersionDirectory -ChildPath "VaporShell.psd1") -ArgumentList @($SourceAdditionalModuleDirectory,$NextModuleVersion,$TargetDirectory,$env:NugetApiKey) -ScriptBlock {
             Param($SourceAdditionalModuleDirectory,$NextModuleVersion,$TargetDirectory,$NugetApiKey)
-            Write-Host "Publishing $($_.BaseName) version [$($NextModuleVersion)] to PSGallery"
+            "Publishing $($_.BaseName) version [$($NextModuleVersion)] to PSGallery"
             $subDirectory = [System.IO.Path]::Combine($TargetDirectory, $_.BaseName)
             $subVersionDirectory = Split-Path (Get-ChildItem $subDirectory -Recurse -Filter "$($_.BaseName).psd1")
-            Write-Host "Module found at: $subVersionDirectory"
+            "Module found at: $subVersionDirectory"
             Import-Module (Join-Path -Path $subVersionDirectory -ChildPath "$($_.BaseName).psd1") -Force
             $pars = @{
                 Path = $subVersionDirectory
@@ -861,10 +861,10 @@ Task PublishToPSGallery -If $psGalleryConditions {
                 Repository = 'PSGallery'
                 Verbose = $true
             }
-            Publish-Module @pars
+            Publish-Module @pars 4>&1
         } |
-        Wait-RSJob |
-        Receive-RSJob
+        Wait-RSJob -Verbose |
+        Receive-RSJob -Verbose
     Write-BuildLog "Deployment successful!"
 }
 
