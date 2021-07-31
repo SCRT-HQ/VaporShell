@@ -96,7 +96,7 @@ Task Init {
             $summaryNextVersionSuffix = $null
         }
         '^(beta|rc|nightly|alpha)$' {
-            $Script:PrereleaseString = "$($env:BHBranchName)".ToLower() + "$env:"
+            $Script:PrereleaseString = "$($env:BHBranchName)".ToLower() + "$($env:BHBuildNumber -replace '\.')"
             $summaryNextVersionSuffix = "-" + $Script:PrereleaseString
         }
         default {
