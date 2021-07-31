@@ -864,8 +864,8 @@ Task PublishToPSGallery -If $psGalleryConditions {
             Publish-Module @pars 4>&1
             "[$((Get-Date).ToString('HH:mm:ss'))] Published $($_.BaseName) successfully!"
         } |
-        Wait-RSJob -Verbose |
-        Receive-RSJob -Verbose | ForEach-Object {$_}
+        Wait-RSJob |
+        Receive-RSJob | ForEach-Object {$_}
     Write-BuildLog "Deployment successful!"
 }
 
