@@ -96,7 +96,7 @@ Task Init {
             $summaryNextVersionSuffix = $null
         }
         '^(beta|rc|nightly|alpha)$' {
-            $Script:PrereleaseString = "$($env:BHBranchName)".ToLower() + "$($env:BHBuildNumber -replace '\.')"
+            $Script:PrereleaseString = "$($env:BHBranchName)".ToLower() + $env:BHBuildNumber #"$($env:BHBuildNumber -replace '\.')"
             $summaryNextVersionSuffix = "-" + $Script:PrereleaseString
         }
         default {
@@ -846,7 +846,7 @@ Task PublishToPSGallery -If $psGalleryConditions {
     }
     Publish-Module @pars
     Import-Module PoshRSJob
-    Get-ChildItem $SourceAdditionalModuleDirectory -Directory |
+    $jobs = Get-ChildItem $SourceAdditionalModuleDirectory -Directory |
         Sort-Object Name |
         Start-RSJob -Name {$_.Name} -ModulesToImport (Join-Path -Path $TargetVersionDirectory -ChildPath "VaporShell.psd1") -ArgumentList @($SourceAdditionalModuleDirectory,$NextModuleVersion,$TargetDirectory,$env:NugetApiKey) -ScriptBlock {
             Param($SourceAdditionalModuleDirectory,$NextModuleVersion,$TargetDirectory,$NugetApiKey)
@@ -864,12 +864,13 @@ Task PublishToPSGallery -If $psGalleryConditions {
             Publish-Module @pars 4>&1
             "[$((Get-Date).ToString('HH:mm:ss'))] Published $($_.BaseName) successfully!"
         }
-        while ($jobs = Get-RSJob) {
+        while ($jobs) {
             Start-Sleep -Milliseconds 200
             if ($done = $jobs | Where-Object State -in 'Completed','Failed','Stopped','Suspended','Disconnected') {
                 $done | Receive-RSJob
                 $done | Remove-RSJob
             }
+            $jobs = Get-RSJob
         }
     Write-BuildLog "Deployment successful!"
 }
