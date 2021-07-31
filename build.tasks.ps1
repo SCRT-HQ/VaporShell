@@ -863,9 +863,14 @@ Task PublishToPSGallery -If $psGalleryConditions {
             }
             Publish-Module @pars 4>&1
             "[$((Get-Date).ToString('HH:mm:ss'))] Published $($_.BaseName) successfully!"
-        } |
-        Wait-RSJob |
-        Receive-RSJob | ForEach-Object {$_}
+        }
+        while ($jobs = Get-RSJob) {
+            Start-Sleep -Milliseconds 200
+            if ($done = $jobs | Where-Object State -in 'Completed','Failed','Stopped','Suspended','Disconnected') {
+                $done | Receive-RSJob
+                $done | Remove-RSJob
+            }
+        }
     Write-BuildLog "Deployment successful!"
 }
 

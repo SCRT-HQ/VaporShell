@@ -27,6 +27,53 @@ Get-ScrtHqDevContainerHelp
 
 Import-Module PSProfile
 
+# $GitPromptSettings.DefaultPromptBeforeSuffix.ForegroundColor = 0x808080
+# $GitPromptSettings.DefaultPromptSuffix.ForegroundColor = 0x808080
+# $GitPromptSettings.DefaultPromptPath.ForegroundColor = 0xFFA500
+# $GitPromptSettings.DefaultPromptBeforeSuffix.Text = '`n[$([DateTime]::now.ToString("MM-dd HH:mm:ss.ffff"))] [#$((Get-History -Count 1).id + 1)]'
+# $GitPromptSettings.DefaultPromptSuffix = '$(">" * ($nestedPromptLevel + 1)) '
+
+function global:prompt {
+    $origDollarQuestion = $global:?
+    $origLastExitCode = $global:LASTEXITCODE
+    $GitPromptSettings.DefaultPromptPrefix.ForegroundColor = if ($origDollarQuestion -eq $true) {
+        "Green"
+    }
+    else {
+        "Red"
+    }
+    $GitPromptSettings.DefaultPromptPath.ForegroundColor = 'Cyan'
+    $GitPromptSettings.DefaultPromptPrefix.Text = '[#$($MyInvocation.HistoryId) $("PS {0}" -f (Get-PSVersion))] '
+    $GitPromptSettings.DefaultPromptPath.Text = '[$(Get-PathAlias)$("+" * ((Get-Location -Stack).Count))]'
+    $GitPromptSettings.DefaultPromptBeforeSuffix.Text = '`n[$(Get-LastCommandDuration) @ $([DateTime]::now.ToString("HH:mm:ss.ffff"))]`n'
+    if ($env:AWS_PROFILE) {
+        $GitPromptSettings.DefaultPromptBeforeSuffix.ForegroundColor = 'Yellow'
+        $awsIcon = if ($global:PSProfile.Settings.ContainsKey("FontType")) {
+            $global:PSProfile.Settings.PromptCharacters.AWS[$global:PSProfile.Settings.FontType]
+        }
+        else {
+            "AWS:"
+        }
+        if ([String]::IsNullOrEmpty($awsIcon)) {
+            $awsIcon = "AWS:"
+        }
+        $str = "$($awsIcon) $($env:AWS_PROFILE)$(if($env:AWS_DEFAULT_REGION){" @ $env:AWS_DEFAULT_REGION"})"
+        $GitPromptSettings.DefaultPromptBeforeSuffix.Text += '[{0}]`n' -f $str
+    }
+    else {
+        $GitPromptSettings.DefaultPromptBeforeSuffix.ForegroundColor = 'White'
+    }
+
+    $GitPromptSettings.DefaultPromptBeforeSuffix.ForegroundColor = 0x808080
+    $GitPromptSettings.DefaultPromptSuffix.ForegroundColor = 0x808080
+    $GitPromptSettings.DefaultPromptPath.ForegroundColor = 0xFFA500
+
+    $global:LASTEXITCODE = $origLastExitCode
+    & $GitPromptScriptBlock
+}
+
+
+
 if ($null -ne (Get-Module PSReadline)) {
     $setPSReadLineOptionSplat = @{
         HistorySearchCursorMovesToEnd = $true
