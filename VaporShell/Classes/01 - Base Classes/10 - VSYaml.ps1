@@ -12,13 +12,21 @@ class VSYaml : VSJson {
             $stringOrFilepath = [File]::ReadAllText($stringOrFilepath)
         }
         if ($stringOrFilepath.Trim() -match '^%\d\w') {
-            Write-Debug "String appears to be URL encoded, decoding with System.Net.WebUtility::UrlDecode"
-            $stringOrFilepath = [WebUtility]::UrlDecode($stringOrFilepath)
+            Write-Debug "String appears to be URL encoded, decoding"
+            $stringOrFilepath = [VSYaml]::Decode($stringOrFilepath)
         }
         try {
             $final = if (Get-Command cfn-flip* -ErrorAction SilentlyContinue) {
                 $json = $stringOrFilepath | cfn-flip | Out-String
-                ConvertFrom-Json -InputObject $json -ErrorAction Stop
+
+                $jsonConvert = @{
+                    InputObject = $json
+                    ErrorAction = 'Stop'
+                }
+                if ($Global:PSVersionTable.PSVersion.Major -ge 7) {
+                    $jsonConvert['Depth'] = 20
+                }
+                $final = ConvertFrom-Json @jsonConvert
             }
             else {
                 ConvertFrom-Yaml -Yaml $stringOrFilepath -ErrorAction Stop
@@ -37,6 +45,7 @@ class VSYaml : VSJson {
 
     static [VSYaml] Transform([string] $stringOrFilepath) {
         $vsYaml = [VSYaml]::new()
+        $stringOrFilepath = [VSYaml]::Decode($stringOrFilepath)
         $dictionary = [VSYaml]::TransformToDict($stringOrFilepath)
         $dictionary.GetEnumerator() | ForEach-Object {
             $vsYaml[$_.Key] = $_.Value

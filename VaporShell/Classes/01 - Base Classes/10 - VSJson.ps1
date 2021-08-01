@@ -6,17 +6,28 @@ using namespace System.Management.Automation
 using namespace System.Net
 
 class VSJson : VSHashtable {
+    static [string] Decode([string] $stringOrFilepath) {
+        return [WebUtility]::UrlDecode($stringOrFilepath)
+    }
+
     static [Specialized.OrderedDictionary] TransformToDict([string] $stringOrFilepath) {
         $dictionary = [ordered]@{}
         if (Test-Path $stringOrFilepath) {
             $stringOrFilepath = [File]::ReadAllText($stringOrFilepath)
         }
         if ($stringOrFilepath.Trim() -match '^%\d\w') {
-            Write-Debug "String appears to be URL encoded, decoding with System.Net.WebUtility::UrlDecode"
-            $stringOrFilepath = [WebUtility]::UrlDecode($stringOrFilepath)
+            Write-Debug "String appears to be URL encoded, decoding"
+            $stringOrFilepath = [VSJson]::Decode($stringOrFilepath)
         }
         try {
-            $final = (ConvertFrom-Json -InputObject $stringOrFilepath -ErrorAction Stop)
+            $jsonConvert = @{
+                InputObject = $stringOrFilepath
+                ErrorAction = 'Stop'
+            }
+            if ($Global:PSVersionTable.PSVersion.Major -ge 7) {
+                $jsonConvert['Depth'] = 20
+            }
+            $final = ConvertFrom-Json @jsonConvert
             $final.PSObject.Properties | ForEach-Object {
                 Write-Debug "Adding key '$($_.Name)' with value '$($_.Value)' to VSJson"
                 $dictionary[$_.Name] = $_.Value
@@ -31,6 +42,7 @@ class VSJson : VSHashtable {
 
     static [VSJson] Transform([string] $stringOrFilepath) {
         $vsJson = [VSJson]::new()
+        $stringOrFilepath = [VSJson]::Decode($stringOrFilepath)
         $dictionary = [VSJson]::TransformToDict($stringOrFilepath)
         $dictionary.GetEnumerator() | ForEach-Object {
             $vsJson[$_.Key] = $_.Value
@@ -56,6 +68,7 @@ class VSJson : VSHashtable {
         }
     }
     VSJson([string] $stringOrFilepath) {
+        $stringOrFilepath = [VSJson]::Decode($stringOrFilepath)
         $dictionary = [VSJson]::TransformToDict($stringOrFilepath)
         $dictionary.GetEnumerator() | ForEach-Object {
             Write-Debug "Adding key '$($_.Key)' with value '$($_.Value)' to $this"
@@ -64,7 +77,8 @@ class VSJson : VSHashtable {
     }
     VSJson([string[]] $strings) {
         $newString = $strings -join [Environment]::NewLine
-        $dictionary = [VSJson]::TransformToDict($newString)
+        $stringOrFilepath = [VSJson]::Decode($newString)
+        $dictionary = [VSJson]::TransformToDict($stringOrFilepath)
         $dictionary.GetEnumerator() | ForEach-Object {
             Write-Debug "Adding key '$($_.Key)' with value '$($_.Value)' to $this"
             $this[$_.Key] = $_.Value
