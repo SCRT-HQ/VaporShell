@@ -49,7 +49,8 @@ function Install-VaporShellServiceModule {
         $PassThru
     )
     Begin {
-        $installed = Get-Module VaporShell* -ListAvailable
+        Write-Verbose "Getting list of installed VaporShell modules"
+        $installed = Get-Module VaporShell* -ListAvailable -Verbose:$false
     }
     Process {
         $params = $PSBoundParameters
@@ -65,7 +66,24 @@ function Install-VaporShellServiceModule {
                 $_
             }
         }
-        if ($alreadyInstalled = $params['Name'] | Where-Object {$_ -in $installed.Name}) {
+
+        $notInstalled = $params['Name'] | Where-Object {$_ -notin $installed.Name}
+        $alreadyInstalled = $params['Name'] | Where-Object {$_ -in $installed.Name}
+
+        if ($notInstalled) {
+            Write-Verbose "Installing modules:`n- $($notInstalled -join "`n- ")"
+            if (($params.Keys -join '-') -match 'Version|Prerelease') {
+                $params.Remove('Name') | Out-Null
+                foreach ($mod in $notInstalled) {
+                    Install-Module -Name $mod @params
+                }
+            }
+            else {
+                $params['Name'] = $notInstalled
+                Install-Module @params
+            }
+        }
+        if ($alreadyInstalled) {
             Write-Verbose "The following modules are already installed and will be updated instead:`n- $($alreadyInstalled -join "`n- ")"
             $updateParams = $params
             $updateParams['Name'] = $alreadyInstalled
@@ -79,19 +97,6 @@ function Install-VaporShellServiceModule {
             else {
                 Update-Module @updateParams
             }
-
-            $params['Name'] = $names | Where-Object {$_ -notin $installed.Name}
-        }
-        Write-Verbose "Installing modules:`n- $($params['Name'] -join "`n- ")"
-        if (($params.Keys -join '-') -match 'Version|Prerelease') {
-            $list = $params['Name']
-            $params.Remove('Name') | Out-Null
-            foreach ($mod in $list) {
-                Install-Module -Name $mod @params
-            }
-        }
-        else {
-            Install-Module @params
         }
     }
 }

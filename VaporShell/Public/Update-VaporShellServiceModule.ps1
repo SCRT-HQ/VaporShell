@@ -45,7 +45,7 @@ function Update-VaporShellServiceModule {
             $params.Remove('All') | Out-Null
             $params['Name'] = [enum]::GetValues([VaporShellServiceModule])
         }
-        $names = $params['Name'] | ForEach-Object {
+        $params['Name']  = $params['Name'] | ForEach-Object {
             if ($_ -notmatch '^VaporShell') {
                 "VaporShell.$_"
             }
@@ -53,33 +53,37 @@ function Update-VaporShellServiceModule {
                 $_
             }
         }
-        if ($notInstalled = $names | Where-Object {$_ -notin $installed.Name}) {
-            Write-Verbose "The following modules are not installed yet and will be installed:`n- $($notInstalled -join "`n- ")"
-            $installParams = $params
-            $installParams['Name'] = $notInstalled
 
-            if (($installParams.Keys -join '-') -match 'Version|Prerelease') {
-                $installParams.Remove('Name') | Out-Null
-                foreach ($mod in $alreadyInstalled) {
-                    Install-Module -Name $mod @installParams
+        $notInstalled = $params['Name'] | Where-Object {$_ -notin $installed.Name}
+        $alreadyInstalled = $params['Name'] | Where-Object {$_ -in $installed.Name}
+
+        if ($notInstalled) {
+            Write-Verbose "The following modules are not installed yet and will be installed:`n- $($notInstalled -join "`n- ")"
+            if (($params.Keys -join '-') -match 'Version|Prerelease') {
+                $params.Remove('Name') | Out-Null
+                foreach ($mod in $notInstalled) {
+                    Install-Module -Name $mod @params
                 }
             }
             else {
-                Install-Module @installParams
+                $params['Name'] = $notInstalled
+                Install-Module @params
             }
+        }
+        if ($alreadyInstalled) {
+            Write-Verbose "Updating modules:`n- $($alreadyInstalled -join "`n- ")"
+            $updateParams = $params
+            $updateParams['Name'] = $alreadyInstalled
 
-            $params['Name'] = $names | Where-Object {$_ -in $installed.Name}
-        }
-        Write-Verbose "Updating modules:`n- $($params['Name'] -join "`n- ")"
-        if (($params.Keys -join '-') -match 'Version|Prerelease') {
-            $list = $params['Name']
-            $params.Remove('Name') | Out-Null
-            foreach ($mod in $list) {
-                Update-Module -Name $mod @params
+            if (($updateParams.Keys -join '-') -match 'Version|Prerelease') {
+                $updateParams.Remove('Name') | Out-Null
+                foreach ($mod in $alreadyInstalled) {
+                    Update-Module -Name $mod @updateParams
+                }
             }
-        }
-        else {
-            Update-Module @params
+            else {
+                Update-Module @updateParams
+            }
         }
     }
 }

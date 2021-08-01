@@ -30,6 +30,7 @@ $new = [VSTemplate]@{
         [IAMRole]@{
             LogicalId = 'IAMRole'
             Path = '/'
+            RoleName = 'SMLambdaClonedRole'
             Policies = @(
                 [IAMRolePolicy]@{
                     PolicyName = 'Inline'
@@ -39,7 +40,6 @@ $new = [VSTemplate]@{
             AssumeRolePolicyDocument = $assumeRolePolicy
         }
     )
-
 }
 $new.ToJson()
 $new.ToYaml()
