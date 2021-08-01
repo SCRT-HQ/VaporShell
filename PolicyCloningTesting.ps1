@@ -36,6 +36,12 @@ $new = [VSTemplate]@{
                     PolicyName = 'Inline'
                     PolicyDocument = $policies
                 }
+                $(if ($includeSecondPolicy) {
+                    [IAMRolePolicy]@{
+                        PolicyName = 'InlineConditional'
+                        PolicyDocument = $policies
+                    }
+                })
             )
             AssumeRolePolicyDocument = $assumeRolePolicy
         }
