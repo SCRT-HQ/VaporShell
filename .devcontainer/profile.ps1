@@ -39,10 +39,10 @@ function global:prompt {
     $origDollarQuestion = $global:?
     $origLastExitCode = $global:LASTEXITCODE
     $GitPromptSettings.DefaultPromptPrefix.ForegroundColor = if ($origDollarQuestion -eq $true) {
-        "Green"
+        "LightGreen"
     }
     else {
-        "Red"
+        "Pink"
     }
     $GitPromptSettings.DefaultPromptPath.ForegroundColor = 'Cyan'
     $GitPromptSettings.DefaultPromptPrefix.Text = '[#$($MyInvocation.HistoryId) $("PS {0}" -f (Get-PSVersion))] '
