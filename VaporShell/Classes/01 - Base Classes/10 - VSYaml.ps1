@@ -13,7 +13,7 @@ class VSYaml : VSJson {
         }
         if ($stringOrFilepath.Trim() -match '^%\d\w') {
             Write-Debug "String appears to be URL encoded, decoding with System.Net.WebUtility::UrlDecode"
-            $stringOrFilepath = [System.Net.WebUtility]::UrlDecode($stringOrFilepath)
+            $stringOrFilepath = [WebUtility]::UrlDecode($stringOrFilepath)
         }
         try {
             $final = if (Get-Command cfn-flip* -ErrorAction SilentlyContinue) {
