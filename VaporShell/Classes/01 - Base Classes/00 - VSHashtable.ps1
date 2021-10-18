@@ -11,6 +11,7 @@ class VSHashtable : OrderedDictionary {
     static hidden [string] $_vsFunctionName = ''
     static hidden [string] $_awsDocumentation = ''
     hidden [string[]] $_commonParams = @('Verbose','Debug','ErrorAction','WarningAction','InformationAction','ErrorVariable','WarningVariable','InformationVariable','OutVariable','OutBuffer','PipelineVariable')
+    hidden [string[]] $_topLevelProperties = @()
 
     hidden [void] _addAccessors() {}
 
@@ -67,7 +68,13 @@ class VSHashtable : OrderedDictionary {
                     $key -notmatch '^(_|LogicalId$)' -and (
                         $value -is [enum] -or
                         $key -match '::' -or
-                        $null -ne $value
+                        (
+                            $null -ne $value -and (
+                                $null -eq $this._topLevelProperties -or
+                                $this._topLevelProperties.Count -eq 0 -or
+                                $key -in $this._topLevelProperties
+                            )
+                        )
                     ) -and (
                         $value -isnot [string] -or
                         -not [string]::IsNullOrEmpty($value)
