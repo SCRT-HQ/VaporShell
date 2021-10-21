@@ -9,7 +9,8 @@ class VSYaml : VSJson {
     static [Specialized.OrderedDictionary] TransformToDict([string] $stringOrFilepath) {
         $dictionary = [ordered]@{}
         if (Test-Path $stringOrFilepath) {
-            $stringOrFilepath = [File]::ReadAllText($stringOrFilepath)
+            $resPath = Resolve-Path $stringOrFilepath
+            $stringOrFilepath = [File]::ReadAllText($resPath)
         }
         if ($stringOrFilepath.Trim() -match '^%\d\w') {
             Write-Debug "String appears to be URL encoded, decoding"

@@ -10,21 +10,20 @@ class VSHashtable : OrderedDictionary {
     # Useful for adding corresponding public properties for intellisense.
     static hidden [string] $_vsFunctionName = ''
     static hidden [string] $_awsDocumentation = ''
-    hidden [string[]] $_commonParams = @('Verbose','Debug','ErrorAction','WarningAction','InformationAction','ErrorVariable','WarningVariable','InformationVariable','OutVariable','OutBuffer','PipelineVariable')
     hidden [string[]] $_topLevelProperties = @()
 
     hidden [void] _addAccessors() {}
 
     [object] Help() {
-        return $this.Help($null)
+        return $this.Help([ClassHelpScope]::Full)
     }
 
-    [object] Help([string] $scope) {
+    [object] Help([ClassHelpScope] $scope) {
         if ([string]::IsNullOrEmpty($this._vsFunctionName)) {
             return "Help content has not been created for this class. Please open an issue on the GitHub repository to request help for this class."
         }
         $params = @{Name = $this._vsFunctionName}
-        switch -Regex ($scope) {
+        switch -Regex ("$scope") {
             '^F(u|ull){0,1}' {
                 $params["Full"] = $true
             }
@@ -154,7 +153,7 @@ class VSHashtable : OrderedDictionary {
         Write-Debug "[$($this.GetType())] Contructing from input IDictionary"
         $props.GetEnumerator() | ForEach-Object {
             Write-Debug "[$($this.GetType())] [$($_.Key)]  Checking for property"
-            if ($this.GetType().FullName -eq 'VSHashtable' -or ($this.PSObject.Properties.Name -contains $_.Key -and $_.Key -notin $this._commonParams)) {
+            if ($this.GetType().FullName -eq 'VSHashtable' -or ($this.PSObject.Properties.Name -contains $_.Key -and $_.Key -notin [PSCommonParameters].GetEnumValues())) {
                 Write-Debug "[$($this.GetType())] [$($_.Key)] Property found, adding value: $($_.Value)"
                 $val = if ($_.Value -is [enum]) {
                     $_.Value.ToString()
@@ -172,7 +171,7 @@ class VSHashtable : OrderedDictionary {
         Write-Debug "[$($this.GetType())] Contructing from input PSObject"
         $props.PSObject.Properties | ForEach-Object {
             Write-Debug "[$($this.GetType())] [$($_.Name)] Checking for property"
-            if ($this.GetType().FullName -eq 'VSHashtable' -or ($this.PSObject.Properties.Name -contains $_.Name -and $_.Name -notin $this._commonParams)) {
+            if ($this.GetType().FullName -eq 'VSHashtable' -or ($this.PSObject.Properties.Name -contains $_.Name -and $_.Name -notin [PSCommonParameters].GetEnumValues())) {
                 Write-Debug "[$($this.GetType())] [$($_.Name)] Property found, adding value: $($_.Value)"
                 $val = if ($_.Value -is [enum]) {
                     $_.Value.ToString()
