@@ -10,10 +10,12 @@ function Add-FnGetAtt {
         http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html
 
     .PARAMETER LogicalNameOfResource
-        The logical name of the resource that contains the attribute that you want.
+        The logical name of the resource that contains the attribute that you want. You can also pass the short form of `LogicalNameOfResource.AttributeName` and exclude passing the `AttributeName` parameter additionally.
 
     .PARAMETER AttributeName
         The name of the resource-specific attribute whose value you want. See the resource's reference page for details about the attributes available for that resource type.
+
+        Not needed if the value passed to the `LogicalNameOfResource` parameter is the short form of `LogicalNameOfResource.AttributeName`.
 
     .EXAMPLE
         Add-FnGetAtt -LogicalNameOfResource "MyLB" -AttributeName "DNSName"
@@ -266,11 +268,16 @@ function Add-FnGetAtt {
         [parameter(Mandatory,Position = 0)]
         [string]
         $LogicalNameOfResource,
-        [parameter(Mandatory,Position = 1)]
+        [parameter(Position = 1)]
         [string]
         $AttributeName
     )
-    $obj = [FnGetAtt]::new($LogicalNameOfResource,$AttributeName)
+    $obj = if ($AttributeName) {
+        [FnGetAtt]::new($LogicalNameOfResource,$AttributeName)
+    }
+    else {
+        [FnGetAtt]::new($LogicalNameOfResource)
+    }
     Write-Verbose "Resulting JSON from $($MyInvocation.MyCommand): `n$($obj.ToJson() | Format-Json)"
     $obj
 }
