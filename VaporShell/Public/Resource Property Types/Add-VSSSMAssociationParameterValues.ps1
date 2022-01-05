@@ -37,7 +37,10 @@ ParameterValues is a property of the AWS::SSM::Association: https://docs.aws.ama
         foreach ($key in $PSBoundParameters.Keys | Where-Object {$commonParams -notcontains $_}) {
             switch ($key) {
                 Default {
-                    $obj | Add-Member -MemberType NoteProperty -Name $key -Value $PSBoundParameters.$key
+                    foreach ($item in $PSBoundParameters.$key.keys) {
+                        $obj | Add-Member -MemberType NoteProperty -Name $item -Value $PSBoundParameters.$key.$item
+                    }
+                    
                 }
             }
         }
